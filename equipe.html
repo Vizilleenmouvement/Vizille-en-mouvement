@@ -640,12 +640,6 @@
             margin-bottom: 1rem;
         }
         
-        .modal-bio {
-            color: var(--gris-texte);
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-        
         .modal-section {
             margin-bottom: 1.25rem;
         }
@@ -660,6 +654,7 @@
             gap: 0.5rem;
         }
         
+        .modal-bio,
         .modal-pedigree,
         .modal-objectifs {
             background: var(--blanc-casse);
@@ -965,8 +960,8 @@
                 photoContainer.innerHTML = `<div class="modal-photo-placeholder">👤</div>`;
             }
             
-            // Infos
-            document.getElementById('modal-name').textContent = candidat.nom || '';
+            // Infos de base
+            document.getElementById('modal-name').textContent = candidat.nom || 'Nom non renseigné';
             document.getElementById('modal-role').textContent = candidat.role || '';
             
             // Délégation
@@ -978,43 +973,17 @@
                 delegationEl.style.display = 'none';
             }
             
-            // Bio
-            const bioEl = document.getElementById('modal-bio');
-            if (candidat.bio) {
-                bioEl.textContent = candidat.bio;
-                bioEl.style.display = 'block';
-            } else {
-                bioEl.style.display = 'none';
-            }
+            // Bio / Présentation
+            document.getElementById('modal-bio').textContent = candidat.bio || 'Non renseigné';
             
             // Parcours
-            const pedigreeSection = document.getElementById('modal-pedigree-section');
-            const pedigreeEl = document.getElementById('modal-pedigree');
-            if (candidat.pedigree) {
-                pedigreeEl.textContent = candidat.pedigree;
-                pedigreeSection.style.display = 'block';
-            } else {
-                pedigreeSection.style.display = 'none';
-            }
+            document.getElementById('modal-pedigree').textContent = candidat.pedigree || 'Non renseigné';
             
             // Objectifs
-            const objectifsSection = document.getElementById('modal-objectifs-section');
-            const objectifsEl = document.getElementById('modal-objectifs');
-            if (candidat.objectifs) {
-                objectifsEl.textContent = candidat.objectifs;
-                objectifsSection.style.display = 'block';
-            } else {
-                objectifsSection.style.display = 'none';
-            }
+            document.getElementById('modal-objectifs').textContent = candidat.objectifs || 'Non renseigné';
             
             // Citation
-            const citationEl = document.getElementById('modal-citation');
-            if (candidat.citation) {
-                citationEl.textContent = candidat.citation;
-                citationEl.style.display = 'block';
-            } else {
-                citationEl.style.display = 'none';
-            }
+            document.getElementById('modal-citation').textContent = candidat.citation || 'Non renseigné';
             
             // Réseaux sociaux
             const socialsEl = document.getElementById('modal-socials');
@@ -1028,7 +997,8 @@
                 socialsEl.innerHTML = socialsHtml;
                 socialsEl.style.display = 'flex';
             } else {
-                socialsEl.style.display = 'none';
+                socialsEl.innerHTML = '<span style="color: #999; font-size: 0.9rem;">Aucun réseau social</span>';
+                socialsEl.style.display = 'block';
             }
             
             // Afficher
@@ -1062,19 +1032,27 @@
             </div>
             <div class="modal-body">
                 <span class="modal-delegation" id="modal-delegation"></span>
-                <p class="modal-bio" id="modal-bio"></p>
                 
-                <div class="modal-section" id="modal-pedigree-section">
+                <div class="modal-section">
+                    <h4 class="modal-section-title">👤 Présentation</h4>
+                    <p class="modal-bio" id="modal-bio">Non renseigné</p>
+                </div>
+                
+                <div class="modal-section">
                     <h4 class="modal-section-title">🎓 Parcours</h4>
-                    <p class="modal-pedigree" id="modal-pedigree"></p>
+                    <p class="modal-pedigree" id="modal-pedigree">Non renseigné</p>
                 </div>
                 
-                <div class="modal-section" id="modal-objectifs-section">
+                <div class="modal-section">
                     <h4 class="modal-section-title">🎯 Objectifs de campagne</h4>
-                    <p class="modal-objectifs" id="modal-objectifs"></p>
+                    <p class="modal-objectifs" id="modal-objectifs">Non renseigné</p>
                 </div>
                 
-                <p class="modal-citation" id="modal-citation"></p>
+                <div class="modal-section" id="modal-citation-section">
+                    <h4 class="modal-section-title">💬 Citation</h4>
+                    <p class="modal-citation" id="modal-citation">Non renseigné</p>
+                </div>
+                
                 <div class="modal-socials" id="modal-socials"></div>
             </div>
         </div>
