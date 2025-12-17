@@ -19,15 +19,17 @@
     "nom": "Jean-Pierre Martin",
     "role": "Adjoint",
     "delegation": "Finances & Budget",
-    "photo": "images/chevalier-bayard-fb-1765647152996.jpg",
-    "ordre": 2,
-    "actif": true,
     "bio": "",
+    "pedigree": "le goût du risque",
+    "objectifs": "",
     "citation": "",
     "email": "",
     "facebook": "",
     "linkedin": "",
-    "twitter": ""
+    "twitter": "",
+    "ordre": 2,
+    "photo": "images/chevalier-bayard-fb-1765647152996.jpg",
+    "actif": true
   },
   {
     "id": 3,
