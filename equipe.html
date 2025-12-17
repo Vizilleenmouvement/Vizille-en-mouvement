@@ -669,7 +669,7 @@
         
         async function loadCandidats() {
             try {
-                const response = await fetch('candidats.json');
+                const response = await fetch('candidats.json?v=' + Date.now());
                 if (!response.ok) throw new Error('Erreur');
                 
                 candidatsData = await response.json();
