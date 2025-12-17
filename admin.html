@@ -518,7 +518,7 @@
         <div class="header-actions">
             <input type="password" class="token-input" id="github-token" placeholder="🔐 Token GitHub" onchange="saveToken()">
             <button class="btn btn-sm" style="background: rgba(255,255,255,0.2);" onclick="toggleToken()">👁️</button>
-            <a href="https://vizilleenmouvement.github.io/vizille-en-mouvement/" target="_blank" class="btn btn-sm" style="background: var(--or); color: var(--bleu);">🌐 Voir le site</a>
+            <a href="https://Vizilleenmouvement.github.io/Vizille-en-mouvement/" target="_blank" class="btn btn-sm" style="background: var(--or); color: var(--bleu);">🌐 Voir le site</a>
         </div>
     </header>
 
@@ -663,10 +663,10 @@
 
                     <!-- LIENS -->
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="https://vizilleenmouvement.github.io/vizille-en-mouvement/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--bleu); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                        <a href="https://Vizilleenmouvement.github.io/Vizille-en-mouvement/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--bleu); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
                             🌐 Voir le site en ligne
                         </a>
-                        <a href="https://github.com/vizilleenmouvement/vizille-en-mouvement" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #333; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                        <a href="https://github.com/Vizilleenmouvement/Vizille-en-mouvement" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #333; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
                             📁 Voir sur GitHub
                         </a>
                     </div>
@@ -1039,7 +1039,7 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label>Email de contact</label>
-                            <input type="email" id="config-email" placeholder="contact@vizille-en-mouvement.fr" onchange="markModified('config')">
+                            <input type="email" id="config-email" placeholder="contact@Vizille-en-mouvement.fr" onchange="markModified('config')">
                         </div>
                         <div class="form-group">
                             <label>Téléphone</label>
@@ -1055,17 +1055,17 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label>📘 Facebook (URL)</label>
-                            <input type="url" id="config-facebook" placeholder="https://facebook.com/vizilleenmouvement" onchange="markModified('config')">
+                            <input type="url" id="config-facebook" placeholder="https://facebook.com/Vizilleenmouvement" onchange="markModified('config')">
                         </div>
                         <div class="form-group">
                             <label>📸 Instagram (URL)</label>
-                            <input type="url" id="config-instagram" placeholder="https://instagram.com/vizilleenmouvement" onchange="markModified('config')">
+                            <input type="url" id="config-instagram" placeholder="https://instagram.com/Vizilleenmouvement" onchange="markModified('config')">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label>🐦 Twitter / X (URL)</label>
-                            <input type="url" id="config-twitter" placeholder="https://twitter.com/vizilleenmouvement" onchange="markModified('config')">
+                            <input type="url" id="config-twitter" placeholder="https://twitter.com/Vizilleenmouvement" onchange="markModified('config')">
                         </div>
                         <div class="form-group">
                             <label>🔗 Autre lien</label>
@@ -1131,8 +1131,8 @@
     <script>
         // ===== CONFIGURATION =====
         const GITHUB_CONFIG = {
-            owner: 'vizilleenmouvement',
-            repo: 'vizille-en-mouvement',
+            owner: 'Vizilleenmouvement',
+            repo: 'Vizille-en-mouvement',
             branch: 'main'
         };
 
@@ -2087,7 +2087,7 @@
                 text += `✅ *Notre réponse :*\n${f.reponse}\n\n`;
                 text += `━━━━━━━━━━━━━━━\n`;
                 text += `🗳️ *Vizille en Mouvement*\n`;
-                text += `🌐 https://vizilleenmouvement.github.io/vizille-en-mouvement/`;
+                text += `🌐 https://Vizilleenmouvement.github.io/Vizille-en-mouvement/`;
             } 
             else if (type === 'article') {
                 const a = data.articles[index];
@@ -2097,7 +2097,7 @@
                 text += `👉 Lire la suite sur notre site\n`;
                 text += `━━━━━━━━━━━━━━━\n`;
                 text += `🗳️ *Vizille en Mouvement*\n`;
-                text += `🌐 https://vizilleenmouvement.github.io/vizille-en-mouvement/blog.html`;
+                text += `🌐 https://Vizilleenmouvement.github.io/Vizille-en-mouvement/blog.html`;
             }
             
             navigator.clipboard.writeText(text).then(() => {
@@ -2498,7 +2498,7 @@
             }
             
             const article = data.articles[index];
-            const siteUrl = `https://vizilleenmouvement.github.io/vizille-en-mouvement/blog.html`;
+            const siteUrl = `https://Vizilleenmouvement.github.io/Vizille-en-mouvement/blog.html`;
             
             const postText = `📰 ${article.titre}
 
@@ -2581,8 +2581,8 @@ ${cta}
 📱 SUIVEZ-NOUS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🌐 Site : https://vizilleenmouvement.github.io/vizille-en-mouvement/
-📘 Facebook : ${data.config.facebook || 'https://facebook.com/vizilleenmouvement'}
+🌐 Site : https://Vizilleenmouvement.github.io/Vizille-en-mouvement/
+📘 Facebook : ${data.config.facebook || 'https://facebook.com/Vizilleenmouvement'}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Pour vous désabonner, répondez à cet email.
