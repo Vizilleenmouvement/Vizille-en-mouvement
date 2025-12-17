@@ -2648,7 +2648,16 @@ Pour vous désabonner, répondez à cet email.
         }
 
         // ===== PUBLICATION =====
+        // Flag pour éviter les publications multiples simultanées
+        const publishingInProgress = {};
+        
         async function publish(section, retryCount = 0) {
+            // Éviter les clics multiples
+            if (publishingInProgress[section]) {
+                showToast('⏳ Publication déjà en cours...', 'info');
+                return;
+            }
+            
             const token = getToken();
             if (!token) {
                 showToast('⚠️ Configurez votre token GitHub', 'warning');
@@ -2666,6 +2675,7 @@ Pour vous désabonner, répondez à cet email.
             };
 
             const filename = files[section];
+            publishingInProgress[section] = true;
             
             // Pour config, on doit d'abord lire les valeurs des champs
             if (section === 'config') {
@@ -2695,14 +2705,22 @@ Pour vous désabonner, répondez à cet email.
             setStatus(section, 'loading', '⏳ Publication...');
 
             try {
-                // Récupérer le SHA actuel
+                // Récupérer le SHA actuel (avec cache-buster pour éviter le cache)
                 let sha = null;
+                const timestamp = Date.now();
                 const getResponse = await fetch(
-                    `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${filename}?ref=${GITHUB_CONFIG.branch}`,
-                    { headers: { 'Authorization': `token ${token}` } }
+                    `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${filename}?ref=${GITHUB_CONFIG.branch}&_=${timestamp}`,
+                    { 
+                        headers: { 
+                            'Authorization': `token ${token}`,
+                            'Cache-Control': 'no-cache'
+                        } 
+                    }
                 );
                 if (getResponse.ok) {
-                    sha = (await getResponse.json()).sha;
+                    const fileData = await getResponse.json();
+                    sha = fileData.sha;
+                    console.log(`📄 SHA récupéré pour ${filename}: ${sha.substring(0, 7)}...`);
                 }
 
                 const body = {
@@ -2727,10 +2745,14 @@ Pour vous désabonner, répondez à cet email.
                 if (response.ok) {
                     setStatus(section, 'saved', '✓ À jour');
                     showToast(`✅ ${filename} publié !`, 'success');
-                } else if (response.status === 409 && retryCount < 3) {
-                    // Conflit - réessayer avec le nouveau SHA
-                    showToast('🔄 Conflit détecté, nouvelle tentative...', 'warning');
-                    await new Promise(r => setTimeout(r, 1000));
+                    publishingInProgress[section] = false;
+                } else if (response.status === 409 && retryCount < 5) {
+                    // Conflit - attendre un peu plus longtemps et réessayer
+                    const delay = 1000 * (retryCount + 1); // 1s, 2s, 3s, 4s, 5s
+                    console.log(`🔄 Conflit 409 sur ${filename}, retry ${retryCount + 1}/5 dans ${delay}ms...`);
+                    showToast(`🔄 Conflit, nouvelle tentative (${retryCount + 1}/5)...`, 'warning');
+                    await new Promise(r => setTimeout(r, delay));
+                    publishingInProgress[section] = false;
                     return publish(section, retryCount + 1);
                 } else {
                     const error = await response.json();
@@ -2738,6 +2760,7 @@ Pour vous désabonner, répondez à cet email.
                 }
             } catch (err) {
                 setStatus(section, 'modified', '⚠️ Erreur');
+                publishingInProgress[section] = false;
                 showToast('❌ Erreur: ' + err.message, 'error');
             }
         }
