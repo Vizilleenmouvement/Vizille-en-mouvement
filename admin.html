@@ -2712,8 +2712,7 @@ Pour vous désabonner, répondez à cet email.
                     `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${filename}?ref=${GITHUB_CONFIG.branch}&_=${timestamp}`,
                     { 
                         headers: { 
-                            'Authorization': `token ${token}`,
-                            'Cache-Control': 'no-cache'
+                            'Authorization': `token ${token}`
                         } 
                     }
                 );
