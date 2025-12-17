@@ -646,6 +646,30 @@
             margin-bottom: 1rem;
         }
         
+        .modal-section {
+            margin-bottom: 1.25rem;
+        }
+        
+        .modal-section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: var(--bleu-vizille);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .modal-pedigree,
+        .modal-objectifs {
+            background: var(--blanc-casse);
+            padding: 1rem;
+            border-radius: 8px;
+            color: var(--gris-texte);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
         .modal-citation {
             background: var(--blanc-casse);
             border-left: 4px solid var(--or);
@@ -963,6 +987,26 @@
                 bioEl.style.display = 'none';
             }
             
+            // Pédigrée
+            const pedigreeSection = document.getElementById('modal-pedigree-section');
+            const pedigreeEl = document.getElementById('modal-pedigree');
+            if (candidat.pedigree) {
+                pedigreeEl.textContent = candidat.pedigree;
+                pedigreeSection.style.display = 'block';
+            } else {
+                pedigreeSection.style.display = 'none';
+            }
+            
+            // Objectifs
+            const objectifsSection = document.getElementById('modal-objectifs-section');
+            const objectifsEl = document.getElementById('modal-objectifs');
+            if (candidat.objectifs) {
+                objectifsEl.textContent = candidat.objectifs;
+                objectifsSection.style.display = 'block';
+            } else {
+                objectifsSection.style.display = 'none';
+            }
+            
             // Citation
             const citationEl = document.getElementById('modal-citation');
             if (candidat.citation) {
@@ -1019,6 +1063,17 @@
             <div class="modal-body">
                 <span class="modal-delegation" id="modal-delegation"></span>
                 <p class="modal-bio" id="modal-bio"></p>
+                
+                <div class="modal-section" id="modal-pedigree-section">
+                    <h4 class="modal-section-title">🎓 Parcours</h4>
+                    <p class="modal-pedigree" id="modal-pedigree"></p>
+                </div>
+                
+                <div class="modal-section" id="modal-objectifs-section">
+                    <h4 class="modal-section-title">🎯 Objectifs de campagne</h4>
+                    <p class="modal-objectifs" id="modal-objectifs"></p>
+                </div>
+                
                 <p class="modal-citation" id="modal-citation"></p>
                 <div class="modal-socials" id="modal-socials"></div>
             </div>
