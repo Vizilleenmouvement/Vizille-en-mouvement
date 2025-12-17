@@ -1833,6 +1833,14 @@
                     <textarea id="edit-bio" rows="3" placeholder="Courte présentation...">${c.bio || ''}</textarea>
                 </div>
                 <div class="form-group">
+                    <label>🎓 Parcours</label>
+                    <textarea id="edit-pedigree" rows="3" placeholder="Formation, expériences professionnelles, engagements passés...">${c.pedigree || ''}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>🎯 Objectifs de campagne</label>
+                    <textarea id="edit-objectifs" rows="3" placeholder="Mes priorités pour Vizille...">${c.objectifs || ''}</textarea>
+                </div>
+                <div class="form-group">
                     <label>💬 Citation / Engagement personnel</label>
                     <input type="text" id="edit-citation" value="${c.citation || ''}" placeholder="Ex: Mon engagement pour Vizille...">
                 </div>
@@ -1926,6 +1934,8 @@
             const role = document.getElementById('edit-role').value.trim();
             const delegation = document.getElementById('edit-delegation').value.trim();
             const bio = document.getElementById('edit-bio').value.trim();
+            const pedigree = document.getElementById('edit-pedigree').value.trim();
+            const objectifs = document.getElementById('edit-objectifs').value.trim();
             const citation = document.getElementById('edit-citation').value.trim();
             const email = document.getElementById('edit-email').value.trim();
             const facebook = document.getElementById('edit-facebook').value.trim();
@@ -1953,7 +1963,7 @@
 
             const candidatData = { 
                 id: currentEdit.index >= 0 ? data.candidats[currentEdit.index].id : Date.now(),
-                nom, role, delegation, bio, citation, email, facebook, linkedin, twitter, ordre, photo, actif: true 
+                nom, role, delegation, bio, pedigree, objectifs, citation, email, facebook, linkedin, twitter, ordre, photo, actif: true 
             };
 
             if (currentEdit.index === -1) {
