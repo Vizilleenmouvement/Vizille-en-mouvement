@@ -1312,6 +1312,7 @@
                 setStatus(key, 'loading', '⏳...');
                 try {
                     const url = `https://raw.githubusercontent.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/${GITHUB_CONFIG.branch}/${file}`;
+                    console.log(`Chargement de ${file}...`, url);
                     const response = await fetch(url);
                     if (response.ok) {
                         const loaded = await response.json();
@@ -1320,11 +1321,16 @@
                         } else {
                             data[key] = loaded;
                         }
+                        console.log(`✅ ${file} chargé:`, loaded.length !== undefined ? `${loaded.length} éléments` : 'OK');
+                        setStatus(key, 'saved', '✓ À jour');
+                    } else {
+                        console.warn(`⚠️ ${file} - Erreur HTTP ${response.status}`);
+                        setStatus(key, 'modified', `⚠️ Erreur ${response.status}`);
                     }
                 } catch (err) {
-                    console.log(`${file} non trouvé`);
+                    console.error(`❌ ${file} - Erreur:`, err.message);
+                    setStatus(key, 'modified', '❌ Erreur');
                 }
-                setStatus(key, 'saved', '✓ À jour');
             }
 
             renderAll();
