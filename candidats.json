@@ -79,15 +79,15 @@
     "nom": "Marc Fontaine",
     "role": "Adjoint",
     "delegation": "Travaux & Voirie",
-    "photo": "images/marc-fontaine.png",
-    "ordre": 6,
-    "actif": true,
     "bio": "",
-    "citation": "",
+    "citation": "bonjour !",
     "email": "",
     "facebook": "",
     "linkedin": "",
-    "twitter": ""
+    "twitter": "",
+    "ordre": 6,
+    "photo": "images/marc-fontaine.png",
+    "actif": true
   },
   {
     "id": 7,
