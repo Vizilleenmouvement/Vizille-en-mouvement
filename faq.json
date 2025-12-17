@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "source": "site",
+    "auteur": null,
+    "question": "Quand auront lieu les élections municipales ?",
+    "reponse": "Les élections municipales auront lieu en mars 2026.",
+    "categorie": "Élections",
+    "ordre": 1
+  },
+  {
+    "id": 2,
+    "source": "site",
+    "auteur": null,
+    "question": "Comment rejoindre l'équipe de campagne ?",
+    "reponse": "Contactez-nous via le formulaire de contact sur notre site ou venez nous rencontrer lors de nos permanences.",
+    "categorie": "Participation",
+    "ordre": 2
+  },
+  {
+    "id": 3,
+    "source": "facebook",
+    "auteur": "Marie D.",
+    "question": "La Maison de Santé ouvrira-t-elle avant les élections ?",
+    "reponse": "Oui, la Maison de Santé est prévue pour ouvrir ses portes au premier semestre 2025. Les travaux avancent bien et plusieurs professionnels de santé ont déjà confirmé leur installation.",
+    "categorie": "Santé",
+    "ordre": 3
+  }
+]

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Vizille en Mouvement</title>
+    <meta name="description" content="Contactez l'équipe Vizille en Mouvement. Posez vos questions, partagez vos idées.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bleu-vizille: #1a3a5c;
+            --bleu-clair: #2d5a87;
+            --or: #c9a227;
+            --or-clair: #e8c84a;
+            --blanc-casse: #f8f6f1;
+            --gris-doux: #e8e6e1;
+            --gris-texte: #4a4a4a;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: var(--blanc-casse);
+            color: var(--gris-texte);
+            line-height: 1.6;
+        }
+        
+        /* ===== NAVIGATION STYLE FIGARO ===== */
+        .header-top {
+            background: var(--bleu-vizille);
+            padding: 0.4rem 0;
+            text-align: center;
+            border-bottom: 2px solid var(--or);
+        }
+        
+        .header-top p {
+            color: white;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        
+        .header-main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--gris-doux);
+            background: white;
+        }
+        
+        .nav-header-logo {
+            height: 85px;
+            width: auto;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(26, 58, 92, 0.2));
+        }
+        
+        .nav-header-logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.4));
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 0;
+            border-left: 1px solid var(--gris-doux);
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            border-right: 1px solid var(--gris-doux);
+        }
+        
+        nav ul li a {
+            display: block;
+            padding: 0.6rem 1.25rem;
+            color: var(--gris-texte);
+            text-decoration: none;
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+        
+        nav ul li a:hover {
+            background: var(--blanc-casse);
+            color: var(--bleu-vizille);
+        }
+        
+        nav ul li a.active {
+            background: var(--bleu-vizille);
+            color: white;
+        }
+        
+        nav ul li a.admin-link {
+            opacity: 0.5;
+            font-size: 1.1rem;
+            padding: 0.6rem 1rem;
+        }
+        
+        nav ul li a.admin-link:hover {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .header-main {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                border: none;
+            }
+            
+            nav ul li {
+                border: none;
+            }
+            
+            nav ul li a {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.75rem;
+            }
+        }
+        
+        /* Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--bleu-vizille) 0%, var(--bleu-clair) 100%);
+            color: white;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+        
+        .header-logo {
+            max-width: 280px;
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.5));
+            animation: pulse 2s ease-in-out infinite, glow 2s ease-in-out infinite;
+        }
+        
+        .header-slogan {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--or-clair);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            15% { transform: scale(1.05); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.03); }
+            60% { transform: scale(1); }
+        }
+        
+        @keyframes glow {
+            0%, 100% { 
+                filter: drop-shadow(0 0 15px rgba(255,255,255,0.4)) drop-shadow(0 0 30px rgba(201,162,39,0.3));
+            }
+            50% { 
+                filter: drop-shadow(0 0 25px rgba(255,255,255,0.7)) drop-shadow(0 0 50px rgba(201,162,39,0.5)) drop-shadow(0 0 70px rgba(201,162,39,0.3));
+            }
+        }
+        
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .page-header p { opacity: 0.9; font-size: 1.2rem; }
+        
+        /* Content */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        /* Form */
+        .contact-form {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .contact-form h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--bleu-vizille);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--bleu-vizille);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--gris-doux);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--or);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--or) 0%, var(--or-clair) 100%);
+            color: var(--bleu-vizille);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(201,162,39,0.4);
+        }
+        
+        /* Info */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .info-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--bleu-vizille);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .info-card p {
+            color: var(--gris-texte);
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-card a {
+            color: var(--bleu-clair);
+            text-decoration: none;
+        }
+        
+        .info-card a:hover {
+            color: var(--or);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: var(--bleu-vizille);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--or);
+            transform: translateY(-3px);
+        }
+        
+        /* Success message */
+        .success-message {
+            display: none;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--bleu-vizille);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .footer-slogan {
+            font-family: 'Playfair Display', serif;
+            color: var(--or-clair);
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <p>Contact • Vizille en Mouvement</p>
+        </div>
+        
+        <div class="header-main">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Vizille en Mouvement" class="nav-header-logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="bilan.html">Bilan</a></li>
+                    <li><a href="projet.html">Projet</a></li>
+                    <li><a href="blog.html">Actualités</a></li>
+                    <li><a href="equipe.html">Équipe</a></li>
+                    <li><a href="faq.html">Ensemble</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="admin.html" class="admin-link" title="Administration">⚙️</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="page-header">
+        <img src="images/logo.png" alt="Vizille en Mouvement" class="header-logo">
+        <p class="header-slogan">« Ensemble pour une ville dynamique et solidaire »</p>
+        <h1>✉️ Contactez-nous</h1>
+        <p>Une question, une idée ? Écrivez-nous !</p>
+    </section>
+    
+    <main class="content">
+        <div class="contact-grid">
+            <div class="contact-form">
+                <h2>📝 Envoyez-nous un message</h2>
+                
+                <div class="success-message" id="success-message">
+                    ✅ Votre message a bien été envoyé ! Nous vous répondrons rapidement.
+                </div>
+                
+                <form action="https://formspree.io/f/xjknewpy" method="POST" id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Votre nom *</label>
+                        <input type="text" id="name" name="name" required placeholder="Jean Dupont">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Votre email *</label>
+                        <input type="email" id="email" name="email" required placeholder="jean.dupont@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <select id="subject" name="subject">
+                            <option value="Question générale">Question générale</option>
+                            <option value="Rejoindre l'équipe">Rejoindre l'équipe</option>
+                            <option value="Proposition / Idée">Proposition / Idée</option>
+                            <option value="Demande de rencontre">Demande de rencontre</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Votre message *</label>
+                        <textarea id="message" name="message" required placeholder="Écrivez votre message ici..."></textarea>
+                    </div>
+                    
+                    <input type="hidden" name="_subject" value="Nouveau message - Vizille en Mouvement">
+                    <input type="text" name="_gotcha" style="display:none">
+                    
+                    <button type="submit" class="btn-submit">📤 Envoyer le message</button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <div class="info-card">
+                    <h3>📍 Nous trouver</h3>
+                    <p><strong>Vizille en Mouvement</strong></p>
+                    <p id="contact-adresse">Vizille, Isère, France</p>
+                    <p id="contact-telephone"></p>
+                    <p id="contact-email"></p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>📱 Suivez-nous</h3>
+                    <p>Retrouvez-nous sur les réseaux sociaux pour suivre notre actualité.</p>
+                    <div class="social-links" id="social-links">
+                        <a href="https://facebook.com/vizilleenmouvement" target="_blank" title="Facebook">📘</a>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <h3>🕐 Permanences</h3>
+                    <p id="contact-permanences">Nous organisons des permanences régulières pour vous rencontrer.</p>
+                    <p><a href="blog.html">→ Voir les actualités</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <p class="footer-slogan">« Ensemble pour une ville dynamique et solidaire »</p>
+        <p>© 2025 Vizille en Mouvement</p>
+    </footer>
+    
+    <script>
+        // Charger la configuration
+        async function loadConfig() {
+            try {
+                const response = await fetch('config.json');
+                if (response.ok) {
+                    const config = await response.json();
+                    
+                    // Adresse
+                    if (config.adresse) {
+                        document.getElementById('contact-adresse').textContent = config.adresse;
+                    }
+                    
+                    // Téléphone
+                    if (config.telephone) {
+                        document.getElementById('contact-telephone').innerHTML = `📞 <a href="tel:${config.telephone}">${config.telephone}</a>`;
+                    }
+                    
+                    // Email
+                    if (config.email) {
+                        document.getElementById('contact-email').innerHTML = `📧 <a href="mailto:${config.email}">${config.email}</a>`;
+                    }
+                    
+                    // Permanences
+                    if (config.permanences) {
+                        document.getElementById('contact-permanences').textContent = config.permanences;
+                    }
+                    
+                    // Réseaux sociaux
+                    let socialHtml = '';
+                    if (config.facebook) socialHtml += `<a href="${config.facebook}" target="_blank" title="Facebook">📘</a>`;
+                    if (config.instagram) socialHtml += `<a href="${config.instagram}" target="_blank" title="Instagram">📸</a>`;
+                    if (config.twitter) socialHtml += `<a href="${config.twitter}" target="_blank" title="Twitter">🐦</a>`;
+                    if (config.autre) socialHtml += `<a href="${config.autre}" target="_blank" title="Autre">🔗</a>`;
+                    
+                    if (socialHtml) {
+                        document.getElementById('social-links').innerHTML = socialHtml;
+                    }
+                }
+            } catch (err) {
+                console.log('Config non trouvée, valeurs par défaut utilisées');
+            }
+        }
+        
+        // Charger la config au démarrage
+        document.addEventListener('DOMContentLoaded', loadConfig);
+        
+        // Gestion du formulaire avec Formspree
+        const form = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    successMessage.style.display = 'block';
+                    form.reset();
+                    // Scroll vers le message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    alert('Une erreur est survenue. Veuillez réessayer.');
+                }
+            } catch (error) {
+                alert('Une erreur est survenue. Veuillez réessayer.');
+            }
+        });
+    </script>
+</body>
+</html>

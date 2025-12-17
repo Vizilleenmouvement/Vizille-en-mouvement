@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "titre": "Lancement de la campagne Vizille en Mouvement",
+    "date": "2025-12-01",
+    "categorie": "Événement",
+    "extrait": "C'est avec enthousiasme que nous lançons officiellement notre campagne pour les municipales 2026.",
+    "contenu": "C'est avec enthousiasme que nous lançons officiellement notre campagne pour les municipales 2026.\n\nNotre équipe, composée de 9 candidats engagés, est prête à porter un projet ambitieux pour Vizille.\n\nNous vous invitons à suivre nos actualités et à venir nous rencontrer lors de nos permanences et réunions publiques.\n\nEnsemble, construisons l'avenir de notre ville !",
+    "image": ""
+  },
+  {
+    "id": 2,
+    "titre": "Première réunion publique - Salle des fêtes",
+    "date": "2025-12-15",
+    "categorie": "Événement",
+    "extrait": "Venez nombreux échanger avec notre équipe le samedi 15 décembre à 18h.",
+    "contenu": "Nous avons le plaisir de vous convier à notre première réunion publique.\n\nDate : Samedi 15 décembre 2025\nHeure : 18h00\nLieu : Salle des fêtes de Vizille\n\nAu programme :\n- Présentation de l'équipe\n- Notre bilan du mandat\n- Nos projets pour 2026-2032\n- Vos questions\n\nUn moment convivial suivra la réunion. Venez nombreux !",
+    "image": ""
+  }
+]

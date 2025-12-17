@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Équipe – Vizille en Mouvement</title>
+    <meta name="description" content="Découvrez l'équipe de Vizille en Mouvement. Des femmes et des hommes engagés pour Vizille.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bleu-vizille: #1a3a5c;
+            --bleu-clair: #2d5a87;
+            --or: #c9a227;
+            --or-clair: #e8c84a;
+            --blanc-casse: #f8f6f1;
+            --gris-doux: #e8e6e1;
+            --gris-texte: #4a4a4a;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: var(--blanc-casse);
+            color: var(--gris-texte);
+            line-height: 1.6;
+        }
+        
+        /* ===== NAVIGATION STYLE FIGARO ===== */
+        .header-top {
+            background: var(--bleu-vizille);
+            padding: 0.4rem 0;
+            text-align: center;
+            border-bottom: 2px solid var(--or);
+        }
+        
+        .header-top p {
+            color: white;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        
+        .header-main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--gris-doux);
+            background: white;
+        }
+        
+        .nav-header-logo {
+            height: 85px;
+            width: auto;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(26, 58, 92, 0.2));
+        }
+        
+        .nav-header-logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.4));
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 0;
+            border-left: 1px solid var(--gris-doux);
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            border-right: 1px solid var(--gris-doux);
+        }
+        
+        nav ul li a {
+            display: block;
+            padding: 0.6rem 1.25rem;
+            color: var(--gris-texte);
+            text-decoration: none;
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+        
+        nav ul li a:hover {
+            background: var(--blanc-casse);
+            color: var(--bleu-vizille);
+        }
+        
+        nav ul li a.active {
+            background: var(--bleu-vizille);
+            color: white;
+        }
+        
+        nav ul li a.admin-link {
+            opacity: 0.5;
+            font-size: 1.1rem;
+            padding: 0.6rem 1rem;
+        }
+        
+        nav ul li a.admin-link:hover {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .header-main {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                border: none;
+            }
+            
+            nav ul li {
+                border: none;
+            }
+            
+            nav ul li a {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.75rem;
+            }
+        }
+        
+        /* Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--bleu-vizille) 0%, var(--bleu-clair) 100%);
+            color: white;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+        
+        .header-logo {
+            max-width: 280px;
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.5));
+            animation: pulse 2s ease-in-out infinite, glow 2s ease-in-out infinite;
+        }
+        
+        .header-slogan {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--or-clair);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            15% { transform: scale(1.05); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.03); }
+            60% { transform: scale(1); }
+        }
+        
+        @keyframes glow {
+            0%, 100% { 
+                filter: drop-shadow(0 0 15px rgba(255,255,255,0.4)) drop-shadow(0 0 30px rgba(201,162,39,0.3));
+            }
+            50% { 
+                filter: drop-shadow(0 0 25px rgba(255,255,255,0.7)) drop-shadow(0 0 50px rgba(201,162,39,0.5)) drop-shadow(0 0 70px rgba(201,162,39,0.3));
+            }
+        }
+        
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .page-header p { opacity: 0.9; font-size: 1.2rem; }
+        
+        /* Content */
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        
+        /* Tête de liste */
+        .leader-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 4rem;
+            border: 3px solid var(--or);
+        }
+        
+        .leader-photo {
+            flex: 0 0 350px;
+            min-height: 400px;
+            background: var(--gris-doux);
+        }
+        
+        .leader-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+        
+        .leader-info {
+            flex: 1;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .leader-badge {
+            display: inline-block;
+            background: var(--or);
+            color: var(--bleu-vizille);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+        
+        .leader-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--bleu-vizille);
+            margin-bottom: 0.5rem;
+        }
+        
+        .leader-role {
+            color: var(--or);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .leader-bio {
+            color: var(--gris-texte);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Section title */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--bleu-vizille);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .team-photo {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: top;
+            background: var(--gris-doux);
+        }
+        
+        .team-photo-placeholder {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, var(--gris-doux) 0%, #d0cec9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--bleu-vizille);
+            opacity: 0.3;
+        }
+        
+        .team-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .team-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--bleu-vizille);
+            margin-bottom: 0.25rem;
+        }
+        
+        .team-role {
+            color: var(--or);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-delegation {
+            display: inline-block;
+            background: #e8f4fc;
+            color: var(--bleu-vizille);
+            padding: 0.3rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .team-bio {
+            color: var(--gris-texte);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+        
+        .team-citation {
+            font-style: italic;
+            color: var(--bleu-clair);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gris-doux);
+        }
+        
+        .team-citation::before {
+            content: '« ';
+            color: var(--or);
+        }
+        
+        .team-citation::after {
+            content: ' »';
+            color: var(--or);
+        }
+        
+        .team-socials {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gris-doux);
+        }
+        
+        .team-socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--gris-doux);
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        
+        .team-socials a:hover {
+            background: var(--bleu-vizille);
+            transform: scale(1.1);
+        }
+        
+        /* Charte & Contrat */
+        .values-section {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 2px solid var(--gris-doux);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .value-item {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-bottom: 4px solid var(--or);
+        }
+        
+        .value-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .value-item h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--bleu-vizille);
+            margin-bottom: 0.5rem;
+        }
+        
+        .value-item p {
+            color: var(--gris-texte);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        .contrat-section .value-item {
+            border-bottom-color: var(--bleu-vizille);
+        }
+        
+        /* Rejoignez-nous */
+        .join-section {
+            margin-top: 4rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--bleu-vizille) 0%, var(--bleu-clair) 100%);
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .join-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .join-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-contact {
+            display: inline-block;
+            background: var(--or);
+            color: var(--bleu-vizille);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .btn-contact:hover {
+            background: var(--or-clair);
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--bleu-vizille);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .footer-slogan {
+            font-family: 'Playfair Display', serif;
+            color: var(--or-clair);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--bleu-vizille);
+        }
+        
+        @media (max-width: 768px) {
+            .leader-card { flex-direction: column; }
+            .leader-photo { flex: none; min-height: 300px; }
+            .team-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        @media (max-width: 480px) {
+            .values-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <p>L'Équipe • Vizille en Mouvement</p>
+        </div>
+        
+        <div class="header-main">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Vizille en Mouvement" class="nav-header-logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="bilan.html">Bilan</a></li>
+                    <li><a href="projet.html">Projet</a></li>
+                    <li><a href="blog.html">Actualités</a></li>
+                    <li><a href="equipe.html" class="active">Équipe</a></li>
+                    <li><a href="faq.html">Ensemble</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin.html" class="admin-link" title="Administration">⚙️</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="page-header">
+        <img src="images/logo.png" alt="Vizille en Mouvement" class="header-logo">
+        <p class="header-slogan">« Ensemble pour une ville dynamique et solidaire »</p>
+        <h1>👥 L'Équipe</h1>
+        <p>Notre liste rassemble des femmes et des hommes de tous horizons, unis par l'envie de servir Vizille et ses habitants.</p>
+    </section>
+    
+    <main class="content">
+        
+        <!-- TÊTE DE LISTE -->
+        <div class="leader-card">
+            <div class="leader-photo">
+                <img src="images/maire.png" alt="Catherine Troton">
+            </div>
+            <div class="leader-info">
+                <span class="leader-badge">⭐ Tête de liste</span>
+                <h2 class="leader-name">Catherine Troton</h2>
+                <p class="leader-role">Candidate Tête de Liste</p>
+                <p class="leader-bio">Engagée depuis plus de 20 ans pour Vizille. Porte les valeurs de solidarité, d'écoute et de proximité au cœur de son action municipale.</p>
+            </div>
+        </div>
+        
+        <!-- LES COLISTIERS -->
+        <h2 class="section-title">Les colistiers</h2>
+        <div class="team-grid" id="team-grid">
+            <div class="loading">
+                <span style="font-size: 2rem;">⏳</span>
+                <p>Chargement de l'équipe...</p>
+            </div>
+        </div>
+        
+        <!-- CHARTE D'ENGAGEMENT -->
+        <section class="values-section">
+            <h2 class="section-title">📜 Notre Charte d'Engagement</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">👂</div>
+                    <h4>Écoute Citoyenne</h4>
+                    <p>Placer la parole des habitants au cœur de la décision</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🌱</div>
+                    <h4>Développement Durable</h4>
+                    <p>Agir pour une transition écologique ambitieuse</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🤝</div>
+                    <h4>Respect Mutuel</h4>
+                    <p>Instaurer la confiance avec le personnel municipal</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">⚖️</div>
+                    <h4>Égalité Réelle</h4>
+                    <p>Garantir l'égalité femmes-hommes dans les responsabilités</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">❤️</div>
+                    <h4>Dignité et Tolérance</h4>
+                    <p>Lutter contre toutes les discriminations</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🏛️</div>
+                    <h4>Laïcité & Neutralité</h4>
+                    <p>Respecter les principes républicains</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CONTRAT D'ACTION -->
+        <section class="values-section contrat-section">
+            <h2 class="section-title">✍️ Notre Contrat d'Action</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">💝</div>
+                    <h4>Altruisme</h4>
+                    <p>Agir pour l'intérêt général avant tout</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">📊</div>
+                    <h4>Rigueur</h4>
+                    <p>Gestion transparente et responsable des deniers publics</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🗳️</div>
+                    <h4>Démocratie</h4>
+                    <p>Respect de l'opinion politique de chacun</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🏗️</div>
+                    <h4>Participation</h4>
+                    <p>Co-construction des projets avec les habitants</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">✨</div>
+                    <h4>Exemplarité</h4>
+                    <p>Refus des attaques personnelles, débat d'idées</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- REJOIGNEZ-NOUS -->
+        <section class="join-section">
+            <h2>🤝 Rejoignez-nous</h2>
+            <p>Vous souhaitez vous engager pour Vizille ?</p>
+            <a href="contact.html" class="btn-contact">Nous contacter</a>
+        </section>
+        
+    </main>
+    
+    <footer class="footer">
+        <p class="footer-slogan">« Ensemble pour une ville dynamique et solidaire »</p>
+        <p>© 2025 Vizille en Mouvement</p>
+    </footer>
+    
+    <script>
+        let candidatsData = [];
+        
+        async function loadCandidats() {
+            try {
+                const response = await fetch('candidats.json');
+                if (!response.ok) throw new Error('Erreur');
+                
+                candidatsData = await response.json();
+                
+                // Filtrer les actifs, exclure la tête de liste, trier par ordre
+                candidatsData = candidatsData
+                    .filter(c => c.actif !== false)
+                    .filter(c => !c.role?.toLowerCase().includes('tête de liste'))
+                    .filter(c => c.ordre !== 1)
+                    .sort((a, b) => (a.ordre || 99) - (b.ordre || 99));
+                
+                renderTeam();
+            } catch (err) {
+                document.getElementById('team-grid').innerHTML = `
+                    <div class="loading">
+                        <span style="font-size: 2rem;">👥</span>
+                        <p>L'équipe sera bientôt dévoilée !</p>
+                    </div>
+                `;
+            }
+        }
+        
+        function renderTeam() {
+            const grid = document.getElementById('team-grid');
+            
+            if (candidatsData.length === 0) {
+                grid.innerHTML = `
+                    <div class="loading">
+                        <span style="font-size: 2rem;">👥</span>
+                        <p>Les colistiers seront bientôt dévoilés !</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            grid.innerHTML = candidatsData.map(candidat => {
+                const photoHtml = candidat.photo 
+                    ? `<img src="${candidat.photo}" alt="${candidat.nom}" class="team-photo">`
+                    : `<div class="team-photo-placeholder">👤</div>`;
+                
+                // Construire les liens sociaux
+                let socialsHtml = '';
+                if (candidat.email || candidat.facebook || candidat.linkedin || candidat.twitter) {
+                    let links = '';
+                    if (candidat.email) links += `<a href="mailto:${candidat.email}" title="Email">📧</a>`;
+                    if (candidat.facebook) links += `<a href="${candidat.facebook}" target="_blank" title="Facebook">📘</a>`;
+                    if (candidat.linkedin) links += `<a href="${candidat.linkedin}" target="_blank" title="LinkedIn">💼</a>`;
+                    if (candidat.twitter) links += `<a href="${candidat.twitter}" target="_blank" title="Twitter">🐦</a>`;
+                    socialsHtml = `<div class="team-socials">${links}</div>`;
+                }
+                
+                return `
+                    <div class="team-card">
+                        ${photoHtml}
+                        <div class="team-info">
+                            <h3 class="team-name">${candidat.nom}</h3>
+                            ${candidat.role ? `<p class="team-role">${candidat.role}</p>` : ''}
+                            ${candidat.delegation ? `<span class="team-delegation">${candidat.delegation}</span>` : ''}
+                            ${candidat.bio ? `<p class="team-bio">${candidat.bio}</p>` : ''}
+                            ${candidat.citation ? `<p class="team-citation">${candidat.citation}</p>` : ''}
+                            ${socialsHtml}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        document.addEventListener('DOMContentLoaded', loadCandidats);
+    </script>
+</body>
+</html>

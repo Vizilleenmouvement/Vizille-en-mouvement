@@ -1,0 +1,2760 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Vizille en Mouvement</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bleu: #1a3a5c;
+            --bleu-clair: #2d5a87;
+            --or: #c9a227;
+            --vert: #27ae60;
+            --orange: #f39c12;
+            --rouge: #e74c3c;
+            --gris-bg: #f5f7fa;
+            --gris-border: #e1e5eb;
+            --gris-texte: #4a5568;
+            --blanc: #ffffff;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --radius: 12px;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--gris-bg);
+            color: var(--gris-texte);
+            line-height: 1.6;
+        }
+        
+        /* ===== LOGIN ===== */
+        .login-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        
+        .login-overlay.hidden { display: none; }
+        
+        .login-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 400px;
+            width: 90%;
+        }
+        
+        .login-box h2 {
+            color: var(--bleu);
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .login-box > p {
+            color: var(--or);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        
+        .login-box input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--gris-border);
+            border-radius: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .login-box input:focus {
+            outline: none;
+            border-color: var(--bleu);
+        }
+        
+        .login-box button {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bleu);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .login-box button:hover {
+            background: var(--bleu-clair);
+            transform: translateY(-2px);
+        }
+        
+        .login-error {
+            color: var(--rouge);
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+        
+        /* ===== THEME BUTTONS ===== */
+        .theme-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--gris-border);
+            background: white;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        
+        .theme-btn:hover {
+            border-color: var(--bleu);
+            background: var(--gris-bg);
+        }
+        
+        .theme-btn.active {
+            background: var(--bleu);
+            color: white;
+            border-color: var(--bleu);
+        }
+        
+        /* ===== HEADER ===== */
+        .header {
+            background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        
+        .header h1 { font-size: 1.3rem; font-weight: 600; }
+        
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .token-input {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            width: 200px;
+        }
+        
+        .token-input::placeholder { color: rgba(255,255,255,0.5); }
+        
+        /* ===== NAVIGATION ===== */
+        .nav-tabs {
+            background: var(--blanc);
+            border-bottom: 1px solid var(--gris-border);
+            display: flex;
+            padding: 0 1rem;
+            overflow-x: auto;
+        }
+        
+        .nav-tab {
+            padding: 1rem 1.25rem;
+            border: none;
+            background: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--gris-texte);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        
+        .nav-tab:hover { color: var(--bleu); background: var(--gris-bg); }
+        .nav-tab.active { color: var(--bleu); border-bottom-color: var(--or); }
+        
+        /* ===== MAIN ===== */
+        main { padding: 1.5rem; max-width: 1400px; margin: 0 auto; }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
+        /* ===== CARD ===== */
+        .card {
+            background: var(--blanc);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .card-header h2 { font-size: 1.1rem; font-weight: 600; }
+        
+        .publish-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .status {
+            font-size: 0.85rem;
+            padding: 0.3rem 0.75rem;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .status.modified { background: var(--orange); }
+        .status.saved { background: var(--vert); }
+        .status.loading { background: rgba(255,255,255,0.3); }
+        
+        .btn-publish {
+            background: var(--vert);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+        
+        .btn-publish:hover { background: #219a52; transform: translateY(-1px); }
+        .btn-publish:disabled { background: #95a5a6; cursor: not-allowed; transform: none; }
+        
+        .card-body { padding: 1.5rem; }
+        
+        /* ===== FORMS ===== */
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .form-group { margin-bottom: 1rem; }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--bleu);
+            font-size: 0.9rem;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--gris-border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--bleu);
+        }
+        
+        /* ===== PHOTO UPLOAD ===== */
+        .photo-upload {
+            border: 2px dashed var(--gris-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: var(--gris-bg);
+        }
+        
+        .photo-upload:hover {
+            border-color: var(--bleu);
+            background: #eef2f7;
+        }
+        
+        .photo-upload.dragover {
+            border-color: var(--vert);
+            background: #e8f5e9;
+        }
+        
+        .photo-upload input { display: none; }
+        
+        .photo-upload .icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        
+        .photo-upload p { color: var(--gris-texte); font-size: 0.9rem; }
+        
+        .photo-preview {
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .photo-preview img {
+            max-width: 150px;
+            max-height: 150px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 3px solid var(--vert);
+        }
+        
+        .photo-preview.active { display: block; }
+        
+        /* ===== BUTTONS ===== */
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        
+        .btn-primary { background: var(--bleu); color: white; }
+        .btn-primary:hover { background: var(--bleu-clair); }
+        .btn-success { background: var(--vert); color: white; }
+        .btn-danger { background: var(--rouge); color: white; }
+        .btn-outline { background: transparent; border: 2px solid var(--gris-border); color: var(--gris-texte); }
+        .btn-sm { padding: 0.4rem 0.8rem; font-size: 0.85rem; }
+        
+        /* ===== ITEMS LIST ===== */
+        .items-list { margin-top: 1.5rem; }
+        
+        .items-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--gris-border);
+        }
+        
+        .items-header h3 { color: var(--bleu); font-size: 1.1rem; }
+        
+        .item-card {
+            background: var(--gris-bg);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .item-card:hover { background: #eef1f5; }
+        
+        .item-info { flex: 1; display: flex; gap: 1rem; align-items: flex-start; }
+        
+        .item-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: var(--gris-border);
+            flex-shrink: 0;
+        }
+        
+        .item-photo-placeholder {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gris-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .item-text { flex: 1; }
+        
+        .item-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            background: #dbeafe;
+            color: var(--bleu);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.25rem;
+        }
+        
+        .item-title {
+            font-weight: 600;
+            color: var(--bleu);
+            margin-bottom: 0.25rem;
+        }
+        
+        .item-desc {
+            font-size: 0.9rem;
+            color: var(--gris-texte);
+        }
+        
+        .item-actions { display: flex; gap: 0.5rem; }
+        
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            color: white;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .toast.show { transform: translateY(0); opacity: 1; }
+        .toast.success { background: var(--vert); }
+        .toast.error { background: var(--rouge); }
+        .toast.warning { background: var(--orange); }
+        .toast.info { background: var(--bleu); }
+        
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            padding: 1rem;
+        }
+        
+        .modal-overlay.active { display: flex; }
+        
+        .modal {
+            background: white;
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--gris-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h3 { color: var(--bleu); }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gris-texte);
+        }
+        
+        .modal-body { padding: 1.5rem; }
+        
+        .modal-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--gris-border);
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.75rem;
+        }
+        
+        /* ===== EMPTY STATE ===== */
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--gris-texte);
+        }
+        
+        .empty-state .icon { font-size: 3rem; margin-bottom: 1rem; }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .header { flex-direction: column; gap: 1rem; text-align: center; }
+            .header-actions { width: 100%; justify-content: center; flex-wrap: wrap; }
+            .card-header { flex-direction: column; gap: 1rem; }
+            .publish-bar { width: 100%; justify-content: space-between; }
+            .form-row { grid-template-columns: 1fr; }
+            .item-info { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1>⚙️ Administration - Vizille en Mouvement</h1>
+        <div class="header-actions">
+            <input type="password" class="token-input" id="github-token" placeholder="🔐 Token GitHub" onchange="saveToken()">
+            <button class="btn btn-sm" style="background: rgba(255,255,255,0.2);" onclick="toggleToken()">👁️</button>
+            <a href="https://vizilleenmouvement.github.io/vizille-en-mouvement/" target="_blank" class="btn btn-sm" style="background: var(--or); color: var(--bleu);">🌐 Voir le site</a>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="nav-tabs">
+        <button class="nav-tab active" data-tab="accueil">🏠 Accueil</button>
+        <button class="nav-tab" data-tab="projets">🚀 Projets</button>
+        <button class="nav-tab" data-tab="actions">📊 Actions</button>
+        <button class="nav-tab" data-tab="candidats">👥 Candidats</button>
+        <button class="nav-tab" data-tab="faq">💬 Ensemble</button>
+        <button class="nav-tab" data-tab="articles">📰 Articles</button>
+        <button class="nav-tab" data-tab="communication">📢 Communication</button>
+        <button class="nav-tab" data-tab="config">⚙️ Paramètres</button>
+    </nav>
+
+    <!-- MAIN -->
+    <main>
+        
+        <!-- TAB: ACCUEIL -->
+        <section class="tab-content active" id="tab-accueil">
+            <div class="card">
+                <div class="card-header" style="background: linear-gradient(135deg, #1a3a5c 0%, #c9a227 100%);">
+                    <h2>🏠 Bienvenue dans l'Administration</h2>
+                </div>
+                <div class="card-body">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <h1 style="color: var(--bleu); font-size: 2rem; margin-bottom: 0.5rem;">Vizille en Mouvement</h1>
+                        <p style="color: var(--or); font-size: 1.2rem;">Interface de gestion du site de campagne</p>
+                    </div>
+
+                    <!-- ÉTAPES -->
+                    <div style="background: #e8f4fc; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+                        <h3 style="color: var(--bleu); margin-bottom: 1rem;">🚀 Comment ça marche ?</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                            <div style="background: white; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">1️⃣</div>
+                                <strong style="color: var(--bleu);">Configurer le token</strong>
+                                <p style="font-size: 0.9rem; color: var(--gris-texte);">Collez le token GitHub en haut de page (une seule fois)</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">2️⃣</div>
+                                <strong style="color: var(--bleu);">Modifier le contenu</strong>
+                                <p style="font-size: 0.9rem; color: var(--gris-texte);">Ajoutez, modifiez ou supprimez des éléments</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">3️⃣</div>
+                                <strong style="color: var(--bleu);">Publier</strong>
+                                <p style="font-size: 0.9rem; color: var(--gris-texte);">Cliquez sur 🚀 Publier dans l'onglet modifié</p>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">4️⃣</div>
+                                <strong style="color: var(--bleu);">C'est en ligne !</strong>
+                                <p style="font-size: 0.9rem; color: var(--gris-texte);">Le site se met à jour en 1-2 minutes</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ONGLETS -->
+                    <h3 style="color: var(--bleu); margin-bottom: 1rem;">📑 Les onglets</h3>
+                    <div style="display: grid; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--gris-bg); border-radius: 8px;">
+                            <span style="font-size: 1.5rem;">🚀</span>
+                            <div>
+                                <strong style="color: var(--bleu);">Projets</strong>
+                                <p style="font-size: 0.9rem; margin: 0;">Les projets du programme 2026-2032 → Page "Notre Projet"</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--gris-bg); border-radius: 8px;">
+                            <span style="font-size: 1.5rem;">📊</span>
+                            <div>
+                                <strong style="color: var(--bleu);">Actions</strong>
+                                <p style="font-size: 0.9rem; margin: 0;">Les 330 actions du bilan 2020-2026 → Page "Bilan"</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--gris-bg); border-radius: 8px;">
+                            <span style="font-size: 1.5rem;">👥</span>
+                            <div>
+                                <strong style="color: var(--bleu);">Candidats</strong>
+                                <p style="font-size: 0.9rem; margin: 0;">L'équipe et les colistiers avec photos → Page "Équipe"</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--gris-bg); border-radius: 8px;">
+                            <span style="font-size: 1.5rem;">💬</span>
+                            <div>
+                                <strong style="color: var(--bleu);">Ensemble</strong>
+                                <p style="font-size: 0.9rem; margin: 0;">Questions/réponses des citoyens → Page "Ensemble"</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--gris-bg); border-radius: 8px;">
+                            <span style="font-size: 1.5rem;">📰</span>
+                            <div>
+                                <strong style="color: var(--bleu);">Articles</strong>
+                                <p style="font-size: 0.9rem; margin: 0;">Actualités et communiqués → Page "Blog"</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--gris-bg); border-radius: 8px;">
+                            <span style="font-size: 1.5rem;">📢</span>
+                            <div>
+                                <strong style="color: var(--bleu);">Communication</strong>
+                                <p style="font-size: 0.9rem; margin: 0;">Abonnés newsletter, partage Facebook, envoi newsletter</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--gris-bg); border-radius: 8px;">
+                            <span style="font-size: 1.5rem;">⚙️</span>
+                            <div>
+                                <strong style="color: var(--bleu);">Paramètres</strong>
+                                <p style="font-size: 0.9rem; margin: 0;">Coordonnées, réseaux sociaux, permanences → Page "Contact"</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STATUTS -->
+                    <h3 style="color: var(--bleu); margin-bottom: 1rem;">🚦 Les statuts</h3>
+                    <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="background: var(--vert); color: white; padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.85rem;">✓ À jour</span>
+                            <span>= Aucune modification en attente</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="background: var(--orange); color: white; padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.85rem;">⚠️ Modifié</span>
+                            <span>= Modifications à publier</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="background: rgba(0,0,0,0.3); color: white; padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.85rem;">⏳ Publication...</span>
+                            <span>= Envoi en cours</span>
+                        </div>
+                    </div>
+
+                    <!-- TOKEN -->
+                    <div style="background: #1b1f23; color: white; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1rem;">🔐 Le Token GitHub</h3>
+                        <p style="margin-bottom: 1rem;">Le token permet de publier directement sur le site. Il est sauvegardé dans votre navigateur.</p>
+                        <ul style="margin-left: 1.5rem; line-height: 2;">
+                            <li>Collez-le dans le champ 🔐 en haut de page</li>
+                            <li>Cliquez sur 👁️ pour le voir/masquer</li>
+                            <li>Il est mémorisé automatiquement</li>
+                        </ul>
+                        <p style="margin-top: 1rem; padding: 0.75rem; background: rgba(255,255,255,0.1); border-radius: 8px; font-size: 0.9rem;">
+                            ⚠️ Ne partagez pas ce token publiquement. Demandez-le à Michel si besoin.
+                        </p>
+                    </div>
+
+                    <!-- LIENS -->
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="https://vizilleenmouvement.github.io/vizille-en-mouvement/" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--bleu); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                            🌐 Voir le site en ligne
+                        </a>
+                        <a href="https://github.com/vizilleenmouvement/vizille-en-mouvement" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #333; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                            📁 Voir sur GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB: PROJETS -->
+        <section class="tab-content" id="tab-projets">
+            <div class="card">
+                <div class="card-header">
+                    <h2>🚀 Projets 2026-2032</h2>
+                    <div class="publish-bar">
+                        <span class="status saved" id="status-projets">✓ À jour</span>
+                        <button class="btn-publish" onclick="publish('projets')">🚀 Publier</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-primary" onclick="openAddProjet()">+ Ajouter un projet</button>
+                    
+                    <!-- FILTRES PAR THÈME -->
+                    <div style="margin: 1.5rem 0;">
+                        <h4 style="color: var(--bleu); margin-bottom: 0.75rem;">Filtrer par thème :</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;" id="projet-theme-filters">
+                            <button class="theme-btn active" data-theme="" onclick="filterProjets('')">
+                                📋 Tous (<span id="pcount-all">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="urbanisme" onclick="filterProjets('urbanisme')">
+                                🏘️ Urbanisme (<span id="pcount-urbanisme">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="environnement" onclick="filterProjets('environnement')">
+                                🌿 Environnement (<span id="pcount-environnement">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="solidarite" onclick="filterProjets('solidarite')">
+                                🤝 Solidarité (<span id="pcount-solidarite">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="sante" onclick="filterProjets('sante')">
+                                🏥 Santé (<span id="pcount-sante">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="enfance" onclick="filterProjets('enfance')">
+                                👶 Enfance (<span id="pcount-enfance">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="culture" onclick="filterProjets('culture')">
+                                🎭 Culture (<span id="pcount-culture">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="sport" onclick="filterProjets('sport')">
+                                ⚽ Sport (<span id="pcount-sport">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="economie" onclick="filterProjets('economie')">
+                                💼 Économie (<span id="pcount-economie">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="securite" onclick="filterProjets('securite')">
+                                🛡️ Sécurité (<span id="pcount-securite">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="mobilites" onclick="filterProjets('mobilites')">
+                                🚴 Mobilités (<span id="pcount-mobilites">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="seniors" onclick="filterProjets('seniors')">
+                                👴 Seniors (<span id="pcount-seniors">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="democratie" onclick="filterProjets('democratie')">
+                                🗣️ Démocratie (<span id="pcount-democratie">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="metropole" onclick="filterProjets('metropole')">
+                                🏛️ Métropole (<span id="pcount-metropole">0</span>)
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="items-list">
+                        <div class="items-header">
+                            <h3>Projets affichés : <span id="projets-count">0</span></h3>
+                            <input type="text" id="search-projets" placeholder="🔍 Rechercher..." style="padding: 0.5rem 1rem; border: 2px solid var(--gris-border); border-radius: 8px; width: 200px;" oninput="renderProjets()">
+                        </div>
+                        <div id="projets-list"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB: ACTIONS -->
+        <section class="tab-content" id="tab-actions">
+            <div class="card">
+                <div class="card-header">
+                    <h2>📊 Actions du Bilan 2020-2026</h2>
+                    <div class="publish-bar">
+                        <span class="status saved" id="status-actions">✓ À jour</span>
+                        <button class="btn-publish" onclick="publish('actions')">🚀 Publier</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-primary" onclick="openAddAction()">+ Ajouter une action</button>
+                    
+                    <!-- FILTRES PAR THÈME -->
+                    <div style="margin: 1.5rem 0;">
+                        <h4 style="color: var(--bleu); margin-bottom: 0.75rem;">Filtrer par thème :</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;" id="theme-filters">
+                            <button class="theme-btn active" data-theme="" onclick="filterActions('')">
+                                📋 Tous (<span id="count-all">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Urbanisme" onclick="filterActions('Urbanisme')">
+                                🏗️ Urbanisme (<span id="count-Urbanisme">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Santé" onclick="filterActions('Santé')">
+                                🏥 Santé (<span id="count-Santé">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Environnement" onclick="filterActions('Environnement')">
+                                🌱 Environnement (<span id="count-Environnement">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Culture" onclick="filterActions('Culture')">
+                                🎭 Culture (<span id="count-Culture">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Patrimoine" onclick="filterActions('Patrimoine')">
+                                🏛️ Patrimoine (<span id="count-Patrimoine">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Enfance" onclick="filterActions('Enfance')">
+                                👶 Enfance (<span id="count-Enfance">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Solidarité" onclick="filterActions('Solidarité')">
+                                🤝 Solidarité (<span id="count-Solidarité">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Sport" onclick="filterActions('Sport')">
+                                ⚽ Sport (<span id="count-Sport">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Économie" onclick="filterActions('Économie')">
+                                💼 Économie (<span id="count-Économie">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Sécurité" onclick="filterActions('Sécurité')">
+                                🛡️ Sécurité (<span id="count-Sécurité">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Mobilités" onclick="filterActions('Mobilités')">
+                                🚲 Mobilités (<span id="count-Mobilités">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Finance" onclick="filterActions('Finance')">
+                                💰 Finance (<span id="count-Finance">0</span>)
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="items-list">
+                        <div class="items-header">
+                            <h3>Actions affichées : <span id="actions-count">0</span></h3>
+                            <input type="text" id="search-actions" placeholder="🔍 Rechercher..." style="padding: 0.5rem 1rem; border: 2px solid var(--gris-border); border-radius: 8px; width: 200px;" oninput="renderActions()">
+                        </div>
+                        <div id="actions-list"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB: CANDIDATS -->
+        <section class="tab-content" id="tab-candidats">
+            <div class="card">
+                <div class="card-header">
+                    <h2>👥 Candidats</h2>
+                    <div class="publish-bar">
+                        <span class="status saved" id="status-candidats">✓ À jour</span>
+                        <button class="btn-publish" onclick="publish('candidats')">🚀 Publier</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-primary" onclick="openAddCandidat()">+ Ajouter un candidat</button>
+                    
+                    <div class="items-list">
+                        <div class="items-header">
+                            <h3>Candidats (<span id="candidats-count">0</span>)</h3>
+                        </div>
+                        <div id="candidats-list"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB: FAQ -->
+        <section class="tab-content" id="tab-faq">
+            <div class="card">
+                <div class="card-header">
+                    <h2>💬 Ensemble - Questions / Réponses</h2>
+                    <div class="publish-bar">
+                        <span class="status saved" id="status-faq">✓ À jour</span>
+                        <button class="btn-publish" onclick="publish('faq')">🚀 Publier</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-primary" onclick="openAddFaq()">+ Ajouter une question</button>
+                    
+                    <div class="items-list">
+                        <div class="items-header">
+                            <h3>Questions (<span id="faq-count">0</span>)</h3>
+                        </div>
+                        <div id="faq-list"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB: ARTICLES -->
+        <section class="tab-content" id="tab-articles">
+            <div class="card">
+                <div class="card-header">
+                    <h2>📰 Articles / Actualités</h2>
+                    <div class="publish-bar">
+                        <span class="status saved" id="status-articles">✓ À jour</span>
+                        <button class="btn-publish" onclick="publish('articles')">🚀 Publier</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-primary" onclick="openAddArticle()">+ Ajouter un article</button>
+                    
+                    <div class="items-list">
+                        <div class="items-header">
+                            <h3>Articles (<span id="articles-count">0</span>)</h3>
+                        </div>
+                        <div id="articles-list"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB: COMMUNICATION -->
+        <section class="tab-content" id="tab-communication">
+            <!-- ABONNÉS NEWSLETTER -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>📧 Abonnés Newsletter</h2>
+                    <div class="publish-bar">
+                        <span class="status saved" id="status-abonnes">✓ À jour</span>
+                        <button class="btn-publish" onclick="publish('abonnes')">🚀 Publier</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                        <button class="btn btn-primary" onclick="openAddAbonne()">+ Ajouter un abonné</button>
+                        <button class="btn btn-outline" onclick="exportAbonnes()">📥 Exporter (CSV)</button>
+                        <button class="btn btn-outline" onclick="document.getElementById('import-abonnes').click()">📤 Importer</button>
+                        <input type="file" id="import-abonnes" accept=".csv,.txt" style="display:none" onchange="importAbonnes(event)">
+                    </div>
+                    
+                    <div style="background: #e8f4fc; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                        <strong style="color: var(--bleu);">📊 Statistiques :</strong>
+                        <span id="stats-abonnes">0 abonnés actifs</span>
+                    </div>
+                    
+                    <div class="items-list">
+                        <div class="items-header">
+                            <h3>Liste des abonnés (<span id="abonnes-count">0</span>)</h3>
+                            <input type="text" id="search-abonnes" placeholder="🔍 Rechercher..." style="padding: 0.5rem 1rem; border: 2px solid var(--gris-border); border-radius: 8px; width: 200px;" oninput="renderAbonnes()">
+                        </div>
+                        <div id="abonnes-list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PARTAGE FACEBOOK -->
+            <div class="card">
+                <div class="card-header" style="background: linear-gradient(135deg, #1877f2 0%, #42b72a 100%);">
+                    <h2>📘 Partage Facebook</h2>
+                </div>
+                <div class="card-body">
+                    <p style="margin-bottom: 1rem; color: var(--gris-texte);">Sélectionnez un article puis générez un post prêt à copier-coller sur Facebook.</p>
+                    
+                    <div class="form-group">
+                        <label>Choisir un article à partager</label>
+                        <select id="fb-article-select" onchange="previewFacebookPost()">
+                            <option value="">-- Sélectionnez un article --</option>
+                        </select>
+                    </div>
+                    
+                    <div id="fb-preview-zone" style="display: none;">
+                        <div class="form-group">
+                            <label>Texte du post (modifiable)</label>
+                            <textarea id="fb-post-text" rows="5" style="font-size: 1rem;"></textarea>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <button class="btn btn-primary" onclick="copyFacebookPost()" style="background: #1877f2;">
+                                📋 Copier le texte
+                            </button>
+                            <button class="btn btn-outline" onclick="window.open('https://www.facebook.com/', '_blank')">
+                                📘 Ouvrir Facebook
+                            </button>
+                        </div>
+                        
+                        <div style="background: #f0f2f5; padding: 1rem; border-radius: 8px; margin-top: 1.5rem;">
+                            <strong style="color: #1877f2;">💡 Mode d'emploi :</strong>
+                            <ol style="margin: 0.5rem 0 0 1.5rem; color: var(--gris-texte);">
+                                <li>Cliquez sur "Copier le texte"</li>
+                                <li>Ouvrez Facebook</li>
+                                <li>Créez un nouveau post et collez (Ctrl+V)</li>
+                                <li>Publiez !</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ÉDITEUR NEWSLETTER -->
+            <div class="card">
+                <div class="card-header" style="background: linear-gradient(135deg, #9b59b6 0%, #3498db 100%);">
+                    <h2>📬 Rédiger la Newsletter</h2>
+                </div>
+                <div class="card-body">
+                    <p style="margin-bottom: 1.5rem; color: var(--gris-texte);">Composez votre newsletter hebdomadaire. Le contenu sera prêt à copier dans Brevo.</p>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Objet de l'email</label>
+                            <input type="text" id="nl-objet" placeholder="Ex: Vizille en Mouvement - Actualités de la semaine">
+                        </div>
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="date" id="nl-date">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Introduction</label>
+                        <textarea id="nl-intro" rows="3" placeholder="Chers Vizillois, voici les actualités de la semaine..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Contenu principal</label>
+                        <textarea id="nl-contenu" rows="8" placeholder="- Événement 1&#10;- Événement 2&#10;- Actualité importante..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Appel à l'action (optionnel)</label>
+                        <input type="text" id="nl-cta" placeholder="Ex: Rejoignez-nous samedi à 18h pour notre réunion publique !">
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <button class="btn btn-primary" onclick="generateNewsletter()" style="background: #9b59b6;">
+                            ✨ Générer la newsletter
+                        </button>
+                        <button class="btn btn-outline" onclick="clearNewsletter()">
+                            🗑️ Effacer
+                        </button>
+                    </div>
+                    
+                    <div id="nl-result" style="display: none; margin-top: 1.5rem;">
+                        <div class="form-group">
+                            <label>📄 Newsletter générée (prête à copier)</label>
+                            <textarea id="nl-output" rows="12" readonly style="background: #f8f9fa; font-family: monospace;"></textarea>
+                        </div>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <button class="btn btn-success" onclick="copyNewsletter()">
+                                📋 Copier le contenu
+                            </button>
+                            <button class="btn btn-outline" onclick="copyAbonnesEmails()">
+                                📧 Copier les emails des abonnés
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB: PARAMÈTRES -->
+        <section class="tab-content" id="tab-config">
+            <div class="card">
+                <div class="card-header">
+                    <h2>⚙️ Paramètres du site</h2>
+                    <div class="publish-bar">
+                        <span class="status saved" id="status-config">✓ À jour</span>
+                        <button class="btn-publish" onclick="publish('config')">🚀 Publier</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 style="color: var(--bleu); margin-bottom: 1rem;">📧 Coordonnées</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email de contact</label>
+                            <input type="email" id="config-email" placeholder="contact@vizille-en-mouvement.fr" onchange="markModified('config')">
+                        </div>
+                        <div class="form-group">
+                            <label>Téléphone</label>
+                            <input type="tel" id="config-telephone" placeholder="04 76 XX XX XX" onchange="markModified('config')">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Adresse / Lieu de permanence</label>
+                        <input type="text" id="config-adresse" placeholder="Vizille, France" onchange="markModified('config')">
+                    </div>
+
+                    <h3 style="color: var(--bleu); margin: 2rem 0 1rem;">📱 Réseaux sociaux</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>📘 Facebook (URL)</label>
+                            <input type="url" id="config-facebook" placeholder="https://facebook.com/vizilleenmouvement" onchange="markModified('config')">
+                        </div>
+                        <div class="form-group">
+                            <label>📸 Instagram (URL)</label>
+                            <input type="url" id="config-instagram" placeholder="https://instagram.com/vizilleenmouvement" onchange="markModified('config')">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>🐦 Twitter / X (URL)</label>
+                            <input type="url" id="config-twitter" placeholder="https://twitter.com/vizilleenmouvement" onchange="markModified('config')">
+                        </div>
+                        <div class="form-group">
+                            <label>🔗 Autre lien</label>
+                            <input type="url" id="config-autre" placeholder="https://..." onchange="markModified('config')">
+                        </div>
+                    </div>
+
+                    <h3 style="color: var(--bleu); margin: 2rem 0 1rem;">🕐 Permanences</h3>
+                    <div class="form-group">
+                        <label>Informations sur les permanences</label>
+                        <textarea id="config-permanences" rows="3" placeholder="Ex: Tous les samedis de 10h à 12h à la salle des fêtes..." onchange="markModified('config')"></textarea>
+                    </div>
+
+                    <h3 style="color: var(--bleu); margin: 2rem 0 1rem;">🎨 Personnalisation</h3>
+                    <div class="form-group">
+                        <label>Slogan</label>
+                        <input type="text" id="config-slogan" placeholder="Ensemble pour une ville dynamique et solidaire" onchange="markModified('config')">
+                    </div>
+
+                    <h3 style="color: var(--bleu); margin: 2rem 0 1rem;">🔒 Sécurité</h3>
+                    <div style="background: #fef3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                        <p style="margin: 0; color: #856404;">⚠️ Le mot de passe est stocké dans votre navigateur. Chaque utilisateur peut définir le sien.</p>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Ancien mot de passe</label>
+                            <input type="password" id="old-password" placeholder="••••••">
+                        </div>
+                        <div class="form-group">
+                            <label>Nouveau mot de passe</label>
+                            <input type="password" id="new-password" placeholder="••••••">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirmer</label>
+                            <input type="password" id="confirm-password" placeholder="••••••">
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="changePassword()">🔐 Changer le mot de passe</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal-edit">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Modifier</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeModal()">Annuler</button>
+                <button class="btn btn-primary" id="modal-save">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== CONFIGURATION =====
+        const GITHUB_CONFIG = {
+            owner: 'vizilleenmouvement',
+            repo: 'vizille-en-mouvement',
+            branch: 'main'
+        };
+
+        // Mot de passe par défaut hashé (@@@@@ = 5 @)
+        const DEFAULT_PASSWORD_HASH = 'YXQ0dml6aWxsZTIwMjY2NDczMTI5MDEx';
+        
+        // ===== AUTHENTIFICATION =====
+        function simpleHash(str) {
+            // Hash simple pour ne pas stocker en clair
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            return btoa('at4' + str + hash + '1');
+        }
+        
+        function checkPassword() {
+            const input = document.getElementById('login-password').value;
+            const storedHash = localStorage.getItem('vizille_admin_password') || DEFAULT_PASSWORD_HASH;
+            const inputHash = simpleHash(input);
+            
+            if (inputHash === storedHash) {
+                document.getElementById('login-overlay').classList.add('hidden');
+                document.getElementById('login-error').textContent = '';
+                loadAllData();
+            } else {
+                document.getElementById('login-error').textContent = '❌ Mot de passe incorrect';
+                document.getElementById('login-password').value = '';
+            }
+        }
+        
+        function changePassword() {
+            const oldPwd = document.getElementById('old-password').value;
+            const newPwd = document.getElementById('new-password').value;
+            const confirmPwd = document.getElementById('confirm-password').value;
+            
+            // Vérifier l'ancien mot de passe
+            const storedHash = localStorage.getItem('vizille_admin_password') || DEFAULT_PASSWORD_HASH;
+            if (simpleHash(oldPwd) !== storedHash) {
+                showToast('❌ Ancien mot de passe incorrect', 'error');
+                return;
+            }
+            
+            // Vérifier la confirmation
+            if (newPwd !== confirmPwd) {
+                showToast('❌ Les mots de passe ne correspondent pas', 'error');
+                return;
+            }
+            
+            // Vérifier la longueur
+            if (newPwd.length < 3) {
+                showToast('❌ Mot de passe trop court (min 3 caractères)', 'error');
+                return;
+            }
+            
+            // Sauvegarder le nouveau mot de passe
+            localStorage.setItem('vizille_admin_password', simpleHash(newPwd));
+            
+            // Vider les champs
+            document.getElementById('old-password').value = '';
+            document.getElementById('new-password').value = '';
+            document.getElementById('confirm-password').value = '';
+            
+            showToast('✅ Mot de passe changé !', 'success');
+        }
+
+        const THEMES_PROJETS = [
+            { value: 'urbanisme', label: '🏗️ Urbanisme' },
+            { value: 'sante', label: '🏥 Santé' },
+            { value: 'environnement', label: '🌱 Environnement' },
+            { value: 'culture', label: '🎭 Culture' },
+            { value: 'patrimoine', label: '🏛️ Patrimoine' },
+            { value: 'enfance', label: '👶 Enfance' },
+            { value: 'solidarite', label: '🤝 Solidarité' },
+            { value: 'sport', label: '⚽ Sport' },
+            { value: 'economie', label: '💼 Économie' },
+            { value: 'securite', label: '🛡️ Sécurité' },
+            { value: 'mobilites', label: '🚲 Mobilités' },
+            { value: 'finances', label: '💰 Finances' }
+        ];
+
+        const THEMES_ACTIONS = [
+            { value: 'Urbanisme', label: '🏗️ Urbanisme' },
+            { value: 'Santé', label: '🏥 Santé' },
+            { value: 'Environnement', label: '🌱 Environnement' },
+            { value: 'Culture', label: '🎭 Culture' },
+            { value: 'Patrimoine', label: '🏛️ Patrimoine' },
+            { value: 'Enfance', label: '👶 Enfance' },
+            { value: 'Solidarité', label: '🤝 Solidarité' },
+            { value: 'Sport', label: '⚽ Sport' },
+            { value: 'Économie', label: '💼 Économie' },
+            { value: 'Sécurité', label: '🛡️ Sécurité' },
+            { value: 'Mobilités', label: '🚲 Mobilités' },
+            { value: 'Finance', label: '💰 Finance' }
+        ];
+
+        // ===== DONNÉES =====
+        let data = {
+            projets: [],
+            actions: [],
+            candidats: [],
+            faq: [],
+            articles: [],
+            abonnes: [],
+            config: {
+                email: '',
+                telephone: '',
+                adresse: '',
+                facebook: '',
+                instagram: '',
+                twitter: '',
+                autre: '',
+                permanences: '',
+                slogan: 'Ensemble pour une ville dynamique et solidaire'
+            }
+        };
+
+        let currentEdit = { type: null, index: null };
+        let pendingPhoto = null;
+
+        // ===== INITIALISATION =====
+        document.addEventListener('DOMContentLoaded', () => {
+            setupTabs();
+            loadToken();
+            loadAllData();
+        });
+
+        function setupTabs() {
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    tab.classList.add('active');
+                    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+                });
+            });
+        }
+
+        // ===== TOKEN =====
+        function loadToken() {
+            const saved = localStorage.getItem('vizille_github_token');
+            if (saved) document.getElementById('github-token').value = saved;
+        }
+
+        function saveToken() {
+            const token = document.getElementById('github-token').value;
+            localStorage.setItem('vizille_github_token', token);
+            showToast('🔐 Token sauvegardé', 'success');
+        }
+
+        function toggleToken() {
+            const input = document.getElementById('github-token');
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+
+        function getToken() {
+            return document.getElementById('github-token').value;
+        }
+
+        // ===== CHARGEMENT DONNÉES =====
+        async function loadAllData() {
+            showToast('⏳ Chargement des données...', 'info');
+            
+            const files = {
+                projets: 'projets.json',
+                actions: 'data.json',
+                candidats: 'candidats.json',
+                faq: 'faq.json',
+                articles: 'articles.json',
+                abonnes: 'abonnes.json',
+                config: 'config.json'
+            };
+
+            for (const [key, file] of Object.entries(files)) {
+                setStatus(key, 'loading', '⏳...');
+                try {
+                    const url = `https://raw.githubusercontent.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/${GITHUB_CONFIG.branch}/${file}`;
+                    const response = await fetch(url);
+                    if (response.ok) {
+                        const loaded = await response.json();
+                        if (key === 'config') {
+                            data.config = { ...data.config, ...loaded };
+                        } else {
+                            data[key] = loaded;
+                        }
+                    }
+                } catch (err) {
+                    console.log(`${file} non trouvé`);
+                }
+                setStatus(key, 'saved', '✓ À jour');
+            }
+
+            renderAll();
+            showToast('✅ Données chargées !', 'success');
+        }
+
+        // ===== STATUS =====
+        function setStatus(section, state, text) {
+            const el = document.getElementById('status-' + section);
+            if (el) {
+                el.textContent = text;
+                el.className = 'status ' + state;
+            }
+        }
+
+        function markModified(section) {
+            setStatus(section, 'modified', '⚠️ Modifié');
+        }
+
+        // ===== RENDER ALL =====
+        function renderAll() {
+            renderProjets();
+            renderActions();
+            renderCandidats();
+            renderFaq();
+            renderArticles();
+            renderAbonnes();
+            renderFacebookSelect();
+            renderConfig();
+            initNewsletterDate();
+        }
+
+        function getThemeLabel(themes, value) {
+            const t = themes.find(t => t.value === value);
+            return t ? t.label : value;
+        }
+
+        // ===== PROJETS =====
+        let currentProjetFilter = '';
+        
+        function filterProjets(theme) {
+            currentProjetFilter = theme;
+            // Mettre à jour les boutons actifs
+            document.querySelectorAll('#projet-theme-filters .theme-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.theme === theme);
+            });
+            renderProjets();
+        }
+        
+        function updateProjetCounts() {
+            // Compter les projets par thème (directement depuis les données)
+            const counts = {};
+            data.projets.forEach(p => {
+                const theme = (p.theme || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                counts[theme] = (counts[theme] || 0) + 1;
+            });
+            
+            // Mettre à jour le compteur total
+            const allEl = document.getElementById('pcount-all');
+            if (allEl) allEl.textContent = data.projets.length;
+            
+            // Mettre à jour les compteurs par thème
+            document.querySelectorAll('[id^="pcount-"]').forEach(el => {
+                const theme = el.id.replace('pcount-', '');
+                if (theme !== 'all') {
+                    el.textContent = counts[theme] || 0;
+                }
+            });
+        }
+        
+        function renderProjets() {
+            updateProjetCounts();
+            
+            const search = (document.getElementById('search-projets')?.value || '').toLowerCase();
+            
+            let filtered = data.projets;
+            
+            // Filtre par thème
+            if (currentProjetFilter) {
+                filtered = filtered.filter(p => (p.theme || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(currentProjetFilter.toLowerCase()));
+            }
+            
+            // Filtre par recherche
+            if (search) {
+                filtered = filtered.filter(p => 
+                    (p.titre || '').toLowerCase().includes(search) ||
+                    (p.theme || '').toLowerCase().includes(search) ||
+                    (p.resume || '').toLowerCase().includes(search) ||
+                    (p.description || '').toLowerCase().includes(search)
+                );
+            }
+            
+            document.getElementById('projets-count').textContent = filtered.length;
+            document.getElementById('projets-list').innerHTML = filtered.length === 0 
+                ? '<div class="empty-state"><div class="icon">📭</div><p>Aucun projet trouvé</p></div>'
+                : filtered.map((p, i) => {
+                    const themeConf = THEMES_CONFIG.find(t => t.theme === p.theme) || { icon: '📋', color: '#1a3a5c' };
+                    return `
+                    <div class="item-card" style="border-left: 4px solid ${themeConf.color}">
+                        <div class="item-info">
+                            <div class="item-text">
+                                <div class="item-title">${themeConf.icon} ${p.titre || 'Sans titre'}</div>
+                                <div class="item-desc">
+                                    <span style="background: ${themeConf.color}; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-right: 0.5rem;">${p.theme}</span>
+                                    <span style="color: #666;">${p.statut || ''} ${p.annee ? '• ' + p.annee : ''}</span>
+                                    ${p.resume ? '<br><em style="color: #888;">' + p.resume + '</em>' : ''}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn btn-sm btn-primary" onclick="openEditProjet(${data.projets.indexOf(p)})">✏️</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteProjet(${data.projets.indexOf(p)})">🗑️</button>
+                        </div>
+                    </div>
+                `}).join('');
+        }
+
+        function openAddProjet() {
+            currentEdit = { type: 'projet', index: -1 };
+            showProjetModal({});
+        }
+
+        function openEditProjet(index) {
+            currentEdit = { type: 'projet', index };
+            showProjetModal(data.projets[index]);
+        }
+
+        const THEMES_CONFIG = [
+            { theme: 'Urbanisme', icon: '🏘️', color: '#34495e' },
+            { theme: 'Environnement', icon: '🌿', color: '#27ae60' },
+            { theme: 'Solidarité', icon: '🤝', color: '#e74c3c' },
+            { theme: 'Santé', icon: '🏥', color: '#e91e63' },
+            { theme: 'Enfance', icon: '👶', color: '#3498db' },
+            { theme: 'Culture', icon: '🎭', color: '#9b59b6' },
+            { theme: 'Sport', icon: '⚽', color: '#4caf50' },
+            { theme: 'Économie', icon: '💼', color: '#f39c12' },
+            { theme: 'Sécurité', icon: '🛡️', color: '#2c3e50' },
+            { theme: 'Mobilités', icon: '🚴', color: '#1abc9c' },
+            { theme: 'Seniors', icon: '👴', color: '#795548' },
+            { theme: 'Démocratie locale', icon: '🗣️', color: '#607d8b' },
+            { theme: 'Métropole', icon: '🏛️', color: '#00bcd4' }
+        ];
+
+        function showProjetModal(p) {
+            document.getElementById('modal-title').textContent = currentEdit.index === -1 ? '➕ Ajouter un projet' : '✏️ Modifier le projet';
+            
+            const themeOptions = THEMES_CONFIG.map(t => 
+                `<option value="${t.theme}" ${p.theme === t.theme ? 'selected' : ''}>${t.icon} ${t.theme}</option>`
+            ).join('');
+            
+            const statutOptions = ['Programmé', 'En cours', 'Prioritaire', 'Étude'].map(s =>
+                `<option value="${s}" ${p.statut === s ? 'selected' : ''}>${s}</option>`
+            ).join('');
+            
+            document.getElementById('modal-body').innerHTML = `
+                <div class="form-group">
+                    <label>Titre du projet *</label>
+                    <input type="text" id="edit-titre" value="${p.titre || ''}" placeholder="Ex: Création d'une maison de santé">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label>Thème *</label>
+                        <select id="edit-theme">
+                            <option value="">-- Choisir --</option>
+                            ${themeOptions}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Statut</label>
+                        <select id="edit-statut">
+                            ${statutOptions}
+                        </select>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label>Année prévue</label>
+                        <select id="edit-annee">
+                            <option value="">--</option>
+                            ${[2026, 2027, 2028, 2029, 2030, 2031, 2032].map(a => 
+                                `<option value="${a}" ${p.annee == a ? 'selected' : ''}>${a}</option>`
+                            ).join('')}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Importance (1-3)</label>
+                        <select id="edit-importance">
+                            <option value="1" ${p.importance == 1 ? 'selected' : ''}>1 - Normal</option>
+                            <option value="2" ${p.importance == 2 ? 'selected' : ''}>2 - Important</option>
+                            <option value="3" ${p.importance == 3 ? 'selected' : ''}>3 - Prioritaire</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Résumé court</label>
+                    <input type="text" id="edit-resume" value="${p.resume || ''}" placeholder="Ex: Accès aux soins pour tous">
+                </div>
+                <div class="form-group">
+                    <label>Description détaillée</label>
+                    <textarea id="edit-description" rows="4" placeholder="Description complète du projet...">${p.description || ''}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Budget estimé (€)</label>
+                    <input type="number" id="edit-budget" value="${p.budget || 0}" placeholder="0">
+                </div>
+            `;
+            document.getElementById('modal-save').onclick = saveProjet;
+            document.getElementById('modal-edit').classList.add('active');
+        }
+
+        function updateThemePreview() {
+            // Plus nécessaire avec le nouveau formulaire
+        }
+
+        function saveProjet() {
+            const titre = document.getElementById('edit-titre').value.trim();
+            const theme = document.getElementById('edit-theme').value;
+            const statut = document.getElementById('edit-statut').value;
+            const annee = parseInt(document.getElementById('edit-annee').value) || null;
+            const importance = parseInt(document.getElementById('edit-importance').value) || 1;
+            const resume = document.getElementById('edit-resume').value.trim();
+            const description = document.getElementById('edit-description').value.trim();
+            const budget = parseInt(document.getElementById('edit-budget').value) || 0;
+            
+            if (!titre || !theme) {
+                showToast('⚠️ Titre et thème obligatoires', 'warning');
+                return;
+            }
+
+            const projet = {
+                id: currentEdit.index === -1 ? Date.now() : data.projets[currentEdit.index].id,
+                titre,
+                theme,
+                statut,
+                annee,
+                budget,
+                resume,
+                description,
+                importance,
+                chiffres: currentEdit.index === -1 ? [] : (data.projets[currentEdit.index].chiffres || [])
+            };
+
+            if (currentEdit.index === -1) {
+                data.projets.push(projet);
+            } else {
+                data.projets[currentEdit.index] = projet;
+            }
+            
+            markModified('projets');
+            renderProjets();
+            closeModal();
+            showToast('✅ Projet enregistré', 'success');
+        }
+
+        function deleteProjet(index) {
+            if (confirm('Supprimer ce projet ?')) {
+                data.projets.splice(index, 1);
+                markModified('projets');
+                renderProjets();
+                showToast('🗑️ Projet supprimé', 'success');
+            }
+        }
+
+        // ===== ACTIONS =====
+        let currentActionFilter = '';
+        
+        function filterActions(theme) {
+            currentActionFilter = theme;
+            // Mettre à jour les boutons actifs
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.theme === theme);
+            });
+            renderActions();
+        }
+        
+        function updateThemeCounts() {
+            // Compter les actions par thème
+            const counts = {};
+            THEMES_ACTIONS.forEach(t => counts[t.value] = 0);
+            data.actions.forEach(a => {
+                if (counts[a.theme] !== undefined) counts[a.theme]++;
+            });
+            
+            // Mettre à jour les compteurs
+            document.getElementById('count-all').textContent = data.actions.length;
+            THEMES_ACTIONS.forEach(t => {
+                const el = document.getElementById('count-' + t.value);
+                if (el) el.textContent = counts[t.value];
+            });
+        }
+        
+        function renderActions() {
+            updateThemeCounts();
+            
+            const search = (document.getElementById('search-actions')?.value || '').toLowerCase();
+            
+            let filtered = data.actions;
+            
+            // Filtre par thème
+            if (currentActionFilter) {
+                filtered = filtered.filter(a => a.theme === currentActionFilter);
+            }
+            
+            // Filtre par recherche
+            if (search) {
+                filtered = filtered.filter(a => 
+                    (a.titre || '').toLowerCase().includes(search) ||
+                    (a.description || '').toLowerCase().includes(search)
+                );
+            }
+            
+            document.getElementById('actions-count').textContent = filtered.length;
+            document.getElementById('actions-list').innerHTML = filtered.length === 0
+                ? '<div class="empty-state"><div class="icon">📭</div><p>Aucune action trouvée</p></div>'
+                : filtered.map((a, i) => `
+                    <div class="item-card">
+                        <div class="item-info">
+                            <div class="item-text">
+                                <span class="item-badge">${a.theme} • ${a.statut || 'Réalisé'}</span>
+                                <div class="item-title">${a.titre}</div>
+                                <div class="item-desc">${a.description || ''}</div>
+                            </div>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn btn-sm btn-primary" onclick="openEditAction(${data.actions.indexOf(a)})">✏️</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteAction(${data.actions.indexOf(a)})">🗑️</button>
+                        </div>
+                    </div>
+                `).join('');
+        }
+
+        function openAddAction() {
+            currentEdit = { type: 'action', index: -1 };
+            showActionModal({});
+        }
+
+        function openEditAction(index) {
+            currentEdit = { type: 'action', index };
+            showActionModal(data.actions[index]);
+        }
+
+        function showActionModal(a) {
+            document.getElementById('modal-title').textContent = currentEdit.index === -1 ? '➕ Ajouter une action' : '✏️ Modifier l\'action';
+            document.getElementById('modal-body').innerHTML = `
+                <div class="form-group">
+                    <label>Titre *</label>
+                    <input type="text" id="edit-titre" value="${a.titre || ''}">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Thème *</label>
+                        <select id="edit-theme">
+                            <option value="">-- Choisir --</option>
+                            ${THEMES_ACTIONS.map(t => `<option value="${t.value}" ${a.theme === t.value ? 'selected' : ''}>${t.label}</option>`).join('')}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Statut</label>
+                        <select id="edit-statut">
+                            <option value="Réalisé" ${a.statut === 'Réalisé' ? 'selected' : ''}>✅ Réalisé</option>
+                            <option value="En cours" ${a.statut === 'En cours' ? 'selected' : ''}>🔄 En cours</option>
+                            <option value="Prévu" ${a.statut === 'Prévu' ? 'selected' : ''}>📅 Prévu</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="edit-description" rows="3">${a.description || ''}</textarea>
+                </div>
+            `;
+            document.getElementById('modal-save').onclick = saveAction;
+            document.getElementById('modal-edit').classList.add('active');
+        }
+
+        function saveAction() {
+            const titre = document.getElementById('edit-titre').value.trim();
+            const theme = document.getElementById('edit-theme').value;
+            const statut = document.getElementById('edit-statut').value;
+            const description = document.getElementById('edit-description').value.trim();
+            
+            if (!titre || !theme) {
+                showToast('⚠️ Titre et thème obligatoires', 'warning');
+                return;
+            }
+
+            if (currentEdit.index === -1) {
+                data.actions.push({ id: Date.now(), titre, theme, statut, description });
+            } else {
+                Object.assign(data.actions[currentEdit.index], { titre, theme, statut, description });
+            }
+            
+            markModified('actions');
+            renderActions();
+            closeModal();
+            showToast('✅ Action enregistrée', 'success');
+        }
+
+        function deleteAction(index) {
+            if (confirm('Supprimer cette action ?')) {
+                data.actions.splice(index, 1);
+                markModified('actions');
+                renderActions();
+                showToast('🗑️ Action supprimée', 'success');
+            }
+        }
+
+        // ===== CANDIDATS =====
+        function getPhotoUrl(photo) {
+            if (!photo) return null;
+            // Ignorer les chemins locaux
+            if (photo.startsWith('file://')) return null;
+            // Si c'est déjà une URL complète
+            if (photo.startsWith('http')) return photo;
+            // Si c'est un chemin relatif, construire l'URL GitHub
+            return `https://raw.githubusercontent.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/${GITHUB_CONFIG.branch}/${photo}`;
+        }
+
+        function renderCandidats() {
+            document.getElementById('candidats-count').textContent = data.candidats.length;
+            const sorted = [...data.candidats].sort((a, b) => (a.ordre || 99) - (b.ordre || 99));
+            
+            document.getElementById('candidats-list').innerHTML = sorted.length === 0
+                ? '<div class="empty-state"><div class="icon">👥</div><p>Aucun candidat</p></div>'
+                : sorted.map((c, i) => {
+                    const realIndex = data.candidats.indexOf(c);
+                    const photoUrl = getPhotoUrl(c.photo);
+                    const photoHtml = photoUrl 
+                        ? `<img src="${photoUrl}" class="item-photo" alt="${c.nom}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                           <div class="item-photo-placeholder" style="display:none;">👤</div>`
+                        : `<div class="item-photo-placeholder">👤</div>`;
+                    
+                    let badges = [];
+                    if (c.role) badges.push(c.role);
+                    if (c.delegation) badges.push(c.delegation);
+                    
+                    let socials = [];
+                    if (c.email) socials.push('📧');
+                    if (c.facebook) socials.push('📘');
+                    if (c.linkedin) socials.push('💼');
+                    if (c.twitter) socials.push('🐦');
+                    
+                    return `
+                        <div class="item-card">
+                            <div class="item-info">
+                                ${photoHtml}
+                                <div class="item-text">
+                                    <div class="item-title">${c.nom} ${socials.length ? '<span style="font-size: 0.8rem; opacity: 0.7;">' + socials.join(' ') + '</span>' : ''}</div>
+                                    ${badges.length ? `<span class="item-badge">${badges.join(' • ')}</span>` : ''}
+                                    <div class="item-desc">${c.bio ? c.bio.substring(0, 80) + '...' : ''}</div>
+                                    ${c.citation ? `<div class="item-desc" style="font-style: italic; color: var(--or);">« ${c.citation.substring(0, 50)}... »</div>` : ''}
+                                </div>
+                            </div>
+                            <div class="item-actions">
+                                <button class="btn btn-sm btn-primary" onclick="openEditCandidat(${realIndex})">✏️</button>
+                                <button class="btn btn-sm btn-danger" onclick="deleteCandidat(${realIndex})">🗑️</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+        }
+
+        function openAddCandidat() {
+            currentEdit = { type: 'candidat', index: -1 };
+            pendingPhoto = null;
+            showCandidatModal({});
+        }
+
+        function openEditCandidat(index) {
+            currentEdit = { type: 'candidat', index };
+            pendingPhoto = null;
+            showCandidatModal(data.candidats[index]);
+        }
+
+        function showCandidatModal(c) {
+            const photoUrl = getPhotoUrl(c.photo);
+            document.getElementById('modal-title').textContent = currentEdit.index === -1 ? '➕ Ajouter un candidat' : '✏️ Modifier le candidat';
+            document.getElementById('modal-body').innerHTML = `
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nom complet *</label>
+                        <input type="text" id="edit-nom" value="${c.nom || ''}">
+                    </div>
+                    <div class="form-group">
+                        <label>Ordre d'affichage</label>
+                        <input type="number" id="edit-ordre" value="${c.ordre || 10}" min="1">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Rôle / Fonction</label>
+                        <input type="text" id="edit-role" value="${c.role || ''}" placeholder="Ex: Adjoint aux finances">
+                    </div>
+                    <div class="form-group">
+                        <label>Délégation / Domaine</label>
+                        <input type="text" id="edit-delegation" value="${c.delegation || ''}" placeholder="Ex: Urbanisme, Environnement">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Biographie</label>
+                    <textarea id="edit-bio" rows="3" placeholder="Courte présentation...">${c.bio || ''}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>💬 Citation / Engagement personnel</label>
+                    <input type="text" id="edit-citation" value="${c.citation || ''}" placeholder="Ex: Mon engagement pour Vizille...">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>📧 Email (optionnel)</label>
+                        <input type="email" id="edit-email" value="${c.email || ''}" placeholder="prenom.nom@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>📘 Facebook (URL)</label>
+                        <input type="url" id="edit-facebook" value="${c.facebook || ''}" placeholder="https://facebook.com/...">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>💼 LinkedIn (URL)</label>
+                        <input type="url" id="edit-linkedin" value="${c.linkedin || ''}" placeholder="https://linkedin.com/in/...">
+                    </div>
+                    <div class="form-group">
+                        <label>🐦 Twitter (URL)</label>
+                        <input type="url" id="edit-twitter" value="${c.twitter || ''}" placeholder="https://twitter.com/...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Photo</label>
+                    <div class="photo-upload" onclick="document.getElementById('photo-input').click()" 
+                         ondragover="event.preventDefault(); this.classList.add('dragover')"
+                         ondragleave="this.classList.remove('dragover')"
+                         ondrop="handlePhotoDrop(event)">
+                        <input type="file" id="photo-input" accept="image/*" onchange="handlePhotoSelect(event)">
+                        <div class="icon">📷</div>
+                        <p>Cliquez ou glissez une photo</p>
+                        <p style="font-size: 0.8rem; opacity: 0.7;">Max 1 Mo • JPG, PNG</p>
+                    </div>
+                    <div class="photo-preview ${photoUrl ? 'active' : ''}" id="photo-preview">
+                        <img src="${photoUrl || ''}" id="photo-preview-img" onerror="this.parentElement.classList.remove('active');">
+                        <button class="btn btn-sm btn-danger" style="margin-top: 0.5rem;" onclick="removePhoto()">🗑️ Supprimer</button>
+                    </div>
+                </div>
+            `;
+            document.getElementById('modal-save').onclick = saveCandidat;
+            document.getElementById('modal-edit').classList.add('active');
+        }
+
+        function handlePhotoSelect(event) {
+            const file = event.target.files[0];
+            if (file) processPhoto(file);
+        }
+
+        function handlePhotoDrop(event) {
+            event.preventDefault();
+            event.target.classList.remove('dragover');
+            const file = event.dataTransfer.files[0];
+            if (file) processPhoto(file);
+        }
+
+        function processPhoto(file) {
+            if (file.size > 1024 * 1024) {
+                showToast('⚠️ Image trop grande (max 1 Mo)', 'warning');
+                return;
+            }
+
+            if (!file.type.startsWith('image/')) {
+                showToast('⚠️ Fichier non valide', 'warning');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                pendingPhoto = {
+                    data: e.target.result,
+                    name: file.name,
+                    type: file.type
+                };
+                
+                document.getElementById('photo-preview-img').src = e.target.result;
+                document.getElementById('photo-preview').classList.add('active');
+                showToast('✅ Photo prête', 'success');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function removePhoto() {
+            pendingPhoto = { remove: true };
+            document.getElementById('photo-preview').classList.remove('active');
+            document.getElementById('photo-preview-img').src = '';
+        }
+
+        async function saveCandidat() {
+            const nom = document.getElementById('edit-nom').value.trim();
+            const role = document.getElementById('edit-role').value.trim();
+            const delegation = document.getElementById('edit-delegation').value.trim();
+            const bio = document.getElementById('edit-bio').value.trim();
+            const citation = document.getElementById('edit-citation').value.trim();
+            const email = document.getElementById('edit-email').value.trim();
+            const facebook = document.getElementById('edit-facebook').value.trim();
+            const linkedin = document.getElementById('edit-linkedin').value.trim();
+            const twitter = document.getElementById('edit-twitter').value.trim();
+            const ordre = parseInt(document.getElementById('edit-ordre').value) || 10;
+            
+            if (!nom) {
+                showToast('⚠️ Nom obligatoire', 'warning');
+                return;
+            }
+
+            let photo = currentEdit.index >= 0 ? data.candidats[currentEdit.index].photo : null;
+
+            // Upload photo si nouvelle
+            if (pendingPhoto && !pendingPhoto.remove) {
+                showToast('⏳ Upload de la photo...', 'info');
+                const photoUrl = await uploadPhoto(pendingPhoto, nom);
+                if (photoUrl) {
+                    photo = photoUrl;
+                }
+            } else if (pendingPhoto && pendingPhoto.remove) {
+                photo = null;
+            }
+
+            const candidatData = { 
+                id: currentEdit.index >= 0 ? data.candidats[currentEdit.index].id : Date.now(),
+                nom, role, delegation, bio, citation, email, facebook, linkedin, twitter, ordre, photo, actif: true 
+            };
+
+            if (currentEdit.index === -1) {
+                data.candidats.push(candidatData);
+            } else {
+                data.candidats[currentEdit.index] = candidatData;
+            }
+            
+            markModified('candidats');
+            renderCandidats();
+            closeModal();
+            showToast('✅ Candidat enregistré', 'success');
+        }
+
+        async function uploadPhoto(photoData, nom, retryCount = 0) {
+            const token = getToken();
+            if (!token) {
+                showToast('⚠️ Token requis pour l\'upload', 'warning');
+                return null;
+            }
+
+            // Nom de fichier propre
+            const ext = photoData.name.split('.').pop().toLowerCase();
+            const cleanName = nom.toLowerCase()
+                .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Enlever accents
+                .replace(/[^a-z0-9]/g, '-')
+                .replace(/-+/g, '-');
+            const filename = `images/${cleanName}.${ext}`;
+            
+            // Extraire le base64 pur (sans le préfixe data:image/...)
+            const base64Content = photoData.data.split(',')[1];
+
+            try {
+                // Récupérer le SHA si le fichier existe
+                let sha = null;
+                const getResponse = await fetch(
+                    `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${filename}?ref=${GITHUB_CONFIG.branch}`,
+                    { headers: { 'Authorization': `token ${token}` } }
+                );
+                if (getResponse.ok) {
+                    sha = (await getResponse.json()).sha;
+                }
+
+                const body = {
+                    message: `Upload photo ${nom}`,
+                    content: base64Content,
+                    branch: GITHUB_CONFIG.branch
+                };
+                if (sha) body.sha = sha;
+
+                const response = await fetch(
+                    `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${filename}`,
+                    {
+                        method: 'PUT',
+                        headers: {
+                            'Authorization': `token ${token}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(body)
+                    }
+                );
+
+                if (response.ok) {
+                    showToast('✅ Photo uploadée', 'success');
+                    return filename;
+                } else if (response.status === 409 && retryCount < 3) {
+                    // Conflit - réessayer
+                    showToast('🔄 Conflit, nouvelle tentative...', 'warning');
+                    await new Promise(r => setTimeout(r, 1000));
+                    return uploadPhoto(photoData, nom, retryCount + 1);
+                } else {
+                    const error = await response.json();
+                    throw new Error(error.message || 'Upload failed');
+                }
+            } catch (err) {
+                showToast('❌ Erreur upload: ' + err.message, 'error');
+                return null;
+            }
+        }
+
+        function deleteCandidat(index) {
+            if (confirm('Supprimer ce candidat ?')) {
+                data.candidats.splice(index, 1);
+                markModified('candidats');
+                renderCandidats();
+                showToast('🗑️ Candidat supprimé', 'success');
+            }
+        }
+
+        // ===== FAQ =====
+        function renderFaq() {
+            document.getElementById('faq-count').textContent = data.faq.length;
+            document.getElementById('faq-list').innerHTML = data.faq.length === 0
+                ? '<div class="empty-state"><div class="icon">❓</div><p>Aucune question</p></div>'
+                : data.faq.map((f, i) => {
+                    const origineIcons = {
+                        'Site web': '🌐',
+                        'Facebook': '📘',
+                        'WhatsApp': '💬',
+                        'Permanence': '🏛️',
+                        'Email': '📧',
+                        'Autre': '📝'
+                    };
+                    const origineIcon = origineIcons[f.origine] || '❓';
+                    return `
+                    <div class="item-card">
+                        <div class="item-info">
+                            <div class="item-text">
+                                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.25rem;">
+                                    ${f.categorie ? `<span class="item-badge">${f.categorie}</span>` : ''}
+                                    ${f.origine ? `<span class="item-badge" style="background: #e8f4fc; color: var(--bleu);">${origineIcon} ${f.origine}</span>` : ''}
+                                    ${f.pseudo ? `<span class="item-badge" style="background: #f0f0f0; color: #666;">👤 ${f.pseudo}</span>` : ''}
+                                </div>
+                                <div class="item-title">${f.question}</div>
+                                <div class="item-desc">${(f.reponse || '').substring(0, 100)}...</div>
+                                ${f.date ? `<div class="item-desc" style="font-size: 0.8rem; opacity: 0.6;">📅 ${f.date}</div>` : ''}
+                            </div>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn btn-sm" style="background: #25D366; color: white;" onclick="copyForWhatsApp('faq', ${i})" title="Copier pour WhatsApp">💬</button>
+                            <button class="btn btn-sm btn-primary" onclick="openEditFaq(${i})">✏️</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteFaq(${i})">🗑️</button>
+                        </div>
+                    </div>
+                `}).join('');
+        }
+        
+        function copyForWhatsApp(type, index) {
+            let text = '';
+            
+            if (type === 'faq') {
+                const f = data.faq[index];
+                text = `❓ *QUESTION D'UN VIZILLOIS*\n\n`;
+                if (f.pseudo) text += `👤 _${f.pseudo}_\n`;
+                if (f.categorie) text += `🏷️ ${f.categorie}\n`;
+                text += `\n📝 *${f.question}*\n\n`;
+                text += `✅ *Notre réponse :*\n${f.reponse}\n\n`;
+                text += `━━━━━━━━━━━━━━━\n`;
+                text += `🗳️ *Vizille en Mouvement*\n`;
+                text += `🌐 https://vizilleenmouvement.github.io/vizille-en-mouvement/`;
+            } 
+            else if (type === 'article') {
+                const a = data.articles[index];
+                text = `📰 *${a.titre}*\n\n`;
+                if (a.date) text += `📅 ${a.date}\n\n`;
+                text += `${a.resume || a.contenu?.substring(0, 200) || ''}\n\n`;
+                text += `👉 Lire la suite sur notre site\n`;
+                text += `━━━━━━━━━━━━━━━\n`;
+                text += `🗳️ *Vizille en Mouvement*\n`;
+                text += `🌐 https://vizilleenmouvement.github.io/vizille-en-mouvement/blog.html`;
+            }
+            
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('✅ Copié ! Collez dans WhatsApp', 'success');
+            }).catch(() => {
+                // Fallback
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                showToast('✅ Copié ! Collez dans WhatsApp', 'success');
+            });
+        }
+
+        function openAddFaq() {
+            currentEdit = { type: 'faq', index: -1 };
+            showFaqModal({});
+        }
+
+        function openEditFaq(index) {
+            currentEdit = { type: 'faq', index };
+            showFaqModal(data.faq[index]);
+        }
+
+        function showFaqModal(f) {
+            document.getElementById('modal-title').textContent = currentEdit.index === -1 ? '➕ Ajouter une question' : '✏️ Modifier la question';
+            document.getElementById('modal-body').innerHTML = `
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>📍 Origine *</label>
+                        <select id="edit-origine">
+                            <option value="">-- Source --</option>
+                            <option value="Site web" ${f.origine === 'Site web' ? 'selected' : ''}>🌐 Site web</option>
+                            <option value="Facebook" ${f.origine === 'Facebook' ? 'selected' : ''}>📘 Facebook</option>
+                            <option value="WhatsApp" ${f.origine === 'WhatsApp' ? 'selected' : ''}>💬 WhatsApp</option>
+                            <option value="Permanence" ${f.origine === 'Permanence' ? 'selected' : ''}>🏛️ Permanence</option>
+                            <option value="Email" ${f.origine === 'Email' ? 'selected' : ''}>📧 Email</option>
+                            <option value="Autre" ${f.origine === 'Autre' ? 'selected' : ''}>📝 Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>👤 Pseudo / Nom</label>
+                        <input type="text" id="edit-pseudo" value="${f.pseudo || ''}" placeholder="Ex: Marie D., Anonyme...">
+                    </div>
+                    <div class="form-group">
+                        <label>📅 Date</label>
+                        <input type="date" id="edit-date" value="${f.date || ''}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Question *</label>
+                    <input type="text" id="edit-question" value="${f.question || ''}">
+                </div>
+                <div class="form-group">
+                    <label>Réponse *</label>
+                    <textarea id="edit-reponse" rows="5">${f.reponse || ''}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Catégorie / Thème</label>
+                    <input type="text" id="edit-categorie" value="${f.categorie || ''}" placeholder="Ex: Urbanisme, Sécurité, Vie municipale...">
+                </div>
+            `;
+            document.getElementById('modal-save').onclick = saveFaq;
+            document.getElementById('modal-edit').classList.add('active');
+        }
+
+        function saveFaq() {
+            const question = document.getElementById('edit-question').value.trim();
+            const reponse = document.getElementById('edit-reponse').value.trim();
+            const categorie = document.getElementById('edit-categorie').value.trim();
+            const origine = document.getElementById('edit-origine').value;
+            const pseudo = document.getElementById('edit-pseudo').value.trim();
+            const date = document.getElementById('edit-date').value;
+            
+            if (!question || !reponse) {
+                showToast('⚠️ Question et réponse obligatoires', 'warning');
+                return;
+            }
+
+            if (currentEdit.index === -1) {
+                data.faq.push({ id: Date.now(), question, reponse, categorie, origine, pseudo, date });
+            } else {
+                Object.assign(data.faq[currentEdit.index], { question, reponse, categorie, origine, pseudo, date });
+            }
+            
+            markModified('faq');
+            renderFaq();
+            closeModal();
+            showToast('✅ Question enregistrée', 'success');
+        }
+
+        function deleteFaq(index) {
+            if (confirm('Supprimer cette question ?')) {
+                data.faq.splice(index, 1);
+                markModified('faq');
+                renderFaq();
+                showToast('🗑️ Question supprimée', 'success');
+            }
+        }
+
+        // ===== ARTICLES =====
+        function renderArticles() {
+            document.getElementById('articles-count').textContent = data.articles.length;
+            const sorted = [...data.articles].sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+            
+            document.getElementById('articles-list').innerHTML = sorted.length === 0
+                ? '<div class="empty-state"><div class="icon">📰</div><p>Aucun article</p></div>'
+                : sorted.map((a, i) => {
+                    const realIndex = data.articles.indexOf(a);
+                    return `
+                        <div class="item-card">
+                            <div class="item-info">
+                                <div class="item-text">
+                                    <span class="item-badge">${a.date || 'Sans date'}</span>
+                                    <div class="item-title">${a.titre}</div>
+                                    <div class="item-desc">${a.resume || ''}</div>
+                                </div>
+                            </div>
+                            <div class="item-actions">
+                                <button class="btn btn-sm" style="background: #25D366; color: white;" onclick="copyForWhatsApp('article', ${realIndex})" title="Copier pour WhatsApp">💬</button>
+                                <button class="btn btn-sm btn-primary" onclick="openEditArticle(${realIndex})">✏️</button>
+                                <button class="btn btn-sm btn-danger" onclick="deleteArticle(${realIndex})">🗑️</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+        }
+
+        function openAddArticle() {
+            currentEdit = { type: 'article', index: -1 };
+            showArticleModal({ date: new Date().toISOString().split('T')[0] });
+        }
+
+        function openEditArticle(index) {
+            currentEdit = { type: 'article', index };
+            showArticleModal(data.articles[index]);
+        }
+
+        function showArticleModal(a) {
+            document.getElementById('modal-title').textContent = currentEdit.index === -1 ? '➕ Ajouter un article' : '✏️ Modifier l\'article';
+            document.getElementById('modal-body').innerHTML = `
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Titre *</label>
+                        <input type="text" id="edit-titre" value="${a.titre || ''}">
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" id="edit-date" value="${a.date || ''}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Résumé</label>
+                    <textarea id="edit-resume" rows="2">${a.resume || ''}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Contenu</label>
+                    <textarea id="edit-contenu" rows="6">${a.contenu || ''}</textarea>
+                </div>
+            `;
+            document.getElementById('modal-save').onclick = saveArticle;
+            document.getElementById('modal-edit').classList.add('active');
+        }
+
+        function saveArticle() {
+            const titre = document.getElementById('edit-titre').value.trim();
+            const date = document.getElementById('edit-date').value;
+            const resume = document.getElementById('edit-resume').value.trim();
+            const contenu = document.getElementById('edit-contenu').value.trim();
+            
+            if (!titre) {
+                showToast('⚠️ Titre obligatoire', 'warning');
+                return;
+            }
+
+            if (currentEdit.index === -1) {
+                data.articles.push({ id: Date.now(), titre, date, resume, contenu });
+            } else {
+                Object.assign(data.articles[currentEdit.index], { titre, date, resume, contenu });
+            }
+            
+            markModified('articles');
+            renderArticles();
+            closeModal();
+            showToast('✅ Article enregistré', 'success');
+        }
+
+        function deleteArticle(index) {
+            if (confirm('Supprimer cet article ?')) {
+                data.articles.splice(index, 1);
+                markModified('articles');
+                renderArticles();
+                showToast('🗑️ Article supprimé', 'success');
+            }
+        }
+
+        // ===== ABONNÉS NEWSLETTER =====
+        function renderAbonnes() {
+            const search = (document.getElementById('search-abonnes')?.value || '').toLowerCase();
+            const abonnesActifs = data.abonnes.filter(a => a.actif !== false);
+            
+            const filtered = data.abonnes.filter(a => {
+                if (!search) return true;
+                return (a.email || '').toLowerCase().includes(search) || 
+                       (a.nom || '').toLowerCase().includes(search);
+            });
+            
+            document.getElementById('abonnes-count').textContent = filtered.length;
+            document.getElementById('stats-abonnes').textContent = `${abonnesActifs.length} abonnés actifs`;
+            
+            const container = document.getElementById('abonnes-list');
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="icon">📧</div>
+                        <p>Aucun abonné${search ? ' trouvé' : ''}</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = filtered.map((a, i) => {
+                const realIndex = data.abonnes.indexOf(a);
+                const statusClass = a.actif === false ? 'style="opacity: 0.5;"' : '';
+                const statusBadge = a.actif === false ? 
+                    '<span style="background: #fee; color: #c00; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin-left: 8px;">Désabonné</span>' : '';
+                return `
+                    <div class="item-card" ${statusClass}>
+                        <div class="item-info">
+                            <div class="item-photo-placeholder">📧</div>
+                            <div class="item-text">
+                                <div class="item-title">${a.email}${statusBadge}</div>
+                                <div class="item-desc">${a.nom || 'Sans nom'} • Inscrit le ${a.date || 'N/A'}</div>
+                            </div>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn btn-sm btn-primary" onclick="openEditAbonne(${realIndex})">✏️</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteAbonne(${realIndex})">🗑️</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function openAddAbonne() {
+            currentEdit = { type: 'abonne', index: -1 };
+            showAbonneModal({ date: new Date().toISOString().split('T')[0], actif: true });
+        }
+
+        function openEditAbonne(index) {
+            currentEdit = { type: 'abonne', index };
+            showAbonneModal(data.abonnes[index]);
+        }
+
+        function showAbonneModal(a) {
+            document.getElementById('modal-title').textContent = currentEdit.index === -1 ? '➕ Ajouter un abonné' : '✏️ Modifier l\'abonné';
+            document.getElementById('modal-body').innerHTML = `
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" id="edit-abonne-email" value="${a.email || ''}">
+                </div>
+                <div class="form-group">
+                    <label>Nom (optionnel)</label>
+                    <input type="text" id="edit-abonne-nom" value="${a.nom || ''}">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date d'inscription</label>
+                        <input type="date" id="edit-abonne-date" value="${a.date || ''}">
+                    </div>
+                    <div class="form-group">
+                        <label>Statut</label>
+                        <select id="edit-abonne-actif">
+                            <option value="true" ${a.actif !== false ? 'selected' : ''}>✅ Actif</option>
+                            <option value="false" ${a.actif === false ? 'selected' : ''}>❌ Désabonné</option>
+                        </select>
+                    </div>
+                </div>
+            `;
+            document.getElementById('modal-save').onclick = saveAbonne;
+            document.getElementById('modal-edit').classList.add('active');
+        }
+
+        function saveAbonne() {
+            const email = document.getElementById('edit-abonne-email').value.trim();
+            const nom = document.getElementById('edit-abonne-nom').value.trim();
+            const date = document.getElementById('edit-abonne-date').value;
+            const actif = document.getElementById('edit-abonne-actif').value === 'true';
+            
+            if (!email || !email.includes('@')) {
+                showToast('⚠️ Email invalide', 'warning');
+                return;
+            }
+
+            // Vérifier si l'email existe déjà (sauf en édition du même)
+            const existant = data.abonnes.findIndex(a => a.email.toLowerCase() === email.toLowerCase());
+            if (existant !== -1 && existant !== currentEdit.index) {
+                showToast('⚠️ Cet email existe déjà', 'warning');
+                return;
+            }
+
+            if (currentEdit.index === -1) {
+                data.abonnes.push({ id: Date.now(), email, nom, date, actif });
+            } else {
+                Object.assign(data.abonnes[currentEdit.index], { email, nom, date, actif });
+            }
+            
+            markModified('abonnes');
+            renderAbonnes();
+            closeModal();
+            showToast('✅ Abonné enregistré', 'success');
+        }
+
+        function deleteAbonne(index) {
+            if (confirm('Supprimer cet abonné ?')) {
+                data.abonnes.splice(index, 1);
+                markModified('abonnes');
+                renderAbonnes();
+                showToast('🗑️ Abonné supprimé', 'success');
+            }
+        }
+
+        function exportAbonnes() {
+            const actifs = data.abonnes.filter(a => a.actif !== false);
+            const csv = 'Email,Nom,Date\n' + actifs.map(a => `${a.email},"${a.nom || ''}",${a.date || ''}`).join('\n');
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `abonnes-vizille-${new Date().toISOString().split('T')[0]}.csv`;
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('📥 Export CSV téléchargé', 'success');
+        }
+
+        function importAbonnes(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const text = e.target.result;
+                const lines = text.split('\n').filter(l => l.trim());
+                let count = 0;
+                
+                lines.forEach((line, i) => {
+                    if (i === 0 && line.toLowerCase().includes('email')) return; // Skip header
+                    
+                    const parts = line.split(',');
+                    const email = parts[0]?.trim().replace(/"/g, '');
+                    
+                    if (email && email.includes('@')) {
+                        const existe = data.abonnes.find(a => a.email.toLowerCase() === email.toLowerCase());
+                        if (!existe) {
+                            data.abonnes.push({
+                                id: Date.now() + count,
+                                email,
+                                nom: parts[1]?.trim().replace(/"/g, '') || '',
+                                date: new Date().toISOString().split('T')[0],
+                                actif: true
+                            });
+                            count++;
+                        }
+                    }
+                });
+                
+                if (count > 0) {
+                    markModified('abonnes');
+                    renderAbonnes();
+                    showToast(`✅ ${count} abonnés importés`, 'success');
+                } else {
+                    showToast('⚠️ Aucun nouvel email trouvé', 'warning');
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = '';
+        }
+
+        // ===== PARTAGE FACEBOOK =====
+        function renderFacebookSelect() {
+            const select = document.getElementById('fb-article-select');
+            if (!select) return;
+            
+            select.innerHTML = '<option value="">-- Sélectionnez un article --</option>' +
+                data.articles.map((a, i) => `<option value="${i}">${a.date || 'Sans date'} - ${a.titre}</option>`).join('');
+        }
+
+        function previewFacebookPost() {
+            const select = document.getElementById('fb-article-select');
+            const index = select.value;
+            const previewZone = document.getElementById('fb-preview-zone');
+            
+            if (index === '') {
+                previewZone.style.display = 'none';
+                return;
+            }
+            
+            const article = data.articles[index];
+            const siteUrl = `https://vizilleenmouvement.github.io/vizille-en-mouvement/blog.html`;
+            
+            const postText = `📰 ${article.titre}
+
+${article.extrait || article.resume || article.contenu?.substring(0, 200) + '...' || ''}
+
+👉 Lire l'article complet sur notre site :
+${siteUrl}
+
+#Vizille #Municipales2026 #VizilleEnMouvement`;
+            
+            document.getElementById('fb-post-text').value = postText;
+            previewZone.style.display = 'block';
+        }
+
+        function copyFacebookPost() {
+            const text = document.getElementById('fb-post-text').value;
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('📋 Texte copié ! Collez-le sur Facebook', 'success');
+            }).catch(() => {
+                showToast('❌ Erreur de copie', 'error');
+            });
+        }
+
+        // ===== NEWSLETTER =====
+        function initNewsletterDate() {
+            const dateInput = document.getElementById('nl-date');
+            if (dateInput && !dateInput.value) {
+                dateInput.value = new Date().toISOString().split('T')[0];
+            }
+        }
+
+        function generateNewsletter() {
+            const objet = document.getElementById('nl-objet').value.trim();
+            const date = document.getElementById('nl-date').value;
+            const intro = document.getElementById('nl-intro').value.trim();
+            const contenu = document.getElementById('nl-contenu').value.trim();
+            const cta = document.getElementById('nl-cta').value.trim();
+            
+            if (!objet || !contenu) {
+                showToast('⚠️ Objet et contenu requis', 'warning');
+                return;
+            }
+            
+            const dateFormatted = date ? new Date(date).toLocaleDateString('fr-FR', { 
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
+            }) : '';
+            
+            let newsletter = `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🏛️ VIZILLE EN MOUVEMENT
+Ensemble pour une ville dynamique et solidaire
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📅 ${dateFormatted}
+
+`;
+            
+            if (intro) {
+                newsletter += `${intro}\n\n`;
+            }
+            
+            newsletter += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📰 ACTUALITÉS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${contenu}
+
+`;
+            
+            if (cta) {
+                newsletter += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📢 À NE PAS MANQUER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${cta}
+
+`;
+            }
+            
+            newsletter += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📱 SUIVEZ-NOUS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🌐 Site : https://vizilleenmouvement.github.io/vizille-en-mouvement/
+📘 Facebook : ${data.config.facebook || 'https://facebook.com/vizilleenmouvement'}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Pour vous désabonner, répondez à cet email.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+            
+            document.getElementById('nl-output').value = newsletter;
+            document.getElementById('nl-result').style.display = 'block';
+            showToast('✨ Newsletter générée !', 'success');
+        }
+
+        function clearNewsletter() {
+            document.getElementById('nl-objet').value = '';
+            document.getElementById('nl-intro').value = '';
+            document.getElementById('nl-contenu').value = '';
+            document.getElementById('nl-cta').value = '';
+            document.getElementById('nl-output').value = '';
+            document.getElementById('nl-result').style.display = 'none';
+            showToast('🗑️ Formulaire effacé', 'info');
+        }
+
+        function copyNewsletter() {
+            const text = document.getElementById('nl-output').value;
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('📋 Newsletter copiée !', 'success');
+            }).catch(() => {
+                showToast('❌ Erreur de copie', 'error');
+            });
+        }
+
+        function copyAbonnesEmails() {
+            const actifs = data.abonnes.filter(a => a.actif !== false);
+            const emails = actifs.map(a => a.email).join('; ');
+            
+            if (!emails) {
+                showToast('⚠️ Aucun abonné actif', 'warning');
+                return;
+            }
+            
+            navigator.clipboard.writeText(emails).then(() => {
+                showToast(`📧 ${actifs.length} emails copiés !`, 'success');
+            }).catch(() => {
+                showToast('❌ Erreur de copie', 'error');
+            });
+        }
+
+        // ===== CONFIG =====
+        function renderConfig() {
+            document.getElementById('config-email').value = data.config.email || '';
+            document.getElementById('config-telephone').value = data.config.telephone || '';
+            document.getElementById('config-adresse').value = data.config.adresse || '';
+            document.getElementById('config-facebook').value = data.config.facebook || '';
+            document.getElementById('config-instagram').value = data.config.instagram || '';
+            document.getElementById('config-twitter').value = data.config.twitter || '';
+            document.getElementById('config-autre').value = data.config.autre || '';
+            document.getElementById('config-permanences').value = data.config.permanences || '';
+            document.getElementById('config-slogan').value = data.config.slogan || 'Ensemble pour une ville dynamique et solidaire';
+        }
+
+        // ===== PUBLICATION =====
+        async function publish(section, retryCount = 0) {
+            const token = getToken();
+            if (!token) {
+                showToast('⚠️ Configurez votre token GitHub', 'warning');
+                return;
+            }
+
+            const files = {
+                projets: 'projets.json',
+                actions: 'data.json',
+                candidats: 'candidats.json',
+                faq: 'faq.json',
+                articles: 'articles.json',
+                abonnes: 'abonnes.json',
+                config: 'config.json'
+            };
+
+            const filename = files[section];
+            
+            // Pour config, on doit d'abord lire les valeurs des champs
+            if (section === 'config') {
+                data.config = {
+                    email: document.getElementById('config-email').value,
+                    telephone: document.getElementById('config-telephone').value,
+                    adresse: document.getElementById('config-adresse').value,
+                    facebook: document.getElementById('config-facebook').value,
+                    instagram: document.getElementById('config-instagram').value,
+                    twitter: document.getElementById('config-twitter').value,
+                    autre: document.getElementById('config-autre').value,
+                    permanences: document.getElementById('config-permanences').value,
+                    slogan: document.getElementById('config-slogan').value
+                };
+            }
+            
+            // Pour candidats, nettoyer les chemins de photos locaux
+            if (section === 'candidats') {
+                data.candidats = data.candidats.map(c => ({
+                    ...c,
+                    photo: c.photo && c.photo.startsWith('file://') ? '' : c.photo
+                }));
+            }
+            
+            const content = JSON.stringify(data[section], null, 2);
+
+            setStatus(section, 'loading', '⏳ Publication...');
+
+            try {
+                // Récupérer le SHA actuel
+                let sha = null;
+                const getResponse = await fetch(
+                    `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${filename}?ref=${GITHUB_CONFIG.branch}`,
+                    { headers: { 'Authorization': `token ${token}` } }
+                );
+                if (getResponse.ok) {
+                    sha = (await getResponse.json()).sha;
+                }
+
+                const body = {
+                    message: `Mise à jour ${filename} via Admin`,
+                    content: btoa(unescape(encodeURIComponent(content))),
+                    branch: GITHUB_CONFIG.branch
+                };
+                if (sha) body.sha = sha;
+
+                const response = await fetch(
+                    `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${filename}`,
+                    {
+                        method: 'PUT',
+                        headers: {
+                            'Authorization': `token ${token}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(body)
+                    }
+                );
+
+                if (response.ok) {
+                    setStatus(section, 'saved', '✓ À jour');
+                    showToast(`✅ ${filename} publié !`, 'success');
+                } else if (response.status === 409 && retryCount < 3) {
+                    // Conflit - réessayer avec le nouveau SHA
+                    showToast('🔄 Conflit détecté, nouvelle tentative...', 'warning');
+                    await new Promise(r => setTimeout(r, 1000));
+                    return publish(section, retryCount + 1);
+                } else {
+                    const error = await response.json();
+                    throw new Error(error.message || `Erreur ${response.status}`);
+                }
+            } catch (err) {
+                setStatus(section, 'modified', '⚠️ Erreur');
+                showToast('❌ Erreur: ' + err.message, 'error');
+            }
+        }
+
+        // ===== MODAL =====
+        function closeModal() {
+            document.getElementById('modal-edit').classList.remove('active');
+            pendingPhoto = null;
+        }
+
+        // Fermer modal avec Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // ===== TOAST =====
+        function showToast(message, type) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast show ' + type;
+            setTimeout(() => toast.className = 'toast', 3000);
+        }
+    </script>
+
+</body>
+</html>

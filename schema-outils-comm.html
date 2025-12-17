@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outils de Communication - Vizille en Mouvement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: linear-gradient(135deg, #1a2a4a 0%, #0d1b2a 100%);
+            min-height: 100vh;
+            padding: 30px;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #d4a855;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.1rem;
+        }
+
+        .schema {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            min-width: 180px;
+            max-width: 220px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .box.principale {
+            border-color: #d4a855;
+            background: rgba(212, 168, 85, 0.15);
+        }
+
+        .box.collecte {
+            border-color: #5b9bd5;
+            background: rgba(91, 155, 213, 0.15);
+        }
+
+        .box.stockage {
+            border-color: #70ad47;
+            background: rgba(112, 173, 71, 0.15);
+        }
+
+        .box.diffusion {
+            border-color: #ed7d31;
+            background: rgba(237, 125, 49, 0.15);
+        }
+
+        .box.admin {
+            border-color: #9b59b6;
+            background: rgba(155, 89, 182, 0.15);
+            min-width: 250px;
+        }
+
+        .box-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .box p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.4;
+        }
+
+        .arrow-down {
+            text-align: center;
+            font-size: 2rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .lien-manuel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.08);
+            border: 1px dashed rgba(255,255,255,0.3);
+            border-radius: 10px;
+            padding: 12px 20px;
+            margin: 10px auto;
+            max-width: 500px;
+        }
+
+        .icone-manuel {
+            font-size: 1.5rem;
+        }
+
+        .texte-manuel {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+            font-style: italic;
+        }
+
+        .legende {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .legende-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .legende-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+        }
+
+        .legende-color.principale { background: #d4a855; }
+        .legende-color.collecte { background: #5b9bd5; }
+        .legende-color.admin { background: #9b59b6; }
+        .legende-color.stockage { background: #70ad47; }
+        .legende-color.diffusion { background: #ed7d31; }
+
+        .flux {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .flux h2 {
+            font-family: 'Playfair Display', serif;
+            color: #d4a855;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .flux-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .flux-numero {
+            background: #d4a855;
+            color: #1a2a4a;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .flux-texte strong {
+            color: #d4a855;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗂️ Nos Outils de Communication</h1>
+            <p>Vizille en Mouvement - Vue d'ensemble pour l'équipe</p>
+        </header>
+
+        <div class="schema">
+            <!-- Niveau 1 : Plateforme centrale -->
+            <div class="row">
+                <div class="box principale">
+                    <div class="box-icon">🌐</div>
+                    <h3>Site Web</h3>
+                    <p>Notre vitrine principale<br>Accueil, Projets, Blog, Bilan, Équipe, Contact</p>
+                </div>
+            </div>
+
+            <div class="arrow-down">⬇️ ⬆️</div>
+
+            <!-- Niveau 2 : Collecte -->
+            <div class="row">
+                <div class="box collecte">
+                    <div class="box-icon">📝</div>
+                    <h3>Formspree</h3>
+                    <p>Formulaire de contact<br>+ Inscriptions newsletter</p>
+                </div>
+                <div class="box collecte">
+                    <div class="box-icon">📘</div>
+                    <h3>Facebook</h3>
+                    <p>Réseaux sociaux<br>Posts, événements, partages</p>
+                </div>
+            </div>
+
+            <!-- Lien via Admin -->
+            <div class="lien-manuel">
+                <span class="icone-manuel">⚙️</span>
+                <span class="texte-manuel">Partage géré via l'Administration (copier-coller vers Facebook)</span>
+            </div>
+
+            <div class="arrow-down">⬇️</div>
+
+            <!-- Niveau 3 : Administration centrale -->
+            <div class="row">
+                <div class="box admin">
+                    <div class="box-icon">⚙️</div>
+                    <h3>Administration</h3>
+                    <p>Centre de pilotage<br>Partage FB, Newsletter, Abonnés</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="box stockage">
+                    <div class="box-icon">💾</div>
+                    <h3>GitHub</h3>
+                    <p>Stockage des données<br>Synchronisation équipe</p>
+                </div>
+                <div class="box stockage">
+                    <div class="box-icon">📊</div>
+                    <h3>Tableau de suivi</h3>
+                    <p>17 actions de comm<br>Statuts et priorités</p>
+                </div>
+            </div>
+
+            <div class="arrow-down">⬇️</div>
+
+            <!-- Niveau 4 : Diffusion -->
+            <div class="row">
+                <div class="box diffusion">
+                    <div class="box-icon">📧</div>
+                    <h3>Newsletter</h3>
+                    <p>Envoi hebdomadaire<br>Brevo (gratuit)</p>
+                </div>
+                <div class="box diffusion">
+                    <div class="box-icon">🖨️</div>
+                    <h3>Supports papier</h3>
+                    <p>Tracts, affiches<br>Bulletins</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Légende -->
+        <div class="legende">
+            <div class="legende-item">
+                <div class="legende-color principale"></div>
+                <span>Plateforme centrale</span>
+            </div>
+            <div class="legende-item">
+                <div class="legende-color collecte"></div>
+                <span>Collecte / Interaction</span>
+            </div>
+            <div class="legende-item">
+                <div class="legende-color admin"></div>
+                <span>Pilotage (Équipe comm)</span>
+            </div>
+            <div class="legende-item">
+                <div class="legende-color stockage"></div>
+                <span>Stockage / Données</span>
+            </div>
+            <div class="legende-item">
+                <div class="legende-color diffusion"></div>
+                <span>Diffusion</span>
+            </div>
+        </div>
+
+        <!-- Flux Newsletter -->
+        <div class="flux">
+            <h2>📬 Flux Newsletter</h2>
+            <div class="flux-item">
+                <div class="flux-numero">1</div>
+                <div class="flux-texte">
+                    <strong>Inscription</strong> → Formulaire sur le site ou lien partagé sur Facebook
+                </div>
+            </div>
+            <div class="flux-item">
+                <div class="flux-numero">2</div>
+                <div class="flux-texte">
+                    <strong>Gestion abonnés</strong> → Ajouter/supprimer les emails dans l'admin
+                </div>
+            </div>
+            <div class="flux-item">
+                <div class="flux-numero">3</div>
+                <div class="flux-texte">
+                    <strong>Rédaction</strong> → Composer la newsletter dans l'admin
+                </div>
+            </div>
+            <div class="flux-item">
+                <div class="flux-numero">4</div>
+                <div class="flux-texte">
+                    <strong>Envoi hebdo</strong> → Envoyer via Brevo (gratuit, français, RGPD)
+                </div>
+            </div>
+        </div>
+
+        <!-- Coordination Site / Facebook -->
+        <div class="flux">
+            <h2>📘 Partage vers Facebook</h2>
+            <div class="flux-item">
+                <div class="flux-numero">1</div>
+                <div class="flux-texte">
+                    <strong>Générer</strong> → Depuis l'admin, générer un post Facebook pour un article
+                </div>
+            </div>
+            <div class="flux-item">
+                <div class="flux-numero">2</div>
+                <div class="flux-texte">
+                    <strong>Copier</strong> → Copier le texte + lien généré
+                </div>
+            </div>
+            <div class="flux-item">
+                <div class="flux-numero">3</div>
+                <div class="flux-texte">
+                    <strong>Coller</strong> → Publier sur la page Facebook
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            Vizille en Mouvement 2026 • Ensemble pour une ville dynamique et solidaire
+        </footer>
+    </div>
+</body>
+</html>
