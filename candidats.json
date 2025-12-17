@@ -133,20 +133,5 @@
     "facebook": "",
     "linkedin": "",
     "twitter": ""
-  },
-  {
-    "id": 1765690882155,
-    "nom": "Jim Morrisson",
-    "role": "Adjoint aux loisirs",
-    "delegation": "Qualité de vie",
-    "photo": "images/jim-morrisson.jpg",
-    "ordre": 10,
-    "actif": true,
-    "bio": "Né à Vizille",
-    "citation": "Ne jamais remettre au lendemain ce qui peut être fait deux jours après",
-    "email": "",
-    "facebook": "",
-    "linkedin": "",
-    "twitter": ""
   }
 ]
