@@ -33,6 +33,12 @@
         }
         
         /* ===== NAVIGATION STYLE FIGARO ===== */
+        .header {
+            position: relative;
+            z-index: 100;
+            background: white;
+        }
+        
         .header-top {
             background: var(--bleu-vizille);
             padding: 0.4rem 0;
@@ -59,6 +65,18 @@
             justify-content: space-between;
             border-bottom: 1px solid var(--gris-doux);
             background: white;
+        }
+        
+        .nav-header-logo {
+            height: 85px;
+            width: auto;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(26, 58, 92, 0.2));
+        }
+        
+        .nav-header-logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.4));
         }
         
         .header-logo {
@@ -396,7 +414,7 @@
         
         <div class="header-main">
             <a href="index.html">
-                <img src="images/logo.png" alt="Vizille en Mouvement" class="header-logo">
+                <img src="images/logo.png" alt="Vizille en Mouvement" class="nav-header-logo">
             </a>
             <nav>
                 <ul>

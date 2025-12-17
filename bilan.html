@@ -60,7 +60,7 @@
         .header {
             background: linear-gradient(135deg, var(--bleu-vizille) 0%, var(--bleu-clair) 100%);
             color: white;
-            padding: 2rem 1.5rem 3rem;
+            padding: 0;
             position: relative;
             overflow: hidden;
         }
@@ -74,6 +74,7 @@
             bottom: 0;
             background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             opacity: 0.5;
+            pointer-events: none;
         }
         
         .header-content {
@@ -85,7 +86,7 @@
         
         .hero-banner {
             text-align: center;
-            padding: 1.5rem 0;
+            padding: 0.75rem 0;
             background: linear-gradient(180deg, rgba(26, 58, 92, 0.92) 0%, rgba(26, 58, 92, 0.85) 100%),
                         url('images/vizille-panorama.png') center center/cover;
             border-bottom: 5px solid var(--or);
@@ -98,7 +99,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 0.75rem;
+            margin: 0 auto 0.4rem;
             animation: figaro-pulse 4s ease-in-out infinite;
         }
         
@@ -167,7 +168,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 1rem;
-            margin-top: 1rem;
+            margin-top: 0.5rem;
         }
         
         .stat-card {
@@ -189,15 +190,17 @@
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
             font-weight: 700;
-            color: var(--or-clair);
+            color: #e8c84a;
             line-height: 1.1;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
         }
         
         .stat-label {
             font-size: 0.85rem;
-            opacity: 0.9;
+            opacity: 0.95;
             margin-top: 0.25rem;
             font-weight: 500;
+            color: white;
         }
         
         /* ===== MAIN CONTENT ===== */
@@ -817,6 +820,7 @@
             
             .stat-number {
                 font-size: 1.5rem;
+                color: #e8c84a;
             }
             
             .charts-section {
@@ -884,12 +888,14 @@
             padding: 1rem;
             opacity: 0;
             visibility: hidden;
+            pointer-events: none;
             transition: all 0.3s ease;
         }
         
         .modal-overlay.active {
             opacity: 1;
             visibility: visible;
+            pointer-events: auto;
         }
         
         .modal {
@@ -1318,6 +1324,12 @@
         }
         
         /* ===== NAVIGATION STYLE FIGARO ===== */
+        .header {
+            position: relative;
+            z-index: 9999;
+            background: white;
+        }
+        
         .header-top {
             background: var(--bleu-vizille);
             padding: 0.4rem 0;
@@ -1338,7 +1350,7 @@
         .header-main {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 0.5rem 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -1460,7 +1472,27 @@
                 font-size: 1.5rem;
             }
         }
-    </style>
+    
+
+/* === FIX visibilité libellés des chiffres globaux (KPI) === */
+.header .stats-grid{
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--bleu-vizille) 0%, var(--bleu-clair) 100%);
+  border: 1px solid rgba(201, 162, 39, 0.25);
+}
+
+.header .stats-grid .stat-card{
+  background: rgba(255,255,255,0.12);
+}
+
+.header .stats-grid .stat-label{
+  color: #fff;
+  opacity: 0.95;
+}
+
+</style>
 </head>
 <body>
     <!-- Navigation Site -->

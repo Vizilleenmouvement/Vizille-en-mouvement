@@ -32,6 +32,30 @@
     }
     
     /* ===== HEADER / NAVIGATION STYLE FIGARO ===== */
+    .header {
+        position: relative;
+        z-index: 1000;
+        background: white;
+    }
+    
+    .header-main {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #e8e6e1;
+        background: white;
+        position: relative;
+        z-index: 1000;
+    }
+    
+    nav {
+        position: relative;
+        z-index: 1000;
+    }
+    
     .header-top {
         background: var(--bleu);
         padding: 0.4rem 0;
@@ -60,14 +84,14 @@
         background: white;
     }
     
-    .header-logo {
+    .nav-header-logo {
         height: 85px;
         width: auto;
         transition: all 0.3s ease;
         filter: drop-shadow(0 2px 4px rgba(26, 58, 92, 0.2));
     }
     
-    .header-logo:hover {
+    .nav-header-logo:hover {
         transform: scale(1.05);
         filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.4));
     }
@@ -96,6 +120,9 @@
         letter-spacing: 0.5px;
         text-transform: uppercase;
         transition: all 0.2s;
+        cursor: pointer;
+        position: relative;
+        z-index: 1000;
     }
     
     nav ul li a:hover {
@@ -470,7 +497,7 @@
     
     <div class="header-main">
         <a href="index.html">
-            <img src="images/logo.png" alt="Vizille en Mouvement" class="header-logo">
+            <img src="images/logo.png" alt="Vizille en Mouvement" class="nav-header-logo">
         </a>
         <nav>
             <ul>
