@@ -294,7 +294,7 @@
     "statut": "Programmé",
     "annee": 2027,
     "budget": 0,
-    "resume": "Vélo",
+    "resume": "Vélo vélo et encore vélo",
     "description": "",
     "importance": 2,
     "chiffres": []
@@ -331,7 +331,7 @@
     "annee": 2027,
     "budget": 0,
     "resume": "Accessibilité",
-    "description": "toujours",
+    "description": "",
     "importance": 2,
     "chiffres": []
   },
