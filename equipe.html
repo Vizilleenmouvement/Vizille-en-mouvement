@@ -523,6 +523,194 @@
         @media (max-width: 480px) {
             .values-grid { grid-template-columns: 1fr; }
         }
+        
+        /* ===== MODAL CANDIDAT ===== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 1rem;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.2s;
+        }
+        
+        .modal-close:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+        
+        .modal-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--or);
+            margin-bottom: 1rem;
+        }
+        
+        .modal-photo-placeholder {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 1rem;
+            border: 4px solid var(--or);
+        }
+        
+        .modal-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .modal-role {
+            color: var(--or);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .modal-body {
+            padding: 1.5rem;
+        }
+        
+        .modal-delegation {
+            display: inline-block;
+            background: var(--bleu-vizille);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-bio {
+            color: var(--gris-texte);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-citation {
+            background: var(--blanc-casse);
+            border-left: 4px solid var(--or);
+            padding: 1rem;
+            font-style: italic;
+            color: var(--bleu-vizille);
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-citation::before {
+            content: '« ';
+        }
+        
+        .modal-citation::after {
+            content: ' »';
+        }
+        
+        .modal-socials {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gris-doux);
+        }
+        
+        .modal-socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: var(--bleu-vizille);
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.2s;
+        }
+        
+        .modal-socials a:hover {
+            background: var(--or);
+            transform: scale(1.1);
+        }
+        
+        /* Carte cliquable */
+        .team-card {
+            cursor: pointer;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .team-card::after {
+            content: '👆 Cliquer pour en savoir plus';
+            display: block;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--gris-texte);
+            opacity: 0.6;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px dashed var(--gris-doux);
+        }
     </style>
 </head>
 <body>
@@ -705,7 +893,7 @@
                 return;
             }
             
-            grid.innerHTML = candidatsData.map(candidat => {
+            grid.innerHTML = candidatsData.map((candidat, index) => {
                 const photoHtml = candidat.photo 
                     ? `<img src="${candidat.photo}" alt="${candidat.nom}" class="team-photo">`
                     : `<div class="team-photo-placeholder">👤</div>`;
@@ -714,22 +902,21 @@
                 let socialsHtml = '';
                 if (candidat.email || candidat.facebook || candidat.linkedin || candidat.twitter) {
                     let links = '';
-                    if (candidat.email) links += `<a href="mailto:${candidat.email}" title="Email">📧</a>`;
-                    if (candidat.facebook) links += `<a href="${candidat.facebook}" target="_blank" title="Facebook">📘</a>`;
-                    if (candidat.linkedin) links += `<a href="${candidat.linkedin}" target="_blank" title="LinkedIn">💼</a>`;
-                    if (candidat.twitter) links += `<a href="${candidat.twitter}" target="_blank" title="Twitter">🐦</a>`;
+                    if (candidat.email) links += `<a href="mailto:${candidat.email}" title="Email" onclick="event.stopPropagation()">📧</a>`;
+                    if (candidat.facebook) links += `<a href="${candidat.facebook}" target="_blank" title="Facebook" onclick="event.stopPropagation()">📘</a>`;
+                    if (candidat.linkedin) links += `<a href="${candidat.linkedin}" target="_blank" title="LinkedIn" onclick="event.stopPropagation()">💼</a>`;
+                    if (candidat.twitter) links += `<a href="${candidat.twitter}" target="_blank" title="Twitter" onclick="event.stopPropagation()">🐦</a>`;
                     socialsHtml = `<div class="team-socials">${links}</div>`;
                 }
                 
                 return `
-                    <div class="team-card">
+                    <div class="team-card" onclick="openCandidatModal(${index})">
                         ${photoHtml}
                         <div class="team-info">
                             <h3 class="team-name">${candidat.nom}</h3>
                             ${candidat.role ? `<p class="team-role">${candidat.role}</p>` : ''}
                             ${candidat.delegation ? `<span class="team-delegation">${candidat.delegation}</span>` : ''}
-                            ${candidat.bio ? `<p class="team-bio">${candidat.bio}</p>` : ''}
-                            ${candidat.citation ? `<p class="team-citation">${candidat.citation}</p>` : ''}
+                            ${candidat.bio ? `<p class="team-bio">${candidat.bio.substring(0, 100)}${candidat.bio.length > 100 ? '...' : ''}</p>` : ''}
                             ${socialsHtml}
                         </div>
                     </div>
@@ -738,6 +925,104 @@
         }
         
         document.addEventListener('DOMContentLoaded', loadCandidats);
+        
+        // ===== MODAL CANDIDAT =====
+        function openCandidatModal(index) {
+            const candidat = candidatsData[index];
+            if (!candidat) return;
+            
+            const modal = document.getElementById('candidat-modal');
+            
+            // Photo
+            const photoContainer = document.getElementById('modal-photo-container');
+            if (candidat.photo) {
+                photoContainer.innerHTML = `<img src="${candidat.photo}" alt="${candidat.nom}" class="modal-photo">`;
+            } else {
+                photoContainer.innerHTML = `<div class="modal-photo-placeholder">👤</div>`;
+            }
+            
+            // Infos
+            document.getElementById('modal-name').textContent = candidat.nom || '';
+            document.getElementById('modal-role').textContent = candidat.role || '';
+            
+            // Délégation
+            const delegationEl = document.getElementById('modal-delegation');
+            if (candidat.delegation) {
+                delegationEl.textContent = candidat.delegation;
+                delegationEl.style.display = 'inline-block';
+            } else {
+                delegationEl.style.display = 'none';
+            }
+            
+            // Bio
+            const bioEl = document.getElementById('modal-bio');
+            if (candidat.bio) {
+                bioEl.textContent = candidat.bio;
+                bioEl.style.display = 'block';
+            } else {
+                bioEl.style.display = 'none';
+            }
+            
+            // Citation
+            const citationEl = document.getElementById('modal-citation');
+            if (candidat.citation) {
+                citationEl.textContent = candidat.citation;
+                citationEl.style.display = 'block';
+            } else {
+                citationEl.style.display = 'none';
+            }
+            
+            // Réseaux sociaux
+            const socialsEl = document.getElementById('modal-socials');
+            let socialsHtml = '';
+            if (candidat.email) socialsHtml += `<a href="mailto:${candidat.email}" title="Email">📧</a>`;
+            if (candidat.facebook) socialsHtml += `<a href="${candidat.facebook}" target="_blank" title="Facebook">📘</a>`;
+            if (candidat.linkedin) socialsHtml += `<a href="${candidat.linkedin}" target="_blank" title="LinkedIn">💼</a>`;
+            if (candidat.twitter) socialsHtml += `<a href="${candidat.twitter}" target="_blank" title="Twitter">🐦</a>`;
+            
+            if (socialsHtml) {
+                socialsEl.innerHTML = socialsHtml;
+                socialsEl.style.display = 'flex';
+            } else {
+                socialsEl.style.display = 'none';
+            }
+            
+            // Afficher
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeCandidatModal() {
+            document.getElementById('candidat-modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Fermer avec Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeCandidatModal();
+        });
+        
+        // Rendre accessible globalement
+        window.openCandidatModal = openCandidatModal;
+        window.closeCandidatModal = closeCandidatModal;
     </script>
+    
+    <!-- Modal Candidat -->
+    <div class="modal-overlay" id="candidat-modal" onclick="if(event.target === this) closeCandidatModal()">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeCandidatModal()">✕</button>
+                <div id="modal-photo-container"></div>
+                <h2 class="modal-name" id="modal-name"></h2>
+                <p class="modal-role" id="modal-role"></p>
+            </div>
+            <div class="modal-body">
+                <span class="modal-delegation" id="modal-delegation"></span>
+                <p class="modal-bio" id="modal-bio"></p>
+                <p class="modal-citation" id="modal-citation"></p>
+                <div class="modal-socials" id="modal-socials"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

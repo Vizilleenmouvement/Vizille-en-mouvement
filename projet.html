@@ -1652,8 +1652,8 @@ const themeConfig = {
 // ===== INITIALISATION =====
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        // Charger les données
-        const response = await fetch('projets.json');
+        // Charger les données (cache-buster pour éviter le cache)
+        const response = await fetch('projets.json?v=' + Date.now());
         if (!response.ok) throw new Error('Erreur chargement données');
         allData = await response.json();
         
@@ -1704,6 +1704,16 @@ function initializeFilters() {
             btn.classList.add('active');
             document.getElementById('filter-theme').value = btn.dataset.theme;
             applyFilters();
+            
+            // Scroller vers les cartes de résultats
+            setTimeout(() => {
+                const target = document.getElementById('view-cards') || document.getElementById('view-themes') || document.getElementById('view-table');
+                if (target && !target.classList.contains('hidden')) {
+                    const offset = 20;
+                    const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            }, 150);
         });
     });
     
@@ -2237,7 +2247,15 @@ function filterByTheme(theme) {
     
     applyFilters();
     
-    document.querySelector('.main-content').scrollIntoView({ behavior: 'smooth' });
+    // Scroller vers les cartes de résultats
+    setTimeout(() => {
+        const target = document.getElementById('view-cards');
+        if (target) {
+            const offset = 20;
+            const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    }, 150);
 }
 
 function returnToProject() {
