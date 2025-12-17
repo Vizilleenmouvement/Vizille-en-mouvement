@@ -507,7 +507,7 @@
         // Charger les FAQ
         async function loadFaq() {
             try {
-                const response = await fetch('faq.json');
+                const response = await fetch('faq.json?v=' + Date.now());
                 if (!response.ok) throw new Error('Erreur');
                 
                 faqData = await response.json();
