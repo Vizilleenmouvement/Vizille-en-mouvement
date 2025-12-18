@@ -36,42 +36,6 @@
     "chiffres": []
   },
   {
-    "id": 4,
-    "titre": "Extension du réseau de chaleur (phase 2)",
-    "theme": "Environnement",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Transition énergétique",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 5,
-    "titre": "Développer les jardins partagés",
-    "theme": "Environnement",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Nature en ville",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 6,
-    "titre": "Renforcer la biodiversité urbaine",
-    "theme": "Environnement",
-    "statut": "Programmé",
-    "annee": 2028,
-    "budget": 0,
-    "resume": "Écologie locale",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
     "id": 7,
     "titre": "Renforcer les actions du CCAS",
     "theme": "Solidarité",
