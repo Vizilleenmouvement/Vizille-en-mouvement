@@ -2028,7 +2028,7 @@ function renderCardsView() {
                     <h3 class="card-title">${projet.titre}</h3>
                     <p class="card-description">${projet.resume || projet.description || 'Engagement pour le mandat 2026-2032.'}</p>
                     <div class="card-footer">
-                        <span class="card-budget">${projet.budget || ''}</span>
+                        <span class="card-budget">${projet.budget ? projet.budget : 'En cours d\'évaluation'}</span>
                         <span class="card-year">${projet.annee ? 'Horizon ' + projet.annee : ''}</span>
                     </div>
                     <div class="card-detail-hint">👆 Cliquer pour les détails</div>
@@ -2061,7 +2061,7 @@ function renderTableView() {
                 <td>${projet.titre}</td>
                 <td><span class="table-statut ${horizonClass}">${horizon}</span></td>
                 <td>${projet.annee || '-'}</td>
-                <td>${projet.budget || '-'}</td>
+                <td>${projet.budget ? projet.budget : 'En cours d\'évaluation'}</td>
             </tr>
         `;
     });
