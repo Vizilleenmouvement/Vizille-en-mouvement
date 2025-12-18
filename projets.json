@@ -13,7 +13,7 @@
   },
   {
     "id": 2,
-    "titre": "Poursuivre la rénovation des quartiers prioritaires",
+    "titre": "Poursuivre la rénovation des quartiers",
     "theme": "Urbanisme",
     "statut": "Programmé",
     "annee": 2028,
@@ -25,7 +25,7 @@
   },
   {
     "id": 3,
-    "titre": "Finaliser l'Alliance Textile et les Tanneries",
+    "titre": "Finaliser les projets des Tanneries",
     "theme": "Urbanisme",
     "statut": "Programmé",
     "annee": 2029,
@@ -55,18 +55,6 @@
     "annee": 2028,
     "budget": 0,
     "resume": "Accessibilité PMR",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 9,
-    "titre": "Créer un fonds d'aide d'urgence",
-    "theme": "Solidarité",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Aide d'urgence",
     "description": "",
     "importance": 1,
     "chiffres": []
@@ -108,18 +96,6 @@
     "chiffres": []
   },
   {
-    "id": 13,
-    "titre": "Restauration scolaire de qualité (bio, local, tarification sociale)",
-    "theme": "Enfance",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Cantine responsable",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
     "id": 14,
     "titre": "Renforcer les capacités d'accueil périscolaire",
     "theme": "Enfance",
@@ -153,18 +129,6 @@
     "resume": "Animation culturelle",
     "description": "",
     "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 17,
-    "titre": "Moderniser la médiathèque",
-    "theme": "Culture",
-    "statut": "Programmé",
-    "annee": 2028,
-    "budget": 0,
-    "resume": "Médiathèque",
-    "description": "",
-    "importance": 1,
     "chiffres": []
   },
   {
@@ -258,20 +222,20 @@
     "statut": "Programmé",
     "annee": 2027,
     "budget": 0,
-    "resume": "Vélo vélo et encore vélo",
+    "resume": "Laison verte chemin de murs",
     "description": "",
     "importance": 2,
     "chiffres": []
   },
   {
     "id": 26,
-    "titre": "Piétoniser certaines zones du centre",
+    "titre": "Transformer certaines zones du centre en zones partagées",
     "theme": "Mobilités",
     "statut": "Programmé",
     "annee": 2028,
     "budget": 0,
-    "resume": "Piétonisation",
-    "description": "",
+    "resume": "Partager",
+    "description": "Une zone partagée est un espace de circulation apaisé, conçu pour permettre la cohabitation de tous les usages — piétons, vélos, engins de déplacement personnel, véhicules motorisés — avec une priorité donnée aux usagers les plus vulnérables.\nCe n’est ni une rue piétonne, ni une rue “classique” :\nc’est un espace de vie avant d’être un axe de circulation.",
     "importance": 1,
     "chiffres": []
   },
@@ -297,30 +261,6 @@
     "resume": "Accessibilité",
     "description": "",
     "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 29,
-    "titre": "Étudier une résidence intergénérationnelle",
-    "theme": "Seniors",
-    "statut": "Programmé",
-    "annee": 2028,
-    "budget": 0,
-    "resume": "Habitat senior",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 30,
-    "titre": "Développer le portage de repas",
-    "theme": "Seniors",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Services aux aînés",
-    "description": "",
-    "importance": 1,
     "chiffres": []
   },
   {
@@ -396,15 +336,15 @@
     "chiffres": []
   },
   {
-    "id": 1765709728312,
-    "titre": "vélo",
-    "theme": "Sport",
-    "resume": "vélo",
-    "statut": "Programmé",
-    "annee": 2026,
-    "description": "",
+    "id": 1766034821819,
+    "titre": "Développer des espaces partagés en centre-ville",
+    "theme": "Mobilités",
+    "statut": "Étude",
+    "annee": 2029,
     "budget": 0,
-    "importance": 1,
+    "resume": "Faire du centre-ville un espace apaisé, attractif et accessible à tous.",
+    "description": "Le projet vise à renforcer le rôle du centre-ville comme espace de vie, de rencontre et de commerce.\nIl s’appuie sur le développement d’espaces partagés, la continuité des cheminements piétons, la valorisation de la rue piétonne et la liaison entre le marché et le château.\nLa circulation y est organisée pour privilégier les usages locaux et limiter le transit.",
+    "importance": 2,
     "chiffres": []
   }
 ]
