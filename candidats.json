@@ -120,20 +120,5 @@
     "facebook": "",
     "linkedin": "",
     "twitter": ""
-  },
-  {
-    "id": 9,
-    "nom": "Charlotte Corday",
-    "role": "Adjointe",
-    "delegation": "Démocratie & Citoyenneté",
-    "photo": "",
-    "ordre": 9,
-    "actif": true,
-    "bio": "",
-    "citation": "",
-    "email": "",
-    "facebook": "",
-    "linkedin": "",
-    "twitter": ""
   }
 ]
