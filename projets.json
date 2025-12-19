@@ -51,12 +51,12 @@
     "id": 8,
     "titre": "Améliorer l'accessibilité de tous les bâtiments",
     "theme": "Solidarité",
-    "statut": "Programmé",
+    "statut": "Prioritaire",
     "annee": 2028,
     "budget": 0,
     "resume": "Accessibilité PMR",
     "description": "",
-    "importance": 1,
+    "importance": 3,
     "chiffres": []
   },
   {
