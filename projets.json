@@ -1,53 +1,5 @@
 [
   {
-    "id": 1,
-    "titre": "Achever le projet Centralité et les voies adjacentes",
-    "theme": "Urbanisme",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Finalisation du cœur de ville",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 2,
-    "titre": "Poursuivre la rénovation des quartiers",
-    "theme": "Urbanisme",
-    "statut": "Programmé",
-    "annee": 2028,
-    "budget": 0,
-    "resume": "Rénovation urbaine",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 3,
-    "titre": "Finaliser les projets des Tanneries",
-    "theme": "Urbanisme",
-    "statut": "Programmé",
-    "annee": 2029,
-    "budget": 0,
-    "resume": "Reconversion du patrimoine industriel",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 7,
-    "titre": "Renforcer les actions du CCAS",
-    "theme": "Solidarité",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Aide sociale",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
     "id": 8,
     "titre": "Améliorer l'accessibilité de tous les bâtiments",
     "theme": "Solidarité",
@@ -69,54 +21,6 @@
     "resume": "Accès aux soins",
     "description": "",
     "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 11,
-    "titre": "Développer les actions de prévention",
-    "theme": "Santé",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Prévention santé",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 12,
-    "titre": "Promouvoir le sport-santé pour tous",
-    "theme": "Santé",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Sport et bien-être",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 14,
-    "titre": "Renforcer les capacités d'accueil périscolaire",
-    "theme": "Enfance",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Périscolaire",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 15,
-    "titre": "Moderniser les équipements des écoles",
-    "theme": "Enfance",
-    "statut": "Programmé",
-    "annee": 2028,
-    "budget": 0,
-    "resume": "Écoles modernes",
-    "description": "",
-    "importance": 1,
     "chiffres": []
   },
   {
@@ -153,18 +57,6 @@
     "resume": "Commerce local",
     "description": "",
     "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 20,
-    "titre": "Développer la zone d'activités",
-    "theme": "Économie",
-    "statut": "Programmé",
-    "annee": 2028,
-    "budget": 0,
-    "resume": "Développement économique",
-    "description": "",
-    "importance": 1,
     "chiffres": []
   },
   {
@@ -264,21 +156,9 @@
     "chiffres": []
   },
   {
-    "id": 31,
-    "titre": "Instaurer un budget participatif",
-    "theme": "Démocratie locale",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Participation citoyenne",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
     "id": 32,
-    "titre": "Créer des conseils de quartier",
-    "theme": "Démocratie locale",
+    "titre": "Instaurer des correspondants de quartier",
+    "theme": "Sécurité",
     "statut": "Programmé",
     "annee": 2026,
     "budget": 0,
