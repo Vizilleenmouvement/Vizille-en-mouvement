@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vizille en Mouvement – Bilan 2020-2026</title>
-    <meta name="description" content="Tableau de bord interactif des 271 actions municipales de Vizille (2020-2026). 41,5 M€ d'investissements pour l'avenir de notre commune.">
+    <meta name="description" content="Tableau de bord interactif des 347 actions municipales de Vizille (2020-2026). 41,5 M€ d'investissements pour l'avenir de notre commune.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1585,16 +1585,20 @@
                     <div class="stat-label">Actions totales</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number" id="stat-budget">—</div>
-                    <div class="stat-label">Budget total</div>
-                </div>
-                <div class="stat-card">
                     <div class="stat-number" id="stat-realises">—</div>
                     <div class="stat-label">Réalisées</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number" id="stat-encours">—</div>
                     <div class="stat-label">En cours</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="stat-decidees">—</div>
+                    <div class="stat-label">Décidées</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="stat-programmees">—</div>
+                    <div class="stat-label">Programmées</div>
                 </div>
             </div>
         </div>
@@ -1754,7 +1758,7 @@
         <div class="footer-content">
             <div>
                 <h4>À propos</h4>
-                <p>Ce tableau de bord présente les 271 actions municipales réalisées ou engagées par la Ville de Vizille durant le mandat 2020-2026, représentant plus de 41 millions d'euros d'investissements.</p>
+                <p>Ce tableau de bord présente les 347 actions municipales réalisées ou engagées par la Ville de Vizille durant le mandat 2020-2026, représentant plus de 41 millions d'euros d'investissements.</p>
             </div>
             <div>
                 <h4>Sources</h4>
@@ -1889,15 +1893,18 @@ async function loadData() {
 
 // ===== MISE À JOUR DES STATISTIQUES =====
 function updateStats() {
-    const total = allData.length;
-    const realises = allData.filter(d => d.statut === 'Réalisé').length;
-    const encours = allData.filter(d => d.statut === 'En cours').length;
-    const budget = allData.reduce((sum, d) => sum + (d.budget || 0), 0);
-    
+    // Chiffres de référence (mise à jour manuelle)
+    const total = 347;
+    const realises = 281;
+    const encours = 38;
+    const decidees = 22;
+    const programmees = 6;
+
     animateNumber('stat-total', total);
     animateNumber('stat-realises', realises);
     animateNumber('stat-encours', encours);
-    document.getElementById('stat-budget').textContent = formatBudget(budget);
+    animateNumber('stat-decidees', decidees);
+    animateNumber('stat-programmees', programmees);
 }
 
 function animateNumber(elementId, target) {
