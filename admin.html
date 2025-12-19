@@ -528,7 +528,7 @@
         <button class="nav-tab" data-tab="projets">🚀 Projets</button>
         <button class="nav-tab" data-tab="actions">📊 Actions</button>
         <button class="nav-tab" data-tab="candidats">👥 Candidats</button>
-        <button class="nav-tab" data-tab="faq">💬 Ensemble</button>
+        <button class="nav-tab" data-tab="faq">💬 Vos questions</button>
         <button class="nav-tab" data-tab="articles">📰 Articles</button>
         <button class="nav-tab" data-tab="communication">📢 Communication</button>
         <button class="nav-tab" data-tab="config">⚙️ Paramètres</button>
@@ -603,8 +603,8 @@
                         <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--gris-bg); border-radius: 8px;">
                             <span style="font-size: 1.5rem;">💬</span>
                             <div>
-                                <strong style="color: var(--bleu);">Ensemble</strong>
-                                <p style="font-size: 0.9rem; margin: 0;">Questions/réponses des citoyens → Page "Ensemble"</p>
+                                <strong style="color: var(--bleu);">Vos questions</strong>
+                                <p style="font-size: 0.9rem; margin: 0;">Questions/réponses des citoyens → Page "Vos questions"</p>
                             </div>
                         </div>
                         <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--gris-bg); border-radius: 8px;">
@@ -844,7 +844,7 @@
         <section class="tab-content" id="tab-faq">
             <div class="card">
                 <div class="card-header">
-                    <h2>💬 Ensemble - Questions / Réponses</h2>
+                    <h2>💬 Vos questions - Questions / Réponses</h2>
                     <div class="publish-bar">
                         <span class="status saved" id="status-faq">✓ À jour</span>
                         <button class="btn-publish" onclick="publish('faq')">🚀 Publier</button>
@@ -1082,7 +1082,7 @@
                     <h3 style="color: var(--bleu); margin: 2rem 0 1rem;">🎨 Personnalisation</h3>
                     <div class="form-group">
                         <label>Slogan</label>
-                        <input type="text" id="config-slogan" placeholder="Ensemble pour une ville dynamique et solidaire" onchange="markModified('config')">
+                        <input type="text" id="config-slogan" placeholder="Vos questions pour une ville dynamique et solidaire" onchange="markModified('config')">
                     </div>
 
                     <h3 style="color: var(--bleu); margin: 2rem 0 1rem;">🔒 Sécurité</h3>
@@ -1248,7 +1248,7 @@
                 twitter: '',
                 autre: '',
                 permanences: '',
-                slogan: 'Ensemble pour une ville dynamique et solidaire'
+                slogan: 'Vos questions pour une ville dynamique et solidaire'
             }
         };
 
@@ -2564,7 +2564,7 @@ ${siteUrl}
             
             let newsletter = `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🏛️ VIZILLE EN MOUVEMENT
-Ensemble pour une ville dynamique et solidaire
+Vos questions pour une ville dynamique et solidaire
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 📅 ${dateFormatted}
@@ -2654,7 +2654,7 @@ Pour vous désabonner, répondez à cet email.
             document.getElementById('config-twitter').value = data.config.twitter || '';
             document.getElementById('config-autre').value = data.config.autre || '';
             document.getElementById('config-permanences').value = data.config.permanences || '';
-            document.getElementById('config-slogan').value = data.config.slogan || 'Ensemble pour une ville dynamique et solidaire';
+            document.getElementById('config-slogan').value = data.config.slogan || 'Vos questions pour une ville dynamique et solidaire';
         }
 
         // ===== PUBLICATION =====
