@@ -1324,6 +1324,149 @@
         .modal-footer .btn {
             flex: 1;
         }
+        
+        /* ===== NOUVELLES SECTIONS MODAL ===== */
+        
+        /* Infos clés (année, budget) */
+        .modal-infos-cles {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .info-cle {
+            flex: 1;
+            min-width: 140px;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--blanc-casse) 0%, #f5f5f5 100%);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--or);
+            text-align: center;
+        }
+        
+        .info-cle-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 0.25rem;
+        }
+        
+        .info-cle-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--bleu-vizille);
+        }
+        
+        .info-cle-value.budget {
+            color: var(--vert-realise);
+        }
+        
+        /* Image du projet */
+        .modal-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .modal-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-gallery img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .modal-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Documents */
+        .documents-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .document-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: linear-gradient(135deg, #fff9e6 0%, #fff5d6 100%);
+            border-radius: var(--radius-sm);
+            border: 1px solid #eed9a0;
+            text-decoration: none;
+            color: var(--gris-texte);
+            transition: all 0.2s ease;
+        }
+        
+        .document-item:hover {
+            background: linear-gradient(135deg, #fff5d6 0%, #ffefb8 100%);
+            border-color: var(--or);
+            transform: translateX(5px);
+        }
+        
+        .document-icon {
+            font-size: 1.5rem;
+        }
+        
+        .document-info {
+            flex: 1;
+        }
+        
+        .document-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--bleu-vizille);
+        }
+        
+        .document-desc {
+            font-size: 0.8rem;
+            color: #888;
+        }
+        
+        .document-download {
+            font-size: 1.2rem;
+            color: var(--or);
+        }
+        
+        /* Description améliorée */
+        .description-resume {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--bleu-vizille);
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--or);
+        }
+        
+        .description-complete {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--gris-texte);
+            white-space: pre-line;
+        }
+        
+        .description-complete:empty {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -1577,28 +1720,54 @@
             </div>
             
             <div class="modal-body">
-                <!-- Résumé -->
+                <!-- Infos clés (année, budget) -->
+                <div class="modal-infos-cles" id="modal-infos-cles">
+                    <div class="info-cle">
+                        <div class="info-cle-label">📅 Horizon</div>
+                        <div class="info-cle-value" id="modal-annee">-</div>
+                    </div>
+                    <div class="info-cle">
+                        <div class="info-cle-label">💰 Budget estimé</div>
+                        <div class="info-cle-value budget" id="modal-budget">-</div>
+                    </div>
+                </div>
+                
+                <!-- Image du projet -->
+                <section class="modal-section hidden" id="section-image">
+                    <h3>🖼️ Illustration</h3>
+                    <img class="modal-image" id="modal-image" src="" alt="">
+                    <div class="modal-gallery" id="modal-gallery"></div>
+                </section>
+                
+                <!-- Résumé et Description -->
                 <section class="modal-section">
                     <h3>📋 Notre engagement</h3>
-                    <p id="modal-description"></p>
+                    <p class="description-resume" id="modal-resume"></p>
+                    <p class="description-complete" id="modal-description"></p>
                 </section>
                 
                 <!-- Chiffres clés -->
-                <section class="modal-section" id="section-chiffres">
+                <section class="modal-section hidden" id="section-chiffres">
                     <h3>📊 Objectifs chiffrés</h3>
                     <div class="chiffres-grid" id="modal-chiffres"></div>
                 </section>
                 
                 <!-- Chronologie -->
-                <section class="modal-section" id="section-chronologie">
+                <section class="modal-section hidden" id="section-chronologie">
                     <h3>📅 Calendrier prévisionnel</h3>
                     <div class="timeline" id="modal-timeline"></div>
                 </section>
                 
                 <!-- Détails complémentaires -->
-                <section class="modal-section" id="section-details">
+                <section class="modal-section hidden" id="section-details">
                     <h3>📝 Détails</h3>
                     <div id="modal-details"></div>
+                </section>
+                
+                <!-- Documents -->
+                <section class="modal-section hidden" id="section-documents">
+                    <h3>📎 Documents joints</h3>
+                    <div class="documents-list" id="modal-documents"></div>
                 </section>
                 
                 <!-- Sources -->
@@ -2100,8 +2269,65 @@ function openProjectModal(projectId) {
     document.getElementById('modal-statut').textContent = horizon;
     document.getElementById('modal-statut').className = 'modal-statut ' + getHorizonClass(horizon);
     
-    // Résumé
-    document.getElementById('modal-description').textContent = project.resume || project.description || 'Pas de description disponible.';
+    // Infos clés (année et budget)
+    document.getElementById('modal-annee').textContent = project.annee ? project.annee : 'À définir';
+    const budgetValue = project.budget ? project.budget.toLocaleString('fr-FR') + ' €' : 'En cours d\'évaluation';
+    document.getElementById('modal-budget').textContent = budgetValue;
+    
+    // Image du projet
+    const imageSection = document.getElementById('section-image');
+    const mainImage = document.getElementById('modal-image');
+    const gallery = document.getElementById('modal-gallery');
+    
+    if (project.image) {
+        imageSection.classList.remove('hidden');
+        mainImage.src = project.image;
+        mainImage.alt = project.titre;
+        mainImage.style.display = 'block';
+        gallery.innerHTML = '';
+        
+        // Si galerie d'images multiples
+        if (project.images && project.images.length > 0) {
+            gallery.innerHTML = project.images.map(img => `
+                <img src="${img.url}" alt="${img.alt || project.titre}" onclick="document.getElementById('modal-image').src='${img.url}'">
+            `).join('');
+        }
+    } else if (project.images && project.images.length > 0) {
+        imageSection.classList.remove('hidden');
+        mainImage.src = project.images[0].url;
+        mainImage.alt = project.images[0].alt || project.titre;
+        mainImage.style.display = 'block';
+        gallery.innerHTML = project.images.map(img => `
+            <img src="${img.url}" alt="${img.alt || project.titre}" onclick="document.getElementById('modal-image').src='${img.url}'">
+        `).join('');
+    } else {
+        imageSection.classList.add('hidden');
+        mainImage.style.display = 'none';
+        gallery.innerHTML = '';
+    }
+    
+    // Résumé et Description complète
+    const resumeEl = document.getElementById('modal-resume');
+    const descEl = document.getElementById('modal-description');
+    
+    if (project.resume) {
+        resumeEl.textContent = project.resume;
+        resumeEl.style.display = 'block';
+    } else {
+        resumeEl.style.display = 'none';
+    }
+    
+    if (project.description && project.description.trim()) {
+        descEl.textContent = project.description;
+        descEl.style.display = 'block';
+    } else if (!project.resume) {
+        // Si pas de résumé ni description, afficher un texte par défaut
+        resumeEl.textContent = 'Pas de description disponible.';
+        resumeEl.style.display = 'block';
+        descEl.style.display = 'none';
+    } else {
+        descEl.style.display = 'none';
+    }
     
     // Chiffres clés
     const chiffresSection = document.getElementById('section-chiffres');
@@ -2141,6 +2367,28 @@ function openProjectModal(projectId) {
         detailsContainer.innerHTML = `<p>${project.details}</p>`;
     } else {
         detailsSection.classList.add('hidden');
+    }
+    
+    // Documents
+    const docsSection = document.getElementById('section-documents');
+    const docsContainer = document.getElementById('modal-documents');
+    if (project.documents && project.documents.length > 0) {
+        docsSection.classList.remove('hidden');
+        docsContainer.innerHTML = project.documents.map(doc => {
+            const icon = getDocumentIcon(doc.type || doc.url);
+            return `
+                <a href="${doc.url}" target="_blank" rel="noopener" class="document-item">
+                    <span class="document-icon">${icon}</span>
+                    <div class="document-info">
+                        <div class="document-name">${doc.nom || doc.label || 'Document'}</div>
+                        ${doc.description ? `<div class="document-desc">${doc.description}</div>` : ''}
+                    </div>
+                    <span class="document-download">⬇️</span>
+                </a>
+            `;
+        }).join('');
+    } else {
+        docsSection.classList.add('hidden');
     }
     
     // Sources
@@ -2188,6 +2436,19 @@ function openProjectModal(projectId) {
     // Afficher
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+}
+
+// Fonction utilitaire pour les icônes de documents
+function getDocumentIcon(typeOrUrl) {
+    if (!typeOrUrl) return '📄';
+    const type = typeOrUrl.toLowerCase();
+    if (type.includes('pdf')) return '📕';
+    if (type.includes('doc') || type.includes('word')) return '📘';
+    if (type.includes('xls') || type.includes('excel')) return '📗';
+    if (type.includes('ppt') || type.includes('powerpoint')) return '📙';
+    if (type.includes('image') || type.includes('jpg') || type.includes('png')) return '🖼️';
+    if (type.includes('video') || type.includes('mp4')) return '🎬';
+    return '📄';
 }
 
 function closeProjectModal() {

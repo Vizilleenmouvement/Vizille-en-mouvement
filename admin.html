@@ -1485,6 +1485,42 @@
                 `<option value="${s}" ${p.statut === s ? 'selected' : ''}>${s}</option>`
             ).join('');
             
+            // Préparer les chiffres existants
+            const chiffresHTML = (p.chiffres || []).map((c, i) => `
+                <div class="chiffre-row" style="display: grid; grid-template-columns: 1fr 2fr auto; gap: 0.5rem; margin-bottom: 0.5rem;">
+                    <input type="text" class="chiffre-valeur" value="${c.valeur || ''}" placeholder="Ex: 150 000 €">
+                    <input type="text" class="chiffre-label" value="${c.label || ''}" placeholder="Ex: Budget total">
+                    <button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.remove()">🗑️</button>
+                </div>
+            `).join('');
+            
+            // Préparer la chronologie existante
+            const chronoHTML = (p.chronologie || []).map((c, i) => `
+                <div class="chrono-row" style="display: grid; grid-template-columns: 120px 1fr auto; gap: 0.5rem; margin-bottom: 0.5rem;">
+                    <input type="text" class="chrono-date" value="${c.date || ''}" placeholder="Ex: 2027">
+                    <input type="text" class="chrono-event" value="${c.evenement || ''}" placeholder="Ex: Lancement des travaux">
+                    <button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.remove()">🗑️</button>
+                </div>
+            `).join('');
+            
+            // Préparer les documents existants
+            const docsHTML = (p.documents || []).map((d, i) => `
+                <div class="doc-row" style="display: grid; grid-template-columns: 1fr 2fr auto; gap: 0.5rem; margin-bottom: 0.5rem;">
+                    <input type="text" class="doc-nom" value="${d.nom || ''}" placeholder="Nom du document">
+                    <input type="text" class="doc-url" value="${d.url || ''}" placeholder="URL ou chemin">
+                    <button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.remove()">🗑️</button>
+                </div>
+            `).join('');
+            
+            // Préparer les images existantes
+            const imagesHTML = (p.images || []).map((img, i) => `
+                <div class="img-row" style="display: grid; grid-template-columns: 2fr 1fr auto; gap: 0.5rem; margin-bottom: 0.5rem;">
+                    <input type="text" class="img-url" value="${img.url || ''}" placeholder="URL de l'image">
+                    <input type="text" class="img-alt" value="${img.alt || ''}" placeholder="Description">
+                    <button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.remove()">🗑️</button>
+                </div>
+            `).join('');
+            
             document.getElementById('modal-body').innerHTML = `
                 <div class="form-group">
                     <label>Titre du projet *</label>
@@ -1536,9 +1572,111 @@
                     <label>Budget estimé (€)</label>
                     <input type="number" id="edit-budget" value="${p.budget || 0}" placeholder="0">
                 </div>
+                
+                <hr style="margin: 1.5rem 0; border: none; border-top: 2px solid var(--or);">
+                <h4 style="color: var(--bleu); margin-bottom: 1rem;">🖼️ Illustration</h4>
+                
+                <div class="form-group">
+                    <label>Image principale (URL)</label>
+                    <input type="text" id="edit-image" value="${p.image || ''}" placeholder="Ex: images/projets/mon-projet.jpg">
+                </div>
+                
+                <div class="form-group">
+                    <label>Galerie d'images</label>
+                    <div id="images-container">${imagesHTML}</div>
+                    <button type="button" class="btn btn-outline btn-sm" onclick="addImageRow()" style="margin-top: 0.5rem;">+ Ajouter une image</button>
+                </div>
+                
+                <hr style="margin: 1.5rem 0; border: none; border-top: 2px solid var(--or);">
+                <h4 style="color: var(--bleu); margin-bottom: 1rem;">📊 Objectifs chiffrés</h4>
+                
+                <div class="form-group">
+                    <label>Chiffres clés</label>
+                    <div id="chiffres-container">${chiffresHTML}</div>
+                    <button type="button" class="btn btn-outline btn-sm" onclick="addChiffreRow()" style="margin-top: 0.5rem;">+ Ajouter un chiffre</button>
+                </div>
+                
+                <hr style="margin: 1.5rem 0; border: none; border-top: 2px solid var(--or);">
+                <h4 style="color: var(--bleu); margin-bottom: 1rem;">📅 Calendrier prévisionnel</h4>
+                
+                <div class="form-group">
+                    <label>Étapes du projet</label>
+                    <div id="chrono-container">${chronoHTML}</div>
+                    <button type="button" class="btn btn-outline btn-sm" onclick="addChronoRow()" style="margin-top: 0.5rem;">+ Ajouter une étape</button>
+                </div>
+                
+                <hr style="margin: 1.5rem 0; border: none; border-top: 2px solid var(--or);">
+                <h4 style="color: var(--bleu); margin-bottom: 1rem;">📎 Documents joints</h4>
+                
+                <div class="form-group">
+                    <label>Documents (PDF, études, plans...)</label>
+                    <div id="docs-container">${docsHTML}</div>
+                    <button type="button" class="btn btn-outline btn-sm" onclick="addDocRow()" style="margin-top: 0.5rem;">+ Ajouter un document</button>
+                </div>
+                
+                <hr style="margin: 1.5rem 0; border: none; border-top: 2px solid var(--or);">
+                <h4 style="color: var(--bleu); margin-bottom: 1rem;">📝 Informations complémentaires</h4>
+                
+                <div class="form-group">
+                    <label>Détails supplémentaires</label>
+                    <textarea id="edit-details" rows="3" placeholder="Informations complémentaires, contexte, partenaires...">${p.details || ''}</textarea>
+                </div>
             `;
             document.getElementById('modal-save').onclick = saveProjet;
             document.getElementById('modal-edit').classList.add('active');
+        }
+        
+        // Fonctions pour ajouter des lignes dynamiquement
+        function addChiffreRow() {
+            const container = document.getElementById('chiffres-container');
+            const row = document.createElement('div');
+            row.className = 'chiffre-row';
+            row.style.cssText = 'display: grid; grid-template-columns: 1fr 2fr auto; gap: 0.5rem; margin-bottom: 0.5rem;';
+            row.innerHTML = `
+                <input type="text" class="chiffre-valeur" placeholder="Ex: 150 000 €">
+                <input type="text" class="chiffre-label" placeholder="Ex: Budget total">
+                <button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.remove()">🗑️</button>
+            `;
+            container.appendChild(row);
+        }
+        
+        function addChronoRow() {
+            const container = document.getElementById('chrono-container');
+            const row = document.createElement('div');
+            row.className = 'chrono-row';
+            row.style.cssText = 'display: grid; grid-template-columns: 120px 1fr auto; gap: 0.5rem; margin-bottom: 0.5rem;';
+            row.innerHTML = `
+                <input type="text" class="chrono-date" placeholder="Ex: 2027">
+                <input type="text" class="chrono-event" placeholder="Ex: Lancement des travaux">
+                <button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.remove()">🗑️</button>
+            `;
+            container.appendChild(row);
+        }
+        
+        function addDocRow() {
+            const container = document.getElementById('docs-container');
+            const row = document.createElement('div');
+            row.className = 'doc-row';
+            row.style.cssText = 'display: grid; grid-template-columns: 1fr 2fr auto; gap: 0.5rem; margin-bottom: 0.5rem;';
+            row.innerHTML = `
+                <input type="text" class="doc-nom" placeholder="Nom du document">
+                <input type="text" class="doc-url" placeholder="URL ou chemin">
+                <button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.remove()">🗑️</button>
+            `;
+            container.appendChild(row);
+        }
+        
+        function addImageRow() {
+            const container = document.getElementById('images-container');
+            const row = document.createElement('div');
+            row.className = 'img-row';
+            row.style.cssText = 'display: grid; grid-template-columns: 2fr 1fr auto; gap: 0.5rem; margin-bottom: 0.5rem;';
+            row.innerHTML = `
+                <input type="text" class="img-url" placeholder="URL de l'image">
+                <input type="text" class="img-alt" placeholder="Description">
+                <button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.remove()">🗑️</button>
+            `;
+            container.appendChild(row);
         }
 
         function updateThemePreview() {
@@ -1555,6 +1693,50 @@
             const description = document.getElementById('edit-description').value.trim();
             const budget = parseInt(document.getElementById('edit-budget').value) || 0;
             
+            // Nouveaux champs
+            const image = document.getElementById('edit-image').value.trim();
+            const details = document.getElementById('edit-details').value.trim();
+            
+            // Récupérer les chiffres
+            const chiffres = [];
+            document.querySelectorAll('#chiffres-container .chiffre-row').forEach(row => {
+                const valeur = row.querySelector('.chiffre-valeur').value.trim();
+                const label = row.querySelector('.chiffre-label').value.trim();
+                if (valeur || label) {
+                    chiffres.push({ valeur, label });
+                }
+            });
+            
+            // Récupérer la chronologie
+            const chronologie = [];
+            document.querySelectorAll('#chrono-container .chrono-row').forEach(row => {
+                const date = row.querySelector('.chrono-date').value.trim();
+                const evenement = row.querySelector('.chrono-event').value.trim();
+                if (date || evenement) {
+                    chronologie.push({ date, evenement });
+                }
+            });
+            
+            // Récupérer les documents
+            const documents = [];
+            document.querySelectorAll('#docs-container .doc-row').forEach(row => {
+                const nom = row.querySelector('.doc-nom').value.trim();
+                const url = row.querySelector('.doc-url').value.trim();
+                if (nom || url) {
+                    documents.push({ nom, url });
+                }
+            });
+            
+            // Récupérer les images de la galerie
+            const images = [];
+            document.querySelectorAll('#images-container .img-row').forEach(row => {
+                const url = row.querySelector('.img-url').value.trim();
+                const alt = row.querySelector('.img-alt').value.trim();
+                if (url) {
+                    images.push({ url, alt });
+                }
+            });
+            
             if (!titre || !theme) {
                 showToast('⚠️ Titre et thème obligatoires', 'warning');
                 return;
@@ -1570,7 +1752,15 @@
                 resume,
                 description,
                 importance,
-                chiffres: currentEdit.index === -1 ? [] : (data.projets[currentEdit.index].chiffres || [])
+                image,
+                images,
+                chiffres,
+                chronologie,
+                documents,
+                details,
+                // Conserver les sources existantes si modification
+                sources: currentEdit.index === -1 ? [] : (data.projets[currentEdit.index].sources || []),
+                lien_source: currentEdit.index === -1 ? [] : (data.projets[currentEdit.index].lien_source || [])
             };
 
             if (currentEdit.index === -1) {
@@ -1584,6 +1774,7 @@
             closeModal();
             showToast('✅ Projet enregistré', 'success');
         }
+
 
         function deleteProjet(index) {
             if (confirm('Supprimer ce projet ?')) {
