@@ -6,7 +6,10 @@
     "question": "Quand auront lieu les élections municipales ?",
     "reponse": "Les élections municipales auront lieu en mars 2026.",
     "categorie": "Élections",
-    "ordre": 1
+    "ordre": 1,
+    "origine": "Facebook",
+    "pseudo": "Joseph",
+    "date": ""
   },
   {
     "id": 2,
