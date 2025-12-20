@@ -121,14 +121,14 @@
   },
   {
     "id": 26,
-    "titre": "Transformer certaines zones du centre en zones partagées",
+    "titre": "Centre-ville Espaces partagés • Marche, commerces, lien marché → château",
     "theme": "Mobilités",
-    "statut": "Programmé",
-    "annee": 2028,
+    "statut": "Étude",
+    "annee": 2027,
     "budget": 0,
-    "resume": "Partager",
+    "resume": "Un centre-ville vivant et apaisé.",
     "description": "Une zone partagée est un espace de circulation apaisé, conçu pour permettre la cohabitation de tous les usages — piétons, vélos, engins de déplacement personnel, véhicules motorisés — avec une priorité donnée aux usagers les plus vulnérables.\nCe n’est ni une rue piétonne, ni une rue “classique” :\nc’est un espace de vie avant d’être un axe de circulation.",
-    "importance": 1,
+    "importance": 2,
     "chiffres": []
   },
   {
@@ -237,6 +237,54 @@
     "resume": "Préparer des solutions crédibles pour les liaisons vers l’agglo et la vallée, au-delà du tout-voiture.",
     "description": "Pistes à étudier\n• Bus et navettes mieux adaptés aux horaires\n• Covoiturage et parkings relais\n• Transport par câble (horizon long ter\nMéthode\nScénarios réalistes, étapes claires et partenaires compétents.\nPréparer aujourd’hui les mobilités de demain.",
     "importance": 2,
+    "chiffres": []
+  },
+  {
+    "id": 1766214972808,
+    "titre": "Usagers vulnérables Piétons • Enfants • Seniors • PMR • Mobilités douces",
+    "theme": "Mobilités",
+    "statut": "Étude",
+    "annee": null,
+    "budget": 0,
+    "resume": "Les plus vulnérables doivent être les mieux protégés.",
+    "description": "Pourquoi ?\nLa sécurité des déplacements est une condition essentielle de la\ntranquillité du quotidien.\nPriorités\n• Traversées piétonnes plus visibles et mieux sécurisées\n• Abords des écoles et équipements protégés\n• Cheminements accessibles, continus et lisibles\n• Carrefours plus compréhensibles\n• Vitesse adaptée dans les zones sensibles",
+    "importance": 2,
+    "chiffres": []
+  },
+  {
+    "id": 1766215078061,
+    "titre": "Apaiser la circulation Quartiers habités • Notamment le Péage (RD 1091)",
+    "theme": "Mobilités",
+    "statut": "Prioritaire",
+    "annee": null,
+    "budget": 0,
+    "resume": "La ville habitée avant la ville traversée.",
+    "description": "Constat\nLe transit et les vitesses excessives dégradent le quotidien : bruit,\nstress, sentiment d’insécurité.\nPriorités\n• Protéger les habitants des nuisances du transit\n• Vitesse adaptée et conduite plus régulière\n• Limiter les reports dans les rues résidentielles\n• Permettre aux habitants de se déplacer simplement\nApproche\nSolutions proportionnées et progressives, cohérentes avec les\ndonnées de comptage.",
+    "importance": 3,
+    "chiffres": []
+  },
+  {
+    "id": 1766215178230,
+    "titre": "Plan de circulation Organiser les flux pour mieux se déplacer en sécurité",
+    "theme": "Mobilités",
+    "statut": "Étude",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Lisibilité Données Sécurité Comprendre • guider • apaiser",
+    "description": "Pourquoi ?\nUn plan lisible réduit les incompréhensions, les détours inutiles et\nles conflits d’usages.\nPriorités\n• Mettre en place des comptages simples aux points clés\n• Hiérarchiser les axes : transit, desserte locale, zones apaisées\n• Clarifier carrefours et signalisation\n• Évaluer, ajuster, puis déployer progressivement\nUn plan lisible pour mieux se déplacer, en\nsécurité.",
+    "importance": 1,
+    "chiffres": []
+  },
+  {
+    "id": 1766215445812,
+    "titre": "Feu de Jarrie Rétablir une régulation adaptée : déclenché quand il le faut",
+    "theme": "Mobilités",
+    "statut": "Prioritaire",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Un feu utile à la sécurité… mais activé au bon moment.",
+    "description": "Constat\nDes bouchons récurrents aux heures de pointe et des temps de\ntrajet allongés.\nObjectif\n• Régulation dynamique par capteurs\n• Déclenchement uniquement en cas de congestion\n• Transparence sur les données de fonctionnement\nLeviers\nDémarches coordonnées avec les autorités compétentes et\npartenaires du territoire.",
+    "importance": 3,
     "chiffres": []
   }
 ]
