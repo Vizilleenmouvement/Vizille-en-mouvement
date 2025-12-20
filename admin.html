@@ -2416,13 +2416,16 @@
                 ? '<div class="empty-state"><div class="icon">📰</div><p>Aucun article</p></div>'
                 : sorted.map((a, i) => {
                     const realIndex = data.articles.indexOf(a);
+                    const categorieBadge = a.categorie ? `<span style="background: #e8f4fc; color: var(--bleu); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin-left: 8px;">${a.categorie}</span>` : '';
+                    const imageIndicator = a.image ? '🖼️' : '';
                     return `
                         <div class="item-card">
                             <div class="item-info">
+                                ${a.image ? `<img src="${a.image}" alt="" class="item-photo" style="border-radius: 8px; width: 60px; height: 60px; object-fit: cover;">` : '<div class="item-photo-placeholder">📰</div>'}
                                 <div class="item-text">
-                                    <span class="item-badge">${a.date || 'Sans date'}</span>
-                                    <div class="item-title">${a.titre}</div>
-                                    <div class="item-desc">${a.resume || ''}</div>
+                                    <span class="item-badge">${a.date || 'Sans date'}${categorieBadge}</span>
+                                    <div class="item-title">${a.titre} ${imageIndicator}</div>
+                                    <div class="item-desc">${a.extrait || a.contenu?.substring(0, 100) || ''}</div>
                                 </div>
                             </div>
                             <div class="item-actions">
@@ -2433,6 +2436,9 @@
                         </div>
                     `;
                 }).join('');
+            
+            // Mettre à jour la liste pour le partage Facebook
+            updateFacebookArticleSelect();
         }
 
         function openAddArticle() {
@@ -2458,15 +2464,52 @@
                         <input type="date" id="edit-date" value="${a.date || ''}">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label>Résumé</label>
-                    <textarea id="edit-resume" rows="2">${a.resume || ''}</textarea>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Catégorie</label>
+                        <select id="edit-categorie">
+                            <option value="">-- Sans catégorie --</option>
+                            <option value="Événement" ${a.categorie === 'Événement' ? 'selected' : ''}>📅 Événement</option>
+                            <option value="Communiqué" ${a.categorie === 'Communiqué' ? 'selected' : ''}>📣 Communiqué</option>
+                            <option value="Réunion" ${a.categorie === 'Réunion' ? 'selected' : ''}>🤝 Réunion</option>
+                            <option value="Action" ${a.categorie === 'Action' ? 'selected' : ''}>✊ Action</option>
+                            <option value="Bilan" ${a.categorie === 'Bilan' ? 'selected' : ''}>📊 Bilan</option>
+                            <option value="Projet" ${a.categorie === 'Projet' ? 'selected' : ''}>🚀 Projet</option>
+                            <option value="Tribune" ${a.categorie === 'Tribune' ? 'selected' : ''}>📝 Tribune</option>
+                            <option value="Info" ${a.categorie === 'Info' ? 'selected' : ''}>ℹ️ Info</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Image (URL)</label>
+                        <input type="url" id="edit-image" value="${a.image || ''}" placeholder="https://... ou images/nom.jpg">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label>Contenu</label>
-                    <textarea id="edit-contenu" rows="6">${a.contenu || ''}</textarea>
+                    <label>Extrait (aperçu court)</label>
+                    <textarea id="edit-extrait" rows="2" placeholder="Court résumé affiché dans la liste des actualités...">${a.extrait || ''}</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Contenu complet</label>
+                    <textarea id="edit-contenu" rows="8" placeholder="Le texte complet de l'article. Utilisez des sauts de ligne pour séparer les paragraphes.">${a.contenu || ''}</textarea>
+                </div>
+                <div id="image-preview" style="margin-top: 1rem; display: ${a.image ? 'block' : 'none'};">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--bleu);">Aperçu image :</label>
+                    <img src="${a.image || ''}" alt="Aperçu" style="max-width: 200px; max-height: 150px; border-radius: 8px; border: 2px solid var(--gris-border);" onerror="this.parentElement.style.display='none'">
                 </div>
             `;
+            
+            // Prévisualiser l'image quand l'URL change
+            document.getElementById('edit-image').addEventListener('input', function() {
+                const preview = document.getElementById('image-preview');
+                const img = preview.querySelector('img');
+                if (this.value) {
+                    img.src = this.value;
+                    preview.style.display = 'block';
+                } else {
+                    preview.style.display = 'none';
+                }
+            });
+            
             document.getElementById('modal-save').onclick = saveArticle;
             document.getElementById('modal-edit').classList.add('active');
         }
@@ -2474,7 +2517,9 @@
         function saveArticle() {
             const titre = document.getElementById('edit-titre').value.trim();
             const date = document.getElementById('edit-date').value;
-            const resume = document.getElementById('edit-resume').value.trim();
+            const categorie = document.getElementById('edit-categorie').value;
+            const image = document.getElementById('edit-image').value.trim();
+            const extrait = document.getElementById('edit-extrait').value.trim();
             const contenu = document.getElementById('edit-contenu').value.trim();
             
             if (!titre) {
@@ -2482,14 +2527,25 @@
                 return;
             }
 
+            const articleData = { 
+                id: currentEdit.index === -1 ? Date.now() : data.articles[currentEdit.index].id,
+                titre, 
+                date, 
+                categorie,
+                image,
+                extrait, 
+                contenu 
+            };
+
             if (currentEdit.index === -1) {
-                data.articles.push({ id: Date.now(), titre, date, resume, contenu });
+                data.articles.push(articleData);
             } else {
-                Object.assign(data.articles[currentEdit.index], { titre, date, resume, contenu });
+                data.articles[currentEdit.index] = articleData;
             }
             
             markModified('articles');
             renderArticles();
+            updateFacebookArticleSelect();
             closeModal();
             showToast('✅ Article enregistré', 'success');
         }
@@ -2686,6 +2742,10 @@
         }
 
         // ===== PARTAGE FACEBOOK =====
+        function updateFacebookArticleSelect() {
+            renderFacebookSelect();
+        }
+        
         function renderFacebookSelect() {
             const select = document.getElementById('fb-article-select');
             if (!select) return;
