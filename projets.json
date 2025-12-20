@@ -1,242 +1,66 @@
-[
-  {
-    "id": 8,
-    "titre": "Améliorer l'accessibilité de tous les bâtiments",
-    "theme": "Solidarité",
-    "statut": "Prioritaire",
-    "annee": 2028,
-    "budget": 0,
-    "resume": "Accessibilité PMR",
-    "description": "",
-    "importance": 3,
-    "chiffres": []
-  },
-  {
-    "id": 10,
-    "titre": "Rendre la Maison de Santé pleinement opérationnelle",
-    "theme": "Santé",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Accès aux soins",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 16,
-    "titre": "Pérenniser les festivals et événements",
-    "theme": "Culture",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Animation culturelle",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 18,
-    "titre": "Soutenir les associations culturelles",
-    "theme": "Culture",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Vie associative",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 19,
-    "titre": "Soutenir les commerces de proximité",
-    "theme": "Économie",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Commerce local",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 21,
-    "titre": "Renforcer l'attractivité touristique",
-    "theme": "Économie",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Tourisme",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 22,
-    "titre": "Achever le maillage de vidéoprotection",
-    "theme": "Sécurité",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Vidéoprotection",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 23,
-    "titre": "Déployer l'éclairage intelligent",
-    "theme": "Sécurité",
-    "statut": "Programmé",
-    "annee": 2028,
-    "budget": 0,
-    "resume": "Éclairage public",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 24,
-    "titre": "Renforcer la médiation de proximité",
-    "theme": "Sécurité",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Médiation",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 25,
-    "titre": "Étendre les pistes cyclables",
-    "theme": "Mobilités",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Laison verte chemin de murs",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 26,
-    "titre": "Transformer certaines zones du centre en zones partagées",
-    "theme": "Mobilités",
-    "statut": "Programmé",
-    "annee": 2028,
-    "budget": 0,
-    "resume": "Partager",
-    "description": "Une zone partagée est un espace de circulation apaisé, conçu pour permettre la cohabitation de tous les usages — piétons, vélos, engins de déplacement personnel, véhicules motorisés — avec une priorité donnée aux usagers les plus vulnérables.\nCe n’est ni une rue piétonne, ni une rue “classique” :\nc’est un espace de vie avant d’être un axe de circulation.",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 27,
-    "titre": "Optimiser le stationnement",
-    "theme": "Mobilités",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Stationnement",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 28,
-    "titre": "Améliorer l'accessibilité des espaces publics",
-    "theme": "Seniors",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Accessibilité",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 32,
-    "titre": "Instaurer des correspondants de quartier",
-    "theme": "Sécurité",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Démocratie de proximité",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 33,
-    "titre": "Renforcer la transparence (open data)",
-    "theme": "Démocratie locale",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Transparence",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 34,
-    "titre": "Le maire siègera personnellement aux conseils métropolitains",
-    "theme": "Métropole",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Présence métropolitaine",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 35,
-    "titre": "Porter la voix de Vizille (transports, PLUi, eau)",
-    "theme": "Métropole",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Défense des intérêts",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 36,
-    "titre": "Défendre une juste répartition des dotations Sud Métropole",
-    "theme": "Métropole",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Équité territoriale",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 1766034821819,
-    "titre": "Développer des espaces partagés en centre-ville",
-    "theme": "Mobilités",
-    "statut": "Étude",
-    "annee": 2029,
-    "budget": 0,
-    "resume": "Faire du centre-ville un espace apaisé, attractif et accessible à tous.",
-    "description": "Le projet vise à renforcer le rôle du centre-ville comme espace de vie, de rencontre et de commerce.\nIl s’appuie sur le développement d’espaces partagés, la continuité des cheminements piétons, la valorisation de la rue piétonne et la liaison entre le marché et le château.\nLa circulation y est organisée pour privilégier les usages locaux et limiter le transit.",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 1766165580426,
-    "titre": "Mobilités structurantes",
-    "theme": "Mobilités",
-    "statut": "Étude",
-    "annee": null,
-    "budget": 0,
-    "resume": "Préparer des solutions crédibles pour les liaisons vers l’agglo et la vallée, au-delà du tout-voiture.",
-    "description": "Pistes à étudier\n• Bus et navettes mieux adaptés aux horaires\n• Covoiturage et parkings relais\n• Transport par câble (horizon long ter\nMéthode\nScénarios réalistes, étapes claires et partenaires compétents.\nPréparer aujourd’hui les mobilités de demain.",
-    "importance": 2,
-    "chiffres": []
-  }
-]
+{
+  "id": 26,
+  "titre": "Transformer certaines zones du centre en zones partagées",
+  "theme": "Mobilités",
+  "statut": "Programmé",
+  "annee": 2028,
+  "budget": 150000,
+  "resume": "Créer des espaces de circulation apaisée où piétons, vélos et véhicules cohabitent harmonieusement.",
+  "description": "Une zone partagée est un espace de circulation apaisé, conçu pour permettre la cohabitation de tous les usages – piétons, vélos, engins de déplacement personnel, véhicules motorisés – avec une priorité donnée aux usagers les plus vulnérables.\n\nCe n'est ni une rue piétonne, ni une rue \"classique\" : c'est un espace de vie avant d'être un axe de circulation.\n\nLes aménagements prévus :\n• Revêtement de sol unifié pour gommer la distinction trottoir/chaussée\n• Mobilier urbain de qualité (bancs, jardinières)\n• Limitation à 20 km/h\n• Signalétique adaptée",
+  "importance": 2,
+  
+  "image": "images/projets/zone-partagee-concept.jpg",
+  
+  "images": [
+    {
+      "url": "images/projets/zone-partagee-concept.jpg",
+      "alt": "Concept de zone partagée"
+    },
+    {
+      "url": "images/projets/zone-partagee-exemple.jpg",
+      "alt": "Exemple dans une autre ville"
+    },
+    {
+      "url": "images/projets/zone-partagee-plan.jpg",
+      "alt": "Plan d'aménagement prévu"
+    }
+  ],
+  
+  "chiffres": [
+    { "valeur": "350m", "label": "de voirie concernée" },
+    { "valeur": "20 km/h", "label": "vitesse maximale" },
+    { "valeur": "3", "label": "phases de travaux" }
+  ],
+  
+  "chronologie": [
+    { "date": "2027", "evenement": "Études de faisabilité et concertation" },
+    { "date": "Début 2028", "evenement": "Lancement des travaux - Phase 1" },
+    { "date": "Mi-2028", "evenement": "Phase 2 - Aménagements" },
+    { "date": "Fin 2028", "evenement": "Inauguration" }
+  ],
+  
+  "details": "Ce projet s'inscrit dans notre volonté de rendre le centre-ville plus attractif et agréable pour tous. Il sera réalisé en concertation avec les commerçants et les riverains.",
+  
+  "documents": [
+    {
+      "nom": "Étude préliminaire",
+      "url": "documents/projets/zone-partagee-etude.pdf",
+      "type": "pdf",
+      "description": "Analyse des flux et propositions d'aménagement"
+    },
+    {
+      "nom": "Exemples en France",
+      "url": "documents/projets/zones-partagees-exemples.pdf",
+      "type": "pdf",
+      "description": "Retours d'expérience d'autres villes"
+    }
+  ],
+  
+  "lien_source": [
+    {
+      "type": "Page dédiée",
+      "label": "En savoir plus sur les zones partagées",
+      "url": "https://www.cerema.fr/fr/actualites/zone-rencontre-amenagement-favorable-aux-piétons"
+    }
+  ]
+}
