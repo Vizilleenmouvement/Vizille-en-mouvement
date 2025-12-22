@@ -5,8 +5,8 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vos questions – Vizille en Mouvement</title>
-    <meta name="description" content="Participez à la vie de votre ville. Posez vos questions, partagez vos idées et suggestions.">
+    <title>Construisons ensemble – Vizille en Mouvement</title>
+    <meta name="description" content="Participez à la vie de votre ville. Posez vos questions, partagez vos idées et suggestions. Contactez l'équipe Vizille en Mouvement.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -152,23 +152,23 @@
         .page-header {
             background: linear-gradient(135deg, var(--bleu-vizille) 0%, var(--bleu-clair) 100%);
             color: white;
-            padding: 3rem 1.5rem;
+            padding: 1.5rem 1.5rem;
             text-align: center;
         }
         
         .header-logo {
-            max-width: 280px;
-            margin-bottom: 0.5rem;
+            max-width: 180px;
+            margin-bottom: 0.3rem;
             filter: drop-shadow(0 0 20px rgba(255,255,255,0.5));
             animation: pulse 2s ease-in-out infinite, glow 2s ease-in-out infinite;
         }
         
         .header-slogan {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: var(--or-clair);
             font-style: italic;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.75rem;
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         
@@ -191,24 +191,69 @@
         
         .page-header h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2rem;
+            margin-bottom: 0.25rem;
         }
-        .page-header p { opacity: 0.9; font-size: 1.2rem; }
+        .page-header p { opacity: 0.9; font-size: 1rem; }
         
         /* Content */
         .content {
             max-width: 800px;
             margin: 0 auto;
-            padding: 3rem 1.5rem;
+            padding: 1.5rem 1.5rem;
+        }
+        
+        /* Section Title */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--bleu-vizille);
+            margin: 1.5rem 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, var(--or) 0%, transparent 100%);
+        }
+        
+        /* Section Vos Questions - Plus visible */
+        .questions-header {
+            background: linear-gradient(135deg, var(--bleu-vizille) 0%, var(--bleu-clair) 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0 1rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(26, 58, 92, 0.2);
+        }
+        
+        .questions-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .questions-header p {
+            margin: 0.25rem 0 0;
+            opacity: 0.9;
+            font-size: 0.9rem;
         }
         
         /* Formulaire poser question */
         .ask-question-box {
             background: white;
             border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             border-left: 5px solid var(--or);
         }
@@ -239,49 +284,52 @@
             font-weight: 600;
             margin-bottom: 0.4rem;
             color: var(--bleu-vizille);
-            font-size: 0.95rem;
         }
         
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
-            padding: 0.75rem 1rem;
+            padding: 0.8rem 1rem;
             border: 2px solid var(--gris-doux);
             border-radius: 8px;
-            font-size: 1rem;
             font-family: inherit;
+            font-size: 1rem;
             transition: border-color 0.2s;
         }
         
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             border-color: var(--or);
         }
         
         .form-group textarea {
-            min-height: 100px;
+            min-height: 120px;
             resize: vertical;
         }
         
         .btn-submit {
-            padding: 0.85rem 2rem;
-            background: linear-gradient(135deg, var(--or) 0%, var(--or-clair) 100%);
-            color: var(--bleu-vizille);
+            background: var(--bleu-vizille);
+            color: white;
             border: none;
-            border-radius: 8px;
+            padding: 1rem 2rem;
             font-size: 1rem;
-            font-weight: 700;
+            font-weight: 600;
+            border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s;
+            width: 100%;
         }
         
         .btn-submit:hover {
+            background: var(--bleu-clair);
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(201,162,39,0.4);
         }
         
         .success-message {
+            display: none;
             background: #d4edda;
             border: 1px solid #c3e6cb;
             color: #155724;
@@ -291,27 +339,17 @@
             text-align: center;
         }
         
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            color: var(--bleu-vizille);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--or);
-        }
-        
-        /* FAQ Accordion */
+        /* FAQ List */
         .faq-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            margin-top: 1rem;
         }
         
         .faq-item {
             background: white;
             border-radius: 12px;
-            overflow: hidden;
+            margin-bottom: 1rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
         }
         
         .faq-question {
@@ -320,19 +358,15 @@
             background: white;
             border: none;
             text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--bleu-vizille);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 1rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--bleu-vizille);
-            transition: all 0.2s;
-        }
-        
-        .faq-question > div {
-            flex: 1;
+            transition: background 0.2s;
+            font-family: inherit;
         }
         
         .faq-question:hover {
@@ -356,7 +390,7 @@
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            transition: max-height 0.3s ease;
         }
         
         .faq-answer.open {
@@ -366,36 +400,154 @@
         .faq-answer-content {
             padding: 1.5rem;
             background: var(--blanc-casse);
-            color: var(--gris-texte);
-            line-height: 1.8;
+            border-top: 1px solid var(--gris-doux);
         }
         
         .faq-category {
             display: inline-block;
             background: var(--or);
             color: white;
-            padding: 0.2rem 0.75rem;
-            border-radius: 15px;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
             font-size: 0.8rem;
+            font-weight: 600;
             margin-bottom: 0.75rem;
         }
         
-        /* Empty state */
         .empty-state {
             text-align: center;
-            padding: 4rem 2rem;
-            color: #999;
+            padding: 3rem;
+            color: #888;
         }
         
         .empty-state .icon {
-            font-size: 4rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
         
-        /* Loading */
         .loading {
             text-align: center;
             padding: 3rem;
+            color: var(--bleu-vizille);
+        }
+        
+        /* ===== SECTION NOUS CONTACTER ===== */
+        .contact-section {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--gris-doux);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.25rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .contact-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--bleu-vizille);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        .contact-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-card a {
+            color: var(--bleu-clair);
+            text-decoration: none;
+        }
+        
+        .contact-card a:hover {
+            color: var(--or);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: var(--bleu-vizille);
+            border-radius: 50%;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .social-links a:hover {
+            background: var(--or);
+            transform: translateY(-3px);
+        }
+        
+        /* Boutons d'engagement */
+        .special-requests {
+            background: linear-gradient(135deg, var(--bleu-vizille) 0%, var(--bleu-clair) 100%);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-top: 1.5rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .special-requests h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        .request-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .btn-request {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.5rem;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .btn-request:hover {
+            background: white;
+            color: var(--bleu-vizille);
+            transform: translateY(-2px);
+        }
+        
+        .btn-request.highlight {
+            background: var(--or);
+            border-color: var(--or);
+        }
+        
+        .btn-request.highlight:hover {
+            background: var(--or-clair);
+            border-color: var(--or-clair);
             color: var(--bleu-vizille);
         }
         
@@ -403,9 +555,9 @@
         .footer {
             background: var(--bleu-vizille);
             color: white;
-            padding: 2rem;
+            padding: 1.5rem;
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
         .footer-slogan {
             font-family: 'Playfair Display', serif;
@@ -417,13 +569,15 @@
             .faq-question { font-size: 1rem; padding: 1rem; }
             .form-row { grid-template-columns: 1fr; }
             .ask-question-box { padding: 1.5rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .request-buttons { flex-direction: column; }
         }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="header-top">
-            <p>Vis  • Vizille en Mouvement</p>
+            <p>Construisons ensemble • Vizille en Mouvement</p>
         </div>
         
         <div class="header-main">
@@ -437,8 +591,7 @@
                     <li><a href="projet.html">Projet</a></li>
                     <li><a href="blog.html">Actualités</a></li>
                     <li><a href="equipe.html">Équipe</a></li>
-                    <li><a href="faq.html" class="active">Vos questions</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html" class="active">Construisons ensemble</a></li>
                     <li><a href="admin.html" class="admin-link" title="Administration">⚙️</a></li>
                 </ul>
             </nav>
@@ -448,7 +601,7 @@
     <section class="page-header">
         <img src="images/logo.png" alt="Vizille en Mouvement" class="header-logo">
         <p class="header-slogan">« Ensemble pour une ville dynamique et solidaire »</p>
-        <h1>🤝 Vos questions</h1>
+        <h1>🤝 Construisons ensemble</h1>
         <p>Vos questions, vos idées, vos suggestions – participez à la vie de votre ville</p>
     </section>
     
@@ -459,11 +612,11 @@
             <p>Une question ? Une idée ? Une suggestion ? Partagez avec nous, nous vous répondrons !</p>
             
             <div class="success-message" id="question-success" style="display: none;">
-                ✅ Votre question a bien été envoyée ! Nous y répondrons prochainement.
+                ✅ Votre message a bien été envoyé ! Nous vous répondrons prochainement.
             </div>
             
             <form action="https://formspree.io/f/xjknewpy" method="POST" id="question-form">
-                <input type="hidden" name="_subject" value="Nouvelle question - Vizille en Mouvement">
+                <input type="hidden" name="_subject" value="Nouveau message - Vizille en Mouvement">
                 <input type="text" name="_gotcha" style="display:none">
                 
                 <div class="form-row">
@@ -478,15 +631,31 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="q-question">Votre question *</label>
-                    <textarea id="q-question" name="question" required placeholder="Quelle est votre question ?"></textarea>
+                    <label for="q-subject">Sujet</label>
+                    <select id="q-subject" name="subject">
+                        <option value="Et vous, quelle ville voulez-vous pour l'avenir ?">Et vous, quelle ville voulez-vous pour l'avenir ?</option>
+                        <option value="Question générale">Question générale</option>
+                        <option value="Proposition / Idée">Proposition / Idée</option>
+                        <option value="Rejoindre l'équipe">Rejoindre l'équipe</option>
+                        <option value="Demande de rencontre">Demande de rencontre</option>
+                        <option value="Autre">Autre</option>
+                    </select>
                 </div>
                 
-                <button type="submit" class="btn-submit">📤 Envoyer ma question</button>
+                <div class="form-group">
+                    <label for="q-question">Votre message *</label>
+                    <textarea id="q-question" name="message" required placeholder="Quelle est votre question ou suggestion ?"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">📤 Envoyer mon message</button>
             </form>
         </div>
         
-        <h2 class="section-title">📋 Questions & Réponses</h2>
+        <!-- Section Vos Questions -->
+        <div class="questions-header">
+            <h2>💬 Vos questions</h2>
+            <p>Les réponses aux questions posées par les Vizillois</p>
+        </div>
         
         <div class="faq-list" id="faq-list">
             <div class="loading">
@@ -494,10 +663,55 @@
                 <p>Chargement...</p>
             </div>
         </div>
+        
+        <!-- ===== SECTION NOUS CONTACTER ===== -->
+        <section class="contact-section">
+            <h2 class="section-title">📍 Nous contacter</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>🏛️ Infos pratiques</h3>
+                    <p><strong>Vizille en Mouvement</strong></p>
+                    <p id="contact-adresse">Vizille, Isère, France</p>
+                    <p id="contact-telephone"></p>
+                    <p id="contact-email"></p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>🕐 Permanences</h3>
+                    <p id="contact-permanences">Nous organisons des permanences régulières pour vous rencontrer.</p>
+                    <p style="margin-top: 0.75rem;"><a href="blog.html">→ Voir les actualités</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>📱 Suivez-nous</h3>
+                    <p>Retrouvez notre actualité sur les réseaux sociaux.</p>
+                    <div class="social-links" id="social-links">
+                        <a href="#" target="_blank" title="Facebook">📘</a>
+                        <a href="#" target="_blank" title="Instagram">📸</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="special-requests">
+                <h3>🚀 Envie de vous engager ?</h3>
+                <div class="request-buttons">
+                    <a href="#ask-box" class="btn-request highlight" onclick="setSubject('Rejoindre l\'équipe')">
+                        🤝 Rejoindre l'équipe
+                    </a>
+                    <a href="#ask-box" class="btn-request" onclick="setSubject('Demande de rencontre')">
+                        📅 Demander une rencontre
+                    </a>
+                    <a href="#ask-box" class="btn-request" onclick="setSubject('Proposition / Idée')">
+                        💡 Proposer une idée
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
     
     <footer class="footer">
-        <p class="footer-slogan">« Vis questions pour une ville dynamique et solidaire »</p>
+        <p class="footer-slogan">« Ensemble pour une ville dynamique et solidaire »</p>
         <p>© 2025 Vizille en Mouvement</p>
     </footer>
     
@@ -521,7 +735,7 @@
                     <div class="empty-state">
                         <div class="icon">❓</div>
                         <h3>Aucune question pour le moment</h3>
-                        <p>Revenez bientôt !</p>
+                        <p>Soyez le premier à poser une question !</p>
                     </div>
                 `;
             }
@@ -536,6 +750,7 @@
                     <div class="empty-state">
                         <div class="icon">❓</div>
                         <h3>Aucune question pour le moment</h3>
+                        <p>Soyez le premier à poser une question !</p>
                     </div>
                 `;
                 return;
@@ -587,8 +802,61 @@
             answer.classList.toggle('open');
         }
         
-        // Charger au démarrage
-        // Gestion du formulaire de question
+        // Pré-sélectionner un sujet
+        function setSubject(subject) {
+            const select = document.getElementById('q-subject');
+            if (select) {
+                select.value = subject;
+            }
+            // Focus sur le champ message
+            setTimeout(() => {
+                document.getElementById('q-question').focus();
+            }, 100);
+        }
+        
+        // Charger la configuration (pour les infos de contact)
+        async function loadConfig() {
+            try {
+                const response = await fetch('config.json?v=' + Date.now());
+                if (response.ok) {
+                    const config = await response.json();
+                    
+                    // Adresse
+                    if (config.adresse) {
+                        document.getElementById('contact-adresse').textContent = config.adresse;
+                    }
+                    
+                    // Téléphone
+                    if (config.telephone) {
+                        document.getElementById('contact-telephone').innerHTML = `📞 <a href="tel:${config.telephone}">${config.telephone}</a>`;
+                    }
+                    
+                    // Email
+                    if (config.email) {
+                        document.getElementById('contact-email').innerHTML = `📧 <a href="mailto:${config.email}">${config.email}</a>`;
+                    }
+                    
+                    // Permanences
+                    if (config.permanences) {
+                        document.getElementById('contact-permanences').textContent = config.permanences;
+                    }
+                    
+                    // Réseaux sociaux
+                    let socialHtml = '';
+                    if (config.facebook) socialHtml += `<a href="${config.facebook}" target="_blank" title="Facebook">📘</a>`;
+                    if (config.instagram) socialHtml += `<a href="${config.instagram}" target="_blank" title="Instagram">📸</a>`;
+                    if (config.twitter) socialHtml += `<a href="${config.twitter}" target="_blank" title="Twitter">🐦</a>`;
+                    
+                    if (socialHtml) {
+                        document.getElementById('social-links').innerHTML = socialHtml;
+                    }
+                }
+            } catch (err) {
+                console.log('Config non trouvée, valeurs par défaut utilisées');
+            }
+        }
+        
+        // Gestion du formulaire
         const questionForm = document.getElementById('question-form');
         const questionSuccess = document.getElementById('question-success');
         
@@ -620,7 +888,11 @@
             });
         }
         
-        document.addEventListener('DOMContentLoaded', loadFaq);
+        // Charger au démarrage
+        document.addEventListener('DOMContentLoaded', () => {
+            loadFaq();
+            loadConfig();
+        });
     </script>
 </body>
 </html>

@@ -528,7 +528,7 @@
         <button class="nav-tab" data-tab="projets">🚀 Projets</button>
         <button class="nav-tab" data-tab="actions">📊 Actions</button>
         <button class="nav-tab" data-tab="candidats">👥 Candidats</button>
-        <button class="nav-tab" data-tab="faq">💬 Vos questions</button>
+        <button class="nav-tab" data-tab="faq">🤝 Construisons ensemble</button>
         <button class="nav-tab" data-tab="articles">📰 Articles</button>
         <button class="nav-tab" data-tab="communication">📢 Communication</button>
         <button class="nav-tab" data-tab="config">⚙️ Paramètres</button>
@@ -603,8 +603,8 @@
                         <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--gris-bg); border-radius: 8px;">
                             <span style="font-size: 1.5rem;">💬</span>
                             <div>
-                                <strong style="color: var(--bleu);">Vos questions</strong>
-                                <p style="font-size: 0.9rem; margin: 0;">Questions/réponses des citoyens → Page "Vos questions"</p>
+                                <strong style="color: var(--bleu);">Construisons ensemble</strong>
+                                <p style="font-size: 0.9rem; margin: 0;">Questions, idées, contact → Page "Construisons ensemble"</p>
                             </div>
                         </div>
                         <div style="display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--gris-bg); border-radius: 8px;">
@@ -625,7 +625,7 @@
                             <span style="font-size: 1.5rem;">⚙️</span>
                             <div>
                                 <strong style="color: var(--bleu);">Paramètres</strong>
-                                <p style="font-size: 0.9rem; margin: 0;">Coordonnées, réseaux sociaux, permanences → Page "Contact"</p>
+                                <p style="font-size: 0.9rem; margin: 0;">Coordonnées, réseaux sociaux, permanences → Page "Construisons ensemble"</p>
                             </div>
                         </div>
                     </div>
@@ -718,8 +718,8 @@
                             <button class="theme-btn" data-theme="economie" onclick="filterProjets('economie')">
                                 💼 Économie (<span id="pcount-economie">0</span>)
                             </button>
-                            <button class="theme-btn" data-theme="securite" onclick="filterProjets('securite')">
-                                🛡️ Sécurité (<span id="pcount-securite">0</span>)
+                            <button class="theme-btn" data-theme="tranquillite" onclick="filterProjets('tranquillite')">
+                                🛡️ Tranquillité (<span id="pcount-tranquillite">0</span>)
                             </button>
                             <button class="theme-btn" data-theme="mobilites" onclick="filterProjets('mobilites')">
                                 🚴 Mobilités (<span id="pcount-mobilites">0</span>)
@@ -794,8 +794,8 @@
                             <button class="theme-btn" data-theme="Économie" onclick="filterActions('Économie')">
                                 💼 Économie (<span id="count-Économie">0</span>)
                             </button>
-                            <button class="theme-btn" data-theme="Sécurité" onclick="filterActions('Sécurité')">
-                                🛡️ Sécurité (<span id="count-Sécurité">0</span>)
+                            <button class="theme-btn" data-theme="Tranquillité" onclick="filterActions('Tranquillité')">
+                                🛡️ Tranquillité (<span id="count-Tranquillité">0</span>)
                             </button>
                             <button class="theme-btn" data-theme="Mobilités" onclick="filterActions('Mobilités')">
                                 🚲 Mobilités (<span id="count-Mobilités">0</span>)
@@ -844,7 +844,7 @@
         <section class="tab-content" id="tab-faq">
             <div class="card">
                 <div class="card-header">
-                    <h2>💬 Vos questions - Questions / Réponses</h2>
+                    <h2>🤝 Construisons ensemble - Questions / Réponses</h2>
                     <div class="publish-bar">
                         <span class="status saved" id="status-faq">✓ À jour</span>
                         <button class="btn-publish" onclick="publish('faq')">🚀 Publier</button>
@@ -1085,7 +1085,7 @@
                         <input type="text" id="config-slogan" placeholder="Vos questions pour une ville dynamique et solidaire" onchange="markModified('config')">
                     </div>
 
-                    <h3 style="color: var(--bleu); margin: 2rem 0 1rem;">🔒 Sécurité</h3>
+                    <h3 style="color: var(--bleu); margin: 2rem 0 1rem;">🔒 Tranquillité</h3>
                     <div style="background: #fef3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
                         <p style="margin: 0; color: #856404;">⚠️ Le mot de passe est stocké dans votre navigateur. Chaque utilisateur peut définir le sien.</p>
                     </div>
@@ -1211,7 +1211,7 @@
             { value: 'solidarite', label: '🤝 Solidarité' },
             { value: 'sport', label: '⚽ Sport' },
             { value: 'economie', label: '💼 Économie' },
-            { value: 'securite', label: '🛡️ Sécurité' },
+            { value: 'tranquillite', label: '🛡️ Tranquillité' },
             { value: 'mobilites', label: '🚲 Mobilités' },
             { value: 'finances', label: '💰 Finances' }
         ];
@@ -1226,7 +1226,7 @@
             { value: 'Solidarité', label: '🤝 Solidarité' },
             { value: 'Sport', label: '⚽ Sport' },
             { value: 'Économie', label: '💼 Économie' },
-            { value: 'Sécurité', label: '🛡️ Sécurité' },
+            { value: 'Tranquillité', label: '🛡️ Tranquillité' },
             { value: 'Mobilités', label: '🚲 Mobilités' },
             { value: 'Finance', label: '💰 Finance' }
         ];
@@ -1467,7 +1467,7 @@
             { theme: 'Culture', icon: '🎭', color: '#9b59b6' },
             { theme: 'Sport', icon: '⚽', color: '#4caf50' },
             { theme: 'Économie', icon: '💼', color: '#f39c12' },
-            { theme: 'Sécurité', icon: '🛡️', color: '#2c3e50' },
+            { theme: 'Tranquillité', icon: '🛡️', color: '#2c3e50' },
             { theme: 'Mobilités', icon: '🚴', color: '#1abc9c' },
             { theme: 'Seniors', icon: '👴', color: '#795548' },
             { theme: 'Démocratie locale', icon: '🗣️', color: '#607d8b' },
@@ -2366,7 +2366,7 @@
                 </div>
                 <div class="form-group">
                     <label>Catégorie / Thème</label>
-                    <input type="text" id="edit-categorie" value="${f.categorie || ''}" placeholder="Ex: Urbanisme, Sécurité, Vie municipale...">
+                    <input type="text" id="edit-categorie" value="${f.categorie || ''}" placeholder="Ex: Urbanisme, Tranquillité, Vie municipale...">
                 </div>
             `;
             document.getElementById('modal-save').onclick = saveFaq;

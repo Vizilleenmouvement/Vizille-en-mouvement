@@ -74,7 +74,7 @@
   {
     "id": 22,
     "titre": "Achever le maillage de vidéoprotection",
-    "theme": "Sécurité",
+    "theme": "Tranquillité",
     "statut": "Programmé",
     "annee": 2027,
     "budget": 0,
@@ -86,7 +86,7 @@
   {
     "id": 23,
     "titre": "Déployer l'éclairage intelligent",
-    "theme": "Sécurité",
+    "theme": "Tranquillité",
     "statut": "Programmé",
     "annee": 2028,
     "budget": 0,
@@ -98,7 +98,7 @@
   {
     "id": 24,
     "titre": "Renforcer la médiation de proximité",
-    "theme": "Sécurité",
+    "theme": "Tranquillité",
     "statut": "Programmé",
     "annee": 2026,
     "budget": 0,
@@ -158,7 +158,7 @@
   {
     "id": 32,
     "titre": "Instaurer des correspondants de quartier",
-    "theme": "Sécurité",
+    "theme": "Tranquillité",
     "statut": "Programmé",
     "annee": 2026,
     "budget": 0,
@@ -270,7 +270,7 @@
     "statut": "Étude",
     "annee": 2026,
     "budget": 0,
-    "resume": "Lisibilité Données Sécurité Comprendre • guider • apaiser",
+    "resume": "Lisibilité Données Tranquillité Comprendre • guider • apaiser",
     "description": "Pourquoi ?\nUn plan lisible réduit les incompréhensions, les détours inutiles et\nles conflits d’usages.\nPriorités\n• Mettre en place des comptages simples aux points clés\n• Hiérarchiser les axes : transit, desserte locale, zones apaisées\n• Clarifier carrefours et signalisation\n• Évaluer, ajuster, puis déployer progressivement\nUn plan lisible pour mieux se déplacer, en\nsécurité.",
     "importance": 1,
     "chiffres": []
