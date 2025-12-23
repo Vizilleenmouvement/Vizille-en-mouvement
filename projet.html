@@ -656,6 +656,49 @@
         .progress-dot.court-terme { background: var(--orange-encours); }
         .progress-dot.moyen-terme { background: var(--bleu-decide); }
         
+        /* Aperçu des projets dans les cartes thèmes */
+        .theme-preview {
+            padding: 0.75rem 1.25rem;
+            background: white;
+            border-top: 1px solid var(--gris-doux);
+        }
+        
+        .preview-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .preview-list li {
+            font-size: 0.85rem;
+            color: var(--gris-texte);
+            padding: 0.3rem 0;
+            border-bottom: 1px dotted #e0e0e0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .preview-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .preview-list li::before {
+            content: '→ ';
+            color: var(--or);
+            font-weight: bold;
+        }
+        
+        .preview-list li.plus-count {
+            color: var(--bleu-clair);
+            font-style: italic;
+            font-weight: 500;
+        }
+        
+        .preview-list li.plus-count::before {
+            content: '';
+        }
+        
         /* ===== CARDS VIEW ===== */
         .cards-grid {
             display: grid;
@@ -1399,7 +1442,8 @@
                     <li><a href="bilan.html">Bilan</a></li>
                     <li><a href="projet.html" class="active">Projet</a></li>
                     <li><a href="equipe.html">Équipe</a></li>
-                    <li><a href="faq.html">Construisons ensemble</a></li>
+                    <li><a href="faq.html">Vos questions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                     <li><a href="admin.html" class="admin-link" title="Administration">⚙️</a></li>
                 </ul>
             </nav>
@@ -1488,8 +1532,8 @@
                         <a href="equipe.html" class="site-nav-btn">
                             <span class="icon">👥</span> Équipe
                         </a>
-                        <a href="faq.html" class="site-nav-btn">
-                            <span class="icon">🤝</span> Ensemble
+                        <a href="contact.html" class="site-nav-btn">
+                            <span class="icon">📞</span> Contact
                         </a>
                     </div>
                 </div>
@@ -2054,6 +2098,13 @@ function renderThemesView() {
         const config = themeConfig[theme] || { icon: '📌', color: '#1a3a5c' };
         const count = projets.length;
         
+        // Générer l'aperçu des 3 premiers projets
+        const previewProjets = projets.slice(0, 3).map(p => {
+            const titre = p.titre.length > 40 ? p.titre.substring(0, 40) + '...' : p.titre;
+            return `<li>${titre}</li>`;
+        }).join('');
+        const plusCount = projets.length > 3 ? `<li class="plus-count">+ ${projets.length - 3} autre${projets.length - 3 > 1 ? 's' : ''}...</li>` : '';
+        
         html += `
             <div class="theme-card" onclick="filterByTheme('${theme}')" style="border-left: 5px solid ${config.color}">
                 <div class="theme-header" style="background: linear-gradient(135deg, ${config.color} 0%, ${adjustColor(config.color, -20)} 100%)">
@@ -2063,8 +2114,14 @@ function renderThemesView() {
                         <span class="count">${count} engagement${count > 1 ? 's' : ''}</span>
                     </div>
                 </div>
+                <div class="theme-preview">
+                    <ul class="preview-list">
+                        ${previewProjets}
+                        ${plusCount}
+                    </ul>
+                </div>
                 <div class="theme-stats">
-                    <span class="theme-budget">Voir les détails →</span>
+                    <span class="theme-budget">👆 Cliquer pour voir tous les projets</span>
                     <div class="theme-progress">
                         ${projets.some(p => p.horizon === 'Prioritaire' || p.statut === 'Prioritaire') ? '<span class="progress-dot prioritaire" title="Prioritaire"></span>' : ''}
                         ${projets.some(p => p.horizon === 'Court terme' || p.statut === 'Court terme') ? '<span class="progress-dot court-terme" title="Court terme"></span>' : ''}
