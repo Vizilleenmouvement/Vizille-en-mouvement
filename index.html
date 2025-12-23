@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vizille en Mouvement - Bientôt en ligne</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bleu: #1a3a5c;
+            --bleu-clair: #2d5a87;
+            --or: #c9a227;
+            --or-clair: #e8c84a;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%);
+            padding: 2rem;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .logo {
+            max-width: 200px;
+            margin-bottom: 1.5rem;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--bleu);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .slogan {
+            color: var(--or);
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        
+        .message {
+            background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        
+        .message h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .message p {
+            opacity: 0.9;
+        }
+        
+        /* Zone mot de passe (pour l'équipe) */
+        .password-zone {
+            border-top: 1px solid #eee;
+            padding-top: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .password-zone p {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 0.75rem;
+        }
+        
+        .password-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .password-form input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .password-form input:focus {
+            outline: none;
+            border-color: var(--or);
+        }
+        
+        .password-form button {
+            padding: 0.75rem 1.5rem;
+            background: var(--or);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .password-form button:hover {
+            background: var(--bleu);
+        }
+        
+        .error {
+            color: #e74c3c;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        
+        .social {
+            margin-top: 1.5rem;
+        }
+        
+        .social a {
+            display: inline-block;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="images/logo.png" alt="Vizille en Mouvement" class="logo">
+        
+        <h1>Vizille en Mouvement</h1>
+        <p class="slogan">Ensemble pour une ville dynamique et solidaire</p>
+        
+        <div class="message">
+            <h2>🚀 Nous serons bientôt parmi vous !</h2>
+            <p>Notre site est en cours de préparation.<br>Revenez très vite pour découvrir notre projet pour Vizille.</p>
+        </div>
+        
+        <div class="social">
+            <a href="https://facebook.com/vizilleenmouvement" title="Facebook">📘</a>
+        </div>
+        
+        <div class="password-zone">
+            <p>🔐 Accès équipe</p>
+            <form class="password-form" onsubmit="return checkPassword()">
+                <input type="password" id="pwd" placeholder="Mot de passe">
+                <button type="submit">→</button>
+            </form>
+            <p class="error" id="error">Mot de passe incorrect</p>
+        </div>
+    </div>
+    
+    <script>
+        // Mot de passe simple (à changer !)
+        // Pour plus de sécurité, utilisez vizille2026 par exemple
+        const PASSWORD = 'vizille2026';
+        
+        function checkPassword() {
+            const input = document.getElementById('pwd').value;
+            if (input === PASSWORD) {
+                // Redirige vers la vraie page d'accueil
+                window.location.href = 'index-full.html';
+            } else {
+                document.getElementById('error').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('error').style.display = 'none';
+                }, 2000);
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
