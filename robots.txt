@@ -1,0 +1,11 @@
+# Robots.txt pour Vizille en Mouvement
+# Site de campagne municipale 2026
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://vizilleenmouvement.fr/sitemap.xml
+
+# Pages à ne pas indexer (administration)
+Disallow: /admin.html
