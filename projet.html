@@ -1393,6 +1393,26 @@
             font-size: 1rem;
         }
         
+        /* Badge thèmes multiples */
+        .multi-theme-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 8px;
+        }
+        
+        .theme-badge {
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 12px;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .theme-badge.secondary {
+            opacity: 0.8;
+        }
+
         /* Modal footer */
         .modal-footer {
             padding: 1rem 2rem 2rem;
@@ -1774,7 +1794,7 @@ let sortColumn = 'annee';
 let sortDirection = 'asc';
 let currentProjectIndex = 0;
 
-// Configuration des thèmes
+// Configuration des thèmes (fixe)
 const themeConfig = {
     "Santé": { icon: "🏥", color: "#e91e63" },
     "Urbanisme": { icon: "🏘️", color: "#34495e" },
@@ -1793,8 +1813,26 @@ const themeConfig = {
     "Personnel": { icon: "👥", color: "#9e9e9e" },
     "Éducation": { icon: "📚", color: "#3f51b5" },
     "Jeunesse": { icon: "🎓", color: "#00bcd4" },
-    "Démocratie": { icon: "🗳️", color: "#ff5722" }
+    "Démocratie": { icon: "🗳️", color: "#ff5722" },
+    "Seniors": { icon: "👴", color: "#795548" },
+    "Métropole": { icon: "🏛️", color: "#00bcd4" },
+    "Démocratie locale": { icon: "🗣️", color: "#607d8b" }
 };
+
+// ===== SUPPORT THÈMES MULTIPLES =====
+// Helper pour obtenir les thèmes d'un projet (supporte theme ou themes)
+function getProjectThemes(projet) {
+    if (projet.themes && Array.isArray(projet.themes)) {
+        return projet.themes;
+    }
+    return projet.theme ? [projet.theme] : [];
+}
+
+// Vérifier si un projet appartient à un thème
+function projectHasTheme(projet, theme) {
+    const themes = getProjectThemes(projet);
+    return themes.includes(theme);
+}
 
 // ===== INITIALISATION =====
 document.addEventListener('DOMContentLoaded', async () => {
@@ -1822,7 +1860,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 function initializeFilters() {
     // Générer les boutons de thèmes
     const themesGrid = document.getElementById('theme-filters-grid');
-    const uniqueThemes = [...new Set(allData.map(p => p.theme))].sort();
+    
+    // Collecter tous les thèmes utilisés (supporte theme et themes)
+    const usedThemes = new Set();
+    allData.forEach(p => {
+        getProjectThemes(p).forEach(t => usedThemes.add(t));
+    });
+    
+    // Combiner avec les thèmes configurés
+    const allThemes = new Set([...usedThemes, ...Object.keys(themeConfig)]);
+    const uniqueThemes = [...allThemes].sort();
     
     // Bouton "Tous"
     let html = `
@@ -1913,7 +1960,8 @@ function applyFilters() {
             (projet.resume && projet.resume.toLowerCase().includes(search)) ||
             (projet.description && projet.description.toLowerCase().includes(search));
         
-        const matchTheme = !theme || projet.theme === theme;
+        // Support des thèmes multiples
+        const matchTheme = !theme || projectHasTheme(projet, theme);
         const matchHorizon = !horizon || projet.horizon === horizon || projet.statut === horizon;
         const matchAnnee = !annee || projet.annee == annee;
         
@@ -1964,7 +2012,12 @@ function parseBudget(budget) {
 // ===== STATISTIQUES =====
 function updateStats() {
     const total = allData.length;
-    const themes = [...new Set(allData.map(p => p.theme))].length;
+    
+    // Compter les thèmes uniques (supporte theme et themes)
+    const themesSet = new Set();
+    allData.forEach(p => getProjectThemes(p).forEach(t => themesSet.add(t)));
+    const themes = themesSet.size;
+    
     const prioritaires = allData.filter(p => p.horizon === 'Prioritaire' || p.statut === 'Prioritaire').length;
     const courtTerme = allData.filter(p => p.horizon === 'Court terme' || p.statut === 'Court terme').length;
     
@@ -1976,10 +2029,13 @@ function updateStats() {
 
 // ===== GRAPHIQUES =====
 function initializeCharts() {
-    // Graphique par thème
+    // Graphique par thème (supporte thèmes multiples)
     const themeData = {};
     allData.forEach(p => {
-        themeData[p.theme] = (themeData[p.theme] || 0) + 1;
+        const themes = getProjectThemes(p);
+        themes.forEach(t => {
+            themeData[t] = (themeData[t] || 0) + 1;
+        });
     });
     
     const themeLabels = Object.keys(themeData).sort((a, b) => themeData[b] - themeData[a]);
@@ -2119,11 +2175,15 @@ function renderThemesView() {
     const container = document.getElementById('view-themes');
     const themeGroups = {};
     
+    // Regrouper les projets par thème (un projet peut être dans plusieurs thèmes)
     filteredData.forEach(projet => {
-        if (!themeGroups[projet.theme]) {
-            themeGroups[projet.theme] = [];
-        }
-        themeGroups[projet.theme].push(projet);
+        const themes = getProjectThemes(projet);
+        themes.forEach(theme => {
+            if (!themeGroups[theme]) {
+                themeGroups[theme] = [];
+            }
+            themeGroups[theme].push(projet);
+        });
     });
     
     let html = '';
@@ -2175,20 +2235,32 @@ function renderCardsView() {
     
     let html = '';
     filteredData.forEach((projet, index) => {
-        const config = themeConfig[projet.theme] || { icon: '📌', color: '#1a3a5c' };
+        const themes = getProjectThemes(projet);
+        const primaryTheme = themes[0] || 'Non défini';
+        const config = themeConfig[primaryTheme] || { icon: '📌', color: '#1a3a5c' };
         const horizon = projet.horizon || projet.statut || 'Non défini';
         const horizonClass = getHorizonClass(horizon);
+        
+        // Générer les badges pour tous les thèmes
+        let themeBadges = '';
+        if (themes.length > 1) {
+            themeBadges = '<div class="multi-theme-badges">' + themes.slice(1).map(t => {
+                const tConfig = themeConfig[t] || { icon: '📌', color: '#1a3a5c' };
+                return `<span class="theme-badge secondary" style="background: ${tConfig.color}">${tConfig.icon} ${t}</span>`;
+            }).join('') + '</div>';
+        }
         
         html += `
             <div class="action-card" onclick="openProjectModal(${projet.id})" style="animation-delay: ${index * 0.05}s">
                 <div class="card-header">
                     <span class="card-theme" style="background: ${config.color}">
-                        ${config.icon} ${projet.theme}
+                        ${config.icon} ${primaryTheme}
                     </span>
                     <span class="card-statut ${horizonClass}">${horizon}</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">${projet.titre}</h3>
+                    ${themeBadges}
                     <p class="card-description">${projet.resume || projet.description || 'Engagement pour le mandat 2026-2032.'}</p>
                     <div class="card-footer">
                         <span class="card-budget">${projet.budget ? projet.budget : 'En cours d\'évaluation'}</span>
@@ -2209,16 +2281,23 @@ function renderTableView() {
     
     let html = '';
     filteredData.forEach(projet => {
-        const config = themeConfig[projet.theme] || { icon: '📌', color: '#1a3a5c' };
+        const themes = getProjectThemes(projet);
+        const primaryTheme = themes[0] || 'Non défini';
+        const config = themeConfig[primaryTheme] || { icon: '📌', color: '#1a3a5c' };
         const horizon = projet.horizon || projet.statut || '';
         const horizonClass = getHorizonClass(horizon);
+        
+        // Afficher tous les thèmes
+        const themesDisplay = themes.map(t => {
+            const tConfig = themeConfig[t] || { icon: '📌', color: '#1a3a5c' };
+            return `<span style="color: ${tConfig.color}">${tConfig.icon}</span> ${t}`;
+        }).join(', ');
         
         html += `
             <tr onclick="openProjectModal(${projet.id})">
                 <td>
                     <span class="table-theme">
-                        <span style="color: ${config.color}">${config.icon}</span>
-                        ${projet.theme}
+                        ${themesDisplay}
                     </span>
                 </td>
                 <td>${projet.titre}</td>
@@ -2251,14 +2330,27 @@ function openProjectModal(projectId) {
     currentProjectIndex = filteredData.findIndex(p => p.id === projectId);
     
     const modal = document.getElementById('modal-overlay');
-    const config = themeConfig[project.theme] || { icon: '📌', color: '#1a3a5c' };
+    const themes = getProjectThemes(project);
+    const primaryTheme = themes[0] || 'Non défini';
+    const config = themeConfig[primaryTheme] || { icon: '📌', color: '#1a3a5c' };
     const horizon = project.horizon || project.statut || '';
     
     // Header
     document.getElementById('modal-header').style.background = 
         `linear-gradient(135deg, ${config.color} 0%, ${adjustColor(config.color, -30)} 100%)`;
     document.getElementById('modal-icon').textContent = config.icon;
-    document.getElementById('modal-theme').textContent = project.theme;
+    
+    // Afficher tous les thèmes
+    if (themes.length > 1) {
+        const themesHtml = themes.map(t => {
+            const tConfig = themeConfig[t] || { icon: '📌', color: '#1a3a5c' };
+            return `<span style="background: ${tConfig.color}; padding: 2px 8px; border-radius: 10px; margin-right: 5px;">${tConfig.icon} ${t}</span>`;
+        }).join('');
+        document.getElementById('modal-theme').innerHTML = themesHtml;
+    } else {
+        document.getElementById('modal-theme').textContent = primaryTheme;
+    }
+    
     document.getElementById('modal-title').textContent = project.titre;
     document.getElementById('modal-statut').textContent = horizon;
     document.getElementById('modal-statut').className = 'modal-statut ' + getHorizonClass(horizon);

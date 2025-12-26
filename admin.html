@@ -1446,33 +1446,46 @@
             
             let filtered = data.projets;
             
-            // Filtre par thème
+            // Filtre par thème (supporte themes[] et theme)
             if (currentProjetFilter) {
-                filtered = filtered.filter(p => (p.theme || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(currentProjetFilter.toLowerCase()));
+                filtered = filtered.filter(p => {
+                    const themes = getProjetThemes(p);
+                    return themes.some(t => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(currentProjetFilter.toLowerCase()));
+                });
             }
             
             // Filtre par recherche
             if (search) {
-                filtered = filtered.filter(p => 
-                    (p.titre || '').toLowerCase().includes(search) ||
-                    (p.theme || '').toLowerCase().includes(search) ||
-                    (p.resume || '').toLowerCase().includes(search) ||
-                    (p.description || '').toLowerCase().includes(search)
-                );
+                filtered = filtered.filter(p => {
+                    const themesStr = getProjetThemes(p).join(' ').toLowerCase();
+                    return (p.titre || '').toLowerCase().includes(search) ||
+                        themesStr.includes(search) ||
+                        (p.resume || '').toLowerCase().includes(search) ||
+                        (p.description || '').toLowerCase().includes(search);
+                });
             }
             
             document.getElementById('projets-count').textContent = filtered.length;
             document.getElementById('projets-list').innerHTML = filtered.length === 0 
                 ? '<div class="empty-state"><div class="icon">📭</div><p>Aucun projet trouvé</p></div>'
                 : filtered.map((p, i) => {
-                    const themeConf = THEMES_CONFIG.find(t => t.theme === p.theme) || { icon: '📋', color: '#1a3a5c' };
+                    const themes = getProjetThemes(p);
+                    const primaryTheme = themes[0] || 'Non défini';
+                    const themeConf = THEMES_CONFIG.find(t => t.theme === primaryTheme) || { icon: '📋', color: '#1a3a5c' };
+                    
+                    // Badges pour tous les thèmes
+                    const themeBadges = themes.map(t => {
+                        const conf = THEMES_CONFIG.find(tc => tc.theme === t) || { icon: '📋', color: '#1a3a5c' };
+                        return `<span style="background: ${conf.color}; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-right: 0.3rem;">${conf.icon} ${t}</span>`;
+                    }).join('');
+                    
                     return `
                     <div class="item-card" style="border-left: 4px solid ${themeConf.color}">
                         <div class="item-info">
                             <div class="item-text">
                                 <div class="item-title">${themeConf.icon} ${p.titre || 'Sans titre'}</div>
                                 <div class="item-desc">
-                                    <span style="background: ${themeConf.color}; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-right: 0.5rem;">${p.theme}</span>
+                                    ${themeBadges}
                                     <span style="color: #666;">${p.statut || ''} ${p.annee ? '• ' + p.annee : ''}</span>
                                     ${p.resume ? '<br><em style="color: #888;">' + p.resume + '</em>' : ''}
                                 </div>
@@ -1512,11 +1525,23 @@
             { theme: 'Métropole', icon: '🏛️', color: '#00bcd4' }
         ];
 
+        // Helper pour obtenir les thèmes d'un projet (supporte theme ou themes)
+        function getProjetThemes(p) {
+            if (p.themes && Array.isArray(p.themes)) {
+                return p.themes;
+            }
+            return p.theme ? [p.theme] : [];
+        }
+
         function showProjetModal(p) {
             document.getElementById('modal-title').textContent = currentEdit.index === -1 ? '➕ Ajouter un projet' : '✏️ Modifier le projet';
             
-            const themeOptions = THEMES_CONFIG.map(t => 
-                `<option value="${t.theme}" ${p.theme === t.theme ? 'selected' : ''}>${t.icon} ${t.theme}</option>`
+            const currentThemes = getProjetThemes(p);
+            const themeCheckboxes = THEMES_CONFIG.map(t => 
+                `<label style="display: inline-flex; align-items: center; gap: 5px; margin: 4px 8px 4px 0; cursor: pointer;">
+                    <input type="checkbox" class="theme-checkbox" value="${t.theme}" ${currentThemes.includes(t.theme) ? 'checked' : ''}>
+                    <span style="background: ${t.color}; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.85rem;">${t.icon} ${t.theme}</span>
+                </label>`
             ).join('');
             
             const statutOptions = ['Programmé', 'En cours', 'Prioritaire', 'Étude'].map(s =>
@@ -1564,22 +1589,19 @@
                     <label>Titre du projet *</label>
                     <input type="text" id="edit-titre" value="${p.titre || ''}" placeholder="Ex: Création d'une maison de santé">
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <div class="form-group">
-                        <label>Thème *</label>
-                        <select id="edit-theme">
-                            <option value="">-- Choisir --</option>
-                            ${themeOptions}
-                        </select>
+                <div class="form-group">
+                    <label>Thème(s) * <small style="color: #888; font-weight: normal;">(cocher un ou plusieurs)</small></label>
+                    <div id="themes-checkboxes" style="display: flex; flex-wrap: wrap; padding: 10px; background: #f8f9fa; border-radius: 8px; border: 1px solid var(--gris-border);">
+                        ${themeCheckboxes}
                     </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                     <div class="form-group">
                         <label>Statut</label>
                         <select id="edit-statut">
                             ${statutOptions}
                         </select>
                     </div>
-                </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                     <div class="form-group">
                         <label>Année prévue</label>
                         <select id="edit-annee">
@@ -1589,6 +1611,8 @@
                             ).join('')}
                         </select>
                     </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                     <div class="form-group">
                         <label>Importance (1-3)</label>
                         <select id="edit-importance">
@@ -1596,6 +1620,10 @@
                             <option value="2" ${p.importance == 2 ? 'selected' : ''}>2 - Important</option>
                             <option value="3" ${p.importance == 3 ? 'selected' : ''}>3 - Prioritaire</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Budget estimé (€)</label>
+                        <input type="number" id="edit-budget" value="${p.budget || 0}" placeholder="0">
                     </div>
                 </div>
                 <div class="form-group">
@@ -1605,10 +1633,6 @@
                 <div class="form-group">
                     <label>Description détaillée</label>
                     <textarea id="edit-description" rows="4" placeholder="Description complète du projet...">${p.description || ''}</textarea>
-                </div>
-                <div class="form-group">
-                    <label>Budget estimé (€)</label>
-                    <input type="number" id="edit-budget" value="${p.budget || 0}" placeholder="0">
                 </div>
                 
                 <hr style="margin: 1.5rem 0; border: none; border-top: 2px solid var(--or);">
@@ -1723,7 +1747,13 @@
 
         function saveProjet() {
             const titre = document.getElementById('edit-titre').value.trim();
-            const theme = document.getElementById('edit-theme').value;
+            
+            // Récupérer les thèmes cochés
+            const themes = [];
+            document.querySelectorAll('#themes-checkboxes .theme-checkbox:checked').forEach(cb => {
+                themes.push(cb.value);
+            });
+            
             const statut = document.getElementById('edit-statut').value;
             const annee = parseInt(document.getElementById('edit-annee').value) || null;
             const importance = parseInt(document.getElementById('edit-importance').value) || 1;
@@ -1775,15 +1805,16 @@
                 }
             });
             
-            if (!titre || !theme) {
-                showToast('⚠️ Titre et thème obligatoires', 'warning');
+            if (!titre || themes.length === 0) {
+                showToast('⚠️ Titre et au moins un thème obligatoires', 'warning');
                 return;
             }
 
             const projet = {
                 id: currentEdit.index === -1 ? Date.now() : data.projets[currentEdit.index].id,
                 titre,
-                theme,
+                themes,  // tableau de thèmes
+                theme: themes[0],  // rétrocompatibilité : premier thème
                 statut,
                 annee,
                 budget,
