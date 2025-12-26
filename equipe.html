@@ -1,6 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <script>
+        // Protection par mot de passe - @@@@
+        (function() {
+            const PASSWORD = '@@@@';
+            const MAX_ATTEMPTS = 3;
+            
+            if (!sessionStorage.getItem('vizille_auth')) {
+                let attempts = 0;
+                let authenticated = false;
+                
+                while (!authenticated && attempts < MAX_ATTEMPTS) {
+                    const input = prompt('Mot de passe requis pour accéder au site :');
+                    
+                    if (input === null) {
+                        window.location.href = 'about:blank';
+                        break;
+                    }
+                    
+                    if (input === PASSWORD) {
+                        authenticated = true;
+                        sessionStorage.setItem('vizille_auth', 'true');
+                    } else {
+                        attempts++;
+                        if (attempts < MAX_ATTEMPTS) {
+                            alert('Mot de passe incorrect. Tentative ' + attempts + '/' + MAX_ATTEMPTS);
+                        } else {
+                            alert('Trop de tentatives. Accès refusé.');
+                            window.location.href = 'about:blank';
+                        }
+                    }
+                }
+                
+                if (!authenticated) {
+                    document.body.innerHTML = '';
+                }
+            }
+        })();
+    </script>
 
     
     <meta charset="UTF-8">
