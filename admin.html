@@ -564,6 +564,7 @@
     <nav class="nav-tabs">
         <button class="nav-tab active" data-tab="accueil">🏠 Accueil</button>
         <button class="nav-tab" data-tab="projets">🚀 Projets</button>
+        <button class="nav-tab" data-tab="themes">🎨 Thèmes</button>
         <button class="nav-tab" data-tab="actions">📊 Actions</button>
         <button class="nav-tab" data-tab="candidats">👥 Candidats</button>
         <button class="nav-tab" data-tab="faq">🤝 Construisons ensemble</button>
@@ -780,6 +781,80 @@
                             <input type="text" id="search-projets" placeholder="🔍 Rechercher..." style="padding: 0.5rem 1rem; border: 2px solid var(--gris-border); border-radius: 8px; width: 200px;" oninput="renderProjets()">
                         </div>
                         <div id="projets-list"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB: THÈMES -->
+        <section class="tab-content" id="tab-themes">
+            <div class="card">
+                <div class="card-header">
+                    <h2>🎨 Gestion des Thèmes</h2>
+                    <div class="publish-bar">
+                        <span class="status saved" id="status-themes">✓ À jour</span>
+                        <button class="btn-publish" onclick="publish('themes')">🚀 Publier</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p style="color: #666; margin-bottom: 1.5rem;">
+                        Gérez les thèmes disponibles pour classer vos projets. Un thème ne peut être supprimé que s'il n'est rattaché à aucun projet.
+                    </p>
+                    
+                    <!-- Formulaire d'ajout -->
+                    <div style="display: flex; gap: 10px; margin-bottom: 2rem; padding: 1rem; background: #f8f9fa; border-radius: 8px; flex-wrap: wrap; align-items: flex-end;">
+                        <div class="form-group" style="margin: 0; flex: 1; min-width: 150px;">
+                            <label style="font-size: 0.85rem;">Nom du thème</label>
+                            <input type="text" id="new-theme-name" placeholder="Ex: Numérique" maxlength="30" style="width: 100%;">
+                        </div>
+                        <div class="form-group" style="margin: 0; width: 80px;">
+                            <label style="font-size: 0.85rem;">Icône</label>
+                            <select id="new-theme-icon" style="width: 100%; font-size: 1.2rem; text-align: center;">
+                                <option value="📌">📌</option>
+                                <option value="🏥">🏥</option>
+                                <option value="🏘️">🏘️</option>
+                                <option value="🌿">🌿</option>
+                                <option value="🎭">🎭</option>
+                                <option value="🏛️">🏛️</option>
+                                <option value="👶">👶</option>
+                                <option value="🤝">🤝</option>
+                                <option value="⚽">⚽</option>
+                                <option value="💼">💼</option>
+                                <option value="🚴">🚴</option>
+                                <option value="🛡️">🛡️</option>
+                                <option value="🏗️">🏗️</option>
+                                <option value="💰">💰</option>
+                                <option value="👥">👥</option>
+                                <option value="📚">📚</option>
+                                <option value="🎓">🎓</option>
+                                <option value="🗳️">🗳️</option>
+                                <option value="🎯">🎯</option>
+                                <option value="🌍">🌍</option>
+                                <option value="🚗">🚗</option>
+                                <option value="🏠">🏠</option>
+                                <option value="💡">💡</option>
+                                <option value="📱">📱</option>
+                                <option value="🌳">🌳</option>
+                                <option value="👴">👴</option>
+                                <option value="🗣️">🗣️</option>
+                                <option value="🎪">🎪</option>
+                                <option value="🏆">🏆</option>
+                                <option value="🔧">🔧</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin: 0; width: 80px;">
+                            <label style="font-size: 0.85rem;">Couleur</label>
+                            <input type="color" id="new-theme-color" value="#1a3a5c" style="width: 100%; height: 38px; border: none; border-radius: 4px; cursor: pointer;">
+                        </div>
+                        <button class="btn btn-primary" onclick="addNewTheme()" style="height: 38px;">
+                            + Ajouter
+                        </button>
+                    </div>
+                    
+                    <!-- Liste des thèmes -->
+                    <h4 style="color: var(--bleu); margin-bottom: 1rem;">Thèmes existants (<span id="themes-count">0</span>)</h4>
+                    <div id="themes-list" style="display: grid; gap: 10px;">
+                        <!-- Généré dynamiquement -->
                     </div>
                 </div>
             </div>
@@ -1272,6 +1347,7 @@
         // ===== DONNÉES =====
         let data = {
             projets: [],
+            themes: [],
             actions: [],
             candidats: [],
             faq: [],
@@ -1338,6 +1414,7 @@
             
             const files = {
                 projets: 'projets.json',
+                themes: 'themes.json',
                 actions: 'data.json',
                 candidats: 'candidats.json',
                 faq: 'faq.json',
@@ -1356,6 +1433,10 @@
                         const loaded = await response.json();
                         if (key === 'config') {
                             data.config = { ...data.config, ...loaded };
+                        } else if (key === 'themes') {
+                            data.themes = loaded;
+                            // Mettre à jour THEMES_CONFIG depuis les données chargées
+                            THEMES_CONFIG = [...loaded];
                         } else {
                             data[key] = loaded;
                         }
@@ -1391,6 +1472,7 @@
         // ===== RENDER ALL =====
         function renderAll() {
             renderProjets();
+            renderThemesList();
             renderActions();
             renderCandidats();
             renderFaq();
@@ -1509,7 +1591,8 @@
             showProjetModal(data.projets[index]);
         }
 
-        const THEMES_CONFIG = [
+        // Configuration des thèmes par défaut (sera remplacée par themes.json au chargement)
+        let THEMES_CONFIG = [
             { theme: 'Urbanisme', icon: '🏘️', color: '#34495e' },
             { theme: 'Environnement', icon: '🌿', color: '#27ae60' },
             { theme: 'Solidarité', icon: '🤝', color: '#e74c3c' },
@@ -1524,6 +1607,100 @@
             { theme: 'Démocratie locale', icon: '🗣️', color: '#607d8b' },
             { theme: 'Métropole', icon: '🏛️', color: '#00bcd4' }
         ];
+        
+        // ===== GESTION DES THÈMES =====
+        function renderThemesList() {
+            // Compter les projets par thème
+            const themeCounts = {};
+            (data.projets || []).forEach(p => {
+                const themes = getProjetThemes(p);
+                themes.forEach(t => {
+                    themeCounts[t] = (themeCounts[t] || 0) + 1;
+                });
+            });
+            
+            document.getElementById('themes-count').textContent = THEMES_CONFIG.length;
+            
+            const container = document.getElementById('themes-list');
+            container.innerHTML = THEMES_CONFIG.map((t, index) => {
+                const count = themeCounts[t.theme] || 0;
+                const canDelete = count === 0;
+                return `
+                    <div style="display: flex; align-items: center; gap: 15px; padding: 12px 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid ${t.color};">
+                        <span style="font-size: 1.5rem;">${t.icon}</span>
+                        <span style="flex: 1; font-weight: 600;">${t.theme}</span>
+                        <span style="background: ${t.color}; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem;">
+                            ${count} projet${count > 1 ? 's' : ''}
+                        </span>
+                        <button class="btn btn-sm ${canDelete ? 'btn-danger' : ''}" 
+                                onclick="deleteTheme(${index})" 
+                                ${!canDelete ? 'disabled style="opacity: 0.3; cursor: not-allowed;"' : ''}
+                                title="${canDelete ? 'Supprimer ce thème' : 'Ce thème a des projets rattachés'}">
+                            🗑️
+                        </button>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function addNewTheme() {
+            const nameInput = document.getElementById('new-theme-name');
+            const iconSelect = document.getElementById('new-theme-icon');
+            const colorInput = document.getElementById('new-theme-color');
+            
+            const name = nameInput.value.trim();
+            const icon = iconSelect.value;
+            const color = colorInput.value;
+            
+            if (!name) {
+                showToast('⚠️ Veuillez entrer un nom de thème', 'warning');
+                return;
+            }
+            
+            if (THEMES_CONFIG.some(t => t.theme.toLowerCase() === name.toLowerCase())) {
+                showToast('⚠️ Ce thème existe déjà', 'warning');
+                return;
+            }
+            
+            THEMES_CONFIG.push({ theme: name, icon, color });
+            THEMES_CONFIG.sort((a, b) => a.theme.localeCompare(b.theme));
+            data.themes = [...THEMES_CONFIG];
+            markModified('themes');
+            
+            // Réinitialiser le formulaire
+            nameInput.value = '';
+            iconSelect.value = '📌';
+            colorInput.value = '#1a3a5c';
+            
+            renderThemesList();
+            showToast('✅ Thème ajouté : ' + name + ' (pensez à publier)', 'success');
+        }
+        
+        function deleteTheme(index) {
+            const theme = THEMES_CONFIG[index];
+            
+            // Vérifier qu'aucun projet n'utilise ce thème
+            const hasProjects = (data.projets || []).some(p => {
+                const themes = getProjetThemes(p);
+                return themes.includes(theme.theme);
+            });
+            
+            if (hasProjects) {
+                showToast('⚠️ Impossible de supprimer : des projets utilisent ce thème', 'warning');
+                return;
+            }
+            
+            if (!confirm(`Supprimer le thème "${theme.theme}" ?`)) {
+                return;
+            }
+            
+            THEMES_CONFIG.splice(index, 1);
+            data.themes = [...THEMES_CONFIG];
+            markModified('themes');
+            
+            renderThemesList();
+            showToast('✅ Thème supprimé (pensez à publier)', 'success');
+        }
 
         // Helper pour obtenir les thèmes d'un projet (supporte theme ou themes)
         function getProjetThemes(p) {
@@ -2996,6 +3173,7 @@ Pour vous désabonner, répondez à cet email.
 
             const files = {
                 projets: 'projets.json',
+                themes: 'themes.json',
                 actions: 'data.json',
                 candidats: 'candidats.json',
                 faq: 'faq.json',
@@ -3006,6 +3184,11 @@ Pour vous désabonner, répondez à cet email.
 
             const filename = files[section];
             publishingInProgress[section] = true;
+            
+            // Pour themes, synchroniser avec THEMES_CONFIG
+            if (section === 'themes') {
+                data.themes = [...THEMES_CONFIG];
+            }
             
             // Pour config, on doit d'abord lire les valeurs des champs
             if (section === 'config') {

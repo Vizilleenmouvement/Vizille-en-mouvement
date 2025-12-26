@@ -1,80 +1,15 @@
 [
-  {
-    "id": 1,
-    "nom": "Urbanisme",
-    "icon": "🏘️",
-    "color": "#34495e"
-  },
-  {
-    "id": 2,
-    "nom": "Santé",
-    "icon": "🏥",
-    "color": "#e91e63"
-  },
-  {
-    "id": 3,
-    "nom": "Environnement",
-    "icon": "🌿",
-    "color": "#27ae60"
-  },
-  {
-    "id": 4,
-    "nom": "Culture",
-    "icon": "🎭",
-    "color": "#9b59b6"
-  },
-  {
-    "id": 5,
-    "nom": "Patrimoine",
-    "icon": "🏛️",
-    "color": "#8e44ad"
-  },
-  {
-    "id": 6,
-    "nom": "Enfance",
-    "icon": "👶",
-    "color": "#3498db"
-  },
-  {
-    "id": 7,
-    "nom": "Solidarité",
-    "icon": "🤝",
-    "color": "#e74c3c"
-  },
-  {
-    "id": 8,
-    "nom": "Sport",
-    "icon": "⚽",
-    "color": "#2ecc71"
-  },
-  {
-    "id": 9,
-    "nom": "Économie",
-    "icon": "💼",
-    "color": "#f39c12"
-  },
-  {
-    "id": 10,
-    "nom": "Mobilités",
-    "icon": "🚴",
-    "color": "#1abc9c"
-  },
-  {
-    "id": 11,
-    "nom": "Tranquillité",
-    "icon": "🛡️",
-    "color": "#2c3e50"
-  },
-  {
-    "id": 12,
-    "nom": "Finance",
-    "icon": "💰",
-    "color": "#795548"
-  },
-  {
-    "id": 1765644410129,
-    "nom": "Vélo",
-    "icon": "🚴",
-    "color": "#607d8b"
-  }
+  { "theme": "Culture", "icon": "🎭", "color": "#9b59b6" },
+  { "theme": "Démocratie locale", "icon": "🗣️", "color": "#607d8b" },
+  { "theme": "Économie", "icon": "💼", "color": "#f39c12" },
+  { "theme": "Enfance", "icon": "👶", "color": "#3498db" },
+  { "theme": "Environnement", "icon": "🌿", "color": "#27ae60" },
+  { "theme": "Métropole", "icon": "🏛️", "color": "#00bcd4" },
+  { "theme": "Mobilités", "icon": "🚴", "color": "#1abc9c" },
+  { "theme": "Santé", "icon": "🏥", "color": "#e91e63" },
+  { "theme": "Seniors", "icon": "👴", "color": "#795548" },
+  { "theme": "Solidarité", "icon": "🤝", "color": "#e74c3c" },
+  { "theme": "Sport", "icon": "⚽", "color": "#4caf50" },
+  { "theme": "Tranquillité", "icon": "🛡️", "color": "#2c3e50" },
+  { "theme": "Urbanisme", "icon": "🏘️", "color": "#34495e" }
 ]

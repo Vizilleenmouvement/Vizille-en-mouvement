@@ -1794,8 +1794,8 @@ let sortColumn = 'annee';
 let sortDirection = 'asc';
 let currentProjectIndex = 0;
 
-// Configuration des thèmes (fixe)
-const themeConfig = {
+// Configuration des thèmes par défaut
+const defaultThemeConfig = {
     "Santé": { icon: "🏥", color: "#e91e63" },
     "Urbanisme": { icon: "🏘️", color: "#34495e" },
     "Environnement": { icon: "🌿", color: "#27ae60" },
@@ -1819,6 +1819,25 @@ const themeConfig = {
     "Démocratie locale": { icon: "🗣️", color: "#607d8b" }
 };
 
+// Configuration des thèmes (sera mise à jour depuis themes.json)
+let themeConfig = { ...defaultThemeConfig };
+
+// Charger les thèmes depuis themes.json
+async function loadThemeConfig() {
+    try {
+        const response = await fetch('themes.json?v=' + Date.now());
+        if (response.ok) {
+            const themesArray = await response.json();
+            // Convertir le tableau en objet
+            themesArray.forEach(t => {
+                themeConfig[t.theme] = { icon: t.icon, color: t.color };
+            });
+        }
+    } catch (e) {
+        console.warn('Utilisation des thèmes par défaut');
+    }
+}
+
 // ===== SUPPORT THÈMES MULTIPLES =====
 // Helper pour obtenir les thèmes d'un projet (supporte theme ou themes)
 function getProjectThemes(projet) {
@@ -1837,6 +1856,9 @@ function projectHasTheme(projet, theme) {
 // ===== INITIALISATION =====
 document.addEventListener('DOMContentLoaded', async () => {
     try {
+        // Charger les thèmes d'abord
+        await loadThemeConfig();
+        
         // Charger les données (cache-buster pour éviter le cache)
         const response = await fetch('projets.json?v=' + Date.now());
         if (!response.ok) throw new Error('Erreur chargement données');
