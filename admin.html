@@ -1624,7 +1624,7 @@
             const container = document.getElementById('themes-list');
             container.innerHTML = THEMES_CONFIG.map((t, index) => {
                 const count = themeCounts[t.theme] || 0;
-                const canDelete = count === 0;
+                const hasProjects = count > 0;
                 return `
                     <div style="display: flex; align-items: center; gap: 15px; padding: 12px 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid ${t.color};">
                         <span style="font-size: 1.5rem;">${t.icon}</span>
@@ -1632,10 +1632,9 @@
                         <span style="background: ${t.color}; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem;">
                             ${count} projet${count > 1 ? 's' : ''}
                         </span>
-                        <button class="btn btn-sm ${canDelete ? 'btn-danger' : ''}" 
+                        <button class="btn btn-sm btn-danger" 
                                 onclick="deleteTheme(${index})" 
-                                ${!canDelete ? 'disabled style="opacity: 0.3; cursor: not-allowed;"' : ''}
-                                title="${canDelete ? 'Supprimer ce thème' : 'Ce thème a des projets rattachés'}">
+                                title="${hasProjects ? 'Supprimer et réassigner les projets' : 'Supprimer ce thème'}">
                             🗑️
                         </button>
                     </div>
@@ -1679,17 +1678,19 @@
         function deleteTheme(index) {
             const theme = THEMES_CONFIG[index];
             
-            // Vérifier qu'aucun projet n'utilise ce thème
-            const hasProjects = (data.projets || []).some(p => {
+            // Compter les projets qui utilisent ce thème
+            const projetsWithTheme = (data.projets || []).filter(p => {
                 const themes = getProjetThemes(p);
                 return themes.includes(theme.theme);
             });
             
-            if (hasProjects) {
-                showToast('⚠️ Impossible de supprimer : des projets utilisent ce thème', 'warning');
+            if (projetsWithTheme.length > 0) {
+                // Afficher la modal de réassignation
+                showReassignModal(index, theme, projetsWithTheme.length);
                 return;
             }
             
+            // Pas de projets, suppression directe
             if (!confirm(`Supprimer le thème "${theme.theme}" ?`)) {
                 return;
             }
@@ -1701,6 +1702,74 @@
             renderThemesList();
             showToast('✅ Thème supprimé (pensez à publier)', 'success');
         }
+        
+        function showReassignModal(themeIndex, theme, projetCount) {
+            // Créer les options pour le select (tous les thèmes sauf celui à supprimer)
+            const otherThemes = THEMES_CONFIG.filter((t, i) => i !== themeIndex);
+            const options = otherThemes.map(t => 
+                `<option value="${t.theme}">${t.icon} ${t.theme}</option>`
+            ).join('');
+            
+            // Créer la modal
+            const modalHTML = `
+                <div id="reassign-modal" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; z-index: 9999;">
+                    <div style="background: white; border-radius: 12px; padding: 2rem; max-width: 450px; width: 90%; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                        <h3 style="color: var(--bleu); margin-bottom: 1rem;">🔄 Réassigner les projets</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem;">
+                            <strong>${projetCount} projet${projetCount > 1 ? 's' : ''}</strong> utilise${projetCount > 1 ? 'nt' : ''} le thème <strong style="color: ${theme.color};">${theme.icon} ${theme.theme}</strong>.
+                        </p>
+                        <p style="color: #666; margin-bottom: 1rem;">Vers quel thème souhaitez-vous les déplacer ?</p>
+                        <select id="reassign-target" style="width: 100%; padding: 10px; border: 2px solid var(--gris-border); border-radius: 8px; font-size: 1rem; margin-bottom: 1.5rem;">
+                            ${options}
+                        </select>
+                        <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                            <button class="btn" onclick="closeReassignModal()" style="background: #e0e0e0; color: #666;">Annuler</button>
+                            <button class="btn btn-primary" onclick="confirmReassign(${themeIndex}, '${theme.theme}')">Réassigner et supprimer</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+        }
+        
+        function closeReassignModal() {
+            const modal = document.getElementById('reassign-modal');
+            if (modal) modal.remove();
+        }
+        
+        function confirmReassign(themeIndex, oldThemeName) {
+            const newTheme = document.getElementById('reassign-target').value;
+            
+            // Réassigner tous les projets
+            let reassigned = 0;
+            (data.projets || []).forEach(p => {
+                const themes = getProjetThemes(p);
+                const idx = themes.indexOf(oldThemeName);
+                if (idx !== -1) {
+                    // Remplacer l'ancien thème par le nouveau
+                    themes[idx] = newTheme;
+                    // Supprimer les doublons si le nouveau thème était déjà présent
+                    p.themes = [...new Set(themes)];
+                    p.theme = p.themes[0]; // Rétrocompatibilité
+                    reassigned++;
+                }
+            });
+            
+            // Supprimer le thème
+            THEMES_CONFIG.splice(themeIndex, 1);
+            data.themes = [...THEMES_CONFIG];
+            
+            // Marquer comme modifié
+            markModified('themes');
+            markModified('projets');
+            
+            closeReassignModal();
+            renderThemesList();
+            renderProjets();
+            
+            showToast(`✅ ${reassigned} projet${reassigned > 1 ? 's' : ''} réassigné${reassigned > 1 ? 's' : ''} vers "${newTheme}" (pensez à publier)`, 'success');
+        }
 
         // Helper pour obtenir les thèmes d'un projet (supporte theme ou themes)
         function getProjetThemes(p) {
@@ -1709,17 +1778,48 @@
             }
             return p.theme ? [p.theme] : [];
         }
+        
+        // Toggle un badge de thème (sélection/désélection)
+        function toggleThemeBadge(el) {
+            const isSelected = el.classList.contains('selected');
+            const color = el.dataset.color;
+            
+            if (isSelected) {
+                el.classList.remove('selected');
+                el.style.background = '#e0e0e0';
+                el.style.color = '#666';
+                el.style.borderColor = 'transparent';
+            } else {
+                el.classList.add('selected');
+                el.style.background = color;
+                el.style.color = 'white';
+                el.style.borderColor = color;
+            }
+        }
 
         function showProjetModal(p) {
             document.getElementById('modal-title').textContent = currentEdit.index === -1 ? '➕ Ajouter un projet' : '✏️ Modifier le projet';
             
             const currentThemes = getProjetThemes(p);
-            const themeCheckboxes = THEMES_CONFIG.map(t => 
-                `<label style="display: inline-flex; align-items: center; gap: 5px; margin: 4px 8px 4px 0; cursor: pointer;">
-                    <input type="checkbox" class="theme-checkbox" value="${t.theme}" ${currentThemes.includes(t.theme) ? 'checked' : ''}>
-                    <span style="background: ${t.color}; color: white; padding: 2px 8px; border-radius: 12px; font-size: 0.85rem;">${t.icon} ${t.theme}</span>
-                </label>`
-            ).join('');
+            const themeBadges = THEMES_CONFIG.map(t => {
+                const isSelected = currentThemes.includes(t.theme);
+                return `<span class="theme-badge-select ${isSelected ? 'selected' : ''}" 
+                              data-theme="${t.theme}" 
+                              data-color="${t.color}"
+                              onclick="toggleThemeBadge(this)"
+                              style="background: ${isSelected ? t.color : '#e0e0e0'}; 
+                                     color: ${isSelected ? 'white' : '#666'}; 
+                                     padding: 6px 12px; 
+                                     border-radius: 20px; 
+                                     font-size: 0.85rem; 
+                                     cursor: pointer; 
+                                     margin: 4px;
+                                     display: inline-block;
+                                     transition: all 0.2s ease;
+                                     border: 2px solid ${isSelected ? t.color : 'transparent'};">
+                        ${t.icon} ${t.theme}
+                       </span>`;
+            }).join('');
             
             const statutOptions = ['Programmé', 'En cours', 'Prioritaire', 'Étude'].map(s =>
                 `<option value="${s}" ${p.statut === s ? 'selected' : ''}>${s}</option>`
@@ -1767,9 +1867,9 @@
                     <input type="text" id="edit-titre" value="${p.titre || ''}" placeholder="Ex: Création d'une maison de santé">
                 </div>
                 <div class="form-group">
-                    <label>Thème(s) * <small style="color: #888; font-weight: normal;">(cocher un ou plusieurs)</small></label>
-                    <div id="themes-checkboxes" style="display: flex; flex-wrap: wrap; padding: 10px; background: #f8f9fa; border-radius: 8px; border: 1px solid var(--gris-border);">
-                        ${themeCheckboxes}
+                    <label>Thème(s) * <small style="color: #888; font-weight: normal;">(cliquer pour sélectionner)</small></label>
+                    <div id="themes-badges" style="display: flex; flex-wrap: wrap; padding: 10px; background: #f8f9fa; border-radius: 8px; border: 1px solid var(--gris-border);">
+                        ${themeBadges}
                     </div>
                 </div>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
@@ -1925,10 +2025,10 @@
         function saveProjet() {
             const titre = document.getElementById('edit-titre').value.trim();
             
-            // Récupérer les thèmes cochés
+            // Récupérer les thèmes sélectionnés (badges)
             const themes = [];
-            document.querySelectorAll('#themes-checkboxes .theme-checkbox:checked').forEach(cb => {
-                themes.push(cb.value);
+            document.querySelectorAll('#themes-badges .theme-badge-select.selected').forEach(badge => {
+                themes.push(badge.dataset.theme);
             });
             
             const statut = document.getElementById('edit-statut').value;
