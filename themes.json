@@ -63,10 +63,5 @@
     "theme": "Urbanisme",
     "icon": "🏘️",
     "color": "#34495e"
-  },
-  {
-    "theme": "Vélo",
-    "icon": "📌",
-    "color": "#1a3a5c"
   }
 ]
