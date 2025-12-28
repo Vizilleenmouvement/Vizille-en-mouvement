@@ -1,16 +1,5 @@
 /* ===== STYLES PAGE PROJET 2026-2032 ===== */
 
-/* ===== HEADER STYLE FIGARO ===== */
-.header {
-    background: white;
-    color: var(--gris-texte);
-    padding: 0;
-    position: relative;
-    z-index: 1000;
-    border-bottom: 3px solid var(--noir, #1a1a1a);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
 /* ===== HERO BANNER ===== */
 /* Le hero utilise les styles de page-header.css (.hero-banner, .hero-content, .hero-logo, .slogan) */
 
