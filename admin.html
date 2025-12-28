@@ -1157,63 +1157,6 @@
                         <p style="color: var(--or); font-size: 1.2rem;">Interface de gestion du site de campagne</p>
                     </div>
 
-                    <!-- DASHBOARD STATISTIQUES -->
-                    <div id="dashboard-stats" style="margin-bottom: 2rem;">
-                        <h3 style="color: var(--bleu); margin-bottom: 1rem;">📊 Tableau de bord</h3>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem;">
-                            <div class="dashboard-stat-card" onclick="switchTab('projets')" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.25rem; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.2s;">
-                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚀</div>
-                                <div style="font-size: 2rem; font-weight: 700;" id="stat-projets">0</div>
-                                <div style="font-size: 0.85rem; opacity: 0.9;">Projets</div>
-                            </div>
-                            <div class="dashboard-stat-card" onclick="switchTab('actions')" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 1.25rem; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.2s;">
-                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
-                                <div style="font-size: 2rem; font-weight: 700;" id="stat-actions">0</div>
-                                <div style="font-size: 0.85rem; opacity: 0.9;">Actions bilan</div>
-                            </div>
-                            <div class="dashboard-stat-card" onclick="switchTab('candidats')" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 1.25rem; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.2s;">
-                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">👥</div>
-                                <div style="font-size: 2rem; font-weight: 700;" id="stat-candidats">0</div>
-                                <div style="font-size: 0.85rem; opacity: 0.9;">Candidats</div>
-                            </div>
-                            <div class="dashboard-stat-card" onclick="switchTab('articles')" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; padding: 1.25rem; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.2s;">
-                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">📰</div>
-                                <div style="font-size: 2rem; font-weight: 700;" id="stat-articles">0</div>
-                                <div style="font-size: 0.85rem; opacity: 0.9;">Articles</div>
-                            </div>
-                            <div class="dashboard-stat-card" onclick="switchTab('themes')" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; padding: 1.25rem; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.2s;">
-                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎨</div>
-                                <div style="font-size: 2rem; font-weight: 700;" id="stat-themes">0</div>
-                                <div style="font-size: 0.85rem; opacity: 0.9;">Thèmes</div>
-                            </div>
-                            <div class="dashboard-stat-card" onclick="switchTab('communication')" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333; padding: 1.25rem; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.2s;">
-                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">📧</div>
-                                <div style="font-size: 2rem; font-weight: 700;" id="stat-abonnes">0</div>
-                                <div style="font-size: 0.85rem; opacity: 0.9;">Abonnés</div>
-                            </div>
-                        </div>
-
-                        <!-- Dernières activités -->
-                        <div style="margin-top: 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
-                            <div style="background: white; border: 1px solid var(--gris-border); border-radius: 12px; padding: 1.25rem;">
-                                <h4 style="color: var(--bleu); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                                    <span>📰</span> Derniers articles
-                                </h4>
-                                <div id="dashboard-recent-articles" style="font-size: 0.9rem; color: var(--gris-texte);">
-                                    Chargement...
-                                </div>
-                            </div>
-                            <div style="background: white; border: 1px solid var(--gris-border); border-radius: 12px; padding: 1.25rem;">
-                                <h4 style="color: var(--bleu); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                                    <span>📊</span> Répartition actions
-                                </h4>
-                                <div id="dashboard-actions-stats" style="font-size: 0.9rem; color: var(--gris-texte);">
-                                    Chargement...
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- ÉTAPES -->
                     <div style="background: #e8f4fc; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
                         <h3 style="color: var(--bleu); margin-bottom: 1rem;">🚀 Comment ça marche ?</h3>
