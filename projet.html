@@ -476,7 +476,7 @@ function initializeFilters() {
             setTimeout(() => {
                 const target = document.getElementById('view-cards') || document.getElementById('view-themes') || document.getElementById('view-table');
                 if (target && !target.classList.contains('hidden')) {
-                    const offset = 20;
+                    const offset = 150; // Compense le header fixe
                     const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
                     window.scrollTo({ top: y, behavior: 'smooth' });
                 }
@@ -1097,7 +1097,7 @@ function filterByTheme(theme) {
     setTimeout(() => {
         const target = document.getElementById('results-section');
         if (target) {
-            const offset = 20;
+            const offset = 150; // Compense le header fixe
             const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
             window.scrollTo({ top: y, behavior: 'smooth' });
         }
@@ -1123,7 +1123,7 @@ function backToThemes() {
     // Scroll vers les filtres thèmes
     const target = document.getElementById('theme-filters-grid');
     if (target) {
-        const offset = 100;
+        const offset = 150; // Compense le header fixe
         const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
         window.scrollTo({ top: y, behavior: 'smooth' });
     }
