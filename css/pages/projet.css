@@ -213,33 +213,32 @@
 
 /* ===== THEME FILTERS ===== */
 .theme-filters {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .theme-filters-label {
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--bleu-vizille);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .theme-filters-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .theme-filter-btn {
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 0.75rem;
+    gap: 0.4rem;
+    padding: 0.5rem 0.9rem;
     background: var(--blanc-casse);
     border: 1px solid var(--gris-doux);
-    border-radius: 12px;
+    border-radius: 20px;
     font-weight: 500;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     cursor: pointer;
     transition: all 0.2s;
     text-align: center;
@@ -248,24 +247,50 @@
 .theme-filter-btn:hover {
     background: white;
     border-color: var(--or);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
 }
 
 .theme-filter-btn.active {
     background: var(--or);
     color: white;
     border-color: var(--or);
-    box-shadow: 0 4px 12px rgba(201, 162, 39, 0.25);
+    box-shadow: 0 3px 10px rgba(201, 162, 39, 0.25);
 }
 
 .theme-filter-btn .icon {
-    font-size: 2rem;
+    font-size: 1.1rem;
 }
 
 .theme-filter-btn .label {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     line-height: 1.2;
+}
+
+/* Bouton retour aux thèmes */
+.btn-back-themes {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--bleu-vizille);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 1rem;
+}
+
+.btn-back-themes:hover {
+    background: var(--bleu-clair);
+    transform: translateY(-2px);
+}
+
+.btn-back-themes.visible {
+    display: inline-flex;
 }
 
 .filters-divider {

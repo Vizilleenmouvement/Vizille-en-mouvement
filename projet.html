@@ -179,6 +179,9 @@
 
         <!-- Results Section -->
         <section id="results-section">
+            <button class="btn-back-themes" id="btn-back-themes" onclick="backToThemes()">
+                ← Revenir aux thèmes
+            </button>
             <div class="loading" id="loading">Chargement des engagements</div>
 
             <!-- Themes View -->
@@ -497,6 +500,7 @@ function initializeFilters() {
             btn.classList.add('active');
             currentView = btn.dataset.view;
             renderCurrentView();
+            updateBackButton();
         });
     });
 
@@ -1088,15 +1092,51 @@ function filterByTheme(theme) {
     currentView = 'cards';
 
     applyFilters();
+    updateBackButton();
 
     setTimeout(() => {
-        const target = document.getElementById('view-cards');
+        const target = document.getElementById('results-section');
         if (target) {
             const offset = 20;
             const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
             window.scrollTo({ top: y, behavior: 'smooth' });
         }
     }, 150);
+}
+
+function backToThemes() {
+    // Réinitialiser le filtre thème
+    document.getElementById('filter-theme').value = '';
+    document.querySelectorAll('.theme-filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    // Revenir à la vue thèmes
+    document.querySelectorAll('.view-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.view === 'themes');
+    });
+    currentView = 'themes';
+
+    applyFilters();
+    updateBackButton();
+
+    // Scroll vers les filtres thèmes
+    const target = document.getElementById('theme-filters-grid');
+    if (target) {
+        const offset = 100;
+        const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+}
+
+function updateBackButton() {
+    const btn = document.getElementById('btn-back-themes');
+    const themeFilter = document.getElementById('filter-theme').value;
+    if (themeFilter || currentView !== 'themes') {
+        btn.classList.add('visible');
+    } else {
+        btn.classList.remove('visible');
+    }
 }
 
 function returnToProject() {
@@ -1108,6 +1148,7 @@ function returnToProject() {
     currentView = 'themes';
 
     renderCurrentView();
+    updateBackButton();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
