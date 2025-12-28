@@ -12,18 +12,6 @@
     "chiffres": []
   },
   {
-    "id": 10,
-    "titre": "Rendre la Maison de Santé pleinement opérationnelle",
-    "theme": "Santé",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Accès aux soins",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
     "id": 33,
     "titre": "Renforcer la transparence (open data)",
     "theme": "Démocratie locale",
