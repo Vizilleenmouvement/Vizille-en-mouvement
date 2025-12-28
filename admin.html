@@ -1843,7 +1843,25 @@
             <div class="modal-body" id="modal-body"></div>
             <div class="modal-footer">
                 <button class="btn btn-outline" onclick="closeModal()">Annuler</button>
+                <button class="btn" id="modal-preview" style="background: var(--or); color: var(--bleu);" onclick="previewCurrentItem()">👁️ Prévisualiser</button>
                 <button class="btn btn-primary" id="modal-save">Enregistrer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Prévisualisation -->
+    <div class="modal-overlay" id="modal-preview-overlay" onclick="closePreview(event)">
+        <div class="modal" style="max-width: 800px; max-height: 90vh; overflow: auto;">
+            <div class="modal-header" style="background: var(--or); color: var(--bleu);">
+                <h3>👁️ Prévisualisation</h3>
+                <button class="modal-close" onclick="closePreviewModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="preview-body" style="background: var(--gris-bg); padding: 2rem;">
+                <!-- Contenu de prévisualisation -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closePreviewModal()">Fermer</button>
+                <button class="btn btn-primary" onclick="closePreviewModal(); saveCurrentItem();">✅ Valider et enregistrer</button>
             </div>
         </div>
     </div>
@@ -1975,6 +1993,186 @@
 
         let currentEdit = { type: null, index: null };
         let pendingPhoto = null;
+        let currentPreviewType = null; // 'projet', 'article', 'action', etc.
+
+        // ===== PRÉVISUALISATION =====
+        function previewCurrentItem() {
+            // Détecter le type d'élément en cours d'édition
+            const modalTitle = document.getElementById('modal-title').textContent;
+
+            if (modalTitle.includes('projet')) {
+                previewProjet();
+            } else if (modalTitle.includes('article')) {
+                previewArticle();
+            } else if (modalTitle.includes('action')) {
+                previewAction();
+            } else {
+                showToast('Prévisualisation non disponible pour cet élément', 'info');
+                return;
+            }
+
+            document.getElementById('modal-preview-overlay').classList.add('active');
+        }
+
+        function previewProjet() {
+            currentPreviewType = 'projet';
+            const titre = document.getElementById('edit-titre')?.value || 'Sans titre';
+            const resume = document.getElementById('edit-resume')?.value || '';
+            const description = document.getElementById('edit-description')?.value || '';
+            const statut = document.getElementById('edit-statut')?.value || 'Programmé';
+            const annee = document.getElementById('edit-annee')?.value || '';
+            const budget = document.getElementById('edit-budget')?.value || '';
+            const image = document.getElementById('edit-image')?.value || '';
+
+            // Récupérer les thèmes sélectionnés
+            const selectedThemes = [];
+            document.querySelectorAll('.theme-badge-select.selected').forEach(badge => {
+                selectedThemes.push({
+                    theme: badge.dataset.theme,
+                    color: badge.dataset.color
+                });
+            });
+
+            const primaryTheme = selectedThemes[0] || { theme: 'Non défini', color: '#1a3a5c' };
+
+            const statutColors = {
+                'Prioritaire': '#e74c3c',
+                'Court terme': '#f39c12',
+                'Programmé': '#27ae60',
+                'Étude': '#9b59b6',
+                'En cours': '#3498db'
+            };
+
+            let themeBadgesHTML = selectedThemes.map(t =>
+                `<span style="background: ${t.color}; color: white; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; margin-right: 5px;">${t.theme}</span>`
+            ).join('');
+
+            let imageHTML = '';
+            if (image) {
+                imageHTML = `
+                    <div style="margin-bottom: 1.5rem; text-align: center;">
+                        <img src="${image}" alt="${titre}" style="max-width: 100%; max-height: 300px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    </div>
+                `;
+            }
+
+            document.getElementById('preview-body').innerHTML = `
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    <div style="background: linear-gradient(135deg, ${primaryTheme.color} 0%, ${adjustColorPreview(primaryTheme.color, -30)} 100%); color: white; padding: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <div>${themeBadgesHTML || '<span style="opacity: 0.7;">Aucun thème</span>'}</div>
+                            <span style="background: ${statutColors[statut] || '#27ae60'}; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">${statut}</span>
+                        </div>
+                        <h2 style="font-size: 1.8rem; margin: 0; font-weight: 700;">${titre}</h2>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        ${imageHTML}
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 10px; text-align: center;">
+                                <div style="color: #888; font-size: 0.85rem;">📅 Horizon</div>
+                                <div style="font-size: 1.2rem; font-weight: 600; color: var(--bleu);">${annee || 'À définir'}</div>
+                            </div>
+                            <div style="background: #f8f9fa; padding: 1rem; border-radius: 10px; text-align: center;">
+                                <div style="color: #888; font-size: 0.85rem;">💰 Budget estimé</div>
+                                <div style="font-size: 1.2rem; font-weight: 600; color: var(--bleu);">${budget ? budget.toLocaleString('fr-FR') + ' €' : 'En évaluation'}</div>
+                            </div>
+                        </div>
+                        ${resume ? `<p style="font-size: 1.1rem; color: #333; line-height: 1.7; margin-bottom: 1rem; font-weight: 500;">${resume}</p>` : ''}
+                        ${description ? `<p style="color: #555; line-height: 1.7;">${description}</p>` : ''}
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 1rem; color: #888; font-size: 0.9rem;">
+                    ℹ️ Aperçu de la fiche projet telle qu'elle apparaîtra sur le site
+                </p>
+            `;
+        }
+
+        function previewArticle() {
+            currentPreviewType = 'article';
+            const titre = document.getElementById('edit-titre')?.value || 'Sans titre';
+            const contenu = document.getElementById('edit-contenu')?.value || '';
+            const categorie = document.getElementById('edit-categorie')?.value || '';
+            const date = document.getElementById('edit-date')?.value || new Date().toISOString().split('T')[0];
+            const image = document.getElementById('edit-image')?.value || '';
+
+            const dateFormatee = new Date(date).toLocaleDateString('fr-FR', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+
+            let imageHTML = image ? `<img src="${image}" alt="${titre}" style="width: 100%; height: 200px; object-fit: cover;">` :
+                `<div style="width: 100%; height: 200px; background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">📰</div>`;
+
+            document.getElementById('preview-body').innerHTML = `
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); max-width: 400px; margin: 0 auto;">
+                    ${imageHTML}
+                    <div style="padding: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            ${categorie ? `<span style="background: var(--or); color: var(--bleu); padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">${categorie}</span>` : '<span></span>'}
+                            <span style="color: #888; font-size: 0.85rem;">${dateFormatee}</span>
+                        </div>
+                        <h3 style="font-size: 1.3rem; color: var(--bleu); margin-bottom: 0.75rem; font-weight: 700;">${titre}</h3>
+                        <p style="color: #666; line-height: 1.6; font-size: 0.95rem;">${contenu.substring(0, 150)}${contenu.length > 150 ? '...' : ''}</p>
+                        <div style="margin-top: 1rem; text-align: right;">
+                            <span style="color: var(--bleu); font-weight: 600; font-size: 0.9rem;">Lire la suite →</span>
+                        </div>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 1rem; color: #888; font-size: 0.9rem;">
+                    ℹ️ Aperçu de la carte article telle qu'elle apparaîtra sur le site
+                </p>
+            `;
+        }
+
+        function previewAction() {
+            currentPreviewType = 'action';
+            const titre = document.getElementById('edit-titre')?.value || 'Sans titre';
+            const statut = document.getElementById('edit-statut')?.value || 'En cours';
+            const theme = document.getElementById('edit-theme')?.value || '';
+
+            const statutColors = {
+                'Réalisé': '#27ae60',
+                'En cours': '#f39c12',
+                'Prévu': '#3498db'
+            };
+
+            document.getElementById('preview-body').innerHTML = `
+                <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <span style="background: #e0e0e0; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem;">${theme || 'Sans thème'}</span>
+                        <span style="background: ${statutColors[statut] || '#888'}; color: white; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">${statut}</span>
+                    </div>
+                    <h3 style="font-size: 1.2rem; color: var(--bleu); margin: 0;">${titre}</h3>
+                </div>
+                <p style="text-align: center; margin-top: 1rem; color: #888; font-size: 0.9rem;">
+                    ℹ️ Aperçu de l'action telle qu'elle apparaîtra dans le bilan
+                </p>
+            `;
+        }
+
+        function closePreview(event) {
+            if (event.target.id === 'modal-preview-overlay') {
+                closePreviewModal();
+            }
+        }
+
+        function closePreviewModal() {
+            document.getElementById('modal-preview-overlay').classList.remove('active');
+        }
+
+        function saveCurrentItem() {
+            // Déclencher le clic sur le bouton Enregistrer
+            document.getElementById('modal-save').click();
+        }
+
+        function adjustColorPreview(color, amount) {
+            const hex = color.replace('#', '');
+            const r = Math.max(0, Math.min(255, parseInt(hex.substr(0, 2), 16) + amount));
+            const g = Math.max(0, Math.min(255, parseInt(hex.substr(2, 2), 16) + amount));
+            const b = Math.max(0, Math.min(255, parseInt(hex.substr(4, 2), 16) + amount));
+            return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+        }
 
         // ===== INITIALISATION =====
         document.addEventListener('DOMContentLoaded', () => {
