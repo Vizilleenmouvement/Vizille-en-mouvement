@@ -2006,6 +2006,8 @@
                 previewArticle();
             } else if (modalTitle.includes('action')) {
                 previewAction();
+            } else if (modalTitle.includes('candidat')) {
+                previewCandidat();
             } else {
                 showToast('Prévisualisation non disponible pour cet élément', 'info');
                 return;
@@ -2147,6 +2149,85 @@
                 </div>
                 <p style="text-align: center; margin-top: 1rem; color: #888; font-size: 0.9rem;">
                     ℹ️ Aperçu de l'action telle qu'elle apparaîtra dans le bilan
+                </p>
+            `;
+        }
+
+        function previewCandidat() {
+            currentPreviewType = 'candidat';
+            const nom = document.getElementById('edit-nom')?.value || 'Nom du candidat';
+            const role = document.getElementById('edit-role')?.value || '';
+            const delegation = document.getElementById('edit-delegation')?.value || '';
+            const bio = document.getElementById('edit-bio')?.value || '';
+            const pedigree = document.getElementById('edit-pedigree')?.value || '';
+            const objectifs = document.getElementById('edit-objectifs')?.value || '';
+            const citation = document.getElementById('edit-citation')?.value || '';
+            const email = document.getElementById('edit-email')?.value || '';
+            const facebook = document.getElementById('edit-facebook')?.value || '';
+            const linkedin = document.getElementById('edit-linkedin')?.value || '';
+            const twitter = document.getElementById('edit-twitter')?.value || '';
+
+            // Récupérer la photo depuis la prévisualisation
+            const photoPreviewImg = document.getElementById('photo-preview-img');
+            const photoUrl = photoPreviewImg?.src || '';
+            const hasPhoto = photoUrl && !photoUrl.includes('undefined') && photoPreviewImg?.parentElement?.classList?.contains('active');
+
+            // Construire les liens sociaux
+            let socialLinks = '';
+            if (email) socialLinks += `<a href="mailto:${email}" style="color: var(--bleu); margin-right: 10px; font-size: 1.2rem;" title="Email">📧</a>`;
+            if (facebook) socialLinks += `<a href="${facebook}" target="_blank" style="color: #1877f2; margin-right: 10px; font-size: 1.2rem;" title="Facebook">📘</a>`;
+            if (linkedin) socialLinks += `<a href="${linkedin}" target="_blank" style="color: #0077b5; margin-right: 10px; font-size: 1.2rem;" title="LinkedIn">💼</a>`;
+            if (twitter) socialLinks += `<a href="${twitter}" target="_blank" style="color: #1da1f2; margin-right: 10px; font-size: 1.2rem;" title="Twitter">🐦</a>`;
+
+            const photoHTML = hasPhoto
+                ? `<img src="${photoUrl}" alt="${nom}" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--or); box-shadow: 0 4px 15px rgba(0,0,0,0.2);">`
+                : `<div style="width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; border: 4px solid var(--or);">👤</div>`;
+
+            document.getElementById('preview-body').innerHTML = `
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); max-width: 500px; margin: 0 auto;">
+                    <div style="background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%); padding: 2rem; text-align: center;">
+                        ${photoHTML}
+                        <h2 style="color: white; margin: 1rem 0 0.25rem; font-size: 1.5rem;">${nom}</h2>
+                        ${role ? `<p style="color: var(--or); font-weight: 600; margin: 0;">${role}</p>` : ''}
+                        ${delegation ? `<p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin: 0.25rem 0 0;">${delegation}</p>` : ''}
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        ${citation ? `
+                            <blockquote style="border-left: 4px solid var(--or); padding-left: 1rem; margin: 0 0 1.5rem; font-style: italic; color: #555;">
+                                "${citation}"
+                            </blockquote>
+                        ` : ''}
+
+                        ${bio ? `
+                            <div style="margin-bottom: 1rem;">
+                                <h4 style="color: var(--bleu); margin-bottom: 0.5rem; font-size: 0.95rem;">📝 Présentation</h4>
+                                <p style="color: #555; line-height: 1.6; font-size: 0.95rem; margin: 0;">${bio}</p>
+                            </div>
+                        ` : ''}
+
+                        ${pedigree ? `
+                            <div style="margin-bottom: 1rem;">
+                                <h4 style="color: var(--bleu); margin-bottom: 0.5rem; font-size: 0.95rem;">🎓 Parcours</h4>
+                                <p style="color: #555; line-height: 1.6; font-size: 0.95rem; margin: 0;">${pedigree}</p>
+                            </div>
+                        ` : ''}
+
+                        ${objectifs ? `
+                            <div style="margin-bottom: 1rem;">
+                                <h4 style="color: var(--bleu); margin-bottom: 0.5rem; font-size: 0.95rem;">🎯 Mes priorités</h4>
+                                <p style="color: #555; line-height: 1.6; font-size: 0.95rem; margin: 0;">${objectifs}</p>
+                            </div>
+                        ` : ''}
+
+                        ${socialLinks ? `
+                            <div style="border-top: 1px solid #eee; padding-top: 1rem; text-align: center;">
+                                ${socialLinks}
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 1rem; color: #888; font-size: 0.9rem;">
+                    ℹ️ Aperçu de la fiche candidat telle qu'elle apparaîtra sur le site
                 </p>
             `;
         }
