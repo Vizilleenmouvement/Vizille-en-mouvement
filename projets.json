@@ -1,5 +1,17 @@
 [
   {
+    "id": 8,
+    "titre": "Améliorer l'accessibilité de tous les bâtiments",
+    "theme": "Solidarité",
+    "statut": "Prioritaire",
+    "annee": 2028,
+    "budget": 0,
+    "resume": "Accessibilité PMR",
+    "description": "",
+    "importance": 3,
+    "chiffres": []
+  },
+  {
     "id": 10,
     "titre": "Rendre la Maison de Santé pleinement opérationnelle",
     "theme": "Santé",
@@ -12,17 +24,85 @@
     "chiffres": []
   },
   {
-    "id": 26,
-    "titre": "Centre-ville Espaces partagés • Marche, commerces, lien marché → château",
-    "themes": [
-      "Mobilités"
-    ],
-    "theme": "Mobilités",
-    "statut": "Étude",
+    "id": 16,
+    "titre": "Pérenniser les festivals et événements",
+    "theme": "Culture",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Animation culturelle",
+    "description": "",
+    "importance": 2,
+    "chiffres": []
+  },
+  {
+    "id": 18,
+    "titre": "Soutenir les associations culturelles",
+    "theme": "Culture",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Vie associative",
+    "description": "",
+    "importance": 1,
+    "chiffres": []
+  },
+  {
+    "id": 21,
+    "titre": "Projet en cours de conception",
+    "theme": "Économie",
+    "statut": "Programmé",
     "annee": 2027,
     "budget": 0,
-    "resume": "Un centre-ville vivant et apaisé.",
-    "description": "Une zone partagée est un espace de circulation apaisé, conçu pour permettre la cohabitation de tous les usages — piétons, vélos, engins de déplacement personnel, véhicules motorisés — avec une priorité donnée aux usagers les plus vulnérables.\nCe n’est ni une rue piétonne, ni une rue “classique” :\nc’est un espace de vie avant d’être un axe de circulation.",
+    "resume": "Tourisme",
+    "description": "",
+    "importance": 1,
+    "image": "",
+    "images": [],
+    "chiffres": [],
+    "chronologie": [],
+    "documents": [],
+    "details": "",
+    "sources": [],
+    "lien_source": []
+  },
+  {
+    "id": 22,
+    "titre": "Achever le maillage de vidéoprotection",
+    "theme": "Tranquillité",
+    "statut": "Programmé",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Vidéoprotection",
+    "description": "",
+    "importance": 2,
+    "chiffres": []
+  },
+  {
+    "id": 24,
+    "titre": "Renforcer la médiation de proximité",
+    "theme": "Tranquillité",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Médiation",
+    "description": "",
+    "importance": 1,
+    "chiffres": []
+  },
+  {
+    "id": 25,
+    "titre": "Un réseau cyclable continu, sûr et partagé.",
+    "themes": [
+      "Mobilités",
+      "Tranquillité"
+    ],
+    "theme": "Mobilités",
+    "statut": "Programmé",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Comprendre • guider • apaiser",
+    "description": "Pourquoi ?\nRendre les itinéraires vélo plus sûrs, lisibles et continus pour les\ntrajets du quotidien.\nPriorités\n• Renforcer l’axe Chemin des Murs\n• Relier les quartiers (centre ↔ Péage) et vers la Romanche\n• Jalonnement et signalisation cohérents\n• Traiter les discontinuités\nCohabitation\nPiétons, familles, chiens, cyclistes : règles simples et information\npédagogique.\nUn réseau cyclable continu, sûr et partagé.",
     "importance": 2,
     "image": "",
     "images": [],
@@ -30,15 +110,44 @@
     "chronologie": [],
     "documents": [],
     "details": "",
-    "slogan": "",
-    "numero": "",
-    "tags": [],
-    "enjeux": [],
-    "axes_action": [],
-    "indicateurs": [],
-    "vision": "",
     "sources": [],
     "lien_source": []
+  },
+  {
+    "id": 26,
+    "titre": "Centre-ville Espaces partagés • Marche, commerces, lien marché → château",
+    "theme": "Mobilités",
+    "statut": "Étude",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Un centre-ville vivant et apaisé.",
+    "description": "Une zone partagée est un espace de circulation apaisé, conçu pour permettre la cohabitation de tous les usages — piétons, vélos, engins de déplacement personnel, véhicules motorisés — avec une priorité donnée aux usagers les plus vulnérables.\nCe n’est ni une rue piétonne, ni une rue “classique” :\nc’est un espace de vie avant d’être un axe de circulation.",
+    "importance": 2,
+    "chiffres": []
+  },
+  {
+    "id": 28,
+    "titre": "Améliorer l'accessibilité des espaces publics",
+    "theme": "Seniors",
+    "statut": "Programmé",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Accessibilité",
+    "description": "",
+    "importance": 2,
+    "chiffres": []
+  },
+  {
+    "id": 32,
+    "titre": "Instaurer des correspondants de quartier",
+    "theme": "Tranquillité",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Démocratie de proximité",
+    "description": "",
+    "importance": 1,
+    "chiffres": []
   },
   {
     "id": 33,
@@ -86,6 +195,18 @@
     "resume": "Équité territoriale",
     "description": "",
     "importance": 1,
+    "chiffres": []
+  },
+  {
+    "id": 1766034821819,
+    "titre": "Développer des espaces partagés en centre-ville",
+    "theme": "Mobilités",
+    "statut": "Étude",
+    "annee": 2029,
+    "budget": 0,
+    "resume": "Faire du centre-ville un espace apaisé, attractif et accessible à tous.",
+    "description": "Le projet vise à renforcer le rôle du centre-ville comme espace de vie, de rencontre et de commerce.\nIl s’appuie sur le développement d’espaces partagés, la continuité des cheminements piétons, la valorisation de la rue piétonne et la liaison entre le marché et le château.\nLa circulation y est organisée pour privilégier les usages locaux et limiter le transit.",
+    "importance": 2,
     "chiffres": []
   },
   {
