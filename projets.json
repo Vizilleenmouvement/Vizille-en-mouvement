@@ -67,60 +67,6 @@
     "lien_source": []
   },
   {
-    "id": 22,
-    "titre": "Achever le maillage de vidéoprotection",
-    "theme": "Tranquillité",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Vidéoprotection",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 24,
-    "titre": "Renforcer la médiation de proximité",
-    "theme": "Tranquillité",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Médiation",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 25,
-    "titre": "Un réseau cyclable continu, sûr et partagé.",
-    "themes": [
-      "Mobilités",
-      "Tranquillité"
-    ],
-    "theme": "Mobilités",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Comprendre • guider • apaiser",
-    "description": "Pourquoi ?\nRendre les itinéraires vélo plus sûrs, lisibles et continus pour les\ntrajets du quotidien.\nPriorités\n• Renforcer l’axe Chemin des Murs\n• Relier les quartiers (centre ↔ Péage) et vers la Romanche\n• Jalonnement et signalisation cohérents\n• Traiter les discontinuités\nCohabitation\nPiétons, familles, chiens, cyclistes : règles simples et information\npédagogique.\nUn réseau cyclable continu, sûr et partagé.",
-    "importance": 2,
-    "image": "",
-    "images": [],
-    "chiffres": [],
-    "chronologie": [],
-    "documents": [],
-    "details": "",
-    "slogan": "",
-    "numero": "",
-    "tags": [],
-    "enjeux": [],
-    "axes_action": [],
-    "indicateurs": [],
-    "vision": "",
-    "sources": [],
-    "lien_source": []
-  },
-  {
     "id": 26,
     "titre": "Centre-ville Espaces partagés • Marche, commerces, lien marché → château",
     "themes": [
@@ -159,18 +105,6 @@
     "resume": "Accessibilité",
     "description": "",
     "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 32,
-    "titre": "Instaurer des correspondants de quartier",
-    "theme": "Tranquillité",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Démocratie de proximité",
-    "description": "",
-    "importance": 1,
     "chiffres": []
   },
   {
