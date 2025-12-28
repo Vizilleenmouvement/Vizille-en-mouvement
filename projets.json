@@ -79,29 +79,6 @@
     "chiffres": []
   },
   {
-    "id": 23,
-    "titre": "Déployer l'éclairage intelligent",
-    "themes": [
-      "Mobilités",
-      "Tranquillité"
-    ],
-    "theme": "Mobilités",
-    "statut": "Programmé",
-    "annee": 2028,
-    "budget": 0,
-    "resume": "Éclairage public",
-    "description": "",
-    "importance": 1,
-    "image": "",
-    "images": [],
-    "chiffres": [],
-    "chronologie": [],
-    "documents": [],
-    "details": "",
-    "sources": [],
-    "lien_source": []
-  },
-  {
     "id": 24,
     "titre": "Renforcer la médiation de proximité",
     "theme": "Tranquillité",
@@ -139,6 +116,9 @@
   {
     "id": 26,
     "titre": "Centre-ville Espaces partagés • Marche, commerces, lien marché → château",
+    "themes": [
+      "Mobilités"
+    ],
     "theme": "Mobilités",
     "statut": "Étude",
     "annee": 2027,
@@ -146,19 +126,21 @@
     "resume": "Un centre-ville vivant et apaisé.",
     "description": "Une zone partagée est un espace de circulation apaisé, conçu pour permettre la cohabitation de tous les usages — piétons, vélos, engins de déplacement personnel, véhicules motorisés — avec une priorité donnée aux usagers les plus vulnérables.\nCe n’est ni une rue piétonne, ni une rue “classique” :\nc’est un espace de vie avant d’être un axe de circulation.",
     "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 27,
-    "titre": "Optimiser le stationnement",
-    "theme": "Mobilités",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Stationnement",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
+    "image": "",
+    "images": [],
+    "chiffres": [],
+    "chronologie": [],
+    "documents": [],
+    "details": "",
+    "slogan": "",
+    "numero": "",
+    "tags": [],
+    "enjeux": [],
+    "axes_action": [],
+    "indicateurs": [],
+    "vision": "",
+    "sources": [],
+    "lien_source": []
   },
   {
     "id": 28,
