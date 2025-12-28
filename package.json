@@ -1,0 +1,36 @@
+{
+  "name": "vizille-en-mouvement",
+  "version": "1.0.0",
+  "description": "Site web de campagne municipale Vizille en Mouvement 2026",
+  "private": true,
+  "scripts": {
+    "lint": "eslint js/*.js app.js",
+    "lint:fix": "eslint js/*.js app.js --fix",
+    "serve": "npx serve -l 3000",
+    "optimize-images": "echo 'Utilisez: npx @squoosh/cli --webp auto images/*.png'",
+    "validate-json": "node -e \"['data.json', 'articles.json', 'faq.json', 'projets.json', 'themes.json', 'config.json', 'stats.json', 'candidats.json'].forEach(f => { try { require('./' + f); console.log('✓ ' + f); } catch(e) { console.error('✗ ' + f + ': ' + e.message); } })\"",
+    "build": "echo 'Site statique - pas de build nécessaire'",
+    "check": "npm run lint && npm run validate-json"
+  },
+  "keywords": [
+    "vizille",
+    "municipales",
+    "campagne",
+    "politique",
+    "2026"
+  ],
+  "author": "Vizille en Mouvement",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "serve": "^14.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vizilleenmouvement/Vizille-en-mouvement.git"
+  },
+  "homepage": "https://vizilleenmouvement.fr"
+}

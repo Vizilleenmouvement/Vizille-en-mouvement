@@ -1,0 +1,125 @@
+/* ===== STYLES DE BASE - Vizille en Mouvement ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background: var(--blanc-casse);
+    color: var(--gris-texte);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===== LIENS ===== */
+a {
+    color: var(--bleu-clair);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--or);
+}
+
+/* ===== BOUTONS ===== */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: inherit;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--bleu-vizille);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--bleu-clair);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.btn-secondary {
+    background: var(--gris-doux);
+    color: var(--gris-texte);
+}
+
+.btn-secondary:hover {
+    background: #d8d6d1;
+}
+
+.btn-gold {
+    background: var(--or);
+    color: var(--bleu-vizille);
+}
+
+.btn-gold:hover {
+    background: var(--or-clair);
+    transform: translateY(-2px);
+}
+
+/* ===== CONTENEURS ===== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.container-wide {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ===== ANIMATIONS COMMUNES ===== */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.05); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.03); }
+    60% { transform: scale(1); }
+}
+
+@keyframes glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 15px rgba(255,255,255,0.4)) drop-shadow(0 0 30px rgba(201,162,39,0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 25px rgba(255,255,255,0.7)) drop-shadow(0 0 50px rgba(201,162,39,0.5)) drop-shadow(0 0 70px rgba(201,162,39,0.3));
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== UTILITAIRES ===== */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+.hidden { display: none !important; }
+.visible { display: block !important; }

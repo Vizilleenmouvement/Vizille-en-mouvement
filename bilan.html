@@ -1,1534 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <script>
-        // Protection par mot de passe - @@@@
-        (function() {
-            const PASSWORD = '@@@@';
-            const MAX_ATTEMPTS = 3;
-            
-            if (!sessionStorage.getItem('vizille_auth')) {
-                let attempts = 0;
-                let authenticated = false;
-                
-                while (!authenticated && attempts < MAX_ATTEMPTS) {
-                    const input = prompt('Mot de passe requis pour accéder au site :');
-                    
-                    if (input === null) {
-                        window.location.href = 'about:blank';
-                        break;
-                    }
-                    
-                    if (input === PASSWORD) {
-                        authenticated = true;
-                        sessionStorage.setItem('vizille_auth', 'true');
-                    } else {
-                        attempts++;
-                        if (attempts < MAX_ATTEMPTS) {
-                            alert('Mot de passe incorrect. Tentative ' + attempts + '/' + MAX_ATTEMPTS);
-                        } else {
-                            alert('Trop de tentatives. Accès refusé.');
-                            window.location.href = 'about:blank';
-                        }
-                    }
-                }
-                
-                if (!authenticated) {
-                    document.body.innerHTML = '';
-                }
-            }
-        })();
-    </script>
+    <script src="js/auth.js"></script>
 
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vizille en Mouvement – Bilan 2020-2026</title>
     <meta name="description" content="Tableau de bord interactif des 347 actions municipales de Vizille (2020-2026). 41,5 M€ d'investissements pour l'avenir de notre commune.">
-    
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vizilleenmouvement.github.io/Vizille-en-mouvement/bilan.html">
+    <meta property="og:title" content="Bilan 2020-2026 - Vizille en Mouvement">
+    <meta property="og:description" content="Tableau de bord interactif des 347 actions municipales de Vizille. 41,5 M€ d'investissements.">
+    <meta property="og:image" content="https://vizilleenmouvement.github.io/Vizille-en-mouvement/images/logo.png">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bilan 2020-2026 - Vizille en Mouvement">
+    <meta name="twitter:description" content="Tableau de bord interactif des 347 actions municipales de Vizille.">
+    <meta name="twitter:image" content="https://vizilleenmouvement.github.io/Vizille-en-mouvement/images/logo.png">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <style>
-        :root {
-            --bleu-vizille: #1a3a5c;
-            --bleu-clair: #2d5a87;
-            --or: #c9a227;
-            --or-clair: #e8c84a;
-            --blanc-casse: #f8f6f1;
-            --gris-doux: #e8e6e1;
-            --gris-texte: #4a4a4a;
-            --vert-realise: #27ae60;
-            --orange-encours: #f39c12;
-            --bleu-decide: #3498db;
-            --violet-programme: #9b59b6;
-            --rouge-accent: #e74c3c;
-            
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
-            --shadow-lg: 0 8px 24px rgba(0,0,0,0.16);
-            --shadow-xl: 0 12px 48px rgba(0,0,0,0.2);
-            
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
-            --radius-xl: 28px;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--blanc-casse);
-            color: var(--gris-texte);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        /* ===== HEADER ===== */
-        .header {
-            background: linear-gradient(135deg, var(--bleu-vizille) 0%, var(--bleu-clair) 100%);
-            color: white;
-            padding: 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-            pointer-events: none;
-        }
-        
-        .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-banner {
-            text-align: center;
-            padding: 0.75rem 0;
-            background: linear-gradient(180deg, rgba(26, 58, 92, 0.92) 0%, rgba(26, 58, 92, 0.85) 100%),
-                        url('images/vizille-panorama.png') center center/cover;
-            border-bottom: 5px solid var(--or);
-            color: white;
-        }
-        
-        .logo {
-            max-width: 180px;
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 0.4rem;
-            animation: figaro-pulse 4s ease-in-out infinite;
-        }
-        
-        @keyframes figaro-pulse {
-            0%, 100% { 
-                transform: scale(1);
-            }
-            50% { 
-                transform: scale(1.05);
-            }
-        }
-        
-        .logo img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-        }
-        
-        .title-block {
-            text-align: center;
-        }
-        
-        .title-block h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.6rem, 5vw, 2.5rem);
-            font-weight: 900;
-            margin-bottom: 0.4rem;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            letter-spacing: -1px;
-            color: white;
-        }
-        
-        .title-block .slogan {
-            font-size: clamp(1rem, 3vw, 1.3rem);
-            font-weight: 600;
-            color: var(--or);
-            background: linear-gradient(90deg, var(--or-clair), var(--or), var(--or-clair));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-            text-shadow: none;
-            letter-spacing: 0.5px;
-        }
-        
-        .title-block .subtitle {
-            font-size: 1rem;
-            opacity: 0.9;
-            font-weight: 500;
-            background: rgba(255,255,255,0.15);
-            display: inline-block;
-            padding: 0.4rem 1.2rem;
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-        
-        /* Legacy support */
-        .logo-title {
-            display: block;
-        }
-        
-        /* Stats Cards */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 1rem;
-            margin-top: 0.5rem;
-        }
-        
-        .stat-card {
-            background: rgba(255,255,255,0.12);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: var(--radius-md);
-            padding: 1rem 0.75rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .stat-card:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-3px);
-        }
-        
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: #e8c84a;
-            line-height: 1.1;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-        }
-        
-        .stat-label {
-            font-size: 0.85rem;
-            opacity: 0.95;
-            margin-top: 0.25rem;
-            font-weight: 500;
-            color: white;
-        }
-        
-        /* ===== MAIN CONTENT ===== */
-        .main-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
-        
-        /* Section Title */
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--bleu-vizille);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .section-title::after {
-            content: '';
-            flex: 1;
-            height: 2px;
-            background: linear-gradient(90deg, var(--or) 0%, transparent 100%);
-        }
-        
-        /* ===== CHARTS SECTION ===== */
-        .charts-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-        
-        .chart-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 1.5rem;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-        }
-        
-        .chart-card:hover {
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .chart-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            color: var(--bleu-vizille);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        
-        .chart-container {
-            position: relative;
-            height: 280px;
-        }
-        
-        /* ===== FILTERS ===== */
-        .filters-section {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 1.5rem;
-            box-shadow: var(--shadow-md);
-            margin-bottom: 2rem;
-        }
-        
-        .filters-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1rem;
-            align-items: end;
-        }
-        
-        .filter-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        
-        .filter-group label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--bleu-vizille);
-        }
-        
-        .filter-group select,
-        .filter-group input {
-            padding: 0.75rem 1rem;
-            border: 2px solid var(--gris-doux);
-            border-radius: var(--radius-sm);
-            font-size: 0.95rem;
-            font-family: inherit;
-            background: white;
-            transition: all 0.2s ease;
-        }
-        
-        .filter-group select:focus,
-        .filter-group input:focus {
-            outline: none;
-            border-color: var(--or);
-            box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
-        }
-        
-        .filter-actions {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: var(--radius-sm);
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-family: inherit;
-        }
-        
-        .btn-primary {
-            background: var(--bleu-vizille);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: var(--bleu-clair);
-            transform: translateY(-1px);
-        }
-        
-        .btn-secondary {
-            background: var(--gris-doux);
-            color: var(--gris-texte);
-        }
-        
-        .btn-secondary:hover {
-            background: #d8d6d1;
-        }
-        
-        .results-count {
-            font-size: 0.95rem;
-            color: var(--gris-texte);
-            padding: 0.75rem 0;
-            font-weight: 500;
-        }
-        
-        .results-count strong {
-            color: var(--bleu-vizille);
-        }
-        
-        /* ===== BOUTONS DE THÈMES ===== */
-        .theme-filters {
-            margin-bottom: 1.5rem;
-        }
-        
-        .theme-filters-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--bleu-vizille);
-            margin-bottom: 1rem;
-        }
-        
-        .theme-filters-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 0.75rem;
-        }
-        
-        .theme-filter-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 0.75rem;
-            background: var(--blanc-casse);
-            border: 2px solid transparent;
-            border-radius: 12px;
-            font-weight: 500;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-align: center;
-        }
-        
-        .theme-filter-btn:hover {
-            background: white;
-            border-color: var(--or);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-        }
-        
-        .theme-filter-btn.active {
-            background: var(--or);
-            color: white;
-            border-color: var(--or);
-            box-shadow: 0 4px 16px rgba(201, 162, 39, 0.3);
-        }
-        
-        .theme-filter-btn .icon {
-            font-size: 2rem;
-        }
-        
-        .theme-filter-btn .label {
-            font-size: 0.85rem;
-            line-height: 1.2;
-        }
-        
-        /* Séparateur */
-        .filters-divider {
-            height: 1px;
-            background: var(--gris-doux);
-            margin: 1.5rem 0;
-        }
-        
-        /* Navigation pages du site */
-        .site-nav {
-            margin-bottom: 1.5rem;
-        }
-        
-        .site-nav-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--bleu-vizille);
-            margin-bottom: 1rem;
-        }
-        
-        .site-nav-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-        
-        .site-nav-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.25rem;
-            background: var(--bleu-vizille);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-decoration: none;
-        }
-        
-        .site-nav-btn:hover {
-            background: var(--bleu-clair);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(26, 58, 92, 0.3);
-        }
-        
-        .site-nav-btn.active {
-            background: var(--or);
-            color: white;
-        }
-        
-        .site-nav-btn .icon {
-            font-size: 1.1rem;
-        }
-        
-        /* View Toggle */
-        .view-toggle {
-            display: flex;
-            gap: 0.5rem;
-            background: var(--gris-doux);
-            padding: 0.25rem;
-            border-radius: var(--radius-sm);
-        }
-        
-        .view-btn {
-            padding: 0.5rem 1rem;
-            border: none;
-            background: transparent;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
-        }
-        
-        .view-btn.active {
-            background: white;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        /* ===== THEMES VIEW ===== */
-        .themes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.25rem;
-            margin-bottom: 2rem;
-        }
-        
-        .theme-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .theme-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .theme-header {
-            padding: 1.25rem;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .theme-icon {
-            font-size: 2rem;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-        }
-        
-        .theme-info h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-bottom: 0.15rem;
-        }
-        
-        .theme-info .count {
-            font-size: 0.85rem;
-            opacity: 0.9;
-        }
-        
-        .theme-stats {
-            padding: 1rem 1.25rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--blanc-casse);
-        }
-        
-        .theme-budget {
-            font-weight: 600;
-            color: var(--bleu-vizille);
-        }
-        
-        .theme-progress {
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        .progress-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-        
-        .progress-dot.realise { background: var(--vert-realise); }
-        .progress-dot.encours { background: var(--orange-encours); }
-        .progress-dot.projet { background: var(--bleu-decide); }
-        
-        /* ===== CARDS VIEW ===== */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.25rem;
-        }
-        
-        .action-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-            animation: fadeInUp 0.4s ease forwards;
-            opacity: 0;
-        }
-        
-        .action-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .card-header {
-            padding: 1rem 1.25rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .card-theme {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 0.35rem 0.75rem;
-            border-radius: 20px;
-            color: white;
-        }
-        
-        .card-statut {
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.3rem 0.7rem;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .statut-realise { background: rgba(39, 174, 96, 0.15); color: var(--vert-realise); }
-        .statut-encours { background: rgba(243, 156, 18, 0.15); color: var(--orange-encours); }
-        .statut-decide { background: rgba(52, 152, 219, 0.15); color: var(--bleu-decide); }
-        .statut-programme { background: rgba(155, 89, 182, 0.15); color: var(--violet-programme); }
-        
-        .card-body {
-            padding: 0 1.25rem 1.25rem;
-        }
-        
-        .card-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            color: var(--bleu-vizille);
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
-        }
-        
-        .card-description {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-        
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 0.75rem;
-            border-top: 1px solid var(--gris-doux);
-        }
-        
-        .card-budget {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--or);
-        }
-        
-        .card-year {
-            font-size: 0.85rem;
-            color: #888;
-            font-weight: 500;
-        }
-        
-        .action-card {
-            cursor: pointer;
-            border: 2px solid transparent;
-            -webkit-tap-highlight-color: rgba(201, 162, 39, 0.3);
-            touch-action: manipulation;
-        }
-        
-        .action-card:hover,
-        .action-card:active {
-            border-color: var(--or);
-        }
-        
-        .card-detail-hint {
-            font-size: 0.8rem;
-            color: var(--or);
-            margin-top: 0.75rem;
-            font-weight: 500;
-            opacity: 1;
-        }
-        
-        /* ===== TABLE VIEW ===== */
-        .table-container {
-            background: white;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .data-table tbody tr {
-            cursor: pointer;
-            -webkit-tap-highlight-color: rgba(201, 162, 39, 0.3);
-            touch-action: manipulation;
-        }
-        
-        .data-table tbody tr:hover {
-            background: rgba(201, 162, 39, 0.1);
-        }
-        
-        .data-table th {
-            background: var(--bleu-vizille);
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-            position: sticky;
-            top: 0;
-            cursor: pointer;
-            transition: background 0.2s ease;
-        }
-        
-        .data-table th:hover {
-            background: var(--bleu-clair);
-        }
-        
-        .data-table th::after {
-            content: ' ↕';
-            opacity: 0.5;
-            font-size: 0.8rem;
-        }
-        
-        .data-table td {
-            padding: 0.875rem 1rem;
-            border-bottom: 1px solid var(--gris-doux);
-        }
-        
-        .data-table tr:hover td {
-            background: rgba(201, 162, 39, 0.08);
-        }
-        
-        .table-theme {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.85rem;
-        }
-        
-        .table-statut {
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.25rem 0.6rem;
-            border-radius: 12px;
-        }
-        
-        /* ===== FOOTER ===== */
-        .footer {
-            background: var(--bleu-vizille);
-            color: white;
-            padding: 2.5rem 1.5rem;
-            margin-top: 3rem;
-        }
-        
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .footer h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: var(--or-clair);
-        }
-        
-        .footer p, .footer li {
-            font-size: 0.9rem;
-            opacity: 0.85;
-            line-height: 1.7;
-        }
-        
-        .footer ul {
-            list-style: none;
-        }
-        
-        .footer-bottom {
-            max-width: 1400px;
-            margin: 2rem auto 0;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.15);
-            text-align: center;
-            font-size: 0.85rem;
-            opacity: 0.7;
-        }
-        
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            .header {
-                padding: 1.5rem 1rem 2rem;
-            }
-            
-            .logo {
-                width: 200px;
-                height: auto;
-                padding: 0;
-                margin-bottom: 1rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .stat-number {
-                font-size: 1.5rem;
-                color: #e8c84a;
-            }
-            
-            .charts-section {
-                grid-template-columns: 1fr;
-            }
-            
-            .filters-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .themes-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .data-table {
-                font-size: 0.85rem;
-            }
-            
-            .data-table th, .data-table td {
-                padding: 0.625rem;
-            }
-            
-            .action-card {
-                border: 2px solid var(--gris-doux);
-            }
-            
-            .card-detail-hint {
-                opacity: 1;
-                font-weight: 600;
-            }
-        }
-        
-        /* Tablettes (iPad) */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .cards-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .logo {
-                width: 240px;
-            }
-            
-            .action-card {
-                border: 2px solid var(--gris-doux);
-            }
-        }
-        
-        /* ===== MODAL DÉTAIL ===== */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transition: all 0.3s ease;
-        }
-        
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-        }
-        
-        .modal {
-            background: white;
-            border-radius: var(--radius-xl);
-            width: 100%;
-            max-width: 800px;
-            max-height: 90vh;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: var(--shadow-xl);
-            transform: translateY(20px) scale(0.95);
-            transition: transform 0.3s ease;
-        }
-        
-        .modal-overlay.active .modal {
-            transform: translateY(0) scale(1);
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 40px;
-            height: 40px;
-            border: none;
-            background: rgba(255,255,255,0.2);
-            color: white;
-            font-size: 1.5rem;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            z-index: 10;
-        }
-        
-        .modal-close:hover {
-            background: rgba(255,255,255,0.3);
-            transform: rotate(90deg);
-        }
-        
-        .modal-header {
-            padding: 2rem;
-            color: white;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            position: relative;
-        }
-        
-        .modal-icon {
-            font-size: 3rem;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-        }
-        
-        .modal-title-block {
-            flex: 1;
-        }
-        
-        .modal-theme {
-            font-size: 0.85rem;
-            opacity: 0.9;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-        
-        .modal-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-top: 0.25rem;
-            line-height: 1.3;
-        }
-        
-        .modal-statut {
-            font-size: 0.8rem;
-            font-weight: 700;
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            background: rgba(255,255,255,0.2);
-            white-space: nowrap;
-        }
-        
-        .modal-body {
-            padding: 1.5rem 2rem;
-            overflow-y: auto;
-            flex: 1;
-        }
-        
-        .modal-section {
-            margin-bottom: 1.5rem;
-        }
-        
-        .modal-section:last-child {
-            margin-bottom: 0;
-        }
-        
-        .modal-section h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            color: var(--bleu-vizille);
-            margin-bottom: 0.75rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--gris-doux);
-        }
-        
-        .modal-section p {
-            color: var(--gris-texte);
-            line-height: 1.7;
-        }
-        
-        /* Chiffres clés grid */
-        .chiffres-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 1rem;
-        }
-        
-        .chiffre-item {
-            background: var(--blanc-casse);
-            border-radius: var(--radius-md);
-            padding: 1rem;
-            text-align: center;
-        }
-        
-        .chiffre-value {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--bleu-vizille);
-        }
-        
-        .chiffre-label {
-            font-size: 0.8rem;
-            color: #666;
-            margin-top: 0.25rem;
-        }
-        
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 6px;
-            top: 4px;
-            bottom: 4px;
-            width: 2px;
-            background: var(--gris-doux);
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding-bottom: 1rem;
-        }
-        
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2rem;
-            top: 6px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--or);
-            border: 2px solid white;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .timeline-date {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--bleu-vizille);
-        }
-        
-        .timeline-event {
-            font-size: 0.9rem;
-            color: var(--gris-texte);
-        }
-        
-        /* Sources */
-        .sources-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        
-        .source-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: #666;
-            padding: 0.5rem 0.75rem;
-            background: var(--blanc-casse);
-            border-radius: var(--radius-sm);
-        }
-        
-        .source-link {
-            color: var(--bleu-vizille);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        
-        .source-link:hover {
-            color: var(--or);
-            text-decoration: underline;
-        }
-        
-        .source-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-            margin-top: 0.5rem;
-        }
-        
-        .source-links .source-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--bleu-vizille);
-            padding: 0.4rem 0.6rem;
-            background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);
-            border-radius: var(--radius-sm);
-            border: 1px solid #d0e3f0;
-            transition: all 0.2s ease;
-        }
-        
-        .source-links .source-link:hover {
-            background: linear-gradient(135deg, #e0f0ff 0%, #d8ecfb 100%);
-            border-color: var(--bleu-vizille);
-            transform: translateX(3px);
-            text-decoration: none;
-        }
-        
-        .source-links .external-icon {
-            margin-left: auto;
-            opacity: 0.5;
-            font-size: 0.8rem;
-        }
-        
-        .source-links .source-link:hover .external-icon {
-            opacity: 1;
-        }
-        
-        .source-icon {
-            font-size: 1rem;
-        }
-        
-        /* Modal footer */
-        .modal-footer {
-            padding: 1rem 2rem;
-            border-top: 1px solid var(--gris-doux);
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-        
-        /* Hidden class */
-        .hidden {
-            display: none !important;
-        }
-        
-        /* Loading */
-        .loading {
-            text-align: center;
-            padding: 3rem;
-            color: var(--gris-texte);
-        }
-        
-        .loading::after {
-            content: '';
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            border: 3px solid var(--gris-doux);
-            border-top-color: var(--or);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            margin-left: 0.75rem;
-            vertical-align: middle;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        /* Empty state */
-        .empty-state {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--gris-texte);
-        }
-        
-        .empty-state-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            opacity: 0.4;
-        }
-        
-        .empty-state h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--bleu-vizille);
-            margin-bottom: 0.5rem;
-        }
-            /* ===== NAVIGATION SITE ===== */
-        .site-nav {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        /* ===== BARRE THÉMATIQUE ===== */
-        .theme-nav {
-            background: white;
-            border-top: 2px solid var(--gris-doux);
-            position: sticky;
-            top: 70px;
-            z-index: 99;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-        }
-        
-        .theme-nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0.75rem 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            overflow-x: auto;
-            scrollbar-width: thin;
-            scrollbar-color: var(--or) var(--gris-doux);
-        }
-        
-        .theme-nav-container::-webkit-scrollbar {
-            height: 6px;
-        }
-        
-        .theme-nav-container::-webkit-scrollbar-track {
-            background: var(--gris-doux);
-            border-radius: 3px;
-        }
-        
-        .theme-nav-container::-webkit-scrollbar-thumb {
-            background: var(--or);
-            border-radius: 3px;
-        }
-        
-        .btn-back {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: var(--bleu-vizille);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-        
-        .btn-back:hover {
-            background: var(--bleu-clair);
-            transform: translateX(-2px);
-        }
-        
-        .theme-nav-divider {
-            width: 2px;
-            height: 30px;
-            background: var(--gris-doux);
-            flex-shrink: 0;
-        }
-        
-        .theme-btns {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: nowrap;
-        }
-        
-        .theme-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.5rem 1rem;
-            background: var(--blanc-casse);
-            border: 2px solid transparent;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-        
-        .theme-btn:hover {
-            background: white;
-            border-color: var(--or);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        .theme-btn.active {
-            background: var(--or);
-            color: white;
-            border-color: var(--or);
-        }
-        
-        .theme-btn .icon {
-            font-size: 1.1rem;
-        }
-        
-        /* ===== NAVIGATION STYLE FIGARO ===== */
-        .header {
-            position: relative;
-            z-index: 9999;
-            background: white;
-        }
-        
-        .header-top {
-            background: var(--bleu-vizille);
-            padding: 0.4rem 0;
-            text-align: center;
-            border-bottom: 2px solid var(--or);
-        }
-        
-        .header-top p {
-            color: white;
-            font-family: 'Source Sans 3', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin: 0;
-        }
-        
-        .header-main {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0.5rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--gris-doux);
-            background: white;
-        }
-        
-        .nav-header-logo {
-            height: 85px;
-            width: auto;
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 2px 4px rgba(26, 58, 92, 0.2));
-        }
-        
-        .nav-header-logo:hover {
-            transform: scale(1.05);
-            filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.4));
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 0;
-            border-left: 1px solid var(--gris-doux);
-            margin: 0;
-            padding: 0;
-        }
-        
-        nav ul li {
-            border-right: 1px solid var(--gris-doux);
-        }
-        
-        nav ul li a {
-            display: block;
-            padding: 0.6rem 1.25rem;
-            color: var(--gris-texte);
-            text-decoration: none;
-            font-family: 'Source Sans 3', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            transition: all 0.2s;
-        }
-        
-        nav ul li a:hover {
-            background: var(--blanc-casse);
-            color: var(--bleu-vizille);
-        }
-        
-        nav ul li a.active {
-            background: var(--bleu-vizille);
-            color: white;
-        }
-        
-        nav ul li a.admin-link {
-            opacity: 0.5;
-            font-size: 1.1rem;
-            padding: 0.6rem 1rem;
-        }
-        
-        nav ul li a.admin-link:hover {
-            opacity: 1;
-        }
-        
-        @media (max-width: 768px) {
-            .header-main {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                border: none;
-            }
-            
-            nav ul li {
-                border: none;
-            }
-            
-            nav ul li a {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.75rem;
-            }
-            
-            /* Barre thématique responsive */
-            .theme-nav {
-                top: auto;
-                position: static;
-            }
-            .theme-nav-container {
-                padding: 0.5rem 1rem;
-                gap: 0.5rem;
-            }
-            .btn-back {
-                font-size: 0.85rem;
-                padding: 0.4rem 0.75rem;
-            }
-            .theme-btn {
-                font-size: 0.85rem;
-                padding: 0.4rem 0.75rem;
-            }
-            .theme-btn .icon {
-                font-size: 1rem;
-            }
-            
-            /* Boutons de filtrage par thème responsive */
-            .theme-filters-grid {
-                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-                gap: 0.5rem;
-            }
-            .theme-filter-btn {
-                padding: 0.75rem 0.5rem;
-                font-size: 0.8rem;
-            }
-            .theme-filter-btn .icon {
-                font-size: 1.5rem;
-            }
-        }
-    
 
-/* === FIX visibilité libellés des chiffres globaux (KPI) === */
-.header .stats-grid{
-  margin-top: 1rem;
-  padding: 1rem;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, var(--bleu-vizille) 0%, var(--bleu-clair) 100%);
-  border: 1px solid rgba(201, 162, 39, 0.25);
-}
-
-.header .stats-grid .stat-card{
-  background: rgba(255,255,255,0.12);
-}
-
-.header .stats-grid .stat-label{
-  color: #fff;
-  opacity: 0.95;
-}
-
-</style>
+    <!-- CSS Modulaires -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/bilan.css">
 </head>
 <body>
     <!-- Navigation Site -->
@@ -1536,7 +40,7 @@
         <div class="header-top">
             <p>Bilan 2020-2026 • Vizille en Mouvement</p>
         </div>
-        
+
         <div class="header-main">
             <a href="index.html">
                 <img src="images/logo.png" alt="Vizille en Mouvement" class="nav-header-logo">
@@ -1555,92 +59,40 @@
         </div>
     </header>
 
-    <!-- Barre de navigation thématique -->
-    <div class="theme-nav" id="theme-nav" style="display: none;">
-        <div class="theme-nav-container">
-            <button class="btn-back" onclick="returnToBilan()">
-                ← Retour au bilan
-            </button>
-            <div class="theme-nav-divider"></div>
-            <div class="theme-btns">
-                <button class="theme-btn" data-theme="Urbanisme" onclick="filterByTheme('Urbanisme')">
-                    <span class="icon">🏘️</span> Urbanisme
-                </button>
-                <button class="theme-btn" data-theme="Santé" onclick="filterByTheme('Santé')">
-                    <span class="icon">🏥</span> Santé
-                </button>
-                <button class="theme-btn" data-theme="Environnement" onclick="filterByTheme('Environnement')">
-                    <span class="icon">🌿</span> Environnement
-                </button>
-                <button class="theme-btn" data-theme="Culture" onclick="filterByTheme('Culture')">
-                    <span class="icon">🎭</span> Culture
-                </button>
-                <button class="theme-btn" data-theme="Patrimoine" onclick="filterByTheme('Patrimoine')">
-                    <span class="icon">🏛️</span> Patrimoine
-                </button>
-                <button class="theme-btn" data-theme="Enfance" onclick="filterByTheme('Enfance')">
-                    <span class="icon">👶</span> Enfance
-                </button>
-                <button class="theme-btn" data-theme="Solidarité" onclick="filterByTheme('Solidarité')">
-                    <span class="icon">🤝</span> Solidarité
-                </button>
-                <button class="theme-btn" data-theme="Sport" onclick="filterByTheme('Sport')">
-                    <span class="icon">⚽</span> Sport
-                </button>
-                <button class="theme-btn" data-theme="Économie" onclick="filterByTheme('Économie')">
-                    <span class="icon">💼</span> Économie
-                </button>
-                <button class="theme-btn" data-theme="Tranquillité" onclick="filterByTheme('Tranquillité')">
-                    <span class="icon">🛡️</span> Tranquillité
-                </button>
-                <button class="theme-btn" data-theme="Mobilités" onclick="filterByTheme('Mobilités')">
-                    <span class="icon">🚴</span> Mobilités
-                </button>
-                <button class="theme-btn" data-theme="Finance" onclick="filterByTheme('Finance')">
-                    <span class="icon">💰</span> Finance
-                </button>
-            </div>
+    <!-- Hero -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <img src="images/logo.png" alt="Vizille en Mouvement" class="hero-logo">
+            <h1>Bilan du Mandat 2020-2026</h1>
+            <p class="slogan">Ensemble pour une ville dynamique et solidaire</p>
         </div>
-    </div>
+    </section>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <div class="hero-banner">
-                <div class="logo"><img src="images/logo.png" alt="Vizille en Mouvement"></div>
-                <div class="title-block">
-                    <h1>Bilan du Mandat 2020-2026</h1>
-                    <p class="subtitle">Ensemble pour une ville dynamique et solidaire</p>
-                </div>
-            </div>
-            
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number" id="stat-total">—</div>
-                    <div class="stat-label">Actions totales</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="stat-realises">—</div>
-                    <div class="stat-label">Réalisées</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="stat-encours">—</div>
-                    <div class="stat-label">En cours</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="stat-decidees">—</div>
-                    <div class="stat-label">Décidées</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="stat-programmees">—</div>
-                    <div class="stat-label">Programmées</div>
-                </div>
-            </div>
-        </div>
-    </header>
-    
     <!-- Main Content -->
     <main class="main-content">
+        <!-- Stats Section -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="stat-total">—</div>
+                <div class="stat-label">Actions totales</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-realises">—</div>
+                <div class="stat-label">Réalisées</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-encours">—</div>
+                <div class="stat-label">En cours</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-decidees">—</div>
+                <div class="stat-label">Décidées</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-programmees">—</div>
+                <div class="stat-label">Programmées</div>
+            </div>
+        </div>
         <!-- Charts Section -->
         <section>
             <h2 class="section-title">📊 Vue synthétique</h2>
@@ -1665,38 +117,11 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- Filters Section -->
         <section>
             <h2 class="section-title">🔍 Explorer les actions</h2>
             <div class="filters-section">
-                <!-- Navigation vers les pages du site -->
-                <div class="site-nav">
-                    <label class="site-nav-label">📄 Pages du site</label>
-                    <div class="site-nav-grid">
-                        <a href="index.html" class="site-nav-btn">
-                            <span class="icon">🏠</span> Accueil
-                        </a>
-                        <a href="bilan.html" class="site-nav-btn active">
-                            <span class="icon">📊</span> Bilan
-                        </a>
-                        <a href="projet.html" class="site-nav-btn">
-                            <span class="icon">🚀</span> Projets 2026
-                        </a>
-                        <a href="blog.html" class="site-nav-btn">
-                            <span class="icon">📰</span> Actualités
-                        </a>
-                        <a href="equipe.html" class="site-nav-btn">
-                            <span class="icon">👥</span> Équipe
-                        </a>
-                        <a href="faq.html" class="site-nav-btn">
-                            <span class="icon">🤝</span> Construisons ensemble
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="filters-divider"></div>
-                
                 <!-- Filtres par thème (boutons) -->
                 <div class="theme-filters">
                     <label class="theme-filters-label">Thème</label>
@@ -1704,9 +129,9 @@
                         <!-- Les boutons seront générés par JavaScript -->
                     </div>
                 </div>
-                
+
                 <div class="filters-divider"></div>
-                
+
                 <!-- Autres filtres -->
                 <div class="filters-grid">
                     <div class="filter-group">
@@ -1738,28 +163,28 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Select caché pour la compatibilité avec le code existant -->
                 <select id="filter-theme" style="display: none;">
                     <option value="">Tous les thèmes</option>
                 </select>
-                
+
                 <p class="results-count">
                     <strong id="results-count">0</strong> actions trouvées
                 </p>
             </div>
         </section>
-        
+
         <!-- Results Section -->
         <section id="results-section">
             <div class="loading" id="loading">Chargement des données</div>
-            
+
             <!-- Themes View -->
             <div id="view-themes" class="themes-grid hidden"></div>
-            
+
             <!-- Cards View -->
             <div id="view-cards" class="cards-grid hidden"></div>
-            
+
             <!-- Table View -->
             <div id="view-table" class="table-container hidden">
                 <table class="data-table">
@@ -1775,7 +200,7 @@
                     <tbody id="table-body"></tbody>
                 </table>
             </div>
-            
+
             <!-- Empty State -->
             <div id="empty-state" class="empty-state hidden">
                 <div class="empty-state-icon">🔍</div>
@@ -1784,7 +209,34 @@
             </div>
         </section>
     </main>
-    
+
+    <!-- Navigation vers les pages du site (en bas de page) -->
+    <section class="site-nav-section">
+        <div class="site-nav-container">
+            <label class="site-nav-label">📄 Pages du site</label>
+            <div class="site-nav-grid">
+                <a href="index.html" class="site-nav-btn">
+                    <span class="icon">🏠</span> Accueil
+                </a>
+                <a href="bilan.html" class="site-nav-btn active">
+                    <span class="icon">📊</span> Bilan
+                </a>
+                <a href="projet.html" class="site-nav-btn">
+                    <span class="icon">🚀</span> Projets 2026
+                </a>
+                <a href="blog.html" class="site-nav-btn">
+                    <span class="icon">📰</span> Actualités
+                </a>
+                <a href="equipe.html" class="site-nav-btn">
+                    <span class="icon">👥</span> Équipe
+                </a>
+                <a href="faq.html" class="site-nav-btn">
+                    <span class="icon">🤝</span> Construisons ensemble
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
@@ -1810,12 +262,12 @@
             <p>© 2025 Vizille en Mouvement – Données mises à jour : décembre 2025</p>
         </div>
     </footer>
-    
+
     <!-- Modal Détail Projet -->
     <div class="modal-overlay" id="modal-overlay">
         <div class="modal" id="modal-detail">
             <button class="modal-close" id="modal-close">&times;</button>
-            
+
             <div class="modal-header" id="modal-header">
                 <span class="modal-icon" id="modal-icon"></span>
                 <div class="modal-title-block">
@@ -1824,46 +276,46 @@
                 </div>
                 <span class="modal-statut" id="modal-statut"></span>
             </div>
-            
+
             <div class="modal-body">
                 <!-- Résumé -->
                 <section class="modal-section">
                     <h3>📋 Résumé</h3>
                     <p id="modal-description"></p>
                 </section>
-                
+
                 <!-- Chiffres clés -->
                 <section class="modal-section" id="section-chiffres">
                     <h3>📊 Chiffres clés</h3>
                     <div class="chiffres-grid" id="modal-chiffres"></div>
                 </section>
-                
+
                 <!-- Chronologie -->
                 <section class="modal-section" id="section-chronologie">
                     <h3>📅 Chronologie</h3>
                     <div class="timeline" id="modal-timeline"></div>
                 </section>
-                
+
                 <!-- Détails complémentaires -->
                 <section class="modal-section" id="section-details">
                     <h3>📝 Détails</h3>
                     <div id="modal-details"></div>
                 </section>
-                
+
                 <!-- Sources -->
                 <section class="modal-section">
                     <h3>📰 Sources</h3>
                     <div class="sources-list" id="modal-sources"></div>
                 </section>
             </div>
-            
+
             <div class="modal-footer">
                 <button class="btn btn-secondary" id="btn-prev-projet">← Précédent</button>
                 <button class="btn btn-secondary" id="btn-next-projet">Suivant →</button>
             </div>
         </div>
     </div>
-    
+
 <script>
 // ===== VIZILLE EN MOUVEMENT - APP.JS =====
 // Tableau de bord interactif des actions municipales
@@ -1925,7 +377,6 @@ async function loadData() {
 
 // ===== MISE À JOUR DES STATISTIQUES =====
 function updateStats() {
-    // Chiffres de référence (mise à jour manuelle)
     const total = 347;
     const realises = 281;
     const encours = 38;
@@ -1944,19 +395,19 @@ function animateNumber(elementId, target) {
     const duration = 1000;
     const start = 0;
     const startTime = performance.now();
-    
+
     function update(currentTime) {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
         const easeOut = 1 - Math.pow(1 - progress, 3);
         const current = Math.round(start + (target - start) * easeOut);
         el.textContent = current.toLocaleString('fr-FR');
-        
+
         if (progress < 1) {
             requestAnimationFrame(update);
         }
     }
-    
+
     requestAnimationFrame(update);
 }
 
@@ -1983,7 +434,7 @@ function setupFilters() {
         option.textContent = `${config.icon} ${theme}`;
         themeSelect.appendChild(option);
     });
-    
+
     // === GÉNÉRATION DES BOUTONS DE THÈMES ===
     const themeFiltersGrid = document.getElementById('theme-filters-grid');
     if (themeFiltersGrid) {
@@ -1994,7 +445,7 @@ function setupFilters() {
         allBtn.innerHTML = '<span class="icon">🏷️</span><span class="label">Tous</span>';
         allBtn.addEventListener('click', () => selectThemeButton(''));
         themeFiltersGrid.appendChild(allBtn);
-        
+
         // Boutons pour chaque thème
         themes.forEach(theme => {
             const config = themeConfig[theme] || { icon: '📋', color: '#666' };
@@ -2006,7 +457,7 @@ function setupFilters() {
             themeFiltersGrid.appendChild(btn);
         });
     }
-    
+
     // Années
     const annees = [...new Set(allData.map(d => d.annee).filter(a => a))].sort();
     const anneeSelect = document.getElementById('filter-annee');
@@ -2020,28 +471,21 @@ function setupFilters() {
 
 // Fonction pour sélectionner un thème via les boutons
 function selectThemeButton(theme) {
-    // Mettre à jour le select caché
     document.getElementById('filter-theme').value = theme;
-    
-    // Mettre à jour les boutons visuels
     document.querySelectorAll('.theme-filter-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.theme === theme);
     });
-    
-    // Appliquer les filtres
     applyFilters();
 }
 
 // ===== EVENT LISTENERS =====
 function setupEventListeners() {
-    // Filtres
     document.getElementById('filter-search').addEventListener('input', debounce(applyFilters, 300));
     document.getElementById('filter-theme').addEventListener('change', applyFilters);
     document.getElementById('filter-statut').addEventListener('change', applyFilters);
     document.getElementById('filter-annee').addEventListener('change', applyFilters);
     document.getElementById('btn-reset').addEventListener('click', resetFilters);
-    
-    // Vue toggle
+
     document.querySelectorAll('.view-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
@@ -2050,8 +494,7 @@ function setupEventListeners() {
             renderCurrentView();
         });
     });
-    
-    // Tri tableau
+
     document.querySelectorAll('.data-table th[data-sort]').forEach(th => {
         th.addEventListener('click', () => {
             const column = th.dataset.sort;
@@ -2080,7 +523,7 @@ function applyFilters() {
     const theme = document.getElementById('filter-theme').value;
     const statut = document.getElementById('filter-statut').value;
     const annee = document.getElementById('filter-annee').value;
-    
+
     filteredData = allData.filter(item => {
         if (search) {
             const searchLower = search.toLowerCase();
@@ -2096,7 +539,7 @@ function applyFilters() {
         if (annee && item.annee !== annee) return false;
         return true;
     });
-    
+
     document.getElementById('results-count').textContent = filteredData.length;
     renderCurrentView();
 }
@@ -2106,12 +549,11 @@ function resetFilters() {
     document.getElementById('filter-theme').value = '';
     document.getElementById('filter-statut').value = '';
     document.getElementById('filter-annee').value = '';
-    
-    // Réinitialiser les boutons de thème
+
     document.querySelectorAll('.theme-filter-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.theme === '');
     });
-    
+
     applyFilters();
 }
 
@@ -2121,12 +563,12 @@ function renderCurrentView() {
     document.getElementById('view-cards').classList.add('hidden');
     document.getElementById('view-table').classList.add('hidden');
     document.getElementById('empty-state').classList.add('hidden');
-    
+
     if (filteredData.length === 0) {
         document.getElementById('empty-state').classList.remove('hidden');
         return;
     }
-    
+
     switch (currentView) {
         case 'themes':
             renderThemesView();
@@ -2145,8 +587,7 @@ function renderThemesView() {
     const container = document.getElementById('view-themes');
     container.innerHTML = '';
     container.classList.remove('hidden');
-    
-    // Grouper par thème
+
     const themes = {};
     filteredData.forEach(item => {
         if (!themes[item.theme]) {
@@ -2158,10 +599,9 @@ function renderThemesView() {
         else if (item.statut === 'En cours') themes[item.theme].encours++;
         else themes[item.theme].projets++;
     });
-    
-    // Trier par nombre d'actions
+
     const sortedThemes = Object.entries(themes).sort((a, b) => b[1].items.length - a[1].items.length);
-    
+
     sortedThemes.forEach(([themeName, data], index) => {
         const config = themeConfig[themeName] || { icon: '📋', color: '#607d8b' };
         const card = document.createElement('div');
@@ -2179,12 +619,12 @@ function renderThemesView() {
                 <span class="theme-budget">${formatBudget(data.budget)}</span>
                 <div class="theme-progress">
                     ${data.realises > 0 ? `<span class="progress-dot realise" title="${data.realises} réalisé(s)"></span>` : ''}
-                    ${data.encours > 0 ? `<span class="progress-dot encours" title="${data.encours} en cours"></span>` : ''}
-                    ${data.projets > 0 ? `<span class="progress-dot projet" title="${data.projets} projet(s)"></span>` : ''}
+                    ${data.encours > 0 ? `<span class="progress-dot en-cours" title="${data.encours} en cours"></span>` : ''}
+                    ${data.projets > 0 ? `<span class="progress-dot decide" title="${data.projets} projet(s)"></span>` : ''}
                 </div>
             </div>
         `;
-        
+
         card.addEventListener('click', () => {
             document.getElementById('filter-theme').value = themeName;
             document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
@@ -2192,7 +632,7 @@ function renderThemesView() {
             currentView = 'cards';
             applyFilters();
         });
-        
+
         container.appendChild(card);
     });
 }
@@ -2202,8 +642,7 @@ function renderCardsView() {
     const container = document.getElementById('view-cards');
     container.innerHTML = '';
     container.classList.remove('hidden');
-    
-    // Trier
+
     const sorted = [...filteredData].sort((a, b) => {
         let valA = a[sortColumn] || '';
         let valB = b[sortColumn] || '';
@@ -2219,17 +658,17 @@ function renderCardsView() {
         if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
         return 0;
     });
-    
+
     sorted.forEach((item, index) => {
         const config = themeConfig[item.theme] || { icon: '📋', color: '#607d8b' };
         const statutClass = getStatutClass(item.statut);
         const hasDetails = item.importance > 1 || (item.chiffres && item.chiffres.length > 1);
-        
+
         const card = document.createElement('div');
         card.className = 'action-card' + (hasDetails ? ' has-details' : '');
         card.style.animationDelay = `${Math.min(index * 0.03, 0.5)}s`;
         card.dataset.projectId = item.id;
-        
+
         card.innerHTML = `
             <div class="card-header">
                 <span class="card-theme" style="background: ${config.color}">
@@ -2247,9 +686,9 @@ function renderCardsView() {
                 ${hasDetails ? '<div class="card-detail-hint">Cliquez pour les détails →</div>' : ''}
             </div>
         `;
-        
+
         card.addEventListener('click', () => openProjectModal(item.id));
-        
+
         container.appendChild(card);
     });
 }
@@ -2259,8 +698,7 @@ function renderTableView() {
     const tbody = document.getElementById('table-body');
     tbody.innerHTML = '';
     document.getElementById('view-table').classList.remove('hidden');
-    
-    // Trier
+
     const sorted = [...filteredData].sort((a, b) => {
         let valA = a[sortColumn] || '';
         let valB = b[sortColumn] || '';
@@ -2272,11 +710,11 @@ function renderTableView() {
         if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
         return 0;
     });
-    
+
     sorted.forEach(item => {
         const config = themeConfig[item.theme] || { icon: '📋', color: '#607d8b' };
         const statutClass = getStatutClass(item.statut);
-        
+
         const row = document.createElement('tr');
         row.addEventListener('click', () => openProjectModal(item.id));
         row.innerHTML = `
@@ -2324,19 +762,18 @@ function renderCharts() {
 
 function renderThemesChart() {
     const ctx = document.getElementById('chart-themes').getContext('2d');
-    
-    // Agréger par thème
+
     const themesData = {};
     allData.forEach(item => {
         if (!themesData[item.theme]) themesData[item.theme] = 0;
         themesData[item.theme]++;
     });
-    
+
     const sorted = Object.entries(themesData).sort((a, b) => b[1] - a[1]).slice(0, 10);
     const labels = sorted.map(([theme]) => theme);
     const data = sorted.map(([, count]) => count);
     const colors = labels.map(theme => themeConfig[theme]?.color || '#607d8b');
-    
+
     chartThemes = new Chart(ctx, {
         type: 'doughnut',
         data: {
@@ -2365,15 +802,12 @@ function renderThemesChart() {
                 if (elements.length > 0) {
                     const index = elements[0].index;
                     const themeName = labels[index];
-                    // Filtrer par ce thème
                     document.getElementById('filter-theme').value = themeName;
                     applyFilters();
-                    // Basculer vers la vue cartes
                     document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
                     document.querySelector('.view-btn[data-view="cards"]').classList.add('active');
                     currentView = 'cards';
                     renderCurrentView();
-                    // Scroller vers les résultats
                     document.getElementById('view-cards').scrollIntoView({ behavior: 'smooth' });
                 }
             }
@@ -2383,8 +817,7 @@ function renderThemesChart() {
 
 function renderAnneesChart() {
     const ctx = document.getElementById('chart-annees').getContext('2d');
-    
-    // Agréger par année
+
     const anneesData = {};
     allData.forEach(item => {
         if (item.annee) {
@@ -2393,11 +826,11 @@ function renderAnneesChart() {
             anneesData[item.annee].budget += item.budget || 0;
         }
     });
-    
+
     const years = Object.keys(anneesData).sort();
     const counts = years.map(y => anneesData[y].count);
     const budgets = years.map(y => anneesData[y].budget / 1000000);
-    
+
     chartAnnees = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -2454,24 +887,24 @@ function renderAnneesChart() {
 
 function renderStatutsChart() {
     const ctx = document.getElementById('chart-statuts').getContext('2d');
-    
+
     const statuts = {
         'Réalisé': { count: 0, color: '#27ae60' },
         'En cours': { count: 0, color: '#f39c12' },
         'Décidé': { count: 0, color: '#3498db' },
         'Programmé': { count: 0, color: '#9b59b6' }
     };
-    
+
     allData.forEach(item => {
         if (statuts[item.statut]) {
             statuts[item.statut].count++;
         }
     });
-    
+
     const labels = Object.keys(statuts);
     const data = labels.map(s => statuts[s].count);
     const colors = labels.map(s => statuts[s].color);
-    
+
     chartStatuts = new Chart(ctx, {
         type: 'polarArea',
         data: {
@@ -2514,25 +947,22 @@ let currentProjectIndex = 0;
 function openProjectModal(projectId) {
     const project = filteredData.find(p => p.id === projectId);
     if (!project) return;
-    
+
     currentProjectIndex = filteredData.findIndex(p => p.id === projectId);
-    
+
     const config = themeConfig[project.theme] || { icon: '📋', color: '#607d8b' };
     const modal = document.getElementById('modal-overlay');
     const header = document.getElementById('modal-header');
-    
-    // Header
+
     header.style.background = `linear-gradient(135deg, ${config.color} 0%, ${adjustColor(config.color, -20)} 100%)`;
     document.getElementById('modal-icon').textContent = config.icon;
     document.getElementById('modal-theme').textContent = project.theme;
     document.getElementById('modal-title').textContent = project.titre;
     document.getElementById('modal-statut').textContent = project.statut;
     document.getElementById('modal-statut').className = 'modal-statut ' + getStatutClass(project.statut);
-    
-    // Résumé
+
     document.getElementById('modal-description').textContent = project.resume || project.description || 'Pas de description disponible.';
-    
-    // Chiffres clés
+
     const chiffresSection = document.getElementById('section-chiffres');
     const chiffresContainer = document.getElementById('modal-chiffres');
     if (project.chiffres && project.chiffres.length > 0) {
@@ -2546,8 +976,7 @@ function openProjectModal(projectId) {
     } else {
         chiffresSection.classList.add('hidden');
     }
-    
-    // Chronologie
+
     const chronoSection = document.getElementById('section-chronologie');
     const timelineContainer = document.getElementById('modal-timeline');
     if (project.chronologie && project.chronologie.length > 0) {
@@ -2561,8 +990,7 @@ function openProjectModal(projectId) {
     } else {
         chronoSection.classList.add('hidden');
     }
-    
-    // Détails
+
     const detailsSection = document.getElementById('section-details');
     const detailsContainer = document.getElementById('modal-details');
     if (project.details) {
@@ -2571,12 +999,10 @@ function openProjectModal(projectId) {
     } else {
         detailsSection.classList.add('hidden');
     }
-    
-    // Sources
+
     const sourcesContainer = document.getElementById('modal-sources');
     let sourcesHTML = '';
-    
-    // Ajouter les sources textuelles d'abord
+
     if (project.sources && project.sources.length > 0) {
         sourcesHTML += project.sources.map(s => {
             const icon = s.type === 'delib' ? '📋' : s.type === 'magazine' ? '📰' : '📄';
@@ -2588,13 +1014,12 @@ function openProjectModal(projectId) {
             `;
         }).join('');
     }
-    
-    // Afficher les liens sources cliquables
+
     if (project.lien_source && project.lien_source.length > 0) {
         sourcesHTML += '<div class="source-links">';
         sourcesHTML += project.lien_source.map(ls => {
-            const icon = ls.type === 'Délibération' ? '📋' : 
-                        ls.type === 'Magazine' || ls.type === 'Magazine PDF' ? '📰' : 
+            const icon = ls.type === 'Délibération' ? '📋' :
+                        ls.type === 'Magazine' || ls.type === 'Magazine PDF' ? '📰' :
                         ls.type === 'Page dédiée' ? '🔗' : '📄';
             return `
                 <a href="${ls.url}" target="_blank" rel="noopener" class="source-link">
@@ -2606,17 +1031,15 @@ function openProjectModal(projectId) {
         }).join('');
         sourcesHTML += '</div>';
     }
-    
+
     if (!sourcesHTML) {
         sourcesHTML = '<div class="source-item"><span class="source-icon">📄</span><span>Documentation municipale</span></div>';
     }
-    
+
     sourcesContainer.innerHTML = sourcesHTML;
-    
-    // Navigation
+
     updateModalNavigation();
-    
-    // Afficher
+
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
@@ -2664,10 +1087,8 @@ document.addEventListener('keydown', (e) => {
 
 // ===== NAVIGATION THÉMATIQUE =====
 function filterByTheme(theme) {
-    // Mettre à jour le select du filtre
     document.getElementById('filter-theme').value = theme;
-    
-    // Mettre à jour les boutons de filtrage
+
     document.querySelectorAll('.theme-filter-btn').forEach(btn => {
         if (btn.dataset.theme === theme) {
             btn.classList.add('active');
@@ -2675,67 +1096,23 @@ function filterByTheme(theme) {
             btn.classList.remove('active');
         }
     });
-    
-    // Appliquer les filtres
+
     applyFilters();
-    
-    // Afficher la barre thématique
-    showThemeNav(theme);
-    
-    // Scroll vers le contenu
     document.querySelector('.main-content').scrollIntoView({ behavior: 'smooth' });
 }
 
 function returnToBilan() {
-    // Réinitialiser tous les filtres
     resetFilters();
-    
-    // Masquer la barre thématique
-    hideThemeNav();
-    
-    // Scroll vers le haut
     window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function showThemeNav(activeTheme) {
-    const themeNav = document.getElementById('theme-nav');
-    themeNav.style.display = 'block';
-    
-    // Mettre à jour les boutons actifs
-    document.querySelectorAll('.theme-btn').forEach(btn => {
-        if (btn.dataset.theme === activeTheme) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-}
-
-function hideThemeNav() {
-    const themeNav = document.getElementById('theme-nav');
-    themeNav.style.display = 'none';
-    
-    // Réinitialiser les boutons actifs
-    document.querySelectorAll('.theme-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
 }
 
 // Rendre les fonctions accessibles globalement
 window.filterByTheme = filterByTheme;
 window.returnToBilan = returnToBilan;
-window.showThemeNav = showThemeNav;
-window.hideThemeNav = hideThemeNav;
-
-// Observer les changements de filtres pour afficher/masquer la barre
-document.getElementById('filter-theme').addEventListener('change', function() {
-    if (this.value) {
-        showThemeNav(this.value);
-    } else {
-        hideThemeNav();
-    }
-});
 
 </script>
+
+<!-- Site Features JS -->
+<script src="js/site-features.js"></script>
 </body>
 </html>

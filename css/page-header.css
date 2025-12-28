@@ -1,0 +1,135 @@
+/* ===== PAGE HEADER (Hero Banner) - Vizille en Mouvement ===== */
+
+/* Hero banner style index */
+.hero-banner {
+    position: relative;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/vizille-panorama.png') center center / cover no-repeat;
+    z-index: 1;
+}
+
+.hero-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(26, 82, 118, 0.75) 0%, rgba(14, 58, 82, 0.85) 100%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 1.5rem;
+}
+
+.hero-logo {
+    max-width: 325px;
+    margin-bottom: 0.75rem;
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.5));
+    animation: pulse 2s ease-in-out infinite, glow 2s ease-in-out infinite;
+}
+
+.slogan {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* Page header style autres pages */
+.page-header {
+    background: linear-gradient(135deg, var(--bleu-vizille) 0%, var(--bleu-clair) 100%);
+    color: white;
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.page-header .header-logo {
+    max-width: 280px;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.5));
+    animation: pulse 2s ease-in-out infinite, glow 2s ease-in-out infinite;
+}
+
+.page-header .header-slogan {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--or-clair);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.page-header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    opacity: 0.9;
+    font-size: 1.2rem;
+}
+
+/* Page header compact */
+.page-header-compact {
+    padding: 1.5rem 1.5rem;
+}
+
+.page-header-compact .header-logo {
+    max-width: 180px;
+    margin-bottom: 0.3rem;
+}
+
+.page-header-compact .header-slogan {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.page-header-compact h1 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+.page-header-compact p {
+    font-size: 1rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero-logo {
+        max-width: 250px;
+    }
+
+    .slogan {
+        font-size: 1.2rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+}

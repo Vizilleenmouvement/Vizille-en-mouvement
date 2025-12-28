@@ -454,7 +454,567 @@
         }
         
         .item-actions { display: flex; gap: 0.5rem; }
-        
+
+        /* ===== CARDS GRID (style bilan/projet) ===== */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .admin-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .admin-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border-color: var(--or);
+        }
+
+        .admin-card-header {
+            padding: 1rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-card-theme {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            color: white;
+        }
+
+        .admin-card-statut {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .statut-realise { background: rgba(39, 174, 96, 0.15); color: #27ae60; }
+        .statut-encours { background: rgba(243, 156, 18, 0.15); color: #f39c12; }
+        .statut-prevu { background: rgba(52, 152, 219, 0.15); color: #3498db; }
+        .statut-prioritaire { background: rgba(231, 76, 60, 0.15); color: #e74c3c; }
+        .statut-court-terme { background: rgba(243, 156, 18, 0.15); color: #f39c12; }
+        .statut-moyen-terme { background: rgba(52, 152, 219, 0.15); color: #3498db; }
+
+        .admin-card-body {
+            padding: 0 1.25rem 1.25rem;
+        }
+
+        .admin-card-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--bleu);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .admin-card-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .admin-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--gris-border);
+        }
+
+        .admin-card-meta {
+            font-size: 0.85rem;
+            color: #888;
+            font-weight: 500;
+        }
+
+        .admin-card-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== THEMES GRID (groupement par thème) ===== */
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .theme-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .theme-card-header {
+            padding: 1.25rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .theme-card-icon {
+            font-size: 2rem;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .theme-card-info h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .theme-card-info .count {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .theme-card-stats {
+            padding: 1rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--gris-bg);
+        }
+
+        .theme-card-stats span {
+            font-size: 0.85rem;
+            color: var(--gris-texte);
+        }
+
+        .theme-card-arrow {
+            font-size: 1.2rem;
+            color: var(--or);
+            transition: transform 0.3s;
+        }
+
+        .theme-card:hover .theme-card-arrow {
+            transform: translateX(5px);
+        }
+
+        /* Détail d'un thème */
+        .theme-detail {
+            margin-top: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .theme-detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gris-border);
+        }
+
+        .theme-detail-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--bleu);
+        }
+
+        .btn-back-theme {
+            padding: 0.5rem 1rem;
+            background: var(--gris-bg);
+            border: 2px solid var(--gris-border);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-back-theme:hover {
+            background: var(--bleu);
+            color: white;
+            border-color: var(--bleu);
+        }
+
+        /* ===== CANDIDAT CARDS ===== */
+        .candidat-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .candidat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border-color: var(--or);
+        }
+
+        .candidat-card-photo {
+            position: relative;
+            height: 180px;
+            background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .candidat-card-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .candidat-card-photo .no-photo {
+            font-size: 4rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .candidat-card-ordre {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--or);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .candidat-card-body {
+            padding: 1.25rem;
+        }
+
+        .candidat-card-name {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--bleu);
+            margin-bottom: 0.25rem;
+        }
+
+        .candidat-card-role {
+            font-size: 0.85rem;
+            color: var(--or);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .candidat-card-delegation {
+            font-size: 0.8rem;
+            color: #666;
+            background: #f0f4f8;
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            border-radius: 15px;
+            margin-bottom: 0.75rem;
+        }
+
+        .candidat-card-bio {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 0.75rem;
+        }
+
+        .candidat-card-citation {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--bleu);
+            background: linear-gradient(135deg, rgba(26,58,92,0.05) 0%, rgba(201,162,39,0.1) 100%);
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--or);
+            margin-bottom: 1rem;
+        }
+
+        .candidat-card-socials {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .candidat-card-socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #f0f4f8;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .candidat-card-socials a:hover {
+            background: var(--bleu);
+            transform: scale(1.1);
+        }
+
+        .candidat-card-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.5rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--gris-border);
+        }
+
+        /* ===== ARTICLE CARDS ===== */
+        .article-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            border-color: var(--or);
+        }
+
+        .article-card-image {
+            position: relative;
+            height: 140px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .article-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .article-card-image .no-image {
+            font-size: 3rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .article-card-category {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 0.3rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .article-card-category.evenement { background: #3498db; }
+        .article-card-category.communique { background: #e74c3c; }
+        .article-card-category.reunion { background: #27ae60; }
+        .article-card-category.action { background: #9b59b6; }
+        .article-card-category.bilan { background: #f39c12; }
+        .article-card-category.projet { background: #1abc9c; }
+        .article-card-category.tribune { background: #34495e; }
+        .article-card-category.info { background: #95a5a6; }
+
+        .article-card-body {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card-date {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 0.5rem;
+        }
+
+        .article-card-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--bleu);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .article-card-extrait {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .article-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            border-top: 1px solid var(--gris-border);
+        }
+
+        .article-card-share {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        /* ===== DASHBOARD STATS ===== */
+        .dashboard-stat-card:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        /* ===== GLOBAL SEARCH ===== */
+        .global-search-container {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .global-search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid var(--gris-border);
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .global-search-input:focus {
+            outline: none;
+            border-color: var(--bleu);
+            box-shadow: 0 0 0 3px rgba(26, 58, 92, 0.1);
+        }
+
+        .global-search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: var(--gris-texte);
+        }
+
+        .global-search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid var(--gris-border);
+            border-radius: 12px;
+            margin-top: 0.5rem;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            z-index: 100;
+            display: none;
+        }
+
+        .global-search-results.active {
+            display: block;
+        }
+
+        .search-result-group {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--gris-border);
+        }
+
+        .search-result-group:last-child {
+            border-bottom: none;
+        }
+
+        .search-result-group-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--or);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .search-result-item {
+            padding: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .search-result-item:hover {
+            background: var(--gris-bg);
+        }
+
+        .search-result-item .icon {
+            font-size: 1.2rem;
+        }
+
+        .search-result-item .title {
+            font-weight: 500;
+            color: var(--bleu);
+        }
+
+        .search-result-item .subtitle {
+            font-size: 0.8rem;
+            color: var(--gris-texte);
+        }
+
         /* ===== TOAST ===== */
         .toast {
             position: fixed;
@@ -560,6 +1120,15 @@
         </div>
     </header>
 
+    <!-- RECHERCHE GLOBALE -->
+    <div style="background: white; padding: 0.75rem 1rem; border-bottom: 1px solid var(--gris-border);">
+        <div class="global-search-container" style="max-width: 600px; margin: 0 auto;">
+            <span class="global-search-icon">🔍</span>
+            <input type="text" class="global-search-input" id="global-search" placeholder="Rechercher dans tout le contenu..." oninput="handleGlobalSearch(this.value)" onfocus="handleGlobalSearch(this.value)">
+            <div class="global-search-results" id="global-search-results"></div>
+        </div>
+    </div>
+
     <!-- NAVIGATION -->
     <nav class="nav-tabs">
         <button class="nav-tab active" data-tab="accueil">🏠 Accueil</button>
@@ -586,6 +1155,63 @@
                     <div style="text-align: center; margin-bottom: 2rem;">
                         <h1 style="color: var(--bleu); font-size: 2rem; margin-bottom: 0.5rem;">Vizille en Mouvement</h1>
                         <p style="color: var(--or); font-size: 1.2rem;">Interface de gestion du site de campagne</p>
+                    </div>
+
+                    <!-- DASHBOARD STATISTIQUES -->
+                    <div id="dashboard-stats" style="margin-bottom: 2rem;">
+                        <h3 style="color: var(--bleu); margin-bottom: 1rem;">📊 Tableau de bord</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem;">
+                            <div class="dashboard-stat-card" onclick="switchTab('projets')" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.25rem; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.2s;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚀</div>
+                                <div style="font-size: 2rem; font-weight: 700;" id="stat-projets">0</div>
+                                <div style="font-size: 0.85rem; opacity: 0.9;">Projets</div>
+                            </div>
+                            <div class="dashboard-stat-card" onclick="switchTab('actions')" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 1.25rem; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.2s;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
+                                <div style="font-size: 2rem; font-weight: 700;" id="stat-actions">0</div>
+                                <div style="font-size: 0.85rem; opacity: 0.9;">Actions bilan</div>
+                            </div>
+                            <div class="dashboard-stat-card" onclick="switchTab('candidats')" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 1.25rem; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.2s;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">👥</div>
+                                <div style="font-size: 2rem; font-weight: 700;" id="stat-candidats">0</div>
+                                <div style="font-size: 0.85rem; opacity: 0.9;">Candidats</div>
+                            </div>
+                            <div class="dashboard-stat-card" onclick="switchTab('articles')" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; padding: 1.25rem; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.2s;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">📰</div>
+                                <div style="font-size: 2rem; font-weight: 700;" id="stat-articles">0</div>
+                                <div style="font-size: 0.85rem; opacity: 0.9;">Articles</div>
+                            </div>
+                            <div class="dashboard-stat-card" onclick="switchTab('themes')" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; padding: 1.25rem; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.2s;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎨</div>
+                                <div style="font-size: 2rem; font-weight: 700;" id="stat-themes">0</div>
+                                <div style="font-size: 0.85rem; opacity: 0.9;">Thèmes</div>
+                            </div>
+                            <div class="dashboard-stat-card" onclick="switchTab('communication')" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #333; padding: 1.25rem; border-radius: 12px; text-align: center; cursor: pointer; transition: transform 0.2s;">
+                                <div style="font-size: 2rem; margin-bottom: 0.5rem;">📧</div>
+                                <div style="font-size: 2rem; font-weight: 700;" id="stat-abonnes">0</div>
+                                <div style="font-size: 0.85rem; opacity: 0.9;">Abonnés</div>
+                            </div>
+                        </div>
+
+                        <!-- Dernières activités -->
+                        <div style="margin-top: 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                            <div style="background: white; border: 1px solid var(--gris-border); border-radius: 12px; padding: 1.25rem;">
+                                <h4 style="color: var(--bleu); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <span>📰</span> Derniers articles
+                                </h4>
+                                <div id="dashboard-recent-articles" style="font-size: 0.9rem; color: var(--gris-texte);">
+                                    Chargement...
+                                </div>
+                            </div>
+                            <div style="background: white; border: 1px solid var(--gris-border); border-radius: 12px; padding: 1.25rem;">
+                                <h4 style="color: var(--bleu); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                    <span>📊</span> Répartition actions
+                                </h4>
+                                <div id="dashboard-actions-stats" style="font-size: 0.9rem; color: var(--gris-texte);">
+                                    Chargement...
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- ÉTAPES -->
@@ -777,10 +1403,11 @@
                     
                     <div class="items-list">
                         <div class="items-header">
-                            <h3>Projets affichés : <span id="projets-count">0</span></h3>
+                            <h3>Projets : <span id="projets-count">0</span></h3>
                             <input type="text" id="search-projets" placeholder="🔍 Rechercher..." style="padding: 0.5rem 1rem; border: 2px solid var(--gris-border); border-radius: 8px; width: 200px;" oninput="renderProjets()">
                         </div>
-                        <div id="projets-list"></div>
+                        <div id="projets-themes-view" class="themes-grid"></div>
+                        <div id="projets-detail-view" style="display: none;"></div>
                     </div>
                 </div>
             </div>
@@ -853,7 +1480,7 @@
                     
                     <!-- Liste des thèmes -->
                     <h4 style="color: var(--bleu); margin-bottom: 1rem;">Thèmes existants (<span id="themes-count">0</span>)</h4>
-                    <div id="themes-list" style="display: grid; gap: 10px;">
+                    <div id="themes-list" class="themes-grid">
                         <!-- Généré dynamiquement -->
                     </div>
                 </div>
@@ -921,10 +1548,11 @@
                     
                     <div class="items-list">
                         <div class="items-header">
-                            <h3>Actions affichées : <span id="actions-count">0</span></h3>
+                            <h3>Actions : <span id="actions-count">0</span></h3>
                             <input type="text" id="search-actions" placeholder="🔍 Rechercher..." style="padding: 0.5rem 1rem; border: 2px solid var(--gris-border); border-radius: 8px; width: 200px;" oninput="renderActions()">
                         </div>
-                        <div id="actions-list"></div>
+                        <div id="actions-themes-view" class="themes-grid"></div>
+                        <div id="actions-detail-view" style="display: none;"></div>
                     </div>
                 </div>
             </div>
@@ -942,12 +1570,13 @@
                 </div>
                 <div class="card-body">
                     <button class="btn btn-primary" onclick="openAddCandidat()">+ Ajouter un candidat</button>
-                    
+
                     <div class="items-list">
                         <div class="items-header">
                             <h3>Candidats (<span id="candidats-count">0</span>)</h3>
+                            <input type="text" id="search-candidats" placeholder="🔍 Rechercher..." style="padding: 0.5rem 1rem; border: 2px solid var(--gris-border); border-radius: 8px; width: 200px;" oninput="renderCandidats()">
                         </div>
-                        <div id="candidats-list"></div>
+                        <div id="candidats-list" class="cards-grid"></div>
                     </div>
                 </div>
             </div>
@@ -988,12 +1617,47 @@
                 </div>
                 <div class="card-body">
                     <button class="btn btn-primary" onclick="openAddArticle()">+ Ajouter un article</button>
-                    
+
+                    <!-- FILTRES PAR CATÉGORIE -->
+                    <div style="margin: 1.5rem 0;">
+                        <h4 style="color: var(--bleu); margin-bottom: 0.75rem;">Filtrer par catégorie :</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;" id="article-category-filters">
+                            <button class="theme-btn active" data-category="" onclick="filterArticles('')">
+                                📋 Tous (<span id="acount-all">0</span>)
+                            </button>
+                            <button class="theme-btn" data-category="Événement" onclick="filterArticles('Événement')">
+                                📅 Événement (<span id="acount-evenement">0</span>)
+                            </button>
+                            <button class="theme-btn" data-category="Communiqué" onclick="filterArticles('Communiqué')">
+                                📣 Communiqué (<span id="acount-communique">0</span>)
+                            </button>
+                            <button class="theme-btn" data-category="Réunion" onclick="filterArticles('Réunion')">
+                                🤝 Réunion (<span id="acount-reunion">0</span>)
+                            </button>
+                            <button class="theme-btn" data-category="Action" onclick="filterArticles('Action')">
+                                ✊ Action (<span id="acount-action">0</span>)
+                            </button>
+                            <button class="theme-btn" data-category="Bilan" onclick="filterArticles('Bilan')">
+                                📊 Bilan (<span id="acount-bilan">0</span>)
+                            </button>
+                            <button class="theme-btn" data-category="Projet" onclick="filterArticles('Projet')">
+                                🚀 Projet (<span id="acount-projet">0</span>)
+                            </button>
+                            <button class="theme-btn" data-category="Tribune" onclick="filterArticles('Tribune')">
+                                📝 Tribune (<span id="acount-tribune">0</span>)
+                            </button>
+                            <button class="theme-btn" data-category="Info" onclick="filterArticles('Info')">
+                                ℹ️ Info (<span id="acount-info">0</span>)
+                            </button>
+                        </div>
+                    </div>
+
                     <div class="items-list">
                         <div class="items-header">
                             <h3>Articles (<span id="articles-count">0</span>)</h3>
+                            <input type="text" id="search-articles" placeholder="🔍 Rechercher..." style="padding: 0.5rem 1rem; border: 2px solid var(--gris-border); border-radius: 8px; width: 200px;" oninput="renderArticles()">
                         </div>
-                        <div id="articles-list"></div>
+                        <div id="articles-list" class="cards-grid"></div>
                     </div>
                 </div>
             </div>
@@ -1481,7 +2145,266 @@
             renderFacebookSelect();
             renderConfig();
             initNewsletterDate();
+            updateDashboard();
         }
+
+        // ===== DASHBOARD =====
+        function updateDashboard() {
+            // Mise à jour des statistiques
+            const el = (id) => document.getElementById(id);
+            if (el('stat-projets')) el('stat-projets').textContent = data.projets.length;
+            if (el('stat-actions')) el('stat-actions').textContent = data.actions.length;
+            if (el('stat-candidats')) el('stat-candidats').textContent = data.candidats.length;
+            if (el('stat-articles')) el('stat-articles').textContent = data.articles.length;
+            if (el('stat-themes')) el('stat-themes').textContent = data.themes.length;
+            if (el('stat-abonnes')) el('stat-abonnes').textContent = data.abonnes.filter(a => a.actif !== false).length;
+
+            // Derniers articles
+            const recentArticles = [...data.articles]
+                .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
+                .slice(0, 3);
+
+            const articlesHtml = recentArticles.length === 0
+                ? '<p style="color: #888;">Aucun article</p>'
+                : recentArticles.map(a => `
+                    <div style="padding: 0.5rem 0; border-bottom: 1px solid #eee; cursor: pointer;" onclick="switchTab('articles')">
+                        <div style="font-weight: 500; color: var(--bleu);">${a.titre || 'Sans titre'}</div>
+                        <div style="font-size: 0.8rem; color: #888;">${a.date || 'Sans date'} ${a.categorie ? '• ' + a.categorie : ''}</div>
+                    </div>
+                `).join('');
+
+            if (el('dashboard-recent-articles')) {
+                el('dashboard-recent-articles').innerHTML = articlesHtml;
+            }
+
+            // Répartition des actions par statut
+            const actionsStats = {
+                realise: data.actions.filter(a => a.statut === 'Réalisé' || a.statut === 'realise').length,
+                encours: data.actions.filter(a => a.statut === 'En cours' || a.statut === 'encours').length,
+                prevu: data.actions.filter(a => a.statut === 'Prévu' || a.statut === 'prevu').length
+            };
+
+            const total = data.actions.length || 1;
+            const actionsStatsHtml = `
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="flex: 1; height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden;">
+                            <div style="width: ${(actionsStats.realise / total * 100).toFixed(0)}%; height: 100%; background: #27ae60;"></div>
+                        </div>
+                        <span style="font-size: 0.8rem; min-width: 70px;">✅ ${actionsStats.realise} réalisées</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="flex: 1; height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden;">
+                            <div style="width: ${(actionsStats.encours / total * 100).toFixed(0)}%; height: 100%; background: #f39c12;"></div>
+                        </div>
+                        <span style="font-size: 0.8rem; min-width: 70px;">🔄 ${actionsStats.encours} en cours</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div style="flex: 1; height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden;">
+                            <div style="width: ${(actionsStats.prevu / total * 100).toFixed(0)}%; height: 100%; background: #3498db;"></div>
+                        </div>
+                        <span style="font-size: 0.8rem; min-width: 70px;">📋 ${actionsStats.prevu} prévues</span>
+                    </div>
+                </div>
+            `;
+
+            if (el('dashboard-actions-stats')) {
+                el('dashboard-actions-stats').innerHTML = actionsStatsHtml;
+            }
+        }
+
+        function switchTab(tabName) {
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.tab === tabName);
+            });
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.toggle('active', content.id === 'tab-' + tabName);
+            });
+        }
+
+        // ===== RECHERCHE GLOBALE =====
+        function handleGlobalSearch(query) {
+            const resultsContainer = document.getElementById('global-search-results');
+
+            if (!query || query.length < 2) {
+                resultsContainer.classList.remove('active');
+                return;
+            }
+
+            const q = query.toLowerCase();
+            const results = {
+                projets: [],
+                actions: [],
+                candidats: [],
+                articles: [],
+                faq: []
+            };
+
+            // Recherche dans les projets
+            data.projets.forEach((p, i) => {
+                if ((p.titre || '').toLowerCase().includes(q) ||
+                    (p.description || '').toLowerCase().includes(q)) {
+                    results.projets.push({ ...p, index: i });
+                }
+            });
+
+            // Recherche dans les actions
+            data.actions.forEach((a, i) => {
+                if ((a.titre || '').toLowerCase().includes(q) ||
+                    (a.description || '').toLowerCase().includes(q)) {
+                    results.actions.push({ ...a, index: i });
+                }
+            });
+
+            // Recherche dans les candidats
+            data.candidats.forEach((c, i) => {
+                if ((c.nom || '').toLowerCase().includes(q) ||
+                    (c.role || '').toLowerCase().includes(q) ||
+                    (c.bio || '').toLowerCase().includes(q)) {
+                    results.candidats.push({ ...c, index: i });
+                }
+            });
+
+            // Recherche dans les articles
+            data.articles.forEach((a, i) => {
+                if ((a.titre || '').toLowerCase().includes(q) ||
+                    (a.extrait || '').toLowerCase().includes(q) ||
+                    (a.contenu || '').toLowerCase().includes(q)) {
+                    results.articles.push({ ...a, index: i });
+                }
+            });
+
+            // Recherche dans la FAQ
+            data.faq.forEach((f, i) => {
+                if ((f.question || '').toLowerCase().includes(q) ||
+                    (f.reponse || '').toLowerCase().includes(q)) {
+                    results.faq.push({ ...f, index: i });
+                }
+            });
+
+            // Générer le HTML des résultats
+            let html = '';
+            const hasResults = Object.values(results).some(arr => arr.length > 0);
+
+            if (!hasResults) {
+                html = '<div style="padding: 1rem; text-align: center; color: #888;">Aucun résultat pour "' + query + '"</div>';
+            } else {
+                if (results.projets.length > 0) {
+                    html += `<div class="search-result-group">
+                        <div class="search-result-group-title">🚀 Projets (${results.projets.length})</div>
+                        ${results.projets.slice(0, 3).map(p => `
+                            <div class="search-result-item" onclick="goToResult('projets', ${p.index})">
+                                <span class="icon">🚀</span>
+                                <div>
+                                    <div class="title">${p.titre || 'Sans titre'}</div>
+                                    <div class="subtitle">${p.theme || ''}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>`;
+                }
+
+                if (results.actions.length > 0) {
+                    html += `<div class="search-result-group">
+                        <div class="search-result-group-title">📊 Actions (${results.actions.length})</div>
+                        ${results.actions.slice(0, 3).map(a => `
+                            <div class="search-result-item" onclick="goToResult('actions', ${a.index})">
+                                <span class="icon">📊</span>
+                                <div>
+                                    <div class="title">${a.titre || 'Sans titre'}</div>
+                                    <div class="subtitle">${a.theme || ''} ${a.statut ? '• ' + a.statut : ''}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>`;
+                }
+
+                if (results.candidats.length > 0) {
+                    html += `<div class="search-result-group">
+                        <div class="search-result-group-title">👥 Candidats (${results.candidats.length})</div>
+                        ${results.candidats.slice(0, 3).map(c => `
+                            <div class="search-result-item" onclick="goToResult('candidats', ${c.index})">
+                                <span class="icon">👤</span>
+                                <div>
+                                    <div class="title">${c.nom || 'Sans nom'}</div>
+                                    <div class="subtitle">${c.role || ''}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>`;
+                }
+
+                if (results.articles.length > 0) {
+                    html += `<div class="search-result-group">
+                        <div class="search-result-group-title">📰 Articles (${results.articles.length})</div>
+                        ${results.articles.slice(0, 3).map(a => `
+                            <div class="search-result-item" onclick="goToResult('articles', ${a.index})">
+                                <span class="icon">📰</span>
+                                <div>
+                                    <div class="title">${a.titre || 'Sans titre'}</div>
+                                    <div class="subtitle">${a.date || ''} ${a.categorie ? '• ' + a.categorie : ''}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>`;
+                }
+
+                if (results.faq.length > 0) {
+                    html += `<div class="search-result-group">
+                        <div class="search-result-group-title">❓ FAQ (${results.faq.length})</div>
+                        ${results.faq.slice(0, 3).map(f => `
+                            <div class="search-result-item" onclick="goToResult('faq', ${f.index})">
+                                <span class="icon">❓</span>
+                                <div>
+                                    <div class="title">${f.question || 'Sans question'}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>`;
+                }
+            }
+
+            resultsContainer.innerHTML = html;
+            resultsContainer.classList.add('active');
+        }
+
+        function goToResult(type, index) {
+            // Fermer les résultats
+            document.getElementById('global-search-results').classList.remove('active');
+            document.getElementById('global-search').value = '';
+
+            // Aller à l'onglet approprié
+            switchTab(type);
+
+            // Ouvrir l'éditeur selon le type
+            setTimeout(() => {
+                switch (type) {
+                    case 'projets':
+                        openEditProjet(index);
+                        break;
+                    case 'actions':
+                        openEditAction(index);
+                        break;
+                    case 'candidats':
+                        openEditCandidat(index);
+                        break;
+                    case 'articles':
+                        openEditArticle(index);
+                        break;
+                    case 'faq':
+                        openEditFaq(index);
+                        break;
+                }
+            }, 100);
+        }
+
+        // Fermer les résultats quand on clique ailleurs
+        document.addEventListener('click', function(e) {
+            const searchContainer = document.querySelector('.global-search-container');
+            if (searchContainer && !searchContainer.contains(e.target)) {
+                document.getElementById('global-search-results').classList.remove('active');
+            }
+        });
 
         function getThemeLabel(themes, value) {
             const t = themes.find(t => t.value === value);
@@ -1521,21 +2444,127 @@
             });
         }
         
+        // Variable pour suivre le thème actuellement affiché en détail
+        let currentProjetThemeDetail = null;
+
         function renderProjets() {
             updateProjetCounts();
-            
+
             const search = (document.getElementById('search-projets')?.value || '').toLowerCase();
-            
+
+            // Si recherche active ou filtre thème via boutons, afficher directement les cartes
+            if (search || currentProjetFilter) {
+                showProjetsCards(search);
+                return;
+            }
+
+            // Si un thème est sélectionné en détail, afficher ses projets
+            if (currentProjetThemeDetail) {
+                showProjetThemeDetail(currentProjetThemeDetail);
+                return;
+            }
+
+            // Sinon, afficher la vue par thèmes
+            showProjetsThemesView();
+        }
+
+        function showProjetsThemesView() {
+            document.getElementById('projets-themes-view').style.display = 'grid';
+            document.getElementById('projets-detail-view').style.display = 'none';
+
+            // Grouper les projets par thème principal
+            const themeGroups = {};
+            data.projets.forEach(p => {
+                const themes = getProjetThemes(p);
+                const primaryTheme = themes[0] || 'Non défini';
+                if (!themeGroups[primaryTheme]) {
+                    themeGroups[primaryTheme] = [];
+                }
+                themeGroups[primaryTheme].push(p);
+            });
+
+            document.getElementById('projets-count').textContent = data.projets.length;
+
+            // Trier les thèmes par nombre de projets
+            const sortedThemes = Object.entries(themeGroups).sort((a, b) => b[1].length - a[1].length);
+
+            document.getElementById('projets-themes-view').innerHTML = sortedThemes.length === 0
+                ? '<div class="empty-state" style="grid-column: 1/-1;"><div class="icon">📭</div><p>Aucun projet</p></div>'
+                : sortedThemes.map(([themeName, projets]) => {
+                    const themeConf = THEMES_CONFIG.find(t => t.theme === themeName) || { icon: '📋', color: '#1a3a5c' };
+                    const prioritaires = projets.filter(p => p.statut === 'Prioritaire').length;
+
+                    return `
+                    <div class="theme-card" onclick="showProjetThemeDetail('${themeName}')">
+                        <div class="theme-card-header" style="background: ${themeConf.color}">
+                            <span class="theme-card-icon">${themeConf.icon}</span>
+                            <div class="theme-card-info">
+                                <h3>${themeName}</h3>
+                                <span class="count">${projets.length} projet${projets.length > 1 ? 's' : ''}</span>
+                            </div>
+                        </div>
+                        <div class="theme-card-stats">
+                            <span>${prioritaires > 0 ? '🔴 ' + prioritaires + ' prioritaire(s)' : 'Cliquer pour voir'}</span>
+                            <span class="theme-card-arrow">→</span>
+                        </div>
+                    </div>
+                `}).join('');
+        }
+
+        function showProjetThemeDetail(themeName) {
+            currentProjetThemeDetail = themeName;
+            document.getElementById('projets-themes-view').style.display = 'none';
+            document.getElementById('projets-detail-view').style.display = 'block';
+
+            const themeConf = THEMES_CONFIG.find(t => t.theme === themeName) || { icon: '📋', color: '#1a3a5c' };
+
+            // Filtrer les projets de ce thème
+            const projets = data.projets.filter(p => {
+                const themes = getProjetThemes(p);
+                return themes.includes(themeName);
+            });
+
+            document.getElementById('projets-count').textContent = projets.length;
+
+            document.getElementById('projets-detail-view').innerHTML = `
+                <div class="theme-detail">
+                    <div class="theme-detail-header">
+                        <div class="theme-detail-title">
+                            <span style="font-size: 1.5rem;">${themeConf.icon}</span>
+                            <span>${themeName}</span>
+                            <span style="color: #888; font-weight: normal; font-size: 1rem;">(${projets.length} projet${projets.length > 1 ? 's' : ''})</span>
+                        </div>
+                        <button class="btn-back-theme" onclick="backToProjetsThemes()">← Retour aux thèmes</button>
+                    </div>
+                    <div class="cards-grid">
+                        ${projets.map(p => renderProjetCard(p)).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function backToProjetsThemes() {
+            currentProjetThemeDetail = null;
+            currentProjetFilter = '';
+            document.querySelectorAll('#tab-projets .theme-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('#tab-projets .theme-btn')?.classList.add('active');
+            renderProjets();
+        }
+
+        function showProjetsCards(search) {
+            document.getElementById('projets-themes-view').style.display = 'none';
+            document.getElementById('projets-detail-view').style.display = 'block';
+
             let filtered = data.projets;
-            
-            // Filtre par thème (supporte themes[] et theme)
+
+            // Filtre par thème
             if (currentProjetFilter) {
                 filtered = filtered.filter(p => {
                     const themes = getProjetThemes(p);
                     return themes.some(t => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(currentProjetFilter.toLowerCase()));
                 });
             }
-            
+
             // Filtre par recherche
             if (search) {
                 filtered = filtered.filter(p => {
@@ -1546,39 +2575,54 @@
                         (p.description || '').toLowerCase().includes(search);
                 });
             }
-            
+
             document.getElementById('projets-count').textContent = filtered.length;
-            document.getElementById('projets-list').innerHTML = filtered.length === 0 
-                ? '<div class="empty-state"><div class="icon">📭</div><p>Aucun projet trouvé</p></div>'
-                : filtered.map((p, i) => {
-                    const themes = getProjetThemes(p);
-                    const primaryTheme = themes[0] || 'Non défini';
-                    const themeConf = THEMES_CONFIG.find(t => t.theme === primaryTheme) || { icon: '📋', color: '#1a3a5c' };
-                    
-                    // Badges pour tous les thèmes
-                    const themeBadges = themes.map(t => {
-                        const conf = THEMES_CONFIG.find(tc => tc.theme === t) || { icon: '📋', color: '#1a3a5c' };
-                        return `<span style="background: ${conf.color}; color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-right: 0.3rem;">${conf.icon} ${t}</span>`;
-                    }).join('');
-                    
-                    return `
-                    <div class="item-card" style="border-left: 4px solid ${themeConf.color}">
-                        <div class="item-info">
-                            <div class="item-text">
-                                <div class="item-title">${themeConf.icon} ${p.titre || 'Sans titre'}</div>
-                                <div class="item-desc">
-                                    ${themeBadges}
-                                    <span style="color: #666;">${p.statut || ''} ${p.annee ? '• ' + p.annee : ''}</span>
-                                    ${p.resume ? '<br><em style="color: #888;">' + p.resume + '</em>' : ''}
-                                </div>
+
+            document.getElementById('projets-detail-view').innerHTML = `
+                <div class="theme-detail">
+                    <div class="theme-detail-header">
+                        <div class="theme-detail-title">
+                            <span>🔍 Résultats</span>
+                            <span style="color: #888; font-weight: normal; font-size: 1rem;">(${filtered.length} projet${filtered.length > 1 ? 's' : ''})</span>
+                        </div>
+                        <button class="btn-back-theme" onclick="backToProjetsThemes()">← Retour aux thèmes</button>
+                    </div>
+                    <div class="cards-grid">
+                        ${filtered.length === 0
+                            ? '<div class="empty-state" style="grid-column: 1/-1;"><div class="icon">📭</div><p>Aucun projet trouvé</p></div>'
+                            : filtered.map(p => renderProjetCard(p)).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderProjetCard(p) {
+            const themes = getProjetThemes(p);
+            const primaryTheme = themes[0] || 'Non défini';
+            const themeConf = THEMES_CONFIG.find(t => t.theme === primaryTheme) || { icon: '📋', color: '#1a3a5c' };
+            const statutClass = (p.statut || '').toLowerCase().replace(/\s+/g, '-').replace('é', 'e');
+
+            return `
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <span class="admin-card-theme" style="background: ${themeConf.color}">
+                            ${themeConf.icon} ${primaryTheme}
+                        </span>
+                        <span class="admin-card-statut statut-${statutClass}">${p.statut || 'Non défini'}</span>
+                    </div>
+                    <div class="admin-card-body">
+                        <div class="admin-card-title">${p.titre || 'Sans titre'}</div>
+                        <div class="admin-card-desc">${p.resume || p.description || ''}</div>
+                        <div class="admin-card-footer">
+                            <span class="admin-card-meta">${p.annee || ''}</span>
+                            <div class="admin-card-actions">
+                                <button class="btn btn-sm btn-primary" onclick="openEditProjet(${data.projets.indexOf(p)})">✏️ Modifier</button>
+                                <button class="btn btn-sm btn-danger" onclick="deleteProjet(${data.projets.indexOf(p)})">🗑️</button>
                             </div>
                         </div>
-                        <div class="item-actions">
-                            <button class="btn btn-sm btn-primary" onclick="openEditProjet(${data.projets.indexOf(p)})">✏️</button>
-                            <button class="btn btn-sm btn-danger" onclick="deleteProjet(${data.projets.indexOf(p)})">🗑️</button>
-                        </div>
                     </div>
-                `}).join('');
+                </div>
+            `;
         }
 
         function openAddProjet() {
@@ -1620,23 +2664,35 @@
             });
             
             document.getElementById('themes-count').textContent = THEMES_CONFIG.length;
-            
+
+            // Trier par nombre de projets décroissant
+            const sortedThemes = [...THEMES_CONFIG].map((t, originalIndex) => ({
+                ...t,
+                originalIndex,
+                count: themeCounts[t.theme] || 0
+            })).sort((a, b) => b.count - a.count);
+
             const container = document.getElementById('themes-list');
-            container.innerHTML = THEMES_CONFIG.map((t, index) => {
-                const count = themeCounts[t.theme] || 0;
-                const hasProjects = count > 0;
-                return `
-                    <div style="display: flex; align-items: center; gap: 15px; padding: 12px 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid ${t.color};">
-                        <span style="font-size: 1.5rem;">${t.icon}</span>
-                        <span style="flex: 1; font-weight: 600;">${t.theme}</span>
-                        <span style="background: ${t.color}; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem;">
-                            ${count} projet${count > 1 ? 's' : ''}
-                        </span>
-                        <button class="btn btn-sm btn-danger" 
-                                onclick="deleteTheme(${index})" 
-                                title="${hasProjects ? 'Supprimer et réassigner les projets' : 'Supprimer ce thème'}">
-                            🗑️
-                        </button>
+            container.innerHTML = sortedThemes.length === 0
+                ? '<div class="empty-state" style="grid-column: 1/-1;"><div class="icon">🎨</div><p>Aucun thème</p></div>'
+                : sortedThemes.map((t) => {
+                    const hasProjects = t.count > 0;
+                    return `
+                    <div class="theme-card" style="cursor: default;">
+                        <div class="theme-card-header" style="background: ${t.color}">
+                            <span class="theme-card-icon">${t.icon}</span>
+                            <div class="theme-card-info">
+                                <h3>${t.theme}</h3>
+                                <span class="count">${t.count} projet${t.count > 1 ? 's' : ''}</span>
+                            </div>
+                        </div>
+                        <div class="theme-card-stats" style="justify-content: flex-end;">
+                            <button class="btn btn-sm btn-danger"
+                                    onclick="deleteTheme(${t.originalIndex})"
+                                    title="${hasProjects ? 'Supprimer et réassigner les projets' : 'Supprimer ce thème'}">
+                                🗑️ Supprimer
+                            </button>
+                        </div>
                     </div>
                 `;
             }).join('');
@@ -1914,10 +2970,19 @@
                 
                 <hr style="margin: 1.5rem 0; border: none; border-top: 2px solid var(--or);">
                 <h4 style="color: var(--bleu); margin-bottom: 1rem;">🖼️ Illustration</h4>
-                
+
                 <div class="form-group">
-                    <label>Image principale (URL)</label>
-                    <input type="text" id="edit-image" value="${p.image || ''}" placeholder="Ex: images/projets/mon-projet.jpg">
+                    <label>Image principale</label>
+                    <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+                        <input type="text" id="edit-image" value="${p.image || ''}" placeholder="Chemin de l'image" style="flex: 1; min-width: 200px;">
+                        <label class="btn btn-outline btn-sm" style="cursor: pointer; margin: 0;">
+                            📁 Importer
+                            <input type="file" id="import-image" accept="image/*" onchange="handleImageImport(this)" style="display: none;">
+                        </label>
+                    </div>
+                    <div id="image-preview" style="margin-top: 0.5rem; ${p.image ? '' : 'display: none;'}">
+                        <img src="${p.image || ''}" style="max-width: 150px; max-height: 100px; border-radius: 8px; border: 1px solid var(--gris-border);">
+                    </div>
                 </div>
                 
                 <div class="form-group">
@@ -1954,8 +3019,46 @@
                 </div>
                 
                 <hr style="margin: 1.5rem 0; border: none; border-top: 2px solid var(--or);">
+                <h4 style="color: var(--bleu); margin-bottom: 1rem;">🎯 Fiche Objectif (Mobilités)</h4>
+
+                <div class="form-group">
+                    <label>Slogan <small style="color: #888;">(ex: Relier • Diversifier • Anticiper)</small></label>
+                    <input type="text" id="edit-slogan" value="${p.slogan || ''}" placeholder="Ex: Protéger • Faciliter • Rassurer">
+                </div>
+
+                <div class="form-group">
+                    <label>Numéro d'objectif <small style="color: #888;">(ex: 1/7)</small></label>
+                    <input type="text" id="edit-numero" value="${p.numero || ''}" placeholder="Ex: 1/7">
+                </div>
+
+                <div class="form-group">
+                    <label>Tags <small style="color: #888;">(séparés par des virgules)</small></label>
+                    <input type="text" id="edit-tags" value="${(p.tags || []).join(', ')}" placeholder="Ex: Sécurité, Accessibilité, Confort">
+                </div>
+
+                <div class="form-group">
+                    <label>Enjeux <small style="color: #888;">(un par ligne)</small></label>
+                    <textarea id="edit-enjeux" rows="3" placeholder="Réduire la dépendance à la voiture&#10;Offrir des alternatives crédibles&#10;Anticiper les besoins futurs">${(p.enjeux || []).join('\n')}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Axes d'action <small style="color: #888;">(un par ligne)</small></label>
+                    <textarea id="edit-axes" rows="4" placeholder="Navettes adaptées aux horaires&#10;Covoiturage et parkings relais&#10;Scénarios transport par câble">${(p.axes_action || []).join('\n')}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Indicateurs <small style="color: #888;">(séparés par des virgules)</small></label>
+                    <input type="text" id="edit-indicateurs" value="${(p.indicateurs || []).join(', ')}" placeholder="Ex: Études engagées, Partenaires mobilisés, Usage des alternatives">
+                </div>
+
+                <div class="form-group">
+                    <label>Vision</label>
+                    <textarea id="edit-vision" rows="2" placeholder="Ex: Aucune hypothèse n'est écartée pour connecter Vizille au territoire.">${p.vision || ''}</textarea>
+                </div>
+
+                <hr style="margin: 1.5rem 0; border: none; border-top: 2px solid var(--or);">
                 <h4 style="color: var(--bleu); margin-bottom: 1rem;">📝 Informations complémentaires</h4>
-                
+
                 <div class="form-group">
                     <label>Détails supplémentaires</label>
                     <textarea id="edit-details" rows="3" placeholder="Informations complémentaires, contexte, partenaires...">${p.details || ''}</textarea>
@@ -2003,6 +3106,34 @@
                 <button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.remove()">🗑️</button>
             `;
             container.appendChild(row);
+        }
+
+        // Gestion de l'import d'image
+        function handleImageImport(input) {
+            const file = input.files[0];
+            if (!file) return;
+
+            // Générer un nom de fichier propre
+            const fileName = file.name.replace(/\s+/g, '_').toLowerCase();
+            const imagePath = 'images/objectifs/' + fileName;
+
+            // Mettre à jour le champ texte
+            document.getElementById('edit-image').value = imagePath;
+
+            // Afficher la prévisualisation
+            const preview = document.getElementById('image-preview');
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.innerHTML = `<img src="${e.target.result}" style="max-width: 150px; max-height: 100px; border-radius: 8px; border: 1px solid var(--gris-border);">`;
+                preview.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+
+            // Stocker le fichier pour upload ultérieur
+            window.pendingImageFile = file;
+            window.pendingImagePath = imagePath;
+
+            showToast('📁 Image sélectionnée : ' + fileName + '\\n⚠️ Placez le fichier dans images/projets/', 'info');
         }
         
         function addImageRow() {
@@ -2081,7 +3212,20 @@
                     images.push({ url, alt });
                 }
             });
-            
+
+            // Récupérer les champs Fiche Objectif
+            const slogan = document.getElementById('edit-slogan').value.trim();
+            const numero = document.getElementById('edit-numero').value.trim();
+            const tagsInput = document.getElementById('edit-tags').value.trim();
+            const tags = tagsInput ? tagsInput.split(',').map(t => t.trim()).filter(t => t) : [];
+            const enjeuxInput = document.getElementById('edit-enjeux').value.trim();
+            const enjeux = enjeuxInput ? enjeuxInput.split('\n').map(e => e.trim()).filter(e => e) : [];
+            const axesInput = document.getElementById('edit-axes').value.trim();
+            const axes_action = axesInput ? axesInput.split('\n').map(a => a.trim()).filter(a => a) : [];
+            const indicateursInput = document.getElementById('edit-indicateurs').value.trim();
+            const indicateurs = indicateursInput ? indicateursInput.split(',').map(i => i.trim()).filter(i => i) : [];
+            const vision = document.getElementById('edit-vision').value.trim();
+
             if (!titre || themes.length === 0) {
                 showToast('⚠️ Titre et au moins un thème obligatoires', 'warning');
                 return;
@@ -2104,6 +3248,14 @@
                 chronologie,
                 documents,
                 details,
+                // Champs Fiche Objectif
+                slogan,
+                numero,
+                tags,
+                enjeux,
+                axes_action,
+                indicateurs,
+                vision,
                 // Conserver les sources existantes si modification
                 sources: currentEdit.index === -1 ? [] : (data.projets[currentEdit.index].sources || []),
                 lien_source: currentEdit.index === -1 ? [] : (data.projets[currentEdit.index].lien_source || [])
@@ -2159,44 +3311,191 @@
             });
         }
         
+        // Configuration des thèmes pour les actions (bilan)
+        const THEMES_ACTIONS_CONFIG = {
+            'Urbanisme': { icon: '🏘️', color: '#34495e' },
+            'Santé': { icon: '🏥', color: '#e91e63' },
+            'Environnement': { icon: '🌿', color: '#27ae60' },
+            'Culture': { icon: '🎭', color: '#9b59b6' },
+            'Patrimoine': { icon: '🏛️', color: '#8e44ad' },
+            'Enfance': { icon: '👶', color: '#3498db' },
+            'Solidarité': { icon: '🤝', color: '#e74c3c' },
+            'Sport': { icon: '⚽', color: '#2ecc71' },
+            'Économie': { icon: '💼', color: '#f39c12' },
+            'Mobilités': { icon: '🚴', color: '#1abc9c' },
+            'Tranquillité': { icon: '🛡️', color: '#2c3e50' },
+            'Finance': { icon: '💰', color: '#795548' }
+        };
+
+        // Variable pour suivre le thème actuellement affiché en détail pour les actions
+        let currentActionThemeDetail = null;
+
         function renderActions() {
             updateThemeCounts();
-            
+
             const search = (document.getElementById('search-actions')?.value || '').toLowerCase();
-            
+
+            // Si recherche active ou filtre thème via boutons, afficher directement les cartes
+            if (search || currentActionFilter) {
+                showActionsCards(search);
+                return;
+            }
+
+            // Si un thème est sélectionné en détail, afficher ses actions
+            if (currentActionThemeDetail) {
+                showActionThemeDetail(currentActionThemeDetail);
+                return;
+            }
+
+            // Sinon, afficher la vue par thèmes
+            showActionsThemesView();
+        }
+
+        function showActionsThemesView() {
+            document.getElementById('actions-themes-view').style.display = 'grid';
+            document.getElementById('actions-detail-view').style.display = 'none';
+
+            // Grouper les actions par thème
+            const themeGroups = {};
+            data.actions.forEach(a => {
+                const theme = a.theme || 'Non défini';
+                if (!themeGroups[theme]) {
+                    themeGroups[theme] = [];
+                }
+                themeGroups[theme].push(a);
+            });
+
+            document.getElementById('actions-count').textContent = data.actions.length;
+
+            // Trier les thèmes par nombre d'actions
+            const sortedThemes = Object.entries(themeGroups).sort((a, b) => b[1].length - a[1].length);
+
+            document.getElementById('actions-themes-view').innerHTML = sortedThemes.length === 0
+                ? '<div class="empty-state" style="grid-column: 1/-1;"><div class="icon">📭</div><p>Aucune action</p></div>'
+                : sortedThemes.map(([themeName, actions]) => {
+                    const themeConf = THEMES_ACTIONS_CONFIG[themeName] || { icon: '📋', color: '#1a3a5c' };
+                    const realises = actions.filter(a => a.statut === 'Réalisé').length;
+                    const encours = actions.filter(a => a.statut === 'En cours').length;
+
+                    return `
+                    <div class="theme-card" onclick="showActionThemeDetail('${themeName}')">
+                        <div class="theme-card-header" style="background: ${themeConf.color}">
+                            <span class="theme-card-icon">${themeConf.icon}</span>
+                            <div class="theme-card-info">
+                                <h3>${themeName}</h3>
+                                <span class="count">${actions.length} action${actions.length > 1 ? 's' : ''}</span>
+                            </div>
+                        </div>
+                        <div class="theme-card-stats">
+                            <span>✅ ${realises} réalisée(s)${encours > 0 ? ' • 🔄 ' + encours + ' en cours' : ''}</span>
+                            <span class="theme-card-arrow">→</span>
+                        </div>
+                    </div>
+                `}).join('');
+        }
+
+        function showActionThemeDetail(themeName) {
+            currentActionThemeDetail = themeName;
+            document.getElementById('actions-themes-view').style.display = 'none';
+            document.getElementById('actions-detail-view').style.display = 'block';
+
+            const themeConf = THEMES_ACTIONS_CONFIG[themeName] || { icon: '📋', color: '#1a3a5c' };
+
+            // Filtrer les actions de ce thème
+            const actions = data.actions.filter(a => a.theme === themeName);
+
+            document.getElementById('actions-count').textContent = actions.length;
+
+            document.getElementById('actions-detail-view').innerHTML = `
+                <div class="theme-detail">
+                    <div class="theme-detail-header">
+                        <div class="theme-detail-title">
+                            <span style="font-size: 1.5rem;">${themeConf.icon}</span>
+                            <span>${themeName}</span>
+                            <span style="color: #888; font-weight: normal; font-size: 1rem;">(${actions.length} action${actions.length > 1 ? 's' : ''})</span>
+                        </div>
+                        <button class="btn-back-theme" onclick="backToActionsThemes()">← Retour aux thèmes</button>
+                    </div>
+                    <div class="cards-grid">
+                        ${actions.map(a => renderActionCard(a)).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function backToActionsThemes() {
+            currentActionThemeDetail = null;
+            currentActionFilter = '';
+            document.querySelectorAll('#tab-actions .theme-btn').forEach(b => b.classList.remove('active'));
+            document.querySelector('#tab-actions .theme-btn')?.classList.add('active');
+            renderActions();
+        }
+
+        function showActionsCards(search) {
+            document.getElementById('actions-themes-view').style.display = 'none';
+            document.getElementById('actions-detail-view').style.display = 'block';
+
             let filtered = data.actions;
-            
+
             // Filtre par thème
             if (currentActionFilter) {
                 filtered = filtered.filter(a => a.theme === currentActionFilter);
             }
-            
+
             // Filtre par recherche
             if (search) {
-                filtered = filtered.filter(a => 
+                filtered = filtered.filter(a =>
                     (a.titre || '').toLowerCase().includes(search) ||
                     (a.description || '').toLowerCase().includes(search)
                 );
             }
-            
+
             document.getElementById('actions-count').textContent = filtered.length;
-            document.getElementById('actions-list').innerHTML = filtered.length === 0
-                ? '<div class="empty-state"><div class="icon">📭</div><p>Aucune action trouvée</p></div>'
-                : filtered.map((a, i) => `
-                    <div class="item-card">
-                        <div class="item-info">
-                            <div class="item-text">
-                                <span class="item-badge">${a.theme} • ${a.statut || 'Réalisé'}</span>
-                                <div class="item-title">${a.titre}</div>
-                                <div class="item-desc">${a.description || ''}</div>
+
+            document.getElementById('actions-detail-view').innerHTML = `
+                <div class="theme-detail">
+                    <div class="theme-detail-header">
+                        <div class="theme-detail-title">
+                            <span>🔍 Résultats</span>
+                            <span style="color: #888; font-weight: normal; font-size: 1rem;">(${filtered.length} action${filtered.length > 1 ? 's' : ''})</span>
+                        </div>
+                        <button class="btn-back-theme" onclick="backToActionsThemes()">← Retour aux thèmes</button>
+                    </div>
+                    <div class="cards-grid">
+                        ${filtered.length === 0
+                            ? '<div class="empty-state" style="grid-column: 1/-1;"><div class="icon">📭</div><p>Aucune action trouvée</p></div>'
+                            : filtered.map(a => renderActionCard(a)).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderActionCard(a) {
+            const themeConf = THEMES_ACTIONS_CONFIG[a.theme] || { icon: '📋', color: '#1a3a5c' };
+            const statut = a.statut || 'Réalisé';
+            const statutClass = statut.toLowerCase().replace(/\s+/g, '-').replace('é', 'e');
+
+            return `
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <span class="admin-card-theme" style="background: ${themeConf.color}">
+                            ${themeConf.icon} ${a.theme}
+                        </span>
+                        <span class="admin-card-statut statut-${statutClass}">${statut}</span>
+                    </div>
+                    <div class="admin-card-body">
+                        <div class="admin-card-title">${a.titre}</div>
+                        <div class="admin-card-desc">${a.description || ''}</div>
+                        <div class="admin-card-footer">
+                            <span class="admin-card-meta">${a.annee || ''}</span>
+                            <div class="admin-card-actions">
+                                <button class="btn btn-sm btn-primary" onclick="openEditAction(${data.actions.indexOf(a)})">✏️ Modifier</button>
+                                <button class="btn btn-sm btn-danger" onclick="deleteAction(${data.actions.indexOf(a)})">🗑️</button>
                             </div>
                         </div>
-                        <div class="item-actions">
-                            <button class="btn btn-sm btn-primary" onclick="openEditAction(${data.actions.indexOf(a)})">✏️</button>
-                            <button class="btn btn-sm btn-danger" onclick="deleteAction(${data.actions.indexOf(a)})">🗑️</button>
-                        </div>
                     </div>
-                `).join('');
+                </div>
+            `;
         }
 
         function openAddAction() {
@@ -2286,43 +3585,55 @@
         }
 
         function renderCandidats() {
-            document.getElementById('candidats-count').textContent = data.candidats.length;
+            const search = (document.getElementById('search-candidats')?.value || '').toLowerCase();
             const sorted = [...data.candidats].sort((a, b) => (a.ordre || 99) - (b.ordre || 99));
-            
-            document.getElementById('candidats-list').innerHTML = sorted.length === 0
-                ? '<div class="empty-state"><div class="icon">👥</div><p>Aucun candidat</p></div>'
-                : sorted.map((c, i) => {
+
+            const filtered = sorted.filter(c => {
+                if (!search) return true;
+                return (c.nom || '').toLowerCase().includes(search) ||
+                       (c.role || '').toLowerCase().includes(search) ||
+                       (c.delegation || '').toLowerCase().includes(search) ||
+                       (c.bio || '').toLowerCase().includes(search);
+            });
+
+            document.getElementById('candidats-count').textContent = filtered.length;
+
+            document.getElementById('candidats-list').innerHTML = filtered.length === 0
+                ? '<div class="empty-state"><div class="icon">👥</div><p>Aucun candidat' + (search ? ' trouvé' : '') + '</p></div>'
+                : filtered.map((c, i) => {
                     const realIndex = data.candidats.indexOf(c);
                     const photoUrl = getPhotoUrl(c.photo);
-                    const photoHtml = photoUrl 
-                        ? `<img src="${photoUrl}" class="item-photo" alt="${c.nom}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                           <div class="item-photo-placeholder" style="display:none;">👤</div>`
-                        : `<div class="item-photo-placeholder">👤</div>`;
-                    
-                    let badges = [];
-                    if (c.role) badges.push(c.role);
-                    if (c.delegation) badges.push(c.delegation);
-                    
-                    let socials = [];
-                    if (c.email) socials.push('📧');
-                    if (c.facebook) socials.push('📘');
-                    if (c.linkedin) socials.push('💼');
-                    if (c.twitter) socials.push('🐦');
-                    
+
+                    let socialsHtml = '';
+                    if (c.email || c.facebook || c.linkedin || c.twitter) {
+                        socialsHtml = '<div class="candidat-card-socials">';
+                        if (c.email) socialsHtml += `<span title="${c.email}">📧</span>`;
+                        if (c.facebook) socialsHtml += `<span title="Facebook">📘</span>`;
+                        if (c.linkedin) socialsHtml += `<span title="LinkedIn">💼</span>`;
+                        if (c.twitter) socialsHtml += `<span title="Twitter">🐦</span>`;
+                        socialsHtml += '</div>';
+                    }
+
                     return `
-                        <div class="item-card">
-                            <div class="item-info">
-                                ${photoHtml}
-                                <div class="item-text">
-                                    <div class="item-title">${c.nom} ${socials.length ? '<span style="font-size: 0.8rem; opacity: 0.7;">' + socials.join(' ') + '</span>' : ''}</div>
-                                    ${badges.length ? `<span class="item-badge">${badges.join(' • ')}</span>` : ''}
-                                    <div class="item-desc">${c.bio ? c.bio.substring(0, 80) + '...' : ''}</div>
-                                    ${c.citation ? `<div class="item-desc" style="font-style: italic; color: var(--or);">« ${c.citation.substring(0, 50)}... »</div>` : ''}
-                                </div>
+                        <div class="candidat-card">
+                            <div class="candidat-card-photo">
+                                ${photoUrl
+                                    ? `<img src="${photoUrl}" alt="${c.nom}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                       <span class="no-photo" style="display:none;">👤</span>`
+                                    : '<span class="no-photo">👤</span>'}
+                                <span class="candidat-card-ordre">${c.ordre || i + 1}</span>
                             </div>
-                            <div class="item-actions">
-                                <button class="btn btn-sm btn-primary" onclick="openEditCandidat(${realIndex})">✏️</button>
-                                <button class="btn btn-sm btn-danger" onclick="deleteCandidat(${realIndex})">🗑️</button>
+                            <div class="candidat-card-body">
+                                <div class="candidat-card-name">${c.nom || 'Sans nom'}</div>
+                                ${c.role ? `<div class="candidat-card-role">${c.role}</div>` : ''}
+                                ${c.delegation ? `<div class="candidat-card-delegation">${c.delegation}</div>` : ''}
+                                ${c.bio ? `<div class="candidat-card-bio">${c.bio}</div>` : ''}
+                                ${c.citation ? `<div class="candidat-card-citation">« ${c.citation} »</div>` : ''}
+                                ${socialsHtml}
+                                <div class="candidat-card-footer">
+                                    <button class="btn btn-sm btn-primary" onclick="openEditCandidat(${realIndex})">✏️ Modifier</button>
+                                    <button class="btn btn-sm btn-danger" onclick="deleteCandidat(${realIndex})">🗑️</button>
+                                </div>
                             </div>
                         </div>
                     `;
@@ -2754,37 +4065,139 @@
         }
 
         // ===== ARTICLES =====
+        let currentArticleFilter = '';
+
+        function filterArticles(category) {
+            currentArticleFilter = category;
+            // Mise à jour des boutons de filtre
+            document.querySelectorAll('#article-category-filters .theme-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.category === category);
+            });
+            renderArticles();
+        }
+
+        function updateArticleCategoryCounts() {
+            const counts = { all: data.articles.length };
+            const categories = ['Événement', 'Communiqué', 'Réunion', 'Action', 'Bilan', 'Projet', 'Tribune', 'Info'];
+            categories.forEach(cat => {
+                counts[cat] = data.articles.filter(a => a.categorie === cat).length;
+            });
+
+            const el = (id) => document.getElementById(id);
+            if (el('acount-all')) el('acount-all').textContent = counts.all;
+            if (el('acount-evenement')) el('acount-evenement').textContent = counts['Événement'] || 0;
+            if (el('acount-communique')) el('acount-communique').textContent = counts['Communiqué'] || 0;
+            if (el('acount-reunion')) el('acount-reunion').textContent = counts['Réunion'] || 0;
+            if (el('acount-action')) el('acount-action').textContent = counts['Action'] || 0;
+            if (el('acount-bilan')) el('acount-bilan').textContent = counts['Bilan'] || 0;
+            if (el('acount-projet')) el('acount-projet').textContent = counts['Projet'] || 0;
+            if (el('acount-tribune')) el('acount-tribune').textContent = counts['Tribune'] || 0;
+            if (el('acount-info')) el('acount-info').textContent = counts['Info'] || 0;
+        }
+
+        function getCategoryClass(categorie) {
+            if (!categorie) return '';
+            const map = {
+                'Événement': 'evenement',
+                'Communiqué': 'communique',
+                'Réunion': 'reunion',
+                'Action': 'action',
+                'Bilan': 'bilan',
+                'Projet': 'projet',
+                'Tribune': 'tribune',
+                'Info': 'info'
+            };
+            return map[categorie] || '';
+        }
+
+        function getCategoryIcon(categorie) {
+            const icons = {
+                'Événement': '📅',
+                'Communiqué': '📣',
+                'Réunion': '🤝',
+                'Action': '✊',
+                'Bilan': '📊',
+                'Projet': '🚀',
+                'Tribune': '📝',
+                'Info': 'ℹ️'
+            };
+            return icons[categorie] || '📰';
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return 'Sans date';
+            const d = new Date(dateStr);
+            return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+        }
+
         function renderArticles() {
-            document.getElementById('articles-count').textContent = data.articles.length;
-            const sorted = [...data.articles].sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
-            
-            document.getElementById('articles-list').innerHTML = sorted.length === 0
-                ? '<div class="empty-state"><div class="icon">📰</div><p>Aucun article</p></div>'
-                : sorted.map((a, i) => {
+            updateArticleCategoryCounts();
+
+            const search = (document.getElementById('search-articles')?.value || '').toLowerCase();
+            let filtered = [...data.articles].sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+
+            // Filtre par catégorie
+            if (currentArticleFilter) {
+                filtered = filtered.filter(a => a.categorie === currentArticleFilter);
+            }
+
+            // Filtre par recherche
+            if (search) {
+                filtered = filtered.filter(a =>
+                    (a.titre || '').toLowerCase().includes(search) ||
+                    (a.extrait || '').toLowerCase().includes(search) ||
+                    (a.contenu || '').toLowerCase().includes(search) ||
+                    (a.categorie || '').toLowerCase().includes(search)
+                );
+            }
+
+            document.getElementById('articles-count').textContent = filtered.length;
+
+            document.getElementById('articles-list').innerHTML = filtered.length === 0
+                ? '<div class="empty-state"><div class="icon">📰</div><p>Aucun article' + (search || currentArticleFilter ? ' trouvé' : '') + '</p></div>'
+                : filtered.map((a, i) => {
                     const realIndex = data.articles.indexOf(a);
-                    const categorieBadge = a.categorie ? `<span style="background: #e8f4fc; color: var(--bleu); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin-left: 8px;">${a.categorie}</span>` : '';
-                    const imageIndicator = a.image ? '🖼️' : '';
+                    const categoryClass = getCategoryClass(a.categorie);
+                    const categoryIcon = getCategoryIcon(a.categorie);
+
                     return `
-                        <div class="item-card">
-                            <div class="item-info">
-                                ${a.image ? `<img src="${a.image}" alt="" class="item-photo" style="border-radius: 8px; width: 60px; height: 60px; object-fit: cover;">` : '<div class="item-photo-placeholder">📰</div>'}
-                                <div class="item-text">
-                                    <span class="item-badge">${a.date || 'Sans date'}${categorieBadge}</span>
-                                    <div class="item-title">${a.titre} ${imageIndicator}</div>
-                                    <div class="item-desc">${a.extrait || a.contenu?.substring(0, 100) || ''}</div>
-                                </div>
+                        <div class="article-card">
+                            <div class="article-card-image">
+                                ${a.image
+                                    ? `<img src="${a.image}" alt="${a.titre}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                       <span class="no-image" style="display:none;">📰</span>`
+                                    : '<span class="no-image">📰</span>'}
+                                ${a.categorie ? `<span class="article-card-category ${categoryClass}">${categoryIcon} ${a.categorie}</span>` : ''}
                             </div>
-                            <div class="item-actions">
-                                <button class="btn btn-sm" style="background: #25D366; color: white;" onclick="copyForWhatsApp('article', ${realIndex})" title="Copier pour WhatsApp">💬</button>
-                                <button class="btn btn-sm btn-primary" onclick="openEditArticle(${realIndex})">✏️</button>
-                                <button class="btn btn-sm btn-danger" onclick="deleteArticle(${realIndex})">🗑️</button>
+                            <div class="article-card-body">
+                                <div class="article-card-date">📅 ${formatDate(a.date)}</div>
+                                <div class="article-card-title">${a.titre || 'Sans titre'}</div>
+                                <div class="article-card-extrait">${a.extrait || a.contenu?.substring(0, 150) || 'Aucun extrait'}</div>
+                                <div class="article-card-footer">
+                                    <div class="article-card-share">
+                                        <button class="btn btn-sm" style="background: #25D366; color: white;" onclick="copyForWhatsApp('article', ${realIndex})" title="WhatsApp">💬</button>
+                                        <button class="btn btn-sm" style="background: #1877f2; color: white;" onclick="copyForFacebook(${realIndex})" title="Facebook">📘</button>
+                                    </div>
+                                    <div style="display: flex; gap: 0.5rem;">
+                                        <button class="btn btn-sm btn-primary" onclick="openEditArticle(${realIndex})">✏️</button>
+                                        <button class="btn btn-sm btn-danger" onclick="deleteArticle(${realIndex})">🗑️</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     `;
                 }).join('');
-            
+
             // Mettre à jour la liste pour le partage Facebook
             updateFacebookArticleSelect();
+        }
+
+        function copyForFacebook(index) {
+            const a = data.articles[index];
+            const text = `📰 ${a.titre}\n\n${a.extrait || a.contenu?.substring(0, 200) || ''}\n\n👉 Lire la suite sur notre site\n\n#Vizille #Municipales2026 #VizilleEnMouvement`;
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('📋 Texte copié pour Facebook !', 'success');
+            });
         }
 
         function openAddArticle() {

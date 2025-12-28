@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script src="js/auth.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test CSS - Vizille en Mouvement</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Nouveaux CSS modulaires -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-top">
+            <p>Test CSS • Vizille en Mouvement</p>
+        </div>
+
+        <div class="header-main">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Vizille en Mouvement" class="nav-header-logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="bilan.html">Bilan</a></li>
+                    <li><a href="projet.html">Projet</a></li>
+                    <li><a href="blog.html">Actualités</a></li>
+                    <li><a href="equipe.html">Équipe</a></li>
+                    <li><a href="faq.html">Construisons ensemble</a></li>
+                    <li><a href="test-css.html" class="active">Test CSS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <img src="images/logo.png" alt="Vizille en Mouvement" class="header-logo">
+        <p class="header-slogan">« Ensemble pour une ville dynamique et solidaire »</p>
+        <h1>🧪 Test des nouveaux CSS</h1>
+        <p>Cette page utilise les fichiers CSS modulaires</p>
+    </section>
+
+    <!-- CONTENU -->
+    <main class="container" style="padding: 2rem 1.5rem;">
+
+        <!-- Section titre -->
+        <h2 class="section-title">Composants UI</h2>
+
+        <!-- Boutons -->
+        <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-body">
+                <h3 style="margin-bottom: 1rem; color: var(--bleu-vizille);">Boutons</h3>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#" class="btn btn-primary">Bouton Primary</a>
+                    <a href="#" class="btn btn-secondary">Bouton Secondary</a>
+                    <a href="#" class="btn btn-gold">Bouton Gold</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Badges -->
+        <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-body">
+                <h3 style="margin-bottom: 1rem; color: var(--bleu-vizille);">Badges</h3>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <span class="badge badge-primary">Primary</span>
+                    <span class="badge badge-gold">Gold</span>
+                    <span class="badge badge-success">Réalisé</span>
+                    <span class="badge badge-warning">En cours</span>
+                    <span class="badge badge-info">Décidé</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Messages -->
+        <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-body">
+                <h3 style="margin-bottom: 1rem; color: var(--bleu-vizille);">Messages</h3>
+                <div class="success-message">✅ Message de succès</div>
+                <div class="error-message">❌ Message d'erreur</div>
+                <div class="info-message">ℹ️ Message d'information</div>
+            </div>
+        </div>
+
+        <!-- Formulaire -->
+        <h2 class="section-title">Formulaire</h2>
+
+        <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nom">Nom</label>
+                            <input type="text" id="nom" placeholder="Votre nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="votre@email.fr">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sujet">Sujet</label>
+                        <select id="sujet">
+                            <option>Question générale</option>
+                            <option>Proposition</option>
+                            <option>Rejoindre l'équipe</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Votre message..."></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Variables CSS -->
+        <h2 class="section-title">Couleurs (variables CSS)</h2>
+
+        <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-body">
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem;">
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: var(--bleu-vizille); border-radius: 8px; margin: 0 auto 0.5rem;"></div>
+                        <small>--bleu-vizille</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: var(--bleu-clair); border-radius: 8px; margin: 0 auto 0.5rem;"></div>
+                        <small>--bleu-clair</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: var(--or); border-radius: 8px; margin: 0 auto 0.5rem;"></div>
+                        <small>--or</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: var(--or-clair); border-radius: 8px; margin: 0 auto 0.5rem;"></div>
+                        <small>--or-clair</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: var(--vert-realise); border-radius: 8px; margin: 0 auto 0.5rem;"></div>
+                        <small>--vert-realise</small>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: var(--orange-encours); border-radius: 8px; margin: 0 auto 0.5rem;"></div>
+                        <small>--orange-encours</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- État vide -->
+        <h2 class="section-title">États</h2>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+            <div class="card">
+                <div class="card-body">
+                    <div class="loading">
+                        <span class="icon">⏳</span>
+                        <p>Chargement en cours...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="empty-state">
+                        <div class="icon">📭</div>
+                        <h3>Aucun résultat</h3>
+                        <p>Essayez une autre recherche</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info migration -->
+        <div class="info-message" style="margin-top: 2rem;">
+            <strong>Cette page utilise uniquement les fichiers CSS modulaires :</strong><br>
+            <code>css/main.css</code> → importe variables.css, base.css, header.css, footer.css, page-header.css, components.css
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="Vizille en Mouvement" style="height: 40px; filter: brightness(0) invert(1);">
+                <p>Liste citoyenne pour les élections municipales 2026.<br>Ensemble pour une ville dynamique et solidaire.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">◉</a>
+                </div>
+            </div>
+
+            <div>
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="bilan.html">Bilan</a></li>
+                    <li><a href="projet.html">Projet</a></li>
+                    <li><a href="blog.html">Actualités</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Informations</h4>
+                <ul>
+                    <li><a href="faq.html">Construisons ensemble</a></li>
+                    <li><a href="equipe.html">L'Équipe</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Liens</h4>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="AMELIORATIONS.md">Documentation</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Vizille en Mouvement – Test CSS modulaires</p>
+        </div>
+    </footer>
+
+    <script src="js/components.js"></script>
+</body>
+</html>

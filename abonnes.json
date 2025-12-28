@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "_comment": "Liste des abonnés à la newsletter - Ce fichier sera rempli automatiquement",
+    "_schema": {
+      "email": "string (required)",
+      "prenom": "string (optional)",
+      "date_inscription": "ISO date string",
+      "actif": "boolean"
+    }
+  }
+]

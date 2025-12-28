@@ -79,6 +79,18 @@
     "chiffres": []
   },
   {
+    "id": 23,
+    "titre": "Déployer l'éclairage intelligent",
+    "theme": "Tranquillité",
+    "statut": "Programmé",
+    "annee": 2028,
+    "budget": 0,
+    "resume": "Éclairage public",
+    "description": "",
+    "importance": 1,
+    "chiffres": []
+  },
+  {
     "id": 24,
     "titre": "Renforcer la médiation de proximité",
     "theme": "Tranquillité",
@@ -88,41 +100,6 @@
     "resume": "Médiation",
     "description": "",
     "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 25,
-    "titre": "Un réseau cyclable continu, sûr et partagé.",
-    "themes": [
-      "Mobilités",
-      "Tranquillité"
-    ],
-    "theme": "Mobilités",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Comprendre • guider • apaiser",
-    "description": "Pourquoi ?\nRendre les itinéraires vélo plus sûrs, lisibles et continus pour les\ntrajets du quotidien.\nPriorités\n• Renforcer l’axe Chemin des Murs\n• Relier les quartiers (centre ↔ Péage) et vers la Romanche\n• Jalonnement et signalisation cohérents\n• Traiter les discontinuités\nCohabitation\nPiétons, familles, chiens, cyclistes : règles simples et information\npédagogique.\nUn réseau cyclable continu, sûr et partagé.",
-    "importance": 2,
-    "image": "",
-    "images": [],
-    "chiffres": [],
-    "chronologie": [],
-    "documents": [],
-    "details": "",
-    "sources": [],
-    "lien_source": []
-  },
-  {
-    "id": 26,
-    "titre": "Centre-ville Espaces partagés • Marche, commerces, lien marché → château",
-    "theme": "Mobilités",
-    "statut": "Étude",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Un centre-ville vivant et apaisé.",
-    "description": "Une zone partagée est un espace de circulation apaisé, conçu pour permettre la cohabitation de tous les usages — piétons, vélos, engins de déplacement personnel, véhicules motorisés — avec une priorité donnée aux usagers les plus vulnérables.\nCe n’est ni une rue piétonne, ni une rue “classique” :\nc’est un espace de vie avant d’être un axe de circulation.",
-    "importance": 2,
     "chiffres": []
   },
   {
@@ -198,75 +175,207 @@
     "chiffres": []
   },
   {
-    "id": 1766034821819,
-    "titre": "Développer des espaces partagés en centre-ville",
-    "theme": "Mobilités",
-    "statut": "Étude",
-    "annee": 2029,
-    "budget": 0,
-    "resume": "Faire du centre-ville un espace apaisé, attractif et accessible à tous.",
-    "description": "Le projet vise à renforcer le rôle du centre-ville comme espace de vie, de rencontre et de commerce.\nIl s’appuie sur le développement d’espaces partagés, la continuité des cheminements piétons, la valorisation de la rue piétonne et la liaison entre le marché et le château.\nLa circulation y est organisée pour privilégier les usages locaux et limiter le transit.",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 1766165580426,
-    "titre": "Mobilités structurantes",
+    "id": 101,
+    "titre": "Objectif 1 - Mobilités structurantes",
     "theme": "Mobilités",
     "statut": "Étude",
     "annee": null,
     "budget": 0,
-    "resume": "Préparer des solutions crédibles pour les liaisons vers l’agglo et la vallée, au-delà du tout-voiture.",
-    "description": "Pistes à étudier\n• Bus et navettes mieux adaptés aux horaires\n• Covoiturage et parkings relais\n• Transport par câble (horizon long ter\nMéthode\nScénarios réalistes, étapes claires et partenaires compétents.\nPréparer aujourd’hui les mobilités de demain.",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 1766214972808,
-    "titre": "Usagers vulnérables Piétons • Enfants • Seniors • PMR • Mobilités douces",
-    "theme": "Mobilités",
-    "statut": "Étude",
-    "annee": null,
-    "budget": 0,
-    "resume": "Les plus vulnérables doivent être les mieux protégés.",
-    "description": "Pourquoi ?\nLa sécurité des déplacements est une condition essentielle de la\ntranquillité du quotidien.\nPriorités\n• Traversées piétonnes plus visibles et mieux sécurisées\n• Abords des écoles et équipements protégés\n• Cheminements accessibles, continus et lisibles\n• Carrefours plus compréhensibles\n• Vitesse adaptée dans les zones sensibles",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 1766215078061,
-    "titre": "Apaiser la circulation Quartiers habités • Notamment le Péage (RD 1091)",
-    "theme": "Mobilités",
-    "statut": "Prioritaire",
-    "annee": null,
-    "budget": 0,
-    "resume": "La ville habitée avant la ville traversée.",
-    "description": "Constat\nLe transit et les vitesses excessives dégradent le quotidien : bruit,\nstress, sentiment d’insécurité.\nPriorités\n• Protéger les habitants des nuisances du transit\n• Vitesse adaptée et conduite plus régulière\n• Limiter les reports dans les rues résidentielles\n• Permettre aux habitants de se déplacer simplement\nApproche\nSolutions proportionnées et progressives, cohérentes avec les\ndonnées de comptage.",
+    "resume": "Explorer toutes les solutions - long terme",
+    "description": "Améliorer les liaisons vers l'agglomération et la vallée : bus, navettes, covoiturage, parkings relais, câble, rail.",
     "importance": 3,
-    "chiffres": []
+    "chiffres": [],
+    "tags": ["Connexion", "Alternatives", "Long terme"],
+    "slogan": "Relier • Diversifier • Anticiper",
+    "enjeux": [
+      "Réduire la dépendance à la voiture individuelle",
+      "Offrir des alternatives crédibles aux heures de pointe",
+      "Anticiper les besoins futurs du bassin de vie"
+    ],
+    "axes_action": [
+      "Navettes adaptées aux horaires pendulaires",
+      "Covoiturage et parkings relais identifiés",
+      "Scénarios transport par câble (long terme)",
+      "Réflexion sur la solution ferroviaire"
+    ],
+    "indicateurs": ["Études engagées", "Partenaires mobilisés", "Usage des alternatives"],
+    "vision": "Aucune hypothèse n'est écartée pour connecter Vizille au territoire.",
+    "numero": "1/7",
+    "image": "images/objectifs/objectif_1.png"
   },
   {
-    "id": 1766215178230,
-    "titre": "Plan de circulation Organiser les flux pour mieux se déplacer en sécurité",
+    "id": 102,
+    "titre": "Objectif 2 - Renforcer les mobilités cyclables",
     "theme": "Mobilités",
-    "statut": "Étude",
-    "annee": 2026,
+    "statut": "Programmé",
+    "annee": 2027,
     "budget": 0,
-    "resume": "Lisibilité Données Tranquillité Comprendre • guider • apaiser",
-    "description": "Pourquoi ?\nUn plan lisible réduit les incompréhensions, les détours inutiles et\nles conflits d’usages.\nPriorités\n• Mettre en place des comptages simples aux points clés\n• Hiérarchiser les axes : transit, desserte locale, zones apaisées\n• Clarifier carrefours et signalisation\n• Évaluer, ajuster, puis déployer progressivement\nUn plan lisible pour mieux se déplacer, en\nsécurité.",
-    "importance": 1,
-    "chiffres": []
+    "resume": "Vizille, cœur du maillage cycliste",
+    "description": "Liaisons vers Grenoble, Oisans, Uriage et Matheysine. Réseau continu, lisible et sécurisé.",
+    "importance": 3,
+    "chiffres": [],
+    "tags": ["Tranquillité", "Sécurité", "Mobilités"],
+    "slogan": "Relier • Sécuriser • Rendre lisible",
+    "enjeux": [
+      "Sécuriser les trajets du quotidien",
+      "Relier quartiers et équipements",
+      "Favoriser une pratique familiale et intergénérationnelle"
+    ],
+    "axes_action": [
+      "Consolider l'axe du Chemin des Murs",
+      "Assurer la liaison centre ↔ Péage",
+      "Traiter discontinuités et points de conflit",
+      "Jalonnement cohérent • Cohabitation des usages"
+    ],
+    "indicateurs": ["Continuités renforcées", "Points dangereux traités", "Retours d'usagers"],
+    "vision": "Un réseau cyclable continu, de quartier à quartier, de vallée à montagne.",
+    "numero": "2/7",
+    "image": "images/objectifs/objectif_2.png"
   },
   {
-    "id": 1766215445812,
-    "titre": "Feu de Jarrie Rétablir une régulation adaptée : déclenché quand il le faut",
+    "id": 103,
+    "titre": "Objectif 3 - Sécuriser les usagers vulnérables",
     "theme": "Mobilités",
     "statut": "Prioritaire",
     "annee": 2026,
     "budget": 0,
-    "resume": "Un feu utile à la sécurité… mais activé au bon moment.",
-    "description": "Constat\nDes bouchons récurrents aux heures de pointe et des temps de\ntrajet allongés.\nObjectif\n• Régulation dynamique par capteurs\n• Déclenchement uniquement en cas de congestion\n• Transparence sur les données de fonctionnement\nLeviers\nDémarches coordonnées avec les autorités compétentes et\npartenaires du territoire.",
+    "resume": "Priorité aux piétons, enfants, seniors, PMR",
+    "description": "Traversées sûres, abords d'écoles protégés, accessibilité renforcée pour tous.",
     "importance": 3,
-    "chiffres": []
+    "chiffres": [],
+    "tags": ["Sécurité", "Accessibilité", "Confort"],
+    "slogan": "Protéger • Faciliter • Rassurer",
+    "enjeux": [
+      "Réduire les situations à risque",
+      "Améliorer l'accessibilité et le confort de marche",
+      "Renforcer le sentiment de sécurité"
+    ],
+    "axes_action": [
+      "Sécuriser les traversées piétonnes",
+      "Protéger les abords d'écoles",
+      "Améliorer les cheminements accessibles",
+      "Rendre les carrefours plus lisibles",
+      "Apaiser les vitesses sur secteurs sensibles"
+    ],
+    "indicateurs": ["Points sensibles traités", "Qualité des cheminements", "Retours usagers"],
+    "vision": "Des déplacements sûrs et accessibles pour tous, à chaque âge de la vie.",
+    "numero": "3/7",
+    "image": "images/objectifs/objectif_3.png"
+  },
+  {
+    "id": 104,
+    "titre": "Objectif 4 - Apaiser la circulation",
+    "theme": "Mobilités",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Protéger les quartiers habités",
+    "description": "Réduire les nuisances du transit : bruit, vitesses excessives, à-coups de circulation.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": ["Tranquillité", "Cadre de vie", "Sécurité"],
+    "slogan": "Ralentir • Protéger • Fluidifier",
+    "enjeux": [
+      "Réduire vitesses et nuisances sonores",
+      "Limiter les reports en rues résidentielles",
+      "Rendre la circulation plus prévisible"
+    ],
+    "axes_action": [
+      "Identifier les secteurs exposés au transit",
+      "Mettre en œuvre des mesures progressives",
+      "Assurer la cohérence avec le plan de circulation",
+      "Suivre et ajuster selon les retours"
+    ],
+    "indicateurs": ["Vitesses constatées", "Perception des nuisances", "Reports de trafic"],
+    "vision": "Des quartiers protégés du transit, pour une vie quotidienne apaisée.",
+    "numero": "4/7",
+    "image": "images/objectifs/objectif_4.png"
+  },
+  {
+    "id": 105,
+    "titre": "Objectif 5 - Organiser les flux",
+    "theme": "Mobilités",
+    "statut": "Étude",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Un plan de circulation lisible",
+    "description": "Clarifier les itinéraires, hiérarchiser les axes, réduire détours et conflits d'usages.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": ["Lisibilité", "Hiérarchie", "Fluidité"],
+    "slogan": "Clarifier • Hiérarchiser • Simplifier",
+    "enjeux": [
+      "Mieux se déplacer dans la commune",
+      "Réduire le transit inutile en centre-ville",
+      "Limiter les reports dans les quartiers"
+    ],
+    "axes_action": [
+      "Comptages aux points clés",
+      "Hiérarchisation des axes (transit / desserte / apaisé)",
+      "Clarification signalisation et carrefours",
+      "Tester puis déployer progressivement"
+    ],
+    "indicateurs": ["Répartition des flux", "Vitesses constatées", "Retours d'usage"],
+    "vision": "Un plan lisible pour des déplacements simples et cohérents.",
+    "numero": "5/7",
+    "image": "images/objectifs/objectif_5.png"
+  },
+  {
+    "id": 106,
+    "titre": "Objectif 6 - Centre-ville et espaces partagés",
+    "theme": "Mobilités",
+    "statut": "Étude",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Apaiser et dynamiser le cœur de ville",
+    "description": "Cheminements piétons confortables, espaces partagés lisibles, connexion marché ↔ château.",
+    "importance": 3,
+    "chiffres": [],
+    "tags": ["Convivialité", "Commerce", "Patrimoine"],
+    "slogan": "Vivre • Partager • Relier",
+    "enjeux": [
+      "Améliorer la qualité de vie au centre-ville",
+      "Renforcer l'attractivité commerciale",
+      "Réduire les conflits d'usage"
+    ],
+    "axes_action": [
+      "Identifier les secteurs à requalifier",
+      "Déployer des espaces partagés (20 km/h)",
+      "Renforcer les continuités piétonnes",
+      "Améliorer la liaison marché → château"
+    ],
+    "indicateurs": ["Fréquentation", "Retours commerçants/habitants", "Qualité perçue"],
+    "vision": "Un centre-ville apaisé, vivant et connecté à son patrimoine.",
+    "numero": "6/7",
+    "image": "images/objectifs/objectif_6.png"
+  },
+  {
+    "id": 107,
+    "titre": "Objectif 7 - Feu de Jarrie (PPRT)",
+    "theme": "Mobilités",
+    "statut": "Prioritaire",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Rétablir un fonctionnement adapté",
+    "description": "Régulation conforme à la vocation du feu : déclenchée uniquement en cas de congestion avérée.",
+    "importance": 3,
+    "chiffres": [],
+    "tags": ["Régulation", "Bouchons", "Fluidité"],
+    "slogan": "Analyser • Adapter • Fluidifier",
+    "enjeux": [
+      "Réduire les temps de trajet quotidiens",
+      "Éviter les bouchons récurrents aux heures de pointe",
+      "Assurer une régulation dynamique et proportionnée"
+    ],
+    "axes_action": [
+      "Demander les données de fonctionnement à la DREAL",
+      "Réviser le paramétrage du feu",
+      "Porter le sujet avec les partenaires (Département, Métro)",
+      "Mettre en cohérence avec les alternatives de mobilité"
+    ],
+    "indicateurs": ["Temps de parcours", "Durée des phases", "Retours usagers"],
+    "vision": "Transparence des données, régulation adaptée, bouchons réduits.",
+    "numero": "7/7",
+    "image": "images/objectifs/objectif_7.png"
   }
 ]

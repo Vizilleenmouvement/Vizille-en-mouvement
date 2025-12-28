@@ -1,781 +1,40 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <script>
-        // Protection par mot de passe - @@@@
-        (function() {
-            const PASSWORD = '@@@@';
-            const MAX_ATTEMPTS = 3;
-            
-            if (!sessionStorage.getItem('vizille_auth')) {
-                let attempts = 0;
-                let authenticated = false;
-                
-                while (!authenticated && attempts < MAX_ATTEMPTS) {
-                    const input = prompt('Mot de passe requis pour accéder au site :');
-                    
-                    if (input === null) {
-                        window.location.href = 'about:blank';
-                        break;
-                    }
-                    
-                    if (input === PASSWORD) {
-                        authenticated = true;
-                        sessionStorage.setItem('vizille_auth', 'true');
-                    } else {
-                        attempts++;
-                        if (attempts < MAX_ATTEMPTS) {
-                            alert('Mot de passe incorrect. Tentative ' + attempts + '/' + MAX_ATTEMPTS);
-                        } else {
-                            alert('Trop de tentatives. Accès refusé.');
-                            window.location.href = 'about:blank';
-                        }
-                    }
-                }
-                
-                if (!authenticated) {
-                    document.body.innerHTML = '';
-                }
-            }
-        })();
-    </script>
+    <script src="js/auth.js"></script>
 
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L'Équipe – Vizille en Mouvement</title>
     <meta name="description" content="Découvrez l'équipe de Vizille en Mouvement. Des femmes et des hommes engagés pour Vizille.">
-    
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vizilleenmouvement.github.io/Vizille-en-mouvement/equipe.html">
+    <meta property="og:title" content="L'Équipe - Vizille en Mouvement">
+    <meta property="og:description" content="Découvrez l'équipe de Vizille en Mouvement. Des femmes et des hommes engagés.">
+    <meta property="og:image" content="https://vizilleenmouvement.github.io/Vizille-en-mouvement/images/logo.png">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="L'Équipe - Vizille en Mouvement">
+    <meta name="twitter:description" content="Découvrez l'équipe de Vizille en Mouvement.">
+    <meta name="twitter:image" content="https://vizilleenmouvement.github.io/Vizille-en-mouvement/images/logo.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bleu-vizille: #1a3a5c;
-            --bleu-clair: #2d5a87;
-            --or: #c9a227;
-            --or-clair: #e8c84a;
-            --blanc-casse: #f8f6f1;
-            --gris-doux: #e8e6e1;
-            --gris-texte: #4a4a4a;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Source Sans 3', sans-serif;
-            background: var(--blanc-casse);
-            color: var(--gris-texte);
-            line-height: 1.6;
-        }
-        
-        /* ===== NAVIGATION STYLE FIGARO ===== */
-        .header {
-            position: relative;
-            z-index: 100;
-            background: white;
-        }
-        
-        .header-top {
-            background: var(--bleu-vizille);
-            padding: 0.4rem 0;
-            text-align: center;
-            border-bottom: 2px solid var(--or);
-        }
-        
-        .header-top p {
-            color: white;
-            font-family: 'Source Sans 3', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin: 0;
-        }
-        
-        .header-main {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--gris-doux);
-            background: white;
-        }
-        
-        .nav-header-logo {
-            height: 85px;
-            width: auto;
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 2px 4px rgba(26, 58, 92, 0.2));
-        }
-        
-        .nav-header-logo:hover {
-            transform: scale(1.05);
-            filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.4));
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 0;
-            border-left: 1px solid var(--gris-doux);
-            margin: 0;
-            padding: 0;
-        }
-        
-        nav ul li {
-            border-right: 1px solid var(--gris-doux);
-        }
-        
-        nav ul li a {
-            display: block;
-            padding: 0.6rem 1.25rem;
-            color: var(--gris-texte);
-            text-decoration: none;
-            font-family: 'Source Sans 3', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            transition: all 0.2s;
-        }
-        
-        nav ul li a:hover {
-            background: var(--blanc-casse);
-            color: var(--bleu-vizille);
-        }
-        
-        nav ul li a.active {
-            background: var(--bleu-vizille);
-            color: white;
-        }
-        
-        nav ul li a.admin-link {
-            opacity: 0.5;
-            font-size: 1.1rem;
-            padding: 0.6rem 1rem;
-        }
-        
-        nav ul li a.admin-link:hover {
-            opacity: 1;
-        }
-        
-        @media (max-width: 768px) {
-            .header-main {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                border: none;
-            }
-            
-            nav ul li {
-                border: none;
-            }
-            
-            nav ul li a {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.75rem;
-            }
-        }
-        
-        /* Header */
-        .page-header {
-            background: linear-gradient(135deg, var(--bleu-vizille) 0%, var(--bleu-clair) 100%);
-            color: white;
-            padding: 3rem 1.5rem;
-            text-align: center;
-        }
-        
-        .header-logo {
-            max-width: 280px;
-            margin-bottom: 0.5rem;
-            filter: drop-shadow(0 0 20px rgba(255,255,255,0.5));
-            animation: pulse 2s ease-in-out infinite, glow 2s ease-in-out infinite;
-        }
-        
-        .header-slogan {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: var(--or-clair);
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            15% { transform: scale(1.05); }
-            30% { transform: scale(1); }
-            45% { transform: scale(1.03); }
-            60% { transform: scale(1); }
-        }
-        
-        @keyframes glow {
-            0%, 100% { 
-                filter: drop-shadow(0 0 15px rgba(255,255,255,0.4)) drop-shadow(0 0 30px rgba(201,162,39,0.3));
-            }
-            50% { 
-                filter: drop-shadow(0 0 25px rgba(255,255,255,0.7)) drop-shadow(0 0 50px rgba(201,162,39,0.5)) drop-shadow(0 0 70px rgba(201,162,39,0.3));
-            }
-        }
-        
-        .page-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        .page-header p { opacity: 0.9; font-size: 1.2rem; }
-        
-        /* Content */
-        .content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-        }
-        
-        /* Tête de liste */
-        .leader-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
-            display: flex;
-            flex-direction: row;
-            margin-bottom: 4rem;
-            border: 3px solid var(--or);
-        }
-        
-        .leader-photo {
-            flex: 0 0 350px;
-            min-height: 400px;
-            background: var(--gris-doux);
-        }
-        
-        .leader-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top;
-        }
-        
-        .leader-info {
-            flex: 1;
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .leader-badge {
-            display: inline-block;
-            background: var(--or);
-            color: var(--bleu-vizille);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            width: fit-content;
-        }
-        
-        .leader-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            color: var(--bleu-vizille);
-            margin-bottom: 0.5rem;
-        }
-        
-        .leader-role {
-            color: var(--or);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .leader-bio {
-            color: var(--gris-texte);
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        /* Section title */
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--bleu-vizille);
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        /* Team Grid */
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-        
-        .team-card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .team-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        
-        .team-photo {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            object-position: top;
-            background: var(--gris-doux);
-        }
-        
-        .team-photo-placeholder {
-            width: 100%;
-            height: 280px;
-            background: linear-gradient(135deg, var(--gris-doux) 0%, #d0cec9 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: var(--bleu-vizille);
-            opacity: 0.3;
-        }
-        
-        .team-info {
-            padding: 1.5rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .team-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            color: var(--bleu-vizille);
-            margin-bottom: 0.25rem;
-        }
-        
-        .team-role {
-            color: var(--or);
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .team-delegation {
-            display: inline-block;
-            background: #e8f4fc;
-            color: var(--bleu-vizille);
-            padding: 0.3rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .team-bio {
-            color: var(--gris-texte);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            flex: 1;
-        }
-        
-        .team-citation {
-            font-style: italic;
-            color: var(--bleu-clair);
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--gris-doux);
-        }
-        
-        .team-citation::before {
-            content: '« ';
-            color: var(--or);
-        }
-        
-        .team-citation::after {
-            content: ' »';
-            color: var(--or);
-        }
-        
-        .team-socials {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--gris-doux);
-        }
-        
-        .team-socials a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background: var(--gris-doux);
-            border-radius: 50%;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: all 0.2s;
-        }
-        
-        .team-socials a:hover {
-            background: var(--bleu-vizille);
-            transform: scale(1.1);
-        }
-        
-        /* Charte & Contrat */
-        .values-section {
-            margin-top: 4rem;
-            padding-top: 3rem;
-            border-top: 2px solid var(--gris-doux);
-        }
-        
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .value-item {
-            background: white;
-            border-radius: 16px;
-            padding: 1.5rem 1rem;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s;
-            border-bottom: 4px solid var(--or);
-        }
-        
-        .value-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-        }
-        
-        .value-icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .value-item h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            color: var(--bleu-vizille);
-            margin-bottom: 0.5rem;
-        }
-        
-        .value-item p {
-            color: var(--gris-texte);
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-        
-        .contrat-section .value-item {
-            border-bottom-color: var(--bleu-vizille);
-        }
-        
-        /* Rejoignez-nous */
-        .join-section {
-            margin-top: 4rem;
-            padding: 3rem;
-            background: linear-gradient(135deg, var(--bleu-vizille) 0%, var(--bleu-clair) 100%);
-            border-radius: 20px;
-            text-align: center;
-            color: white;
-        }
-        
-        .join-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-        
-        .join-section p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-        }
-        
-        .btn-contact {
-            display: inline-block;
-            background: var(--or);
-            color: var(--bleu-vizille);
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-        }
-        
-        .btn-contact:hover {
-            background: var(--or-clair);
-            transform: scale(1.05);
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--bleu-vizille);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-        .footer-slogan {
-            font-family: 'Playfair Display', serif;
-            color: var(--or-clair);
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Loading */
-        .loading {
-            text-align: center;
-            padding: 3rem;
-            color: var(--bleu-vizille);
-        }
-        
-        @media (max-width: 768px) {
-            .leader-card { flex-direction: column; }
-            .leader-photo { flex: none; min-height: 300px; }
-            .team-grid { grid-template-columns: 1fr; }
-            .values-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        
-        @media (max-width: 480px) {
-            .values-grid { grid-template-columns: 1fr; }
-        }
-        
-        /* ===== MODAL CANDIDAT ===== */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            padding: 1rem;
-        }
-        
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .modal-content {
-            background: white;
-            border-radius: 20px;
-            max-width: 500px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
-        
-        .modal-header {
-            background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair));
-            color: white;
-            padding: 1.5rem;
-            text-align: center;
-            position: relative;
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: rgba(255,255,255,0.2);
-            border: none;
-            color: white;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all 0.2s;
-        }
-        
-        .modal-close:hover {
-            background: rgba(255,255,255,0.3);
-            transform: scale(1.1);
-        }
-        
-        .modal-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--or);
-            margin-bottom: 1rem;
-        }
-        
-        .modal-photo-placeholder {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            margin: 0 auto 1rem;
-            border: 4px solid var(--or);
-        }
-        
-        .modal-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 0.25rem;
-        }
-        
-        .modal-role {
-            color: var(--or);
-            font-weight: 600;
-            font-size: 1rem;
-        }
-        
-        .modal-body {
-            padding: 1.5rem;
-        }
-        
-        .modal-delegation {
-            display: inline-block;
-            background: var(--bleu-vizille);
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        .modal-section {
-            margin-bottom: 1.25rem;
-        }
-        
-        .modal-section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1rem;
-            color: var(--bleu-vizille);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .modal-bio,
-        .modal-pedigree,
-        .modal-objectifs {
-            background: var(--blanc-casse);
-            padding: 1rem;
-            border-radius: 8px;
-            color: var(--gris-texte);
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-        
-        .modal-citation {
-            background: var(--blanc-casse);
-            border-left: 4px solid var(--or);
-            padding: 1rem;
-            font-style: italic;
-            color: var(--bleu-vizille);
-            border-radius: 0 8px 8px 0;
-            margin-bottom: 1rem;
-        }
-        
-        .modal-citation::before {
-            content: '« ';
-        }
-        
-        .modal-citation::after {
-            content: ' »';
-        }
-        
-        .modal-socials {
-            display: flex;
-            gap: 0.75rem;
-            justify-content: center;
-            padding-top: 1rem;
-            border-top: 1px solid var(--gris-doux);
-        }
-        
-        .modal-socials a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            background: var(--bleu-vizille);
-            border-radius: 50%;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: all 0.2s;
-        }
-        
-        .modal-socials a:hover {
-            background: var(--or);
-            transform: scale(1.1);
-        }
-        
-        /* Carte cliquable */
-        .team-card {
-            cursor: pointer;
-        }
-        
-        .team-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-        
-        .team-card::after {
-            content: '👆 Cliquer pour en savoir plus';
-            display: block;
-            text-align: center;
-            font-size: 0.75rem;
-            color: var(--gris-texte);
-            opacity: 0.6;
-            margin-top: 0.5rem;
-            padding-top: 0.5rem;
-            border-top: 1px dashed var(--gris-doux);
-        }
-    </style>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/pages/equipe.css">
 </head>
 <body>
     <header class="header">
         <div class="header-top">
             <p>L'Équipe • Vizille en Mouvement</p>
         </div>
-        
+
         <div class="header-main">
             <a href="index.html">
                 <img src="images/logo.png" alt="Vizille en Mouvement" class="nav-header-logo">
@@ -793,16 +52,16 @@
             </nav>
         </div>
     </header>
-    
+
     <section class="page-header">
         <img src="images/logo.png" alt="Vizille en Mouvement" class="header-logo">
         <p class="header-slogan">« Vos questions pour une ville dynamique et solidaire »</p>
         <h1>👥 L'Équipe</h1>
         <p>Notre liste rassemble des femmes et des hommes de tous horizons, unis par l'envie de servir Vizille et ses habitants.</p>
     </section>
-    
+
     <main class="content">
-        
+
         <!-- TÊTE DE LISTE -->
         <div class="leader-card">
             <div class="leader-photo">
@@ -815,7 +74,7 @@
                 <p class="leader-bio">Engagée depuis plus de 20 ans pour Vizille. Porte les valeurs de solidarité, d'écoute et de proximité au cœur de son action municipale.</p>
             </div>
         </div>
-        
+
         <!-- LES COLISTIERS -->
         <h2 class="section-title">Les colistiers</h2>
         <div class="team-grid" id="team-grid">
@@ -824,7 +83,7 @@
                 <p>Chargement de l'équipe...</p>
             </div>
         </div>
-        
+
         <!-- CHARTE D'ENGAGEMENT -->
         <section class="values-section">
             <h2 class="section-title">📜 Notre Charte d'Engagement</h2>
@@ -861,7 +120,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- CONTRAT D'ACTION -->
         <section class="values-section contrat-section">
             <h2 class="section-title">✍️ Notre Contrat d'Action</h2>
@@ -893,38 +152,38 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- REJOIGNEZ-NOUS -->
         <section class="join-section">
             <h2>🤝 Rejoignez-nous</h2>
             <p>Vous souhaitez vous engager pour Vizille ?</p>
             <a href="faq.html" class="btn-contact">Nous contacter</a>
         </section>
-        
+
     </main>
-    
+
     <footer class="footer">
         <p class="footer-slogan">« Ensemble pour une ville dynamique et solidaire »</p>
         <p>© 2025 Vizille en Mouvement</p>
     </footer>
-    
+
     <script>
         let candidatsData = [];
-        
+
         async function loadCandidats() {
             try {
                 const response = await fetch('candidats.json?v=' + Date.now());
                 if (!response.ok) throw new Error('Erreur');
-                
+
                 candidatsData = await response.json();
-                
+
                 // Filtrer les actifs, exclure la tête de liste, trier par ordre
                 candidatsData = candidatsData
                     .filter(c => c.actif !== false)
                     .filter(c => !c.role?.toLowerCase().includes('tête de liste'))
                     .filter(c => c.ordre !== 1)
                     .sort((a, b) => (a.ordre || 99) - (b.ordre || 99));
-                
+
                 renderTeam();
             } catch (err) {
                 document.getElementById('team-grid').innerHTML = `
@@ -935,10 +194,10 @@
                 `;
             }
         }
-        
+
         function renderTeam() {
             const grid = document.getElementById('team-grid');
-            
+
             if (candidatsData.length === 0) {
                 grid.innerHTML = `
                     <div class="loading">
@@ -948,12 +207,12 @@
                 `;
                 return;
             }
-            
+
             grid.innerHTML = candidatsData.map((candidat, index) => {
-                const photoHtml = candidat.photo 
+                const photoHtml = candidat.photo
                     ? `<img src="${candidat.photo}" alt="${candidat.nom}" class="team-photo">`
                     : `<div class="team-photo-placeholder">👤</div>`;
-                
+
                 // Construire les liens sociaux
                 let socialsHtml = '';
                 if (candidat.email || candidat.facebook || candidat.linkedin || candidat.twitter) {
@@ -964,7 +223,7 @@
                     if (candidat.twitter) links += `<a href="${candidat.twitter}" target="_blank" title="Twitter" onclick="event.stopPropagation()">🐦</a>`;
                     socialsHtml = `<div class="team-socials">${links}</div>`;
                 }
-                
+
                 return `
                     <div class="team-card" onclick="openCandidatModal(${index})">
                         ${photoHtml}
@@ -979,16 +238,16 @@
                 `;
             }).join('');
         }
-        
+
         document.addEventListener('DOMContentLoaded', loadCandidats);
-        
+
         // ===== MODAL CANDIDAT =====
         function openCandidatModal(index) {
             const candidat = candidatsData[index];
             if (!candidat) return;
-            
+
             const modal = document.getElementById('candidat-modal');
-            
+
             // Photo
             const photoContainer = document.getElementById('modal-photo-container');
             if (candidat.photo) {
@@ -996,11 +255,11 @@
             } else {
                 photoContainer.innerHTML = `<div class="modal-photo-placeholder">👤</div>`;
             }
-            
+
             // Infos de base
             document.getElementById('modal-name').textContent = candidat.nom || 'Nom non renseigné';
             document.getElementById('modal-role').textContent = candidat.role || '';
-            
+
             // Délégation
             const delegationEl = document.getElementById('modal-delegation');
             if (candidat.delegation) {
@@ -1009,19 +268,19 @@
             } else {
                 delegationEl.style.display = 'none';
             }
-            
+
             // Bio / Présentation
             document.getElementById('modal-bio').textContent = candidat.bio || 'Non renseigné';
-            
+
             // Parcours
             document.getElementById('modal-pedigree').textContent = candidat.pedigree || 'Non renseigné';
-            
+
             // Objectifs
             document.getElementById('modal-objectifs').textContent = candidat.objectifs || 'Non renseigné';
-            
+
             // Citation
             document.getElementById('modal-citation').textContent = candidat.citation || 'Non renseigné';
-            
+
             // Réseaux sociaux
             const socialsEl = document.getElementById('modal-socials');
             let socialsHtml = '';
@@ -1029,7 +288,7 @@
             if (candidat.facebook) socialsHtml += `<a href="${candidat.facebook}" target="_blank" title="Facebook">📘</a>`;
             if (candidat.linkedin) socialsHtml += `<a href="${candidat.linkedin}" target="_blank" title="LinkedIn">💼</a>`;
             if (candidat.twitter) socialsHtml += `<a href="${candidat.twitter}" target="_blank" title="Twitter">🐦</a>`;
-            
+
             if (socialsHtml) {
                 socialsEl.innerHTML = socialsHtml;
                 socialsEl.style.display = 'flex';
@@ -1037,27 +296,27 @@
                 socialsEl.innerHTML = '<span style="color: #999; font-size: 0.9rem;">Aucun réseau social</span>';
                 socialsEl.style.display = 'block';
             }
-            
+
             // Afficher
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-        
+
         function closeCandidatModal() {
             document.getElementById('candidat-modal').classList.remove('active');
             document.body.style.overflow = '';
         }
-        
+
         // Fermer avec Escape
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeCandidatModal();
         });
-        
+
         // Rendre accessible globalement
         window.openCandidatModal = openCandidatModal;
         window.closeCandidatModal = closeCandidatModal;
     </script>
-    
+
     <!-- Modal Candidat -->
     <div class="modal-overlay" id="candidat-modal" onclick="if(event.target === this) closeCandidatModal()">
         <div class="modal-content">
@@ -1069,30 +328,33 @@
             </div>
             <div class="modal-body">
                 <span class="modal-delegation" id="modal-delegation"></span>
-                
+
                 <div class="modal-section">
                     <h4 class="modal-section-title">👤 Présentation</h4>
                     <p class="modal-bio" id="modal-bio">Non renseigné</p>
                 </div>
-                
+
                 <div class="modal-section">
                     <h4 class="modal-section-title">🎓 Parcours</h4>
                     <p class="modal-pedigree" id="modal-pedigree">Non renseigné</p>
                 </div>
-                
+
                 <div class="modal-section">
                     <h4 class="modal-section-title">🎯 Objectifs de campagne</h4>
                     <p class="modal-objectifs" id="modal-objectifs">Non renseigné</p>
                 </div>
-                
+
                 <div class="modal-section" id="modal-citation-section">
                     <h4 class="modal-section-title">💬 Citation</h4>
                     <p class="modal-citation" id="modal-citation">Non renseigné</p>
                 </div>
-                
+
                 <div class="modal-socials" id="modal-socials"></div>
             </div>
         </div>
     </div>
+
+    <!-- Site Features JS -->
+    <script src="js/site-features.js"></script>
 </body>
 </html>

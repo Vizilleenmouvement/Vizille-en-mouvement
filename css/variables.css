@@ -1,0 +1,93 @@
+/* ===== VARIABLES CSS - Vizille en Mouvement ===== */
+/* Fichier centralisé pour toutes les variables du site */
+
+:root {
+    /* Couleurs principales */
+    --bleu: #1a3a5c;
+    --bleu-vizille: #1a3a5c;
+    --bleu-clair: #2d5a87;
+    --or: #c9a227;
+    --or-clair: #e8c84a;
+    --blanc-casse: #f8f6f1;
+    --gris-doux: #e8e6e1;
+    --gris-texte: #4a4a4a;
+
+    /* Couleurs de statut */
+    --vert-realise: #27ae60;
+    --orange-encours: #f39c12;
+    --bleu-decide: #3498db;
+    --violet-programme: #9b59b6;
+    --rouge-accent: #e74c3c;
+
+    /* Ombres */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.16);
+    --shadow-xl: 0 12px 48px rgba(0,0,0,0.2);
+
+    /* Rayons de bordure */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+
+    /* Typographie */
+    --font-primary: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Playfair Display', serif;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+/* ===== MODE SOMBRE ===== */
+[data-theme="dark"] {
+    --bleu: #c9d1d9;
+    --bleu-vizille: #2d5a87;
+    --bleu-clair: #4a7db8;
+    --or: #e8c84a;
+    --or-clair: #f0d86a;
+    --blanc-casse: #161b22;
+    --gris-doux: #21262d;
+    --gris-texte: #c9d1d9;
+    --bg-body: #0d1117;
+    --bg-card: #161b22;
+    --bg-header: linear-gradient(135deg, #0d1117 0%, #21262d 100%);
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --border-color: #30363d;
+}
+
+[data-theme="dark"] body {
+    background-color: var(--bg-body, #0d1117);
+    color: var(--text-primary, #f0f6fc);
+}
+
+[data-theme="dark"] .header {
+    background: var(--bg-header);
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .action-card,
+[data-theme="dark"] .projet-card,
+[data-theme="dark"] .candidat-card {
+    background: var(--bg-card, #161b22);
+    border-color: var(--border-color, #30363d);
+}
+
+[data-theme="dark"] footer {
+    background: #0d1117;
+}
+
+[data-theme="dark"] .btn-primary {
+    background: var(--or);
+    color: #0d1117;
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+    background: var(--bg-card, #161b22);
+    border-color: var(--border-color, #30363d);
+    color: var(--text-primary, #f0f6fc);
+}

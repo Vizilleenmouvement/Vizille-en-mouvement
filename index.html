@@ -1,645 +1,247 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <script>
-        // Protection par mot de passe - @@@@
-        (function() {
-            const PASSWORD = '@@@@';
-            const MAX_ATTEMPTS = 3;
-            
-            if (!sessionStorage.getItem('vizille_auth')) {
-                let attempts = 0;
-                let authenticated = false;
-                
-                while (!authenticated && attempts < MAX_ATTEMPTS) {
-                    const input = prompt('Mot de passe requis pour accéder au site :');
-                    
-                    if (input === null) {
-                        window.location.href = 'about:blank';
-                        break;
-                    }
-                    
-                    if (input === PASSWORD) {
-                        authenticated = true;
-                        sessionStorage.setItem('vizille_auth', 'true');
-                    } else {
-                        attempts++;
-                        if (attempts < MAX_ATTEMPTS) {
-                            alert('Mot de passe incorrect. Tentative ' + attempts + '/' + MAX_ATTEMPTS);
-                        } else {
-                            alert('Trop de tentatives. Accès refusé.');
-                            window.location.href = 'about:blank';
-                        }
-                    }
-                }
-                
-                if (!authenticated) {
-                    document.body.innerHTML = '';
-                }
-            }
-        })();
-    </script>
+    <script src="js/auth.js"></script>
 
-    
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vizille en Mouvement - Campagne municipale 2026</title>
-  <meta name="description" content="Bilan du mandat 2020-2026 et projet pour Vizille. Ensemble pour une ville dynamique et solidaire.">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --bleu: #1a3a5c;
-      --bleu-clair: #2d5a87;
-      --or: #c9a227;
-      --or-clair: #e8c84a;
-      --blanc-casse: #f8f6f1;
-      --gris-texte: #4a4a4a;
-    }
-    
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body {
-      font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--blanc-casse);
-      color: var(--gris-texte);
-      line-height: 1.6;
-    }
-    
-    /* ===== HEADER / NAVIGATION STYLE FIGARO ===== */
-    .header {
-        position: relative;
-        z-index: 1000;
-        background: white;
-    }
-    
-    .header-main {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 1rem 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid #e8e6e1;
-        background: white;
-        position: relative;
-        z-index: 1000;
-    }
-    
-    nav {
-        position: relative;
-        z-index: 1000;
-    }
-    
-    .header-top {
-        background: var(--bleu);
-        padding: 0.4rem 0;
-        text-align: center;
-        border-bottom: 2px solid var(--or);
-    }
-    
-    .header-top p {
-        color: white;
-        font-family: 'Source Sans 3', sans-serif;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        margin: 0;
-    }
-    
-    .header-main {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 1rem 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid #e8e6e1;
-        background: white;
-    }
-    
-    .nav-header-logo {
-        height: 85px;
-        width: auto;
-        transition: all 0.3s ease;
-        filter: drop-shadow(0 2px 4px rgba(26, 58, 92, 0.2));
-    }
-    
-    .nav-header-logo:hover {
-        transform: scale(1.05);
-        filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.4));
-    }
-    
-    nav ul {
-        display: flex;
-        list-style: none;
-        gap: 0;
-        border-left: 1px solid #e8e6e1;
-        margin: 0;
-        padding: 0;
-    }
-    
-    nav ul li {
-        border-right: 1px solid #e8e6e1;
-    }
-    
-    nav ul li a {
-        display: block;
-        padding: 0.6rem 1.25rem;
-        color: var(--gris-texte);
-        text-decoration: none;
-        font-family: 'Source Sans 3', sans-serif;
-        font-weight: 600;
-        font-size: 0.85rem;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-        transition: all 0.2s;
-        cursor: pointer;
-        position: relative;
-        z-index: 1000;
-    }
-    
-    nav ul li a:hover {
-        background: var(--blanc-casse);
-        color: var(--bleu);
-    }
-    
-    nav ul li a.active {
-        background: var(--bleu);
-        color: white;
-    }
-    
-    nav ul li a.admin-link {
-        opacity: 0.5;
-        font-size: 1.1rem;
-        padding: 0.6rem 1rem;
-    }
-    
-    nav ul li a.admin-link:hover {
-        opacity: 1;
-    }
-    
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--bleu);
-    }
-    
-    @media (max-width: 768px) {
-        .header-main {
-            flex-direction: column;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vizille en Mouvement - Campagne municipale 2026</title>
+    <meta name="description" content="Bilan du mandat 2020-2026 et projet pour Vizille. Ensemble pour une ville dynamique et solidaire.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vizilleenmouvement.github.io/Vizille-en-mouvement/">
+    <meta property="og:title" content="Vizille en Mouvement - Campagne municipale 2026">
+    <meta property="og:description" content="Bilan du mandat 2020-2026 et projet pour Vizille. Ensemble pour une ville dynamique et solidaire.">
+    <meta property="og:image" content="https://vizilleenmouvement.github.io/Vizille-en-mouvement/images/logo.png">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vizilleenmouvement.github.io/Vizille-en-mouvement/">
+    <meta name="twitter:title" content="Vizille en Mouvement - Campagne municipale 2026">
+    <meta name="twitter:description" content="Bilan du mandat 2020-2026 et projet pour Vizille. Ensemble pour une ville dynamique et solidaire.">
+    <meta name="twitter:image" content="https://vizilleenmouvement.github.io/Vizille-en-mouvement/images/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        /* Styles spécifiques à la page d'accueil */
+        .mot-section {
+            padding: 4rem 1.5rem;
+            background: #fff;
+        }
+
+        .mot-container {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .mot-texte p {
+            color: var(--gris-texte);
+            line-height: 1.9;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+
+        .mot-texte .intro {
+            font-size: 1.3rem;
+            color: var(--bleu-vizille);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .mot-texte .highlight {
+            background: linear-gradient(135deg, var(--bleu-vizille) 0%, var(--bleu-clair) 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .mot-texte .signature {
+            margin-top: 2rem;
+            font-style: italic;
+            color: var(--bleu-vizille);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .portrait-wrapper {
+            text-align: center;
+            position: sticky;
+            top: 100px;
+        }
+
+        .portrait-wrapper img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 16px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            border: 4px solid var(--or);
+        }
+
+        .portrait-wrapper p {
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--bleu-vizille);
+        }
+
+        .cta-buttons {
+            display: flex;
             gap: 1rem;
-            padding: 1rem;
-        }
-        
-        nav ul {
+            margin-top: 2rem;
             flex-wrap: wrap;
-            justify-content: center;
-            border: none;
         }
-        
-        nav ul li {
-            border: none;
+
+        @media (max-width: 900px) {
+            .mot-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .portrait-wrapper {
+                position: static;
+            }
+            .portrait-wrapper img {
+                max-width: 300px;
+            }
         }
-        
-        nav ul li a {
-            padding: 0.5rem 0.75rem;
-            font-size: 0.75rem;
+
+        @media (max-width: 768px) {
+            .cta-buttons {
+                flex-direction: column;
+            }
+            .cta-buttons .btn {
+                width: 100%;
+            }
         }
-    }
-    
-    /* ===== HERO COMPACT ===== */
-    .hero-banner {
-      position: relative;
-      min-height: 40vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-    }
-    
-    .hero-banner::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('images/vizille-panorama.png') center center / cover no-repeat;
-      z-index: 1;
-    }
-    
-    .hero-banner::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(180deg, rgba(26, 82, 118, 0.75) 0%, rgba(14, 58, 82, 0.85) 100%);
-      z-index: 2;
-    }
-    
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      padding: 1.5rem;
-    }
-    
-    .hero-logo {
-      max-width: 325px;
-      margin-bottom: 0.75rem;
-      filter: drop-shadow(0 0 20px rgba(255,255,255,0.5));
-      animation: pulse 2s ease-in-out infinite, glow 2s ease-in-out infinite;
-    }
-    
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      15% { transform: scale(1.05); }
-      30% { transform: scale(1); }
-      45% { transform: scale(1.03); }
-      60% { transform: scale(1); }
-    }
-    
-    @keyframes glow {
-      0%, 100% { 
-        filter: drop-shadow(0 0 15px rgba(255,255,255,0.4)) drop-shadow(0 0 30px rgba(201,162,39,0.3));
-      }
-      50% { 
-        filter: drop-shadow(0 0 25px rgba(255,255,255,0.7)) drop-shadow(0 0 50px rgba(201,162,39,0.5)) drop-shadow(0 0 70px rgba(201,162,39,0.3));
-      }
-    }
-    
-    .slogan {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #fff;
-      text-shadow: 0 2px 15px rgba(0,0,0,0.3);
-      margin: 0;
-      letter-spacing: 0.5px;
-    }
-    
-    /* ===== SECTION MOT DE CATHERINE ===== */
-    .mot-section {
-      padding: 4rem 1.5rem;
-      background: #fff;
-    }
-    
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    
-    .mot-container {
-      display: grid;
-      grid-template-columns: 350px 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-    
-    .mot-texte p {
-      color: var(--gris-texte);
-      line-height: 1.9;
-      margin-bottom: 1.2rem;
-      font-size: 1.05rem;
-    }
-    
-    .mot-texte .intro {
-      font-size: 1.3rem;
-      color: var(--bleu);
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-    }
-    
-    .mot-texte .highlight {
-      background: linear-gradient(135deg, var(--bleu) 0%, var(--bleu-clair) 100%);
-      color: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      margin: 1.5rem 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-    
-    .mot-texte .signature {
-      margin-top: 2rem;
-      font-style: italic;
-      color: var(--bleu);
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-    
-    .portrait-wrapper {
-      text-align: center;
-      position: sticky;
-      top: 100px;
-    }
-    
-    .portrait-wrapper img {
-      width: 100%;
-      max-width: 350px;
-      border-radius: 16px;
-      box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-      border: 4px solid var(--or);
-    }
-    
-    .portrait-wrapper p {
-      margin-top: 1rem;
-      font-weight: 600;
-      color: var(--bleu);
-    }
-    
-    /* ===== BOUTONS CTA ===== */
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-    }
-    
-    .btn {
-      display: inline-block;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.2s;
-      text-align: center;
-    }
-    
-    .btn-primary {
-      background: var(--bleu);
-      color: white;
-    }
-    
-    .btn-primary:hover {
-      background: var(--bleu-clair);
-      transform: translateY(-2px);
-    }
-    
-    /* ===== FOOTER ===== */
-    footer {
-      background: var(--bleu);
-      color: white;
-      padding: 3rem 1.5rem 1.5rem;
-    }
-    
-    .footer-grid {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 2rem;
-    }
-    
-    .footer-brand p {
-      margin-top: 1rem;
-      opacity: 0.8;
-      font-size: 0.95rem;
-    }
-    
-    footer h4 {
-      color: var(--or-clair);
-      margin-bottom: 1rem;
-      font-size: 1rem;
-    }
-    
-    footer ul {
-      list-style: none;
-    }
-    
-    footer ul li {
-      margin-bottom: 0.5rem;
-    }
-    
-    footer ul li a {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-    }
-    
-    footer ul li a:hover {
-      color: var(--or-clair);
-    }
-    
-    .footer-bottom {
-      max-width: 1100px;
-      margin: 2rem auto 0;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      text-align: center;
-      opacity: 0.7;
-      font-size: 0.9rem;
-    }
-    
-    .social-links {
-      display: flex;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-    
-    .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50%;
-      color: white;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    
-    .social-links a:hover {
-      background: var(--or);
-    }
-    
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 900px) {
-      .mot-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .portrait-wrapper {
-        position: static;
-      }
-      .portrait-wrapper img {
-        max-width: 300px;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-      nav ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        padding: 1rem;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      }
-      nav ul.active {
-        display: flex;
-      }
-      nav ul li a {
-        padding: 0.8rem 1rem;
-      }
-      .hero-logo {
-        max-width: 250px;
-      }
-      .slogan {
-        font-size: 1.2rem;
-      }
-      .cta-buttons {
-        flex-direction: column;
-      }
-      .btn {
-        width: 100%;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .social-links {
-        justify-content: center;
-      }
-    }
-  </style>
+    </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="header-top">
-        <p>Vizille en Mouvement • Municipales 2026</p>
-    </div>
-    
-    <div class="header-main">
-        <a href="index.html">
-            <img src="images/logo.png" alt="Vizille en Mouvement" class="nav-header-logo">
-        </a>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Accueil</a></li>
-                <li><a href="bilan.html">Bilan</a></li>
-                <li><a href="projet.html">Projet</a></li>
-                <li><a href="blog.html">Actualités</a></li>
-                <li><a href="equipe.html">Équipe</a></li>
-                <li><a href="faq.html">Construisons ensemble</a></li>
-                <li><a href="admin.html" class="admin-link" title="Administration">⚙️</a></li>
-            </ul>
-        </nav>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero-banner">
-    <div class="hero-content">
-      <img src="images/logo.png" alt="Vizille en Mouvement" class="hero-logo">
-      <p class="slogan">Ensemble pour une ville dynamique et solidaire</p>
-    </div>
-  </section>
-
-  <!-- MOT DE LA CANDIDATE -->
-  <section class="mot-section">
-    <div class="container">
-      <div class="mot-container">
-        
-        <div class="portrait-wrapper">
-          <img src="images/maire.png" alt="Catherine Troton">
-          <p>Catherine Troton<br><span style="font-weight: 400; font-size: 0.9rem; color: var(--or);">Candidate Tête de Liste</span></p>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-top">
+            <p>Vizille en Mouvement • Municipales 2026</p>
         </div>
-        
-        <div class="mot-texte">
-          <p class="intro">Chères Vizilloises, chers Vizillois,</p>
-          
-          <p>Depuis 2020, nous avons traversé ensemble des moments difficiles. La crise sanitaire d'abord, puis la fermeture de Vencorex qui a touché tant de familles de notre bassin. Face à ces épreuves, nous avons fait le choix de la <strong>solidarité</strong> et du maintien des <strong>investissements</strong>.</p>
-          
-          <div class="highlight">
-            🎯 <strong>Plus de 330 actions concrètes</strong> ont été menées durant ce mandat pour changer le quotidien des Vizillois : transformation du centre-ville, future Maison de santé, réseau de chaleur, végétalisation...
-          </div>
-          
-          <p>Ce bilan, c'est avant tout <strong>le vôtre</strong>. Celui des agents municipaux engagés au quotidien, des associations qui font vivre notre ville, des habitants qui participent aux concertations.</p>
-          
-          <p>Nous aimons notre ville, nous y vivons et nous y sommes heureux. Ensemble, continuons à construire un avenir prometteur pour Vizille !</p>
-          
-          <p class="signature">Catherine Troton</p>
-          
-          <div class="cta-buttons">
-            <a href="bilan.html" class="btn btn-primary">📋 Découvrir le bilan</a>
-            <a href="projet.html" class="btn btn-primary">🚀 Notre projet</a>
-            <a href="equipe.html" class="btn btn-primary">👥 L'équipe</a>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-grid">
-      
-      <div class="footer-brand">
-        <img src="images/logo.png" alt="Vizille en Mouvement" style="height: 40px; filter: brightness(0) invert(1);">
-        <p>Liste citoyenne pour les élections municipales 2026.<br>Ensemble pour une ville dynamique et solidaire.</p>
-        <div class="social-links">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Instagram">◉</a>
+        <div class="header-main">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Vizille en Mouvement" class="nav-header-logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="bilan.html">Bilan</a></li>
+                    <li><a href="projet.html">Projet</a></li>
+                    <li><a href="blog.html">Actualités</a></li>
+                    <li><a href="equipe.html">Équipe</a></li>
+                    <li><a href="faq.html">Construisons ensemble</a></li>
+                    <li><a href="admin.html" class="admin-link" title="Administration">⚙️</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
-      
-      <div>
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="bilan.html">Bilan</a></li>
-          <li><a href="projet.html">Projet</a></li>
-          <li><a href="blog.html">Actualités</a></li>
-        </ul>
-      </div>
-      
-      <div>
-        <h4>Informations</h4>
-        <ul>
-          <li><a href="faq.html">Construisons ensemble</a></li>
-          <li><a href="equipe.html">L'Équipe</a></li>
-        </ul>
-      </div>
-      
-      <div>
-        <h4>Liens</h4>
-        <ul>
-          <li><a href="#">Mentions légales</a></li>
-          <li><a href="https://Vizilleenmouvement.github.io/test2/" target="_blank">Données ouvertes ↗</a></li>
-        </ul>
-      </div>
-      
-    </div>
-    
-    <div class="footer-bottom">
-      <p>© 2025 Vizille en Mouvement – Campagne municipale 2026</p>
-    </div>
-  </footer>
+    </header>
 
+    <!-- HERO -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <img src="images/logo.png" alt="Vizille en Mouvement" class="hero-logo">
+            <p class="slogan">Ensemble pour une ville dynamique et solidaire</p>
+        </div>
+    </section>
+
+    <!-- MOT DE LA CANDIDATE -->
+    <section class="mot-section">
+        <div class="container">
+            <div class="mot-container">
+
+                <div class="portrait-wrapper">
+                    <img src="images/maire.png" alt="Catherine Troton">
+                    <p>Catherine Troton<br><span style="font-weight: 400; font-size: 0.9rem; color: var(--or);">Candidate Tête de Liste</span></p>
+                </div>
+
+                <div class="mot-texte">
+                    <p class="intro">Chères Vizilloises, chers Vizillois,</p>
+
+                    <p>Depuis 2020, nous avons traversé ensemble des moments difficiles. La crise sanitaire d'abord, puis la fermeture de Vencorex qui a touché tant de familles de notre bassin. Face à ces épreuves, nous avons fait le choix de la <strong>solidarité</strong> et du maintien des <strong>investissements</strong>.</p>
+
+                    <div class="highlight">
+                        🎯 <strong>Plus de 330 actions concrètes</strong> ont été menées durant ce mandat pour changer le quotidien des Vizillois : transformation du centre-ville, future Maison de santé, réseau de chaleur, végétalisation...
+                    </div>
+
+                    <p>Ce bilan, c'est avant tout <strong>le vôtre</strong>. Celui des agents municipaux engagés au quotidien, des associations qui font vivre notre ville, des habitants qui participent aux concertations.</p>
+
+                    <p>Nous aimons notre ville, nous y vivons et nous y sommes heureux. Ensemble, continuons à construire un avenir prometteur pour Vizille !</p>
+
+                    <p class="signature">Catherine Troton</p>
+
+                    <div class="cta-buttons">
+                        <a href="bilan.html" class="btn btn-primary">📋 Découvrir le bilan</a>
+                        <a href="projet.html" class="btn btn-primary">🚀 Notre projet</a>
+                        <a href="equipe.html" class="btn btn-primary">👥 L'équipe</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <img src="images/logo.png" alt="Vizille en Mouvement" style="height: 40px; filter: brightness(0) invert(1);">
+                <p>Liste citoyenne pour les élections municipales 2026.<br>Ensemble pour une ville dynamique et solidaire.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">◉</a>
+                </div>
+            </div>
+
+            <div>
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="bilan.html">Bilan</a></li>
+                    <li><a href="projet.html">Projet</a></li>
+                    <li><a href="blog.html">Actualités</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Informations</h4>
+                <ul>
+                    <li><a href="faq.html">Construisons ensemble</a></li>
+                    <li><a href="equipe.html">L'Équipe</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Liens</h4>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="https://Vizilleenmouvement.github.io/test2/" target="_blank">Données ouvertes ↗</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Vizille en Mouvement – Campagne municipale 2026</p>
+        </div>
+    </footer>
+
+    <!-- Site Features JS -->
+    <script src="js/site-features.js"></script>
 </body>
 </html>

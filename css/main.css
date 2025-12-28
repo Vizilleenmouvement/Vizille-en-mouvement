@@ -1,0 +1,16 @@
+/* ===== MAIN CSS - Vizille en Mouvement ===== */
+/* Point d'entrée principal qui importe tous les modules CSS */
+
+@import url('variables.css');
+@import url('base.css');
+@import url('header.css');
+@import url('footer.css');
+@import url('page-header.css');
+@import url('components.css');
+
+/*
+ * Pour utiliser ce fichier, ajoutez dans le <head> de vos pages HTML :
+ * <link rel="stylesheet" href="css/main.css">
+ *
+ * Cela remplacera tous les styles inline actuels.
+ */
