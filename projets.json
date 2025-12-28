@@ -12,49 +12,6 @@
     "chiffres": []
   },
   {
-    "id": 16,
-    "titre": "Pérenniser les festivals et événements",
-    "theme": "Culture",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Animation culturelle",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 18,
-    "titre": "Soutenir les associations culturelles",
-    "theme": "Culture",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Vie associative",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 21,
-    "titre": "Projet en cours de conception",
-    "theme": "Économie",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Tourisme",
-    "description": "",
-    "importance": 1,
-    "image": "",
-    "images": [],
-    "chiffres": [],
-    "chronologie": [],
-    "documents": [],
-    "details": "",
-    "sources": [],
-    "lien_source": []
-  },
-  {
     "id": 26,
     "titre": "Centre-ville Espaces partagés • Marche, commerces, lien marché → château",
     "themes": [
@@ -82,18 +39,6 @@
     "vision": "",
     "sources": [],
     "lien_source": []
-  },
-  {
-    "id": 28,
-    "titre": "Améliorer l'accessibilité des espaces publics",
-    "theme": "Seniors",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Accessibilité",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
   },
   {
     "id": 33,
