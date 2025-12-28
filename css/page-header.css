@@ -3,14 +3,13 @@
 /* Hero banner style index */
 .hero-banner {
     position: relative;
-    min-height: 40vh;
+    min-height: calc(40vh + 130px); /* Ajoute la hauteur du header */
+    padding-top: 130px; /* Pousse le contenu sous le header */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     overflow: hidden;
-    margin-top: -130px; /* Remonte sous le header fixe */
-    padding-top: 130px; /* Compense pour le contenu */
 }
 
 .hero-banner::before {
@@ -63,6 +62,7 @@
     background: linear-gradient(135deg, var(--bleu-vizille) 0%, var(--bleu-clair) 100%);
     color: white;
     padding: 3rem 1.5rem;
+    padding-top: calc(3rem + 130px); /* Compense le header fixe */
     text-align: center;
 }
 
@@ -120,8 +120,12 @@
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .hero-banner {
-        margin-top: -100px; /* Header plus petit sur mobile */
-        padding-top: 100px;
+        min-height: calc(40vh + 100px);
+        padding-top: 100px; /* Header plus petit sur mobile */
+    }
+
+    .page-header {
+        padding-top: calc(3rem + 100px);
     }
 
     .hero-logo {
