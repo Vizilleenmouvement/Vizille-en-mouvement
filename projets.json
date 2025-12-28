@@ -103,18 +103,6 @@
     "chiffres": []
   },
   {
-    "id": 28,
-    "titre": "Améliorer l'accessibilité des espaces publics",
-    "theme": "Seniors",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Accessibilité",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
     "id": 32,
     "titre": "Instaurer des correspondants de quartier",
     "theme": "Tranquillité",
@@ -185,7 +173,11 @@
     "description": "Améliorer les liaisons vers l'agglomération et la vallée : bus, navettes, covoiturage, parkings relais, câble, rail.",
     "importance": 3,
     "chiffres": [],
-    "tags": ["Connexion", "Alternatives", "Long terme"],
+    "tags": [
+      "Connexion",
+      "Alternatives",
+      "Long terme"
+    ],
     "slogan": "Relier • Diversifier • Anticiper",
     "enjeux": [
       "Réduire la dépendance à la voiture individuelle",
@@ -198,7 +190,11 @@
       "Scénarios transport par câble (long terme)",
       "Réflexion sur la solution ferroviaire"
     ],
-    "indicateurs": ["Études engagées", "Partenaires mobilisés", "Usage des alternatives"],
+    "indicateurs": [
+      "Études engagées",
+      "Partenaires mobilisés",
+      "Usage des alternatives"
+    ],
     "vision": "Aucune hypothèse n'est écartée pour connecter Vizille au territoire.",
     "numero": "1/7",
     "image": "images/objectifs/objectif_1.png"
@@ -214,7 +210,11 @@
     "description": "Liaisons vers Grenoble, Oisans, Uriage et Matheysine. Réseau continu, lisible et sécurisé.",
     "importance": 3,
     "chiffres": [],
-    "tags": ["Tranquillité", "Sécurité", "Mobilités"],
+    "tags": [
+      "Tranquillité",
+      "Sécurité",
+      "Mobilités"
+    ],
     "slogan": "Relier • Sécuriser • Rendre lisible",
     "enjeux": [
       "Sécuriser les trajets du quotidien",
@@ -227,7 +227,11 @@
       "Traiter discontinuités et points de conflit",
       "Jalonnement cohérent • Cohabitation des usages"
     ],
-    "indicateurs": ["Continuités renforcées", "Points dangereux traités", "Retours d'usagers"],
+    "indicateurs": [
+      "Continuités renforcées",
+      "Points dangereux traités",
+      "Retours d'usagers"
+    ],
     "vision": "Un réseau cyclable continu, de quartier à quartier, de vallée à montagne.",
     "numero": "2/7",
     "image": "images/objectifs/objectif_2.png"
@@ -243,7 +247,11 @@
     "description": "Traversées sûres, abords d'écoles protégés, accessibilité renforcée pour tous.",
     "importance": 3,
     "chiffres": [],
-    "tags": ["Sécurité", "Accessibilité", "Confort"],
+    "tags": [
+      "Sécurité",
+      "Accessibilité",
+      "Confort"
+    ],
     "slogan": "Protéger • Faciliter • Rassurer",
     "enjeux": [
       "Réduire les situations à risque",
@@ -257,7 +265,11 @@
       "Rendre les carrefours plus lisibles",
       "Apaiser les vitesses sur secteurs sensibles"
     ],
-    "indicateurs": ["Points sensibles traités", "Qualité des cheminements", "Retours usagers"],
+    "indicateurs": [
+      "Points sensibles traités",
+      "Qualité des cheminements",
+      "Retours usagers"
+    ],
     "vision": "Des déplacements sûrs et accessibles pour tous, à chaque âge de la vie.",
     "numero": "3/7",
     "image": "images/objectifs/objectif_3.png"
@@ -273,7 +285,11 @@
     "description": "Réduire les nuisances du transit : bruit, vitesses excessives, à-coups de circulation.",
     "importance": 2,
     "chiffres": [],
-    "tags": ["Tranquillité", "Cadre de vie", "Sécurité"],
+    "tags": [
+      "Tranquillité",
+      "Cadre de vie",
+      "Sécurité"
+    ],
     "slogan": "Ralentir • Protéger • Fluidifier",
     "enjeux": [
       "Réduire vitesses et nuisances sonores",
@@ -286,7 +302,11 @@
       "Assurer la cohérence avec le plan de circulation",
       "Suivre et ajuster selon les retours"
     ],
-    "indicateurs": ["Vitesses constatées", "Perception des nuisances", "Reports de trafic"],
+    "indicateurs": [
+      "Vitesses constatées",
+      "Perception des nuisances",
+      "Reports de trafic"
+    ],
     "vision": "Des quartiers protégés du transit, pour une vie quotidienne apaisée.",
     "numero": "4/7",
     "image": "images/objectifs/objectif_4.png"
@@ -302,7 +322,11 @@
     "description": "Clarifier les itinéraires, hiérarchiser les axes, réduire détours et conflits d'usages.",
     "importance": 2,
     "chiffres": [],
-    "tags": ["Lisibilité", "Hiérarchie", "Fluidité"],
+    "tags": [
+      "Lisibilité",
+      "Hiérarchie",
+      "Fluidité"
+    ],
     "slogan": "Clarifier • Hiérarchiser • Simplifier",
     "enjeux": [
       "Mieux se déplacer dans la commune",
@@ -315,7 +339,11 @@
       "Clarification signalisation et carrefours",
       "Tester puis déployer progressivement"
     ],
-    "indicateurs": ["Répartition des flux", "Vitesses constatées", "Retours d'usage"],
+    "indicateurs": [
+      "Répartition des flux",
+      "Vitesses constatées",
+      "Retours d'usage"
+    ],
     "vision": "Un plan lisible pour des déplacements simples et cohérents.",
     "numero": "5/7",
     "image": "images/objectifs/objectif_5.png"
@@ -331,7 +359,11 @@
     "description": "Cheminements piétons confortables, espaces partagés lisibles, connexion marché ↔ château.",
     "importance": 3,
     "chiffres": [],
-    "tags": ["Convivialité", "Commerce", "Patrimoine"],
+    "tags": [
+      "Convivialité",
+      "Commerce",
+      "Patrimoine"
+    ],
     "slogan": "Vivre • Partager • Relier",
     "enjeux": [
       "Améliorer la qualité de vie au centre-ville",
@@ -344,7 +376,11 @@
       "Renforcer les continuités piétonnes",
       "Améliorer la liaison marché → château"
     ],
-    "indicateurs": ["Fréquentation", "Retours commerçants/habitants", "Qualité perçue"],
+    "indicateurs": [
+      "Fréquentation",
+      "Retours commerçants/habitants",
+      "Qualité perçue"
+    ],
     "vision": "Un centre-ville apaisé, vivant et connecté à son patrimoine.",
     "numero": "6/7",
     "image": "images/objectifs/objectif_6.png"
@@ -360,7 +396,11 @@
     "description": "Régulation conforme à la vocation du feu : déclenchée uniquement en cas de congestion avérée.",
     "importance": 3,
     "chiffres": [],
-    "tags": ["Régulation", "Bouchons", "Fluidité"],
+    "tags": [
+      "Régulation",
+      "Bouchons",
+      "Fluidité"
+    ],
     "slogan": "Analyser • Adapter • Fluidifier",
     "enjeux": [
       "Réduire les temps de trajet quotidiens",
@@ -373,7 +413,11 @@
       "Porter le sujet avec les partenaires (Département, Métro)",
       "Mettre en cohérence avec les alternatives de mobilité"
     ],
-    "indicateurs": ["Temps de parcours", "Durée des phases", "Retours usagers"],
+    "indicateurs": [
+      "Temps de parcours",
+      "Durée des phases",
+      "Retours usagers"
+    ],
     "vision": "Transparence des données, régulation adaptée, bouchons réduits.",
     "numero": "7/7",
     "image": "images/objectifs/objectif_7.png"
