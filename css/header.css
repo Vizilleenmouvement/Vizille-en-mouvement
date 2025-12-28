@@ -1,9 +1,13 @@
 /* ===== HEADER & NAVIGATION - Vizille en Mouvement ===== */
 
 .header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
     background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-top {
@@ -113,6 +117,10 @@ nav ul li a.admin-link:hover {
 
 /* ===== RESPONSIVE HEADER ===== */
 @media (max-width: 768px) {
+    body {
+        padding-top: 100px; /* Header plus petit sur mobile */
+    }
+
     .header-main {
         flex-direction: column;
         gap: 1rem;

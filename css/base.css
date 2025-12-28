@@ -12,6 +12,7 @@ body {
     color: var(--gris-texte);
     line-height: 1.6;
     overflow-x: hidden;
+    padding-top: 130px; /* Compense le header fixe */
 }
 
 /* ===== LIENS ===== */
