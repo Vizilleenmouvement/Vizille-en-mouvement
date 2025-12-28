@@ -3331,33 +3331,155 @@
         }
 
         // Gestion de l'import d'image
-        function handleImageImport(input) {
+        async function handleImageImport(input) {
             const file = input.files[0];
             if (!file) return;
+
+            if (file.size > 2 * 1024 * 1024) {
+                showToast('Image trop grande (max 2 Mo)', 'warning');
+                return;
+            }
 
             // Générer un nom de fichier propre
             const fileName = file.name.replace(/\s+/g, '_').toLowerCase();
             const imagePath = 'images/objectifs/' + fileName;
 
-            // Mettre à jour le champ texte
-            document.getElementById('edit-image').value = imagePath;
-
             // Afficher la prévisualisation
             const preview = document.getElementById('image-preview');
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = async function(e) {
                 preview.innerHTML = `<img src="${e.target.result}" style="max-width: 150px; max-height: 100px; border-radius: 8px; border: 1px solid var(--gris-border);">`;
                 preview.style.display = 'block';
+
+                // Upload automatique sur GitHub
+                const token = getToken();
+                if (token) {
+                    showToast('Upload de l\'image en cours...', 'info');
+                    const base64Content = e.target.result.split(',')[1];
+
+                    try {
+                        // Vérifier si le fichier existe déjà
+                        let sha = null;
+                        const getResponse = await fetch(
+                            `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${imagePath}?ref=${GITHUB_CONFIG.branch}`,
+                            { headers: { 'Authorization': `token ${token}` } }
+                        );
+                        if (getResponse.ok) {
+                            sha = (await getResponse.json()).sha;
+                        }
+
+                        const body = {
+                            message: `Upload image ${fileName}`,
+                            content: base64Content,
+                            branch: GITHUB_CONFIG.branch
+                        };
+                        if (sha) body.sha = sha;
+
+                        const response = await fetch(
+                            `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${imagePath}`,
+                            {
+                                method: 'PUT',
+                                headers: {
+                                    'Authorization': `token ${token}`,
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(body)
+                            }
+                        );
+
+                        if (response.ok) {
+                            showToast('Image uploadée sur GitHub !', 'success');
+                            document.getElementById('edit-image').value = imagePath;
+                        } else {
+                            const error = await response.json();
+                            throw new Error(error.message);
+                        }
+                    } catch (err) {
+                        showToast('Erreur upload: ' + err.message, 'error');
+                        // Mettre quand même le chemin pour usage local
+                        document.getElementById('edit-image').value = imagePath;
+                    }
+                } else {
+                    // Pas de token = usage local uniquement
+                    document.getElementById('edit-image').value = imagePath;
+                    showToast('Image sélectionnée (local)', 'info');
+                }
             };
             reader.readAsDataURL(file);
-
-            // Stocker le fichier pour upload ultérieur
-            window.pendingImageFile = file;
-            window.pendingImagePath = imagePath;
-
-            showToast('📁 Image sélectionnée : ' + fileName + '\\n⚠️ Placez le fichier dans images/projets/', 'info');
         }
-        
+
+        // Import d'image pour les articles (dossier images/articles/)
+        async function handleArticleImageImport(input) {
+            const file = input.files[0];
+            if (!file) return;
+
+            if (file.size > 2 * 1024 * 1024) {
+                showToast('Image trop grande (max 2 Mo)', 'warning');
+                return;
+            }
+
+            const fileName = file.name.replace(/\s+/g, '_').toLowerCase();
+            const imagePath = 'images/articles/' + fileName;
+
+            const preview = document.getElementById('image-preview');
+            const reader = new FileReader();
+            reader.onload = async function(e) {
+                preview.innerHTML = `<label style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--bleu);">Aperçu image :</label><img src="${e.target.result}" style="max-width: 200px; max-height: 150px; border-radius: 8px; border: 2px solid var(--gris-border);">`;
+                preview.style.display = 'block';
+
+                const token = getToken();
+                if (token) {
+                    showToast('Upload de l\'image en cours...', 'info');
+                    const base64Content = e.target.result.split(',')[1];
+
+                    try {
+                        let sha = null;
+                        const getResponse = await fetch(
+                            `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${imagePath}?ref=${GITHUB_CONFIG.branch}`,
+                            { headers: { 'Authorization': `token ${token}` } }
+                        );
+                        if (getResponse.ok) {
+                            sha = (await getResponse.json()).sha;
+                        }
+
+                        const body = {
+                            message: `Upload image article ${fileName}`,
+                            content: base64Content,
+                            branch: GITHUB_CONFIG.branch
+                        };
+                        if (sha) body.sha = sha;
+
+                        const response = await fetch(
+                            `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${imagePath}`,
+                            {
+                                method: 'PUT',
+                                headers: {
+                                    'Authorization': `token ${token}`,
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(body)
+                            }
+                        );
+
+                        if (response.ok) {
+                            showToast('Image uploadée sur GitHub !', 'success');
+                            document.getElementById('edit-image').value = imagePath;
+                        } else {
+                            const error = await response.json();
+                            throw new Error(error.message);
+                        }
+                    } catch (err) {
+                        showToast('Erreur upload: ' + err.message, 'error');
+                        document.getElementById('edit-image').value = imagePath;
+                    }
+                } else {
+                    document.getElementById('edit-image').value = imagePath;
+                    showToast('Image sélectionnée (local)', 'info');
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
         function addImageRow() {
             const container = document.getElementById('images-container');
             const row = document.createElement('div');
@@ -4461,8 +4583,14 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Image (URL)</label>
-                        <input type="url" id="edit-image" value="${a.image || ''}" placeholder="https://... ou images/nom.jpg">
+                        <label>Image</label>
+                        <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+                            <input type="text" id="edit-image" value="${a.image || ''}" placeholder="https://... ou images/nom.jpg" style="flex: 1; min-width: 200px;">
+                            <label class="btn btn-outline btn-sm" style="cursor: pointer; margin: 0;">
+                                📁 Importer
+                                <input type="file" id="import-image-article" accept="image/*" onchange="handleArticleImageImport(this)" style="display: none;">
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
