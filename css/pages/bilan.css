@@ -209,31 +209,33 @@
 
 .theme-filters-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 0.5rem;
 }
 
 .theme-filter-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 0.75rem;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.75rem 0.5rem;
     background: var(--blanc-casse);
     border: 2px solid transparent;
-    border-radius: 12px;
+    border-radius: 10px;
     font-weight: 500;
     font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.2s;
     text-align: center;
+    min-height: 70px;
 }
 
 .theme-filter-btn:hover {
     background: white;
     border-color: var(--or);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .theme-filter-btn.active {
@@ -244,12 +246,17 @@
 }
 
 .theme-filter-btn .icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    flex-shrink: 0;
 }
 
 .theme-filter-btn .label {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
 }
 
 .filters-divider {

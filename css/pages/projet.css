@@ -213,24 +213,26 @@
 }
 
 .theme-filters-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     gap: 0.5rem;
 }
 
 .theme-filter-btn {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.4rem;
-    padding: 0.5rem 0.9rem;
+    padding: 0.6rem 0.5rem;
     background: var(--blanc-casse);
     border: 1px solid var(--gris-doux);
-    border-radius: 20px;
+    border-radius: 8px;
     font-weight: 500;
     font-size: 0.8rem;
     cursor: pointer;
     transition: all 0.2s;
     text-align: center;
+    min-height: 44px;
 }
 
 .theme-filter-btn:hover {
@@ -249,11 +251,15 @@
 
 .theme-filter-btn .icon {
     font-size: 1.1rem;
+    flex-shrink: 0;
 }
 
 .theme-filter-btn .label {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Bouton retour aux thèmes */
@@ -1106,45 +1112,171 @@
         max-width: 150px;
     }
 
+    /* Stats compacts */
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .stat-card {
+        padding: 0.75rem 0.5rem;
     }
 
     .stat-number {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    /* Graphiques cachés par défaut */
     .charts-section {
+        display: none;
+    }
+
+    .charts-section.show-mobile {
+        display: grid;
         grid-template-columns: 1fr;
     }
 
+    .chart-container {
+        height: 200px;
+    }
+
+    /* Bouton toggle graphiques */
+    .toggle-charts-btn {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        background: var(--blanc-casse);
+        border: 2px dashed var(--gris-doux);
+        border-radius: var(--radius-sm);
+        font-weight: 600;
+        color: var(--bleu-vizille);
+        cursor: pointer;
+    }
+
+    /* Filtres thème en grille 3 colonnes */
+    .theme-filters-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.4rem;
+    }
+
+    .theme-filter-btn {
+        padding: 0.4rem 0.25rem;
+        min-height: 40px;
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+
+    .theme-filter-btn .icon {
+        font-size: 1rem;
+    }
+
+    .theme-filter-btn .label {
+        font-size: 0.6rem;
+    }
+
+    /* Filtres standard */
     .filters-grid {
         grid-template-columns: 1fr;
+        gap: 0.75rem;
     }
 
-    .cards-grid {
-        grid-template-columns: 1fr;
+    .filters-section {
+        padding: 1rem;
     }
 
+    /* Thèmes en 2 colonnes */
     .themes-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
     }
 
-    .data-table {
+    .theme-card {
         font-size: 0.85rem;
     }
 
-    .data-table th, .data-table td {
-        padding: 0.625rem;
+    .theme-header {
+        padding: 0.75rem;
+    }
+
+    .theme-icon {
+        font-size: 1.5rem;
+    }
+
+    .theme-info h3 {
+        font-size: 0.85rem;
+    }
+
+    .theme-info .count {
+        font-size: 0.7rem;
+    }
+
+    .theme-stats {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.7rem;
+    }
+
+    .theme-preview {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .preview-list li {
+        font-size: 0.75rem;
+    }
+
+    /* Cartes projets compactes */
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
     }
 
     .action-card {
+        font-size: 0.9rem;
         border: 2px solid var(--gris-doux);
+    }
+
+    .card-header {
+        padding: 0.75rem 1rem;
+    }
+
+    .card-body {
+        padding: 0 1rem 1rem;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-description {
+        font-size: 0.85rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
     .card-detail-hint {
         opacity: 1;
         font-weight: 600;
+    }
+
+    /* Table */
+    .data-table {
+        font-size: 0.8rem;
+    }
+
+    .data-table th, .data-table td {
+        padding: 0.5rem;
+    }
+
+    .data-table th:nth-child(5),
+    .data-table td:nth-child(5) {
+        display: none;
     }
 
     .site-nav-grid {
@@ -1154,6 +1286,37 @@
     .site-nav-btn {
         justify-content: center;
     }
+
+    /* Modal compact */
+    .modal-header {
+        padding: 1.5rem;
+    }
+
+    .modal-title {
+        font-size: 1.3rem;
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+    }
+
+    .modal-infos-cles {
+        gap: 0.5rem;
+    }
+
+    .info-cle {
+        min-width: 100px;
+        padding: 0.75rem;
+    }
+
+    .info-cle-value {
+        font-size: 1rem;
+    }
+}
+
+/* Bouton toggle graphiques - caché sur desktop */
+.toggle-charts-btn {
+    display: none;
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
