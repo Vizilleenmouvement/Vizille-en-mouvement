@@ -120,32 +120,32 @@
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .hero-banner {
-        min-height: calc(35vh + 80px);
-        padding-top: 80px; /* Header compact sur mobile */
+        min-height: calc(30vh + 70px);
+        padding-top: 70px; /* Header très compact sur mobile */
     }
 
     .page-header {
-        padding-top: calc(2rem + 80px);
-        padding-bottom: 2rem;
+        padding-top: calc(1.5rem + 70px);
+        padding-bottom: 1.5rem;
     }
 
     .hero-logo {
-        max-width: 200px;
+        max-width: 180px;
     }
 
     .slogan {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .page-header h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     .page-header p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .hero-content {
-        padding: 1rem;
+        padding: 0.75rem;
     }
 }
