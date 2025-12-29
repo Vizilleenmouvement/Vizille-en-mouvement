@@ -96,7 +96,8 @@
         <!-- Charts Section -->
         <section>
             <h2 class="section-title">📊 Vue synthétique</h2>
-            <div class="charts-section">
+            <button class="toggle-charts-btn" onclick="toggleCharts()">📊 Voir les graphiques</button>
+            <div class="charts-section" id="charts-section">
                 <div class="chart-card">
                     <h3>Répartition par thème</h3>
                     <div class="chart-container">
@@ -348,6 +349,19 @@ const themeConfig = {
 
 // Instances de graphiques
 let chartThemes, chartAnnees, chartStatuts;
+
+// ===== TOGGLE GRAPHIQUES MOBILE =====
+function toggleCharts() {
+    const charts = document.getElementById('charts-section');
+    const btn = document.querySelector('.toggle-charts-btn');
+    if (charts.classList.contains('show-mobile')) {
+        charts.classList.remove('show-mobile');
+        btn.textContent = '📊 Voir les graphiques';
+    } else {
+        charts.classList.add('show-mobile');
+        btn.textContent = '📊 Masquer les graphiques';
+    }
+}
 
 // ===== INITIALISATION =====
 document.addEventListener('DOMContentLoaded', init);
