@@ -2312,11 +2312,18 @@
             for (const [key, file] of Object.entries(files)) {
                 setStatus(key, 'loading', '⏳...');
                 try {
-                    const url = `https://raw.githubusercontent.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/${GITHUB_CONFIG.branch}/${file}`;
-                    console.log(`Chargement de ${file}...`, url);
-                    const response = await fetch(url);
+                    // Utiliser l'API GitHub au lieu de raw.githubusercontent pour éviter le cache
+                    const token = getToken();
+                    const url = `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${file}?ref=${GITHUB_CONFIG.branch}&t=${Date.now()}`;
+                    console.log(`Chargement de ${file}...`);
+                    const response = await fetch(url, {
+                        headers: token ? { 'Authorization': `token ${token}` } : {}
+                    });
                     if (response.ok) {
-                        const loaded = await response.json();
+                        const apiResponse = await response.json();
+                        // Décoder le contenu base64 de l'API GitHub
+                        const content = atob(apiResponse.content.replace(/\n/g, ''));
+                        const loaded = JSON.parse(content);
                         if (key === 'config') {
                             data.config = { ...data.config, ...loaded };
                         } else if (key === 'themes') {
