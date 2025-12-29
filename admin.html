@@ -2297,7 +2297,16 @@
         // ===== CHARGEMENT DONNÉES =====
         async function loadAllData() {
             showToast('⏳ Chargement des données...', 'info');
-            
+
+            // Réinitialiser les données pour éviter les doublons
+            data.projets = [];
+            data.themes = [];
+            data.actions = [];
+            data.candidats = [];
+            data.faq = [];
+            data.articles = [];
+            data.abonnes = [];
+
             const files = {
                 projets: 'projets.json',
                 themes: 'themes.json',
@@ -2321,8 +2330,10 @@
                     });
                     if (response.ok) {
                         const apiResponse = await response.json();
-                        // Décoder le contenu base64 de l'API GitHub
-                        const content = atob(apiResponse.content.replace(/\n/g, ''));
+                        // Décoder le contenu base64 de l'API GitHub avec support UTF-8
+                        const base64 = apiResponse.content.replace(/\n/g, '');
+                        const bytes = Uint8Array.from(atob(base64), c => c.charCodeAt(0));
+                        const content = new TextDecoder('utf-8').decode(bytes);
                         const loaded = JSON.parse(content);
                         if (key === 'config') {
                             data.config = { ...data.config, ...loaded };
