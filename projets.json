@@ -91,18 +91,6 @@
     "chiffres": []
   },
   {
-    "id": 28,
-    "titre": "Améliorer l'accessibilité des espaces publics",
-    "theme": "Seniors",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Accessibilité",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
     "id": 32,
     "titre": "Instaurer des correspondants de quartier",
     "theme": "Tranquillité",
