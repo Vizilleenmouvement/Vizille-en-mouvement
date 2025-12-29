@@ -55,54 +55,6 @@
     "lien_source": []
   },
   {
-    "id": 22,
-    "titre": "Achever le maillage de vidéoprotection",
-    "theme": "Tranquillité",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Vidéoprotection",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 23,
-    "titre": "Déployer l'éclairage intelligent",
-    "theme": "Tranquillité",
-    "statut": "Programmé",
-    "annee": 2028,
-    "budget": 0,
-    "resume": "Éclairage public",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 24,
-    "titre": "Renforcer la médiation de proximité",
-    "theme": "Tranquillité",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Médiation",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
-    "id": 32,
-    "titre": "Instaurer des correspondants de quartier",
-    "theme": "Tranquillité",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Démocratie de proximité",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
     "id": 33,
     "titre": "Renforcer la transparence (open data)",
     "theme": "Démocratie locale",
