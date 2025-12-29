@@ -701,34 +701,5 @@
     "vision": "Une culture du risque partagée, sans dramatisation.",
     "numero": "11/11",
     "image": "images/objectifs/tranquillite_11.png"
-  },
-  {
-    "id": 1767000009245,
-    "titre": "nouveau",
-    "themes": [
-      "Solidarité"
-    ],
-    "theme": "Solidarité",
-    "statut": "Programmé",
-    "annee": null,
-    "budget": 0,
-    "resume": "nouveau",
-    "description": "nouveau",
-    "importance": 1,
-    "image": "",
-    "images": [],
-    "chiffres": [],
-    "chronologie": [],
-    "documents": [],
-    "details": "",
-    "slogan": "",
-    "numero": "",
-    "tags": [],
-    "enjeux": [],
-    "axes_action": [],
-    "indicateurs": [],
-    "vision": "",
-    "sources": [],
-    "lien_source": []
   }
 ]
