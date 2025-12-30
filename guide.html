@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide d'administration - Vizille en Mouvement</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6; color: #333; max-width: 800px;
+            margin: 0 auto; padding: 2rem 1rem; background: #f5f5f5;
+        }
+        h1 { color: #1a5276; text-align: center; margin-bottom: 0.5rem; font-size: 1.8rem; }
+        .subtitle { text-align: center; color: #666; margin-bottom: 2rem; }
+        h2 { color: #1a5276; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 3px solid #d4a600; }
+        h3 { color: #2980b9; margin: 1.5rem 0 0.5rem; }
+        .card {
+            background: white; border-radius: 12px; padding: 1.5rem;
+            margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .step { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start; }
+        .step-number {
+            background: #1a5276; color: white; width: 32px; height: 32px;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-weight: bold; flex-shrink: 0;
+        }
+        .step-content { flex: 1; }
+        .important {
+            background: #fff3cd; border-left: 4px solid #d4a600;
+            padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;
+        }
+        .important strong { color: #856404; }
+        .warning {
+            background: #f8d7da; border-left: 4px solid #dc3545;
+            padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;
+        }
+        .credentials {
+            background: #e8f4f8; border-left: 4px solid #1a5276;
+            padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0;
+        }
+        code { background: #e9ecef; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.9rem; }
+        .btn-print {
+            display: block; width: 200px; margin: 2rem auto; padding: 1rem 2rem;
+            background: #1a5276; color: white; border: none; border-radius: 8px;
+            font-size: 1rem; cursor: pointer;
+        }
+        .btn-print:hover { background: #154360; }
+        .back-link { display: block; text-align: center; margin-bottom: 2rem; color: #1a5276; }
+        ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.5rem; }
+        a { color: #1a5276; }
+        @media print {
+            body { background: white; padding: 1rem; }
+            .btn-print, .back-link { display: none; }
+            .card { box-shadow: none; border: 1px solid #ddd; }
+            .credentials { background: #f0f0f0 !important; -webkit-print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<a href="admin.html" class="back-link">← Retour à l'administration</a>
+
+<h1>Guide d'administration</h1>
+<p class="subtitle">Vizille en Mouvement - Comment mettre à jour le site</p>
+
+<!-- CONNEXION -->
+<h2>1. Se connecter</h2>
+<div class="card">
+    <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+            Allez sur <strong>admin.html</strong> (ou cliquez sur ⚙️ dans le menu du site)
+        </div>
+    </div>
+    <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+            Entrez le <strong>mot de passe</strong> administrateur
+        </div>
+    </div>
+    <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+            Entrez votre <strong>Token GitHub</strong> en haut à droite (obligatoire pour publier)
+        </div>
+    </div>
+
+    <div class="important">
+        <strong>Token GitHub :</strong> C'est une clé qui vous autorise à modifier le site.
+        Voir la section "Créer un Token GitHub" en fin de guide.
+    </div>
+</div>
+
+<!-- AJOUTER UN CANDIDAT -->
+<h2>2. Ajouter un candidat</h2>
+<div class="card">
+    <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">Cliquez sur l'onglet <strong>👥 Candidats</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">Cliquez sur <strong>+ Nouveau candidat</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">Remplissez : Nom, Prénom, Rôle, Bio, Photo</div>
+    </div>
+    <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">Cliquez sur <strong>Enregistrer</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-content">Cliquez sur <strong>📤 Publier</strong></div>
+    </div>
+</div>
+
+<!-- AJOUTER UN PROJET -->
+<h2>3. Ajouter un projet</h2>
+<div class="card">
+    <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">Cliquez sur l'onglet <strong>🚀 Projets</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">Cliquez sur <strong>+ Nouveau projet</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+            Remplissez les champs :
+            <ul>
+                <li><strong>Titre</strong> : nom du projet</li>
+                <li><strong>Thème(s)</strong> : cliquez sur les badges pour sélectionner</li>
+                <li><strong>Statut</strong> : Programmé, En cours, Réalisé</li>
+                <li><strong>Résumé</strong> : courte description</li>
+                <li><strong>Description</strong> : texte complet</li>
+            </ul>
+        </div>
+    </div>
+    <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">Cliquez sur <strong>Enregistrer</strong> puis <strong>📤 Publier</strong></div>
+    </div>
+</div>
+
+<!-- AJOUTER UNE ACTUALITÉ -->
+<h2>4. Ajouter une actualité</h2>
+<div class="card">
+    <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">Cliquez sur l'onglet <strong>📰 Articles</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">Cliquez sur <strong>+ Nouvel article</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+            Remplissez :
+            <ul>
+                <li><strong>Titre</strong> : titre de l'article</li>
+                <li><strong>Date</strong> : date de publication</li>
+                <li><strong>Catégorie</strong> : Actualité, Événement, Communiqué...</li>
+                <li><strong>Extrait</strong> : résumé court</li>
+                <li><strong>Contenu</strong> : texte complet</li>
+            </ul>
+        </div>
+    </div>
+    <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content"><strong>Enregistrer</strong> puis <strong>📤 Publier</strong></div>
+    </div>
+</div>
+
+<!-- RÉPONDRE À UNE QUESTION -->
+<h2>5. Répondre à une question</h2>
+<div class="card">
+    <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">Cliquez sur l'onglet <strong>🤝 Construisons ensemble</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">Cliquez sur <strong>+ Nouvelle question</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+            Remplissez :
+            <ul>
+                <li><strong>Question</strong> : la question posée</li>
+                <li><strong>Réponse</strong> : votre réponse</li>
+                <li><strong>Auteur</strong> : prénom (optionnel)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content"><strong>Enregistrer</strong> puis <strong>📤 Publier</strong></div>
+    </div>
+</div>
+
+<!-- AJOUTER UNE ACTION AU BILAN -->
+<h2>6. Ajouter une action au bilan</h2>
+<div class="card">
+    <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">Cliquez sur l'onglet <strong>📊 Actions</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">Cliquez sur <strong>+ Nouvelle action</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">Remplissez : Titre, Thème, Statut (Réalisé/En cours/Prévu), Description</div>
+    </div>
+    <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content"><strong>Enregistrer</strong> puis <strong>📤 Publier</strong></div>
+    </div>
+</div>
+
+<!-- RÈGLES IMPORTANTES -->
+<h2>⚠️ Règles importantes</h2>
+<div class="card">
+    <div class="warning">
+        <strong>Toujours PUBLIER après avoir enregistré !</strong><br>
+        Si vous ne cliquez pas sur "Publier", vos modifications ne seront pas visibles sur le site.
+    </div>
+
+    <h3>Les indicateurs de statut</h3>
+    <ul>
+        <li>✅ <strong>À jour</strong> : tout est publié</li>
+        <li>⚠️ <strong>Modifié</strong> : des modifications attendent d'être publiées</li>
+        <li>⏳ <strong>...</strong> : chargement en cours</li>
+        <li>❌ <strong>Erreur</strong> : vérifiez votre token GitHub</li>
+    </ul>
+
+    <h3>Délai de mise à jour</h3>
+    <p>Après publication, attendez <strong>1 à 5 minutes</strong> pour voir les changements sur le site. C'est normal !</p>
+</div>
+
+<!-- CRÉER UN TOKEN GITHUB -->
+<h2>7. Créer un Token GitHub</h2>
+<div class="card">
+    <p style="margin-bottom: 1rem;">Le token est une clé de sécurité qui vous permet de publier sur le site.</p>
+
+    <div class="credentials">
+        <strong>🔐 Identifiants GitHub :</strong><br>
+        <strong>Compte :</strong> Vizilleenmouvement<br>
+        <strong>Mot de passe :</strong> <em>(demander à l'administrateur)</em>
+    </div>
+
+    <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+            Allez sur <a href="https://github.com/login" target="_blank"><strong>github.com</strong></a> et connectez-vous avec les identifiants ci-dessus
+        </div>
+    </div>
+    <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">Cliquez sur votre photo de profil (en haut à droite) → <strong>Settings</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">Dans le menu à gauche, tout en bas, cliquez sur <strong>Developer settings</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">Cliquez sur <strong>Personal access tokens</strong> → <strong>Tokens (classic)</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-content">Cliquez sur <strong>Generate new token</strong> → <strong>Generate new token (classic)</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">6</div>
+        <div class="step-content">
+            Remplissez :
+            <ul>
+                <li><strong>Note</strong> : Admin Vizille</li>
+                <li><strong>Expiration</strong> : No expiration (pour ne pas avoir à le refaire)</li>
+                <li><strong>Cochez</strong> : ☑️ <strong>repo</strong> (accès aux fichiers)</li>
+            </ul>
+        </div>
+    </div>
+    <div class="step">
+        <div class="step-number">7</div>
+        <div class="step-content">Cliquez sur <strong>Generate token</strong> en bas de page</div>
+    </div>
+    <div class="step">
+        <div class="step-number">8</div>
+        <div class="step-content"><strong>Copiez le token</strong> (il commence par <code>ghp_...</code>) et collez-le dans l'admin</div>
+    </div>
+
+    <div class="warning">
+        <strong>Attention !</strong> Le token ne s'affiche qu'une seule fois. Copiez-le immédiatement !
+        Si vous le perdez, il faudra en créer un nouveau.
+    </div>
+
+    <p style="margin-top: 1rem; text-align: center;">
+        <a href="https://github.com/settings/tokens" target="_blank" style="display: inline-block; background: #333; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none;">🔗 Accéder à GitHub Tokens</a>
+    </p>
+</div>
+
+<!-- INVITER UN COLLABORATEUR -->
+<h2>8. Inviter un collaborateur</h2>
+<div class="card">
+    <p style="margin-bottom: 1rem;">Pour donner accès à une autre personne sans partager vos identifiants :</p>
+
+    <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">Allez sur <a href="https://github.com/Vizilleenmouvement/Vizille-en-mouvement" target="_blank"><strong>github.com/Vizilleenmouvement/Vizille-en-mouvement</strong></a></div>
+    </div>
+    <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">Cliquez sur <strong>Settings</strong> (onglet en haut)</div>
+    </div>
+    <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">Dans le menu à gauche, cliquez sur <strong>Collaborators</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">Cliquez sur <strong>Add people</strong></div>
+    </div>
+    <div class="step">
+        <div class="step-number">5</div>
+        <div class="step-content">Entrez l'<strong>email</strong> de la personne à inviter</div>
+    </div>
+
+    <div class="important">
+        <strong>Ce qui se passe ensuite :</strong><br>
+        La personne reçoit un email d'invitation. Elle devra créer un compte GitHub gratuit (si elle n'en a pas), puis créer son propre token en suivant la section 7 de ce guide.
+    </div>
+
+    <p style="margin-top: 1rem; text-align: center;">
+        <a href="https://github.com/Vizilleenmouvement/Vizille-en-mouvement/settings/access" target="_blank" style="display: inline-block; background: #333; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none;">🔗 Gérer les collaborateurs</a>
+    </p>
+</div>
+
+<!-- EN CAS DE PROBLÈME -->
+<h2>9. En cas de problème</h2>
+<div class="card">
+    <ul>
+        <li>Vérifiez que le token GitHub est bien entré</li>
+        <li>Rafraîchissez la page (F5 ou Cmd+R)</li>
+        <li>Attendez quelques minutes (cache GitHub)</li>
+        <li>Contactez l'administrateur technique</li>
+    </ul>
+</div>
+
+<button class="btn-print" onclick="window.print()">🖨️ Imprimer ce guide</button>
+
+<p style="text-align: center; color: #888; margin-top: 2rem; font-size: 0.9rem;">
+    Guide mis à jour le 30 décembre 2024
+</p>
+
+</body>
+</html>
