@@ -96,6 +96,7 @@
 /* Page header compact */
 .page-header-compact {
     padding: 1.5rem 1.5rem;
+    padding-top: calc(2.5rem + 130px); /* Compense le header fixe + espace pour le logo */
 }
 
 .page-header-compact .header-logo {
@@ -143,6 +144,10 @@
 
     .page-header p {
         font-size: 0.85rem;
+    }
+
+    .page-header-compact {
+        padding-top: calc(1rem + 70px); /* Header compact sur mobile */
     }
 
     .hero-content {
