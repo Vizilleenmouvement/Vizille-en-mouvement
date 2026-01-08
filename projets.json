@@ -1,5 +1,137 @@
 [
   {
+    "id": 8,
+    "titre": "Améliorer l'accessibilité de tous les bâtiments",
+    "theme": "Solidarité",
+    "statut": "Prioritaire",
+    "annee": 2028,
+    "budget": 0,
+    "resume": "Accessibilité PMR",
+    "description": "",
+    "importance": 3,
+    "chiffres": []
+  },
+  {
+    "id": 10,
+    "titre": "Rendre la Maison de Santé pleinement opérationnelle",
+    "theme": "Santé",
+    "statut": "Programmé",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Accès aux soins",
+    "description": "",
+    "importance": 2,
+    "chiffres": []
+  },
+  {
+    "id": 16,
+    "titre": "Pérenniser les festivals et événements",
+    "theme": "Culture",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Animation culturelle",
+    "description": "",
+    "importance": 2,
+    "chiffres": []
+  },
+  {
+    "id": 18,
+    "titre": "Soutenir les associations culturelles",
+    "theme": "Culture",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Vie associative",
+    "description": "",
+    "importance": 1,
+    "chiffres": []
+  },
+  {
+    "id": 21,
+    "titre": "Projet en cours de conception",
+    "theme": "Économie",
+    "statut": "Programmé",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Tourisme",
+    "description": "",
+    "importance": 1,
+    "chiffres": []
+  },
+  {
+    "id": 22,
+    "titre": "Achever le maillage de vidéoprotection",
+    "theme": "Tranquillité",
+    "statut": "Programmé",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Vidéoprotection",
+    "description": "",
+    "importance": 2,
+    "chiffres": []
+  },
+  {
+    "id": 23,
+    "titre": "Déployer l'éclairage intelligent",
+    "theme": "Tranquillité",
+    "statut": "Programmé",
+    "annee": 2028,
+    "budget": 0,
+    "resume": "Éclairage public",
+    "description": "",
+    "importance": 1,
+    "chiffres": []
+  },
+  {
+    "id": 24,
+    "titre": "Renforcer la médiation de proximité",
+    "theme": "Tranquillité",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Médiation",
+    "description": "",
+    "importance": 1,
+    "chiffres": []
+  },
+  {
+    "id": 28,
+    "titre": "Améliorer l'accessibilité des espaces publics",
+    "theme": "Seniors",
+    "statut": "Programmé",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Accessibilité",
+    "description": "",
+    "importance": 2,
+    "chiffres": []
+  },
+  {
+    "id": 32,
+    "titre": "Instaurer des correspondants de quartier",
+    "theme": "Tranquillité",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Démocratie de proximité",
+    "description": "",
+    "importance": 1,
+    "chiffres": []
+  },
+  {
+    "id": 33,
+    "titre": "Renforcer la transparence (open data)",
+    "theme": "Démocratie locale",
+    "statut": "Programmé",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Transparence",
+    "description": "",
+    "importance": 1,
+    "chiffres": []
+  },
+  {
     "id": 34,
     "titre": "Le maire siègera personnellement aux conseils métropolitains",
     "theme": "Métropole",
@@ -46,11 +178,7 @@
     "description": "Améliorer les liaisons vers l'agglomération et la vallée : bus, navettes, covoiturage, parkings relais, câble, rail.",
     "importance": 3,
     "chiffres": [],
-    "tags": [
-      "Connexion",
-      "Alternatives",
-      "Long terme"
-    ],
+    "tags": ["Connexion", "Alternatives", "Long terme"],
     "slogan": "Relier • Diversifier • Anticiper",
     "enjeux": [
       "Réduire la dépendance à la voiture individuelle",
@@ -63,11 +191,7 @@
       "Scénarios transport par câble (long terme)",
       "Réflexion sur la solution ferroviaire"
     ],
-    "indicateurs": [
-      "Études engagées",
-      "Partenaires mobilisés",
-      "Usage des alternatives"
-    ],
+    "indicateurs": ["Études engagées", "Partenaires mobilisés", "Usage des alternatives"],
     "vision": "Aucune hypothèse n'est écartée pour connecter Vizille au territoire.",
     "numero": "1/7",
     "image": "images/objectifs/objectif_1.png"
@@ -83,11 +207,7 @@
     "description": "Liaisons vers Grenoble, Oisans, Uriage et Matheysine. Réseau continu, lisible et sécurisé.",
     "importance": 3,
     "chiffres": [],
-    "tags": [
-      "Tranquillité",
-      "Sécurité",
-      "Mobilités"
-    ],
+    "tags": ["Tranquillité", "Sécurité", "Mobilités"],
     "slogan": "Relier • Sécuriser • Rendre lisible",
     "enjeux": [
       "Sécuriser les trajets du quotidien",
@@ -100,11 +220,7 @@
       "Traiter discontinuités et points de conflit",
       "Jalonnement cohérent • Cohabitation des usages"
     ],
-    "indicateurs": [
-      "Continuités renforcées",
-      "Points dangereux traités",
-      "Retours d'usagers"
-    ],
+    "indicateurs": ["Continuités renforcées", "Points dangereux traités", "Retours d'usagers"],
     "vision": "Un réseau cyclable continu, de quartier à quartier, de vallée à montagne.",
     "numero": "2/7",
     "image": "images/objectifs/objectif_2.png"
@@ -120,11 +236,7 @@
     "description": "Traversées sûres, abords d'écoles protégés, accessibilité renforcée pour tous.",
     "importance": 3,
     "chiffres": [],
-    "tags": [
-      "Sécurité",
-      "Accessibilité",
-      "Confort"
-    ],
+    "tags": ["Sécurité", "Accessibilité", "Confort"],
     "slogan": "Protéger • Faciliter • Rassurer",
     "enjeux": [
       "Réduire les situations à risque",
@@ -138,11 +250,7 @@
       "Rendre les carrefours plus lisibles",
       "Apaiser les vitesses sur secteurs sensibles"
     ],
-    "indicateurs": [
-      "Points sensibles traités",
-      "Qualité des cheminements",
-      "Retours usagers"
-    ],
+    "indicateurs": ["Points sensibles traités", "Qualité des cheminements", "Retours usagers"],
     "vision": "Des déplacements sûrs et accessibles pour tous, à chaque âge de la vie.",
     "numero": "3/7",
     "image": "images/objectifs/objectif_3.png"
@@ -158,11 +266,7 @@
     "description": "Réduire les nuisances du transit : bruit, vitesses excessives, à-coups de circulation.",
     "importance": 2,
     "chiffres": [],
-    "tags": [
-      "Tranquillité",
-      "Cadre de vie",
-      "Sécurité"
-    ],
+    "tags": ["Tranquillité", "Cadre de vie", "Sécurité"],
     "slogan": "Ralentir • Protéger • Fluidifier",
     "enjeux": [
       "Réduire vitesses et nuisances sonores",
@@ -175,11 +279,7 @@
       "Assurer la cohérence avec le plan de circulation",
       "Suivre et ajuster selon les retours"
     ],
-    "indicateurs": [
-      "Vitesses constatées",
-      "Perception des nuisances",
-      "Reports de trafic"
-    ],
+    "indicateurs": ["Vitesses constatées", "Perception des nuisances", "Reports de trafic"],
     "vision": "Des quartiers protégés du transit, pour une vie quotidienne apaisée.",
     "numero": "4/7",
     "image": "images/objectifs/objectif_4.png"
@@ -195,11 +295,7 @@
     "description": "Clarifier les itinéraires, hiérarchiser les axes, réduire détours et conflits d'usages.",
     "importance": 2,
     "chiffres": [],
-    "tags": [
-      "Lisibilité",
-      "Hiérarchie",
-      "Fluidité"
-    ],
+    "tags": ["Lisibilité", "Hiérarchie", "Fluidité"],
     "slogan": "Clarifier • Hiérarchiser • Simplifier",
     "enjeux": [
       "Mieux se déplacer dans la commune",
@@ -212,11 +308,7 @@
       "Clarification signalisation et carrefours",
       "Tester puis déployer progressivement"
     ],
-    "indicateurs": [
-      "Répartition des flux",
-      "Vitesses constatées",
-      "Retours d'usage"
-    ],
+    "indicateurs": ["Répartition des flux", "Vitesses constatées", "Retours d'usage"],
     "vision": "Un plan lisible pour des déplacements simples et cohérents.",
     "numero": "5/7",
     "image": "images/objectifs/objectif_5.png"
@@ -232,11 +324,7 @@
     "description": "Cheminements piétons confortables, espaces partagés lisibles, connexion marché ↔ château.",
     "importance": 3,
     "chiffres": [],
-    "tags": [
-      "Convivialité",
-      "Commerce",
-      "Patrimoine"
-    ],
+    "tags": ["Convivialité", "Commerce", "Patrimoine"],
     "slogan": "Vivre • Partager • Relier",
     "enjeux": [
       "Améliorer la qualité de vie au centre-ville",
@@ -249,11 +337,7 @@
       "Renforcer les continuités piétonnes",
       "Améliorer la liaison marché → château"
     ],
-    "indicateurs": [
-      "Fréquentation",
-      "Retours commerçants/habitants",
-      "Qualité perçue"
-    ],
+    "indicateurs": ["Fréquentation", "Retours commerçants/habitants", "Qualité perçue"],
     "vision": "Un centre-ville apaisé, vivant et connecté à son patrimoine.",
     "numero": "6/7",
     "image": "images/objectifs/objectif_6.png"
@@ -269,11 +353,7 @@
     "description": "Régulation conforme à la vocation du feu : déclenchée uniquement en cas de congestion avérée.",
     "importance": 3,
     "chiffres": [],
-    "tags": [
-      "Régulation",
-      "Bouchons",
-      "Fluidité"
-    ],
+    "tags": ["Régulation", "Bouchons", "Fluidité"],
     "slogan": "Analyser • Adapter • Fluidifier",
     "enjeux": [
       "Réduire les temps de trajet quotidiens",
@@ -286,11 +366,7 @@
       "Porter le sujet avec les partenaires (Département, Métro)",
       "Mettre en cohérence avec les alternatives de mobilité"
     ],
-    "indicateurs": [
-      "Temps de parcours",
-      "Durée des phases",
-      "Retours usagers"
-    ],
+    "indicateurs": ["Temps de parcours", "Durée des phases", "Retours usagers"],
     "vision": "Transparence des données, régulation adaptée, bouchons réduits.",
     "numero": "7/7",
     "image": "images/objectifs/objectif_7.png"
@@ -306,11 +382,7 @@
     "description": "La présence visible des agents municipaux dans l'espace public est un facteur essentiel de tranquillité. Elle rassure les habitants, dissuade les comportements inappropriés et permet une détection précoce des problèmes.",
     "importance": 3,
     "chiffres": [],
-    "tags": [
-      "Présence",
-      "Proximité",
-      "Prévention"
-    ],
+    "tags": ["Présence", "Proximité", "Prévention"],
     "slogan": "Être là • Au bon moment • Au bon endroit",
     "enjeux": [
       "Rassurer les habitants par une présence visible",
@@ -323,11 +395,7 @@
       "Coordination avec les services municipaux",
       "Ajustement continu selon les retours terrain"
     ],
-    "indicateurs": [
-      "Nombre de patrouilles par semaine",
-      "Temps de réponse moyen",
-      "Signalements traités"
-    ],
+    "indicateurs": ["Nombre de patrouilles par semaine", "Temps de réponse moyen", "Signalements traités"],
     "vision": "Une présence stratégique : être là où et quand c'est utile.",
     "numero": "1/11",
     "image": "images/objectifs/tranquillite_1.png"
@@ -343,11 +411,7 @@
     "description": "Beaucoup de situations de tension naissent de malentendus ou de voisinages difficiles. La médiation est souvent plus efficace que la sanction : elle permet de restaurer le dialogue.",
     "importance": 3,
     "chiffres": [],
-    "tags": [
-      "Médiation",
-      "Dialogue",
-      "Prévention"
-    ],
+    "tags": ["Médiation", "Dialogue", "Prévention"],
     "slogan": "Écouter • Dialoguer • Résoudre",
     "enjeux": [
       "Traiter rapidement les tensions avant qu'elles s'enveniment",
@@ -360,11 +424,7 @@
       "Prévention jeunesse sur créneaux sensibles",
       "Coordination avec bailleurs, écoles, associations"
     ],
-    "indicateurs": [
-      "Conflits traités et apaisés",
-      "Taux de récidive",
-      "Retours des habitants"
-    ],
+    "indicateurs": ["Conflits traités et apaisés", "Taux de récidive", "Retours des habitants"],
     "vision": "Une implication directe des élus dans la médiation et la prévention.",
     "numero": "2/11",
     "image": "images/objectifs/tranquillite_2.png"
@@ -380,11 +440,7 @@
     "description": "Le bruit est la première nuisance citée par les habitants. Notre approche : des règles connues, des contrôles ciblés, une réactivité quand ça déborde. La pédagogie d'abord, la sanction si récidive.",
     "importance": 3,
     "chiffres": [],
-    "tags": [
-      "Bruit",
-      "Nuisances",
-      "Calme"
-    ],
+    "tags": ["Bruit", "Nuisances", "Calme"],
     "slogan": "Prévenir • Contrôler • Sanctionner si récidive",
     "enjeux": [
       "Réduire les nuisances sonores au quotidien",
@@ -397,11 +453,7 @@
       "Lutte contre dépôts et dégradations",
       "Pédagogie et sanctions graduées"
     ],
-    "indicateurs": [
-      "Plaintes liées au bruit",
-      "Délai d'intervention",
-      "Actions correctives"
-    ],
+    "indicateurs": ["Plaintes liées au bruit", "Délai d'intervention", "Actions correctives"],
     "vision": "Des règles connues, des contrôles ciblés, une réactivité sans faille.",
     "numero": "3/11",
     "image": "images/objectifs/tranquillite_3.png"
@@ -417,11 +469,7 @@
     "description": "Les comportements dangereux sur la route – vitesses excessives, rodéos, non-respect des priorités – sont une source majeure d'inquiétude. L'enjeu est d'apaiser la circulation sans la bloquer.",
     "importance": 3,
     "chiffres": [],
-    "tags": [
-      "Vitesse",
-      "Sécurité routière",
-      "Rodéos"
-    ],
+    "tags": ["Vitesse", "Sécurité routière", "Rodéos"],
     "slogan": "Contrôler • Dissuader • Protéger",
     "enjeux": [
       "Protéger les usagers vulnérables",
@@ -434,11 +482,7 @@
       "Sécurisation des abords d'écoles",
       "Mesures ciblées avec suivi d'efficacité"
     ],
-    "indicateurs": [
-      "Vitesse moyenne constatée",
-      "Incidents signalés",
-      "Ressenti aux abords des écoles"
-    ],
+    "indicateurs": ["Vitesse moyenne constatée", "Incidents signalés", "Ressenti aux abords des écoles"],
     "vision": "Faire respecter des règles qui permettent à chacun de circuler en sécurité.",
     "numero": "4/11",
     "image": "images/objectifs/tranquillite_4.png"
@@ -454,11 +498,7 @@
     "description": "L'aménagement de l'espace public influence directement le sentiment de sécurité. Un parking mal éclairé, un passage peu visible génèrent de l'anxiété. La prévention par le cadre de vie est une approche durable.",
     "importance": 2,
     "chiffres": [],
-    "tags": [
-      "Éclairage",
-      "Aménagement",
-      "Prévention"
-    ],
+    "tags": ["Éclairage", "Aménagement", "Prévention"],
     "slogan": "Éclairer • Dégager • Sécuriser",
     "enjeux": [
       "Réduire le sentiment d'insécurité dans l'espace public",
@@ -471,11 +511,7 @@
       "Cheminements lisibles et continus",
       "Projets d'éclairage adaptés secteur par secteur"
     ],
-    "indicateurs": [
-      "Zones traitées",
-      "Délai de traitement",
-      "Ressenti sur les parcours"
-    ],
+    "indicateurs": ["Zones traitées", "Délai de traitement", "Ressenti sur les parcours"],
     "vision": "Un espace public où l'on se sent en sécurité, de jour comme de nuit.",
     "numero": "5/11",
     "image": "images/objectifs/tranquillite_5.png"
@@ -491,11 +527,7 @@
     "description": "La vidéoprotection permet de dissuader certains comportements, de faciliter l'identification des auteurs d'infractions et de rassurer les habitants. L'objectif est d'achever le maillage prévu.",
     "importance": 2,
     "chiffres": [],
-    "tags": [
-      "Vidéoprotection",
-      "Sécurité",
-      "Transparence"
-    ],
+    "tags": ["Vidéoprotection", "Sécurité", "Transparence"],
     "slogan": "Couvrir • Exploiter • Respecter",
     "enjeux": [
       "Compléter la couverture des zones sensibles",
@@ -508,11 +540,7 @@
       "Transparence réglementaire et affichage conforme",
       "Chaîne d'action : signalement → visionnage → intervention"
     ],
-    "indicateurs": [
-      "Incidents traités grâce à la vidéo",
-      "Délai d'exploitation",
-      "Évolution des incivilités"
-    ],
+    "indicateurs": ["Incidents traités grâce à la vidéo", "Délai d'exploitation", "Évolution des incivilités"],
     "vision": "Un outil efficace au service de la tranquillité, dans le respect du cadre légal.",
     "numero": "6/11",
     "image": "images/objectifs/tranquillite_6.png"
@@ -528,11 +556,7 @@
     "description": "La propreté de l'espace public est une composante essentielle de la tranquillité. Une ville propre est une ville où l'on se sent respecté. La propreté repose sur deux piliers : réactivité et prévention.",
     "importance": 2,
     "chiffres": [],
-    "tags": [
-      "Propreté",
-      "Réactivité",
-      "Cadre de vie"
-    ],
+    "tags": ["Propreté", "Réactivité", "Cadre de vie"],
     "slogan": "Nettoyer vite • Éviter que ce soit sali",
     "enjeux": [
       "Maintenir un espace public propre et accueillant",
@@ -545,11 +569,7 @@
       "Déjections canines : pédagogie et distributeurs de sacs",
       "Équipements adaptés : corbeilles et cendriers"
     ],
-    "indicateurs": [
-      "Délai d'intervention",
-      "Points critiques résolus",
-      "Évolution des signalements"
-    ],
+    "indicateurs": ["Délai d'intervention", "Points critiques résolus", "Évolution des signalements"],
     "vision": "Une ville propre où les règles communes sont respectées.",
     "numero": "7/11",
     "image": "images/objectifs/tranquillite_7.png"
@@ -565,11 +585,7 @@
     "description": "Le lien avec les habitants est la clé d'une action efficace. Ce sont eux qui vivent au quotidien dans les quartiers. Ce lien ne peut pas reposer uniquement sur le numérique.",
     "importance": 3,
     "chiffres": [],
-    "tags": [
-      "Proximité",
-      "Référents",
-      "Accessibilité"
-    ],
+    "tags": ["Proximité", "Référents", "Accessibilité"],
     "slogan": "Écouter • Relayer • Agir",
     "enjeux": [
       "Maintenir un lien direct avec les habitants",
@@ -582,11 +598,7 @@
       "Canal de signalement simple et unique",
       "Réunions de quartier ponctuelles et utiles"
     ],
-    "indicateurs": [
-      "Signalements reçus et traités",
-      "Retours des référents",
-      "Participation aux réunions"
-    ],
+    "indicateurs": ["Signalements reçus et traités", "Retours des référents", "Participation aux réunions"],
     "vision": "Des relais humains identifiés dans chaque quartier.",
     "numero": "8/11",
     "image": "images/objectifs/tranquillite_8.png"
@@ -602,11 +614,7 @@
     "description": "La tranquillité publique implique de nombreux acteurs : gendarmerie, bailleurs sociaux, établissements scolaires, associations, services de l'État. L'efficacité dépend de la coordination.",
     "importance": 2,
     "chiffres": [],
-    "tags": [
-      "Partenariat",
-      "Coordination",
-      "Efficacité"
-    ],
+    "tags": ["Partenariat", "Coordination", "Efficacité"],
     "slogan": "Coordonner • Partager • Agir ensemble",
     "enjeux": [
       "Coordonner tous les acteurs de la tranquillité",
@@ -619,11 +627,7 @@
       "Échanges opérationnels avec gendarmerie, bailleurs, écoles",
       "Projet de nouvelle gendarmerie"
     ],
-    "indicateurs": [
-      "Actions conjointes réalisées",
-      "Délais inter-acteurs",
-      "Points noirs suivis en partenariat"
-    ],
+    "indicateurs": ["Actions conjointes réalisées", "Délais inter-acteurs", "Points noirs suivis en partenariat"],
     "vision": "Une chaîne de réponse partagée entre tous les acteurs.",
     "numero": "9/11",
     "image": "images/objectifs/tranquillite_9.png"
@@ -639,11 +643,7 @@
     "description": "La confiance des habitants repose sur la transparence de l'action publique. Il ne suffit pas d'agir, il faut montrer ce qu'on fait et rendre compte des résultats.",
     "importance": 2,
     "chiffres": [],
-    "tags": [
-      "Transparence",
-      "Méthode",
-      "Bilan"
-    ],
+    "tags": ["Transparence", "Méthode", "Bilan"],
     "slogan": "Identifier • Agir • Mesurer • Publier",
     "enjeux": [
       "Rendre compte de l'action municipale",
@@ -656,11 +656,7 @@
       "Projets d'éclairage documentés secteur par secteur",
       "Bilan annuel public des résultats"
     ],
-    "indicateurs": [
-      "Points noirs recensés et traités",
-      "Délais de traitement",
-      "Publication du bilan annuel"
-    ],
+    "indicateurs": ["Points noirs recensés et traités", "Délais de traitement", "Publication du bilan annuel"],
     "vision": "La méthode : identifier, agir, mesurer, publier.",
     "numero": "10/11",
     "image": "images/objectifs/tranquillite_10.png"
@@ -676,11 +672,7 @@
     "description": "Vizille est exposée à différents risques : inondation, risques industriels, risques naturels. La culture du risque consiste à informer sans dramatiser, à donner les bons réflexes.",
     "importance": 2,
     "chiffres": [],
-    "tags": [
-      "Risques",
-      "Prévention",
-      "Information"
-    ],
+    "tags": ["Risques", "Prévention", "Information"],
     "slogan": "Informer • Former • Préparer",
     "enjeux": [
       "Informer les habitants sur les risques locaux",
@@ -693,13 +685,241 @@
       "Formation des élus et agents",
       "Exercices PCS réguliers et retours d'expérience"
     ],
-    "indicateurs": [
-      "Écoles sensibilisées",
-      "Exercices réalisés",
-      "Mises à jour du PCS"
-    ],
+    "indicateurs": ["Écoles sensibilisées", "Exercices réalisés", "Mises à jour du PCS"],
     "vision": "Une culture du risque partagée, sans dramatisation.",
     "numero": "11/11",
     "image": "images/objectifs/tranquillite_11.png"
+  },
+  {
+    "id": 301,
+    "titre": "Objectif 1 - Petite enfance & modes de garde",
+    "theme": "Enfance/Jeunesse",
+    "statut": "Étude",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Adapter l'offre aux besoins des familles",
+    "description": "L'accueil des tout-petits est une préoccupation majeure des jeunes familles. Nous étudierons l'opportunité d'une municipalisation de la crèche et repenserons son implantation pour réduire les embouteillages.",
+    "importance": 3,
+    "chiffres": [],
+    "tags": ["Crèche", "Familles", "Accueil"],
+    "slogan": "Accueillir • Accompagner • Adapter",
+    "enjeux": [
+      "Répondre aux besoins de garde des familles",
+      "Améliorer l'accessibilité des structures",
+      "Offrir des espaces de jeux adaptés aux tout-petits"
+    ],
+    "axes_action": [
+      "État des lieux des modes de garde (crèche, assistantes maternelles, RAM)",
+      "Étude de municipalisation : coûts vs leviers d'action",
+      "Réflexion sur l'implantation (accessibilité, embouteillages)",
+      "Développer les parcs de jeux et lieux de rencontre"
+    ],
+    "indicateurs": ["Places disponibles", "Taux de satisfaction", "Coût par place"],
+    "vision": "Une offre de garde adaptée aux réalités des familles vizilloises.",
+    "numero": "1/8",
+    "image": "images/objectifs/enfance_1.png"
+  },
+  {
+    "id": 302,
+    "titre": "Objectif 2 - Conseil des jeunes",
+    "theme": "Enfance/Jeunesse",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Donner la parole aux enfants",
+    "description": "Former les citoyens de demain commence dès l'école. Le conseil des jeunes permet aux élèves de s'initier à la démocratie locale et de participer à la vie de leur commune.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": ["Citoyenneté", "Démocratie", "Éducation"],
+    "slogan": "Écouter • Impliquer • Former",
+    "enjeux": [
+      "Initier les enfants à la vie démocratique",
+      "Leur permettre de porter des projets concrets",
+      "Créer un lien entre jeunes et élus"
+    ],
+    "axes_action": [
+      "Créer un conseil des jeunes (élèves d'élémentaire)",
+      "S'inspirer des dispositifs des communes voisines",
+      "Organiser des séances régulières avec les élus",
+      "Permettre aux jeunes de porter des projets concrets"
+    ],
+    "indicateurs": ["Nombre de participants", "Projets proposés", "Écoles participantes"],
+    "vision": "Des enfants acteurs de leur commune dès le plus jeune âge.",
+    "numero": "2/8",
+    "image": "images/objectifs/enfance_2.png"
+  },
+  {
+    "id": 303,
+    "titre": "Objectif 3 - Confort thermique des écoles",
+    "theme": "Enfance/Jeunesse",
+    "statut": "Prioritaire",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Protéger les enfants des fortes chaleurs",
+    "description": "Les épisodes de canicule rendent les conditions d'apprentissage très difficiles. Des températures jusqu'à 44°C ont été relevées dans certaines classes. Il est urgent d'agir.",
+    "importance": 3,
+    "chiffres": ["44°C relevés en classe"],
+    "tags": ["Canicule", "Écoles", "Santé"],
+    "slogan": "Protéger • Rafraîchir • Anticiper",
+    "enjeux": [
+      "Garantir des conditions d'apprentissage acceptables",
+      "Protéger la santé des enfants et du personnel",
+      "Trouver des solutions durables et écologiques"
+    ],
+    "axes_action": [
+      "Déploiement de protections solaires (lames de bois, stores)",
+      "Étude géothermique des écoles (solutions durables)",
+      "Renforcement du plan canicule",
+      "Végétalisation des cours (ombrage naturel)"
+    ],
+    "indicateurs": ["Températures relevées", "Classes équipées", "Signalements chaleur"],
+    "vision": "Des écoles où les enfants peuvent apprendre dans de bonnes conditions, même en été.",
+    "numero": "3/8",
+    "image": "images/objectifs/enfance_3.png"
+  },
+  {
+    "id": 304,
+    "titre": "Objectif 4 - Engagement citoyen des jeunes",
+    "theme": "Enfance/Jeunesse",
+    "statut": "Programmé",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Valoriser l'engagement et les compétences",
+    "description": "Encourager les jeunes à s'engager dans des actions utiles à la collectivité : premiers secours, pompiers volontaires, bénévolat associatif. Un jeune référent peut inspirer ses pairs.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": ["Engagement", "Bénévolat", "Formation"],
+    "slogan": "S'engager • Se former • Transmettre",
+    "enjeux": [
+      "Valoriser l'engagement des jeunes",
+      "Développer des compétences utiles",
+      "Créer des vocations (pompiers, secouristes)"
+    ],
+    "axes_action": [
+      "Identifier des jeunes référents (pompiers, associations)",
+      "Formations aux gestes de premiers secours",
+      "Mise en valeur des parcours d'engagement",
+      "Partenariat avec les associations locales"
+    ],
+    "indicateurs": ["Jeunes formés", "Actions de bénévolat", "Référents identifiés"],
+    "vision": "Des jeunes engagés qui inspirent leurs pairs et servent leur commune.",
+    "numero": "4/8",
+    "image": "images/objectifs/enfance_4.png"
+  },
+  {
+    "id": 305,
+    "titre": "Objectif 5 - Aller vers les adolescents",
+    "theme": "Enfance/Jeunesse",
+    "statut": "Étude",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Créer du lien avec les jeunes « dehors »",
+    "description": "Certains adolescents ne fréquentent pas les structures existantes et restent « dehors ». Il faut aller à leur rencontre, comprendre leurs besoins. L'objectif n'est pas de surveiller mais d'accompagner.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": ["Adolescents", "Écoute", "Accompagnement"],
+    "slogan": "Rencontrer • Écouter • Proposer",
+    "enjeux": [
+      "Renouer le contact avec les jeunes éloignés des structures",
+      "Comprendre leurs attentes réelles",
+      "Proposer des activités qui leur correspondent"
+    ],
+    "axes_action": [
+      "Actions « aller-vers » dans l'espace public",
+      "Écoute des besoins et attentes des adolescents",
+      "Proposition d'activités adaptées à leurs envies",
+      "Accompagnement dans les projets (associations, initiatives)"
+    ],
+    "indicateurs": ["Jeunes rencontrés", "Activités proposées", "Projets accompagnés"],
+    "vision": "Aller vers ceux qui ne viennent pas, pour ne laisser personne de côté.",
+    "numero": "5/8",
+    "image": "images/objectifs/enfance_5.png"
+  },
+  {
+    "id": 306,
+    "titre": "Objectif 6 - Accompagner les créations d'associations",
+    "theme": "Enfance/Jeunesse",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Simplifier les démarches pour les jeunes",
+    "description": "Les jeunes ont des idées mais se heurtent souvent à la complexité administrative. La commune peut les accompagner dans leurs démarches de création associative et de recherche de financement.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": ["Associations", "Accompagnement", "Jeunesse"],
+    "slogan": "Guider • Simplifier • Soutenir",
+    "enjeux": [
+      "Lever les freins administratifs",
+      "Accompagner les premiers pas associatifs",
+      "Favoriser la vie associative locale"
+    ],
+    "axes_action": [
+      "Permanence d'aide aux démarches associatives",
+      "Guide pratique « créer son association à Vizille »",
+      "Mise en relation avec les associations existantes",
+      "Soutien aux premiers projets (locaux, communication)"
+    ],
+    "indicateurs": ["Associations créées", "Jeunes accompagnés", "Projets soutenus"],
+    "vision": "Faciliter l'engagement associatif des jeunes Vizillois.",
+    "numero": "6/8",
+    "image": "images/objectifs/enfance_6.png"
+  },
+  {
+    "id": 307,
+    "titre": "Objectif 7 - Handicap & inclusion",
+    "theme": "Enfance/Jeunesse",
+    "statut": "Étude",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "État des lieux et accompagnement des familles",
+    "description": "L'inclusion des enfants en situation de handicap est un enjeu majeur. Nous ferons un état des lieux de l'accessibilité et améliorerons l'accompagnement des familles concernées.",
+    "importance": 3,
+    "chiffres": [],
+    "tags": ["Handicap", "Inclusion", "Accessibilité"],
+    "slogan": "Accueillir • Adapter • Accompagner",
+    "enjeux": [
+      "Garantir l'accès de tous aux structures municipales",
+      "Accompagner les familles dans leurs démarches",
+      "Former les personnels à l'accueil du handicap"
+    ],
+    "axes_action": [
+      "État des lieux accessibilité (écoles, crèche, périscolaire)",
+      "Identification des besoins non couverts",
+      "Renforcement de l'accompagnement des familles",
+      "Formation des personnels à l'accueil du handicap"
+    ],
+    "indicateurs": ["Enfants accueillis", "Familles accompagnées", "Personnels formés"],
+    "vision": "Une commune où chaque enfant trouve sa place, quelles que soient ses différences.",
+    "numero": "7/8",
+    "image": "images/objectifs/enfance_7.png"
+  },
+  {
+    "id": 308,
+    "titre": "Objectif 8 - Numérique & aide aux devoirs",
+    "theme": "Enfance/Jeunesse",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Réduire les inégalités, soutenir la réussite",
+    "description": "Tous les enfants n'ont pas les mêmes chances face au numérique et à l'aide aux devoirs. La commune agira pour réduire ces inégalités et offrir un soutien adapté à tous.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": ["Numérique", "Égalité", "Soutien scolaire"],
+    "slogan": "Équiper • Accompagner • Réussir",
+    "enjeux": [
+      "Réduire la fracture numérique",
+      "Offrir un soutien scolaire accessible",
+      "Accompagner les parents dans le suivi"
+    ],
+    "axes_action": [
+      "Accès au numérique pour tous (équipements, connexion)",
+      "Renforcement de l'aide aux devoirs",
+      "Partenariats avec associations de soutien scolaire",
+      "Formation des parents aux outils numériques"
+    ],
+    "indicateurs": ["Enfants aidés", "Familles accompagnées", "Équipements fournis"],
+    "vision": "Donner à chaque enfant les mêmes chances de réussite.",
+    "numero": "8/8",
+    "image": "images/objectifs/enfance_8.png"
   }
 ]
