@@ -1019,7 +1019,8 @@
       "Places disponibles",
       "Délais d'inscription",
       "Satisfaction familles"
-    ]
+    ],
+    "image": "images/objectifs/enfance_1.png"
   },
   {
     "id": 508,
@@ -1037,7 +1038,8 @@
       "Participants",
       "Projets proposés",
       "Écoles participantes"
-    ]
+    ],
+    "image": "images/objectifs/enfance_2.png"
   },
   {
     "id": 509,
@@ -1055,7 +1057,8 @@
       "Températures relevées",
       "Classes équipées",
       "Signalements"
-    ]
+    ],
+    "image": "images/objectifs/enfance_3.png"
   },
   {
     "id": 510,
@@ -1073,7 +1076,8 @@
       "Jeunes formés",
       "Actions de bénévolat",
       "Référents identifiés"
-    ]
+    ],
+    "image": "images/objectifs/enfance_4.png"
   },
   {
     "id": 511,
@@ -1091,7 +1095,8 @@
       "Jeunes rencontrés",
       "Activités proposées",
       "Projets accompagnés"
-    ]
+    ],
+    "image": "images/objectifs/enfance_5.png"
   },
   {
     "id": 512,
@@ -1109,7 +1114,8 @@
       "Associations créées",
       "Jeunes accompagnés",
       "Projets soutenus"
-    ]
+    ],
+    "image": "images/objectifs/enfance_6.png"
   },
   {
     "id": 513,
@@ -1127,7 +1133,8 @@
       "Enfants accueillis",
       "Familles accompagnées",
       "Personnels formés"
-    ]
+    ],
+    "image": "images/objectifs/enfance_7.png"
   },
   {
     "id": 514,
@@ -1145,6 +1152,7 @@
       "Enfants aidés",
       "Familles accompagnées",
       "Équipements fournis"
-    ]
+    ],
+    "image": "images/objectifs/enfance_8.png"
   }
 ]
