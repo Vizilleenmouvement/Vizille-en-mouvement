@@ -13701,5 +13701,44 @@
     "details": "",
     "sources": [],
     "lien_source": []
+  },
+  {
+    "id": 304,
+    "theme": "Tranquillité publique",
+    "icon": "🛡️",
+    "color": "#f44336",
+    "statut": "Réalisé",
+    "titre": "Sainte-Barbe des sapeurs-pompiers",
+    "description": "Cérémonie de la Sainte-Barbe des sapeurs-pompiers",
+    "annee": "2024",
+    "annee_fin": "2024",
+    "budget": 0,
+    "source": "Délib",
+    "importance": 1,
+    "resume": "Cérémonie de la Sainte-Barbe des sapeurs-pompiers",
+    "chiffres": [],
+    "chronologie": [
+      {
+        "date": "2022-11-12",
+        "evenement": "Sainte-Barbe + retraite aux flambeaux"
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Délibération",
+        "label": "Délibérations du Conseil Municipal",
+        "url": "https://www.ville-vizille.fr/12600-deliberations.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Police municipale",
+        "url": "https://www.ville-vizille.fr/13723-police-municipale.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Risques majeurs",
+        "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
+      }
+    ]
   }
 ]
