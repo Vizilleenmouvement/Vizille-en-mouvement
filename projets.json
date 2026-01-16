@@ -24,30 +24,6 @@
     "chiffres": []
   },
   {
-    "id": 16,
-    "titre": "Pérenniser les festivals et événements",
-    "theme": "Culture",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Animation culturelle",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
-    "id": 18,
-    "titre": "Soutenir les associations culturelles",
-    "theme": "Culture",
-    "statut": "Programmé",
-    "annee": 2026,
-    "budget": 0,
-    "resume": "Vie associative",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
     "id": 28,
     "titre": "Améliorer l'accessibilité des espaces publics",
     "theme": "Seniors",
