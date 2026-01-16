@@ -12,7 +12,7 @@
 
 .header-top {
     background: var(--bleu-vizille);
-    padding: 0.4rem 0;
+    padding: 0.25rem 0;
     text-align: center;
     border-bottom: 2px solid var(--or);
 }
@@ -30,7 +30,7 @@
 .header-main {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0.6rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,7 +40,7 @@
 
 /* Logo dans le header */
 .nav-header-logo {
-    height: 85px;
+    height: 70px;
     width: auto;
     transition: all var(--transition-normal);
     filter: drop-shadow(0 2px 4px rgba(26, 58, 92, 0.2));
