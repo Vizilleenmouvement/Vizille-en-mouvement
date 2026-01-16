@@ -3,68 +3,58 @@
 /* Grille équipe */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 /* Carte membre */
 .team-card {
     background: white;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: all 0.3s;
     text-align: center;
     cursor: pointer;
-    aspect-ratio: 1;
-    position: relative;
 }
 
 .team-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 .team-card.tete-de-liste {
-    max-width: 180px;
-    margin: 0 auto 0.5rem;
+    max-width: 280px;
 }
 
 .team-photo {
     width: 100%;
-    height: 100%;
+    height: 250px;
     object-fit: cover;
     object-position: top;
 }
 
 .team-card.tete-de-liste .team-photo {
-    height: 100%;
+    height: 280px;
 }
 
 .team-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.85));
-    padding: 0.5rem;
-    color: white;
+    padding: 1rem;
+    background: white;
 }
 
 .team-name {
     font-family: var(--font-heading);
-    font-size: 0.85rem;
-    color: white;
-    margin-bottom: 0;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-    line-height: 1.2;
+    font-size: 1.1rem;
+    color: var(--bleu-vizille);
+    margin-bottom: 0.25rem;
 }
 
 .team-role {
-    color: var(--or-clair);
+    color: var(--or);
     font-weight: 600;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     margin-bottom: 0;
 }
 
@@ -545,24 +535,24 @@
 /* Responsive */
 @media (max-width: 768px) {
     .team-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.75rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
 
     .team-card.tete-de-liste {
-        max-width: 140px;
+        max-width: 100%;
     }
 
     .team-photo {
-        height: 100%;
+        height: 200px;
     }
 
     .team-card.tete-de-liste .team-photo {
-        height: 100%;
+        height: 220px;
     }
 
     .team-name {
-        font-size: 0.75rem;
+        font-size: 1rem;
     }
 
     .leader-card {
