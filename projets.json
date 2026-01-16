@@ -24,18 +24,6 @@
     "chiffres": []
   },
   {
-    "id": 28,
-    "titre": "Améliorer l'accessibilité des espaces publics",
-    "theme": "Seniors",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Accessibilité",
-    "description": "",
-    "importance": 2,
-    "chiffres": []
-  },
-  {
     "id": 33,
     "titre": "Renforcer la transparence (open data)",
     "theme": "Démocratie locale",
