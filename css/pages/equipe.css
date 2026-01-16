@@ -3,8 +3,8 @@
 /* Grille équipe */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
     margin-top: 1rem;
 }
 
@@ -13,7 +13,7 @@
     background: white;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     transition: all 0.3s;
     text-align: center;
     cursor: pointer;
@@ -22,12 +22,12 @@
 }
 
 .team-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
 .team-card.tete-de-liste {
-    max-width: 140px;
+    max-width: 180px;
     margin: 0 auto 0.5rem;
 }
 
@@ -48,13 +48,13 @@
     left: 0;
     right: 0;
     background: linear-gradient(transparent, rgba(0,0,0,0.85));
-    padding: 0.4rem;
+    padding: 0.5rem;
     color: white;
 }
 
 .team-name {
     font-family: var(--font-heading);
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     color: white;
     margin-bottom: 0;
     text-shadow: 0 1px 2px rgba(0,0,0,0.5);
@@ -64,7 +64,7 @@
 .team-role {
     color: var(--or-clair);
     font-weight: 600;
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     margin-bottom: 0;
 }
 
@@ -546,11 +546,11 @@
 @media (max-width: 768px) {
     .team-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
+        gap: 0.75rem;
     }
 
     .team-card.tete-de-liste {
-        max-width: 120px;
+        max-width: 140px;
     }
 
     .team-photo {
@@ -562,7 +562,7 @@
     }
 
     .team-name {
-        font-size: 0.65rem;
+        font-size: 0.75rem;
     }
 
     .leader-card {
