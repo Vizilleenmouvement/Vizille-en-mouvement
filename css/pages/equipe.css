@@ -3,17 +3,17 @@
 /* Grille équipe */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.75rem;
     margin-top: 1rem;
 }
 
 /* Carte membre */
 .team-card {
     background: white;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
     transition: all 0.3s;
     text-align: center;
     cursor: pointer;
@@ -22,12 +22,12 @@
 }
 
 .team-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .team-card.tete-de-liste {
-    max-width: 100px;
+    max-width: 140px;
     margin: 0 auto 0.5rem;
 }
 
@@ -48,13 +48,13 @@
     left: 0;
     right: 0;
     background: linear-gradient(transparent, rgba(0,0,0,0.85));
-    padding: 0.25rem;
+    padding: 0.4rem;
     color: white;
 }
 
 .team-name {
     font-family: var(--font-heading);
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     color: white;
     margin-bottom: 0;
     text-shadow: 0 1px 2px rgba(0,0,0,0.5);
@@ -64,7 +64,7 @@
 .team-role {
     color: var(--or-clair);
     font-weight: 600;
-    font-size: 0.5rem;
+    font-size: 0.65rem;
     margin-bottom: 0;
 }
 
@@ -545,12 +545,12 @@
 /* Responsive */
 @media (max-width: 768px) {
     .team-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0.4rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
     }
 
     .team-card.tete-de-liste {
-        max-width: 80px;
+        max-width: 120px;
     }
 
     .team-photo {
@@ -562,7 +562,7 @@
     }
 
     .team-name {
-        font-size: 0.5rem;
+        font-size: 0.65rem;
     }
 
     .leader-card {
