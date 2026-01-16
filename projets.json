@@ -1002,5 +1002,149 @@
     "vision": "Consommer responsable, près de chez soi.",
     "numero": "6/6",
     "image": "images/objectifs/economie_6.png"
+  },
+  {
+    "id": 507,
+    "theme": "Enfance/Jeunesse",
+    "titre": "Petite enfance",
+    "soustitre": "Accompagner le SICCE",
+    "idee_force": "Renforcer notre implication au sein du SICCE pour sécuriser le fonctionnement et l'accessibilité de la crèche Les Petits Drôles, dans un contexte de circulation contraint.",
+    "actions": [
+      "Participation active à la gouvernance du SICCE",
+      "Dialogue renforcé avec la CAF et le Département",
+      "Amélioration de l'accessibilité (stationnement, accès)",
+      "Étude des besoins complémentaires"
+    ],
+    "indicateurs": [
+      "Places disponibles",
+      "Délais d'inscription",
+      "Satisfaction familles"
+    ]
+  },
+  {
+    "id": 508,
+    "theme": "Enfance/Jeunesse",
+    "titre": "Conseil des jeunes",
+    "soustitre": "Donner la parole aux enfants",
+    "idee_force": "Former les citoyens de demain commence dès l'école. Le conseil des jeunes permet aux élèves de s'initier à la démocratie locale et de participer à la vie de la commune.",
+    "actions": [
+      "Créer un conseil des jeunes (élèves d'élémentaire)",
+      "S'inspirer des dispositifs des communes voisines",
+      "Organiser des séances régulières avec les élus",
+      "Permettre aux jeunes de porter des projets concrets"
+    ],
+    "indicateurs": [
+      "Participants",
+      "Projets proposés",
+      "Écoles participantes"
+    ]
+  },
+  {
+    "id": 509,
+    "theme": "Enfance/Jeunesse",
+    "titre": "Confort thermique des écoles",
+    "soustitre": "Lutter contre les fortes chaleurs",
+    "idee_force": "Les épisodes de canicule rendent les conditions d'apprentissage difficiles. Des températures jusqu'à 44°C ont été relevées. Il est urgent d'agir pour protéger les enfants.",
+    "actions": [
+      "Déploiement de protections solaires (lames de bois, stores)",
+      "Étude géothermique des écoles (solutions durables)",
+      "Renforcement du plan canicule",
+      "Végétalisation des cours (ombrage naturel)"
+    ],
+    "indicateurs": [
+      "Températures relevées",
+      "Classes équipées",
+      "Signalements"
+    ]
+  },
+  {
+    "id": 510,
+    "theme": "Enfance/Jeunesse",
+    "titre": "Engagement citoyen des jeunes",
+    "soustitre": "Valoriser l'engagement et les compétences",
+    "idee_force": "Encourager les jeunes à s'engager dans des actions utiles à la collectivité : premiers secours, pompiers, bénévolat associatif. Un jeune référent peut inspirer ses pairs.",
+    "actions": [
+      "Identifier des jeunes référents (pompiers, associations)",
+      "Formations aux gestes de premiers secours",
+      "Mise en valeur des parcours d'engagement",
+      "Partenariat avec les associations locales"
+    ],
+    "indicateurs": [
+      "Jeunes formés",
+      "Actions de bénévolat",
+      "Référents identifiés"
+    ]
+  },
+  {
+    "id": 511,
+    "theme": "Enfance/Jeunesse",
+    "titre": "Aller vers les adolescents",
+    "soustitre": "Créer du lien avec les jeunes « dehors »",
+    "idee_force": "Certains adolescents ne fréquentent pas les structures existantes. Il faut aller à leur rencontre, comprendre leurs besoins. L'objectif n'est pas de surveiller mais d'accompagner.",
+    "actions": [
+      "Actions « aller-vers » dans l'espace public",
+      "Écoute des besoins et attentes des adolescents",
+      "Proposition d'activités adaptées à leurs envies",
+      "Accompagnement dans les projets (associations, initiatives)"
+    ],
+    "indicateurs": [
+      "Jeunes rencontrés",
+      "Activités proposées",
+      "Projets accompagnés"
+    ]
+  },
+  {
+    "id": 512,
+    "theme": "Enfance/Jeunesse",
+    "titre": "Accompagner les associations",
+    "soustitre": "Simplifier les démarches pour les jeunes",
+    "idee_force": "Les jeunes ont des idées mais se heurtent souvent à la complexité administrative. La commune peut les accompagner dans leurs démarches de création et de financement.",
+    "actions": [
+      "Permanence d'aide aux démarches associatives",
+      "Guide pratique « créer son association à Vizille »",
+      "Mise en relation avec les associations existantes",
+      "Soutien aux premiers projets (locaux, communication)"
+    ],
+    "indicateurs": [
+      "Associations créées",
+      "Jeunes accompagnés",
+      "Projets soutenus"
+    ]
+  },
+  {
+    "id": 513,
+    "theme": "Enfance/Jeunesse",
+    "titre": "Handicap & inclusion",
+    "soustitre": "État des lieux et accompagnement",
+    "idee_force": "L'inclusion des enfants en situation de handicap est un enjeu majeur. Nous ferons un état des lieux de l'accessibilité et améliorerons l'accompagnement des familles.",
+    "actions": [
+      "État des lieux accessibilité (écoles, crèche, périscolaire)",
+      "Identification des besoins non couverts",
+      "Renforcement de l'accompagnement des familles",
+      "Formation des personnels à l'accueil du handicap"
+    ],
+    "indicateurs": [
+      "Enfants accueillis",
+      "Familles accompagnées",
+      "Personnels formés"
+    ]
+  },
+  {
+    "id": 514,
+    "theme": "Enfance/Jeunesse",
+    "titre": "Numérique & aide aux devoirs",
+    "soustitre": "Réduire les inégalités, soutenir la réussite",
+    "idee_force": "Tous les enfants n'ont pas les mêmes chances face au numérique et à l'aide aux devoirs. La commune agira pour réduire ces inégalités et offrir un soutien adapté à tous.",
+    "actions": [
+      "Accès au numérique pour tous (équipements, connexion)",
+      "Renforcement de l'aide aux devoirs",
+      "Partenariats avec associations de soutien scolaire",
+      "Formation des parents aux outils numériques"
+    ],
+    "indicateurs": [
+      "Enfants aidés",
+      "Familles accompagnées",
+      "Équipements fournis"
+    ]
   }
 ]
