@@ -67,20 +67,41 @@
     <main class="content" id="main-content">
 
         <!-- TÊTE DE LISTE -->
-        <div class="leader-card">
-            <div class="leader-photo">
-                <img src="images/catherine-troton.jpg" alt="Catherine Troton">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+            <h2 class="section-title" style="margin: 0;">⭐ Tête de liste</h2>
+            <div class="view-toggle-leader" style="display: flex; gap: 0.5rem;">
+                <button class="view-btn-leader active" data-view="cards" onclick="setLeaderView('cards')" style="padding: 0.5rem 1rem; border: 2px solid var(--bleu-vizille); background: var(--bleu-vizille); color: white; border-radius: 8px; cursor: pointer; font-weight: 600;">
+                    🎴 Carte
+                </button>
+                <button class="view-btn-leader" data-view="list" onclick="setLeaderView('list')" style="padding: 0.5rem 1rem; border: 2px solid var(--bleu-vizille); background: white; color: var(--bleu-vizille); border-radius: 8px; cursor: pointer; font-weight: 600;">
+                    📋 Liste
+                </button>
             </div>
-            <div class="leader-info">
-                <span class="leader-badge">⭐ Tête de liste</span>
-                <h2 class="leader-name">Catherine Troton</h2>
-                <p class="leader-role">Candidate Tête de Liste</p>
-                <p class="leader-bio">Engagée depuis plus de 20 ans pour Vizille. Porte les valeurs de solidarité, d'écoute et de proximité au cœur de son action municipale.</p>
+        </div>
+        <div id="leader-container">
+            <div class="team-grid" style="justify-content: center;">
+                <div class="team-card" style="border: 3px solid var(--or);" onclick="alert('Catherine Troton\n\nCandidate Tête de Liste\n\nEngagée depuis plus de 20 ans pour Vizille. Porte les valeurs de solidarité, d\'écoute et de proximité au cœur de son action municipale.')">
+                    <img src="images/catherine-troton.jpg" alt="Catherine Troton" class="team-photo">
+                    <div class="team-info">
+                        <h3 class="team-name">⭐ Catherine Troton</h3>
+                    </div>
+                </div>
             </div>
+            <p style="text-align: center; color: #666; font-style: italic; margin-top: 0.5rem; font-size: 0.9rem;">👆 Cliquez pour mieux connaître la candidate</p>
         </div>
 
         <!-- LES COLISTIERS -->
-        <h2 class="section-title">Les colistiers</h2>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+            <h2 class="section-title" style="margin: 0;">Les colistiers</h2>
+            <div class="view-toggle" style="display: flex; gap: 0.5rem;">
+                <button class="view-btn active" data-view="cards" onclick="setView('cards')" style="padding: 0.5rem 1rem; border: 2px solid var(--bleu-vizille); background: var(--bleu-vizille); color: white; border-radius: 8px; cursor: pointer; font-weight: 600;">
+                    🎴 Cartes
+                </button>
+                <button class="view-btn" data-view="list" onclick="setView('list')" style="padding: 0.5rem 1rem; border: 2px solid var(--bleu-vizille); background: white; color: var(--bleu-vizille); border-radius: 8px; cursor: pointer; font-weight: 600;">
+                    📋 Liste
+                </button>
+            </div>
+        </div>
         <div class="team-grid" id="team-grid">
             <div class="loading">
                 <span style="font-size: 2rem;">⏳</span>
@@ -173,6 +194,81 @@
 
     <script>
         let candidatsData = [];
+        let currentView = 'cards';
+        let leaderView = 'cards';
+
+        function setLeaderView(view) {
+            leaderView = view;
+            document.querySelectorAll('.view-btn-leader').forEach(btn => {
+                if (btn.dataset.view === view) {
+                    btn.style.background = 'var(--bleu-vizille)';
+                    btn.style.color = 'white';
+                    btn.classList.add('active');
+                } else {
+                    btn.style.background = 'white';
+                    btn.style.color = 'var(--bleu-vizille)';
+                    btn.classList.remove('active');
+                }
+            });
+            renderLeader();
+        }
+
+        function renderLeader() {
+            const container = document.getElementById('leader-container');
+            if (leaderView === 'list') {
+                container.innerHTML = `
+                    <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <thead>
+                            <tr style="background: var(--bleu-vizille); color: white;">
+                                <th style="padding: 1rem; text-align: left;">Photo</th>
+                                <th style="padding: 1rem; text-align: left;">Nom</th>
+                                <th style="padding: 1rem; text-align: left;">Fonction</th>
+                                <th style="padding: 1rem; text-align: left;">Bio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #eee; background: #fffbeb; cursor: pointer;" onclick="alert('Catherine Troton\\n\\nCandidate Tête de Liste\\n\\nEngagée depuis plus de 20 ans pour Vizille. Porte les valeurs de solidarité, d\\'écoute et de proximité au cœur de son action municipale.')">
+                                <td style="padding: 0.75rem;">
+                                    <img src="images/catherine-troton.jpg" alt="Catherine Troton" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--or);">
+                                </td>
+                                <td style="padding: 0.75rem; font-weight: 600;">⭐ Catherine Troton</td>
+                                <td style="padding: 0.75rem; color: #666;">Candidate Tête de Liste</td>
+                                <td style="padding: 0.75rem; color: #888; font-size: 0.9rem;">Engagée depuis plus de 20 ans pour Vizille...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="text-align: center; color: #666; font-style: italic; margin-top: 0.5rem; font-size: 0.9rem;">👆 Cliquez pour mieux connaître la candidate</p>
+                `;
+            } else {
+                container.innerHTML = `
+                    <div class="team-grid" style="justify-content: center;">
+                        <div class="team-card" style="border: 3px solid var(--or);" onclick="alert('Catherine Troton\\n\\nCandidate Tête de Liste\\n\\nEngagée depuis plus de 20 ans pour Vizille. Porte les valeurs de solidarité, d\\'écoute et de proximité au cœur de son action municipale.')">
+                            <img src="images/catherine-troton.jpg" alt="Catherine Troton" class="team-photo">
+                            <div class="team-info">
+                                <h3 class="team-name">⭐ Catherine Troton</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="text-align: center; color: #666; font-style: italic; margin-top: 0.5rem; font-size: 0.9rem;">👆 Cliquez pour mieux connaître la candidate</p>
+                `;
+            }
+        }
+
+        function setView(view) {
+            currentView = view;
+            document.querySelectorAll('.view-btn').forEach(btn => {
+                if (btn.dataset.view === view) {
+                    btn.style.background = 'var(--bleu-vizille)';
+                    btn.style.color = 'white';
+                    btn.classList.add('active');
+                } else {
+                    btn.style.background = 'white';
+                    btn.style.color = 'var(--bleu-vizille)';
+                    btn.classList.remove('active');
+                }
+            });
+            renderTeam();
+        }
 
         async function loadCandidats() {
             try {
@@ -212,35 +308,59 @@
                 return;
             }
 
-            grid.innerHTML = candidatsData.map((candidat, index) => {
-                const photoHtml = candidat.photo
-                    ? `<img src="${candidat.photo}" alt="${candidat.nom}" class="team-photo">`
-                    : `<div class="team-photo-placeholder">👤</div>`;
-
-                // Construire les liens sociaux
-                let socialsHtml = '';
-                if (candidat.email || candidat.facebook || candidat.linkedin || candidat.twitter) {
-                    let links = '';
-                    if (candidat.email) links += `<a href="mailto:${candidat.email}" title="Email" onclick="event.stopPropagation()">📧</a>`;
-                    if (candidat.facebook) links += `<a href="${candidat.facebook}" target="_blank" title="Facebook" onclick="event.stopPropagation()">📘</a>`;
-                    if (candidat.linkedin) links += `<a href="${candidat.linkedin}" target="_blank" title="LinkedIn" onclick="event.stopPropagation()">💼</a>`;
-                    if (candidat.twitter) links += `<a href="${candidat.twitter}" target="_blank" title="Twitter" onclick="event.stopPropagation()">🐦</a>`;
-                    socialsHtml = `<div class="team-socials">${links}</div>`;
-                }
-
-                return `
-                    <div class="team-card" onclick="openCandidatModal(${index})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCandidatModal(${index})}" tabindex="0" role="button" aria-label="${candidat.nom}${candidat.role ? ' - ' + candidat.role : ''}">
-                        ${photoHtml}
-                        <div class="team-info">
-                            <h3 class="team-name">${candidat.nom}</h3>
-                            ${candidat.role ? `<p class="team-role">${candidat.role}</p>` : ''}
-                            ${candidat.delegation ? `<span class="team-delegation">${candidat.delegation}</span>` : ''}
-                            ${candidat.bio ? `<p class="team-bio">${candidat.bio.substring(0, 100)}${candidat.bio.length > 100 ? '...' : ''}</p>` : ''}
-                            ${socialsHtml}
-                        </div>
-                    </div>
+            if (currentView === 'list') {
+                // VUE LISTE
+                grid.style.display = 'block';
+                grid.innerHTML = `
+                    <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <thead>
+                            <tr style="background: var(--bleu-vizille); color: white;">
+                                <th style="padding: 1rem; text-align: left;">Photo</th>
+                                <th style="padding: 1rem; text-align: left;">Nom</th>
+                                <th style="padding: 1rem; text-align: left;">Fonction</th>
+                                <th style="padding: 1rem; text-align: left;">Bio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${candidatsData.map((candidat, index) => `
+                                <tr style="border-bottom: 1px solid #eee; cursor: pointer;" onclick="openCandidatModal(${index})" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 0.75rem;">
+                                        ${candidat.photo 
+                                            ? `<img src="${candidat.photo}" alt="${candidat.nom}" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">`
+                                            : `<div style="width: 50px; height: 50px; border-radius: 50%; background: #e0e0e0; display: flex; align-items: center; justify-content: center;">👤</div>`
+                                        }
+                                    </td>
+                                    <td style="padding: 0.75rem; font-weight: 600;">${candidat.nom}</td>
+                                    <td style="padding: 0.75rem; color: #666;">${candidat.role || candidat.delegation || '—'}</td>
+                                    <td style="padding: 0.75rem; color: #888; font-size: 0.9rem;">${candidat.bio ? candidat.bio.substring(0, 80) + (candidat.bio.length > 80 ? '...' : '') : '—'}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
                 `;
-            }).join('');
+            } else {
+                // VUE CARTES
+                grid.style.display = 'grid';
+                grid.innerHTML = candidatsData.map((candidat, index) => {
+                    const photoHtml = candidat.photo
+                        ? `<img src="${candidat.photo}" alt="${candidat.nom}" class="team-photo">`
+                        : `<div class="team-photo-placeholder" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#e0e0e0;font-size:3rem;">👤</div>`;
+
+                    return `
+                        <div class="team-card" onclick="openCandidatModal(${index})" tabindex="0" role="button" aria-label="${candidat.nom}">
+                            ${photoHtml}
+                            <div class="team-info">
+                                <h3 class="team-name">${candidat.nom}</h3>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                // Phrase indicative
+                const isFemale = candidatsData.some(c => c.sexe === 'F' || c.genre === 'F');
+                const phrase = isFemale ? '👆 Cliquez pour mieux connaître le candidat ou la candidate' : '👆 Cliquez pour mieux connaître le candidat';
+                grid.innerHTML += `<p style="grid-column: 1/-1; text-align: center; color: #666; font-style: italic; margin-top: 0.5rem; font-size: 0.9rem;">${phrase}</p>`;
+            }
         }
 
         document.addEventListener('DOMContentLoaded', loadCandidats);
