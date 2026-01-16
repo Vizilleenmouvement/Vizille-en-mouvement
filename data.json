@@ -2376,6 +2376,58 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
+    ],
+    "images": [
+      {
+        "thumb": "images/bilan/thumbnails/14_Signalements_Politeia/report-3fe525c3-f87b-4c82-bec0-07383c30f782_thumb.jpg",
+        "full": "images/bilan/full/14_Signalements_Politeia/report-3fe525c3-f87b-4c82-bec0-07383c30f782.jpg",
+        "caption": "Signalement traité"
+      },
+      {
+        "thumb": "images/bilan/thumbnails/14_Signalements_Politeia/report-37fbc4ba-92dd-48db-b6cc-b24f27ac7c58_thumb.jpg",
+        "full": "images/bilan/full/14_Signalements_Politeia/report-37fbc4ba-92dd-48db-b6cc-b24f27ac7c58.jpg",
+        "caption": "Intervention"
+      },
+      {
+        "thumb": "images/bilan/thumbnails/14_Signalements_Politeia/report-dd1f6268-1bc0-4d24-ba36-d6e9e8fccf45_thumb.jpg",
+        "full": "images/bilan/full/14_Signalements_Politeia/report-dd1f6268-1bc0-4d24-ba36-d6e9e8fccf45.jpg",
+        "caption": "Réparation effectuée"
+      },
+      {
+        "thumb": "images/bilan/thumbnails/14_Signalements_Politeia/report-1a5ca41c-9342-4bfb-8f4f-4316b341fe21_thumb.jpg",
+        "full": "images/bilan/full/14_Signalements_Politeia/report-1a5ca41c-9342-4bfb-8f4f-4316b341fe21.jpg",
+        "caption": "Problème résolu"
+      },
+      {
+        "thumb": "images/bilan/thumbnails/14_Signalements_Politeia/report-f68ba265-007f-4567-93af-84bb2b2e4889_thumb.jpg",
+        "full": "images/bilan/full/14_Signalements_Politeia/report-f68ba265-007f-4567-93af-84bb2b2e4889.jpg",
+        "caption": "Maintenance"
+      },
+      {
+        "thumb": "images/bilan/thumbnails/14_Signalements_Politeia/report-d3efb225-1940-40f0-bf4e-e69a00914217_thumb.jpg",
+        "full": "images/bilan/full/14_Signalements_Politeia/report-d3efb225-1940-40f0-bf4e-e69a00914217.jpg",
+        "caption": "Travaux"
+      },
+      {
+        "thumb": "images/bilan/thumbnails/14_Signalements_Politeia/report-55a4fe11-848d-4b2b-a529-b9968aaef8c6_thumb.jpg",
+        "full": "images/bilan/full/14_Signalements_Politeia/report-55a4fe11-848d-4b2b-a529-b9968aaef8c6.jpg",
+        "caption": "Aménagement"
+      },
+      {
+        "thumb": "images/bilan/thumbnails/14_Signalements_Politeia/report-68770ad2-c0da-4f8e-9fee-9bb034ead7c9_thumb.jpg",
+        "full": "images/bilan/full/14_Signalements_Politeia/report-68770ad2-c0da-4f8e-9fee-9bb034ead7c9.jpg",
+        "caption": "Voirie"
+      },
+      {
+        "thumb": "images/bilan/thumbnails/14_Signalements_Politeia/report-6e441ff9-f284-47ac-b0c6-6439ae5cf095_thumb.jpg",
+        "full": "images/bilan/full/14_Signalements_Politeia/report-6e441ff9-f284-47ac-b0c6-6439ae5cf095.jpg",
+        "caption": "Espace public"
+      },
+      {
+        "thumb": "images/bilan/thumbnails/14_Signalements_Politeia/report-c4365445-880b-49fc-8820-3ec6b581b037_thumb.jpg",
+        "full": "images/bilan/full/14_Signalements_Politeia/report-c4365445-880b-49fc-8820-3ec6b581b037.jpg",
+        "caption": "Entretien"
+      }
     ]
   },
   {
@@ -2720,6 +2772,13 @@
         "type": "Page",
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
+      }
+    ],
+    "images": [
+      {
+        "thumb": "images/bilan/thumbnails/13_Depot_Sauvage/IMG_20240111_172056_thumb.jpg",
+        "full": "images/bilan/full/13_Depot_Sauvage/IMG_20240111_172056.jpg",
+        "caption": "Dépôt sauvage détecté"
       }
     ]
   },
@@ -3707,6 +3766,18 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
+    ],
+    "images": [
+      {
+        "thumb": "images/bilan/thumbnails/06_Ecole_Joliot_Curie/20241024_162434_thumb.jpg",
+        "full": "images/bilan/full/06_Ecole_Joliot_Curie/20241024_162434.jpg",
+        "caption": "Travaux école Joliot-Curie"
+      },
+      {
+        "thumb": "images/bilan/thumbnails/06_Ecole_Joliot_Curie/20241024_170824_thumb.jpg",
+        "full": "images/bilan/full/06_Ecole_Joliot_Curie/20241024_170824.jpg",
+        "caption": "Aménagements réalisés"
+      }
     ]
   },
   {
@@ -4577,6 +4648,13 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
+    ],
+    "images": [
+      {
+        "thumb": "images/bilan/thumbnails/05_Gymnase_Parc/Réparation toiture gym. parc_thumb.png",
+        "full": "images/bilan/full/05_Gymnase_Parc/Réparation toiture gym. parc.png",
+        "caption": "Réparation toiture gymnase"
+      }
     ]
   },
   {
@@ -4646,6 +4724,18 @@
         "type": "Page",
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
+      }
+    ],
+    "images": [
+      {
+        "thumb": "images/bilan/thumbnails/08_Sol_Parc_Lebrun/20250109_090623_thumb.jpg",
+        "full": "images/bilan/full/08_Sol_Parc_Lebrun/20250109_090623.jpg",
+        "caption": "Sol amortissant - travaux"
+      },
+      {
+        "thumb": "images/bilan/thumbnails/08_Sol_Parc_Lebrun/20250109_113745_thumb.jpg",
+        "full": "images/bilan/full/08_Sol_Parc_Lebrun/20250109_113745.jpg",
+        "caption": "Sol amortissant - terminé"
       }
     ]
   },
@@ -5719,6 +5809,18 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
+    ],
+    "images": [
+      {
+        "thumb": "images/bilan/thumbnails/01_Parkings/IMG20250306121527_thumb.jpg",
+        "full": "images/bilan/full/01_Parkings/IMG20250306121527.jpg",
+        "caption": "Parking Tissages - Vue 1"
+      },
+      {
+        "thumb": "images/bilan/thumbnails/01_Parkings/IMG20250306143740_thumb.jpg",
+        "full": "images/bilan/full/01_Parkings/IMG20250306143740.jpg",
+        "caption": "Parking Tissages - Vue 2"
+      }
     ]
   },
   {
@@ -6162,6 +6264,13 @@
         "type": "Page",
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
+      }
+    ],
+    "images": [
+      {
+        "thumb": "images/bilan/thumbnails/10_Borne_Rampe_Coty/20230403_221356_thumb.jpg",
+        "full": "images/bilan/full/10_Borne_Rampe_Coty/20230403_221356.jpg",
+        "caption": "Borne rampe Coty"
       }
     ]
   },
@@ -6620,6 +6729,18 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
+    ],
+    "images": [
+      {
+        "thumb": "images/bilan/thumbnails/07_Placette_Peage/avant_thumb.jpg",
+        "full": "images/bilan/full/07_Placette_Peage/avant.jpg",
+        "caption": "Placette du Péage - Avant"
+      },
+      {
+        "thumb": "images/bilan/thumbnails/07_Placette_Peage/après_thumb.jpg",
+        "full": "images/bilan/full/07_Placette_Peage/après.jpg",
+        "caption": "Placette du Péage - Après travaux"
+      }
     ]
   },
   {
@@ -7014,6 +7135,28 @@
         "type": "Page",
         "label": "Intercommunalité",
         "url": "https://www.ville-vizille.fr/12603-intercommunalite.htm"
+      }
+    ],
+    "images": [
+      {
+        "thumb": "images/bilan/thumbnails/09_Enrobe_Place_Marche/20221227_114009_thumb.jpg",
+        "full": "images/bilan/full/09_Enrobe_Place_Marche/20221227_114009.jpg",
+        "caption": "Travaux enrobé"
+      },
+      {
+        "thumb": "images/bilan/thumbnails/09_Enrobe_Place_Marche/20221227_114057_thumb.jpg",
+        "full": "images/bilan/full/09_Enrobe_Place_Marche/20221227_114057.jpg",
+        "caption": "Réfection chaussée"
+      },
+      {
+        "thumb": "images/bilan/thumbnails/09_Enrobe_Place_Marche/20221227_114113_thumb.jpg",
+        "full": "images/bilan/full/09_Enrobe_Place_Marche/20221227_114113.jpg",
+        "caption": "Voirie rénovée"
+      },
+      {
+        "thumb": "images/bilan/thumbnails/09_Enrobe_Place_Marche/IMG_16181_thumb.jpg",
+        "full": "images/bilan/full/09_Enrobe_Place_Marche/IMG_16181.jpg",
+        "caption": "Place du marché"
       }
     ]
   },
@@ -8606,6 +8749,13 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
+    ],
+    "images": [
+      {
+        "thumb": "images/bilan/thumbnails/12_Local_Cornage/20241027_173750_thumb.jpg",
+        "full": "images/bilan/full/12_Local_Cornage/20241027_173750.jpg",
+        "caption": "Local technique"
+      }
     ]
   },
   {
@@ -8689,6 +8839,13 @@
         "type": "Page",
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
+      }
+    ],
+    "images": [
+      {
+        "thumb": "images/bilan/thumbnails/02_Abris_Peage/IMG-20250318-WA0003_thumb.jpg",
+        "full": "images/bilan/full/02_Abris_Peage/IMG-20250318-WA0003.jpg",
+        "caption": "Équipement au Péage"
       }
     ]
   },
