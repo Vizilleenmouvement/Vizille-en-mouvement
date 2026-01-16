@@ -27,14 +27,64 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- CSS Modulaires -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/pages/bilan.css">
+
+    <style>
+    .btn-version-texte {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+        background: var(--or, #c9a227);
+        color: white;
+        text-decoration: none;
+        border-radius: var(--radius-lg, 12px);
+        font-size: 0.85rem;
+        font-weight: 600;
+        border: none;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3);
+        white-space: nowrap;
+    }
+    .btn-version-texte:hover {
+        background: #d4af37;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(201, 162, 39, 0.5);
+        color: white;
+    }
+
+    /* Hero compact */
+    .hero-banner {
+        padding: 2rem 1rem !important;
+        min-height: auto !important;
+    }
+    .hero-logo {
+        max-width: 200px !important;
+        margin-bottom: 0.5rem !important;
+    }
+    .hero-content h1 {
+        font-size: 1.8rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+    .hero-content .slogan {
+        font-size: 1rem !important;
+    }
+    
+    @media (max-width: 768px) {
+        .hero-logo {
+            max-width: 120px !important;
+        }
+        .hero-content h1 {
+            font-size: 1.3rem !important;
+        }
+    }
+    </style>
 </head>
 <body>
+    <!-- SAUVEGARDE DE L'ANCIENNE VERSION AVEC CARTES - Créée le 15/01/2026 -->
     <!-- Navigation Site -->
     <header class="header">
         <div class="header-top">
@@ -94,33 +144,8 @@
                 <div class="stat-number" id="stat-programmees">—</div>
                 <div class="stat-label">Programmées</div>
             </div>
+            <a href="bilan-texte.html" class="btn-version-texte">Version liste détaillée</a>
         </div>
-        <!-- Charts Section -->
-        <section>
-            <h2 class="section-title">📊 Vue synthétique</h2>
-            <button class="toggle-charts-btn" onclick="toggleCharts()">📊 Voir les graphiques</button>
-            <div class="charts-section" id="charts-section">
-                <div class="chart-card">
-                    <h3>Répartition par thème</h3>
-                    <div class="chart-container">
-                        <canvas id="chart-themes"></canvas>
-                    </div>
-                </div>
-                <div class="chart-card">
-                    <h3>Évolution par année</h3>
-                    <div class="chart-container">
-                        <canvas id="chart-annees"></canvas>
-                    </div>
-                </div>
-                <div class="chart-card">
-                    <h3>État d'avancement</h3>
-                    <div class="chart-container">
-                        <canvas id="chart-statuts"></canvas>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Filters Section -->
         <section>
             <h2 class="section-title">🔍 Explorer les actions</h2>
@@ -322,6 +347,7 @@
 <script>
 // ===== VIZILLE EN MOUVEMENT - APP.JS =====
 // Tableau de bord interactif des actions municipales
+// SAUVEGARDE - Version avec cartes/graphiques/filtres
 
 // État global
 let allData = [];
@@ -350,20 +376,8 @@ const themeConfig = {
 };
 
 // Instances de graphiques
-let chartThemes, chartAnnees, chartStatuts;
 
 // ===== TOGGLE GRAPHIQUES MOBILE =====
-function toggleCharts() {
-    const charts = document.getElementById('charts-section');
-    const btn = document.querySelector('.toggle-charts-btn');
-    if (charts.classList.contains('show-mobile')) {
-        charts.classList.remove('show-mobile');
-        btn.textContent = '📊 Voir les graphiques';
-    } else {
-        charts.classList.add('show-mobile');
-        btn.textContent = '📊 Masquer les graphiques';
-    }
-}
 
 // ===== INITIALISATION =====
 document.addEventListener('DOMContentLoaded', init);
@@ -373,7 +387,6 @@ async function init() {
         await loadData();
         setupFilters();
         setupEventListeners();
-        renderCharts();
         applyFilters();
         hideLoading();
     } catch (error) {
@@ -770,183 +783,9 @@ function formatYear(item) {
 }
 
 // ===== GRAPHIQUES =====
-function renderCharts() {
-    renderThemesChart();
-    renderAnneesChart();
-    renderStatutsChart();
-}
 
-function renderThemesChart() {
-    const ctx = document.getElementById('chart-themes').getContext('2d');
 
-    const themesData = {};
-    allData.forEach(item => {
-        if (!themesData[item.theme]) themesData[item.theme] = 0;
-        themesData[item.theme]++;
-    });
 
-    const sorted = Object.entries(themesData).sort((a, b) => b[1] - a[1]).slice(0, 10);
-    const labels = sorted.map(([theme]) => theme);
-    const data = sorted.map(([, count]) => count);
-    const colors = labels.map(theme => themeConfig[theme]?.color || '#607d8b');
-
-    chartThemes = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: labels,
-            datasets: [{
-                data: data,
-                backgroundColor: colors,
-                borderWidth: 2,
-                borderColor: '#fff'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'right',
-                    labels: {
-                        padding: 12,
-                        usePointStyle: true,
-                        font: { size: 11 }
-                    }
-                }
-            },
-            onClick: (event, elements) => {
-                if (elements.length > 0) {
-                    const index = elements[0].index;
-                    const themeName = labels[index];
-                    document.getElementById('filter-theme').value = themeName;
-                    applyFilters();
-                    document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
-                    document.querySelector('.view-btn[data-view="cards"]').classList.add('active');
-                    currentView = 'cards';
-                    renderCurrentView();
-                    document.getElementById('view-cards').scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        }
-    });
-}
-
-function renderAnneesChart() {
-    const ctx = document.getElementById('chart-annees').getContext('2d');
-
-    const anneesData = {};
-    allData.forEach(item => {
-        if (item.annee) {
-            if (!anneesData[item.annee]) anneesData[item.annee] = { count: 0, budget: 0 };
-            anneesData[item.annee].count++;
-            anneesData[item.annee].budget += item.budget || 0;
-        }
-    });
-
-    const years = Object.keys(anneesData).sort();
-    const counts = years.map(y => anneesData[y].count);
-    const budgets = years.map(y => anneesData[y].budget / 1000000);
-
-    chartAnnees = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: years,
-            datasets: [
-                {
-                    label: 'Actions',
-                    data: counts,
-                    backgroundColor: 'rgba(26, 58, 92, 0.8)',
-                    borderRadius: 6,
-                    yAxisID: 'y'
-                },
-                {
-                    label: 'Budget (M€)',
-                    data: budgets,
-                    type: 'line',
-                    borderColor: '#c9a227',
-                    backgroundColor: 'rgba(201, 162, 39, 0.1)',
-                    fill: true,
-                    tension: 0.4,
-                    yAxisID: 'y1'
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            interaction: {
-                mode: 'index',
-                intersect: false
-            },
-            plugins: {
-                legend: {
-                    position: 'top',
-                    labels: { usePointStyle: true }
-                }
-            },
-            scales: {
-                y: {
-                    type: 'linear',
-                    position: 'left',
-                    title: { display: true, text: 'Actions' }
-                },
-                y1: {
-                    type: 'linear',
-                    position: 'right',
-                    title: { display: true, text: 'Budget (M€)' },
-                    grid: { drawOnChartArea: false }
-                }
-            }
-        }
-    });
-}
-
-function renderStatutsChart() {
-    const ctx = document.getElementById('chart-statuts').getContext('2d');
-
-    const statuts = {
-        'Réalisé': { count: 0, color: '#27ae60' },
-        'En cours': { count: 0, color: '#f39c12' },
-        'Décidé': { count: 0, color: '#3498db' },
-        'Programmé': { count: 0, color: '#9b59b6' }
-    };
-
-    allData.forEach(item => {
-        if (statuts[item.statut]) {
-            statuts[item.statut].count++;
-        }
-    });
-
-    const labels = Object.keys(statuts);
-    const data = labels.map(s => statuts[s].count);
-    const colors = labels.map(s => statuts[s].color);
-
-    chartStatuts = new Chart(ctx, {
-        type: 'polarArea',
-        data: {
-            labels: labels,
-            datasets: [{
-                data: data,
-                backgroundColor: colors.map(c => c + '99'),
-                borderColor: colors,
-                borderWidth: 2
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'right',
-                    labels: {
-                        padding: 12,
-                        usePointStyle: true
-                    }
-                }
-            }
-        }
-    });
-}
 
 // ===== UTILITAIRES =====
 function hideLoading() {

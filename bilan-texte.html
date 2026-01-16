@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilan 2020-2026 - Vizille en Mouvement</title>
+    <meta name="description" content="Bilan du mandat municipal 2020-2026 à Vizille. 321 actions réalisées ou engagées.">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vizilleenmouvement.fr/bilan.html">
+    <meta property="og:title" content="Bilan 2020-2026 - Vizille en Mouvement">
+    <meta property="og:description" content="Bilan du mandat municipal 2020-2026 à Vizille. 321 actions réalisées ou engagées.">
+    <meta property="og:image" content="https://vizilleenmouvement.fr/images/logo.png">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bilan 2020-2026 - Vizille en Mouvement">
+    <meta name="twitter:description" content="Bilan du mandat municipal 2020-2026 à Vizille.">
+    <meta name="twitter:image" content="https://vizilleenmouvement.fr/images/logo.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        /* ===== STYLES BILAN SIMPLIFIÉ ===== */
+        
+        .bilan-hero {
+            background: linear-gradient(135deg, var(--bleu-nuit) 0%, #2a5a7a 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+        
+        .bilan-hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .bilan-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Stats résumé */
+        .stats-resume {
+            background: var(--gris-clair, #f5f5f5);
+            padding: 1rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .stats-resume p {
+            font-size: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #444;
+        }
+        
+        .stats-resume strong {
+            color: var(--bleu-nuit);
+            font-weight: 700;
+        }
+        
+        /* ===== BARRE FIXE THÈMES ===== */
+        .theme-nav {
+            position: sticky;
+            top: 140px; /* Sous le header fixe */
+            z-index: 100;
+            background: white;
+            padding: 0.6rem 1rem;
+            border-bottom: 2px solid var(--or, #c9a227);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .theme-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            justify-content: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .theme-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.35rem 0.7rem;
+            background: transparent;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #555;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        
+        .theme-btn:hover,
+        .theme-btn.active {
+            background: var(--bleu-nuit, #1a3a5c);
+            color: white;
+            border-color: var(--bleu-nuit, #1a3a5c);
+        }
+        
+        .theme-btn:focus {
+            outline: 2px solid var(--or, #c9a227);
+            outline-offset: 2px;
+        }
+        
+        .theme-btn .count {
+            background: rgba(0,0,0,0.1);
+            padding: 0.1rem 0.4rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .theme-btn:hover .count,
+        .theme-btn.active .count {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        /* Contenu principal */
+        .bilan-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+        
+        /* Légende */
+        .legend {
+            background: #f8f9fa;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            border: 1px solid #e0e0e0;
+            font-size: 0.9rem;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #555;
+        }
+        
+        /* Section thème */
+        .theme-section {
+            margin-bottom: 2.5rem;
+            scroll-margin-top: 200px; /* Header + barre thèmes */
+        }
+        
+        .theme-title {
+            font-size: 1.3rem;
+            color: var(--bleu-nuit);
+            border-bottom: 3px solid var(--or, #c9a227);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .theme-icon {
+            font-size: 1.1rem;
+        }
+        
+        .theme-count {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 400;
+            margin-left: auto;
+        }
+        
+        /* Groupe année */
+        .year-group {
+            margin-bottom: 1.25rem;
+            margin-left: 0.5rem;
+        }
+        
+        .year-title {
+            font-size: 0.95rem;
+            color: #1a5a7a;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            padding-left: 0.5rem;
+            border-left: 3px solid #1a5a7a;
+        }
+        
+        /* Liste actions */
+        .actions-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .action-item {
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            transition: background 0.15s;
+            font-size: 0.95rem;
+        }
+        
+        .action-item:hover {
+            background: #f9f9f9;
+        }
+        
+        .action-item:last-child {
+            border-bottom: none;
+        }
+        
+        .status-icon {
+            flex-shrink: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .action-text {
+            flex: 1;
+            line-height: 1.5;
+            color: #333;
+        }
+        
+        /* Sources */
+        .sources-section {
+            background: #f8f9fa;
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            border: 1px solid #e0e0e0;
+            font-size: 0.9rem;
+        }
+        
+        .sources-section h2 {
+            font-size: 1rem;
+            color: var(--bleu-nuit);
+            margin-bottom: 0.75rem;
+        }
+        
+        .sources-section ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        
+        .sources-section li {
+            margin-bottom: 0.3rem;
+            color: #555;
+        }
+        
+        /* Chargement */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        
+        .loading::after {
+            content: "";
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #1a5a7a;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .bilan-hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .bilan-hero {
+                padding: 2rem 1rem;
+            }
+            
+            .bilan-content {
+                padding: 1rem;
+            }
+            
+            .theme-nav {
+                padding: 0.5rem;
+                top: 100px; /* Header plus petit en mobile */
+            }
+            
+            .theme-buttons {
+                gap: 0.3rem;
+            }
+            
+            .theme-btn {
+                padding: 0.3rem 0.5rem;
+                font-size: 0.7rem;
+            }
+            
+            .theme-btn .count {
+                display: none;
+            }
+            
+            .legend {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                padding: 0.75rem 1rem;
+            }
+            
+            .theme-title {
+                font-size: 1.15rem;
+            }
+            
+            .theme-section {
+                scroll-margin-top: 160px; /* Header + barre thèmes mobile */
+            }
+        }
+        
+        /* Lien vers version détaillée */
+        .version-link {
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .version-link a {
+            color: #1a5a7a;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .version-link a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Bouton version graphique en haut */
+        .version-link-top {
+            text-align: center;
+            padding: 0.75rem 1rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .version-link-top a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.2rem;
+            background: var(--or, #c9a227);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .version-link-top a:hover {
+            background: #b8922a;
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+        
+        @media (max-width: 768px) {
+            .version-link-top a {
+                font-size: 0.8rem;
+                padding: 0.4rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip link accessibilité -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
+    <!-- Navigation Site -->
+    <header class="header">
+        <div class="header-top">
+            <p>Bilan 2020-2026 • Vizille en Mouvement</p>
+        </div>
+        <div class="header-main">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Vizille en Mouvement" class="nav-header-logo">
+            </a>
+            <button class="menu-toggle" aria-label="Menu">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="bilan.html" class="active">Bilan</a></li>
+                    <li><a href="projet.html">Projet</a></li>
+                    <li><a href="blog.html">Actualités</a></li>
+                    <li><a href="equipe.html">Équipe</a></li>
+                    <li><a href="faq.html">Construisons ensemble</a></li>
+                    <li><a href="admin.html" class="admin-link" title="Administration">⚙️</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script src="js/menu-mobile.js"></script>
+    
+    <!-- Hero -->
+    <section class="bilan-hero">
+        <h1>Bilan du Mandat 2020-2026</h1>
+        <p>Les actions réalisées et engagées pour Vizille</p>
+    </section>
+    
+    <!-- Stats résumé -->
+    <div class="stats-resume">
+        <p id="stats-text">Chargement des données...</p>
+    </div>
+    
+    <!-- Lien version graphique (haut) -->
+    <div class="version-link-top">
+        <a href="bilan.html">📊 Version graphique</a>
+    </div>
+    
+    <!-- Barre fixe navigation par thèmes -->
+    <nav class="theme-nav" aria-label="Navigation par thème">
+        <div class="theme-buttons" id="theme-buttons">
+            <!-- Généré par JavaScript -->
+        </div>
+    </nav>
+    
+    <!-- Contenu principal -->
+    <main id="main-content" class="bilan-content">
+        
+        <div class="legend" aria-label="Légende des statuts">
+            <span class="legend-item"><span>✅</span> Réalisé</span>
+            <span class="legend-item"><span>🔄</span> En cours</span>
+            <span class="legend-item"><span>📋</span> Décidé</span>
+            <span class="legend-item"><span>📅</span> Programmé</span>
+        </div>
+        
+        <div id="bilan-liste" class="loading">
+            Chargement du bilan...
+        </div>
+        
+        <section class="sources-section">
+            <h2>📰 Sources</h2>
+            <ul>
+                <li>Magazines « Vivre à Vizille » (n°120 à 171)</li>
+                <li>Délibérations du Conseil Municipal</li>
+                <li>Documents budgétaires 2020-2025</li>
+            </ul>
+        </section>
+        
+        <div class="version-link">
+            <a href="bilan.html">📊 Voir la version interactive avec graphiques et filtres</a>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h4>À propos</h4>
+                <p>Ce bilan présente les actions municipales réalisées ou engagées par la Ville de Vizille durant le mandat 2020-2026.</p>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>Vizille en Mouvement<br>Campagne municipale 2026</p>
+            </div>
+            <div>
+                <h4>Liens</h4>
+                <ul>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="faq.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Vizille en Mouvement</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Configuration des thèmes
+        const themeConfig = {
+            "Santé": { icon: "🏥" },
+            "Urbanisme": { icon: "🏘️" },
+            "Environnement": { icon: "🌿" },
+            "Culture": { icon: "🎭" },
+            "Patrimoine": { icon: "🏛️" },
+            "Enfance": { icon: "👶" },
+            "Solidarité": { icon: "🤝" },
+            "Sport": { icon: "⚽" },
+            "Économie": { icon: "💼" },
+            "Mobilités": { icon: "🚴" },
+            "Tranquillité": { icon: "🛡️" },
+            "Travaux": { icon: "🏗️" },
+            "Intercommunalité": { icon: "🤝" },
+            "Finance": { icon: "💰" },
+            "Personnel": { icon: "👥" }
+        };
+        
+        // Icônes de statut
+        const statusIcons = {
+            "Réalisé": "✅",
+            "En cours": "🔄",
+            "Décidé": "📋",
+            "Programmé": "📅"
+        };
+        
+        // Générer un ID valide pour le thème
+        function themeToId(theme) {
+            return 'theme-' + theme.toLowerCase()
+                .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                .replace(/[^a-z0-9]/g, '-');
+        }
+        
+        // Thème actif
+        let activeTheme = null;
+        
+        // Mettre à jour le bouton actif selon le scroll
+        function updateActiveButton() {
+            const sections = document.querySelectorAll('.theme-section');
+            const navHeight = 200; // Header fixe + barre thèmes
+            
+            let currentSection = null;
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= navHeight + 50 && rect.bottom > navHeight) {
+                    currentSection = section.id;
+                }
+            });
+            
+            if (currentSection !== activeTheme) {
+                activeTheme = currentSection;
+                document.querySelectorAll('.theme-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('href') === '#' + currentSection);
+                });
+            }
+        }
+        
+        // Charger et afficher les données
+        async function loadBilan() {
+            try {
+                const response = await fetch('data.json');
+                if (!response.ok) throw new Error('Erreur chargement');
+                const data = await response.json();
+                
+                if (!data || data.length === 0) {
+                    document.getElementById('bilan-liste').innerHTML = '<p>Aucune donnée disponible.</p>';
+                    return;
+                }
+                
+                // Statistiques
+                const stats = {
+                    total: data.length,
+                    realise: 0,
+                    encours: 0,
+                    decide: 0,
+                    programme: 0
+                };
+                
+                // Organiser par thème puis par année
+                const byTheme = {};
+                
+                data.forEach(action => {
+                    const theme = action.theme || 'Autre';
+                    const year = action.annee || 'N/A';
+                    const status = action.statut || 'Réalisé';
+                    const title = action.titre || 'Action';
+                    
+                    // Compter les statuts
+                    if (status === 'Réalisé') stats.realise++;
+                    else if (status === 'En cours') stats.encours++;
+                    else if (status === 'Décidé') stats.decide++;
+                    else if (status === 'Programmé') stats.programme++;
+                    
+                    // Organiser
+                    if (!byTheme[theme]) byTheme[theme] = {};
+                    if (!byTheme[theme][year]) byTheme[theme][year] = [];
+                    
+                    byTheme[theme][year].push({ title, status });
+                });
+                
+                // Mettre à jour les stats
+                document.getElementById('stats-text').innerHTML = 
+                    `<strong>${stats.total}</strong> actions : ` +
+                    `<strong>${stats.realise}</strong> réalisées, ` +
+                    `<strong>${stats.encours}</strong> en cours, ` +
+                    `<strong>${stats.decide}</strong> décidées, ` +
+                    `<strong>${stats.programme}</strong> programmées`;
+                
+                // Trier les thèmes par nombre d'actions (décroissant)
+                const sortedThemes = Object.entries(byTheme)
+                    .sort((a, b) => {
+                        const countA = Object.values(a[1]).flat().length;
+                        const countB = Object.values(b[1]).flat().length;
+                        return countB - countA;
+                    })
+                    .map(([theme]) => theme);
+                
+                // Générer les boutons de navigation
+                let buttonsHtml = '';
+                sortedThemes.forEach(theme => {
+                    const count = Object.values(byTheme[theme]).flat().length;
+                    const themeId = themeToId(theme);
+                    buttonsHtml += `
+                        <a href="#${themeId}" class="theme-btn" title="${theme} (${count})">
+                            <span class="label">${theme}</span>
+                            <span class="count">${count}</span>
+                        </a>
+                    `;
+                });
+                document.getElementById('theme-buttons').innerHTML = buttonsHtml;
+                
+                // Générer le HTML de la liste
+                let html = '';
+                
+                sortedThemes.forEach(theme => {
+                    const config = themeConfig[theme] || { icon: '📌' };
+                    const themeActions = Object.values(byTheme[theme]).flat();
+                    const themeId = themeToId(theme);
+                    
+                    html += `<section class="theme-section" id="${themeId}">`;
+                    html += `<h2 class="theme-title">`;
+                    html += `<span class="theme-icon">${config.icon}</span> ${theme}`;
+                    html += `<span class="theme-count">${themeActions.length} action${themeActions.length > 1 ? 's' : ''}</span>`;
+                    html += `</h2>`;
+                    
+                    // Trier les années (décroissant)
+                    const years = Object.keys(byTheme[theme]).sort((a, b) => b.localeCompare(a));
+                    
+                    years.forEach(year => {
+                        html += `<div class="year-group">`;
+                        html += `<h3 class="year-title">${year}</h3>`;
+                        html += `<ul class="actions-list">`;
+                        
+                        byTheme[theme][year].forEach(action => {
+                            const icon = statusIcons[action.status] || '✅';
+                            html += `<li class="action-item">`;
+                            html += `<span class="status-icon">${icon}</span>`;
+                            html += `<span class="action-text">${action.title}</span>`;
+                            html += `</li>`;
+                        });
+                        
+                        html += `</ul></div>`;
+                    });
+                    
+                    html += `</section>`;
+                });
+                
+                document.getElementById('bilan-liste').innerHTML = html;
+                document.getElementById('bilan-liste').classList.remove('loading');
+                
+                // Activer le suivi du scroll
+                window.addEventListener('scroll', updateActiveButton, { passive: true });
+                updateActiveButton();
+                
+            } catch (error) {
+                console.error('Erreur:', error);
+                document.getElementById('bilan-liste').innerHTML = 
+                    '<p style="color: #c00; text-align: center;">Erreur lors du chargement des données.</p>';
+                document.getElementById('bilan-liste').classList.remove('loading');
+            }
+        }
+        
+        // Smooth scroll pour les liens d'ancrage
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.theme-btn')) {
+                e.preventDefault();
+                const btn = e.target.closest('.theme-btn');
+                const href = btn.getAttribute('href');
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Mettre à jour visuellement
+                    document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                }
+            }
+        });
+        
+        // Charger au démarrage
+        document.addEventListener('DOMContentLoaded', loadBilan);
+    </script>
+</body>
+</html>
