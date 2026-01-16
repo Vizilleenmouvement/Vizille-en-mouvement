@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="css/pages/equipe.css">
 </head>
 <body>
+    <!-- Skip Link pour navigation clavier -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
     <header class="header">
         <div class="header-top">
             <p>L'Équipe • Vizille en Mouvement</p>
@@ -62,12 +65,12 @@
         <p>Notre liste rassemble des femmes et des hommes de tous horizons, unis par l'envie de servir Vizille et ses habitants.</p>
     </section>
 
-    <main class="content">
+    <main class="content" id="main-content">
 
         <!-- TÊTE DE LISTE -->
         <div class="leader-card">
             <div class="leader-photo">
-                <img src="images/maire.png" alt="Catherine Troton">
+                <img src="images/catherine-troton.jpg" alt="Catherine Troton">
             </div>
             <div class="leader-info">
                 <span class="leader-badge">⭐ Tête de liste</span>
@@ -227,7 +230,7 @@
                 }
 
                 return `
-                    <div class="team-card" onclick="openCandidatModal(${index})">
+                    <div class="team-card" onclick="openCandidatModal(${index})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCandidatModal(${index})}" tabindex="0" role="button" aria-label="${candidat.nom}${candidat.role ? ' - ' + candidat.role : ''}">
                         ${photoHtml}
                         <div class="team-info">
                             <h3 class="team-name">${candidat.nom}</h3>
@@ -320,10 +323,10 @@
     </script>
 
     <!-- Modal Candidat -->
-    <div class="modal-overlay" id="candidat-modal" onclick="if(event.target === this) closeCandidatModal()">
+    <div class="modal-overlay" id="candidat-modal" role="dialog" aria-modal="true" aria-labelledby="modal-name" onclick="if(event.target === this) closeCandidatModal()">
         <div class="modal-content">
             <div class="modal-header">
-                <button class="modal-close" onclick="closeCandidatModal()">✕</button>
+                <button class="modal-close" onclick="closeCandidatModal()" aria-label="Fermer la fenêtre">✕</button>
                 <div id="modal-photo-container"></div>
                 <h2 class="modal-name" id="modal-name"></h2>
                 <p class="modal-role" id="modal-role"></p>

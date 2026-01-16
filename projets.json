@@ -1,5 +1,77 @@
 [
   {
+    "id": 8,
+    "titre": "Améliorer l'accessibilité de tous les bâtiments",
+    "theme": "Solidarité",
+    "statut": "Prioritaire",
+    "annee": 2028,
+    "budget": 0,
+    "resume": "Accessibilité PMR",
+    "description": "",
+    "importance": 3,
+    "chiffres": []
+  },
+  {
+    "id": 10,
+    "titre": "Rendre la Maison de Santé pleinement opérationnelle",
+    "theme": "Santé",
+    "statut": "Programmé",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Accès aux soins",
+    "description": "",
+    "importance": 2,
+    "chiffres": []
+  },
+  {
+    "id": 16,
+    "titre": "Pérenniser les festivals et événements",
+    "theme": "Culture",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Animation culturelle",
+    "description": "",
+    "importance": 2,
+    "chiffres": []
+  },
+  {
+    "id": 18,
+    "titre": "Soutenir les associations culturelles",
+    "theme": "Culture",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Vie associative",
+    "description": "",
+    "importance": 1,
+    "chiffres": []
+  },
+  {
+    "id": 28,
+    "titre": "Améliorer l'accessibilité des espaces publics",
+    "theme": "Seniors",
+    "statut": "Programmé",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Accessibilité",
+    "description": "",
+    "importance": 2,
+    "chiffres": []
+  },
+  {
+    "id": 33,
+    "titre": "Renforcer la transparence (open data)",
+    "theme": "Démocratie locale",
+    "statut": "Programmé",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Transparence",
+    "description": "",
+    "importance": 1,
+    "chiffres": []
+  },
+  {
     "id": 34,
     "titre": "Le maire siègera personnellement aux conseils métropolitains",
     "theme": "Métropole",
@@ -701,5 +773,234 @@
     "vision": "Une culture du risque partagée, sans dramatisation.",
     "numero": "11/11",
     "image": "images/objectifs/tranquillite_11.png"
+  },
+  {
+    "id": 501,
+    "titre": "Revitaliser le commerce de centre-ville",
+    "theme": "Économie",
+    "statut": "Programmé",
+    "annee": 2028,
+    "budget": 0,
+    "resume": "Réhabiliter, attirer, installer",
+    "description": "La vacance commerciale fragilise l'attractivité du centre-ville et la vie de quartier. Accompagner les porteurs de projets et créer les conditions d'installation durables.",
+    "importance": 3,
+    "chiffres": [],
+    "tags": [
+      "Commerce",
+      "Urbanisme",
+      "Centre-ville"
+    ],
+    "slogan": "Réhabiliter • Attirer • Installer",
+    "enjeux": [
+      "Lutter contre la vacance commerciale",
+      "Renforcer l'attractivité du centre-ville",
+      "Créer les conditions d'installation durables"
+    ],
+    "axes_action": [
+      "Réhabiliter les locaux vacants",
+      "Proposer des loyers modérés et exonérations",
+      "Mobiliser la foncière métropolitaine Inovaction Commerce",
+      "Candidater à Action Cœur de Ville"
+    ],
+    "indicateurs": [
+      "Locaux réhabilités",
+      "Commerces installés",
+      "Taux de vacance"
+    ],
+    "vision": "Un centre-ville vivant, c'est une ville qui vit.",
+    "numero": "1/6",
+    "image": "images/objectifs/economie_1.png"
+  },
+  {
+    "id": 502,
+    "titre": "Soutenir commerces et artisans",
+    "theme": "Économie",
+    "statut": "Programmé",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Animer, valoriser, fédérer",
+    "description": "Les commerces de proximité ont besoin de visibilité et d'animation collective. Fédérer les acteurs locaux pour dynamiser l'offre commerciale.",
+    "importance": 3,
+    "chiffres": [],
+    "tags": [
+      "Commerce",
+      "Artisanat",
+      "Animation"
+    ],
+    "slogan": "Animer • Valoriser • Fédérer",
+    "enjeux": [
+      "Renforcer la visibilité des commerces",
+      "Créer une dynamique collective",
+      "Valoriser les savoir-faire locaux"
+    ],
+    "axes_action": [
+      "Renforcer l'Union Commerçante Vizilloise",
+      "Organiser marchés thématiques et animations",
+      "Créer le label Made in Vizille",
+      "Développer les boutiques éphémères"
+    ],
+    "indicateurs": [
+      "Animations organisées",
+      "Commerçants participants",
+      "Fréquentation"
+    ],
+    "vision": "Consommer local, c'est soutenir nos voisins.",
+    "numero": "2/6",
+    "image": "images/objectifs/economie_2.png"
+  },
+  {
+    "id": 503,
+    "titre": "Digitaliser les commerces",
+    "theme": "Économie",
+    "statut": "Étude",
+    "annee": 2028,
+    "budget": 0,
+    "resume": "Former, connecter, vendre",
+    "description": "Le numérique est devenu incontournable pour la visibilité et les ventes. Rendre le numérique accessible à tous les commerçants.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": [
+      "Commerce",
+      "Numérique",
+      "Innovation"
+    ],
+    "slogan": "Former • Connecter • Vendre",
+    "enjeux": [
+      "Améliorer la visibilité en ligne",
+      "Développer de nouveaux canaux de vente",
+      "Former les commerçants au numérique"
+    ],
+    "axes_action": [
+      "Créer une plateforme e-commerce locale",
+      "Former aux réseaux sociaux et au web",
+      "Déployer le click & collect mutualisé",
+      "Accompagner avec les outils IA"
+    ],
+    "indicateurs": [
+      "Commerçants formés",
+      "Commerces en ligne",
+      "Ventes numériques"
+    ],
+    "vision": "Le digital au service du commerce de proximité.",
+    "numero": "3/6",
+    "image": "images/objectifs/economie_3.png"
+  },
+  {
+    "id": 504,
+    "titre": "Accompagner la création d'entreprises",
+    "theme": "Économie",
+    "statut": "Étude",
+    "annee": 2028,
+    "budget": 0,
+    "resume": "Accueillir, accompagner, développer",
+    "description": "Les porteurs de projets manquent d'accompagnement et de locaux adaptés. Simplifier les démarches et offrir un écosystème favorable.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": [
+      "Entreprises",
+      "Emploi",
+      "Accompagnement"
+    ],
+    "slogan": "Accueillir • Accompagner • Développer",
+    "enjeux": [
+      "Faciliter la création d'entreprises",
+      "Offrir des locaux adaptés",
+      "Créer un écosystème entrepreneurial"
+    ],
+    "axes_action": [
+      "Mettre en place un guichet unique",
+      "Créer des ateliers partagés artisans",
+      "Développer des espaces de coworking",
+      "Mobiliser les programmes nationaux"
+    ],
+    "indicateurs": [
+      "Entreprises créées",
+      "Porteurs accompagnés",
+      "Emplois générés"
+    ],
+    "vision": "Entreprendre à Vizille, c'est possible.",
+    "numero": "4/6",
+    "image": "images/objectifs/economie_4.png"
+  },
+  {
+    "id": 505,
+    "titre": "Vizille escale des Alpes",
+    "theme": "Économie",
+    "theme_secondaire": "Tourisme",
+    "statut": "Programmé",
+    "annee": 2028,
+    "budget": 0,
+    "resume": "Capter les 800 000 visiteurs du château",
+    "description": "800 000 visiteurs au château, mais peu de retombées pour les commerces. Transformer le visiteur de passage en client local.",
+    "importance": 3,
+    "chiffres": [
+      {
+        "valeur": "800 000",
+        "label": "visiteurs/an au château"
+      }
+    ],
+    "tags": [
+      "Tourisme",
+      "Commerce",
+      "Patrimoine"
+    ],
+    "slogan": "Capter • Orienter • Fidéliser",
+    "enjeux": [
+      "Capter les flux touristiques du château",
+      "Créer des retombées pour les commerces",
+      "Développer l'offre de séjour"
+    ],
+    "axes_action": [
+      "Créer des parcours château → centre-ville",
+      "Développer circuits patrimoine-artisans",
+      "Renforcer l'offre d'hébergement",
+      "Proposer des packages séjours"
+    ],
+    "indicateurs": [
+      "Visiteurs captés",
+      "Retombées commerciales",
+      "Nuitées"
+    ],
+    "vision": "800 000 visiteurs, autant d'opportunités.",
+    "numero": "5/6",
+    "image": "images/objectifs/economie_5.png"
+  },
+  {
+    "id": 506,
+    "titre": "Commerces écoresponsables",
+    "theme": "Économie",
+    "theme_secondaire": "Environnement",
+    "statut": "Étude",
+    "annee": 2029,
+    "budget": 0,
+    "resume": "Réduire, recycler, valoriser",
+    "description": "La transition écologique est une attente forte des consommateurs. Accompagner les commerces vers des pratiques durables.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": [
+      "Commerce",
+      "Environnement",
+      "Transition"
+    ],
+    "slogan": "Réduire • Recycler • Valoriser",
+    "enjeux": [
+      "Accompagner la transition écologique",
+      "Répondre aux attentes des consommateurs",
+      "Réduire l'empreinte environnementale"
+    ],
+    "axes_action": [
+      "Lancer des opérations Éco-défis",
+      "Développer l'économie circulaire",
+      "Favoriser les produits locaux et bio",
+      "Connecter au réseau de chaleur"
+    ],
+    "indicateurs": [
+      "Commerces labellisés",
+      "Déchets réduits",
+      "Énergie économisée"
+    ],
+    "vision": "Consommer responsable, près de chez soi.",
+    "numero": "6/6",
+    "image": "images/objectifs/economie_6.png"
   }
 ]

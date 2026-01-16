@@ -33,8 +33,7 @@
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 3rem;
+    justify-content: space-between;
     border-bottom: 1px solid var(--gris-doux);
     background: white;
 }
@@ -155,7 +154,7 @@ nav ul li a.admin-link:hover {
         left: 0;
         right: 0;
         bottom: 0;
-        background: #1a3a5c;
+        background: #1a3a5c; /* Fond solide, pas transparent */
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -202,6 +201,7 @@ nav ul li a.admin-link:hover {
         font-size: 1.3rem;
     }
 
+    /* Bouton fermer dans le menu */
     .menu-close {
         position: absolute;
         top: 1rem;

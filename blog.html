@@ -36,9 +36,87 @@
             margin: 0 auto;
             padding: 3rem 1.5rem;
         }
+        /* Séparation entre sections */
+        .section-separator {
+            margin: 2.5rem 0 1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 4px solid #1a3a5c;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+        .section-separator h3 {
+            margin: 0 0 0.5rem;
+            color: #1a3a5c;
+            font-size: 1.2rem;
+        }
+        .section-separator p {
+            margin: 0;
+            color: #666;
+            font-style: italic;
+        }
+        /* Événement prochain mis en avant */
+        .article-card.prochain {
+            background: linear-gradient(135deg, #1a3a5c 0%, #2c5282 100%);
+            color: white;
+            border: 3px solid #c9a227;
+            box-shadow: 0 8px 24px rgba(26, 58, 92, 0.3);
+            transform: scale(1.02);
+        }
+        .article-card.prochain .article-title {
+            color: white;
+        }
+        .article-card.prochain .article-excerpt {
+            color: rgba(255,255,255,0.9);
+        }
+        .article-card.prochain .article-date {
+            background: #c9a227;
+            color: #1a3a5c;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        .article-card.prochain .article-category {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+        .article-card.prochain .article-link {
+            color: #c9a227;
+            font-weight: 600;
+        }
+        .prochain-badge {
+            display: inline-block;
+            background: #c9a227;
+            color: #1a3a5c;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        /* Image réduite dans les cartes */
+        .article-card .article-image {
+            max-height: 150px;
+            max-width: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 1rem auto;
+            display: block;
+        }
     </style>
 </head>
 <body>
+    <!-- Skip Link pour navigation clavier -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
     <header class="header">
         <div class="header-top">
             <p>Actualités • Vizille en Mouvement</p>
@@ -71,7 +149,7 @@
         <p>Suivez notre campagne et nos événements</p>
     </section>
 
-    <main class="content">
+    <main class="content" id="main-content">
         <!-- Liste des articles -->
         <div id="articles-view">
             <div class="filters" id="filters">
@@ -108,10 +186,7 @@
             try {
                 const response = await fetch('articles.json');
                 if (!response.ok) throw new Error('Erreur');
-
                 articlesData = await response.json();
-                articlesData.sort((a, b) => new Date(b.date) - new Date(a.date));
-
                 renderFilters();
                 renderArticles();
             } catch (err) {
@@ -161,12 +236,43 @@
                 return;
             }
 
-            container.innerHTML = filtered.map(article => `
-                <article class="article-card ${article.image ? 'has-image' : ''}">
-                    ${article.image ? `<img src="${article.image}" alt="${article.titre}" class="article-image">` : ''}
+            // Séparer les événements avec date précise et ceux à préciser
+            const avecDate = filtered.filter(a => !a.a_preciser);
+            const aPreciser = filtered.filter(a => a.a_preciser);
+
+            // Trier les événements avec date du plus proche au plus lointain
+            avecDate.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+            let html = '';
+
+            // Afficher les événements avec date précise EN PREMIER
+            html += avecDate.map(article => renderArticleCard(article, false)).join('');
+
+            // Afficher la séparation et les événements à préciser APRÈS
+            if (aPreciser.length > 0) {
+                html += `
+                    <div class="section-separator">
+                        <h3>📅 Réunions de quartier — Janvier/Février 2026</h3>
+                        <p>Dates à confirmer prochainement</p>
+                    </div>
+                `;
+                html += aPreciser.map(article => renderArticleCard(article, true)).join('');
+            }
+
+            container.innerHTML = html;
+        }
+
+        function renderArticleCard(article, hidePreciseDate) {
+            const dateDisplay = hidePreciseDate ? 'Janvier/Février 2026' : formatDate(article.date);
+            const prochainClass = article.prochain ? ' prochain' : '';
+            const prochainBadge = article.prochain ? '<span class="prochain-badge">⏰ PROCHAIN ÉVÉNEMENT</span>' : '';
+            return `
+                <article class="article-card${prochainClass} ${article.image ? 'has-image' : ''}" tabindex="0" role="article" onkeydown="if(event.key==='Enter'){showArticle(${article.id})}">
+                    ${article.image ? `<img src="${article.image}" alt="" class="article-image">` : ''}
                     <div class="article-content">
+                        ${prochainBadge}
                         <div class="article-meta">
-                            <span class="article-date">📅 ${formatDate(article.date)}</span>
+                            <span class="article-date">📅 ${dateDisplay}</span>
                             ${article.categorie ? `<span class="article-category">${article.categorie}</span>` : ''}
                         </div>
                         <h2 class="article-title">${article.titre}</h2>
@@ -176,7 +282,7 @@
                         </a>
                     </div>
                 </article>
-            `).join('');
+            `;
         }
 
         function showArticle(id) {
@@ -186,10 +292,12 @@
             document.getElementById('articles-view').style.display = 'none';
             document.getElementById('article-full').classList.add('active');
 
+            const dateDisplay = article.a_preciser ? 'Janvier/Février 2026' : formatDate(article.date);
+
             document.getElementById('article-full-content').innerHTML = `
                 ${article.image ? `<img src="${article.image}" alt="${article.titre}" class="article-full-image">` : ''}
                 <div class="article-meta">
-                    <span class="article-date">📅 ${formatDate(article.date)}</span>
+                    <span class="article-date">📅 ${dateDisplay}</span>
                     ${article.categorie ? `<span class="article-category">${article.categorie}</span>` : ''}
                 </div>
                 <h1 class="article-title" style="font-size: 2rem; margin: 1rem 0;">${article.titre}</h1>
