@@ -803,6 +803,11 @@ function renderThemesView() {
             document.querySelector('.view-btn[data-view="cards"]').classList.add('active');
             currentView = 'cards';
             applyFilters();
+            // Scroll vers la section des cartes
+            setTimeout(() => {
+                const section = document.querySelector('.filters-section') || document.getElementById('view-cards');
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
         });
 
         container.appendChild(card);
