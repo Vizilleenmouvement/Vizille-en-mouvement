@@ -11159,7 +11159,7 @@
   },
   {
     "id": 295,
-    "theme": "Intercommunalité",
+    "theme": "Jumelages",
     "icon": "🤝",
     "color": "#607d8b",
     "statut": "Réalisé",
@@ -12567,7 +12567,7 @@
   },
   {
     "id": 345,
-    "theme": "Intercommunalité",
+    "theme": "Jumelages",
     "icon": "🇮🇹",
     "color": "#607d8b",
     "statut": "Réalisé",
@@ -12580,7 +12580,7 @@
   },
   {
     "id": 346,
-    "theme": "Intercommunalité",
+    "theme": "Jumelages",
     "icon": "🇩🇪",
     "color": "#607d8b",
     "statut": "Réalisé",
@@ -12593,7 +12593,7 @@
   },
   {
     "id": 347,
-    "theme": "Intercommunalité",
+    "theme": "Jumelages",
     "icon": "🎓",
     "color": "#607d8b",
     "statut": "En cours",
@@ -12658,7 +12658,7 @@
   },
   {
     "id": 352,
-    "theme": "Intercommunalité",
+    "theme": "Culture",
     "icon": "🏔️",
     "color": "#607d8b",
     "statut": "Réalisé",
@@ -12671,7 +12671,7 @@
   },
   {
     "id": 358,
-    "theme": "Intercommunalité",
+    "theme": "Jumelages",
     "icon": "🚒",
     "color": "#607d8b",
     "statut": "Réalisé",
@@ -13264,7 +13264,7 @@
   },
   {
     "id": 389,
-    "theme": "Culture",
+    "theme": "Jumelages",
     "icon": "🎭",
     "color": "#9b59b6",
     "statut": "Réalisé",
@@ -13284,7 +13284,7 @@
   },
   {
     "id": 390,
-    "theme": "Culture",
+    "theme": "Jumelages",
     "icon": "🎭",
     "color": "#9b59b6",
     "statut": "Réalisé",
@@ -13304,7 +13304,7 @@
   },
   {
     "id": 391,
-    "theme": "Culture",
+    "theme": "Jumelages",
     "icon": "🎭",
     "color": "#9b59b6",
     "statut": "Réalisé",
@@ -13344,7 +13344,7 @@
   },
   {
     "id": 393,
-    "theme": "Culture",
+    "theme": "Jumelages",
     "icon": "🎭",
     "color": "#9b59b6",
     "statut": "Réalisé",
@@ -13701,5 +13701,1443 @@
     "details": "",
     "sources": [],
     "lien_source": []
+  },
+  {
+    "id": 304,
+    "theme": "Tranquillité publique",
+    "icon": "🛡️",
+    "color": "#f44336",
+    "statut": "Réalisé",
+    "titre": "Sainte-Barbe des sapeurs-pompiers",
+    "description": "Cérémonie de la Sainte-Barbe des sapeurs-pompiers",
+    "annee": "2024",
+    "annee_fin": "2024",
+    "budget": 0,
+    "source": "Délib",
+    "importance": 1,
+    "resume": "Cérémonie de la Sainte-Barbe des sapeurs-pompiers",
+    "chiffres": [],
+    "chronologie": [
+      {
+        "date": "2022-11-12",
+        "evenement": "Sainte-Barbe + retraite aux flambeaux"
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Délibération",
+        "label": "Délibérations du Conseil Municipal",
+        "url": "https://www.ville-vizille.fr/12600-deliberations.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Police municipale",
+        "url": "https://www.ville-vizille.fr/13723-police-municipale.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Risques majeurs",
+        "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "theme": "Culture",
+    "icon": "🎭",
+    "color": "#9b59b6",
+    "statut": "Réalisé",
+    "titre": "Festival Ouverture Exceptionnelle",
+    "description": "1ère édition nov 2022",
+    "annee": "2022",
+    "annee_fin": "",
+    "budget": 4000,
+    "source": "Délib 2022-12-12-21",
+    "importance": 2,
+    "resume": "1ère édition nov 2022",
+    "chiffres": [
+      {
+        "valeur": "4 000 €",
+        "label": "Budget"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2022",
+        "evenement": "Réalisation"
+      },
+      {
+        "date": "2022-12-12",
+        "evenement": "Subvention 2000€ association Constellations (27 pour)"
+      }
+    ],
+    "details": "Première édition du 23 au 26 novembre 2022, co-organisée avec la Métropole, la Région et la Compagnie Scalène. Ce festival gratuit réunit artistes (danseurs, plasticiens, comédiens, musiciens), commerçants et associations locales sous le signe de l'hospitalité. Les commerces ouvrent leurs portes pour accueillir des spectacles de qualité. L'objectif est de démontrer que monde artistique et commerçants peuvent se mobiliser ensemble pour soutenir l'économie locale et préfigurer la réanimation des rues commerçantes.",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Délib 2022-12-12-21",
+        "desc": ""
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Délibération",
+        "label": "Délibérations du Conseil Municipal",
+        "url": "https://www.ville-vizille.fr/12600-deliberations.htm"
+      },
+      {
+        "type": "Page thématique",
+        "label": "Culture sur ville-vizille.fr",
+        "url": "https://www.ville-vizille.fr/12624-culture.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Service culturel",
+        "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "theme": "Culture",
+    "icon": "🎭",
+    "color": "#9b59b6",
+    "statut": "Réalisé",
+    "titre": "Motion réouverture établissements culturels",
+    "description": "Soutien culture pendant COVID",
+    "annee": "2020",
+    "annee_fin": "2020",
+    "budget": 0,
+    "source": "Délib 2020-12-15-15",
+    "importance": 1,
+    "resume": "Soutien culture pendant COVID",
+    "chiffres": [],
+    "chronologie": [
+      {
+        "date": "2020",
+        "evenement": "Réalisation"
+      }
+    ],
+    "details": "",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Délib 2020-12-15-15",
+        "desc": ""
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Délibération",
+        "label": "Délibérations du Conseil Municipal",
+        "url": "https://www.ville-vizille.fr/12600-deliberations.htm"
+      },
+      {
+        "type": "Page thématique",
+        "label": "Culture sur ville-vizille.fr",
+        "url": "https://www.ville-vizille.fr/12624-culture.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Service culturel",
+        "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "theme": "Culture",
+    "icon": "🎭",
+    "color": "#9b59b6",
+    "statut": "Réalisé",
+    "titre": "Partenariat Amis de l'Orgue",
+    "description": "Restauration de l'orgue historique Callinet (1846) classé MH. Concerts mensuels de collecte par les Amis de l'Orgue de Vizille.",
+    "annee": "2015",
+    "annee_fin": "",
+    "budget": 0,
+    "source": "Magazine",
+    "importance": 2,
+    "resume": "Restauration de l'orgue historique Callinet (1846) classé MH. Concerts mensuels de collecte par les Amis de l'Orgue de Vizille.",
+    "chiffres": [],
+    "chronologie": [
+      {
+        "date": "11/07/2023",
+        "evenement": "CM: Buffet déjà restauré, instrument en cours fabrication"
+      },
+      {
+        "date": "2023",
+        "evenement": "Études complémentaires structure et sols église"
+      },
+      {
+        "date": "2024",
+        "evenement": "Concerts mensuels pour financement"
+      },
+      {
+        "date": "Juillet 2024",
+        "evenement": "Concerts à St-Pierre de Mésage (travaux tribune)"
+      }
+    ],
+    "details": "Le buffet de l'orgue a été restauré. L'instrument est en cours de fabrication. Des études complémentaires sur la structure et les sols de l'église ont été nécessaires.",
+    "sources": [
+      {
+        "type": "magazine",
+        "ref": "VàV n°154-160",
+        "desc": "Concerts 2024"
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Magazine PDF",
+        "label": "Vivre à Vizille n°160 (Juillet 2024)",
+        "url": "https://www.ville-vizille.fr/epublications/12919-publication.htm?download=3599"
+      },
+      {
+        "type": "Magazine PDF",
+        "label": "Vivre à Vizille n°154 (Janvier 2024)",
+        "url": "https://www.ville-vizille.fr/epublications/12919-publication.htm?download=2777"
+      },
+      {
+        "type": "Page thématique",
+        "label": "Culture sur ville-vizille.fr",
+        "url": "https://www.ville-vizille.fr/12624-culture.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Service culturel",
+        "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "theme": "Patrimoine",
+    "icon": "🏛️",
+    "color": "#8e44ad",
+    "statut": "Réalisé",
+    "titre": "Espace Serge Gros inauguré",
+    "description": "Halles sous mairie, hommage ancien Maire",
+    "annee": "2023",
+    "annee_fin": "2023",
+    "budget": 0,
+    "source": "Délib 2023-01-30-12",
+    "importance": 1,
+    "resume": "Halles sous mairie, hommage ancien Maire",
+    "chiffres": [],
+    "chronologie": [
+      {
+        "date": "2023",
+        "evenement": "Réalisation"
+      }
+    ],
+    "details": "",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Délib 2023-01-30-12",
+        "desc": ""
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Délibération",
+        "label": "Délibérations du Conseil Municipal",
+        "url": "https://www.ville-vizille.fr/12600-deliberations.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Histoire de Vizille",
+        "url": "https://www.ville-vizille.fr/12596-une-histoire-exceptionnelle.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Domaine de Vizille",
+        "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "theme": "Patrimoine",
+    "icon": "🏛️",
+    "color": "#8e44ad",
+    "statut": "Réalisé",
+    "titre": "Adhésion Fédération Sites Clunisiens",
+    "description": "Adhésion à la Fédération Européenne des Sites Clunisiens (500€ + 1 300€/an) pour mieux faire connaître l'histoire du Prieuré. Soutien à la candidature UNESCO. Création d'un comité local et scientifique.",
+    "annee": "2023",
+    "annee_fin": "2023",
+    "budget": 1800,
+    "source": "Délib 2023-03-14-24",
+    "importance": 1,
+    "resume": "Demande AHPV, 1800€ total",
+    "chiffres": [
+      {
+        "valeur": "1 800 €",
+        "label": "Budget"
+      },
+      {
+        "valeur": "130 €",
+        "label": "Cotisation annuelle"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2023",
+        "evenement": "Réalisation"
+      },
+      {
+        "date": "26/02/2024",
+        "evenement": "Renouvellement adhésion Fédération Sites Clunisiens (130€)"
+      }
+    ],
+    "details": "",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Délib 2023-03-14-24",
+        "desc": ""
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Délibération",
+        "label": "Délibérations du Conseil Municipal",
+        "url": "https://www.ville-vizille.fr/12600-deliberations.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Histoire de Vizille",
+        "url": "https://www.ville-vizille.fr/12596-une-histoire-exceptionnelle.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Domaine de Vizille",
+        "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "theme": "Patrimoine",
+    "icon": "🏛️",
+    "color": "#8e44ad",
+    "statut": "En cours",
+    "titre": "Restauration orgue église Sainte-Marie",
+    "description": "Restauration de l'orgue historique Callinet (1846) classé MH. Concerts mensuels de collecte par les Amis de l'Orgue de Vizille.",
+    "annee": "2020",
+    "annee_fin": "2025",
+    "budget": 80000,
+    "source": "Délib+Bilan travaux",
+    "importance": 2,
+    "resume": "Restauration de l'orgue historique Callinet (1846) classé MH. Concerts mensuels de collecte par les Amis de l'Orgue de Vizille.",
+    "chiffres": [
+      {
+        "valeur": "80 000 €",
+        "label": "Budget"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "11/07/2023",
+        "evenement": "CM: Buffet déjà restauré, instrument en cours fabrication"
+      },
+      {
+        "date": "2023",
+        "evenement": "Études complémentaires structure et sols église"
+      },
+      {
+        "date": "2023-11-28",
+        "evenement": "DM n°1: crédits consolidation urgence église Notre-Dame"
+      },
+      {
+        "date": "2024",
+        "evenement": "Concerts mensuels pour financement"
+      },
+      {
+        "date": "Juillet 2024",
+        "evenement": "Concerts à St-Pierre de Mésage (travaux tribune)"
+      }
+    ],
+    "details": "Le buffet de l'orgue a été restauré. L'instrument est en cours de fabrication. Des études complémentaires sur la structure et les sols de l'église ont été nécessaires.",
+    "sources": [
+      {
+        "type": "magazine",
+        "ref": "VàV n°154-160",
+        "desc": "Concerts 2024"
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Magazine PDF",
+        "label": "Vivre à Vizille n°160 (Juillet 2024)",
+        "url": "https://www.ville-vizille.fr/epublications/12919-publication.htm?download=3599"
+      },
+      {
+        "type": "Magazine PDF",
+        "label": "Vivre à Vizille n°154 (Janvier 2024)",
+        "url": "https://www.ville-vizille.fr/epublications/12919-publication.htm?download=2777"
+      },
+      {
+        "type": "Délibération",
+        "label": "Délibérations du Conseil Municipal",
+        "url": "https://www.ville-vizille.fr/12600-deliberations.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Histoire de Vizille",
+        "url": "https://www.ville-vizille.fr/12596-une-histoire-exceptionnelle.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Domaine de Vizille",
+        "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "theme": "Patrimoine",
+    "icon": "🏛️",
+    "color": "#8e44ad",
+    "statut": "En cours",
+    "titre": "Travaux sauvegarde Prieuré Sainte-Marie",
+    "description": "Travaux de sauvegarde de l'église prieurale Sainte-Marie, monument historique. Souscription Fondation du Patrimoine. Intégration au réseau des sites clunisiens et candidature UNESCO.",
+    "annee": "2023",
+    "annee_fin": "",
+    "budget": 310000,
+    "source": "Délib 2023-12-13-17/18/19",
+    "importance": 3,
+    "resume": "Monument Historique, 353 892€ HT",
+    "chiffres": [
+      {
+        "valeur": "310 000 €",
+        "label": "Budget"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "12/12/2022",
+        "evenement": "Renouvellement demande subventions DRAC/Région/Département"
+      },
+      {
+        "date": "13/12/2023",
+        "evenement": "CM: Nouvel architecte Pierrick de Vaujany - demandes subventions renouvelées"
+      },
+      {
+        "date": "2020-07-15",
+        "evenement": "Demandes subventions DRAC, Département, Région pour études restauration (29 pour)"
+      },
+      {
+        "date": "2023",
+        "evenement": "Réalisation"
+      },
+      {
+        "date": "2023",
+        "evenement": "Marché appel offres non lancé (retard architectes)"
+      },
+      {
+        "date": "2025-09-30",
+        "evenement": "Autorisation de programme travaux fouilles et sécurisation Prieuré (28 pour)"
+      }
+    ],
+    "details": "Classement Monument Historique. Démission successive de deux architectes du patrimoine a causé retards importants. Nouvel architecte: Pierrick de Vaujany. Financement sollicité: DRAC, Région AURA, Département Isère.",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Délib 2023-12-13-17/18/19",
+        "desc": ""
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Délibération",
+        "label": "Délibérations du Conseil Municipal",
+        "url": "https://www.ville-vizille.fr/12600-deliberations.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Histoire de Vizille",
+        "url": "https://www.ville-vizille.fr/12596-une-histoire-exceptionnelle.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Domaine de Vizille",
+        "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "theme": "Patrimoine",
+    "icon": "🏛️",
+    "color": "#8e44ad",
+    "statut": "Réalisé",
+    "titre": "4 parcours patrimoniaux signalétique",
+    "description": "Été 2022, fonds européens/régionaux",
+    "annee": "2022",
+    "annee_fin": "2022",
+    "budget": 15000,
+    "source": "Magazine+Bilan travaux",
+    "importance": 1,
+    "resume": "Été 2022, fonds européens/régionaux",
+    "chiffres": [
+      {
+        "valeur": "15 000 €",
+        "label": "Budget"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2022",
+        "evenement": "Réalisation"
+      }
+    ],
+    "details": "",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Magazine+Bilan travaux",
+        "desc": ""
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Page",
+        "label": "Histoire de Vizille",
+        "url": "https://www.ville-vizille.fr/12596-une-histoire-exceptionnelle.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Domaine de Vizille",
+        "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "theme": "Patrimoine",
+    "icon": "🏛️",
+    "color": "#8e44ad",
+    "statut": "Réalisé",
+    "titre": "Porte Poterne Château du Roi",
+    "description": "Opération de Revitalisation du Territoire pilotée avec la Métropole. 4 secteurs prioritaires: Tannerie, Tissages, Centre historique, Place du Château.",
+    "annee": "2024",
+    "annee_fin": "2024",
+    "budget": 10875,
+    "source": "Délib 2024-02-15-26",
+    "importance": 3,
+    "resume": "Opération de Revitalisation du Territoire pilotée avec la Métropole. 4 secteurs prioritaires: Tannerie, Tissages, Centre historique, Place du Château.",
+    "chiffres": [
+      {
+        "valeur": "192 k€",
+        "label": "Études tannerie 2024"
+      },
+      {
+        "valeur": "5 ha",
+        "label": "Site tannerie"
+      },
+      {
+        "valeur": "4",
+        "label": "Secteurs prioritaires"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2024",
+        "evenement": "Réalisation"
+      },
+      {
+        "date": "2025-03-12",
+        "evenement": "Recrutement vacataires gardiennage parc Château du Roi (28 pour)"
+      }
+    ],
+    "details": "La Porte Poterne du Château du Roi constitue un élément patrimonial majeur de Vizille. Sa restauration s'inscrit dans la politique de préservation du patrimoine historique communal, aux côtés du Prieuré Notre-Dame et de l'orgue de l'église Sainte-Marie. Les travaux sont menés en coordination avec les services de l'État (DRAC).",
+    "sources": [
+      {
+        "type": "magazine",
+        "ref": "VàV n°157, 161",
+        "desc": "Projet Territoire 2024"
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Magazine PDF",
+        "label": "Vivre à Vizille n°161 (Octobre 2024)",
+        "url": "https://www.ville-vizille.fr/epublications/12919-publication.htm?download=3964"
+      },
+      {
+        "type": "Magazine PDF",
+        "label": "Vivre à Vizille n°157 (Avril 2024)",
+        "url": "https://www.ville-vizille.fr/epublications/12919-publication.htm?download=3201"
+      },
+      {
+        "type": "Page dédiée",
+        "label": "Eau et assainissement",
+        "url": "https://www.ville-vizille.fr/12659-eau-et-assainissement.htm"
+      },
+      {
+        "type": "Délibération",
+        "label": "Délibérations du Conseil Municipal",
+        "url": "https://www.ville-vizille.fr/12600-deliberations.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Histoire de Vizille",
+        "url": "https://www.ville-vizille.fr/12596-une-histoire-exceptionnelle.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Domaine de Vizille",
+        "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "theme": "Patrimoine",
+    "icon": "🏛️",
+    "color": "#8e44ad",
+    "statut": "En cours",
+    "titre": "Renforcement tribune orgue église",
+    "description": "Restauration de l'orgue historique Callinet (1846) classé MH. Concerts mensuels de collecte par les Amis de l'Orgue de Vizille.",
+    "annee": "2024",
+    "annee_fin": "",
+    "budget": 0,
+    "source": "Délib 2024-02-15-25",
+    "importance": 2,
+    "resume": "Restauration de l'orgue historique Callinet (1846) classé MH. Concerts mensuels de collecte par les Amis de l'Orgue de Vizille.",
+    "chiffres": [],
+    "chronologie": [
+      {
+        "date": "11/07/2023",
+        "evenement": "CM: Buffet déjà restauré, instrument en cours fabrication"
+      },
+      {
+        "date": "2023",
+        "evenement": "Études complémentaires structure et sols église"
+      },
+      {
+        "date": "2024",
+        "evenement": "Concerts mensuels pour financement"
+      },
+      {
+        "date": "Juillet 2024",
+        "evenement": "Concerts à St-Pierre de Mésage (travaux tribune)"
+      }
+    ],
+    "details": "Le buffet de l'orgue a été restauré. L'instrument est en cours de fabrication. Des études complémentaires sur la structure et les sols de l'église ont été nécessaires.",
+    "sources": [
+      {
+        "type": "magazine",
+        "ref": "VàV n°154-160",
+        "desc": "Concerts 2024"
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Magazine PDF",
+        "label": "Vivre à Vizille n°160 (Juillet 2024)",
+        "url": "https://www.ville-vizille.fr/epublications/12919-publication.htm?download=3599"
+      },
+      {
+        "type": "Magazine PDF",
+        "label": "Vivre à Vizille n°154 (Janvier 2024)",
+        "url": "https://www.ville-vizille.fr/epublications/12919-publication.htm?download=2777"
+      },
+      {
+        "type": "Délibération",
+        "label": "Délibérations du Conseil Municipal",
+        "url": "https://www.ville-vizille.fr/12600-deliberations.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Histoire de Vizille",
+        "url": "https://www.ville-vizille.fr/12596-une-histoire-exceptionnelle.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Domaine de Vizille",
+        "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "theme": "Patrimoine",
+    "icon": "🏛️",
+    "color": "#8e44ad",
+    "statut": "Réalisé",
+    "titre": "Travaux église prieurale Notre-Dame",
+    "description": "Consolidation urgence MH",
+    "annee": "2020",
+    "annee_fin": "2021",
+    "budget": 0,
+    "source": "Délib 2020-12-15-07/08/09",
+    "importance": 1,
+    "resume": "Consolidation urgence MH",
+    "chiffres": [],
+    "chronologie": [
+      {
+        "date": "2020",
+        "evenement": "Réalisation"
+      }
+    ],
+    "details": "",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Délib 2020-12-15-07/08/09",
+        "desc": ""
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Délibération",
+        "label": "Délibérations du Conseil Municipal",
+        "url": "https://www.ville-vizille.fr/12600-deliberations.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Histoire de Vizille",
+        "url": "https://www.ville-vizille.fr/12596-une-histoire-exceptionnelle.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Domaine de Vizille",
+        "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
+      }
+    ]
+  },
+  {
+    "id": 272,
+    "theme": "Patrimoine",
+    "icon": "🏛️",
+    "color": "#795548",
+    "statut": "En cours",
+    "titre": "Travaux urgence Prieuré Notre-Dame (MH)",
+    "description": "Travaux d'urgence sur le monument historique du Prieuré Notre-Dame",
+    "annee": "2024",
+    "annee_fin": "2024",
+    "budget": 0,
+    "source": "Délib",
+    "importance": 3,
+    "resume": "Travaux d'urgence sur le monument historique du Prieuré Notre-Dame",
+    "chiffres": [
+      {
+        "valeur": "353 892 €",
+        "label": "Coût travaux HT"
+      },
+      {
+        "valeur": "424 670 €",
+        "label": "Coût TTC"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "12/12/2022",
+        "evenement": "CM: Renouvellement demandes subventions"
+      },
+      {
+        "date": "13/12/2023",
+        "evenement": "CM: Nouvel architecte Pierrick de Vaujany"
+      },
+      {
+        "date": "2022",
+        "evenement": "Lancement projet consolidation urgence"
+      },
+      {
+        "date": "2023",
+        "evenement": "Retard - démission 2 architectes successifs"
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Délibération",
+        "label": "Délibérations du Conseil Municipal",
+        "url": "https://www.ville-vizille.fr/12600-deliberations.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Histoire de Vizille",
+        "url": "https://www.ville-vizille.fr/12596-une-histoire-exceptionnelle.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Domaine de Vizille",
+        "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
+      }
+    ]
+  },
+  {
+    "id": 331,
+    "theme": "Culture",
+    "icon": "🎭",
+    "color": "#9b59b6",
+    "statut": "Réalisé",
+    "titre": "Tarification solidaire Jeu de Paume",
+    "description": "Mise en place d'une tarification solidaire pour la saison culturelle au Jeu de Paume. Création du Pack Tribu pour les familles.",
+    "annee": "2020",
+    "annee_fin": "2025",
+    "budget": 0,
+    "source": "Bilan adjoint culture"
+  },
+  {
+    "id": 338,
+    "theme": "Culture",
+    "icon": "👥",
+    "color": "#9b59b6",
+    "statut": "Réalisé",
+    "titre": "Commission culture et patrimoine ouverte",
+    "description": "Ouverture de la commission culture et patrimoine aux acteurs de l'action culturelle et patrimoniale de la ville. Transversalité des actions.",
+    "annee": "2020",
+    "annee_fin": "2025",
+    "budget": 0,
+    "source": "Bilan adjoint culture"
+  },
+  {
+    "id": 340,
+    "theme": "Patrimoine",
+    "icon": "🏰",
+    "color": "#8e44ad",
+    "statut": "Réalisé",
+    "titre": "Poterne du Château du Roi",
+    "description": "Restauration de la poterne du Château du Roi en partenariat avec le Département. Préservation d'un élément important du patrimoine historique.",
+    "annee": "2023",
+    "annee_fin": "2023",
+    "budget": 0,
+    "source": "Bilan adjoint culture"
+  },
+  {
+    "id": 341,
+    "theme": "Patrimoine",
+    "icon": "📱",
+    "color": "#8e44ad",
+    "statut": "Réalisé",
+    "titre": "Application Archistoire",
+    "description": "Partenariat avec la Métropole suite aux assises de la culture : création de l'application Archistoire pour un parcours numérique sur Vizille (financement métropolitain).",
+    "annee": "2024",
+    "annee_fin": "2024",
+    "budget": 0,
+    "source": "Bilan adjoint culture"
+  },
+  {
+    "id": 342,
+    "theme": "Patrimoine",
+    "icon": "🇪🇺",
+    "color": "#8e44ad",
+    "statut": "En cours",
+    "titre": "Candidature UNESCO - Sites Clunisiens",
+    "description": "Soutien à la candidature du réseau des sites clunisiens européens au patrimoine mondial UNESCO. Création d'un comité local et scientifique pour le Prieuré.",
+    "annee": "2023",
+    "annee_fin": "2025",
+    "budget": 0,
+    "source": "Bilan adjoint culture"
+  },
+  {
+    "id": 356,
+    "theme": "Culture",
+    "icon": "🌸",
+    "color": "#9b59b6",
+    "statut": "Réalisé",
+    "titre": "Fête du Printemps avec les écoles",
+    "description": "Organisation de la Fête du Printemps avec participation des écoles de Vizille. Spectacles scolaires, expositions de travaux d'élèves, animations culturelles.",
+    "annee": "2021",
+    "annee_fin": "2025",
+    "budget": 0,
+    "source": "Bilan adjoint culture",
+    "importance": 1,
+    "resume": "Événement printanier avec les écoles."
+  },
+  {
+    "id": 359,
+    "theme": "Patrimoine",
+    "icon": "🔬",
+    "color": "#8e44ad",
+    "statut": "Réalisé",
+    "titre": "Comités local et scientifique Sites Clunisiens",
+    "description": "Création d'un comité local et d'un comité scientifique pour travailler avec des chercheurs sur l'histoire et les origines du Prieuré. Participation à la candidature UNESCO du réseau des sites clunisiens.",
+    "annee": "2023",
+    "annee_fin": "2025",
+    "budget": 0,
+    "source": "Bilan adjoint culture"
+  },
+  {
+    "id": 64,
+    "theme": "Culture",
+    "icon": "🎭",
+    "color": "#9b59b6",
+    "statut": "Réalisé",
+    "titre": "Partenariat AHPV",
+    "description": "Partenariat étroit avec les Amis de l'Histoire du Pays Vizillois (AHPV). Publication revue 'Mémoire', organisation 'Grands RDV de l'Histoire', mise en place parcours patrimoniaux, animations Journées du Patrimoine, Histoires de Livres.",
+    "annee": "2020",
+    "annee_fin": "",
+    "budget": 0,
+    "source": "Magazine",
+    "importance": 1,
+    "resume": "Revue Mémoire, conférences, parcours patrimoniaux",
+    "chiffres": [],
+    "chronologie": [
+      {
+        "date": "2020",
+        "evenement": "Réalisation"
+      }
+    ],
+    "details": "",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Magazine",
+        "desc": ""
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Page thématique",
+        "label": "Culture sur ville-vizille.fr",
+        "url": "https://www.ville-vizille.fr/12624-culture.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Service culturel",
+        "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "theme": "Culture",
+    "icon": "🎭",
+    "color": "#9b59b6",
+    "statut": "Réalisé",
+    "titre": "Chorales La Mirandole + Atchapoly",
+    "description": "Vizille en Chœur, répertoire caucasien/balkanique",
+    "annee": "2020",
+    "annee_fin": "",
+    "budget": 0,
+    "source": "Magazine",
+    "importance": 1,
+    "resume": "Vizille en Chœur, répertoire caucasien/balkanique",
+    "chiffres": [],
+    "chronologie": [
+      {
+        "date": "2020",
+        "evenement": "Réalisation"
+      }
+    ],
+    "details": "",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Magazine",
+        "desc": ""
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Page thématique",
+        "label": "Culture sur ville-vizille.fr",
+        "url": "https://www.ville-vizille.fr/12624-culture.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Service culturel",
+        "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
+      }
+    ]
+  },
+  {
+    "id": 357,
+    "theme": "Culture",
+    "icon": "🤝",
+    "color": "#9b59b6",
+    "statut": "Réalisé",
+    "titre": "Soutien aux associations culturelles",
+    "description": "Aides au fonctionnement des associations patrimoniales, mémorielles et culturelles. Prêts de locaux et de matériel. Participation aux événements de la ville (Fête de la Science, Estivales, commémorations).",
+    "annee": "2020",
+    "annee_fin": "2025",
+    "budget": 0,
+    "source": "Bilan adjoint culture",
+    "importance": 2,
+    "resume": "Aides financières et logistiques aux associations culturelles locales."
+  },
+  {
+    "id": 209,
+    "theme": "Travaux",
+    "icon": "🔧",
+    "color": "#795548",
+    "statut": "Décidé",
+    "titre": "Logement stade rugby",
+    "description": "Redevance 475€/mois (5€/m² pour 95m²), indexation IRL",
+    "annee": "2025",
+    "annee_fin": "",
+    "budget": 5700,
+    "source": "CM 24/06/2025",
+    "importance": 1,
+    "resume": "Redevance 475€/mois (5€/m² pour 95m²), indexation IRL",
+    "chiffres": [
+      {
+        "valeur": "5 700 €",
+        "label": "Budget"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2025",
+        "evenement": "Réalisation"
+      }
+    ],
+    "details": "",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "CM 24/06/2025",
+        "desc": ""
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Page",
+        "label": "Histoire de Vizille",
+        "url": "https://www.ville-vizille.fr/12596-une-histoire-exceptionnelle.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Domaine de Vizille",
+        "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
+      }
+    ]
+  },
+  {
+    "id": 210,
+    "theme": "Travaux",
+    "icon": "🔧",
+    "color": "#795548",
+    "statut": "Décidé",
+    "titre": "WC public cimetière",
+    "description": "Nouvelle structure, déclaration préalable",
+    "annee": "2025",
+    "annee_fin": "",
+    "budget": 0,
+    "source": "Décision 2025-URBA-11",
+    "importance": 1,
+    "resume": "Nouvelle structure, déclaration préalable",
+    "chiffres": [],
+    "chronologie": [
+      {
+        "date": "2025",
+        "evenement": "Réalisation"
+      }
+    ],
+    "details": "",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Décision 2025-URBA-11",
+        "desc": ""
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Page",
+        "label": "Histoire de Vizille",
+        "url": "https://www.ville-vizille.fr/12596-une-histoire-exceptionnelle.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Domaine de Vizille",
+        "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
+      }
+    ]
+  },
+  {
+    "id": 211,
+    "theme": "Travaux",
+    "icon": "🔧",
+    "color": "#795548",
+    "statut": "Décidé",
+    "titre": "Modulaires services techniques",
+    "description": "Installation sur site ST, déclaration préalable",
+    "annee": "2025",
+    "annee_fin": "",
+    "budget": 0,
+    "source": "Décision 2025-URBA-10",
+    "importance": 1,
+    "resume": "Installation sur site ST, déclaration préalable",
+    "chiffres": [],
+    "chronologie": [
+      {
+        "date": "2025",
+        "evenement": "Réalisation"
+      }
+    ],
+    "details": "",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Décision 2025-URBA-10",
+        "desc": ""
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Page",
+        "label": "Histoire de Vizille",
+        "url": "https://www.ville-vizille.fr/12596-une-histoire-exceptionnelle.htm"
+      },
+      {
+        "type": "Page",
+        "label": "Domaine de Vizille",
+        "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
+      }
+    ]
+  },
+  {
+    "id": 901,
+    "theme": "Culture",
+    "icon": "🎭",
+    "color": "#9c27b0",
+    "statut": "Réalisé",
+    "titre": "Festivals et événements culturels annuels",
+    "description": "Programme annuel d'événements culturels gratuits ou accessibles : P'tits Mots P'tits Mômes, Rock'n Road, Estivales, Fête de la Musique, Fête de la Science, Cinéma plein air...",
+    "annee": "2020",
+    "annee_fin": "2026",
+    "budget": 32400,
+    "importance": 2,
+    "resume": "Plus de 12 événements culturels gratuits ou accessibles chaque année pour tous les publics.",
+    "chiffres": [
+      {
+        "valeur": "12+",
+        "label": "Événements/an"
+      },
+      {
+        "valeur": "Gratuit",
+        "label": "Accès majoritaire"
+      },
+      {
+        "valeur": "32,400€",
+        "label": "Budget annuel"
+      }
+    ],
+    "details": "Chaque année, Vizille propose un programme riche d'événements culturels gratuits ou à tarif accessible :\n\n• **Festival P'tits Mots P'tits Mômes** - Spectacles jeune public (12 000€/an)\n• **Festival Film pour Enfants** - Cinéma jeunesse (partenariat LCA)\n• **Festival Rock'n Road** - Concerts rock\n• **Estivales** - Spectacles + 5 concerts gratuits en plein air (7 500€)\n• **Fête de la Musique** - Animations musicales dans la ville\n• **Fête de la Science** - Parcours scientifique intercommunal avec la Casemate et Territoire de Sciences : village sciences, animations scolaires, médiathèque\n• **10 Jours de la Culture** - Événement métropolitain, spectacles gratuits\n• **Cinéma plein air estival** - Projections gratuites\n• **Veillées de Belledonne** - Soirées d'échanges intergénérationnelles (partenariat Espace Belledonne)\n• **Patinoire éphémère de Noël** - Animation hivernale\n• **Animations Marché de Noël** - Spectacles et ambiance festive\n\n**Partenariats métropolitains :**\n• Participation aux assises de la culture métropolitaine\n• Lien avec la Casemate et Territoire de Sciences\n• Participation au COST",
+    "chronologie": [
+      {
+        "date": "Printemps",
+        "evenement": "Festival P'tits Mots P'tits Mômes"
+      },
+      {
+        "date": "Juin",
+        "evenement": "Fête de la Musique"
+      },
+      {
+        "date": "Été",
+        "evenement": "Estivales + Cinéma plein air"
+      },
+      {
+        "date": "Automne",
+        "evenement": "Fête de la Science, 10 Jours Culture"
+      },
+      {
+        "date": "Hiver",
+        "evenement": "Patinoire, Marché de Noël"
+      }
+    ],
+    "sources": [
+      {
+        "type": "magazine",
+        "ref": "Vivre à Vizille",
+        "desc": "Programmation annuelle"
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Page",
+        "label": "Culture et loisirs",
+        "url": "https://www.ville-vizille.fr/12627-culture-et-loisirs.htm"
+      }
+    ]
+  },
+  {
+    "id": 902,
+    "theme": "Culture",
+    "icon": "🎭",
+    "color": "#9c27b0",
+    "statut": "Réalisé",
+    "titre": "Saison culturelle Jeu de Paume",
+    "description": "Programmation annuelle de spectacles vivants : théâtre, musique, danse, jeune public. 13 spectacles par saison + Estivales.",
+    "annee": "2020",
+    "annee_fin": "2026",
+    "budget": 25705,
+    "importance": 2,
+    "resume": "Saison de 13 spectacles variés + 5 concerts Estivales chaque année.",
+    "chiffres": [
+      {
+        "valeur": "13",
+        "label": "Spectacles/saison"
+      },
+      {
+        "valeur": "5",
+        "label": "Concerts Estivales"
+      },
+      {
+        "valeur": "25,705€",
+        "label": "Budget spectacles"
+      }
+    ],
+    "details": "Le théâtre du Jeu de Paume propose chaque saison une programmation diversifiée de spectacles vivants :\n\n**Saison 2024-2025 (13 spectacles) :**\n• 'Le Voisin' - Benoît Turjman (1 429€)\n• 'Les Swingirls - Révolutions' (1 794€)\n• 'Les Sœurs K - Ni Fleurs Ni Couronne' (2 300€)\n• 'Le Dékoncert' - Solfasirc (2 356€)\n• 'Alice Guy' - Black Dogg (8 400€)\n\n**P'tits Mots P'tits Mômes 2025 :**\n• Lou(hou)p - Cie NAJICO (1 195€)\n• Ça Cartonne - Green Piste Records (2 637€)\n• Jeux d'Enfants - Cie Commun Accord (2 004€)\n• Direction artistique Hélène Jusselme (2 840€)\n\n**Estivales** : 5 concerts gratuits en plein air chaque été\n\nLa billetterie en ligne facilite l'accès aux spectacles.",
+    "chronologie": [
+      {
+        "date": "Sept-Juin",
+        "evenement": "Saison culturelle (13 spectacles)"
+      },
+      {
+        "date": "Printemps",
+        "evenement": "P'tits Mots P'tits Mômes"
+      },
+      {
+        "date": "Été",
+        "evenement": "Estivales (5 concerts gratuits)"
+      }
+    ],
+    "sources": [
+      {
+        "type": "magazine",
+        "ref": "Vivre à Vizille",
+        "desc": "Programmation"
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Page",
+        "label": "Jeu de Paume",
+        "url": "https://www.ville-vizille.fr/12627-culture-et-loisirs.htm"
+      }
+    ]
+  },
+  {
+    "id": 903,
+    "theme": "Culture",
+    "icon": "🤝",
+    "color": "#9c27b0",
+    "statut": "Réalisé",
+    "titre": "Partenariats et équipements culturels",
+    "description": "Réseau de partenaires culturels : médiathèque gratuite, Cinémas Associés, MPA, Jeu de Paume pour associations, Éducation nationale.",
+    "annee": "2020",
+    "annee_fin": "2026",
+    "budget": 57500,
+    "importance": 2,
+    "resume": "Médiathèque gratuite, conventions cinéma et musique, mise à disposition Jeu de Paume.",
+    "chiffres": [
+      {
+        "valeur": "Gratuit",
+        "label": "Médiathèque Vizillois"
+      },
+      {
+        "valeur": "29 500€",
+        "label": "Convention cinéma"
+      },
+      {
+        "valeur": "28 000€",
+        "label": "Convention MPA"
+      }
+    ],
+    "details": "Réseau de partenariats avec les acteurs culturels locaux :\n\n**Médiathèque Jules Vallès :**\n• **Gratuité totale pour tous les Vizillois**\n• Très nombreuses animations autour du livre et de l'écriture\n• Actions avec les écoles et structures petite enfance\n• Programme Lire et Faire Lire dans les classes\n• Partenariat avec la librairie locale\n• Lieu d'exposition\n\n**Cinéma :**\n• Convention Cinémas Associés / LCA (29 500€/an)\n• Village Cinéma, Festival du film pour enfants\n• Billetterie en ligne\n\n**Musique :**\n• Convention MPA - Musiques en Pays d'Allevard (28 000€/an)\n• Partenariat en augmentation (prise en charge solidaire élèves)\n\n**Jeu de Paume :**\n• Mise à disposition pour associations\n• Mise à disposition Médiane santé Prévention\n• Partenariat Éducation nationale (collège, lycée, écoles)\n• Expositions Jeu de Paume et Mairie\n\n**Actions intergénérationnelles :**\n• Animations culturelles Résidence La Romanche, Escale\n• Lien avec le Secours Populaire",
+    "chronologie": [
+      {
+        "date": "2020",
+        "evenement": "Maintien gratuité médiathèque"
+      },
+      {
+        "date": "Annuel",
+        "evenement": "Renouvellement conventions"
+      }
+    ],
+    "sources": [
+      {
+        "type": "magazine",
+        "ref": "Vivre à Vizille",
+        "desc": ""
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Page",
+        "label": "Médiathèque",
+        "url": "https://www.ville-vizille.fr/12628-mediatheque.htm"
+      }
+    ]
+  },
+  {
+    "id": 904,
+    "theme": "Culture",
+    "icon": "🎨",
+    "color": "#9c27b0",
+    "statut": "Réalisé",
+    "titre": "Actions culturelles et distinctions",
+    "description": "Street Art Fest, expositions, tournages TV, équipements numériques, label Territoire Numérique Libre.",
+    "annee": "2020",
+    "annee_fin": "2025",
+    "budget": 10800,
+    "importance": 1,
+    "resume": "Fresques Street Art, borne musicale, label numérique, présence médiatique.",
+    "chiffres": [
+      {
+        "valeur": "3",
+        "label": "Fresques Street Art"
+      },
+      {
+        "valeur": "3/5",
+        "label": "Label Numérique Libre"
+      }
+    ],
+    "details": "Actions culturelles ponctuelles et distinctions :\n\n• **Street Art Fest** - 3 fresques murales réalisées (5 000€)\n• **Exposition BD Vizille** - Mise en valeur du 9ème art\n• **Tournage Cuisine ouverte France 3** - Vizille à la télévision\n• **Borne musicale Mélo** - Résidence Romanche (5 800€)\n• **Label Territoire Numérique Libre** - Grade 3/5\n\n**COVID-19 :**\n• Motion de soutien à la culture pendant la crise sanitaire",
+    "chronologie": [
+      {
+        "date": "2021",
+        "evenement": "Motion soutien culture COVID"
+      },
+      {
+        "date": "2022",
+        "evenement": "Street Art Fest"
+      },
+      {
+        "date": "2023",
+        "evenement": "Tournage France 3"
+      }
+    ],
+    "sources": [
+      {
+        "type": "magazine",
+        "ref": "Vivre à Vizille",
+        "desc": ""
+      }
+    ],
+    "lien_source": []
+  },
+  {
+    "id": 905,
+    "theme": "Patrimoine",
+    "icon": "🏛️",
+    "color": "#795548",
+    "statut": "Réalisé",
+    "titre": "Valorisation et préservation du patrimoine",
+    "description": "Acquisitions, fouilles archéologiques, parcours patrimoniaux, adhésion Fondation du Patrimoine.",
+    "annee": "2020",
+    "annee_fin": "2025",
+    "budget": 0,
+    "importance": 1,
+    "resume": "Locomotive historique, chapelle du Péage, fouilles Prieuré, parcours patrimoniaux.",
+    "chiffres": [
+      {
+        "valeur": "1",
+        "label": "Locomotive préservée"
+      },
+      {
+        "valeur": "1",
+        "label": "Chapelle acquise"
+      }
+    ],
+    "details": "Actions de valorisation et préservation du patrimoine :\n\n• **Cession locomotive Brissonneau Lotz** - Préservation patrimoine ferroviaire\n• **Autorisation fouilles Prieuré** - Recherches archéologiques\n• **Rachat chapelle du Péage de Vizille** - Acquisition patrimoniale\n• **Adhésion Fondation du Patrimoine** - Réseau national\n• **Parcours patrimoniaux supplémentaires** - Découverte du territoire\n• **Préservation patrimoine dans OPAH-RU** - Intégration dans la rénovation urbaine",
+    "chronologie": [
+      {
+        "date": "2021",
+        "evenement": "Adhésion Fondation du Patrimoine"
+      },
+      {
+        "date": "2023",
+        "evenement": "Autorisation fouilles Prieuré"
+      },
+      {
+        "date": "2024",
+        "evenement": "Rachat chapelle du Péage"
+      }
+    ],
+    "sources": [
+      {
+        "type": "magazine",
+        "ref": "Vivre à Vizille",
+        "desc": ""
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Page",
+        "label": "Patrimoine",
+        "url": "https://www.ville-vizille.fr/12619-patrimoine.htm"
+      }
+    ]
+  },
+  {
+    "id": 906,
+    "theme": "Culture",
+    "icon": "🎭",
+    "color": "#9c27b0",
+    "statut": "Réalisé",
+    "titre": "Partenariat Espace Belledonne",
+    "description": "Vizille, porte d'entrée du massif de Belledonne, participe activement à l'association Espace Belledonne qui fédère 59 communes entre Isère et Savoie.",
+    "annee": "2020",
+    "annee_fin": "2026",
+    "budget": 0,
+    "importance": 2,
+    "resume": "Vizille membre actif de l'Espace Belledonne : gouvernance, commission culture, camp de base pleine nature, Veillées de Belledonne, mare pédagogique.",
+    "chiffres": [
+      {
+        "valeur": "59",
+        "label": "Communes fédérées"
+      },
+      {
+        "valeur": "6",
+        "label": "Intercommunalités"
+      },
+      {
+        "valeur": "1998",
+        "label": "Création association"
+      }
+    ],
+    "details": "**L'Espace Belledonne**\n\nAssociation loi 1901 créée en 1998 à l'initiative des élus de Belledonne, elle fédère 59 communes de la chaîne entre Isère et Savoie, 6 intercommunalités (dont Grenoble Alpes Métropole) et les acteurs socio-économiques du territoire.\n\nSa vocation : lieu d'échange et de réflexion sur l'avenir et le développement de cette chaîne de montagne, porteur d'un projet de territoire mobilisant des programmes européens (LEADER) et régionaux (Plan Pastoral Territorial).\n\n---\n\n**Implication de Vizille**\n\n• **Gouvernance** : Présence au Conseil d'Administration et aux bureaux de l'Espace Belledonne\n• **Commission culture** : Participation active à la programmation culturelle du massif\n• **Camp de base** : Vizille identifiée parmi les 14 \"camps de base\" d'activités de pleine nature du massif (porte d'entrée sud de Belledonne)\n\n---\n\n**Belledonne et Veillées**\n\nProjet culturel participatif lancé en 2004, les Veillées rassemblent habitants autour de 3 temps forts :\n• Un temps d'échange (débat, atelier, marche, jeux)\n• Un repas convivial partagé\n• Un spectacle professionnel\n\n**Vizille accueille régulièrement ces veillées** créatrices de lien intergénérationnel entre anciens et nouveaux habitants.\n→ Veillée 2025 à Vizille : \"La Cuisine, vecteur de rencontre\" (25 novembre 2025)\n\n---\n\n**Mare pédagogique**\n\nCréation d'une mare pédagogique en partenariat avec l'Espace Belledonne, outil de sensibilisation à l'environnement et à la biodiversité pour les scolaires et habitants.\n\n---\n\n**GR738 - Grande traversée de Belledonne**\n\nL'Espace Belledonne a porté la création du sentier de grande randonnée GR738 reliant Vizille à Aiguebelle (Savoie), valorisant Vizille comme point de départ emblématique de la traversée du massif.",
+    "chronologie": [
+      {
+        "date": "1998",
+        "evenement": "Création de l'association Espace Belledonne"
+      },
+      {
+        "date": "2004",
+        "evenement": "Lancement du projet Belledonne et Veillées"
+      },
+      {
+        "date": "2020-2026",
+        "evenement": "Participation active de Vizille à la gouvernance"
+      },
+      {
+        "date": "2023",
+        "evenement": "Création mare pédagogique partenariat Espace Belledonne"
+      },
+      {
+        "date": "25/11/2025",
+        "evenement": "Veillée à Vizille : La Cuisine, vecteur de rencontre"
+      }
+    ],
+    "sources": [
+      {
+        "type": "site",
+        "ref": "espacebelledonne.fr",
+        "desc": "Site officiel"
+      }
+    ],
+    "lien_source": [
+      {
+        "type": "Site officiel",
+        "label": "Espace Belledonne",
+        "url": "https://espacebelledonne.fr/"
+      },
+      {
+        "type": "Programme",
+        "label": "Belledonne et Veillées",
+        "url": "https://belledonne-et-veillees.com/"
+      },
+      {
+        "type": "Page",
+        "label": "Environnement Vizille",
+        "url": "https://www.ville-vizille.fr/12658-environnement.htm"
+      }
+    ]
   }
 ]

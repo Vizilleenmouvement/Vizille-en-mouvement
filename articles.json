@@ -1,29 +1,106 @@
 [
   {
     "id": 1,
-    "titre": "Lancement de la campagne Vizille en Mouvement",
-    "date": "2025-12-01",
-    "categorie": "Événement",
-    "extrait": "C'est avec enthousiasme que nous lançons officiellement notre campagne pour les municipales 2026.",
-    "contenu": "C'est avec enthousiasme que nous lançons officiellement notre campagne pour les municipales 2026.\n\nNotre équipe, composée de 9 candidats engagés, est prête à porter un projet ambitieux pour Vizille.\n\nNous vous invitons à suivre nos actualités et à venir nous rencontrer lors de nos permanences et réunions publiques.\n\nEnsemble, construisons l'avenir de notre ville !",
-    "image": ""
+    "titre": "🎯 Déclaration de candidature",
+    "date": "2026-01-13",
+    "categorie": "Communiqué",
+    "extrait": "Catherine Troton, Maire de Vizille, annonce sa candidature pour un deuxième mandat municipal.",
+    "contenu": "Chères Vizilloises, chers Vizillois,\n\nC'est avec beaucoup d'émotion et d'enthousiasme que je sollicite votre confiance pour un deuxième mandat municipal. Depuis le début de notre action en 2020, j'ai eu l'honneur de servir notre ville avec conviction, énergie, attachement sincère et proximité. Vizille est un lieu de vie, de rencontres et de projets partagés.\n\nJ'ai toujours été touchée par la richesse de sa vie locale, associative, culturelle, sportive et par les liens qu'elle crée entre les habitants. J'ai eu la joie d'élever ici mes enfants, j'ai plaisir chaque jour à vivre ici, à entretenir cette proximité avec chacun d'entre vous. Ensemble, nous avons engagé des actions pour dynamiser la commune, améliorer le quotidien et préparer l'avenir.\n\nLes projets, imaginés depuis de longues années pour développer la commune, se concrétisent enfin aujourd'hui. Plus de 330 actions ont été menées pendant notre mandat pour améliorer la vie des Vizillois : création de la Maison France Services, végétalisation de cours d'écoles, réouverture de la piscine, travaux d'assainissement, embellissement de la rue Général de Gaulle, rénovation des logements en centre-ville, déploiement de la vidéoprotection, création d'itinéraires cyclables, soutien au monde associatif...\n\nNous avons la volonté claire, avec une équipe renouvelée, de poursuivre et amplifier la dynamique engagée autour de valeurs fortes :\n• La solidarité pour que le service public apporte des solutions à chacun\n• La transition environnementale, indispensable pour répondre aux défis climatiques tout en améliorant notre cadre de vie\n• La proximité et l'écoute des besoins quotidiens des habitants\n\nJe crois en une action municipale proche des citoyens, fondée sur le dialogue, la construction collective et la confiance. C'est avec vous, avec respect et solidarité, que nous nous engageons à rendre notre ville plus vivante, solidaire et tournée vers l'avenir.\n\nEnsemble, poursuivons ce chemin avec enthousiasme et exigence, et surtout bonheur de vivre ici.\n\nCatherine TROTON\nMaire de Vizille",
+    "image": "images/catherine-troton.jpg",
+    "prochain": true
   },
   {
     "id": 2,
-    "titre": "Première réunion publique - Salle des fêtes",
-    "date": "2026-01-15",
-    "categorie": "Événement",
-    "image": "",
-    "extrait": "Venez nombreux échanger avec notre équipe le samedi 15 décembre à 18h.",
-    "contenu": "Nous avons le plaisir de vous convier à notre première réunion publique.\n\nDate : Samedi 15 décembre 2025\nHeure : 18h00\nLieu : Salle des fêtes de Vizille\n\nAu programme :\n- Présentation de l'équipe\n- Notre bilan du mandat\n- Nos projets pour 2026-2032\n- Vos questions\n\nUn moment convivial suivra la réunion. Venez nombreux !"
-  },
-  {
-    "id": 3,
     "titre": "Catherine Troton interviewée par le Dauphiné Libéré",
     "date": "2026-01-16",
     "categorie": "Presse",
+    "extrait": "Notre candidate a rencontré le Dauphiné Libéré pour présenter sa candidature et le projet Vizille en Mouvement.",
+    "contenu": "Le 16 janvier 2026, Catherine Troton, tête de liste de Vizille en Mouvement, a été interviewée par le Dauphiné Libéré.\n\nCette rencontre a été l'occasion de présenter officiellement sa candidature aux élections municipales de mars 2026 et d'exposer les grandes lignes de notre projet pour Vizille.\n\nCatherine Troton a pu évoquer :\n• Le bilan positif du mandat actuel avec plus de 330 actions réalisées\n• Les axes prioritaires pour 2026-2032 : mobilités, tranquillité publique, cadre de vie\n• L'équipe engagée qui l'accompagne dans cette campagne\n• Sa vision d'une ville dynamique et solidaire\n\nRetrouvez l'article complet dans les pages locales du Dauphiné Libéré.",
+    "image": ""
+  },
+  {
+    "id": 3,
+    "titre": "Présence sur les marchés",
+    "date": "2026-01-20",
+    "categorie": "Événement",
+    "extrait": "Rencontrez notre équipe sur les marchés locaux les 20 et 24 janvier.",
+    "contenu": "Venez à notre rencontre sur les marchés de Vizille !\n\nDates : Lundi 20 janvier et Vendredi 24 janvier 2026\n\nNous serons présents pour échanger avec vous, écouter vos préoccupations et vous présenter notre projet pour Vizille 2026-2032.\n\nÀ très bientôt !",
+    "image": ""
+  },
+  {
+    "id": 4,
+    "titre": "Réunion de quartier - Les Mattons",
+    "date": "2026-01-23",
+    "categorie": "Réunion de quartier",
+    "extrait": "Rendez-vous le 23 janvier à 16h15 à l'École Joliot Curie.",
+    "contenu": "Réunion de quartier pour Les Mattons\n\nDate : Jeudi 23 janvier 2026\nHeure : 16h15\nLieu : École Joliot Curie\n\nVotre référent : Mohamed\n\nThèmes abordés :\n• Piste cyclable\n• Chaufferie bois\n• Rue commerçante\n\nVotre voix compte ! Venez nombreux partager vos idées et préoccupations pour votre quartier.",
+    "image": ""
+  },
+  {
+    "id": 5,
+    "titre": "Réunion publique #1 — Bilan du mandat",
+    "date": "2026-01-30",
+    "categorie": "Événement",
+    "extrait": "Vendredi 30 janvier à 18h30, Salle de la République — Discussion autour du bilan 2020-2026.",
+    "contenu": "Réunion publique #1\n\nDate : Vendredi 30 janvier 2026\nHeure : 18h30\nLieu : Salle de la République\n\nPour une discussion autour du bilan du mandat 2020-2026\n\nVenez échanger avec nous et construisons ensemble l'avenir de notre ville !\n\nAu programme :\n• Présentation de l'équipe\n• Bilan des 330 actions réalisées\n• Vos questions et échanges\n\nVenez nombreux !",
+    "image": ""
+  },
+  {
+    "id": 6,
+    "titre": "Réunion publique #2 — Projets pour Vizille",
+    "date": "2026-02-27",
+    "categorie": "Événement",
+    "extrait": "Vendredi 27 février à 18h30, Salle de la République — Échanges sur les projets 2026-2032.",
+    "contenu": "Réunion publique #2\n\nDate : Vendredi 27 février 2026\nHeure : 18h30\nLieu : Salle de la République\n\nPour échanger sur les projets pour Vizille\n\nVenez échanger avec nous et construisons ensemble l'avenir de notre ville !\n\nAu programme :\n• Présentation du programme 2026-2032\n• Bilan des réunions de quartiers\n• Vos questions et propositions\n\nVenez nombreux !",
+    "image": ""
+  },
+  {
+    "id": 7,
+    "titre": "Rencontre conviviale — Place du Château",
+    "date": "2026-03-07",
+    "categorie": "Événement",
+    "extrait": "Samedi 7 mars à partir de 10h — Venez échanger avec les candidats !",
+    "contenu": "Rencontre conviviale #1\n\nDate : Samedi 7 mars 2026\nHeure : À partir de 10h\nLieu : Place du Château\n\nPour échanger avec les candidats\n\nUne rencontre conviviale pour discuter ensemble de l'avenir de Vizille.\n\nAnimations, rencontres, convivialité... Venez nombreux en famille !\n\nEnsemble, mettons Vizille en mouvement !",
+    "image": ""
+  },
+  {
+    "id": 8,
+    "titre": "Réunion de quartier - Les Allas",
+    "date": "2026-01-01",
+    "categorie": "Réunion de quartier",
+    "extrait": "Date à préciser - Votre référente : Catherine.",
+    "contenu": "Réunion de quartier pour Les Allas\n\nDate : À préciser\nLieu : À préciser\n\nVotre référente : Catherine\n\nThèmes abordés :\n• Risques piétons (route de Vaulnaveys)\n• Inondations\n\nVotre voix compte ! Venez nombreux partager vos idées et préoccupations pour votre quartier.",
     "image": "",
-    "extrait": "Notre candidate Catherine Troton a rencontré le Dauphiné Libéré pour présenter sa candidature et le projet Vizille en Mouvement.",
-    "contenu": "Le 16 janvier 2026, Catherine Troton, tête de liste de Vizille en Mouvement, a été interviewée par le Dauphiné Libéré.\n\nCette rencontre a été l'occasion de présenter officiellement sa candidature aux élections municipales de mars 2026 et d'exposer les grandes lignes de notre projet pour Vizille.\n\nCatherine Troton a pu évoquer :\n- Le bilan positif du mandat actuel avec 271 actions réalisées\n- Les axes prioritaires pour 2026-2032 : mobilités, tranquillité publique, cadre de vie\n- L'équipe engagée qui l'accompagne dans cette campagne\n- Sa vision d'une ville dynamique et solidaire\n\nRetrouvez l'article complet dans les pages locales du Dauphiné Libéré."
+    "a_preciser": true
+  },
+  {
+    "id": 9,
+    "titre": "Réunion de quartier - Centre-ville",
+    "date": "2026-01-01",
+    "categorie": "Réunion de quartier",
+    "extrait": "Date à préciser - Vos référents : Gérard et Gilles.",
+    "contenu": "Réunion de quartier pour le Centre-ville\n\nDate : À préciser\nLieu : À préciser\n\nVos référents : Gérard et Gilles\n\nThèmes abordés :\n• Liaison entre la place du château et celle du marché\n• Dynamisation du commerce\n\nVotre voix compte ! Venez nombreux partager vos idées et préoccupations pour votre quartier.",
+    "image": "",
+    "a_preciser": true
+  },
+  {
+    "id": 10,
+    "titre": "Réunion de quartier - Le Péage",
+    "date": "2026-01-01",
+    "categorie": "Réunion de quartier",
+    "extrait": "Date à préciser - Votre référent : Bernard.",
+    "contenu": "Réunion de quartier pour Le Péage\n\nDate : À préciser\nLieu : À préciser\n\nVotre référent : Bernard\n\nThèmes abordés :\n• Questions de mobilités\n• Transports et déplacements\n\nVotre voix compte ! Venez nombreux partager vos idées et préoccupations pour votre quartier.",
+    "image": "",
+    "a_preciser": true
+  },
+  {
+    "id": 11,
+    "titre": "Réunion de quartier - La Gaffe",
+    "date": "2026-01-01",
+    "categorie": "Réunion de quartier",
+    "extrait": "Date à préciser - Votre référente : Saida.",
+    "contenu": "Réunion de quartier pour La Gaffe\n\nDate : À préciser\nLieu : À préciser\n\nVotre référente : Saida\n\nVotre voix compte ! Venez nombreux partager vos idées et préoccupations pour votre quartier.",
+    "image": "",
+    "a_preciser": true
   }
 ]

@@ -3,8 +3,8 @@
 /* Hero banner style index */
 .hero-banner {
     position: relative;
-    min-height: calc(40vh + 130px); /* Ajoute la hauteur du header */
-    padding-top: 130px; /* Pousse le contenu sous le header */
+    min-height: calc(30vh + 100px); /* Réduit */
+    padding-top: 100px; /* Réduit pour le header plus petit */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,12 +37,12 @@
 .hero-content {
     position: relative;
     z-index: 3;
-    padding: 1.5rem;
+    padding: 1rem;
 }
 
 .hero-logo {
-    max-width: 325px;
-    margin-bottom: 0.75rem;
+    max-width: 280px;
+    margin-bottom: 0.5rem;
     filter: drop-shadow(0 0 20px rgba(255,255,255,0.5));
     animation: pulse 2s ease-in-out infinite, glow 2s ease-in-out infinite;
 }
@@ -61,8 +61,8 @@
 .page-header {
     background: linear-gradient(135deg, var(--bleu-vizille) 0%, var(--bleu-clair) 100%);
     color: white;
-    padding: 3rem 1.5rem;
-    padding-top: calc(3rem + 130px); /* Compense le header fixe */
+    padding: 2rem 1.5rem;
+    padding-top: calc(2rem + 100px); /* Compense le header fixe réduit */
     text-align: center;
 }
 

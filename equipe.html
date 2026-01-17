@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <script src="js/auth.js"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +29,9 @@
     <link rel="stylesheet" href="css/pages/equipe.css">
 </head>
 <body>
+    <!-- Skip Link pour navigation clavier -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
     <header class="header">
         <div class="header-top">
             <p>L'Équipe • Vizille en Mouvement</p>
@@ -62,29 +64,29 @@
         <p>Notre liste rassemble des femmes et des hommes de tous horizons, unis par l'envie de servir Vizille et ses habitants.</p>
     </section>
 
-    <main class="content">
+    <main class="content" id="main-content">
+
+        <!-- TOGGLE UNIQUE -->
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 1.5rem;">
+            <div class="view-toggle" style="display: flex; gap: 0.5rem;">
+                <button class="view-btn active" data-view="cards" onclick="setView('cards')" style="padding: 0.5rem 1rem; border: 2px solid var(--bleu-vizille); background: var(--bleu-vizille); color: white; border-radius: 8px; cursor: pointer; font-weight: 600;">
+                    🎴 Cartes
+                </button>
+                <button class="view-btn" data-view="list" onclick="setView('list')" style="padding: 0.5rem 1rem; border: 2px solid var(--bleu-vizille); background: white; color: var(--bleu-vizille); border-radius: 8px; cursor: pointer; font-weight: 600;">
+                    📋 Liste
+                </button>
+            </div>
+        </div>
 
         <!-- TÊTE DE LISTE -->
-        <div class="leader-card">
-            <div class="leader-photo">
-                <img src="images/maire.png" alt="Catherine Troton">
-            </div>
-            <div class="leader-info">
-                <span class="leader-badge">⭐ Tête de liste</span>
-                <h2 class="leader-name">Catherine Troton</h2>
-                <p class="leader-role">Candidate Tête de Liste</p>
-                <p class="leader-bio">Engagée depuis plus de 20 ans pour Vizille. Porte les valeurs de solidarité, d'écoute et de proximité au cœur de son action municipale.</p>
-            </div>
-        </div>
+        <h2 class="section-title">⭐ Tête de liste</h2>
+        <div id="leader-container"></div>
 
         <!-- LES COLISTIERS -->
-        <h2 class="section-title">Les colistiers</h2>
-        <div class="team-grid" id="team-grid">
-            <div class="loading">
-                <span style="font-size: 2rem;">⏳</span>
-                <p>Chargement de l'équipe...</p>
-            </div>
-        </div>
+        <h2 class="section-title" style="margin-top: 2rem;">Les colistiers</h2>
+        <div id="team-grid"></div>
+        
+        <p id="click-hint" style="text-align: center; color: #666; font-style: italic; margin-top: 1rem; font-size: 0.9rem;">👆 Cliquez pour mieux connaître le candidat ou la candidate</p>
 
         <!-- CHARTE D'ENGAGEMENT -->
         <section class="values-section">
@@ -171,6 +173,62 @@
 
     <script>
         let candidatsData = [];
+        let currentView = 'cards';
+
+        function setView(view) {
+            currentView = view;
+            document.querySelectorAll('.view-btn').forEach(btn => {
+                if (btn.dataset.view === view) {
+                    btn.style.background = 'var(--bleu-vizille)';
+                    btn.style.color = 'white';
+                    btn.classList.add('active');
+                } else {
+                    btn.style.background = 'white';
+                    btn.style.color = 'var(--bleu-vizille)';
+                    btn.classList.remove('active');
+                }
+            });
+            renderLeader();
+            renderTeam();
+        }
+
+        function renderLeader() {
+            const container = document.getElementById('leader-container');
+            if (currentView === 'list') {
+                container.innerHTML = `
+                    <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <thead>
+                            <tr style="background: var(--bleu-vizille); color: white;">
+                                <th style="padding: 0.75rem; text-align: left;">Photo</th>
+                                <th style="padding: 0.75rem; text-align: left;">Nom</th>
+                                <th style="padding: 0.75rem; text-align: left;">Fonction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #eee; background: #fffbeb; cursor: pointer;" onclick="alert('Catherine Troton\\n\\nCandidate Tête de Liste\\n\\nEngagée depuis plus de 20 ans pour Vizille. Porte les valeurs de solidarité, d\\'écoute et de proximité au cœur de son action municipale.')">
+                                <td style="padding: 0.5rem;">
+                                    <img src="images/catherine-troton.jpg" alt="Catherine Troton" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 3px solid var(--or);">
+                                </td>
+                                <td style="padding: 0.5rem; font-weight: 600;">⭐ Catherine Troton</td>
+                                <td style="padding: 0.5rem; color: #666;">Candidate Tête de Liste</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                `;
+            } else {
+                container.innerHTML = `
+                    <div class="team-grid">
+                        <div class="team-card" style="border: 3px solid var(--or);" onclick="alert('Catherine Troton\\n\\nCandidate Tête de Liste\\n\\nEngagée depuis plus de 20 ans pour Vizille. Porte les valeurs de solidarité, d\\'écoute et de proximité au cœur de son action municipale.')">
+                            <img src="images/catherine-troton.jpg" alt="Catherine Troton" class="team-photo">
+                            <div class="team-info">
+                                <h3 class="team-name">⭐ Catherine Troton</h3>
+                                <p class="team-role">Candidate Tête de Liste</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
 
         async function loadCandidats() {
             try {
@@ -186,6 +244,7 @@
                     .filter(c => c.ordre !== 1)
                     .sort((a, b) => (a.ordre || 99) - (b.ordre || 99));
 
+                renderLeader();
                 renderTeam();
             } catch (err) {
                 document.getElementById('team-grid').innerHTML = `
@@ -210,35 +269,53 @@
                 return;
             }
 
-            grid.innerHTML = candidatsData.map((candidat, index) => {
-                const photoHtml = candidat.photo
-                    ? `<img src="${candidat.photo}" alt="${candidat.nom}" class="team-photo">`
-                    : `<div class="team-photo-placeholder">👤</div>`;
-
-                // Construire les liens sociaux
-                let socialsHtml = '';
-                if (candidat.email || candidat.facebook || candidat.linkedin || candidat.twitter) {
-                    let links = '';
-                    if (candidat.email) links += `<a href="mailto:${candidat.email}" title="Email" onclick="event.stopPropagation()">📧</a>`;
-                    if (candidat.facebook) links += `<a href="${candidat.facebook}" target="_blank" title="Facebook" onclick="event.stopPropagation()">📘</a>`;
-                    if (candidat.linkedin) links += `<a href="${candidat.linkedin}" target="_blank" title="LinkedIn" onclick="event.stopPropagation()">💼</a>`;
-                    if (candidat.twitter) links += `<a href="${candidat.twitter}" target="_blank" title="Twitter" onclick="event.stopPropagation()">🐦</a>`;
-                    socialsHtml = `<div class="team-socials">${links}</div>`;
-                }
-
-                return `
-                    <div class="team-card" onclick="openCandidatModal(${index})">
-                        ${photoHtml}
-                        <div class="team-info">
-                            <h3 class="team-name">${candidat.nom}</h3>
-                            ${candidat.role ? `<p class="team-role">${candidat.role}</p>` : ''}
-                            ${candidat.delegation ? `<span class="team-delegation">${candidat.delegation}</span>` : ''}
-                            ${candidat.bio ? `<p class="team-bio">${candidat.bio.substring(0, 100)}${candidat.bio.length > 100 ? '...' : ''}</p>` : ''}
-                            ${socialsHtml}
-                        </div>
-                    </div>
+            if (currentView === 'list') {
+                // VUE LISTE
+                grid.style.display = 'block';
+                grid.innerHTML = `
+                    <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <thead>
+                            <tr style="background: var(--bleu-vizille); color: white;">
+                                <th style="padding: 0.75rem; text-align: left;">Photo</th>
+                                <th style="padding: 0.75rem; text-align: left;">Nom</th>
+                                <th style="padding: 0.75rem; text-align: left;">Fonction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${candidatsData.map((candidat, index) => `
+                                <tr style="border-bottom: 1px solid #eee; cursor: pointer;" onclick="openCandidatModal(${index})" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='white'">
+                                    <td style="padding: 0.5rem;">
+                                        ${candidat.photo 
+                                            ? `<img src="${candidat.photo}" alt="${candidat.nom}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">`
+                                            : `<div style="width: 40px; height: 40px; border-radius: 50%; background: #e0e0e0; display: flex; align-items: center; justify-content: center;">👤</div>`
+                                        }
+                                    </td>
+                                    <td style="padding: 0.5rem; font-weight: 600;">${candidat.nom}</td>
+                                    <td style="padding: 0.5rem; color: #666;">${candidat.role || candidat.delegation || '—'}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
                 `;
-            }).join('');
+            } else {
+                // VUE CARTES
+                grid.style.display = 'grid';
+                grid.innerHTML = candidatsData.map((candidat, index) => {
+                    const photoHtml = candidat.photo
+                        ? `<img src="${candidat.photo}" alt="${candidat.nom}" class="team-photo">`
+                        : `<div style="width:100%;height:250px;display:flex;align-items:center;justify-content:center;background:#e0e0e0;font-size:4rem;">👤</div>`;
+
+                    return `
+                        <div class="team-card" onclick="openCandidatModal(${index})" tabindex="0" role="button" aria-label="${candidat.nom}">
+                            ${photoHtml}
+                            <div class="team-info">
+                                <h3 class="team-name">${candidat.nom}</h3>
+                                ${candidat.role ? `<p class="team-role">${candidat.role}</p>` : ''}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
         }
 
         document.addEventListener('DOMContentLoaded', loadCandidats);
@@ -320,10 +397,10 @@
     </script>
 
     <!-- Modal Candidat -->
-    <div class="modal-overlay" id="candidat-modal" onclick="if(event.target === this) closeCandidatModal()">
+    <div class="modal-overlay" id="candidat-modal" role="dialog" aria-modal="true" aria-labelledby="modal-name" onclick="if(event.target === this) closeCandidatModal()">
         <div class="modal-content">
             <div class="modal-header">
-                <button class="modal-close" onclick="closeCandidatModal()">✕</button>
+                <button class="modal-close" onclick="closeCandidatModal()" aria-label="Fermer la fenêtre">✕</button>
                 <div id="modal-photo-container"></div>
                 <h2 class="modal-name" id="modal-name"></h2>
                 <p class="modal-role" id="modal-role"></p>

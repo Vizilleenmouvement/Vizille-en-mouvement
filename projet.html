@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <script src="js/auth.js"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,6 +70,15 @@
 
     <!-- Main Content -->
     <main class="main-content">
+        <!-- Bandeau information -->
+        <div class="info-banner" style="background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%); border: 1px solid #f0c36d; border-radius: 12px; padding: 1rem 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+            <span style="font-size: 1.5rem;">🔧</span>
+            <div>
+                <strong style="color: #856404;">Programme en construction</strong>
+                <p style="margin: 0.25rem 0 0; color: #666; font-size: 0.9rem;">Notre projet municipal prend forme. De nouvelles fiches seront ajoutées régulièrement. Revenez bientôt !</p>
+            </div>
+        </div>
+        
         <!-- Stats Section -->
         <div class="stats-grid">
             <div class="stat-card">
@@ -374,6 +382,7 @@ const defaultThemeConfig = {
     "Économie": { icon: "💼", color: "#f39c12" },
     "Mobilités": { icon: "🚴", color: "#1abc9c" },
     "Tranquillité": { icon: "🛡️", color: "#2c3e50" },
+    "Tranquillité publique": { icon: "🛡️", color: "#2c3e50" },
     "Travaux": { icon: "🏗️", color: "#e67e22" },
     "Intercommunalité": { icon: "🤝", color: "#607d8b" },
     "Finance": { icon: "💰", color: "#795548" },
@@ -383,7 +392,8 @@ const defaultThemeConfig = {
     "Démocratie": { icon: "🗳️", color: "#ff5722" },
     "Seniors": { icon: "👴", color: "#795548" },
     "Métropole": { icon: "🏛️", color: "#00bcd4" },
-    "Démocratie locale": { icon: "🗣️", color: "#607d8b" }
+    "Démocratie locale": { icon: "🗣️", color: "#607d8b" },
+    "Enfance/Jeunesse": { icon: "👶", color: "#3498db" }
 };
 
 // Configuration des thèmes (sera mise à jour depuis themes.json)
@@ -438,6 +448,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         const response = await fetch('projets.json?v=' + Date.now());
         if (!response.ok) throw new Error('Erreur chargement données');
         allData = await response.json();
+        
+        // Filtrer les projets "En veille"
+        allData = allData.filter(p => p.statut !== 'En veille');
 
         initializeFilters();
         initializeCharts();

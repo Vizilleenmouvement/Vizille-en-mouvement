@@ -1114,7 +1114,6 @@
     <header class="header">
         <h1>⚙️ Administration - Vizille en Mouvement</h1>
         <div class="header-actions">
-            <button id="storage-mode-btn" class="btn btn-sm" style="background: #333; color: white; font-weight: bold;" onclick="toggleStorageMode()" title="Cliquer pour changer de mode">🐙 GitHub</button>
             <input type="password" class="token-input" id="github-token" placeholder="🔐 Token GitHub" onchange="saveToken()">
             <button class="btn btn-sm" style="background: rgba(255,255,255,0.2);" onclick="toggleToken()">👁️</button>
             <a href="guide.html" target="_blank" class="btn btn-sm" style="background: #28a745; color: white;">📖 Guide</a>
@@ -1328,6 +1327,9 @@
                             <button class="theme-btn" data-theme="economie" onclick="filterProjets('economie')">
                                 💼 Économie (<span id="pcount-economie">0</span>)
                             </button>
+                            <button class="theme-btn" data-theme="intercommunalite" onclick="filterProjets('intercommunalite')">
+                                🏛️ Intercommunalité (<span id="pcount-intercommunalite">0</span>)
+                            </button>
                             <button class="theme-btn" data-theme="tranquillite" onclick="filterProjets('tranquillite')">
                                 🛡️ Tranquillité (<span id="pcount-tranquillite">0</span>)
                             </button>
@@ -1478,6 +1480,9 @@
                             </button>
                             <button class="theme-btn" data-theme="Économie" onclick="filterActions('Économie')">
                                 💼 Économie (<span id="count-Économie">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Intercommunalité" onclick="filterActions('Intercommunalité')">
+                                🏛️ Intercommunalité (<span id="count-Intercommunalité">0</span>)
                             </button>
                             <button class="theme-btn" data-theme="Tranquillité" onclick="filterActions('Tranquillité')">
                                 🛡️ Tranquillité (<span id="count-Tranquillité">0</span>)
@@ -1875,17 +1880,10 @@
             repo: 'Vizille-en-mouvement',
             branch: 'main'
         };
+        // Mode de stockage
+        const storageMode = 'github'; // Mode unique (GitHub)
 
-        // ===== SUPABASE CONFIGURATION =====
-        const SUPABASE_CONFIG = {
-            url: 'https://etdojjsyhpxoxqezsycp.supabase.co',
-            anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV0ZG9qanN5aHB4b3hxZXpzeWNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY5NzA4NDgsImV4cCI6MjA4MjU0Njg0OH0.0QNQgx5nOX2YoN4h1ECShxaT3JdEXVrVFW_xtED9Bbo'
-        };
-
-        // Mode de stockage: 'github' ou 'supabase'
-        let storageMode = localStorage.getItem('vizille_storage_mode') || 'github';
-
-        // Mot de passe par défaut hashé (@@@@@ = 5 @)
+        // Mot de passe par défaut: vizille2026
         const DEFAULT_PASSWORD_HASH = 'YXQ0dml6aWxsZTIwMjY2NDczMTI5MDEx';
         
         // ===== AUTHENTIFICATION =====
@@ -1960,6 +1958,7 @@
             { value: 'solidarite', label: '🤝 Solidarité' },
             { value: 'sport', label: '⚽ Sport' },
             { value: 'economie', label: '💼 Économie' },
+            { value: 'intercommunalite', label: '🏛️ Intercommunalité' },
             { value: 'tranquillite', label: '🛡️ Tranquillité' },
             { value: 'mobilites', label: '🚲 Mobilités' },
             { value: 'finances', label: '💰 Finances' }
@@ -1975,6 +1974,7 @@
             { value: 'Solidarité', label: '🤝 Solidarité' },
             { value: 'Sport', label: '⚽ Sport' },
             { value: 'Économie', label: '💼 Économie' },
+            { value: 'Intercommunalité', label: '🏛️ Intercommunalité' },
             { value: 'Tranquillité', label: '🛡️ Tranquillité' },
             { value: 'Mobilités', label: '🚲 Mobilités' },
             { value: 'Finance', label: '💰 Finance' }
@@ -2005,130 +2005,6 @@
         let currentEdit = { type: null, index: null };
         let pendingPhoto = null;
         let currentPreviewType = null; // 'projet', 'article', 'action', etc.
-
-        // ===== SUPABASE HELPER FUNCTIONS =====
-        async function supabaseFetch(table, method = 'GET', body = null) {
-            const url = `${SUPABASE_CONFIG.url}/rest/v1/${table}`;
-            const options = {
-                method,
-                headers: {
-                    'apikey': SUPABASE_CONFIG.anonKey,
-                    'Authorization': `Bearer ${SUPABASE_CONFIG.anonKey}`,
-                    'Content-Type': 'application/json',
-                    'Prefer': method === 'POST' ? 'return=representation' : 'return=minimal'
-                }
-            };
-            if (body) {
-                options.body = JSON.stringify(body);
-            }
-            const response = await fetch(url, options);
-            if (!response.ok) {
-                const error = await response.text();
-                throw new Error(`Supabase error: ${error}`);
-            }
-            if (method === 'GET' || method === 'POST') {
-                return response.json();
-            }
-            return true;
-        }
-
-        async function loadFromSupabase() {
-            showToast('⏳ Chargement depuis Supabase...', 'info');
-
-            // Réinitialiser les données
-            data.projets = [];
-            data.themes = [];
-            data.actions = [];
-            data.candidats = [];
-            data.faq = [];
-            data.articles = [];
-            data.abonnes = [];
-
-            const tables = ['themes', 'projets', 'actions', 'articles', 'candidats', 'faq', 'abonnes', 'stats'];
-
-            for (const table of tables) {
-                setStatus(table === 'stats' ? 'config' : table, 'loading', '⏳...');
-                try {
-                    const result = await supabaseFetch(table + '?select=*');
-                    // Extraire les données de la colonne JSONB "data"
-                    const items = result.map(row => row.data);
-                    if (table === 'themes') {
-                        data.themes = items;
-                        THEMES_CONFIG = [...items];
-                    } else if (table === 'stats') {
-                        if (items.length > 0) {
-                            data.config = { ...data.config, ...items[0] };
-                        }
-                    } else {
-                        data[table] = items;
-                    }
-                    console.log(`✅ ${table} chargé depuis Supabase:`, items.length, 'éléments');
-                    setStatus(table === 'stats' ? 'config' : table, 'saved', '✓ À jour');
-                } catch (err) {
-                    console.error(`❌ ${table} - Erreur:`, err.message);
-                    setStatus(table === 'stats' ? 'config' : table, 'modified', '❌ Erreur');
-                }
-            }
-
-            renderAll();
-            showToast('✅ Données chargées depuis Supabase !', 'success');
-        }
-
-        async function publishToSupabase(section) {
-            if (publishingInProgress[section]) {
-                showToast('⏳ Publication déjà en cours...', 'info');
-                return;
-            }
-
-            publishingInProgress[section] = true;
-            setStatus(section, 'loading', '⏳ Publication...');
-
-            try {
-                const table = section === 'config' ? 'stats' : section;
-                const items = section === 'config' ? [data.config] : data[section];
-
-                // Supprimer toutes les données existantes
-                await fetch(`${SUPABASE_CONFIG.url}/rest/v1/${table}?id=gte.0`, {
-                    method: 'DELETE',
-                    headers: {
-                        'apikey': SUPABASE_CONFIG.anonKey,
-                        'Authorization': `Bearer ${SUPABASE_CONFIG.anonKey}`
-                    }
-                });
-
-                // Réinsérer les données avec la structure JSONB {data: ...}
-                if (items.length > 0) {
-                    const rows = items.map(item => ({ data: item }));
-                    await supabaseFetch(table, 'POST', rows);
-                }
-
-                setStatus(section, 'saved', '✓ À jour');
-                showToast(`✅ ${section} publié sur Supabase !`, 'success');
-            } catch (err) {
-                setStatus(section, 'modified', '⚠️ Erreur');
-                showToast('❌ Erreur: ' + err.message, 'error');
-            } finally {
-                publishingInProgress[section] = false;
-            }
-        }
-
-        function toggleStorageMode() {
-            storageMode = storageMode === 'github' ? 'supabase' : 'github';
-            localStorage.setItem('vizille_storage_mode', storageMode);
-            updateStorageModeUI();
-            showToast(`Mode de stockage: ${storageMode.toUpperCase()}`, 'info');
-        }
-
-        function updateStorageModeUI() {
-            const btn = document.getElementById('storage-mode-btn');
-            if (btn) {
-                btn.innerHTML = storageMode === 'github'
-                    ? '🐙 GitHub'
-                    : '🟢 Supabase';
-                btn.title = `Mode actuel: ${storageMode}. Cliquer pour changer.`;
-            }
-        }
-
         // ===== PRÉVISUALISATION =====
         function previewCurrentItem() {
             // Détecter le type d'élément en cours d'édition
@@ -2430,16 +2306,7 @@
 
         // ===== CHARGEMENT DONNÉES =====
         async function loadAllData() {
-            // Mettre à jour l'UI du mode de stockage
-            updateStorageModeUI();
-
-            // Utiliser Supabase si le mode est configuré
-            if (storageMode === 'supabase') {
-                return loadFromSupabase();
-            }
-
-            // Sinon, charger depuis GitHub
-            showToast('⏳ Chargement des données depuis GitHub...', 'info');
+                        showToast('⏳ Chargement des données depuis GitHub...', 'info');
 
             // Réinitialiser les données pour éviter les doublons
             data.projets = [];
@@ -3028,6 +2895,7 @@
             { theme: 'Culture', icon: '🎭', color: '#9b59b6' },
             { theme: 'Sport', icon: '⚽', color: '#4caf50' },
             { theme: 'Économie', icon: '💼', color: '#f39c12' },
+            { theme: 'Intercommunalité', icon: '🏛️', color: '#607d8b' },
             { theme: 'Tranquillité', icon: '🛡️', color: '#2c3e50' },
             { theme: 'Mobilités', icon: '🚴', color: '#1abc9c' },
             { theme: 'Seniors', icon: '👴', color: '#795548' },
@@ -3046,33 +2914,41 @@
                 });
             });
             
+            // Compter les actions par thème
+            const actionCounts = {};
+            (data.actions || []).forEach(a => {
+                const theme = a.theme || 'Non classé';
+                actionCounts[theme] = (actionCounts[theme] || 0) + 1;
+            });
+            
             document.getElementById('themes-count').textContent = THEMES_CONFIG.length;
 
-            // Trier par nombre de projets décroissant
+            // Trier par nombre de projets + actions décroissant
             const sortedThemes = [...THEMES_CONFIG].map((t, originalIndex) => ({
                 ...t,
                 originalIndex,
-                count: themeCounts[t.theme] || 0
-            })).sort((a, b) => b.count - a.count);
+                count: themeCounts[t.theme] || 0,
+                actionCount: actionCounts[t.theme] || 0
+            })).sort((a, b) => (b.count + b.actionCount) - (a.count + a.actionCount));
 
             const container = document.getElementById('themes-list');
             container.innerHTML = sortedThemes.length === 0
                 ? '<div class="empty-state" style="grid-column: 1/-1;"><div class="icon">🎨</div><p>Aucun thème</p></div>'
                 : sortedThemes.map((t) => {
-                    const hasProjects = t.count > 0;
+                    const hasContent = t.count > 0 || t.actionCount > 0;
                     return `
                     <div class="theme-card" style="cursor: default;">
                         <div class="theme-card-header" style="background: ${t.color}">
                             <span class="theme-card-icon">${t.icon}</span>
                             <div class="theme-card-info">
                                 <h3>${t.theme}</h3>
-                                <span class="count">${t.count} projet${t.count > 1 ? 's' : ''}</span>
+                                <span class="count">${t.actionCount} action${t.actionCount > 1 ? 's' : ''} · ${t.count} projet${t.count > 1 ? 's' : ''}</span>
                             </div>
                         </div>
                         <div class="theme-card-stats" style="justify-content: flex-end;">
                             <button class="btn btn-sm btn-danger"
                                     onclick="deleteTheme(${t.originalIndex})"
-                                    title="${hasProjects ? 'Supprimer et réassigner les projets' : 'Supprimer ce thème'}">
+                                    title="${hasContent ? 'Supprimer et réassigner le contenu' : 'Supprimer ce thème'}">
                                 🗑️ Supprimer
                             </button>
                         </div>
@@ -3827,6 +3703,7 @@
             'Solidarité': { icon: '🤝', color: '#e74c3c' },
             'Sport': { icon: '⚽', color: '#2ecc71' },
             'Économie': { icon: '💼', color: '#f39c12' },
+            'Intercommunalité': { icon: '🏛️', color: '#607d8b' },
             'Mobilités': { icon: '🚴', color: '#1abc9c' },
             'Tranquillité': { icon: '🛡️', color: '#2c3e50' },
             'Finance': { icon: '💰', color: '#795548' }
@@ -5188,14 +5065,7 @@ Pour vous désabonner, répondez à cet email.
                 showToast('⏳ Publication déjà en cours...', 'info');
                 return;
             }
-
-            // Utiliser Supabase si le mode est configuré
-            if (storageMode === 'supabase') {
-                return publishToSupabase(section);
-            }
-
-            // Sinon, publier sur GitHub
-            const token = getToken();
+                        const token = getToken();
             if (!token) {
                 showToast('⚠️ Configurez votre token GitHub', 'warning');
                 return;

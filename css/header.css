@@ -12,7 +12,7 @@
 
 .header-top {
     background: var(--bleu-vizille);
-    padding: 0.4rem 0;
+    padding: 0.25rem 0;
     text-align: center;
     border-bottom: 2px solid var(--or);
 }
@@ -30,18 +30,17 @@
 .header-main {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0.6rem 2rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 3rem;
+    justify-content: space-between;
     border-bottom: 1px solid var(--gris-doux);
     background: white;
 }
 
 /* Logo dans le header */
 .nav-header-logo {
-    height: 85px;
+    height: 70px;
     width: auto;
     transition: all var(--transition-normal);
     filter: drop-shadow(0 2px 4px rgba(26, 58, 92, 0.2));
@@ -155,7 +154,7 @@ nav ul li a.admin-link:hover {
         left: 0;
         right: 0;
         bottom: 0;
-        background: #1a3a5c;
+        background: #1a3a5c; /* Fond solide, pas transparent */
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -202,6 +201,7 @@ nav ul li a.admin-link:hover {
         font-size: 1.3rem;
     }
 
+    /* Bouton fermer dans le menu */
     .menu-close {
         position: absolute;
         top: 1rem;

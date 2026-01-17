@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <script src="js/auth.js"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,6 +79,130 @@
         .hero-content h1 {
             font-size: 1.3rem !important;
         }
+    }
+
+    /* ===== GALERIE PHOTOS ===== */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+    
+    .gallery-item {
+        cursor: pointer;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .gallery-item:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    
+    .gallery-item img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        display: block;
+    }
+    
+    .gallery-caption {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        color: #666;
+        text-align: center;
+        background: #f9f9f9;
+    }
+    
+    /* ===== LIGHTBOX ===== */
+    .lightbox-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.95);
+        z-index: 10000;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .lightbox-overlay.active {
+        display: flex;
+    }
+    
+    .lightbox-content {
+        max-width: 90vw;
+        max-height: 85vh;
+        text-align: center;
+    }
+    
+    .lightbox-content img {
+        max-width: 100%;
+        max-height: 80vh;
+        object-fit: contain;
+        border-radius: 4px;
+    }
+    
+    .lightbox-caption {
+        color: #fff;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 2.5rem;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 10001;
+    }
+    
+    .lightbox-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: #fff;
+        background: rgba(255,255,255,0.2);
+        border: none;
+        padding: 1rem;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    
+    .lightbox-prev { left: 20px; }
+    .lightbox-next { right: 20px; }
+    
+    .lightbox-nav:hover {
+        background: rgba(255,255,255,0.3);
+    }
+
+    /* ===== BADGE PHOTOS SUR CARTES ===== */
+    .card-photos-badge {
+        background: linear-gradient(135deg, #3498db, #2980b9);
+        color: white;
+        padding: 0.2rem 0.5rem;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .action-card.has-photos {
+        border-left: 3px solid #3498db;
+    }
+    
+    .table-photos-badge {
+        color: #3498db;
+        font-size: 0.85rem;
     }
     </style>
 </head>
@@ -330,6 +453,12 @@
                     <div id="modal-details"></div>
                 </section>
 
+                <!-- Galerie Photos -->
+                <section class="modal-section" id="section-galerie">
+                    <h3>📷 Galerie Photos</h3>
+                    <div class="gallery-grid" id="modal-galerie"></div>
+                </section>
+
                 <!-- Sources -->
                 <section class="modal-section">
                     <h3>📰 Sources</h3>
@@ -341,6 +470,17 @@
                 <button class="btn btn-secondary" id="btn-prev-projet">← Précédent</button>
                 <button class="btn btn-secondary" id="btn-next-projet">Suivant →</button>
             </div>
+        </div>
+    </div>
+
+    <!-- Lightbox pour les images -->
+    <div class="lightbox-overlay" id="lightbox-overlay">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev">❮</button>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next">❯</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
         </div>
     </div>
 
@@ -369,10 +509,12 @@ const themeConfig = {
     "Économie": { icon: "💼", color: "#f39c12" },
     "Mobilités": { icon: "🚴", color: "#1abc9c" },
     "Tranquillité": { icon: "🛡️", color: "#2c3e50" },
+    "Tranquillité publique": { icon: "🛡️", color: "#2c3e50" },
     "Travaux": { icon: "🏗️", color: "#e67e22" },
     "Intercommunalité": { icon: "🤝", color: "#607d8b" },
     "Finance": { icon: "💰", color: "#795548" },
-    "Personnel": { icon: "👥", color: "#9e9e9e" }
+    "Personnel": { icon: "👥", color: "#9e9e9e" },
+    "Jumelages": { icon: "🌍", color: "#00bcd4" }
 };
 
 // Instances de graphiques
@@ -660,6 +802,11 @@ function renderThemesView() {
             document.querySelector('.view-btn[data-view="cards"]').classList.add('active');
             currentView = 'cards';
             applyFilters();
+            // Scroll vers la section des cartes
+            setTimeout(() => {
+                const section = document.querySelector('.filters-section') || document.getElementById('view-cards');
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
         });
 
         container.appendChild(card);
@@ -692,9 +839,10 @@ function renderCardsView() {
         const config = themeConfig[item.theme] || { icon: '📋', color: '#607d8b' };
         const statutClass = getStatutClass(item.statut);
         const hasDetails = item.importance > 1 || (item.chiffres && item.chiffres.length > 1);
+        const hasPhotos = item.images && item.images.length > 0;
 
         const card = document.createElement('div');
-        card.className = 'action-card' + (hasDetails ? ' has-details' : '');
+        card.className = 'action-card' + (hasDetails ? ' has-details' : '') + (hasPhotos ? ' has-photos' : '');
         card.style.animationDelay = `${Math.min(index * 0.03, 0.5)}s`;
         card.dataset.projectId = item.id;
 
@@ -703,6 +851,7 @@ function renderCardsView() {
                 <span class="card-theme" style="background: ${config.color}">
                     ${config.icon} ${item.theme}
                 </span>
+                ${hasPhotos ? `<span class="card-photos-badge" title="${item.images.length} photo(s)">📷 ${item.images.length}</span>` : ''}
                 <span class="card-statut ${statutClass}">${item.statut}</span>
             </div>
             <div class="card-body">
@@ -743,6 +892,7 @@ function renderTableView() {
     sorted.forEach(item => {
         const config = themeConfig[item.theme] || { icon: '📋', color: '#607d8b' };
         const statutClass = getStatutClass(item.statut);
+        const hasPhotos = item.images && item.images.length > 0;
 
         const row = document.createElement('tr');
         row.addEventListener('click', () => openProjectModal(item.id));
@@ -754,7 +904,7 @@ function renderTableView() {
                 </span>
             </td>
             <td>
-                <strong>${item.titre}</strong>
+                <strong>${item.titre}</strong>${hasPhotos ? ` <span class="table-photos-badge">📷</span>` : ''}
                 ${item.description ? `<br><small style="color: #888">${item.description}</small>` : ''}
             </td>
             <td><span class="table-statut ${statutClass}">${item.statut}</span></td>
@@ -893,6 +1043,21 @@ function openProjectModal(projectId) {
 
     sourcesContainer.innerHTML = sourcesHTML;
 
+    // Galerie Photos
+    const galerieSection = document.getElementById('section-galerie');
+    const galerieContainer = document.getElementById('modal-galerie');
+    if (project.images && project.images.length > 0) {
+        galerieSection.classList.remove('hidden');
+        galerieContainer.innerHTML = project.images.map((img, idx) => `
+            <div class="gallery-item" onclick="openLightbox(${project.id}, ${idx})">
+                <img src="${img.thumb}" alt="${img.caption}" loading="lazy">
+                <div class="gallery-caption">${img.caption}</div>
+            </div>
+        `).join('');
+    } else {
+        galerieSection.classList.add('hidden');
+    }
+
     updateModalNavigation();
 
     modal.classList.add('active');
@@ -925,6 +1090,45 @@ function adjustColor(color, amount) {
     const b = Math.max(0, Math.min(255, parseInt(hex.substr(4, 2), 16) + amount));
     return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
 }
+
+// ===== LIGHTBOX GALERIE =====
+let currentLightboxProject = null;
+let currentLightboxIndex = 0;
+
+function openLightbox(projectId, imageIndex) {
+    currentLightboxProject = filteredData.find(p => p.id === projectId);
+    if (!currentLightboxProject || !currentLightboxProject.images) return;
+    
+    currentLightboxIndex = imageIndex;
+    showLightboxImage();
+    document.getElementById('lightbox-overlay').classList.add('active');
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox-overlay').classList.remove('active');
+}
+
+function showLightboxImage() {
+    const img = currentLightboxProject.images[currentLightboxIndex];
+    document.getElementById('lightbox-img').src = img.full;
+    document.getElementById('lightbox-caption').textContent = 
+        `${img.caption} (${currentLightboxIndex + 1}/${currentLightboxProject.images.length})`;
+}
+
+function navigateLightbox(direction) {
+    currentLightboxIndex += direction;
+    if (currentLightboxIndex < 0) currentLightboxIndex = currentLightboxProject.images.length - 1;
+    if (currentLightboxIndex >= currentLightboxProject.images.length) currentLightboxIndex = 0;
+    showLightboxImage();
+}
+
+// Event listeners pour le lightbox
+document.getElementById('lightbox-overlay').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('lightbox-overlay')) closeLightbox();
+});
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+document.getElementById('lightbox-prev').addEventListener('click', () => navigateLightbox(-1));
+document.getElementById('lightbox-next').addEventListener('click', () => navigateLightbox(1));
 
 // Event listeners pour la modal
 document.getElementById('modal-overlay').addEventListener('click', (e) => {
