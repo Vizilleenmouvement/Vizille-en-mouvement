@@ -1,13 +1,28 @@
 [
   {
-    "theme": "Transition écologique",
-    "icon": "🌱",
-    "color": "#2ecc71"
+    "theme": "Concertation citoyenne",
+    "icon": "🗣️",
+    "color": "#e67e22"
   },
   {
-    "theme": "Enfance/Jeunesse",
+    "theme": "Culture",
+    "icon": "🎭",
+    "color": "#9b59b6"
+  },
+  {
+    "theme": "Démocratie locale",
+    "icon": "🗣️",
+    "color": "#607d8b"
+  },
+  {
+    "theme": "Enfance",
     "icon": "👶",
     "color": "#3498db"
+  },
+  {
+    "theme": "Environnement",
+    "icon": "🌿",
+    "color": "#27ae60"
   },
   {
     "theme": "Mobilités",
@@ -15,19 +30,9 @@
     "color": "#1abc9c"
   },
   {
-    "theme": "Tranquillité publique",
-    "icon": "🛡️",
-    "color": "#2c3e50"
-  },
-  {
-    "theme": "Urbanisme",
-    "icon": "🏗️",
-    "color": "#34495e"
-  },
-  {
-    "theme": "Travaux",
-    "icon": "🔧",
-    "color": "#7f8c8d"
+    "theme": "Métropole",
+    "icon": "🏛️",
+    "color": "#00bcd4"
   },
   {
     "theme": "Santé",
@@ -35,13 +40,38 @@
     "color": "#e91e63"
   },
   {
-    "theme": "Métropole",
-    "icon": "🏛️",
-    "color": "#00bcd4"
+    "theme": "Seniors",
+    "icon": "👴",
+    "color": "#795548"
   },
   {
-    "theme": "Concertation citoyenne",
-    "icon": "🗣️",
-    "color": "#16a085"
+    "theme": "Solidarité",
+    "icon": "🤝",
+    "color": "#e74c3c"
+  },
+  {
+    "theme": "Sport",
+    "icon": "⚽",
+    "color": "#4caf50"
+  },
+  {
+    "theme": "Tranquillité publique",
+    "icon": "🛡️",
+    "color": "#2c3e50"
+  },
+  {
+    "theme": "Transition écologique",
+    "icon": "🌱",
+    "color": "#2ecc71"
+  },
+  {
+    "theme": "Urbanisme",
+    "icon": "🏘️",
+    "color": "#34495e"
+  },
+  {
+    "theme": "Économie",
+    "icon": "💼",
+    "color": "#f39c12"
   }
 ]

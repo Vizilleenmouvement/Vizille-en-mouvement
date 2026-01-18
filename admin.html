@@ -3316,11 +3316,34 @@
                 </div>
 
                 <hr style="margin: 1.5rem 0; border: none; border-top: 2px solid var(--or);">
+                <h4 style="color: var(--bleu); margin-bottom: 1rem;">🏗️ Informations projet (Urbanisme/Travaux)</h4>
+
+                <div class="form-group">
+                    <label>🤝 Partenaires</label>
+                    <input type="text" id="edit-partenaires" value="${p.partenaires || ''}" placeholder="Ex: État (ANCT), Métropole, ANAH, Banque des Territoires">
+                </div>
+
+                <div class="form-group">
+                    <label>💰 Budget / Financement</label>
+                    <input type="text" id="edit-financement" value="${p.financement || ''}" placeholder="Ex: Subventions ANAH jusqu'à 50%, aides Métropole">
+                </div>
+
+                <div class="form-group">
+                    <label>📅 Échéance</label>
+                    <input type="text" id="edit-echeance" value="${p.echeance || ''}" placeholder="Ex: Mise en œuvre 2025-2030">
+                </div>
+
+                <div class="form-group">
+                    <label>📍 Périmètre / Localisation</label>
+                    <input type="text" id="edit-perimetre" value="${p.perimetre || ''}" placeholder="Ex: Rue République → rue Jean Jaurès">
+                </div>
+
+                <hr style="margin: 1.5rem 0; border: none; border-top: 2px solid var(--or);">
                 <h4 style="color: var(--bleu); margin-bottom: 1rem;">📝 Informations complémentaires</h4>
 
                 <div class="form-group">
                     <label>Détails supplémentaires</label>
-                    <textarea id="edit-details" rows="3" placeholder="Informations complémentaires, contexte, partenaires...">${p.details || ''}</textarea>
+                    <textarea id="edit-details" rows="3" placeholder="Informations complémentaires, contexte...">${p.details || ''}</textarea>
                 </div>
             `;
             document.getElementById('modal-save').onclick = saveProjet;
@@ -3607,6 +3630,12 @@
             const indicateurs = indicateursInput ? indicateursInput.split(',').map(i => i.trim()).filter(i => i) : [];
             const vision = document.getElementById('edit-vision').value.trim();
 
+            // Champs Urbanisme/Travaux
+            const partenaires = document.getElementById('edit-partenaires').value.trim();
+            const financement = document.getElementById('edit-financement').value.trim();
+            const echeance = document.getElementById('edit-echeance').value.trim();
+            const perimetre = document.getElementById('edit-perimetre').value.trim();
+
             if (!titre || themes.length === 0) {
                 showToast('⚠️ Titre et au moins un thème obligatoires', 'warning');
                 return;
@@ -3637,6 +3666,11 @@
                 axes_action,
                 indicateurs,
                 vision,
+                // Champs Urbanisme/Travaux
+                partenaires,
+                financement,
+                echeance,
+                perimetre,
                 // Conserver les sources existantes si modification
                 sources: currentEdit.index === -1 ? [] : (data.projets[currentEdit.index].sources || []),
                 lien_source: currentEdit.index === -1 ? [] : (data.projets[currentEdit.index].lien_source || [])

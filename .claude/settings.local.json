@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(chmod:*)",
+      "Bash(sips:*)",
+      "Bash(ls:*)",
+      "Bash(for f in bilan.html projet.html index.html blog.html equipe.html faq.html)",
+      "Bash(do sed -i '' 's/logo-nav\\.png/logo.png/g; s/logo-hero\\.png/logo.png/g' \"$f\")",
+      "Bash(done)",
+      "Bash(cat:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git fetch:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(pdfimages:*)"
+    ]
+  }
+}

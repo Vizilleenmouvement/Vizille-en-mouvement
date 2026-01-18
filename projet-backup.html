@@ -26,68 +26,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <!-- CSS Modulaires -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/pages/projet.css?v=2">
-    <style>
-        /* Section Concertation citoyenne */
-        .leitmotiv-banner {
-            background: linear-gradient(135deg, #16a085, #0e6655);
-            color: white;
-            padding: 1.5rem 2rem;
-            text-align: center;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-        }
-        .leitmotiv-banner h2 { margin: 0 0 0.5rem 0; font-size: 1.2rem; }
-        .leitmotiv-banner p { margin: 0; opacity: 0.9; font-size: 0.95rem; }
-        
-        .axes-tabs {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-        .axe-tab {
-            padding: 0.6rem 1.2rem;
-            background: #ecf0f1;
-            border: 2px solid transparent;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-        }
-        .axe-tab:hover { background: #d5dbdb; }
-        .axe-tab.active { background: #16a085; color: white; border-color: #0e6655; }
-        
-        .axe-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        .axe-objectif {
-            background: linear-gradient(135deg, #5d6d7e, #4a5568);
-            color: white;
-            padding: 1.5rem 2rem;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-        }
-        .axe-objectif h3 { margin: 0 0 0.5rem 0; font-size: 1.3rem; }
-        .axe-objectif p { margin: 0; font-size: 1rem; opacity: 0.95; line-height: 1.5; }
-        
-        .axe-engagements h4 { color: #27ae60; font-size: 1.1rem; margin: 0 0 1rem 0; }
-        .engagement-item {
-            background: white;
-            border-left: 4px solid #27ae60;
-            padding: 1rem 1.5rem;
-            margin-bottom: 1rem;
-            border-radius: 0 8px 8px 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-        .engagement-item h5 { margin: 0 0 0.3rem 0; color: var(--bleu-vizille); font-size: 1rem; }
-        .engagement-item p { margin: 0; color: var(--gris-texte); line-height: 1.5; font-size: 0.95rem; }
-    </style>
 </head>
 <body>
     <header class="header">
@@ -135,6 +79,51 @@
             </div>
         </div>
         
+        <!-- Stats Section -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="stat-total">—</div>
+                <div class="stat-label">Engagements</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-themes">—</div>
+                <div class="stat-label">Thématiques</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-prioritaires">—</div>
+                <div class="stat-label">Prioritaires</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-court-terme">—</div>
+                <div class="stat-label">Court terme</div>
+            </div>
+        </div>
+        <!-- Charts Section -->
+        <section>
+            <h2 class="section-title">📊 Vue d'ensemble du projet</h2>
+            <button class="toggle-charts-btn" onclick="toggleCharts()">📊 Voir les graphiques</button>
+            <div class="charts-section" id="charts-section">
+                <div class="chart-card">
+                    <h3>Répartition par thème</h3>
+                    <div class="chart-container">
+                        <canvas id="chart-themes"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Horizon de réalisation</h3>
+                    <div class="chart-container">
+                        <canvas id="chart-horizons"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Priorités</h3>
+                    <div class="chart-container">
+                        <canvas id="chart-priorites"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Filters Section -->
         <section>
             <h2 class="section-title">🔍 Explorer nos engagements</h2>
@@ -154,6 +143,29 @@
                     <div class="filter-group">
                         <label for="filter-search">Recherche</label>
                         <input type="text" id="filter-search" placeholder="Mot-clé...">
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-horizon">Horizon</label>
+                        <select id="filter-horizon">
+                            <option value="">Tous les horizons</option>
+                            <option value="Prioritaire">🔴 Prioritaire</option>
+                            <option value="Court terme">🟠 Court terme (2026-2028)</option>
+                            <option value="Moyen terme">🔵 Moyen terme (2028-2030)</option>
+                            <option value="Long terme">🟣 Long terme (2030-2032)</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-annee">Année cible</label>
+                        <select id="filter-annee">
+                            <option value="">Toutes les années</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                            <option value="2031">2031</option>
+                            <option value="2032">2032</option>
+                        </select>
                     </div>
                     <div class="filter-group filter-actions">
                         <button class="btn btn-secondary" id="btn-reset">Réinitialiser</button>
@@ -182,16 +194,6 @@
                 ← Revenir aux thèmes
             </button>
             <div class="loading" id="loading">Chargement des engagements</div>
-
-            <!-- Section spéciale Concertation citoyenne -->
-            <div id="view-concertation" class="hidden">
-                <div class="leitmotiv-banner">
-                    <h2>🗣️ ANCRER LE PROGRAMME MUNICIPAL SUR LA BASE DE L'ÉDUCATION POPULAIRE</h2>
-                    <p>→ Renforcer la démocratie • L'émancipation individuelle et collective • La concertation citoyenne</p>
-                </div>
-                <div class="axes-tabs" id="axes-tabs"></div>
-                <div class="axe-content" id="axe-content"></div>
-            </div>
 
             <!-- Themes View -->
             <div id="view-themes" class="themes-grid hidden"></div>
@@ -397,6 +399,19 @@ const defaultThemeConfig = {
 // Configuration des thèmes (sera mise à jour depuis themes.json)
 let themeConfig = { ...defaultThemeConfig };
 
+// Toggle graphiques mobile
+function toggleCharts() {
+    const charts = document.getElementById('charts-section');
+    const btn = document.querySelector('.toggle-charts-btn');
+    if (charts.classList.contains('show-mobile')) {
+        charts.classList.remove('show-mobile');
+        btn.textContent = '📊 Voir les graphiques';
+    } else {
+        charts.classList.add('show-mobile');
+        btn.textContent = '📊 Masquer les graphiques';
+    }
+}
+
 // Charger les thèmes depuis themes.json
 async function loadThemeConfig() {
     try {
@@ -438,54 +453,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         allData = allData.filter(p => p.statut !== 'En veille');
 
         initializeFilters();
-        
-        // Restaurer le thème depuis l'URL si présent
-        const hash = window.location.hash;
-        if (hash && hash.startsWith('#theme=')) {
-            const theme = decodeURIComponent(hash.replace('#theme=', ''));
-            document.getElementById('filter-theme').value = theme;
-            document.querySelectorAll('.theme-filter-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.theme === theme);
-            });
-        }
-        
+        initializeCharts();
         applyFilters();
 
         document.getElementById('loading').classList.add('hidden');
-        
-        // Enregistrer l'état initial dans l'historique
-        const currentTheme = document.getElementById('filter-theme').value;
-        history.replaceState({ theme: currentTheme, view: currentView, initial: true }, '', window.location.href);
 
     } catch (error) {
         console.error('Erreur:', error);
         document.getElementById('loading').textContent = 'Erreur de chargement des données';
-    }
-});
-
-// Gérer le bouton retour du navigateur (swipe trackpad/magic mouse)
-window.addEventListener('popstate', (event) => {
-    // Si une modal est ouverte, la fermer
-    const modal = document.getElementById('modal-overlay');
-    if (modal && modal.classList.contains('active')) {
-        closeProjectModal(true); // true = depuis popstate, ne pas faire history.back()
-        return;
-    }
-    
-    if (event.state && event.state.theme !== undefined) {
-        const theme = event.state.theme;
-        document.getElementById('filter-theme').value = theme;
-        document.querySelectorAll('.theme-filter-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.theme === theme);
-        });
-        applyFilters();
-    } else {
-        // Retour à la vue initiale (tous les thèmes)
-        document.getElementById('filter-theme').value = '';
-        document.querySelectorAll('.theme-filter-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.theme === '');
-        });
-        applyFilters();
     }
 });
 
@@ -498,14 +473,15 @@ function initializeFilters() {
         getProjectThemes(p).forEach(t => usedThemes.add(t));
     });
 
-    // N'afficher que les thèmes qui ont des fiches, Concertation en dernier (avant Tous)
-    const uniqueThemes = [...usedThemes].sort((a, b) => {
-        if (a === 'Concertation citoyenne') return 1;
-        if (b === 'Concertation citoyenne') return -1;
-        return a.localeCompare(b);
-    });
+    const allThemes = new Set([...usedThemes, ...Object.keys(themeConfig)]);
+    const uniqueThemes = [...allThemes].sort();
 
-    let html = '';
+    let html = `
+        <button class="theme-filter-btn active" data-theme="">
+            <span class="icon">🌐</span>
+            <span class="label">Tous</span>
+        </button>
+    `;
 
     uniqueThemes.forEach(theme => {
         const config = themeConfig[theme] || { icon: '📌', color: '#1a3a5c' };
@@ -517,14 +493,6 @@ function initializeFilters() {
         `;
     });
 
-    // Bouton "Tous" à la fin
-    html += `
-        <button class="theme-filter-btn active" data-theme="">
-            <span class="icon">🌐</span>
-            <span class="label">Tous</span>
-        </button>
-    `;
-
     themesGrid.innerHTML = html;
 
     document.querySelectorAll('.theme-filter-btn').forEach(btn => {
@@ -532,11 +500,6 @@ function initializeFilters() {
             document.querySelectorAll('.theme-filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             document.getElementById('filter-theme').value = btn.dataset.theme;
-            
-            // Ajouter à l'historique du navigateur
-            const theme = btn.dataset.theme;
-            history.pushState({ theme: theme, view: currentView }, '', theme ? `#theme=${encodeURIComponent(theme)}` : '#');
-            
             applyFilters();
 
             setTimeout(() => {
@@ -556,6 +519,8 @@ function initializeFilters() {
     });
 
     document.getElementById('filter-search').addEventListener('input', applyFilters);
+    document.getElementById('filter-horizon').addEventListener('change', applyFilters);
+    document.getElementById('filter-annee').addEventListener('change', applyFilters);
     document.getElementById('btn-reset').addEventListener('click', resetFilters);
 
     document.querySelectorAll('.view-btn').forEach(btn => {
@@ -585,6 +550,8 @@ function initializeFilters() {
 function applyFilters() {
     const search = document.getElementById('filter-search').value.toLowerCase();
     const theme = document.getElementById('filter-theme').value;
+    const horizon = document.getElementById('filter-horizon').value;
+    const annee = document.getElementById('filter-annee').value;
 
     filteredData = allData.filter(projet => {
         const matchSearch = !search ||
@@ -593,17 +560,13 @@ function applyFilters() {
             (projet.description && projet.description.toLowerCase().includes(search));
 
         const matchTheme = !theme || projectHasTheme(projet, theme);
+        const matchHorizon = !horizon || projet.horizon === horizon || projet.statut === horizon;
+        const matchAnnee = !annee || projet.annee == annee;
 
-        return matchSearch && matchTheme;
+        return matchSearch && matchTheme && matchHorizon && matchAnnee;
     });
 
     filteredData.sort((a, b) => {
-        // Concertation citoyenne toujours en dernier
-        const aIsConcert = a.theme === 'Concertation citoyenne';
-        const bIsConcert = b.theme === 'Concertation citoyenne';
-        if (aIsConcert && !bIsConcert) return 1;
-        if (!aIsConcert && bIsConcert) return -1;
-        
         // Objectifs en premier, puis engagements, puis le reste
         const typeOrder = { 'objectif': 0, 'engagement': 1 };
         const typeA = typeOrder[a.type] !== undefined ? typeOrder[a.type] : 2;
@@ -631,12 +594,15 @@ function applyFilters() {
     });
 
     document.getElementById('results-count').textContent = filteredData.length;
+    updateStats();
     renderCurrentView();
 }
 
 function resetFilters() {
     document.getElementById('filter-search').value = '';
     document.getElementById('filter-theme').value = '';
+    document.getElementById('filter-horizon').value = '';
+    document.getElementById('filter-annee').value = '';
 
     document.querySelectorAll('.theme-filter-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.theme === '');
@@ -651,12 +617,144 @@ function parseBudget(budget) {
     return parseFloat(str) || 0;
 }
 
+// ===== STATISTIQUES =====
+function updateStats() {
+    const total = allData.length;
+
+    const themesSet = new Set();
+    allData.forEach(p => getProjectThemes(p).forEach(t => themesSet.add(t)));
+    const themes = themesSet.size;
+
+    const prioritaires = allData.filter(p => p.horizon === 'Prioritaire' || p.statut === 'Prioritaire').length;
+    const courtTerme = allData.filter(p => p.horizon === 'Court terme' || p.statut === 'Court terme').length;
+
+    document.getElementById('stat-total').textContent = total;
+    document.getElementById('stat-themes').textContent = themes;
+    document.getElementById('stat-prioritaires').textContent = prioritaires;
+    document.getElementById('stat-court-terme').textContent = courtTerme;
+}
+
+// ===== GRAPHIQUES =====
+function initializeCharts() {
+    const themeData = {};
+    allData.forEach(p => {
+        const themes = getProjectThemes(p);
+        themes.forEach(t => {
+            themeData[t] = (themeData[t] || 0) + 1;
+        });
+    });
+
+    const themeLabels = Object.keys(themeData).sort((a, b) => themeData[b] - themeData[a]);
+    const themeValues = themeLabels.map(t => themeData[t]);
+    const themeColors = themeLabels.map(t => themeConfig[t]?.color || '#1a3a5c');
+
+    new Chart(document.getElementById('chart-themes'), {
+        type: 'doughnut',
+        data: {
+            labels: themeLabels,
+            datasets: [{
+                data: themeValues,
+                backgroundColor: themeColors,
+                borderWidth: 2,
+                borderColor: '#fff'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'right',
+                    labels: { font: { size: 11 } }
+                }
+            }
+        }
+    });
+
+    const horizonData = {};
+    allData.forEach(p => {
+        const h = p.horizon || p.statut || 'Non défini';
+        horizonData[h] = (horizonData[h] || 0) + 1;
+    });
+
+    const horizonLabels = Object.keys(horizonData);
+    const horizonValues = horizonLabels.map(h => horizonData[h]);
+    const horizonColors = {
+        'Prioritaire': '#e74c3c',
+        'Court terme': '#f39c12',
+        'Moyen terme': '#3498db',
+        'Long terme': '#9b59b6',
+        'Programmé': '#1abc9c',
+        'Étude': '#9b59b6',
+        'En cours': '#f39c12',
+        'Non défini': '#95a5a6'
+    };
+
+    new Chart(document.getElementById('chart-horizons'), {
+        type: 'pie',
+        data: {
+            labels: horizonLabels,
+            datasets: [{
+                data: horizonValues,
+                backgroundColor: horizonLabels.map(h => horizonColors[h] || '#95a5a6'),
+                borderWidth: 2,
+                borderColor: '#fff'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: { font: { size: 11 } }
+                }
+            }
+        }
+    });
+
+    const anneeData = {};
+    allData.forEach(p => {
+        if (p.annee) {
+            anneeData[p.annee] = (anneeData[p.annee] || 0) + 1;
+        }
+    });
+
+    const anneeLabels = Object.keys(anneeData).sort();
+    const anneeValues = anneeLabels.map(a => anneeData[a]);
+
+    new Chart(document.getElementById('chart-priorites'), {
+        type: 'bar',
+        data: {
+            labels: anneeLabels,
+            datasets: [{
+                label: 'Engagements',
+                data: anneeValues,
+                backgroundColor: '#c9a227',
+                borderRadius: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { stepSize: 1 }
+                }
+            }
+        }
+    });
+}
+
 // ===== RENDU DES VUES =====
 function renderCurrentView() {
     document.getElementById('view-themes').classList.add('hidden');
     document.getElementById('view-cards').classList.add('hidden');
     document.getElementById('view-table').classList.add('hidden');
-    document.getElementById('view-concertation').classList.add('hidden');
     document.getElementById('empty-state').classList.add('hidden');
 
     if (filteredData.length === 0) {
@@ -676,76 +774,6 @@ function renderCurrentView() {
             break;
     }
 }
-
-function renderConcertationView() {
-    const container = document.getElementById('view-concertation');
-    container.classList.remove('hidden');
-    
-    // Récupérer les fiches Concertation
-    const fiches = allData.filter(p => p.theme === 'Concertation citoyenne');
-    
-    // Identifier les 5 axes (objectifs)
-    const axes = fiches.filter(p => p.type === 'objectif').sort((a, b) => a.id - b.id);
-    
-    // Générer les onglets d'axes
-    let tabsHtml = '';
-    axes.forEach((axe, i) => {
-        const num = i + 1;
-        const label = axe.titre.replace(/^Axe \d+ - /, '');
-        tabsHtml += `<button class="axe-tab ${num === currentAxe ? 'active' : ''}" onclick="selectAxe(${num})">${num}. ${label.substring(0, 25)}${label.length > 25 ? '...' : ''}</button>`;
-    });
-    document.getElementById('axes-tabs').innerHTML = tabsHtml;
-    
-    // Afficher le contenu de l'axe sélectionné
-    renderAxeContent(axes, fiches);
-}
-
-function selectAxe(num) {
-    currentAxe = num;
-    const fiches = allData.filter(p => p.theme === 'Concertation citoyenne');
-    const axes = fiches.filter(p => p.type === 'objectif').sort((a, b) => a.id - b.id);
-    
-    document.querySelectorAll('.axe-tab').forEach((tab, i) => {
-        tab.classList.toggle('active', i + 1 === num);
-    });
-    
-    renderAxeContent(axes, fiches);
-}
-
-function renderAxeContent(axes, allFiches) {
-    const axe = axes[currentAxe - 1];
-    if (!axe) return;
-    
-    const container = document.getElementById('axe-content');
-    
-    // Trouver les engagements de cet axe (fiches entre cet objectif et le suivant)
-    const axeIndex = allFiches.indexOf(axe);
-    const nextAxeIndex = axes[currentAxe] ? allFiches.indexOf(axes[currentAxe]) : allFiches.length;
-    const engagements = allFiches.slice(axeIndex + 1, nextAxeIndex).filter(p => p.type === 'engagement');
-    
-    let html = `
-        <div class="axe-objectif">
-            <h3>🎯 ${axe.titre}</h3>
-            <p>${axe.description || axe.resume || ''}</p>
-        </div>
-        <div class="axe-engagements">
-            <h4>🌱 Nos engagements (${engagements.length})</h4>
-    `;
-    
-    engagements.forEach(eng => {
-        html += `
-            <div class="engagement-item">
-                <h5>${eng.titre}</h5>
-                <p>${eng.description || eng.resume || ''}</p>
-            </div>
-        `;
-    });
-    
-    html += '</div>';
-    container.innerHTML = html;
-}
-
-window.selectAxe = selectAxe;
 
 function renderThemesView() {
     const container = document.getElementById('view-themes');
@@ -808,34 +836,6 @@ function renderCardsView() {
     const container = document.getElementById('view-cards');
 
     let html = '';
-    
-    // Bandeau spécial pour Concertation citoyenne
-    const selectedTheme = document.getElementById('filter-theme')?.value;
-    if (selectedTheme === 'Concertation citoyenne' || filteredData.some(p => getProjectThemes(p).includes('Concertation citoyenne'))) {
-        const hasTheme = filteredData.some(p => getProjectThemes(p).includes('Concertation citoyenne'));
-        if (hasTheme && (selectedTheme === 'Concertation citoyenne' || selectedTheme === '')) {
-            html += `
-                <div class="theme-banner-special" style="
-                    grid-column: 1 / -1;
-                    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
-                    color: white;
-                    padding: 1.5rem 2rem;
-                    border-radius: 12px;
-                    margin-bottom: 1.5rem;
-                    text-align: center;
-                    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
-                ">
-                    <h2 style="margin: 0 0 0.5rem 0; font-size: 1.4rem; font-weight: 700;">
-                        🗣️ ANCRER LE PROGRAMME MUNICIPAL SUR LA BASE DE L'ÉDUCATION POPULAIRE
-                    </h2>
-                    <p style="margin: 0; opacity: 0.9; font-size: 1rem;">
-                        → Renforcer la démocratie • L'émancipation individuelle et collective • La concertation citoyenne
-                    </p>
-                </div>
-            `;
-        }
-    }
-    
     filteredData.forEach((projet, index) => {
         const themes = getProjectThemes(projet);
         const primaryTheme = themes[0] || 'Non défini';
@@ -1076,19 +1076,11 @@ function openProjectModal(projectId) {
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
-    
-    // Ajouter à l'historique pour le retour navigateur
-    history.pushState({ modal: true, projectId: project.id }, '', `#fiche=${project.id}`);
 }
 
-function closeProjectModal(fromPopstate = false) {
+function closeProjectModal() {
     document.getElementById('modal-overlay').classList.remove('active');
     document.body.style.overflow = '';
-    
-    // Si fermeture manuelle (pas depuis popstate), revenir en arrière dans l'historique
-    if (!fromPopstate && window.location.hash.startsWith('#fiche=')) {
-        history.back();
-    }
 }
 
 function openFicheImage() {
