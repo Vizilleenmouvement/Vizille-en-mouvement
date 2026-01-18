@@ -1,1177 +1,686 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vizille en Mouvement – Bilan 2020-2026</title>
-    <meta name="description" content="Tableau de bord interactif des 347 actions municipales de Vizille (2020-2026). 41,5 M€ d'investissements pour l'avenir de notre commune.">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vizilleenmouvement.fr/bilan.html">
-    <meta property="og:title" content="Bilan 2020-2026 - Vizille en Mouvement">
-    <meta property="og:description" content="Tableau de bord interactif des 347 actions municipales de Vizille. 41,5 M€ d'investissements.">
-    <meta property="og:image" content="https://vizilleenmouvement.fr/images/logo.png">
-    <meta property="og:locale" content="fr_FR">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bilan 2020-2026 - Vizille en Mouvement">
-    <meta name="twitter:description" content="Tableau de bord interactif des 347 actions municipales de Vizille.">
-    <meta name="twitter:image" content="https://vizilleenmouvement.fr/images/logo.png">
-
-    <!-- Fonts -->
+    <title>Bilan 2020-2026 – Vizille en Mouvement</title>
+    <meta name="description" content="Bilan complet du mandat 2020-2026 : plus de 330 actions réalisées pour Vizille.">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-
-    <!-- CSS Modulaires -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/pages/bilan.css">
-
+    
     <style>
-    .btn-version-texte {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem 1.5rem;
-        background: var(--or, #c9a227);
-        color: white;
-        text-decoration: none;
-        border-radius: var(--radius-lg, 12px);
-        font-size: 0.85rem;
-        font-weight: 600;
-        border: none;
-        transition: all 0.3s;
-        box-shadow: 0 4px 15px rgba(201, 162, 39, 0.3);
-        white-space: nowrap;
-    }
-    .btn-version-texte:hover {
-        background: #d4af37;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(201, 162, 39, 0.5);
-        color: white;
-    }
-
-    /* Hero compact */
-    .hero-banner {
-        padding: 2rem 1rem !important;
-        min-height: auto !important;
-    }
-    .hero-logo {
-        max-width: 200px !important;
-        margin-bottom: 0.5rem !important;
-    }
-    .hero-content h1 {
-        font-size: 1.8rem !important;
-        margin-bottom: 0.3rem !important;
-    }
-    .hero-content .slogan {
-        font-size: 1rem !important;
-    }
-    
-    @media (max-width: 768px) {
-        .hero-logo {
-            max-width: 120px !important;
+        /* ===== PAGE BILAN CARTES ===== */
+        body { padding-top: 110px; }
+        
+        /* Hero compact avec logo pulsant */
+        .bilan-hero {
+            background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
         }
-        .hero-content h1 {
-            font-size: 1.3rem !important;
+        .bilan-hero .logo-pulse {
+            width: 120px;
+            height: auto;
+            margin-bottom: 1rem;
+            animation: pulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.5));
         }
-    }
-
-    /* ===== GALERIE PHOTOS ===== */
-    .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 1rem;
-    }
-    
-    .gallery-item {
-        cursor: pointer;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
-    
-    .gallery-item:hover {
-        transform: scale(1.03);
-        box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    }
-    
-    .gallery-item img {
-        width: 100%;
-        height: 120px;
-        object-fit: cover;
-        display: block;
-    }
-    
-    .gallery-caption {
-        padding: 0.5rem;
-        font-size: 0.8rem;
-        color: #666;
-        text-align: center;
-        background: #f9f9f9;
-    }
-    
-    /* ===== LIGHTBOX ===== */
-    .lightbox-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.95);
-        z-index: 10000;
-        display: none;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .lightbox-overlay.active {
-        display: flex;
-    }
-    
-    .lightbox-content {
-        max-width: 90vw;
-        max-height: 85vh;
-        text-align: center;
-    }
-    
-    .lightbox-content img {
-        max-width: 100%;
-        max-height: 80vh;
-        object-fit: contain;
-        border-radius: 4px;
-    }
-    
-    .lightbox-caption {
-        color: #fff;
-        padding: 1rem;
-        font-size: 1rem;
-    }
-    
-    .lightbox-close {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        font-size: 2.5rem;
-        color: #fff;
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 10001;
-    }
-    
-    .lightbox-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 2rem;
-        color: #fff;
-        background: rgba(255,255,255,0.2);
-        border: none;
-        padding: 1rem;
-        cursor: pointer;
-        border-radius: 4px;
-    }
-    
-    .lightbox-prev { left: 20px; }
-    .lightbox-next { right: 20px; }
-    
-    .lightbox-nav:hover {
-        background: rgba(255,255,255,0.3);
-    }
-
-    /* ===== BADGE PHOTOS SUR CARTES ===== */
-    .card-photos-badge {
-        background: linear-gradient(135deg, #3498db, #2980b9);
-        color: white;
-        padding: 0.2rem 0.5rem;
-        border-radius: 12px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
-    
-    .action-card.has-photos {
-        border-left: 3px solid #3498db;
-    }
-    
-    .table-photos-badge {
-        color: #3498db;
-        font-size: 0.85rem;
-    }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.5)); }
+            50% { transform: scale(1.05); filter: drop-shadow(0 8px 24px rgba(201, 162, 39, 0.8)); }
+        }
+        .bilan-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin: 0 0 0.5rem 0;
+        }
+        .bilan-hero .slogan {
+            color: var(--or-clair);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        .bilan-hero .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .bilan-hero .stat {
+            text-align: center;
+        }
+        .bilan-hero .stat-val {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--or-clair);
+        }
+        .bilan-hero .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Onglets principaux (thèmes) */
+        .tabs-container {
+            background: white;
+            border-bottom: 2px solid var(--gris-doux);
+            position: sticky;
+            top: 110px;
+            z-index: 100;
+        }
+        .tabs {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            overflow-x: auto;
+            padding: 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .tab {
+            padding: 0.8rem 1rem;
+            cursor: pointer;
+            border-bottom: 4px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            white-space: nowrap;
+            transition: all 0.2s;
+            font-weight: 500;
+            color: var(--gris-texte);
+            font-size: 0.9rem;
+        }
+        .tab:hover { background: var(--blanc-casse); }
+        .tab.active { font-weight: 700; border-bottom-color: var(--bleu-vizille); color: var(--bleu-vizille); }
+        .tab .badge {
+            background: var(--gris-doux);
+            color: var(--gris-texte);
+            padding: 0.15rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.75rem;
+        }
+        .tab.active .badge { background: var(--bleu-vizille); color: white; }
+        
+        /* Onglet Plan Climat spécial */
+        .tab.special { background: linear-gradient(135deg, #2c3e50, #34495e); color: white !important; }
+        .tab.special:hover { background: linear-gradient(135deg, #34495e, #2c3e50); }
+        .tab.special .badge { background: #9b59b6; color: white; }
+        
+        /* Sous-onglets (catégories) */
+        .subtabs-container { background: var(--blanc-casse); padding: 1rem 0; }
+        .subtabs {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+        .subtab {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            background: white;
+            color: var(--gris-texte);
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+        .subtab:hover { border-color: var(--bleu-clair); }
+        .subtab.active { background: var(--bleu-vizille); color: white; }
+        .subtab .count { opacity: 0.7; margin-left: 0.3rem; }
+        
+        /* Bandeau thème */
+        .theme-banner-container { max-width: 1400px; margin: 0 auto; padding: 1rem 1rem 0; }
+        .theme-banner {
+            background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair));
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .theme-banner .icon { font-size: 2.5rem; }
+        .theme-banner .text h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0 0 0.3rem 0; }
+        .theme-banner .text p { opacity: 0.9; font-size: 0.95rem; margin: 0; }
+        .theme-banner.plan-climat { background: linear-gradient(135deg, #2c3e50, #34495e); }
+        
+        /* Grille de cartes */
+        .cards-container { max-width: 1400px; margin: 2rem auto; padding: 0 1rem; }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+        
+        /* Carte action */
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .card-header {
+            padding: 1rem 1.2rem;
+            background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair));
+            color: white;
+        }
+        .card-header h3 { font-size: 1rem; line-height: 1.3; margin: 0; }
+        .card-meta { display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
+        .card-meta span { font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 4px; background: rgba(255,255,255,0.2); }
+        .card-body { padding: 1rem 1.2rem; }
+        .card-body p { font-size: 0.9rem; color: var(--gris-texte); line-height: 1.5; margin: 0; }
+        .card-chiffres { display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; }
+        .chiffre { text-align: center; }
+        .chiffre-val { font-size: 1.3rem; font-weight: 700; color: var(--bleu-vizille); }
+        .chiffre-label { font-size: 0.7rem; color: var(--gris-texte); }
+        
+        /* Carte objectif Plan Climat */
+        .card.objectif .card-header { background: linear-gradient(135deg, #2c3e50, #34495e); }
+        .card.objectif { border-left: 4px solid #9b59b6; }
+        
+        /* Statut badges */
+        .statut { padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; }
+        .statut.realise { background: var(--vert-realise); color: white; }
+        .statut.encours { background: var(--orange-encours); color: white; }
+        .statut.objectif { background: #9b59b6; color: white; }
+        
+        /* Modal détail */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal {
+            background: white;
+            border-radius: 16px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .modal-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair));
+            color: white;
+            position: relative;
+        }
+        .modal-header h2 { font-size: 1.3rem; padding-right: 2rem; margin: 0; }
+        .modal-close {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        .modal-body { padding: 1.5rem; }
+        .modal-section { margin-bottom: 1.5rem; }
+        .modal-section h4 { color: var(--bleu-vizille); margin: 0 0 0.5rem 0; font-size: 1rem; }
+        .modal-section p { margin: 0; line-height: 1.6; }
+        .modal-chiffres { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .modal-chiffre { background: var(--gris-doux); padding: 1rem; border-radius: 8px; text-align: center; min-width: 100px; }
+        .modal-chiffre .val { font-size: 1.5rem; font-weight: 700; color: var(--bleu-vizille); }
+        .modal-chiffre .label { font-size: 0.8rem; }
+        .chrono-item { padding: 0.5rem 0; border-left: 3px solid var(--bleu-clair); padding-left: 1rem; margin-left: 0.5rem; margin-bottom: 0.5rem; }
+        .chrono-date { background: var(--bleu-vizille); color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; }
+        .source-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--gris-doux);
+            border-radius: 6px;
+            color: var(--bleu-vizille);
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin: 0.25rem;
+        }
+        .source-btn:hover { background: var(--bleu-vizille); color: white; }
+        
+        /* Compteur */
+        .results-count { text-align: center; padding: 1rem; color: var(--gris-texte); font-size: 0.9rem; }
+        
+        @media (max-width: 768px) {
+            body { padding-top: 80px; }
+            .tabs-container { top: 80px; }
+            .bilan-hero { padding: 1.5rem 1rem; }
+            .bilan-hero .logo-pulse { width: 80px; }
+            .bilan-hero h1 { font-size: 1.5rem; }
+            .bilan-hero .stat-val { font-size: 2rem; }
+            .cards-grid { grid-template-columns: 1fr; }
+            .tabs { justify-content: flex-start; }
+        }
     </style>
 </head>
 <body>
-    <!-- SAUVEGARDE DE L'ANCIENNE VERSION AVEC CARTES - Créée le 15/01/2026 -->
-    <!-- Navigation Site -->
-    <header class="header">
-        <div class="header-top">
-            <p>Bilan 2020-2026 • Vizille en Mouvement</p>
-        </div>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
+    <header class="header">
+        <div class="header-top"><p>Vizille en Mouvement - Municipales 2026</p></div>
         <div class="header-main">
-            <a href="index.html">
-                <img src="images/logo.png" alt="Vizille en Mouvement" class="nav-header-logo">
-            </a>
+            <a href="index.html"><img src="images/logo.png" alt="Vizille en Mouvement" class="nav-header-logo"></a>
             <button class="menu-toggle" aria-label="Menu">☰</button>
             <nav>
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a href="bilan.html" class="active">Bilan</a></li>
+                    <li><a href="bilan.html">Bilan</a></li>
+                    <li><a href="bilan-cartes.html" class="active">Bilan détaillé</a></li>
                     <li><a href="projet.html">Projet</a></li>
                     <li><a href="blog.html">Actualités</a></li>
-                    <li><a href="equipe.html">Équipe</a></li>
+                    <li><a href="equipe.html">Equipe</a></li>
                     <li><a href="faq.html">Construisons ensemble</a></li>
-                    <li><a href="admin.html" class="admin-link" title="Administration">⚙️</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <script src="js/menu-mobile.js"></script>
 
-    <!-- Hero -->
-    <section class="hero-banner">
-        <div class="hero-content">
-            <img src="images/logo.png" alt="Vizille en Mouvement" class="hero-logo">
-            <h1>Bilan du Mandat 2020-2026</h1>
-            <p class="slogan">Ensemble pour une ville dynamique et solidaire</p>
-        </div>
+    <section class="bilan-hero" id="main-content">
+        <img src="images/logo.png" alt="Vizille en Mouvement" class="logo-pulse">
+        <h1>Bilan 2020-2026</h1>
+        <p class="slogan">Ce que nous avons accompli ensemble</p>
+        <div class="stats" id="hero-stats"></div>
     </section>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Stats Section -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number" id="stat-total">—</div>
-                <div class="stat-label">Actions totales</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="stat-realises">—</div>
-                <div class="stat-label">Réalisées</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="stat-encours">—</div>
-                <div class="stat-label">En cours</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="stat-decidees">—</div>
-                <div class="stat-label">Décidées</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="stat-programmees">—</div>
-                <div class="stat-label">Programmées</div>
-            </div>
-            <a href="bilan-texte.html" class="btn-version-texte">Version liste détaillée</a>
-        </div>
-        <!-- Filters Section -->
-        <section>
-            <h2 class="section-title">🔍 Explorer les actions</h2>
-            <div class="filters-section">
-                <!-- Filtres par thème (boutons) -->
-                <div class="theme-filters">
-                    <label class="theme-filters-label">Thème</label>
-                    <div class="theme-filters-grid" id="theme-filters-grid">
-                        <!-- Les boutons seront générés par JavaScript -->
-                    </div>
-                </div>
-
-                <div class="filters-divider"></div>
-
-                <!-- Autres filtres -->
-                <div class="filters-grid">
-                    <div class="filter-group">
-                        <label for="filter-search">Recherche</label>
-                        <input type="text" id="filter-search" placeholder="Mot-clé...">
-                    </div>
-                    <div class="filter-group">
-                        <label for="filter-statut">Statut</label>
-                        <select id="filter-statut">
-                            <option value="">Tous les statuts</option>
-                            <option value="Réalisé">✅ Réalisé</option>
-                            <option value="En cours">🔄 En cours</option>
-                            <option value="Décidé">📋 Décidé</option>
-                            <option value="Programmé">📅 Programmé</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <label for="filter-annee">Année</label>
-                        <select id="filter-annee">
-                            <option value="">Toutes les années</option>
-                        </select>
-                    </div>
-                    <div class="filter-group filter-actions">
-                        <button class="btn btn-secondary" id="btn-reset">Réinitialiser</button>
-                        <div class="view-toggle">
-                            <button class="view-btn active" data-view="themes" title="Vue par thèmes">🏷️</button>
-                            <button class="view-btn" data-view="cards" title="Vue cartes">🎴</button>
-                            <button class="view-btn" data-view="table" title="Vue tableau">📋</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Select caché pour la compatibilité avec le code existant -->
-                <select id="filter-theme" style="display: none;">
-                    <option value="">Tous les thèmes</option>
-                </select>
-
-                <p class="results-count">
-                    <strong id="results-count">0</strong> actions trouvées
-                </p>
-            </div>
-        </section>
-
-        <!-- Results Section -->
-        <section id="results-section">
-            <div class="loading" id="loading">Chargement des données</div>
-
-            <!-- Themes View -->
-            <div id="view-themes" class="themes-grid hidden"></div>
-
-            <!-- Cards View -->
-            <div id="view-cards" class="cards-grid hidden"></div>
-
-            <!-- Table View -->
-            <div id="view-table" class="table-container hidden">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th data-sort="theme">Thème</th>
-                            <th data-sort="titre">Action</th>
-                            <th data-sort="statut">Statut</th>
-                            <th data-sort="annee">Année</th>
-                            <th data-sort="budget">Budget</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table-body"></tbody>
-                </table>
-            </div>
-
-            <!-- Empty State -->
-            <div id="empty-state" class="empty-state hidden">
-                <div class="empty-state-icon">🔍</div>
-                <h3>Aucun résultat</h3>
-                <p>Essayez de modifier vos critères de recherche</p>
-            </div>
-        </section>
-    </main>
-
-    <!-- Navigation vers les pages du site (en bas de page) -->
-    <section class="site-nav-section">
-        <div class="site-nav-container">
-            <label class="site-nav-label">📄 Pages du site</label>
-            <div class="site-nav-grid">
-                <a href="index.html" class="site-nav-btn">
-                    <span class="icon">🏠</span> Accueil
-                </a>
-                <a href="bilan.html" class="site-nav-btn active">
-                    <span class="icon">📊</span> Bilan
-                </a>
-                <a href="projet.html" class="site-nav-btn">
-                    <span class="icon">🚀</span> Projets 2026
-                </a>
-                <a href="blog.html" class="site-nav-btn">
-                    <span class="icon">📰</span> Actualités
-                </a>
-                <a href="equipe.html" class="site-nav-btn">
-                    <span class="icon">👥</span> Équipe
-                </a>
-                <a href="faq.html" class="site-nav-btn">
-                    <span class="icon">🤝</span> Construisons ensemble
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div>
-                <h4>À propos</h4>
-                <p>Ce tableau de bord présente les 347 actions municipales réalisées ou engagées par la Ville de Vizille durant le mandat 2020-2026, représentant plus de 41 millions d'euros d'investissements.</p>
-            </div>
-            <div>
-                <h4>Sources</h4>
-                <ul>
-                    <li>📰 Magazines « Vivre à Vizille » (n°120 à 171)</li>
-                    <li>📋 Délibérations du Conseil Municipal</li>
-                    <li>📊 Documents budgétaires 2020-2025</li>
-                </ul>
-            </div>
-            <div>
-                <h4>Contact</h4>
-                <p>Vizille en Mouvement<br>
-                Campagne municipales 2026</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Vizille en Mouvement – Données mises à jour : décembre 2025</p>
-        </div>
-    </footer>
-
-    <!-- Modal Détail Projet -->
-    <div class="modal-overlay" id="modal-overlay">
-        <div class="modal" id="modal-detail">
-            <button class="modal-close" id="modal-close">&times;</button>
-
-            <div class="modal-header" id="modal-header">
-                <span class="modal-icon" id="modal-icon"></span>
-                <div class="modal-title-block">
-                    <span class="modal-theme" id="modal-theme"></span>
-                    <h2 class="modal-title" id="modal-title"></h2>
-                </div>
-                <span class="modal-statut" id="modal-statut"></span>
-            </div>
-
-            <div class="modal-body">
-                <!-- Résumé -->
-                <section class="modal-section">
-                    <h3>📋 Résumé</h3>
-                    <p id="modal-description"></p>
-                </section>
-
-                <!-- Chiffres clés -->
-                <section class="modal-section" id="section-chiffres">
-                    <h3>📊 Chiffres clés</h3>
-                    <div class="chiffres-grid" id="modal-chiffres"></div>
-                </section>
-
-                <!-- Chronologie -->
-                <section class="modal-section" id="section-chronologie">
-                    <h3>📅 Chronologie</h3>
-                    <div class="timeline" id="modal-timeline"></div>
-                </section>
-
-                <!-- Détails complémentaires -->
-                <section class="modal-section" id="section-details">
-                    <h3>📝 Détails</h3>
-                    <div id="modal-details"></div>
-                </section>
-
-                <!-- Galerie Photos -->
-                <section class="modal-section" id="section-galerie">
-                    <h3>📷 Galerie Photos</h3>
-                    <div class="gallery-grid" id="modal-galerie"></div>
-                </section>
-
-                <!-- Sources -->
-                <section class="modal-section">
-                    <h3>📰 Sources</h3>
-                    <div class="sources-list" id="modal-sources"></div>
-                </section>
-            </div>
-
-            <div class="modal-footer">
-                <button class="btn btn-secondary" id="btn-prev-projet">← Précédent</button>
-                <button class="btn btn-secondary" id="btn-next-projet">Suivant →</button>
-            </div>
-        </div>
+    
+    <div class="tabs-container">
+        <div class="tabs" id="tabs"></div>
     </div>
-
-    <!-- Lightbox pour les images -->
-    <div class="lightbox-overlay" id="lightbox-overlay">
-        <button class="lightbox-close" id="lightbox-close">&times;</button>
-        <button class="lightbox-nav lightbox-prev" id="lightbox-prev">❮</button>
-        <button class="lightbox-nav lightbox-next" id="lightbox-next">❯</button>
-        <div class="lightbox-content">
-            <img id="lightbox-img" src="" alt="">
-            <div class="lightbox-caption" id="lightbox-caption"></div>
+    
+    <div class="theme-banner-container">
+        <div class="theme-banner" id="theme-banner"></div>
+    </div>
+    
+    <div class="subtabs-container">
+        <div class="subtabs" id="subtabs"></div>
+    </div>
+    
+    <div class="results-count" id="results-count"></div>
+    
+    <div class="cards-container">
+        <div class="cards-grid" id="cards-grid"></div>
+    </div>
+    
+    <!-- Modal détail -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
         </div>
     </div>
 
 <script>
-// ===== VIZILLE EN MOUVEMENT - APP.JS =====
-// Tableau de bord interactif des actions municipales
-// SAUVEGARDE - Version avec cartes/graphiques/filtres
+const THEMES = [
+    { id: 'Plan Climat', label: '🌍 Plan Climat', icon: '📋', special: true },
+    { id: 'Culture', label: 'Culture', icon: '🎭' },
+    { id: 'Environnement', label: 'Environnement', icon: '🌿' },
+    { id: 'Travaux', label: 'Travaux', icon: '🏗️' },
+    { id: 'Patrimoine', label: 'Patrimoine', icon: '🏛️' },
+    { id: 'Solidarité', label: 'Solidarité', icon: '🤝' },
+    { id: 'Sport', label: 'Sport', icon: '⚽' },
+    { id: 'Enfance', label: 'Enfance', icon: '👶' },
+    { id: 'Mobilités', label: 'Mobilités', icon: '🚲' },
+    { id: 'Urbanisme', label: 'Urbanisme', icon: '🏘️' },
+    { id: 'Tranquillité publique', label: 'Tranquillité', icon: '🛡️' },
+    { id: 'Finance', label: 'Finance', icon: '💰' },
+    { id: 'Santé', label: 'Santé', icon: '🏥' },
+    { id: 'Intercommunalité', label: 'Interco', icon: '🏙️' },
+    { id: 'Administration', label: 'Admin', icon: '📋' },
+    { id: 'Jumelages', label: 'Jumelages', icon: '🌍' },
+    { id: 'Personnel', label: 'Personnel', icon: '👥' }
+];
 
-// État global
-let allData = [];
-let filteredData = [];
-let currentView = 'themes';
-let sortColumn = 'annee';
-let sortDirection = 'desc';
-
-// Configuration des thèmes
-const themeConfig = {
-    "Santé": { icon: "🏥", color: "#e91e63" },
-    "Urbanisme": { icon: "🏘️", color: "#34495e" },
-    "Environnement": { icon: "🌿", color: "#27ae60" },
-    "Culture": { icon: "🎭", color: "#9b59b6" },
-    "Patrimoine": { icon: "🏛️", color: "#8e44ad" },
-    "Enfance": { icon: "👶", color: "#3498db" },
-    "Solidarité": { icon: "🤝", color: "#e74c3c" },
-    "Sport": { icon: "⚽", color: "#2ecc71" },
-    "Économie": { icon: "💼", color: "#f39c12" },
-    "Mobilités": { icon: "🚴", color: "#1abc9c" },
-    "Tranquillité": { icon: "🛡️", color: "#2c3e50" },
-    "Tranquillité publique": { icon: "🛡️", color: "#2c3e50" },
-    "Travaux": { icon: "🏗️", color: "#e67e22" },
-    "Intercommunalité": { icon: "🤝", color: "#607d8b" },
-    "Finance": { icon: "💰", color: "#795548" },
-    "Personnel": { icon: "👥", color: "#9e9e9e" },
-    "Jumelages": { icon: "🌍", color: "#00bcd4" }
+const SUBCATEGORIES = {
+    'Plan Climat': [
+        { id: 'Axe 1 - Adaptation', label: 'Axe 1 - Adaptation', icon: '🌳' },
+        { id: 'Axe 2 - Énergie & Air', label: 'Axe 2 - Énergie', icon: '⚡' },
+        { id: 'Axe 3 - Ressources', label: 'Axe 3 - Ressources', icon: '♻️' },
+        { id: 'Axe 4 - Mobilisation', label: 'Axe 4 - Mobilisation', icon: '👥' },
+        { id: 'Axe 5 - Exemplarité', label: 'Axe 5 - Exemplarité', icon: '⭐' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ],
+    'Culture': [
+        { id: 'Festivals', label: 'Festivals & Fêtes', icon: '🎉' },
+        { id: 'Jeunesse & Scolaires', label: 'Jeunesse', icon: '👦' },
+        { id: 'Médiathèque', label: 'Médiathèque', icon: '📚' },
+        { id: 'Jeu de Paume', label: 'Jeu de Paume', icon: '🎭' },
+        { id: 'Associations & Partenariats', label: 'Associations', icon: '🤝' },
+        { id: 'Art & Création', label: 'Art', icon: '🎨' },
+        { id: 'Autres', label: 'Autres', icon: '📋' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ],
+    'Environnement': [
+        { id: 'Énergie & Climat', label: 'Énergie & Climat', icon: '⚡' },
+        { id: 'Déchets & Recyclage', label: 'Déchets', icon: '♻️' },
+        { id: 'Nature & Biodiversité', label: 'Nature', icon: '🌳' },
+        { id: 'Eau', label: 'Eau', icon: '💧' },
+        { id: 'Renouvelables', label: 'Renouvelables', icon: '☀️' },
+        { id: 'Autres', label: 'Autres', icon: '📋' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ],
+    'Travaux': [
+        { id: 'Voirie & Espaces publics', label: 'Voirie', icon: '🛤️' },
+        { id: 'Réseaux', label: 'Réseaux', icon: '🔧' },
+        { id: 'Équipements', label: 'Équipements', icon: '🏗️' },
+        { id: 'Bâtiments', label: 'Bâtiments', icon: '🏢' },
+        { id: 'Autres', label: 'Autres', icon: '📋' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ],
+    'Patrimoine': [
+        { id: 'Monuments', label: 'Monuments', icon: '⛪' },
+        { id: 'Circuits & Tourisme', label: 'Tourisme', icon: '🗺️' },
+        { id: 'Associations & Partenariats', label: 'Associations', icon: '🤝' },
+        { id: 'Études & Projets', label: 'Études', icon: '📐' },
+        { id: 'Autres', label: 'Autres', icon: '📋' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ],
+    'Solidarité': [
+        { id: 'Aide internationale', label: 'Aide internationale', icon: '🌍' },
+        { id: 'Soutien économique', label: 'Soutien éco', icon: '💼' },
+        { id: 'Actions sociales', label: 'Actions sociales', icon: '🏠' },
+        { id: 'Égalité & Inclusion', label: 'Égalité', icon: '⚖️' },
+        { id: 'Autres', label: 'Autres', icon: '📋' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ],
+    'Sport': [
+        { id: 'Équipements', label: 'Équipements', icon: '🏟️' },
+        { id: 'Événements', label: 'Événements', icon: '🏆' },
+        { id: 'Associations & Partenariats', label: 'Associations', icon: '🤝' },
+        { id: 'Mise à disposition', label: 'Mise à dispo', icon: '🔑' },
+        { id: 'Autres', label: 'Autres', icon: '📋' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ],
+    'Enfance': [
+        { id: 'Petite enfance', label: 'Petite enfance', icon: '👶' },
+        { id: 'Écoles', label: 'Écoles', icon: '🏫' },
+        { id: 'Activités', label: 'Activités', icon: '🎿' },
+        { id: 'Numérique & Jeunesse', label: 'Numérique', icon: '💻' },
+        { id: 'Autres', label: 'Autres', icon: '📋' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ],
+    'Mobilités': [
+        { id: 'Piétons & Vélos', label: 'Piétons & Vélos', icon: '🚲' },
+        { id: 'Circulation', label: 'Circulation', icon: '🚗' },
+        { id: 'Stationnement', label: 'Stationnement', icon: '🅿️' },
+        { id: 'Arrêtés & Courriers', label: 'Arrêtés', icon: '📄' },
+        { id: 'Autres', label: 'Autres', icon: '📋' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ],
+    'Urbanisme': [
+        { id: 'Grands projets', label: 'Grands projets', icon: '🏗️' },
+        { id: 'Permis & Déclarations', label: 'Permis', icon: '📝' },
+        { id: 'Études & Diagnostics', label: 'Études', icon: '📐' },
+        { id: 'Logement', label: 'Logement', icon: '🏠' },
+        { id: 'Autres', label: 'Autres', icon: '📋' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ],
+    'Tranquillité publique': [
+        { id: 'Vidéo-protection', label: 'Vidéo-protection', icon: '📹' },
+        { id: 'Prévention', label: 'Prévention', icon: '🛡️' },
+        { id: 'Police municipale', label: 'Police', icon: '👮' },
+        { id: 'Sécurité civile', label: 'Sécurité civile', icon: '🚒' },
+        { id: 'Autres', label: 'Autres', icon: '📋' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ],
+    'Finance': [
+        { id: 'Budget', label: 'Budget', icon: '📊' },
+        { id: 'Fiscalité', label: 'Fiscalité', icon: '💶' },
+        { id: 'Gestion', label: 'Gestion', icon: '📁' },
+        { id: 'Distinctions', label: 'Distinctions', icon: '🏆' },
+        { id: 'Autres', label: 'Autres', icon: '📋' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ],
+    'Santé': [
+        { id: 'Accès aux soins', label: 'Accès aux soins', icon: '🏥' },
+        { id: 'Services publics', label: 'Services publics', icon: '🏛️' },
+        { id: 'Prévention', label: 'Prévention', icon: '💊' },
+        { id: 'Autres', label: 'Autres', icon: '📋' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ],
+    'Intercommunalité': [
+        { id: 'Métropole', label: 'Métropole', icon: '🏙️' },
+        { id: 'Conventions', label: 'Conventions', icon: '📜' },
+        { id: 'Participations', label: 'Participations', icon: '🤝' },
+        { id: 'Vœux & Actions', label: 'Vœux', icon: '📢' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ],
+    'Administration': [
+        { id: 'Conseil municipal', label: 'Conseil', icon: '🏛️' },
+        { id: 'Gestion', label: 'Gestion', icon: '📁' },
+        { id: 'Marchés', label: 'Marchés', icon: '📋' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ],
+    'Jumelages': [
+        { id: 'Échanges', label: 'Échanges', icon: '🤝' },
+        { id: 'Villes partenaires', label: 'Villes', icon: '🏘️' },
+        { id: 'Gouvernance', label: 'Gouvernance', icon: '📋' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ],
+    'Personnel': [
+        { id: 'Postes', label: 'Postes', icon: '👤' },
+        { id: 'Gestion RH', label: 'Gestion RH', icon: '📋' },
+        { id: 'all', label: 'Tout voir', icon: '👁️' }
+    ]
 };
 
-// Instances de graphiques
-
-// ===== TOGGLE GRAPHIQUES MOBILE =====
-
-// ===== INITIALISATION =====
-document.addEventListener('DOMContentLoaded', init);
+let allData = [];
+let currentTheme = 'Culture';
+let currentSubcat = 'Festivals';
 
 async function init() {
-    try {
-        await loadData();
-        setupFilters();
-        setupEventListeners();
-        applyFilters();
-        hideLoading();
-    } catch (error) {
-        console.error('Erreur initialisation:', error);
-        showError();
-    }
+    const r = await fetch('data.json');
+    allData = await r.json();
+    renderHeroStats();
+    renderTabs();
+    renderBanner();
+    renderSubtabs();
+    renderCards();
 }
 
-// ===== CHARGEMENT DES DONNÉES =====
-async function loadData() {
-    const response = await fetch('data.json');
-    if (!response.ok) throw new Error('Impossible de charger les données');
-    allData = await response.json();
-    filteredData = [...allData];
-    updateStats();
+function renderHeroStats() {
+    const actionsCount = allData.filter(p => !p.suspendu && p.theme !== 'Plan Climat').length;
+    const themesCount = new Set(allData.filter(p => !p.suspendu && p.theme !== 'Plan Climat').map(p => p.theme)).size;
+    document.getElementById('hero-stats').innerHTML = `
+        <div class="stat"><div class="stat-val">${actionsCount}</div><div class="stat-label">actions réalisées</div></div>
+        <div class="stat"><div class="stat-val">${themesCount}</div><div class="stat-label">domaines d'action</div></div>
+        <div class="stat"><div class="stat-val">6</div><div class="stat-label">années de mandat</div></div>
+    `;
 }
 
-// ===== MISE À JOUR DES STATISTIQUES =====
-function updateStats() {
-    const total = 347;
-    const realises = 281;
-    const encours = 38;
-    const decidees = 22;
-    const programmees = 6;
-
-    animateNumber('stat-total', total);
-    animateNumber('stat-realises', realises);
-    animateNumber('stat-encours', encours);
-    animateNumber('stat-decidees', decidees);
-    animateNumber('stat-programmees', programmees);
+function renderTabs() {
+    const container = document.getElementById('tabs');
+    container.innerHTML = THEMES.map(t => {
+        const count = allData.filter(p => p.theme === t.id && !p.suspendu).length;
+        const specialClass = t.special ? 'special' : '';
+        return `<div class="tab ${t.id === currentTheme ? 'active' : ''} ${specialClass}" onclick="selectTheme('${t.id}')">
+            <span>${t.icon}</span>
+            <span>${t.label}</span>
+            <span class="badge">${count}</span>
+        </div>`;
+    }).join('');
 }
 
-function animateNumber(elementId, target) {
-    const el = document.getElementById(elementId);
-    const duration = 1000;
-    const start = 0;
-    const startTime = performance.now();
-
-    function update(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const easeOut = 1 - Math.pow(1 - progress, 3);
-        const current = Math.round(start + (target - start) * easeOut);
-        el.textContent = current.toLocaleString('fr-FR');
-
-        if (progress < 1) {
-            requestAnimationFrame(update);
+function renderSubtabs() {
+    const container = document.getElementById('subtabs');
+    const defaultSubcats = [{ id: 'all', label: 'Tout voir', icon: '👁️' }];
+    const subcats = SUBCATEGORIES[currentTheme] || defaultSubcats;
+    
+    container.innerHTML = subcats.map(s => {
+        let count;
+        if (s.id === 'all') {
+            count = allData.filter(p => p.theme === currentTheme && !p.suspendu).length;
+        } else {
+            count = allData.filter(p => p.theme === currentTheme && p.sous_categorie === s.id && !p.suspendu).length;
         }
-    }
-
-    requestAnimationFrame(update);
+        if (count === 0 && s.id !== 'all') return '';
+        return `<div class="subtab ${s.id === currentSubcat ? 'active' : ''}" onclick="selectSubcat('${s.id}')">
+            ${s.icon} ${s.label} <span class="count">(${count})</span>
+        </div>`;
+    }).join('');
 }
 
-function formatBudget(amount) {
-    if (amount >= 1000000) {
-        return (amount / 1000000).toFixed(1).replace('.', ',') + ' M€';
-    } else if (amount >= 1000) {
-        return Math.round(amount / 1000) + ' k€';
-    } else if (amount > 0) {
-        return amount.toLocaleString('fr-FR') + ' €';
-    }
-    return '—';
-}
-
-// ===== CONFIGURATION DES FILTRES =====
-function setupFilters() {
-    // Thèmes
-    const themes = [...new Set(allData.map(d => d.theme))].sort();
-    const themeSelect = document.getElementById('filter-theme');
-    themes.forEach(theme => {
-        const config = themeConfig[theme] || { icon: '📋' };
-        const option = document.createElement('option');
-        option.value = theme;
-        option.textContent = `${config.icon} ${theme}`;
-        themeSelect.appendChild(option);
-    });
-
-    // === GÉNÉRATION DES BOUTONS DE THÈMES ===
-    const themeFiltersGrid = document.getElementById('theme-filters-grid');
-    if (themeFiltersGrid) {
-        // Bouton "Tous"
-        const allBtn = document.createElement('button');
-        allBtn.className = 'theme-filter-btn active';
-        allBtn.dataset.theme = '';
-        allBtn.innerHTML = '<span class="icon">🏷️</span><span class="label">Tous</span>';
-        allBtn.addEventListener('click', () => selectThemeButton(''));
-        themeFiltersGrid.appendChild(allBtn);
-
-        // Boutons pour chaque thème
-        themes.forEach(theme => {
-            const config = themeConfig[theme] || { icon: '📋', color: '#666' };
-            const btn = document.createElement('button');
-            btn.className = 'theme-filter-btn';
-            btn.dataset.theme = theme;
-            btn.innerHTML = `<span class="icon">${config.icon}</span><span class="label">${theme}</span>`;
-            btn.addEventListener('click', () => selectThemeButton(theme));
-            themeFiltersGrid.appendChild(btn);
-        });
-    }
-
-    // Années
-    const annees = [...new Set(allData.map(d => d.annee).filter(a => a))].sort();
-    const anneeSelect = document.getElementById('filter-annee');
-    annees.forEach(annee => {
-        const option = document.createElement('option');
-        option.value = annee;
-        option.textContent = annee;
-        anneeSelect.appendChild(option);
-    });
-}
-
-// Fonction pour sélectionner un thème via les boutons
-function selectThemeButton(theme) {
-    document.getElementById('filter-theme').value = theme;
-    document.querySelectorAll('.theme-filter-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.theme === theme);
-    });
-    applyFilters();
-}
-
-// ===== EVENT LISTENERS =====
-function setupEventListeners() {
-    document.getElementById('filter-search').addEventListener('input', debounce(applyFilters, 300));
-    document.getElementById('filter-theme').addEventListener('change', applyFilters);
-    document.getElementById('filter-statut').addEventListener('change', applyFilters);
-    document.getElementById('filter-annee').addEventListener('change', applyFilters);
-    document.getElementById('btn-reset').addEventListener('click', resetFilters);
-
-    document.querySelectorAll('.view-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            currentView = btn.dataset.view;
-            renderCurrentView();
-        });
-    });
-
-    document.querySelectorAll('.data-table th[data-sort]').forEach(th => {
-        th.addEventListener('click', () => {
-            const column = th.dataset.sort;
-            if (sortColumn === column) {
-                sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
-            } else {
-                sortColumn = column;
-                sortDirection = 'asc';
-            }
-            renderCurrentView();
-        });
-    });
-}
-
-function debounce(fn, delay) {
-    let timeout;
-    return (...args) => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => fn(...args), delay);
+function renderBanner() {
+    const bannerContainer = document.getElementById('theme-banner');
+    const themeInfo = THEMES.find(t => t.id === currentTheme);
+    const count = allData.filter(p => p.theme === currentTheme && !p.suspendu).length;
+    const isPlanClimat = currentTheme === 'Plan Climat';
+    const themeDescriptions = {
+        'Plan Climat': 'Engagements de la Charte PCAEM 2020-2026 signée avec Grenoble-Alpes Métropole',
+        'Culture': 'Festivals, spectacles, médiathèque et vie associative',
+        'Environnement': 'Transition écologique et cadre de vie',
+        'Travaux': 'Rénovations et aménagements',
+        'Patrimoine': 'Préservation et valorisation du patrimoine vizillois',
+        'Solidarité': 'Actions sociales et entraide',
+        'Sport': 'Équipements et associations sportives',
+        'Enfance': 'Petite enfance, écoles et jeunesse',
+        'Mobilités': 'Déplacements doux et transports',
+        'Urbanisme': 'Aménagement du territoire',
+        'Tranquillité publique': 'Sécurité et prévention',
+        'Finance': 'Gestion budgétaire et finances',
+        'Santé': 'Accès aux soins et prévention',
+        'Intercommunalité': 'Coopération métropolitaine',
+        'Administration': 'Services municipaux',
+        'Jumelages': 'Échanges avec Mölln et Cavalese',
+        'Personnel': 'Équipe municipale'
     };
+    const entityLabel = isPlanClimat ? 'objectif' : 'action';
+    bannerContainer.className = 'theme-banner' + (isPlanClimat ? ' plan-climat' : '');
+    bannerContainer.innerHTML = `
+        <div class="icon">${themeInfo.icon}</div>
+        <div class="text">
+            <h2>${themeInfo.id}</h2>
+            <p>${themeDescriptions[currentTheme] || ''} • ${count} ${entityLabel}${count > 1 ? 's' : ''}</p>
+        </div>
+    `;
 }
 
-// ===== FILTRAGE =====
-function applyFilters() {
-    const search = document.getElementById('filter-search').value.toLowerCase();
-    const theme = document.getElementById('filter-theme').value;
-    const statut = document.getElementById('filter-statut').value;
-    const annee = document.getElementById('filter-annee').value;
-
-    filteredData = allData.filter(item => {
-        if (search) {
-            const searchLower = search.toLowerCase();
-            const inTitre = item.titre && item.titre.toLowerCase().includes(searchLower);
-            const inResume = item.resume && item.resume.toLowerCase().includes(searchLower);
-            const inDetails = item.details && item.details.toLowerCase().includes(searchLower);
-            const inTheme = item.theme && item.theme.toLowerCase().includes(searchLower);
-            const inDescription = item.description && item.description.toLowerCase().includes(searchLower);
-            if (!inTitre && !inResume && !inDetails && !inTheme && !inDescription) return false;
-        }
-        if (theme && item.theme !== theme) return false;
-        if (statut && item.statut !== statut) return false;
-        if (annee && item.annee !== annee) return false;
-        return true;
-    });
-
-    document.getElementById('results-count').textContent = filteredData.length;
-    renderCurrentView();
-}
-
-function resetFilters() {
-    document.getElementById('filter-search').value = '';
-    document.getElementById('filter-theme').value = '';
-    document.getElementById('filter-statut').value = '';
-    document.getElementById('filter-annee').value = '';
-
-    document.querySelectorAll('.theme-filter-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.theme === '');
-    });
-
-    applyFilters();
-}
-
-// ===== RENDU DES VUES =====
-function renderCurrentView() {
-    document.getElementById('view-themes').classList.add('hidden');
-    document.getElementById('view-cards').classList.add('hidden');
-    document.getElementById('view-table').classList.add('hidden');
-    document.getElementById('empty-state').classList.add('hidden');
-
-    if (filteredData.length === 0) {
-        document.getElementById('empty-state').classList.remove('hidden');
-        return;
+function renderCards() {
+    const container = document.getElementById('cards-grid');
+    let filtered = allData.filter(p => p.theme === currentTheme && !p.suspendu);
+    
+    if (currentSubcat !== 'all') {
+        filtered = filtered.filter(p => p.sous_categorie === currentSubcat);
     }
-
-    switch (currentView) {
-        case 'themes':
-            renderThemesView();
-            break;
-        case 'cards':
-            renderCardsView();
-            break;
-        case 'table':
-            renderTableView();
-            break;
-    }
-}
-
-// Vue Thèmes
-function renderThemesView() {
-    const container = document.getElementById('view-themes');
-    container.innerHTML = '';
-    container.classList.remove('hidden');
-
-    const themes = {};
-    filteredData.forEach(item => {
-        if (!themes[item.theme]) {
-            themes[item.theme] = { items: [], budget: 0, realises: 0, encours: 0, projets: 0 };
+    
+    filtered.sort((a, b) => (a.importance || 5) - (b.importance || 5) || (b.annee || '').localeCompare(a.annee || ''));
+    
+    const isPlanClimat = currentTheme === 'Plan Climat';
+    const entityLabel = isPlanClimat ? 'objectif' : 'action';
+    document.getElementById('results-count').textContent = `${filtered.length} ${entityLabel}${filtered.length > 1 ? 's' : ''} affiché${filtered.length > 1 ? 's' : ''}`;
+    
+    container.innerHTML = filtered.map((p, i) => {
+        const isObjectif = p.statut === 'Objectif';
+        const statutClass = isObjectif ? 'objectif' : (p.statut === 'Réalisé' ? 'realise' : 'encours');
+        let chiffresHtml = '';
+        if (p.chiffres && p.chiffres.length) {
+            chiffresHtml = `<div class="card-chiffres">${p.chiffres.slice(0,3).map(c => 
+                `<div class="chiffre"><div class="chiffre-val">${c.valeur}</div><div class="chiffre-label">${c.label}</div></div>`
+            ).join('')}</div>`;
         }
-        themes[item.theme].items.push(item);
-        themes[item.theme].budget += item.budget || 0;
-        if (item.statut === 'Réalisé') themes[item.theme].realises++;
-        else if (item.statut === 'En cours') themes[item.theme].encours++;
-        else themes[item.theme].projets++;
-    });
-
-    const sortedThemes = Object.entries(themes).sort((a, b) => b[1].items.length - a[1].items.length);
-
-    sortedThemes.forEach(([themeName, data], index) => {
-        const config = themeConfig[themeName] || { icon: '📋', color: '#607d8b' };
-        const card = document.createElement('div');
-        card.className = 'theme-card';
-        card.style.animationDelay = `${index * 0.05}s`;
-        card.innerHTML = `
-            <div class="theme-header" style="background: ${config.color}">
-                <span class="theme-icon">${config.icon}</span>
-                <div class="theme-info">
-                    <h3>${themeName}</h3>
-                    <span class="count">${data.items.length} action${data.items.length > 1 ? 's' : ''}</span>
-                </div>
-            </div>
-            <div class="theme-stats">
-                <span class="theme-budget">${formatBudget(data.budget)}</span>
-                <div class="theme-progress">
-                    ${data.realises > 0 ? `<span class="progress-dot realise" title="${data.realises} réalisé(s)"></span>` : ''}
-                    ${data.encours > 0 ? `<span class="progress-dot en-cours" title="${data.encours} en cours"></span>` : ''}
-                    ${data.projets > 0 ? `<span class="progress-dot decide" title="${data.projets} projet(s)"></span>` : ''}
-                </div>
-            </div>
-        `;
-
-        card.addEventListener('click', () => {
-            document.getElementById('filter-theme').value = themeName;
-            document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
-            document.querySelector('.view-btn[data-view="cards"]').classList.add('active');
-            currentView = 'cards';
-            applyFilters();
-            // Scroll vers la section des cartes
-            setTimeout(() => {
-                const section = document.querySelector('.filters-section') || document.getElementById('view-cards');
-                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 100);
-        });
-
-        container.appendChild(card);
-    });
-}
-
-// Vue Cartes
-function renderCardsView() {
-    const container = document.getElementById('view-cards');
-    container.innerHTML = '';
-    container.classList.remove('hidden');
-
-    const sorted = [...filteredData].sort((a, b) => {
-        let valA = a[sortColumn] || '';
-        let valB = b[sortColumn] || '';
-        if (sortColumn === 'budget') {
-            valA = a.budget || 0;
-            valB = b.budget || 0;
-        }
-        if (sortColumn === 'importance') {
-            valA = a.importance || 1;
-            valB = b.importance || 1;
-        }
-        if (valA < valB) return sortDirection === 'asc' ? -1 : 1;
-        if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
-        return 0;
-    });
-
-    sorted.forEach((item, index) => {
-        const config = themeConfig[item.theme] || { icon: '📋', color: '#607d8b' };
-        const statutClass = getStatutClass(item.statut);
-        const hasDetails = item.importance > 1 || (item.chiffres && item.chiffres.length > 1);
-        const hasPhotos = item.images && item.images.length > 0;
-
-        const card = document.createElement('div');
-        card.className = 'action-card' + (hasDetails ? ' has-details' : '') + (hasPhotos ? ' has-photos' : '');
-        card.style.animationDelay = `${Math.min(index * 0.03, 0.5)}s`;
-        card.dataset.projectId = item.id;
-
-        card.innerHTML = `
+        
+        return `<div class="card ${isObjectif ? 'objectif' : ''}" onclick="openModal(${p.id})">
             <div class="card-header">
-                <span class="card-theme" style="background: ${config.color}">
-                    ${config.icon} ${item.theme}
-                </span>
-                ${hasPhotos ? `<span class="card-photos-badge" title="${item.images.length} photo(s)">📷 ${item.images.length}</span>` : ''}
-                <span class="card-statut ${statutClass}">${item.statut}</span>
+                <h3>${p.titre}</h3>
+                <div class="card-meta">
+                    ${p.statut ? `<span class="statut ${statutClass}">${p.statut}</span>` : ''}
+                    ${p.annee ? `<span>📅 ${p.annee}</span>` : ''}
+                    ${p.budget ? `<span>💰 ${p.budget.toLocaleString('fr-FR')} €</span>` : ''}
+                </div>
             </div>
             <div class="card-body">
-                <h3 class="card-title">${item.titre}</h3>
-                <p class="card-description">${item.description || ''}</p>
-                <div class="card-footer">
-                    <span class="card-budget">${formatBudget(item.budget)}</span>
-                    <span class="card-year">${formatYear(item)}</span>
-                </div>
-                ${hasDetails ? '<div class="card-detail-hint">Cliquez pour les détails →</div>' : ''}
+                <p>${(p.resume || p.description || '').slice(0, 150)}${(p.resume || p.description || '').length > 150 ? '...' : ''}</p>
+                ${chiffresHtml}
             </div>
-        `;
-
-        card.addEventListener('click', () => openProjectModal(item.id));
-
-        container.appendChild(card);
-    });
+        </div>`;
+    }).join('');
 }
 
-// Vue Tableau
-function renderTableView() {
-    const tbody = document.getElementById('table-body');
-    tbody.innerHTML = '';
-    document.getElementById('view-table').classList.remove('hidden');
-
-    const sorted = [...filteredData].sort((a, b) => {
-        let valA = a[sortColumn] || '';
-        let valB = b[sortColumn] || '';
-        if (sortColumn === 'budget') {
-            valA = a.budget || 0;
-            valB = b.budget || 0;
-        }
-        if (valA < valB) return sortDirection === 'asc' ? -1 : 1;
-        if (valA > valB) return sortDirection === 'asc' ? 1 : -1;
-        return 0;
-    });
-
-    sorted.forEach(item => {
-        const config = themeConfig[item.theme] || { icon: '📋', color: '#607d8b' };
-        const statutClass = getStatutClass(item.statut);
-        const hasPhotos = item.images && item.images.length > 0;
-
-        const row = document.createElement('tr');
-        row.addEventListener('click', () => openProjectModal(item.id));
-        row.innerHTML = `
-            <td>
-                <span class="table-theme">
-                    <span style="color: ${config.color}">${config.icon}</span>
-                    ${item.theme}
-                </span>
-            </td>
-            <td>
-                <strong>${item.titre}</strong>${hasPhotos ? ` <span class="table-photos-badge">📷</span>` : ''}
-                ${item.description ? `<br><small style="color: #888">${item.description}</small>` : ''}
-            </td>
-            <td><span class="table-statut ${statutClass}">${item.statut}</span></td>
-            <td>${formatYear(item)}</td>
-            <td style="font-weight: 600; color: var(--or)">${formatBudget(item.budget)}</td>
-        `;
-        tbody.appendChild(row);
-    });
-}
-
-function getStatutClass(statut) {
-    switch (statut) {
-        case 'Réalisé': return 'statut-realise';
-        case 'En cours': return 'statut-encours';
-        case 'Décidé': return 'statut-decide';
-        case 'Programmé': return 'statut-programme';
-        default: return '';
-    }
-}
-
-function formatYear(item) {
-    if (item.annee && item.annee_fin && item.annee !== item.annee_fin) {
-        return `${item.annee} → ${item.annee_fin}`;
-    }
-    return item.annee || '—';
-}
-
-// ===== GRAPHIQUES =====
-
-
-
-
-// ===== UTILITAIRES =====
-function hideLoading() {
-    document.getElementById('loading').classList.add('hidden');
-}
-
-function showError() {
-    document.getElementById('loading').innerHTML = '❌ Erreur de chargement des données';
-}
-
-// ===== MODAL DÉTAIL PROJET =====
-let currentProjectIndex = 0;
-
-function openProjectModal(projectId) {
-    const project = filteredData.find(p => p.id === projectId);
-    if (!project) return;
-
-    currentProjectIndex = filteredData.findIndex(p => p.id === projectId);
-
-    const config = themeConfig[project.theme] || { icon: '📋', color: '#607d8b' };
-    const modal = document.getElementById('modal-overlay');
-    const header = document.getElementById('modal-header');
-
-    header.style.background = `linear-gradient(135deg, ${config.color} 0%, ${adjustColor(config.color, -20)} 100%)`;
-    document.getElementById('modal-icon').textContent = config.icon;
-    document.getElementById('modal-theme').textContent = project.theme;
-    document.getElementById('modal-title').textContent = project.titre;
-    document.getElementById('modal-statut').textContent = project.statut;
-    document.getElementById('modal-statut').className = 'modal-statut ' + getStatutClass(project.statut);
-
-    document.getElementById('modal-description').textContent = project.resume || project.description || 'Pas de description disponible.';
-
-    const chiffresSection = document.getElementById('section-chiffres');
-    const chiffresContainer = document.getElementById('modal-chiffres');
-    if (project.chiffres && project.chiffres.length > 0) {
-        chiffresSection.classList.remove('hidden');
-        chiffresContainer.innerHTML = project.chiffres.map(c => `
-            <div class="chiffre-item">
-                <div class="chiffre-value">${c.valeur}</div>
-                <div class="chiffre-label">${c.label}</div>
-            </div>
-        `).join('');
+function selectTheme(theme) {
+    currentTheme = theme;
+    const subcats = SUBCATEGORIES[currentTheme];
+    if (subcats && subcats.length > 0) {
+        currentSubcat = subcats[0].id;
     } else {
-        chiffresSection.classList.add('hidden');
+        currentSubcat = 'all';
     }
-
-    const chronoSection = document.getElementById('section-chronologie');
-    const timelineContainer = document.getElementById('modal-timeline');
-    if (project.chronologie && project.chronologie.length > 0) {
-        chronoSection.classList.remove('hidden');
-        timelineContainer.innerHTML = project.chronologie.map(c => `
-            <div class="timeline-item">
-                <div class="timeline-date">${c.date}</div>
-                <div class="timeline-event">${c.evenement}</div>
-            </div>
-        `).join('');
-    } else {
-        chronoSection.classList.add('hidden');
-    }
-
-    const detailsSection = document.getElementById('section-details');
-    const detailsContainer = document.getElementById('modal-details');
-    if (project.details) {
-        detailsSection.classList.remove('hidden');
-        detailsContainer.innerHTML = `<p>${project.details}</p>`;
-    } else {
-        detailsSection.classList.add('hidden');
-    }
-
-    const sourcesContainer = document.getElementById('modal-sources');
-    let sourcesHTML = '';
-
-    if (project.sources && project.sources.length > 0) {
-        sourcesHTML += project.sources.map(s => {
-            const icon = s.type === 'delib' ? '📋' : s.type === 'magazine' ? '📰' : '📄';
-            return `
-                <div class="source-item">
-                    <span class="source-icon">${icon}</span>
-                    <span><strong>${s.ref}</strong>${s.desc ? ' - ' + s.desc : ''}</span>
-                </div>
-            `;
-        }).join('');
-    }
-
-    if (project.lien_source && project.lien_source.length > 0) {
-        sourcesHTML += '<div class="source-links">';
-        sourcesHTML += project.lien_source.map(ls => {
-            const icon = ls.type === 'Délibération' ? '📋' :
-                        ls.type === 'Magazine' || ls.type === 'Magazine PDF' ? '📰' :
-                        ls.type === 'Page dédiée' ? '🔗' : '📄';
-            return `
-                <a href="${ls.url}" target="_blank" rel="noopener" class="source-link">
-                    <span class="source-icon">${icon}</span>
-                    <span>${ls.label}</span>
-                    <span class="external-icon">↗</span>
-                </a>
-            `;
-        }).join('');
-        sourcesHTML += '</div>';
-    }
-
-    if (!sourcesHTML) {
-        sourcesHTML = '<div class="source-item"><span class="source-icon">📄</span><span>Documentation municipale</span></div>';
-    }
-
-    sourcesContainer.innerHTML = sourcesHTML;
-
-    // Galerie Photos
-    const galerieSection = document.getElementById('section-galerie');
-    const galerieContainer = document.getElementById('modal-galerie');
-    if (project.images && project.images.length > 0) {
-        galerieSection.classList.remove('hidden');
-        galerieContainer.innerHTML = project.images.map((img, idx) => `
-            <div class="gallery-item" onclick="openLightbox(${project.id}, ${idx})">
-                <img src="${img.thumb}" alt="${img.caption}" loading="lazy">
-                <div class="gallery-caption">${img.caption}</div>
-            </div>
-        `).join('');
-    } else {
-        galerieSection.classList.add('hidden');
-    }
-
-    updateModalNavigation();
-
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    renderTabs();
+    renderBanner();
+    renderSubtabs();
+    renderCards();
 }
 
-function closeProjectModal() {
-    document.getElementById('modal-overlay').classList.remove('active');
-    document.body.style.overflow = '';
+function selectSubcat(subcat) {
+    currentSubcat = subcat;
+    renderSubtabs();
+    renderCards();
 }
 
-function navigateProject(direction) {
-    currentProjectIndex += direction;
-    if (currentProjectIndex < 0) currentProjectIndex = filteredData.length - 1;
-    if (currentProjectIndex >= filteredData.length) currentProjectIndex = 0;
-    openProjectModal(filteredData[currentProjectIndex].id);
-}
-
-function updateModalNavigation() {
-    const prevBtn = document.getElementById('btn-prev-projet');
-    const nextBtn = document.getElementById('btn-next-projet');
-    prevBtn.disabled = filteredData.length <= 1;
-    nextBtn.disabled = filteredData.length <= 1;
-}
-
-function adjustColor(color, amount) {
-    const hex = color.replace('#', '');
-    const r = Math.max(0, Math.min(255, parseInt(hex.substr(0, 2), 16) + amount));
-    const g = Math.max(0, Math.min(255, parseInt(hex.substr(2, 2), 16) + amount));
-    const b = Math.max(0, Math.min(255, parseInt(hex.substr(4, 2), 16) + amount));
-    return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
-}
-
-// ===== LIGHTBOX GALERIE =====
-let currentLightboxProject = null;
-let currentLightboxIndex = 0;
-
-function openLightbox(projectId, imageIndex) {
-    currentLightboxProject = filteredData.find(p => p.id === projectId);
-    if (!currentLightboxProject || !currentLightboxProject.images) return;
+function openModal(id) {
+    const p = allData.find(x => x.id === id);
+    if (!p) return;
     
-    currentLightboxIndex = imageIndex;
-    showLightboxImage();
-    document.getElementById('lightbox-overlay').classList.add('active');
+    document.getElementById('modal-title').textContent = p.titre;
+    
+    let html = '';
+    if (p.description) {
+        html += `<div class="modal-section"><p>${p.description}</p></div>`;
+    }
+    if (p.chiffres && p.chiffres.length) {
+        html += `<div class="modal-section"><h4>📊 Chiffres clés</h4><div class="modal-chiffres">`;
+        p.chiffres.forEach(c => {
+            html += `<div class="modal-chiffre"><div class="val">${c.valeur}</div><div class="label">${c.label}</div></div>`;
+        });
+        html += `</div></div>`;
+    }
+    if (p.details) {
+        html += `<div class="modal-section"><h4>📋 Détails</h4><p>${p.details}</p></div>`;
+    }
+    if (p.chronologie && p.chronologie.length) {
+        html += `<div class="modal-section"><h4>📆 Chronologie</h4>`;
+        p.chronologie.slice(0, 6).forEach(c => {
+            html += `<div class="chrono-item"><span class="chrono-date">${c.date}</span> ${c.evenement}</div>`;
+        });
+        html += `</div>`;
+    }
+    if (p.lien_source && p.lien_source.length) {
+        html += `<div class="modal-section"><h4>🔗 Sources</h4>`;
+        p.lien_source.forEach(s => {
+            html += `<a href="${s.url}" target="_blank" class="source-btn">${s.label}</a>`;
+        });
+        html += `</div>`;
+    }
+    
+    document.getElementById('modal-body').innerHTML = html;
+    document.getElementById('modal-overlay').classList.add('active');
 }
 
-function closeLightbox() {
-    document.getElementById('lightbox-overlay').classList.remove('active');
+function closeModal() {
+    document.getElementById('modal-overlay').classList.remove('active');
 }
 
-function showLightboxImage() {
-    const img = currentLightboxProject.images[currentLightboxIndex];
-    document.getElementById('lightbox-img').src = img.full;
-    document.getElementById('lightbox-caption').textContent = 
-        `${img.caption} (${currentLightboxIndex + 1}/${currentLightboxProject.images.length})`;
-}
-
-function navigateLightbox(direction) {
-    currentLightboxIndex += direction;
-    if (currentLightboxIndex < 0) currentLightboxIndex = currentLightboxProject.images.length - 1;
-    if (currentLightboxIndex >= currentLightboxProject.images.length) currentLightboxIndex = 0;
-    showLightboxImage();
-}
-
-// Event listeners pour le lightbox
-document.getElementById('lightbox-overlay').addEventListener('click', (e) => {
-    if (e.target === document.getElementById('lightbox-overlay')) closeLightbox();
-});
-document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
-document.getElementById('lightbox-prev').addEventListener('click', () => navigateLightbox(-1));
-document.getElementById('lightbox-next').addEventListener('click', () => navigateLightbox(1));
-
-// Event listeners pour la modal
-document.getElementById('modal-overlay').addEventListener('click', (e) => {
-    if (e.target === document.getElementById('modal-overlay')) closeProjectModal();
-});
-document.getElementById('modal-close').addEventListener('click', closeProjectModal);
-document.getElementById('btn-prev-projet').addEventListener('click', () => navigateProject(-1));
-document.getElementById('btn-next-projet').addEventListener('click', () => navigateProject(1));
-document.addEventListener('keydown', (e) => {
-    if (!document.getElementById('modal-overlay').classList.contains('active')) return;
-    if (e.key === 'Escape') closeProjectModal();
-    if (e.key === 'ArrowLeft') navigateProject(-1);
-    if (e.key === 'ArrowRight') navigateProject(1);
+document.getElementById('modal-overlay').addEventListener('click', e => {
+    if (e.target.id === 'modal-overlay') closeModal();
 });
 
-// ===== NAVIGATION THÉMATIQUE =====
-function filterByTheme(theme) {
-    document.getElementById('filter-theme').value = theme;
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+});
 
-    document.querySelectorAll('.theme-filter-btn').forEach(btn => {
-        if (btn.dataset.theme === theme) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-    });
-
-    applyFilters();
-    document.querySelector('.main-content').scrollIntoView({ behavior: 'smooth' });
-}
-
-function returnToBilan() {
-    resetFilters();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// Rendre les fonctions accessibles globalement
-window.filterByTheme = filterByTheme;
-window.returnToBilan = returnToBilan;
-
+init();
 </script>
-
-<!-- Site Features JS -->
-<script src="js/site-features.js"></script>
 </body>
 </html>

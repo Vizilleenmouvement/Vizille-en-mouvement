@@ -78,7 +78,8 @@
         "label": "Solidarité - CCAS",
         "url": "https://www.ville-vizille.fr/12634-centre-communal-d-action-sociale-ccas.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Accès aux soins"
   },
   {
     "id": 2,
@@ -139,7 +140,8 @@
         "label": "Solidarité - CCAS",
         "url": "https://www.ville-vizille.fr/12634-centre-communal-d-action-sociale-ccas.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Services publics"
   },
   {
     "id": 3,
@@ -204,7 +206,8 @@
         "label": "Solidarité - CCAS",
         "url": "https://www.ville-vizille.fr/12634-centre-communal-d-action-sociale-ccas.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Accès aux soins"
   },
   {
     "id": 4,
@@ -241,7 +244,8 @@
         "label": "Solidarité - CCAS",
         "url": "https://www.ville-vizille.fr/12634-centre-communal-d-action-sociale-ccas.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Accès aux soins"
   },
   {
     "id": 5,
@@ -326,7 +330,8 @@
         "label": "Solidarité - CCAS",
         "url": "https://www.ville-vizille.fr/12634-centre-communal-d-action-sociale-ccas.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Accès aux soins"
   },
   {
     "id": 6,
@@ -363,7 +368,8 @@
         "label": "Solidarité - CCAS",
         "url": "https://www.ville-vizille.fr/12634-centre-communal-d-action-sociale-ccas.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Accès aux soins"
   },
   {
     "id": 7,
@@ -445,7 +451,8 @@
         "label": "Solidarité - CCAS",
         "url": "https://www.ville-vizille.fr/12634-centre-communal-d-action-sociale-ccas.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Prévention"
   },
   {
     "id": 8,
@@ -487,7 +494,8 @@
         "label": "Solidarité - CCAS",
         "url": "https://www.ville-vizille.fr/12634-centre-communal-d-action-sociale-ccas.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Prévention"
   },
   {
     "id": 9,
@@ -524,7 +532,8 @@
         "label": "Solidarité - CCAS",
         "url": "https://www.ville-vizille.fr/12634-centre-communal-d-action-sociale-ccas.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Prévention"
   },
   {
     "id": 10,
@@ -566,7 +575,8 @@
         "label": "Solidarité - CCAS",
         "url": "https://www.ville-vizille.fr/12634-centre-communal-d-action-sociale-ccas.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 11,
@@ -645,7 +655,8 @@
         "label": "Découvrir Vizille",
         "url": "https://www.ville-vizille.fr/12618-decouvrir-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Grands projets"
   },
   {
     "id": 12,
@@ -709,7 +720,8 @@
         "label": "Découvrir Vizille",
         "url": "https://www.ville-vizille.fr/12618-decouvrir-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Grands projets"
   },
   {
     "id": 13,
@@ -768,7 +780,8 @@
         "label": "Découvrir Vizille",
         "url": "https://www.ville-vizille.fr/12618-decouvrir-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Grands projets"
   },
   {
     "id": 14,
@@ -810,7 +823,8 @@
         "label": "Découvrir Vizille",
         "url": "https://www.ville-vizille.fr/12618-decouvrir-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Grands projets"
   },
   {
     "id": 15,
@@ -924,7 +938,8 @@
         "label": "Découvrir Vizille",
         "url": "https://www.ville-vizille.fr/12618-decouvrir-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Grands projets"
   },
   {
     "id": 16,
@@ -1015,7 +1030,8 @@
         "label": "Découvrir Vizille",
         "url": "https://www.ville-vizille.fr/12618-decouvrir-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Grands projets"
   },
   {
     "id": 17,
@@ -1066,7 +1082,8 @@
         "label": "Découvrir Vizille",
         "url": "https://www.ville-vizille.fr/12618-decouvrir-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Permis & Déclarations"
   },
   {
     "id": 18,
@@ -1116,7 +1133,8 @@
         "label": "Découvrir Vizille",
         "url": "https://www.ville-vizille.fr/12618-decouvrir-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Grands projets"
   },
   {
     "id": 19,
@@ -1163,7 +1181,8 @@
         "label": "Découvrir Vizille",
         "url": "https://www.ville-vizille.fr/12618-decouvrir-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Permis & Déclarations"
   },
   {
     "id": 20,
@@ -1172,7 +1191,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Signature Charte Plan Climat Air Énergie",
-    "description": "Engagement dans le Plan Climat-Air-Énergie métropolitain depuis 2021. Nombreuses actions environnementales.",
+    "description": "Signature de la Charte d'engagement communale du Plan Climat-Air-Énergie Métropolitain (PCAEM) en septembre 2021. Feuille de route de la transition écologique avec plus de 200 actions et implication des citoyens.",
     "annee": "2021",
     "annee_fin": "2021",
     "budget": 0,
@@ -1195,7 +1214,7 @@
         "evenement": "Réalisation"
       }
     ],
-    "details": "La commune s'engage dans le Plan Climat Air Énergie de Grenoble-Alpes Métropole avec des objectifs ambitieux de réduction des émissions de gaz à effet de serre et d'amélioration de la qualité de l'air. Plusieurs actions concrètes sont déployées : extinction partielle de l'éclairage public, remplacement des ampoules énergivores, installation d'horloges astronomiques pour optimiser l'éclairage.",
+    "details": "Le PCAEM repose sur 5 axes stratégiques : adapter le territoire au changement climatique, réduire les émissions de GES et la pollution, valoriser les ressources locales, mobiliser habitants et acteurs économiques, renforcer l'exemplarité de la collectivité. Concertation avec partenaires locaux (citoyens, milieu économique). Comités de pilotage : 21 avril 2023 et 26 mars 2025.",
     "sources": [
       {
         "type": "magazine",
@@ -1224,7 +1243,9 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Énergie & Climat",
+    "suspendu": true
   },
   {
     "id": 21,
@@ -1285,7 +1306,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Énergie & Climat"
   },
   {
     "id": 22,
@@ -1337,7 +1359,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Énergie & Climat"
   },
   {
     "id": 23,
@@ -1346,7 +1369,7 @@
     "color": "#27ae60",
     "statut": "En cours",
     "titre": "Réseau de chaleur urbain",
-    "description": "Création votée sept 2025, secteur nord",
+    "description": "Projet de réseau de chaleur urbain pour les quartiers nord et centre-ville de Vizille. Installation prévue en 2028.",
     "annee": "2025",
     "annee_fin": "",
     "budget": 0,
@@ -1376,7 +1399,7 @@
         "evenement": "CM: Délibération d'intention"
       }
     ],
-    "details": "La Métropole, autorité organisatrice de la distribution de chaleur depuis 2015, étudie la création d'un réseau de chaleur à Vizille. Ce projet permettrait d'alimenter les bâtiments publics et logements collectifs en énergie renouvelable (biomasse, géothermie) à un tarif compétitif.",
+    "details": "Réunion publique en janvier 2026, organisée par la mairie avec l'accompagnement de la Métropole. Présentation des enjeux environnementaux et économiques, modalités de raccordement au futur réseau. Alternative écologique au chauffage individuel pour réduire les émissions de GES.",
     "sources": [
       {
         "type": "doc",
@@ -1405,7 +1428,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Énergie & Climat"
   },
   {
     "id": 24,
@@ -1414,7 +1438,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Extinction éclairage 22h-6h",
-    "description": "28% du parc, économie 30-45k€/an",
+    "description": "Extinction de l'éclairage public de 22h à 6h pour réduire la consommation d'énergie, diminuer la pollution lumineuse et préserver la biodiversité.",
     "annee": "2022",
     "annee_fin": "",
     "budget": 45000,
@@ -1433,7 +1457,7 @@
         "evenement": "Réalisation"
       }
     ],
-    "details": "",
+    "details": "Expérimentation lancée en juillet 2022. Enquête participative en 2023 : questionnaire officiel sur la perception des impacts, les plages horaires, les avantages (économies, protection faune, réduction pollution lumineuse). Possibilité de proposer des améliorations (extinction à la demande, réduction d'intensité). Cette enquête a initié les futures orientations de modernisation de l'éclairage public.",
     "sources": [
       {
         "type": "doc",
@@ -1457,7 +1481,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Énergie & Climat"
   },
   {
     "id": 25,
@@ -1509,7 +1534,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Énergie & Climat"
   },
   {
     "id": 26,
@@ -1556,7 +1582,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Énergie & Climat"
   },
   {
     "id": 27,
@@ -1616,7 +1643,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Énergie & Climat"
   },
   {
     "id": 28,
@@ -1658,7 +1686,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Nature & Biodiversité"
   },
   {
     "id": 29,
@@ -1700,7 +1729,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Déchets & Recyclage"
   },
   {
     "id": 30,
@@ -1742,7 +1772,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Déchets & Recyclage"
   },
   {
     "id": 31,
@@ -1798,7 +1829,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Déchets & Recyclage"
   },
   {
     "id": 32,
@@ -1850,7 +1882,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Déchets & Recyclage"
   },
   {
     "id": 33,
@@ -1901,7 +1934,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Nature & Biodiversité"
   },
   {
     "id": 34,
@@ -1943,7 +1977,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Déchets & Recyclage"
   },
   {
     "id": 35,
@@ -2002,7 +2037,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 36,
@@ -2054,7 +2090,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 37,
@@ -2096,7 +2133,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 38,
@@ -2148,7 +2186,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 39,
@@ -2195,7 +2234,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Eau"
   },
   {
     "id": 40,
@@ -2258,7 +2298,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Énergie & Climat"
   },
   {
     "id": 41,
@@ -2300,7 +2341,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 42,
@@ -2376,7 +2418,8 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Vidéo-protection"
   },
   {
     "id": 43,
@@ -2418,7 +2461,8 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Prévention"
   },
   {
     "id": 44,
@@ -2465,7 +2509,8 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Prévention"
   },
   {
     "id": 46,
@@ -2533,7 +2578,8 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Police municipale"
   },
   {
     "id": 47,
@@ -2580,7 +2626,8 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Prévention"
   },
   {
     "id": 48,
@@ -2632,7 +2679,8 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Sécurité civile"
   },
   {
     "id": 49,
@@ -2679,7 +2727,8 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Sécurité civile"
   },
   {
     "id": 50,
@@ -2721,7 +2770,8 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Vidéo-protection"
   },
   {
     "id": 82,
@@ -2777,7 +2827,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Petite enfance"
   },
   {
     "id": 83,
@@ -2786,7 +2837,7 @@
     "color": "#3498db",
     "statut": "Réalisé",
     "titre": "Désimperméabilisation cour Jean Jaurès",
-    "description": "Désimperméabilisation et végétalisation de la cour, projet phare d'adaptation au changement climatique.",
+    "description": "Désimperméabilisation de la cour de l'école Jean Jaurès pour lutter contre le réchauffement climatique et les îlots de chaleur. Projet co-construit avec les enseignants et les enfants.",
     "annee": "2023",
     "annee_fin": "2024",
     "budget": 230000,
@@ -2817,7 +2868,7 @@
         "evenement": "Inauguration officielle"
       }
     ],
-    "details": "Réaménagement de la cour de l'école Jean Jaurès avec désimperméabilisation des sols pour favoriser l'infiltration des eaux de pluie, réduire les îlots de chaleur et créer des espaces végétalisés propices au bien-être des élèves.",
+    "details": "Concertation en AVP menée par l'Atelier des Cairns (décembre 2022 - avril 2023) avec enseignants et enfants pour construire le projet pédagogique en lien avec l'aménagement. Travaux : juin-automne 2023 (plantation arbres, végétalisation). Inauguration juin 2024 avec enfants, parents, enseignants et partenaires (Agence de l'eau du sud-est).",
     "sources": [
       {
         "type": "magazine",
@@ -2841,7 +2892,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 84,
@@ -2850,7 +2902,7 @@
     "color": "#3498db",
     "statut": "En cours",
     "titre": "Désimperméabilisation cour Paul Langevin",
-    "description": "Maîtrise d'œuvre 2024, travaux 2025",
+    "description": "Désimperméabilisation de la cour de l'école Paul Langevin pour lutter contre les îlots de chaleur. Projet co-construit avec la communauté éducative.",
     "annee": "2024",
     "annee_fin": "2025",
     "budget": 230000,
@@ -2873,7 +2925,7 @@
         "evenement": "Réalisation"
       }
     ],
-    "details": "Transformation de la cour de l'école Paul Langevin avec désimperméabilisation, végétalisation et création d'espaces ombragés. Ce projet participe à l'adaptation au changement climatique et améliore le cadre de vie scolaire.",
+    "details": "Concertation en AVP avec enseignants et enfants pour construire le projet pédagogique en lien avec l'aménagement de la cour. Inauguration janvier 2026 avec enfants, parents, équipe enseignante et partenaires (Agence de l'eau du sud-est).",
     "sources": [
       {
         "type": "doc",
@@ -2897,7 +2949,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 85,
@@ -2949,7 +3002,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 86,
@@ -3001,7 +3055,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 87,
@@ -3048,7 +3103,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 88,
@@ -3095,7 +3151,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 89,
@@ -3159,7 +3216,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 90,
@@ -3211,7 +3269,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Activités"
   },
   {
     "id": 91,
@@ -3253,7 +3312,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 92,
@@ -3300,7 +3360,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Petite enfance"
   },
   {
     "id": 93,
@@ -3352,7 +3413,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 94,
@@ -3418,7 +3480,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 95,
@@ -3509,7 +3572,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 96,
@@ -3608,7 +3672,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 97,
@@ -3660,7 +3725,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 98,
@@ -3707,7 +3773,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 99,
@@ -3764,7 +3831,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Aide internationale"
   },
   {
     "id": 100,
@@ -3821,7 +3889,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Aide internationale"
   },
   {
     "id": 101,
@@ -3878,7 +3947,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Aide internationale"
   },
   {
     "id": 102,
@@ -3935,7 +4005,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Aide internationale"
   },
   {
     "id": 103,
@@ -3992,7 +4063,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Aide internationale"
   },
   {
     "id": 104,
@@ -4044,7 +4116,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Soutien économique"
   },
   {
     "id": 105,
@@ -4096,7 +4169,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Soutien économique"
   },
   {
     "id": 106,
@@ -4148,7 +4222,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Actions sociales"
   },
   {
     "id": 107,
@@ -4205,7 +4280,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Égalité & Inclusion"
   },
   {
     "id": 108,
@@ -4257,7 +4333,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Soutien économique"
   },
   {
     "id": 109,
@@ -4304,7 +4381,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Actions sociales"
   },
   {
     "id": 110,
@@ -4356,7 +4434,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Aide internationale"
   },
   {
     "id": 111,
@@ -4408,7 +4487,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Actions sociales"
   },
   {
     "id": 112,
@@ -4455,7 +4535,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Équipements"
   },
   {
     "id": 113,
@@ -4463,8 +4544,8 @@
     "icon": "⚽",
     "color": "#2ecc71",
     "statut": "Réalisé",
-    "titre": "Piscine municipale maintenue ouverte",
-    "description": "Budget 60-80k€/an travaux, estivale",
+    "titre": "Réouverture de la piscine municipale",
+    "description": "Réouverture de la piscine municipale en 2021 après plusieurs années de fermeture sous le mandat précédent. Travaux de mise aux normes réalisés pour offrir aux Vizillois un équipement sportif et de loisirs essentiel.",
     "annee": "2021",
     "annee_fin": "",
     "budget": 60000,
@@ -4511,7 +4592,7 @@
         "evenement": "Tarification piscine saison 2025"
       }
     ],
-    "details": "Aménagements réalisés en 2023: reprise carrelage bassin, 4 voiles d'ombrage, massifs de fleurs, gazon synthétique autour du bassin, caillebotis dans le pédiluve, réfection portes cabines. Fréquentation en hausse significative, certaines journées plus de 100 personnes. Gratuité les jours de vigilance rouge canicule. Cours de natation MNS de 9h30 à 11h et 18h15 à 19h15.",
+    "details": "La piscine municipale était fermée depuis le mandat précédent. Les élus et les services techniques se sont mobilisés pour réaliser les travaux de mise aux normes nécessaires et rouvrir l'équipement dès 2021. Aménagements complémentaires en 2023 : reprise carrelage bassin, 4 voiles d'ombrage, massifs de fleurs, gazon synthétique, caillebotis pédiluve, réfection portes cabines. Fréquentation en hausse significative. Gratuité les jours de vigilance rouge canicule. Cours de natation MNS.",
     "sources": [
       {
         "type": "doc",
@@ -4530,7 +4611,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Équipements"
   },
   {
     "id": 114,
@@ -4577,7 +4659,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Équipements"
   },
   {
     "id": 115,
@@ -4647,7 +4730,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Équipements"
   },
   {
     "id": 116,
@@ -4689,7 +4773,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Mise à disposition"
   },
   {
     "id": 117,
@@ -4784,7 +4869,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Associations & Partenariats"
   },
   {
     "id": 118,
@@ -4858,7 +4944,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Événements"
   },
   {
     "id": 119,
@@ -4918,7 +5005,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Événements"
   },
   {
     "id": 120,
@@ -4960,7 +5048,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Événements"
   },
   {
     "id": 121,
@@ -5002,7 +5091,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Événements"
   },
   {
     "id": 122,
@@ -5044,7 +5134,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Événements"
   },
   {
     "id": 123,
@@ -5100,7 +5191,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Événements"
   },
   {
     "id": 124,
@@ -5152,7 +5244,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 125,
@@ -5211,7 +5304,9 @@
         "label": "Commerces",
         "url": "https://www.ville-vizille.fr/12681-les-commerces.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Commerce",
+    "suspendu": true
   },
   {
     "id": 126,
@@ -5258,7 +5353,9 @@
         "label": "Commerces",
         "url": "https://www.ville-vizille.fr/12681-les-commerces.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Commerce",
+    "suspendu": true
   },
   {
     "id": 127,
@@ -5300,7 +5397,9 @@
         "label": "Commerces",
         "url": "https://www.ville-vizille.fr/12681-les-commerces.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Développement",
+    "suspendu": true
   },
   {
     "id": 128,
@@ -5342,7 +5441,9 @@
         "label": "Commerces",
         "url": "https://www.ville-vizille.fr/12681-les-commerces.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Commerce",
+    "suspendu": true
   },
   {
     "id": 129,
@@ -5384,7 +5485,9 @@
         "label": "Commerces",
         "url": "https://www.ville-vizille.fr/12681-les-commerces.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Commerce",
+    "suspendu": true
   },
   {
     "id": 130,
@@ -5426,7 +5529,9 @@
         "label": "Commerces",
         "url": "https://www.ville-vizille.fr/12681-les-commerces.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Commerce",
+    "suspendu": true
   },
   {
     "id": 131,
@@ -5468,7 +5573,9 @@
         "label": "Commerces",
         "url": "https://www.ville-vizille.fr/12681-les-commerces.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Concertation",
+    "suspendu": true
   },
   {
     "id": 132,
@@ -5515,7 +5622,9 @@
         "label": "Commerces",
         "url": "https://www.ville-vizille.fr/12681-les-commerces.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Fiscalité",
+    "suspendu": true
   },
   {
     "id": 133,
@@ -5589,7 +5698,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Piétons & Vélos"
   },
   {
     "id": 134,
@@ -5631,7 +5741,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Circulation"
   },
   {
     "id": 135,
@@ -5673,7 +5784,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Circulation"
   },
   {
     "id": 136,
@@ -5719,7 +5831,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Stationnement"
   },
   {
     "id": 137,
@@ -5761,7 +5874,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Piétons & Vélos"
   },
   {
     "id": 138,
@@ -5813,7 +5927,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Piétons & Vélos"
   },
   {
     "id": 139,
@@ -5860,7 +5975,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Piétons & Vélos"
   },
   {
     "id": 140,
@@ -5902,7 +6018,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Stationnement"
   },
   {
     "id": 141,
@@ -5944,7 +6061,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Circulation"
   },
   {
     "id": 142,
@@ -5986,7 +6104,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Voirie & Espaces publics"
   },
   {
     "id": 143,
@@ -6028,7 +6147,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Voirie & Espaces publics"
   },
   {
     "id": 144,
@@ -6075,7 +6195,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Équipements"
   },
   {
     "id": 145,
@@ -6117,7 +6238,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Voirie & Espaces publics"
   },
   {
     "id": 146,
@@ -6163,7 +6285,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Équipements"
   },
   {
     "id": 147,
@@ -6205,7 +6328,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Bâtiments"
   },
   {
     "id": 148,
@@ -6247,7 +6371,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Voirie & Espaces publics"
   },
   {
     "id": 149,
@@ -6289,7 +6414,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Équipements"
   },
   {
     "id": 150,
@@ -6331,7 +6457,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Voirie & Espaces publics"
   },
   {
     "id": 151,
@@ -6378,7 +6505,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Voirie & Espaces publics"
   },
   {
     "id": 152,
@@ -6420,7 +6548,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Voirie & Espaces publics"
   },
   {
     "id": 153,
@@ -6457,7 +6586,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Voirie & Espaces publics"
   },
   {
     "id": 154,
@@ -6494,7 +6624,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Voirie & Espaces publics"
   },
   {
     "id": 155,
@@ -6536,7 +6667,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Bâtiments"
   },
   {
     "id": 156,
@@ -6578,7 +6710,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Équipements"
   },
   {
     "id": 157,
@@ -6587,7 +6720,7 @@
     "color": "#e67e22",
     "statut": "Réalisé",
     "titre": "Désimperméabilisation tennis Péage",
-    "description": "40 000€, espaces verts",
+    "description": "Désimperméabilisation et végétalisation des anciens terrains de tennis du Péage, près de l'église.",
     "annee": "2023",
     "annee_fin": "2023",
     "budget": 40000,
@@ -6606,7 +6739,7 @@
         "evenement": "Réalisation"
       }
     ],
-    "details": "",
+    "details": "Projet issu de la concertation citoyenne lors de la soirée Belledonne & Veillées d'avril 2022 sur la végétalisation. Ateliers participatifs avec les habitants pour définir l'aménagement. S'inscrit dans le Plan métropolitain Canopée pour créer des zones d'ombrage.",
     "sources": [
       {
         "type": "doc",
@@ -6620,7 +6753,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 158,
@@ -6662,7 +6796,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Voirie & Espaces publics"
   },
   {
     "id": 159,
@@ -6699,7 +6834,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 160,
@@ -6741,7 +6877,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 161,
@@ -6778,7 +6915,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 162,
@@ -6834,7 +6972,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 163,
@@ -6876,7 +7015,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 164,
@@ -6913,7 +7053,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Bâtiments"
   },
   {
     "id": 165,
@@ -6968,7 +7109,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 167,
@@ -6977,7 +7119,7 @@
     "color": "#607d8b",
     "statut": "Réalisé",
     "titre": "Convention voirie Métropole",
-    "description": "15 230€ HT/an enveloppe proximité",
+    "description": "Convention de gestion de la voirie communale avec Grenoble-Alpes Métropole. Enveloppe de proximité de 15 230€ HT/an pour l'entretien courant des voies communales.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 15230,
@@ -6996,7 +7138,7 @@
         "evenement": "Réalisation"
       }
     ],
-    "details": "",
+    "details": "Cette convention permet à la commune de bénéficier de l'expertise technique de la Métropole pour l'entretien de ses voiries tout en conservant la maîtrise des priorités locales. Elle couvre les travaux de réfection ponctuelle, le marquage au sol et la signalisation horizontale.",
     "sources": [
       {
         "type": "doc",
@@ -7015,7 +7157,8 @@
         "label": "Intercommunalité",
         "url": "https://www.ville-vizille.fr/12603-intercommunalite.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Métropole"
   },
   {
     "id": 168,
@@ -7024,7 +7167,7 @@
     "color": "#607d8b",
     "statut": "Réalisé",
     "titre": "Vœu 5G - cadre protecteur",
-    "description": "Moratoire demandé",
+    "description": "Vœu demandant un moratoire sur le déploiement de la 5G et un cadre protecteur pour les populations et l'environnement.",
     "annee": "2021",
     "annee_fin": "2021",
     "budget": 0,
@@ -7038,7 +7181,7 @@
         "evenement": "Réalisation"
       }
     ],
-    "details": "",
+    "details": "Le conseil municipal a adopté ce vœu pour demander une évaluation sanitaire et environnementale approfondie avant tout déploiement de la 5G sur le territoire. Cette position s'inscrit dans une démarche de précaution face aux incertitudes sur les effets des ondes électromagnétiques.",
     "sources": [
       {
         "type": "doc",
@@ -7057,7 +7200,8 @@
         "label": "Intercommunalité",
         "url": "https://www.ville-vizille.fr/12603-intercommunalite.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Vœux & Actions"
   },
   {
     "id": 169,
@@ -7099,7 +7243,9 @@
         "label": "Intercommunalité",
         "url": "https://www.ville-vizille.fr/12603-intercommunalite.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Métropole",
+    "suspendu": true
   },
   {
     "id": 170,
@@ -7108,7 +7254,7 @@
     "color": "#607d8b",
     "statut": "Réalisé",
     "titre": "Transfert compétences eaux souterraines",
-    "description": "Métropole",
+    "description": "Transfert à Grenoble-Alpes Métropole de la compétence de gestion des eaux souterraines dans le cadre de la GEMAPI.",
     "annee": "2024",
     "annee_fin": "2024",
     "budget": 0,
@@ -7122,7 +7268,7 @@
         "evenement": "Réalisation"
       }
     ],
-    "details": "",
+    "details": "Ce transfert permet une gestion cohérente et mutualisée des nappes phréatiques à l'échelle du bassin versant. La Métropole assure désormais la surveillance qualitative et quantitative des eaux souterraines et la protection des captages.",
     "sources": [
       {
         "type": "doc",
@@ -7146,7 +7292,8 @@
         "label": "Intercommunalité",
         "url": "https://www.ville-vizille.fr/12603-intercommunalite.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Métropole"
   },
   {
     "id": 171,
@@ -7155,7 +7302,7 @@
     "color": "#607d8b",
     "statut": "Réalisé",
     "titre": "Adhésion service accessibilité Métropole",
-    "description": "Adhésion service accessibilité Métropole",
+    "description": "Adhésion au service mutualisé d'accessibilité de Grenoble-Alpes Métropole pour accompagner la mise en conformité des établissements recevant du public.",
     "annee": "2024",
     "annee_fin": "2024",
     "budget": 0,
@@ -7169,7 +7316,7 @@
         "evenement": "Réalisation"
       }
     ],
-    "details": "",
+    "details": "Ce service apporte une expertise technique et juridique pour l'élaboration des Agendas d'Accessibilité Programmée (Ad'AP) et le suivi des travaux de mise en accessibilité des bâtiments communaux.",
     "sources": [
       {
         "type": "doc",
@@ -7188,7 +7335,8 @@
         "label": "Intercommunalité",
         "url": "https://www.ville-vizille.fr/12603-intercommunalite.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Métropole"
   },
   {
     "id": 172,
@@ -7197,7 +7345,7 @@
     "color": "#607d8b",
     "statut": "Réalisé",
     "titre": "Plateforme numérique participative",
-    "description": "Service commun métropolitain",
+    "description": "Participation à la plateforme numérique participative métropolitaine permettant aux citoyens de contribuer aux consultations et projets.",
     "annee": "2023",
     "annee_fin": "",
     "budget": 0,
@@ -7211,7 +7359,7 @@
         "evenement": "Réalisation"
       }
     ],
-    "details": "",
+    "details": "Ce service commun offre aux Vizillois un outil moderne de participation citoyenne avec consultations en ligne, budgets participatifs et signalements. Il complète les dispositifs locaux de concertation.",
     "sources": [
       {
         "type": "doc",
@@ -7230,7 +7378,8 @@
         "label": "Intercommunalité",
         "url": "https://www.ville-vizille.fr/12603-intercommunalite.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Vœux & Actions"
   },
   {
     "id": 173,
@@ -7239,7 +7388,7 @@
     "color": "#607d8b",
     "statut": "Réalisé",
     "titre": "Entrée capital SPL Isère Aménagement",
-    "description": "Entrée capital SPL Isère Aménagement",
+    "description": "Prise de participation au capital de la SPL Isère Aménagement, société publique locale d'aménagement du territoire.",
     "annee": "2025",
     "annee_fin": "2025",
     "budget": 0,
@@ -7253,7 +7402,7 @@
         "evenement": "Réalisation"
       }
     ],
-    "details": "",
+    "details": "Cette participation permet à Vizille de bénéficier de l'ingénierie de la SPL pour ses projets d'aménagement urbain, notamment dans le cadre de l'ORT et de la requalification des friches industrielles.",
     "sources": [
       {
         "type": "doc",
@@ -7272,7 +7421,8 @@
         "label": "Intercommunalité",
         "url": "https://www.ville-vizille.fr/12603-intercommunalite.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Participations"
   },
   {
     "id": 174,
@@ -7281,7 +7431,7 @@
     "color": "#607d8b",
     "statut": "Réalisé",
     "titre": "Entrée capital Agence France Locale",
-    "description": "Entrée capital Agence France Locale",
+    "description": "Prise de participation au capital de l'Agence France Locale, établissement de crédit des collectivités territoriales.",
     "annee": "2025",
     "annee_fin": "2025",
     "budget": 0,
@@ -7295,7 +7445,7 @@
         "evenement": "Réalisation"
       }
     ],
-    "details": "",
+    "details": "L'AFL propose des financements à taux avantageux pour les investissements communaux. Cette adhésion diversifie les sources de financement de la commune et renforce son autonomie financière.",
     "sources": [
       {
         "type": "doc",
@@ -7314,7 +7464,8 @@
         "label": "Intercommunalité",
         "url": "https://www.ville-vizille.fr/12603-intercommunalite.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Participations"
   },
   {
     "id": 175,
@@ -7356,7 +7507,8 @@
         "label": "Budget",
         "url": "https://www.ville-vizille.fr/12599-budget.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Fiscalité"
   },
   {
     "id": 176,
@@ -7393,7 +7545,8 @@
         "label": "Budget",
         "url": "https://www.ville-vizille.fr/12599-budget.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Gestion"
   },
   {
     "id": 177,
@@ -7435,7 +7588,8 @@
         "label": "Budget",
         "url": "https://www.ville-vizille.fr/12599-budget.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Gestion"
   },
   {
     "id": 178,
@@ -7477,7 +7631,8 @@
         "label": "Budget",
         "url": "https://www.ville-vizille.fr/12599-budget.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Budget"
   },
   {
     "id": 179,
@@ -7544,7 +7699,8 @@
         "label": "Budget",
         "url": "https://www.ville-vizille.fr/12599-budget.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Budget"
   },
   {
     "id": 180,
@@ -7581,7 +7737,8 @@
         "label": "Budget",
         "url": "https://www.ville-vizille.fr/12599-budget.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 181,
@@ -7618,7 +7775,8 @@
         "label": "Budget",
         "url": "https://www.ville-vizille.fr/12599-budget.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Distinctions"
   },
   {
     "id": 182,
@@ -7660,7 +7818,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Bâtiments"
   },
   {
     "id": 183,
@@ -7702,7 +7861,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 184,
@@ -7744,7 +7904,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Réseaux"
   },
   {
     "id": 185,
@@ -7786,7 +7947,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Équipements"
   },
   {
     "id": 186,
@@ -7828,7 +7990,8 @@
         "label": "Services municipaux",
         "url": "https://www.ville-vizille.fr/12602-services-municipaux.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Postes"
   },
   {
     "id": 187,
@@ -7865,7 +8028,8 @@
         "label": "Services municipaux",
         "url": "https://www.ville-vizille.fr/12602-services-municipaux.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Gestion RH"
   },
   {
     "id": 188,
@@ -7902,7 +8066,8 @@
         "label": "Services municipaux",
         "url": "https://www.ville-vizille.fr/12602-services-municipaux.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Gestion RH"
   },
   {
     "id": 189,
@@ -7939,7 +8104,8 @@
         "label": "Services municipaux",
         "url": "https://www.ville-vizille.fr/12602-services-municipaux.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Gestion RH"
   },
   {
     "id": 190,
@@ -8002,7 +8168,8 @@
         "label": "Découvrir Vizille",
         "url": "https://www.ville-vizille.fr/12618-decouvrir-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Études & Diagnostics"
   },
   {
     "id": 193,
@@ -8044,7 +8211,8 @@
         "label": "Découvrir Vizille",
         "url": "https://www.ville-vizille.fr/12618-decouvrir-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Études & Diagnostics"
   },
   {
     "id": 194,
@@ -8081,7 +8249,8 @@
         "label": "Budget",
         "url": "https://www.ville-vizille.fr/12599-budget.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Fiscalité"
   },
   {
     "id": 195,
@@ -8128,7 +8297,8 @@
         "label": "Budget",
         "url": "https://www.ville-vizille.fr/12599-budget.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 198,
@@ -8170,7 +8340,8 @@
         "label": "Budget",
         "url": "https://www.ville-vizille.fr/12599-budget.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Budget"
   },
   {
     "id": 200,
@@ -8222,7 +8393,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Déchets & Recyclage"
   },
   {
     "id": 201,
@@ -8277,7 +8449,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Énergie & Climat"
   },
   {
     "id": 202,
@@ -8319,7 +8492,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 203,
@@ -8361,7 +8535,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 204,
@@ -8408,7 +8583,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 205,
@@ -8450,7 +8626,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 206,
@@ -8492,7 +8669,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 207,
@@ -8559,7 +8737,8 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Vidéo-protection"
   },
   {
     "id": 208,
@@ -8606,7 +8785,8 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Fiscalité"
   },
   {
     "id": 212,
@@ -8648,7 +8828,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Équipements"
   },
   {
     "id": 213,
@@ -8690,7 +8871,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Mise à disposition"
   },
   {
     "id": 214,
@@ -8732,7 +8914,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Équipements"
   },
   {
     "id": 215,
@@ -8774,7 +8957,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Équipements"
   },
   {
     "id": 223,
@@ -8783,7 +8967,7 @@
     "color": "#607d8b",
     "statut": "Décidé",
     "titre": "Répartition sièges Métropole 2026",
-    "description": "Vizille : 1 siège sur 119 (population 7 316), ratio 102%",
+    "description": "Vizille dispose d'1 siège sur 119 au conseil métropolitain (population 7 316 hab.). Suite au vœu du conseil municipal de 2020, la commune a porté la revendication d'une meilleure représentativité des petites communes.",
     "annee": "2026",
     "annee_fin": "",
     "budget": 0,
@@ -8797,7 +8981,7 @@
         "evenement": "Réalisation"
       }
     ],
-    "details": "",
+    "details": "Le ratio de représentation de Vizille est de 102%, proche de la moyenne. Le vœu adopté en 2020 (21 pour, 2 contre, 5 abstentions) demandait une réforme du mode de scrutin pour garantir une voix équitable aux communes de moins de 10 000 habitants face aux grandes villes.",
     "sources": [
       {
         "type": "doc",
@@ -8811,7 +8995,8 @@
         "label": "Intercommunalité",
         "url": "https://www.ville-vizille.fr/12603-intercommunalite.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Métropole"
   },
   {
     "id": 224,
@@ -8853,7 +9038,9 @@
         "label": "Commerces",
         "url": "https://www.ville-vizille.fr/12681-les-commerces.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Fiscalité",
+    "suspendu": true
   },
   {
     "id": 225,
@@ -8900,7 +9087,9 @@
         "label": "Commerces",
         "url": "https://www.ville-vizille.fr/12681-les-commerces.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Développement",
+    "suspendu": true
   },
   {
     "id": 226,
@@ -8947,7 +9136,8 @@
         "label": "Budget",
         "url": "https://www.ville-vizille.fr/12599-budget.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Gestion"
   },
   {
     "id": 227,
@@ -8999,7 +9189,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Énergie & Climat"
   },
   {
     "id": 228,
@@ -9046,7 +9237,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 230,
@@ -9098,7 +9290,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 232,
@@ -9140,7 +9333,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 234,
@@ -9191,7 +9385,8 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Prévention"
   },
   {
     "id": 235,
@@ -9233,7 +9428,8 @@
         "label": "Solidarité - CCAS",
         "url": "https://www.ville-vizille.fr/12634-centre-communal-d-action-sociale-ccas.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Prévention"
   },
   {
     "id": 236,
@@ -9284,7 +9480,8 @@
         "label": "Budget",
         "url": "https://www.ville-vizille.fr/12599-budget.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Budget"
   },
   {
     "id": 238,
@@ -9335,7 +9532,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 239,
@@ -9344,7 +9542,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Avis favorable ZFE VUL-PL Crit'Air 2 report 2028",
-    "description": "Report interdiction VUL/PL diesel de juillet 2025 à juillet 2028",
+    "description": "Avis favorable au report de la ZFE VUL-PL Crit'Air 2 à 2028. Vizille ne fait pas partie de la ZFE mais accompagne la communication.",
     "annee": "2025",
     "annee_fin": "",
     "budget": 0,
@@ -9375,7 +9573,7 @@
         "evenement": "Avis favorable report Crit'Air 2 au 01/07/2028 pour VUL et PL (18 pour, 9 abstentions)"
       }
     ],
-    "details": "La Métropole a obtenu un report à 2028 de l'interdiction des véhicules utilitaires légers et poids lourds Crit'Air 2 dans la Zone à Faibles Émissions (ZFE). Ce délai supplémentaire permet aux professionnels et artisans vizillois de planifier le renouvellement de leur flotte.",
+    "details": "Concertation volontaire organisée par la Métropole au printemps 2023 pour recueillir les avis des citoyens avant la mise en place de la ZFE au 1er juillet 2023. Conclusions partagées publiquement. La ville a participé activement à la communication pour expliquer les modalités aux Vizillois.",
     "sources": [
       {
         "type": "magazine",
@@ -9409,7 +9607,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 241,
@@ -9446,7 +9645,8 @@
         "label": "Services municipaux",
         "url": "https://www.ville-vizille.fr/12602-services-municipaux.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Postes"
   },
   {
     "id": 242,
@@ -9483,7 +9683,8 @@
         "label": "Services municipaux",
         "url": "https://www.ville-vizille.fr/12602-services-municipaux.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Postes"
   },
   {
     "id": 243,
@@ -9530,7 +9731,8 @@
         "label": "Découvrir Vizille",
         "url": "https://www.ville-vizille.fr/12618-decouvrir-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Études & Diagnostics"
   },
   {
     "id": 250,
@@ -9582,7 +9784,8 @@
         "label": "Découvrir Vizille",
         "url": "https://www.ville-vizille.fr/12618-decouvrir-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 251,
@@ -9629,7 +9832,9 @@
         "label": "Commerces",
         "url": "https://www.ville-vizille.fr/12681-les-commerces.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Développement",
+    "suspendu": true
   },
   {
     "id": 252,
@@ -9686,7 +9891,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Actions sociales"
   },
   {
     "id": 253,
@@ -9733,7 +9939,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Actions sociales"
   },
   {
     "id": 254,
@@ -9775,7 +9982,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Équipements"
   },
   {
     "id": 255,
@@ -9831,7 +10039,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 257,
@@ -9873,7 +10082,8 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Police municipale"
   },
   {
     "id": 258,
@@ -9915,7 +10125,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Circulation"
   },
   {
     "id": 259,
@@ -9978,7 +10189,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Arrêtés & Courriers"
   },
   {
     "id": 260,
@@ -10020,7 +10232,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Arrêtés & Courriers"
   },
   {
     "id": 261,
@@ -10062,7 +10275,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Circulation"
   },
   {
     "id": 262,
@@ -10104,7 +10318,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Piétons & Vélos"
   },
   {
     "id": 263,
@@ -10146,7 +10361,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Piétons & Vélos"
   },
   {
     "id": 264,
@@ -10188,7 +10404,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Piétons & Vélos"
   },
   {
     "id": 265,
@@ -10230,7 +10447,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 266,
@@ -10272,7 +10490,8 @@
         "label": "Environnement",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 267,
@@ -10324,7 +10543,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Renouvelables"
   },
   {
     "id": 271,
@@ -10366,7 +10586,8 @@
         "label": "Budget",
         "url": "https://www.ville-vizille.fr/12599-budget.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Gestion"
   },
   {
     "id": 273,
@@ -10418,7 +10639,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Événements"
   },
   {
     "id": 274,
@@ -10462,7 +10684,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Aide internationale"
   },
   {
     "id": 277,
@@ -10501,7 +10724,8 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Police municipale"
   },
   {
     "id": 278,
@@ -10545,7 +10769,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Équipements"
   },
   {
     "id": 279,
@@ -10554,7 +10779,7 @@
     "color": "#673ab7",
     "statut": "Réalisé",
     "titre": "Adhésion Action Nationale Élus Route Napoléon",
-    "description": "Adhésion à l'association Action Nationale des Élus de la Route Napoléon",
+    "description": "Adhésion à l'association Action Nationale des Élus de la Route Napoléon pour promouvoir cet itinéraire touristique historique.",
     "annee": "2024",
     "annee_fin": "2024",
     "budget": 0,
@@ -10579,7 +10804,9 @@
         "label": "Intercommunalité",
         "url": "https://www.ville-vizille.fr/12603-intercommunalite.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Vœux & Actions",
+    "details": "Vizille, étape majeure sur la Route Napoléon (lieu du ralliement des troupes en 1815), participe aux actions de valorisation touristique et culturelle de cet itinéraire mythique reliant Golfe-Juan à Grenoble."
   },
   {
     "id": 280,
@@ -10618,7 +10845,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 281,
@@ -10657,7 +10885,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 282,
@@ -10705,7 +10934,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 283,
@@ -10749,7 +10979,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 285,
@@ -10788,7 +11019,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 286,
@@ -10835,7 +11067,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Énergie & Climat"
   },
   {
     "id": 287,
@@ -10844,7 +11077,7 @@
     "color": "#673ab7",
     "statut": "Réalisé",
     "titre": "Pacte de gouvernance Métropole",
-    "description": "Adoption du pacte de gouvernance avec Grenoble-Alpes Métropole",
+    "description": "Adoption du Pacte de gouvernance avec Grenoble-Alpes Métropole définissant les relations entre la Métropole et ses 49 communes membres.",
     "annee": "2020",
     "annee_fin": "2020",
     "budget": 0,
@@ -10869,7 +11102,9 @@
         "label": "Intercommunalité",
         "url": "https://www.ville-vizille.fr/12603-intercommunalite.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Métropole",
+    "details": "Ce pacte établit les principes de subsidiarité, de solidarité territoriale et de dialogue entre les communes et la Métropole. Il précise les modalités de consultation des maires et de prise en compte des spécificités locales."
   },
   {
     "id": 288,
@@ -10908,7 +11143,8 @@
         "label": "Découvrir Vizille",
         "url": "https://www.ville-vizille.fr/12618-decouvrir-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Logement"
   },
   {
     "id": 289,
@@ -10947,7 +11183,8 @@
         "label": "Services municipaux",
         "url": "https://www.ville-vizille.fr/12602-services-municipaux.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Gestion"
   },
   {
     "id": 290,
@@ -10990,7 +11227,9 @@
         "label": "Commerces",
         "url": "https://www.ville-vizille.fr/12681-les-commerces.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Développement",
+    "suspendu": true
   },
   {
     "id": 291,
@@ -11033,7 +11272,8 @@
         "label": "Services municipaux",
         "url": "https://www.ville-vizille.fr/12602-services-municipaux.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Conseil municipal"
   },
   {
     "id": 292,
@@ -11072,7 +11312,8 @@
         "label": "Services municipaux",
         "url": "https://www.ville-vizille.fr/12602-services-municipaux.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Conseil municipal"
   },
   {
     "id": 293,
@@ -11121,7 +11362,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 294,
@@ -11130,7 +11372,7 @@
     "color": "#673ab7",
     "statut": "Réalisé",
     "titre": "Représentation au SEDI",
-    "description": "Désignation des représentants au SEDI",
+    "description": "Désignation des représentants de Vizille au Syndicat des Énergies du Département de l'Isère (SEDI).",
     "annee": "2020",
     "annee_fin": "2020",
     "budget": 0,
@@ -11155,7 +11397,9 @@
         "label": "Intercommunalité",
         "url": "https://www.ville-vizille.fr/12603-intercommunalite.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Participations",
+    "details": "Le SEDI est l'autorité organisatrice de la distribution d'électricité et de gaz en Isère. Les représentants vizillois participent aux décisions concernant les réseaux énergétiques, l'éclairage public et la transition énergétique."
   },
   {
     "id": 295,
@@ -11194,7 +11438,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Échanges"
   },
   {
     "id": 296,
@@ -11203,7 +11448,7 @@
     "color": "#673ab7",
     "statut": "Réalisé",
     "titre": "Représentation à l'AURG",
-    "description": "Désignation des représentants à l'Agence d'Urbanisme de la Région Grenobloise",
+    "description": "Désignation des représentants de Vizille à l'Agence d'Urbanisme de la Région Grenobloise (AURG).",
     "annee": "2020",
     "annee_fin": "2020",
     "budget": 0,
@@ -11228,7 +11473,9 @@
         "label": "Intercommunalité",
         "url": "https://www.ville-vizille.fr/12603-intercommunalite.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Participations",
+    "details": "L'AURG produit des études et données pour aider les collectivités dans leurs projets d'aménagement. Les représentants vizillois contribuent aux réflexions sur le développement urbain du Sud grenoblois."
   },
   {
     "id": 297,
@@ -11272,7 +11519,8 @@
         "label": "Transition écologique",
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Eau"
   },
   {
     "id": 298,
@@ -11311,7 +11559,8 @@
         "label": "Petite enfance",
         "url": "https://www.ville-vizille.fr/12672-petite-enfance.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Écoles"
   },
   {
     "id": 299,
@@ -11350,7 +11599,8 @@
         "label": "Services municipaux",
         "url": "https://www.ville-vizille.fr/12602-services-municipaux.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Conseil municipal"
   },
   {
     "id": 301,
@@ -11393,7 +11643,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Événements"
   },
   {
     "id": 302,
@@ -11432,7 +11683,9 @@
         "label": "Commerces",
         "url": "https://www.ville-vizille.fr/12681-les-commerces.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Commerce",
+    "suspendu": true
   },
   {
     "id": 303,
@@ -11471,7 +11724,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Événements"
   },
   {
     "id": 307,
@@ -11510,7 +11764,8 @@
         "label": "Services municipaux",
         "url": "https://www.ville-vizille.fr/12602-services-municipaux.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Gestion"
   },
   {
     "id": 308,
@@ -11549,7 +11804,8 @@
         "label": "Services municipaux",
         "url": "https://www.ville-vizille.fr/12602-services-municipaux.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Gestion"
   },
   {
     "id": 309,
@@ -11588,7 +11844,8 @@
         "label": "Services municipaux",
         "url": "https://www.ville-vizille.fr/12602-services-municipaux.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Conseil municipal"
   },
   {
     "id": 310,
@@ -11627,7 +11884,8 @@
         "label": "Services municipaux",
         "url": "https://www.ville-vizille.fr/12602-services-municipaux.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Gestion"
   },
   {
     "id": 311,
@@ -11674,7 +11932,8 @@
         "label": "Services municipaux",
         "url": "https://www.ville-vizille.fr/12602-services-municipaux.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Gestion"
   },
   {
     "id": 312,
@@ -11718,7 +11977,9 @@
         "label": "Commerces",
         "url": "https://www.ville-vizille.fr/12681-les-commerces.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Développement",
+    "suspendu": true
   },
   {
     "id": 313,
@@ -11757,7 +12018,8 @@
         "label": "Découvrir Vizille",
         "url": "https://www.ville-vizille.fr/12618-decouvrir-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Logement"
   },
   {
     "id": 314,
@@ -11801,7 +12063,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 315,
@@ -11840,7 +12103,8 @@
         "label": "Associations sportives",
         "url": "https://www.ville-vizille.fr/12631-associations-sportives.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Associations & Partenariats"
   },
   {
     "id": 317,
@@ -11879,7 +12143,8 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Sécurité civile"
   },
   {
     "id": 318,
@@ -11918,7 +12183,8 @@
         "label": "Services municipaux",
         "url": "https://www.ville-vizille.fr/12602-services-municipaux.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Marchés"
   },
   {
     "id": 319,
@@ -11973,7 +12239,8 @@
         "label": "Cadre de vie",
         "url": "https://www.ville-vizille.fr/12594-cadre-de-vie.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Voirie & Espaces publics"
   },
   {
     "id": 320,
@@ -12034,7 +12301,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Actions sociales"
   },
   {
     "id": 321,
@@ -12086,7 +12354,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 322,
@@ -12140,7 +12409,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 323,
@@ -12196,7 +12466,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 324,
@@ -12235,7 +12506,8 @@
         "label": "Solidarité - CCAS",
         "url": "https://www.ville-vizille.fr/12634-centre-communal-d-action-sociale-ccas.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Prévention"
   },
   {
     "id": 325,
@@ -12286,7 +12558,8 @@
         "label": "Solidarité - CCAS",
         "url": "https://www.ville-vizille.fr/12634-centre-communal-d-action-sociale-ccas.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Accès aux soins"
   },
   {
     "id": 326,
@@ -12347,7 +12620,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 327,
@@ -12408,7 +12682,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Actions sociales"
   },
   {
     "id": 328,
@@ -12455,7 +12730,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 329,
@@ -12517,7 +12793,8 @@
         "label": "Seniors / Autonomie",
         "url": "https://www.ville-vizille.fr/12640-seniors.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 330,
@@ -12563,7 +12840,8 @@
         "label": "Vivre à Vizille",
         "url": "https://www.ville-vizille.fr/12908-vivre-a-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Stationnement"
   },
   {
     "id": 345,
@@ -12576,7 +12854,8 @@
     "annee": "2024",
     "annee_fin": "2025",
     "budget": 0,
-    "source": "Bilan adjoint culture"
+    "source": "Bilan adjoint culture",
+    "sous_categorie": "Villes partenaires"
   },
   {
     "id": 346,
@@ -12589,7 +12868,8 @@
     "annee": "2024",
     "annee_fin": "2025",
     "budget": 0,
-    "source": "Bilan adjoint culture"
+    "source": "Bilan adjoint culture",
+    "sous_categorie": "Échanges"
   },
   {
     "id": 347,
@@ -12602,7 +12882,8 @@
     "annee": "2025",
     "annee_fin": "2026",
     "budget": 0,
-    "source": "Bilan adjoint culture"
+    "source": "Bilan adjoint culture",
+    "sous_categorie": "Échanges"
   },
   {
     "id": 348,
@@ -12615,7 +12896,8 @@
     "annee": "2023",
     "annee_fin": "2024",
     "budget": 0,
-    "source": "Bilan adjoint culture - Espace Belledonne"
+    "source": "Bilan adjoint culture - Espace Belledonne",
+    "sous_categorie": "Autres"
   },
   {
     "id": 349,
@@ -12628,7 +12910,8 @@
     "annee": "2023",
     "annee_fin": "2023",
     "budget": 0,
-    "source": "Bilan adjoint culture - Espace Belledonne"
+    "source": "Bilan adjoint culture - Espace Belledonne",
+    "sous_categorie": "Équipements"
   },
   {
     "id": 350,
@@ -12641,7 +12924,8 @@
     "annee": "2023",
     "annee_fin": "2023",
     "budget": 0,
-    "source": "Bilan adjoint culture - Espace Belledonne"
+    "source": "Bilan adjoint culture - Espace Belledonne",
+    "sous_categorie": "Mise à disposition"
   },
   {
     "id": 351,
@@ -12654,7 +12938,8 @@
     "annee": "2024",
     "annee_fin": "2024",
     "budget": 0,
-    "source": "Bilan adjoint culture - Espace Belledonne"
+    "source": "Bilan adjoint culture - Espace Belledonne",
+    "sous_categorie": "Énergie & Climat"
   },
   {
     "id": 352,
@@ -12667,7 +12952,8 @@
     "annee": "2020",
     "annee_fin": "2025",
     "budget": 0,
-    "source": "Bilan adjoint culture - Espace Belledonne"
+    "source": "Bilan adjoint culture - Espace Belledonne",
+    "sous_categorie": "Associations & Partenariats"
   },
   {
     "id": 358,
@@ -12680,7 +12966,8 @@
     "annee": "2024",
     "annee_fin": "2025",
     "budget": 0,
-    "source": "Bilan adjoint culture"
+    "source": "Bilan adjoint culture",
+    "sous_categorie": "Échanges"
   },
   {
     "id": 360,
@@ -12700,7 +12987,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Jeu de Paume"
   },
   {
     "id": 361,
@@ -12720,7 +13008,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Médiathèque"
   },
   {
     "id": 362,
@@ -12740,7 +13029,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Autres"
   },
   {
     "id": 363,
@@ -12760,7 +13050,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Festivals"
   },
   {
     "id": 364,
@@ -12780,7 +13071,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Festivals"
   },
   {
     "id": 365,
@@ -12800,7 +13092,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Festivals"
   },
   {
     "id": 366,
@@ -12820,7 +13113,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Festivals"
   },
   {
     "id": 367,
@@ -12840,7 +13134,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Festivals"
   },
   {
     "id": 368,
@@ -12860,7 +13155,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Festivals"
   },
   {
     "id": 369,
@@ -12880,7 +13176,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Jeunesse & Scolaires"
   },
   {
     "id": 370,
@@ -12900,7 +13197,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Jeunesse & Scolaires"
   },
   {
     "id": 371,
@@ -12920,7 +13218,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Jeunesse & Scolaires"
   },
   {
     "id": 372,
@@ -12940,7 +13239,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Jeunesse & Scolaires"
   },
   {
     "id": 373,
@@ -12960,7 +13260,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Jeunesse & Scolaires"
   },
   {
     "id": 374,
@@ -12980,7 +13281,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Jeunesse & Scolaires"
   },
   {
     "id": 375,
@@ -13000,7 +13302,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Jeunesse & Scolaires"
   },
   {
     "id": 376,
@@ -13020,7 +13323,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Médiathèque"
   },
   {
     "id": 377,
@@ -13040,7 +13344,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Médiathèque"
   },
   {
     "id": 378,
@@ -13060,7 +13365,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Festivals"
   },
   {
     "id": 379,
@@ -13080,7 +13386,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Associations & Partenariats"
   },
   {
     "id": 380,
@@ -13100,7 +13407,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Médiathèque"
   },
   {
     "id": 381,
@@ -13120,7 +13428,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Autres"
   },
   {
     "id": 382,
@@ -13129,7 +13438,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Veillées de Belledonne",
-    "description": "Moments de rencontres, de lien et de partage avec artistes locaux, en partenariat avec l'Espace Belledonne.",
+    "description": "Soirées 'Belledonne & Veillées' sur la transition environnementale, organisées avec l'Espace Belledonne pour mobiliser les habitants.",
     "annee": "2022",
     "annee_fin": "",
     "budget": 0,
@@ -13138,9 +13447,11 @@
     "resume": "Moments de rencontres, de lien et de partage avec artistes locaux, en partenariat avec l'Espace Belledonne.",
     "chiffres": [],
     "chronologie": [],
-    "details": "",
+    "details": "Avril 2022 : soirée végétalisation - découverte du Plan métropolitain Canopée, ateliers sur l'aménagement des tennis du Péage et du square de la Révolution. A donné lieu aux projets d'aménagement actuels. Novembre 2024 : soirée énergies renouvelables - présentation des enjeux EnR, recueil des avis habitants, maquette réalisée par les collégiens avec la résidence La Romanche.",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Festivals",
+    "suspendu": true
   },
   {
     "id": 383,
@@ -13160,7 +13471,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Associations & Partenariats"
   },
   {
     "id": 384,
@@ -13180,7 +13492,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Associations & Partenariats"
   },
   {
     "id": 385,
@@ -13200,7 +13513,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Jeu de Paume"
   },
   {
     "id": 386,
@@ -13220,7 +13534,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Festivals"
   },
   {
     "id": 387,
@@ -13240,7 +13555,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Festivals"
   },
   {
     "id": 388,
@@ -13260,7 +13576,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Associations & Partenariats"
   },
   {
     "id": 389,
@@ -13280,7 +13597,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Échanges"
   },
   {
     "id": 390,
@@ -13300,7 +13618,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Échanges"
   },
   {
     "id": 391,
@@ -13320,7 +13639,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Échanges"
   },
   {
     "id": 392,
@@ -13340,7 +13660,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Festivals"
   },
   {
     "id": 393,
@@ -13360,7 +13681,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Échanges"
   },
   {
     "id": 394,
@@ -13380,7 +13702,9 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Circuits & Tourisme",
+    "suspendu": true
   },
   {
     "id": 395,
@@ -13400,7 +13724,9 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Circuits & Tourisme",
+    "suspendu": true
   },
   {
     "id": 396,
@@ -13420,7 +13746,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Autres"
   },
   {
     "id": 397,
@@ -13440,7 +13767,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Autres"
   },
   {
     "id": 398,
@@ -13460,7 +13788,9 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Monuments",
+    "suspendu": true
   },
   {
     "id": 399,
@@ -13480,7 +13810,9 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Monuments",
+    "suspendu": true
   },
   {
     "id": 400,
@@ -13500,7 +13832,9 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Monuments",
+    "suspendu": true
   },
   {
     "id": 401,
@@ -13520,7 +13854,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Monuments"
   },
   {
     "id": 402,
@@ -13540,7 +13875,9 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Monuments",
+    "suspendu": true
   },
   {
     "id": 403,
@@ -13560,7 +13897,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Monuments"
   },
   {
     "id": 404,
@@ -13580,7 +13918,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Monuments"
   },
   {
     "id": 405,
@@ -13600,7 +13939,9 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Circuits & Tourisme",
+    "suspendu": true
   },
   {
     "id": 406,
@@ -13620,7 +13961,9 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Circuits & Tourisme",
+    "suspendu": true
   },
   {
     "id": 407,
@@ -13640,7 +13983,9 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Monuments",
+    "suspendu": true
   },
   {
     "id": 408,
@@ -13660,7 +14005,9 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Monuments",
+    "suspendu": true
   },
   {
     "id": 409,
@@ -13680,7 +14027,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Associations & Partenariats"
   },
   {
     "id": 410,
@@ -13700,7 +14048,8 @@
     "chronologie": [],
     "details": "",
     "sources": [],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Autres"
   },
   {
     "id": 304,
@@ -13739,7 +14088,8 @@
         "label": "Risques majeurs",
         "url": "https://www.ville-vizille.fr/12660-risques-majeurs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Sécurité civile"
   },
   {
     "id": 58,
@@ -13795,7 +14145,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Festivals"
   },
   {
     "id": 62,
@@ -13842,7 +14193,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 65,
@@ -13906,7 +14258,9 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Associations & Partenariats",
+    "suspendu": true
   },
   {
     "id": 72,
@@ -13953,7 +14307,8 @@
         "label": "Domaine de Vizille",
         "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 73,
@@ -14013,7 +14368,8 @@
         "label": "Domaine de Vizille",
         "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Monuments"
   },
   {
     "id": 75,
@@ -14021,8 +14377,8 @@
     "icon": "🏛️",
     "color": "#8e44ad",
     "statut": "En cours",
-    "titre": "Restauration orgue église Sainte-Marie",
-    "description": "Restauration de l'orgue historique Callinet (1846) classé MH. Concerts mensuels de collecte par les Amis de l'Orgue de Vizille.",
+    "titre": "Restauration de l'orgue Callinet (1846)",
+    "description": "Restauration complète de l'orgue historique Callinet (1846) classé Monument Historique. Projet porté avec l'association des Amis de l'Orgue : restauration du buffet, renforcement de la tribune, reconstruction de l'instrument.",
     "annee": "2020",
     "annee_fin": "2025",
     "budget": 80000,
@@ -14057,7 +14413,7 @@
         "evenement": "Concerts à St-Pierre de Mésage (travaux tribune)"
       }
     ],
-    "details": "Le buffet de l'orgue a été restauré. L'instrument est en cours de fabrication. Des études complémentaires sur la structure et les sols de l'église ont été nécessaires.",
+    "details": "L'orgue Callinet de 1846 est un instrument remarquable classé MH. Le projet de restauration comprend 3 phases : 1) Restauration du buffet (achevée), 2) Renforcement structurel de la tribune pour supporter le poids de l'instrument, 3) Reconstruction de la partie instrumentale par un facteur d'orgue. Des concerts mensuels de collecte sont organisés par les Amis de l'Orgue pour financer ce projet d'envergure estimé à plusieurs centaines de milliers d'euros.",
     "sources": [
       {
         "type": "magazine",
@@ -14091,7 +14447,8 @@
         "label": "Domaine de Vizille",
         "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Monuments"
   },
   {
     "id": 76,
@@ -14163,7 +14520,8 @@
         "label": "Domaine de Vizille",
         "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Monuments"
   },
   {
     "id": 78,
@@ -14210,7 +14568,8 @@
         "label": "Domaine de Vizille",
         "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Circuits & Tourisme"
   },
   {
     "id": 79,
@@ -14289,7 +14648,8 @@
         "label": "Domaine de Vizille",
         "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Monuments"
   },
   {
     "id": 80,
@@ -14358,7 +14718,9 @@
         "label": "Domaine de Vizille",
         "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Monuments",
+    "suspendu": true
   },
   {
     "id": 81,
@@ -14405,7 +14767,9 @@
         "label": "Domaine de Vizille",
         "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Monuments",
+    "suspendu": true
   },
   {
     "id": 272,
@@ -14465,7 +14829,8 @@
         "label": "Domaine de Vizille",
         "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Monuments"
   },
   {
     "id": 331,
@@ -14478,7 +14843,8 @@
     "annee": "2020",
     "annee_fin": "2025",
     "budget": 0,
-    "source": "Bilan adjoint culture"
+    "source": "Bilan adjoint culture",
+    "sous_categorie": "Jeu de Paume"
   },
   {
     "id": 338,
@@ -14491,7 +14857,8 @@
     "annee": "2020",
     "annee_fin": "2025",
     "budget": 0,
-    "source": "Bilan adjoint culture"
+    "source": "Bilan adjoint culture",
+    "sous_categorie": "Autres"
   },
   {
     "id": 340,
@@ -14504,7 +14871,9 @@
     "annee": "2023",
     "annee_fin": "2023",
     "budget": 0,
-    "source": "Bilan adjoint culture"
+    "source": "Bilan adjoint culture",
+    "sous_categorie": "Monuments",
+    "suspendu": true
   },
   {
     "id": 341,
@@ -14517,7 +14886,8 @@
     "annee": "2024",
     "annee_fin": "2024",
     "budget": 0,
-    "source": "Bilan adjoint culture"
+    "source": "Bilan adjoint culture",
+    "sous_categorie": "Circuits & Tourisme"
   },
   {
     "id": 342,
@@ -14530,7 +14900,9 @@
     "annee": "2023",
     "annee_fin": "2025",
     "budget": 0,
-    "source": "Bilan adjoint culture"
+    "source": "Bilan adjoint culture",
+    "sous_categorie": "Monuments",
+    "suspendu": true
   },
   {
     "id": 356,
@@ -14545,7 +14917,8 @@
     "budget": 0,
     "source": "Bilan adjoint culture",
     "importance": 1,
-    "resume": "Événement printanier avec les écoles."
+    "resume": "Événement printanier avec les écoles.",
+    "sous_categorie": "Festivals"
   },
   {
     "id": 359,
@@ -14558,7 +14931,9 @@
     "annee": "2023",
     "annee_fin": "2025",
     "budget": 0,
-    "source": "Bilan adjoint culture"
+    "source": "Bilan adjoint culture",
+    "sous_categorie": "Monuments",
+    "suspendu": true
   },
   {
     "id": 64,
@@ -14600,7 +14975,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Associations & Partenariats"
   },
   {
     "id": 66,
@@ -14642,7 +15018,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Associations & Partenariats"
   },
   {
     "id": 357,
@@ -14657,7 +15034,8 @@
     "budget": 0,
     "source": "Bilan adjoint culture",
     "importance": 2,
-    "resume": "Aides financières et logistiques aux associations culturelles locales."
+    "resume": "Aides financières et logistiques aux associations culturelles locales.",
+    "sous_categorie": "Festivals"
   },
   {
     "id": 209,
@@ -14704,7 +15082,8 @@
         "label": "Domaine de Vizille",
         "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 210,
@@ -14746,7 +15125,8 @@
         "label": "Domaine de Vizille",
         "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 211,
@@ -14788,7 +15168,8 @@
         "label": "Domaine de Vizille",
         "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Autres"
   },
   {
     "id": 901,
@@ -14853,7 +15234,8 @@
         "label": "Culture et loisirs",
         "url": "https://www.ville-vizille.fr/12627-culture-et-loisirs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Festivals"
   },
   {
     "id": 902,
@@ -14910,7 +15292,8 @@
         "label": "Jeu de Paume",
         "url": "https://www.ville-vizille.fr/12627-culture-et-loisirs.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Festivals"
   },
   {
     "id": 903,
@@ -14963,7 +15346,8 @@
         "label": "Médiathèque",
         "url": "https://www.ville-vizille.fr/12628-mediatheque.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Médiathèque"
   },
   {
     "id": 904,
@@ -15010,7 +15394,8 @@
         "desc": ""
       }
     ],
-    "lien_source": []
+    "lien_source": [],
+    "sous_categorie": "Art & Création"
   },
   {
     "id": 905,
@@ -15063,7 +15448,8 @@
         "label": "Patrimoine",
         "url": "https://www.ville-vizille.fr/12619-patrimoine.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Circuits & Tourisme"
   },
   {
     "id": 906,
@@ -15138,6 +15524,353 @@
         "label": "Environnement Vizille",
         "url": "https://www.ville-vizille.fr/12658-environnement.htm"
       }
+    ],
+    "sous_categorie": "Associations & Partenariats"
+  },
+  {
+    "id": 907,
+    "theme": "Environnement",
+    "sous_categorie": "Énergie & Climat",
+    "statut": "Réalisé",
+    "titre": "Plan Climat-Air-Énergie Territorial (PCAEM)",
+    "description": "Signature de la Charte d'engagement communale avec Grenoble-Alpes Métropole en septembre 2021. Plus de 200 actions engagées avec implication des citoyens et partenaires locaux.",
+    "details": "Le PCAEM constitue la feuille de route de la transition écologique de Vizille. Axes stratégiques : adapter le territoire au changement climatique, réduire les émissions de GES et la pollution, valoriser les ressources locales, mobiliser les acteurs et habitants, renforcer l'exemplarité de la collectivité. Comités de pilotage : 21 avril 2023 et 26 mars 2025.",
+    "annee": "2021",
+    "importance": 2,
+    "chiffres": [
+      {
+        "valeur": "200+",
+        "label": "Actions engagées"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "Sept. 2021",
+        "evenement": "Signature de la Charte PCAEM"
+      },
+      {
+        "date": "21/04/2023",
+        "evenement": "Comité de pilotage"
+      },
+      {
+        "date": "26/03/2025",
+        "evenement": "Comité de pilotage"
+      }
     ]
+  },
+  {
+    "id": 908,
+    "theme": "Environnement",
+    "sous_categorie": "Nature & Biodiversité",
+    "statut": "Réalisé",
+    "titre": "Concertation désimperméabilisation école Jean-Jaurès",
+    "description": "Démarche participative avec enseignants et enfants pour co-construire le projet pédagogique et l'aménagement de la cour d'école. Lutte contre les îlots de chaleur.",
+    "details": "Concertation en phase AVP menée par l'Atelier des Cairns entre décembre 2022 et avril 2023. Les enfants ont participé à la conception du projet. Travaux réalisés entre juin et automne 2023 (plantation d'arbres, végétalisation). Inauguration en juin 2024 avec enfants, parents, enseignants et partenaires (Agence de l'eau du Sud-Est).",
+    "annee": "2022",
+    "annee_fin": "2024",
+    "importance": 2,
+    "chronologie": [
+      {
+        "date": "Déc. 2022",
+        "evenement": "Début concertation avec Atelier des Cairns"
+      },
+      {
+        "date": "Avril 2023",
+        "evenement": "Fin phase concertation"
+      },
+      {
+        "date": "Juin 2023",
+        "evenement": "Début des travaux"
+      },
+      {
+        "date": "Automne 2023",
+        "evenement": "Plantation arbres et végétalisation"
+      },
+      {
+        "date": "Juin 2024",
+        "evenement": "Inauguration"
+      }
+    ]
+  },
+  {
+    "id": 909,
+    "theme": "Environnement",
+    "sous_categorie": "Nature & Biodiversité",
+    "statut": "Réalisé",
+    "titre": "Concertation désimperméabilisation école Paul Langevin",
+    "description": "Démarche participative avec enseignants et enfants pour co-construire le projet pédagogique et l'aménagement de la cour d'école.",
+    "details": "Concertation en phase AVP avec les enseignants et les enfants. Projet pédagogique élaboré en lien avec l'aménagement. Inauguration prévue en janvier 2026 avec enfants, parents, enseignants et partenaires (Agence de l'eau du Sud-Est).",
+    "annee": "2024",
+    "annee_fin": "2026",
+    "importance": 2,
+    "chronologie": [
+      {
+        "date": "2024",
+        "evenement": "Concertation avec enseignants et enfants"
+      },
+      {
+        "date": "Janv. 2026",
+        "evenement": "Inauguration prévue"
+      }
+    ]
+  },
+  {
+    "id": 910,
+    "theme": "Environnement",
+    "sous_categorie": "Nature & Biodiversité",
+    "statut": "Réalisé",
+    "titre": "Veillée Belledonne - Végétalisation (avril 2022)",
+    "description": "Soirée participative sur la végétalisation dans le cadre du Plan Canopée. Ateliers sur l'aménagement des anciens tennis du Péage et du square de la Révolution.",
+    "details": "Soirée organisée avec l'Espace Belledonne pour découvrir le projet d'implantation d'arbres et de végétalisation (zones d'ombrage). Les ateliers participatifs ont permis de co-construire les projets d'aménagement des anciens terrains de tennis du Péage et de la place devant le cinéma.",
+    "annee": "2022",
+    "importance": 2
+  },
+  {
+    "id": 911,
+    "theme": "Environnement",
+    "sous_categorie": "Renouvelables",
+    "statut": "Réalisé",
+    "titre": "Veillée Belledonne - Énergies renouvelables (nov. 2024)",
+    "description": "Soirée de concertation sur les enjeux des énergies renouvelables et le déploiement des EnR à Vizille. Présentation d'une maquette réalisée par les collégiens.",
+    "details": "Concertation pour recueillir l'avis des habitants sur les premières réflexions pour le déploiement des énergies renouvelables. Maquette proposée par 'Les Mains d'Or', élaborée par les collégiens en lien avec les résidents de la résidence autonomie La Romanche - projet intergénérationnel.",
+    "annee": "2024",
+    "importance": 2
+  },
+  {
+    "id": 912,
+    "theme": "Environnement",
+    "sous_categorie": "Énergie & Climat",
+    "statut": "Réalisé",
+    "titre": "Enquête participative éclairage public (2023)",
+    "description": "Démarche participative sur l'adaptation de l'éclairage public : extinction nocturne, réduction des points lumineux, économies d'énergie et préservation de la biodiversité.",
+    "details": "Suite à l'expérimentation d'extinction nocturne (juillet 2022), questionnaire officiel permettant aux habitants de s'exprimer sur : perception des impacts sur la vie quotidienne, plages horaires d'extinction (23h-5h), avantages perçus (économies, protection faune, pollution lumineuse), propositions d'amélioration. Cette enquête a initié les orientations de modernisation de l'éclairage public.",
+    "annee": "2023",
+    "importance": 2,
+    "chronologie": [
+      {
+        "date": "Juil. 2022",
+        "evenement": "Expérimentation extinction nocturne"
+      },
+      {
+        "date": "2023",
+        "evenement": "Enquête participative"
+      },
+      {
+        "date": "2023-2025",
+        "evenement": "Modernisation éclairage public"
+      }
+    ]
+  },
+  {
+    "id": 913,
+    "theme": "Mobilités",
+    "sous_categorie": "Circulation",
+    "statut": "Réalisé",
+    "titre": "Concertation Zone Faible Émission (ZFE)",
+    "description": "Participation active à la concertation métropolitaine sur la ZFE au printemps 2023. Communication locale sur les modalités même si Vizille n'est pas dans le périmètre.",
+    "details": "Concertation volontaire organisée par la Métropole pour recueillir les opinions des citoyens avant la mise en place de la ZFE au 1er juillet 2023. La ville a activement participé à la communication pour expliquer les modalités aux Vizillois.",
+    "annee": "2023",
+    "importance": 2
+  },
+  {
+    "id": 914,
+    "theme": "Environnement",
+    "sous_categorie": "Énergie & Climat",
+    "statut": "En cours",
+    "titre": "Réunion publique chauffage urbain (janv. 2026)",
+    "description": "Réunion publique sur la future centrale de chauffage urbain (2028) pour les quartiers nord et centre-ville. Présentation des enjeux environnementaux, économiques et modalités de raccordement.",
+    "details": "Réunion organisée par la mairie avec l'accompagnement de la Métropole pour présenter le projet de réseau de chaleur urbain prévu pour 2028. Éclairages apportés sur les enjeux de la transition énergétique et les conditions de raccordement pour les habitants et copropriétés concernés.",
+    "annee": "2026",
+    "importance": 2
+  },
+  {
+    "id": 932,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 1 - Adaptation",
+    "statut": "Objectif",
+    "titre": "Préserver les espaces naturels et la biodiversité",
+    "description": "Communiquer sur les enjeux de préservation, sensibiliser aux services écosystémiques, maintenir les espaces de nature ordinaire.",
+    "details": "Actions : faire connaître l'Observatoire de la biodiversité métropolitaine, diffuser la communication PLUi, entretenir et replanter les parcelles boisées avec diversification des essences adaptées au changement climatique.",
+    "importance": 1
+  },
+  {
+    "id": 933,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 1 - Adaptation",
+    "statut": "Objectif",
+    "titre": "Préserver la biodiversité et le réseau écologique",
+    "description": "Identifier réservoirs de biodiversité, corridors écologiques, cours d'eau et zones humides. Gestion différenciée des espaces verts.",
+    "details": "Actions : protéger les corridors écologiques, adapter les essences au changement climatique, préserver les haies et arbres têtards, limiter la pollution lumineuse (Trame Noire), appliquer le SDAL éclairage.",
+    "importance": 1
+  },
+  {
+    "id": 934,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 1 - Adaptation",
+    "statut": "Objectif",
+    "titre": "Végétaliser la ville et limiter l'artificialisation",
+    "description": "Recenser les espaces propices à végétalisation, mener des campagnes de plantation, désimperméabiliser les espaces publics.",
+    "details": "Actions : végétaliser friches, cours d'écoles, parkings, places. Garantir des espaces perméables pour toute construction. Privilégier densification et rénovation du bâti. Communiquer sur les bienfaits de la végétalisation.",
+    "importance": 1
+  },
+  {
+    "id": 935,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 1 - Adaptation",
+    "statut": "Objectif",
+    "titre": "Agir sur les îlots de chaleur",
+    "description": "Identifier les îlots de chaleur urbains, créer des zones de fraîcheur, multiplier les points d'eau.",
+    "details": "Actions : relevés de température, réduction surfaces minéralisées, travail sur l'albedo, végétalisation façades sud/ouest, créer zones refuges ombragées en période de canicule, cartographier et informer les habitants.",
+    "importance": 1
+  },
+  {
+    "id": 936,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 1 - Adaptation",
+    "statut": "Objectif",
+    "titre": "Préserver et gérer la ressource en eau",
+    "description": "Communiquer sur l'enjeu de préservation, établir une stratégie de gestion concertée, expérimenter la gestion alternative des eaux pluviales.",
+    "details": "Actions : respecter les obligations d'infiltration à la parcelle (PLUi), jardins de pluie, bassins secs, protéger les aires d'alimentation de captage, sensibiliser habitants et agriculteurs.",
+    "importance": 1
+  },
+  {
+    "id": 937,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 2 - Énergie & Air",
+    "statut": "Objectif",
+    "titre": "Encourager la sobriété énergétique",
+    "description": "Sensibiliser aux économies d'énergie, promouvoir Métroénergies, participer au Défi des écoles à énergie positive.",
+    "details": "Actions : ateliers, stands, événements de sensibilisation. Relayer l'Espace Info Énergie. Encourager le suivi des consommations via la plateforme Métroénergies.",
+    "importance": 1
+  },
+  {
+    "id": 938,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 2 - Énergie & Air",
+    "statut": "Objectif",
+    "titre": "Encourager la rénovation énergétique",
+    "description": "Faire connaître le dispositif Mur|Mur, organiser des réunions d'information, valoriser les retours d'expériences.",
+    "details": "Actions : permanences CAUE, visites de chantiers, témoignages d'habitants, speed-meetings rénovation. Contrôler le respect des seuils de performance PLUi lors des instructions de permis.",
+    "importance": 1
+  },
+  {
+    "id": 939,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 2 - Énergie & Air",
+    "statut": "Objectif",
+    "titre": "Renouveler les systèmes de chauffage",
+    "description": "Faire connaître la Prime Air Bois et l'Aide Zéro Fioul. Encourager les énergies renouvelables thermiques.",
+    "details": "Actions : réunions publiques, communication saisonnière bonnes pratiques chauffage bois, repérage des logements équipés de chauffages vieillissants, promotion géothermie et solaire thermique.",
+    "importance": 1
+  },
+  {
+    "id": 940,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 2 - Énergie & Air",
+    "statut": "Objectif",
+    "titre": "Promouvoir les mobilités actives et alternatives",
+    "description": "Diminuer les déplacements en voiture individuelle, promouvoir marche, vélo, transports en commun, covoiturage.",
+    "details": "Actions : diffuser durées de trajets en modes actifs, afficher plans multimodaux, organiser fêtes du vélo, pédibus/vélobus pour les écoles, ateliers vélo, communiquer sur Métromobilité et plateformes covoiturage.",
+    "importance": 1
+  },
+  {
+    "id": 941,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 2 - Énergie & Air",
+    "statut": "Objectif",
+    "titre": "Favoriser les réseaux de chaleur et EnR",
+    "description": "Soutenir le développement des réseaux de chaleur métropolitains. Inciter à la production d'énergie renouvelable.",
+    "details": "Actions : faire respecter le classement des réseaux de chaleur, communiquer sur le cadastre solaire MétroSoleil, informer sur les possibilités de raccordement et d'achat d'énergie verte.",
+    "importance": 1
+  },
+  {
+    "id": 942,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 3 - Ressources",
+    "statut": "Objectif",
+    "titre": "Soutenir l'agriculture locale",
+    "description": "Inventorier friches et terrains disponibles, aider à l'installation d'agriculteurs, encourager les pratiques durables.",
+    "details": "Actions : mise à disposition de terrains communaux, baux à clauses environnementales, valoriser les circuits courts (marchés, AMAP, paniers), encourager diversité des productions et limitation des pesticides.",
+    "importance": 1
+  },
+  {
+    "id": 943,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 3 - Ressources",
+    "statut": "Objectif",
+    "titre": "Promouvoir une alimentation locale et de qualité",
+    "description": "Élaborer un Projet Alimentaire Territorial, sensibiliser aux enjeux d'alimentation durable, faire connaître l'offre locale.",
+    "details": "Actions : communiquer sur les producteurs locaux, organiser marchés de producteurs, valoriser produits locaux lors des fêtes, ateliers cuisine locale. Appliquer la loi Egalim en restauration collective (50% qualité, 20% bio, repas végétarien hebdomadaire).",
+    "importance": 1
+  },
+  {
+    "id": 944,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 3 - Ressources",
+    "statut": "Objectif",
+    "titre": "Jardinage, compostage et réduction des déchets",
+    "description": "Promouvoir jardins partagés, compostage, éco-jardinage. Sensibiliser à la sobriété et au réemploi.",
+    "details": "Actions : potagers éducatifs, arbres fruitiers sur domaine public, grainothèque, broyeurs de déchets verts. Faire connaître les composteurs gratuits de la Métropole. Soutenir ressourceries, gratuiteries, repair cafés.",
+    "importance": 1
+  },
+  {
+    "id": 945,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 4 - Mobilisation",
+    "statut": "Objectif",
+    "titre": "Gouvernance interne et suivi",
+    "description": "Mettre en place une instance de pilotage, désigner un élu et un technicien référents, effectuer un suivi annuel.",
+    "details": "Actions : réunions annuelles de bilan, référent Air-Énergie-Climat dans chaque service, consultation citoyenne sur les projets structurants, formation des agents aux enjeux climat-énergie.",
+    "importance": 1
+  },
+  {
+    "id": 946,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 4 - Mobilisation",
+    "statut": "Objectif",
+    "titre": "Mobiliser les partenaires et habitants",
+    "description": "Sensibiliser les structures utilisatrices des bâtiments communaux, inclure les sujets climat dans la communication.",
+    "details": "Actions : présentation annuelle des consommations, optimisation énergétique des bâtiments, tri des déchets dans les associations, éducation à l'environnement dans les écoles, événements thématiques (Semaine DD, Jour de la Nuit...).",
+    "importance": 1
+  },
+  {
+    "id": 947,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 5 - Exemplarité",
+    "statut": "Objectif",
+    "titre": "Optimiser le patrimoine bâti communal",
+    "description": "Suivre les consommations énergétiques, rationaliser le patrimoine, rénover les bâtiments publics.",
+    "details": "Actions : suivi annuel des consommations, instrumentation des bâtiments énergivores, programmation pluriannuelle de rénovation, remplacement des chaudières fioul, passage à l'éclairage LED, conformité décret tertiaire.",
+    "importance": 1
+  },
+  {
+    "id": 948,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 5 - Exemplarité",
+    "statut": "Objectif",
+    "titre": "Gérer durablement l'éclairage public",
+    "description": "Signer la Charte Lumière, suivre les consommations, établir un programme de rénovation.",
+    "details": "Actions : rationnaliser les points lumineux, réduire l'intensité et les plages horaires, extinction nocturne, renouveler en LED avec flux orienté vers le sol, attention au spectre pour réduire la pollution lumineuse.",
+    "importance": 1
+  },
+  {
+    "id": 949,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 5 - Exemplarité",
+    "statut": "Objectif",
+    "titre": "Flotte de véhicules et mobilité des agents",
+    "description": "Recenser et rationaliser la flotte, renouveler vers des véhicules faibles émissions, créer une flotte de vélos de service.",
+    "details": "Actions : caractériser les usages, remplacer par véhicules électriques/GNV, développer vélos et VAE de service, tickets transports en commun, favoriser télétravail et visioconférences.",
+    "importance": 1
+  },
+  {
+    "id": 950,
+    "theme": "Plan Climat",
+    "sous_categorie": "Axe 5 - Exemplarité",
+    "statut": "Objectif",
+    "titre": "Administration éco-responsable",
+    "description": "Sensibiliser les agents à la sobriété, réduire les déchets, achats publics responsables, événements éco-responsables.",
+    "details": "Actions : plan de sensibilisation, tri sélectif, composteurs, supprimer plastique usage unique, réduire papier, clauses environnementales dans les marchés, charte éco-événements, usage numérique responsable.",
+    "importance": 1
   }
 ]
