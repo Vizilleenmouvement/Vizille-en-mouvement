@@ -10,11 +10,6 @@
     "color": "#607d8b"
   },
   {
-    "theme": "Économie",
-    "icon": "💼",
-    "color": "#f39c12"
-  },
-  {
     "theme": "Enfance",
     "icon": "👶",
     "color": "#3498db"
@@ -25,14 +20,14 @@
     "color": "#27ae60"
   },
   {
-    "theme": "Métropole",
-    "icon": "🏛️",
-    "color": "#00bcd4"
-  },
-  {
     "theme": "Mobilités",
     "icon": "🚴",
     "color": "#1abc9c"
+  },
+  {
+    "theme": "Métropole",
+    "icon": "🏛️",
+    "color": "#00bcd4"
   },
   {
     "theme": "Santé",
@@ -60,8 +55,18 @@
     "color": "#2c3e50"
   },
   {
+    "theme": "Transition écologique",
+    "icon": "🌱",
+    "color": "#2ecc71"
+  },
+  {
     "theme": "Urbanisme",
     "icon": "🏘️",
     "color": "#34495e"
+  },
+  {
+    "theme": "Économie",
+    "icon": "💼",
+    "color": "#f39c12"
   }
 ]
