@@ -533,11 +533,20 @@ function initializeFilters() {
             btn.classList.add('active');
             document.getElementById('filter-theme').value = btn.dataset.theme;
             
+            // Si on clique sur un thème spécifique, passer en vue cards directement
+            if (btn.dataset.theme) {
+                currentView = 'cards';
+                document.querySelectorAll('.view-btn').forEach(b => {
+                    b.classList.toggle('active', b.dataset.view === 'cards');
+                });
+            }
+            
             // Ajouter à l'historique du navigateur
             const theme = btn.dataset.theme;
             history.pushState({ theme: theme, view: currentView }, '', theme ? `#theme=${encodeURIComponent(theme)}` : '#');
             
             applyFilters();
+            updateBackButton();
 
             setTimeout(() => {
                 const target = document.getElementById('view-cards') || document.getElementById('view-themes') || document.getElementById('view-table');

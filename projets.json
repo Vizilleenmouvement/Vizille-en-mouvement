@@ -1283,93 +1283,96 @@
     "id": 627,
     "theme": "Urbanisme",
     "type": "objectif",
-    "titre": "Objectif - Revitaliser le centre-ville",
-    "resume": "Redonner attractivité et dynamisme au cœur de Vizille.",
-    "description": "Revitalisation commerciale, réhabilitation du bâti, amélioration du cadre de vie."
+    "titre": "Objectif - Revitaliser le centre-ville de Vizille",
+    "resume": "Transformer le centre-ville et positionner Vizille comme centralité du sud métropolitain.",
+    "description": "• Opération de Revitalisation de Territoire (ORT) signée fin 2025 avec la Métropole\n• Projet Centralité Vizilloise piloté conjointement avec Grenoble-Alpes Métropole\n• Requalification urbaine, habitat, commerce, espaces publics\n• Horizon 2030"
   },
   {
     "id": 628,
     "theme": "Urbanisme",
     "type": "engagement",
-    "titre": "Opération de Revitalisation du Territoire (ORT)",
-    "description": "Dispositif national pour dynamiser le centre-ville."
+    "titre": "ORT - Opération de Revitalisation de Territoire",
+    "resume": "Convention cadre nationale pour revitaliser le centre-ville.",
+    "description": "Convention signée décembre 2025, mise en œuvre 2025-2030.\nPartenaires : État (ANCT), Métropole, ANAH, Banque des Territoires, EPF.\nAccès aux aides ANAH, Action Cœur de Ville, fonds de revitalisation, exonérations fiscales.\nPositionne Vizille comme centralité du sud métropolitain. Englobe OPAH-RU, commerces, mobilités."
   },
   {
     "id": 629,
     "theme": "Urbanisme",
     "type": "engagement",
-    "titre": "Centralité Vizilloise",
-    "description": "Requalification urbaine du centre historique."
+    "titre": "Projet Centralité Vizilloise",
+    "resume": "Programme de requalification urbaine piloté avec la Métropole.",
+    "description": "Requalification urbaine pilotée conjointement par Grenoble-Alpes Métropole et la Ville.\nPoursuite du projet après retour et analyse des concertations."
   },
   {
     "id": 630,
     "theme": "Urbanisme",
     "type": "engagement",
-    "titre": "Réhabilitation des Tanneries",
-    "description": "Reconversion du site des anciennes Tanneries."
+    "titre": "Secteur Tanneries",
+    "resume": "Requalification du dernier grand tènement en centre-ville (~5 ha).",
+    "description": "Logements, équipements, mobilité douce.\nÉtudes, concertation et ateliers effectués pendant le mandat 2020-2026.\nReprise du dossier fin 2026. Cession EPFL-D prévue novembre 2025.\nPartenaires : Métropole, Ville, LPV, EPFL-D, Habitants.\nPérimètre : rue République → rue Jean Jaurès / rue des Forges."
   },
   {
     "id": 631,
     "theme": "Urbanisme",
     "type": "engagement",
-    "titre": "OPAH-RU",
-    "description": "Opération Programmée d'Amélioration de l'Habitat - Renouvellement Urbain."
+    "titre": "Les Terrasses de la Romanche (Alliance Textile)",
+    "resume": "52 logements en accession à la propriété.",
+    "description": "Phase 1 : livraison 2ème semestre 2026 (logements et commerce).\nPhase 2 : chantier en cours, livraison 2028.\nPorté par LPV et Isalis Immo.\nDispositif PSLA, TVA réduite 5,5%, exonération taxe foncière 15 ans."
   },
   {
     "id": 632,
     "theme": "Urbanisme",
     "type": "engagement",
-    "titre": "Terrasses de la Romanche",
-    "description": "Aménagement des terrasses en bord de Romanche."
+    "titre": "OPAH-RU Réno'Vizille",
+    "resume": "Opération d'Amélioration de l'Habitat sur 5 ans, 250 façades ciblées.",
+    "description": "Accompagnement des propriétaires pour la rénovation des logements vacants, rénovation énergétique et façades.\nPartenaires : État (ANAH), Métropole, Ville, Opérateur OPAH.\nSubventions ANAH (jusqu'à 50%), aides Métropole, accompagnement gratuit."
   },
   {
     "id": 633,
     "theme": "Travaux",
     "type": "objectif",
-    "titre": "Objectif - Moderniser les infrastructures",
-    "resume": "Rénover et adapter les équipements municipaux.",
-    "description": "Travaux de voirie, réseaux, bâtiments publics."
+    "titre": "Objectif - Moderniser les infrastructures communales",
+    "resume": "Travaux d'entretien, rénovation et amélioration du patrimoine communal.",
+    "description": "• Programme pluriannuel 2026-2032\n• Qualité des espaces publics, maintenance des bâtiments\n• VRD, éclairage public, propreté des locaux\n• Transition environnementale\n• Une trentaine d'agents dont 6 en encadrement direct\n• Gestion rigoureuse pour maintenir les services et préparer l'avenir"
   },
   {
     "id": 634,
     "theme": "Travaux",
     "type": "engagement",
     "titre": "Rue Général de Gaulle - Réseaux",
-    "description": "Réfection des réseaux souterrains."
+    "resume": "Réfection complète des réseaux d'assainissement et eau potable.",
+    "description": "Travaux de réseaux réalisés en 2024, piétonisation partielle décembre 2025.\nPhase finale 2ème semestre 2027, achèvement début 2028.\nPartenaires : Grenoble-Alpes Métropole (maître d'ouvrage), Ville de Vizille.\nFinancement Métropole (compétences eau/assainissement)."
   },
   {
     "id": 635,
     "theme": "Travaux",
     "type": "engagement",
     "titre": "Rue Général de Gaulle - Voie partagée",
-    "description": "Aménagement en voie partagée piétons/vélos/voitures."
+    "resume": "Piétonisation partielle pour apaiser les déplacements et dynamiser le commerce.",
+    "description": "Amélioration des espaces publics.\nÉtude, concertation, réunion publique fin 2026, travaux courant 2028.\nPartenaires : Grenoble-Alpes Métropole (maître d'ouvrage), Ville de Vizille.\nFinancement Métropole (Centralité Vizilloise), Ville de Vizille."
   },
   {
     "id": 636,
     "theme": "Travaux",
     "type": "engagement",
     "titre": "Maison de Santé Pluriprofessionnelle",
-    "description": "Construction de la MSP."
+    "resume": "Priorité du mandat face à la pénurie médicale.",
+    "description": "La Ville a repris le pilotage. Médecins installés provisoirement dans les locaux de l'Avant-Garde.\nÉtudes et maîtrise d'œuvre en 2026, travaux 2027, livraison début 2028."
   },
   {
     "id": 637,
     "theme": "Travaux",
     "type": "engagement",
-    "titre": "Chapelle du Péage",
-    "description": "Restauration de la Chapelle du Péage."
+    "titre": "Chapelle du Péage de Vizille",
+    "resume": "Préservation et mise en valeur de ce lieu historique.",
+    "description": "Chapelle rachetée par la commune.\nRéunion publique courant 2026 pour débattre du devenir du site."
   },
   {
     "id": 638,
     "theme": "Travaux",
     "type": "engagement",
     "titre": "Gendarmerie",
-    "description": "Travaux liés à la gendarmerie."
-  },
-  {
-    "id": 639,
-    "theme": "Travaux",
-    "type": "engagement",
-    "titre": "Patrimoine communal",
-    "description": "Entretien et valorisation du patrimoine."
+    "resume": "Échéance primordiale pour conserver la gendarmerie sur la commune.",
+    "description": "Études et échanges menés tout au long du mandat.\nPropositions discutées avec les services de l'État.\nL'équipe met toutes les forces nécessaires pour conserver la gendarmerie sur la commune."
   }
 ]
