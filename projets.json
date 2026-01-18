@@ -1538,5 +1538,127 @@
     "description": "Sur la base du Plan Climat, approfondir les actions pédagogiques : formations citoyennes, expérimentations collectives, projets dans les écoles, café-débats santé-environnement.",
     "importance": 1,
     "numero": "5/5"
+  },
+  {
+    "id": 639,
+    "theme": "Urbanisme",
+    "type": "objectif",
+    "titre": "Revitaliser le centre-ville et accompagner les projets urbains",
+    "description": "Un urbanisme au service des habitants, du commerce local et du cadre de vie.",
+    "statut": "En cours"
+  },
+  {
+    "id": 640,
+    "theme": "Urbanisme",
+    "type": "engagement",
+    "titre": "ORT - Opération de Revitalisation de Territoire",
+    "description": "Convention signée en décembre 2025 avec l'État, la Métropole, l'ANAH et la Banque des Territoires. Objectif : redynamiser le centre-ville par une approche globale (habitat, commerces, espaces publics).",
+    "partenaires": "État (ANCT), Métropole, ANAH, Banque des Territoires",
+    "echeance": "Mise en œuvre 2025-2030",
+    "statut": "En cours"
+  },
+  {
+    "id": 641,
+    "theme": "Urbanisme",
+    "type": "engagement",
+    "titre": "Projet Centralité Vizilloise",
+    "description": "Partenariat avec Grenoble-Alpes Métropole pour repenser le cœur de ville : mobilités douces, végétalisation, attractivité commerciale.",
+    "partenaires": "Grenoble-Alpes Métropole",
+    "echeance": "Études 2026-2027",
+    "statut": "À venir"
+  },
+  {
+    "id": 642,
+    "theme": "Urbanisme",
+    "type": "engagement",
+    "titre": "Secteur des Tanneries",
+    "description": "Réflexion sur l'aménagement du secteur des Tanneries (~5 ha). Périmètre : de la rue de la République à la rue Jean Jaurès, de la rue des Forges aux berges.",
+    "perimetre": "Rue République → rue Jean Jaurès / rue des Forges → berges",
+    "echeance": "Horizon 2030",
+    "statut": "À venir"
+  },
+  {
+    "id": 643,
+    "theme": "Urbanisme",
+    "type": "engagement",
+    "titre": "OPAH-RU Réno'Vizille",
+    "description": "Opération Programmée d'Amélioration de l'Habitat - Renouvellement Urbain. 250 façades ciblées sur 5 ans. Subventions ANAH jusqu'à 50%, aides complémentaires Métropole.",
+    "partenaires": "ANAH, Métropole",
+    "financement": "Subventions ANAH jusqu'à 50%, aides Métropole",
+    "echeance": "2025-2030 (5 ans)",
+    "statut": "En cours"
+  },
+  {
+    "id": 644,
+    "theme": "Urbanisme",
+    "type": "engagement",
+    "titre": "Les Terrasses de la Romanche",
+    "description": "52 logements en accession sociale (PSLA). Phase 1 : 2026, Phase 2 : 2028. Avantages : TVA 5,5%, exonération taxe foncière 15 ans, prix maîtrisés.",
+    "partenaires": "EPF, promoteur social",
+    "financement": "PSLA, TVA 5,5%, exonération TF 15 ans",
+    "echeance": "Phase 1: 2026, Phase 2: 2028",
+    "statut": "En cours"
+  },
+  {
+    "id": 645,
+    "theme": "Travaux",
+    "type": "objectif",
+    "titre": "Moderniser les infrastructures et le patrimoine communal",
+    "description": "Des équipements publics entretenus, rénovés et adaptés aux besoins des Vizillois.",
+    "statut": "En cours"
+  },
+  {
+    "id": 646,
+    "theme": "Travaux",
+    "type": "engagement",
+    "titre": "Rue Général de Gaulle - Réseaux",
+    "description": "Renouvellement complet des réseaux (eau, assainissement, électricité) de la rue principale. Travaux en cours, achèvement prévu début 2028.",
+    "echeance": "Achèvement début 2028",
+    "statut": "En cours"
+  },
+  {
+    "id": 647,
+    "theme": "Travaux",
+    "type": "engagement",
+    "titre": "Voie partagée Rue Général de Gaulle",
+    "description": "Après les réseaux : création d'une voie partagée avec piétonisation partielle, végétalisation et mobilier urbain. Objectif : un centre-ville apaisé.",
+    "echeance": "Travaux 2028",
+    "statut": "À venir"
+  },
+  {
+    "id": 648,
+    "theme": "Travaux",
+    "type": "engagement",
+    "titre": "Maison de Santé Pluri-professionnelle",
+    "description": "Priorité du mandat. Construction d'une MSP pour regrouper médecins, infirmiers, spécialistes. Livraison prévue début 2028.",
+    "echeance": "Livraison début 2028",
+    "statut": "En cours"
+  },
+  {
+    "id": 649,
+    "theme": "Travaux",
+    "type": "engagement",
+    "titre": "Chapelle du Péage de Vizille",
+    "description": "Lieu historique racheté par la commune. Projet de réhabilitation en concertation avec les habitants. Réunion publique prévue en 2026.",
+    "echeance": "Réunion publique 2026",
+    "statut": "À venir"
+  },
+  {
+    "id": 650,
+    "theme": "Travaux",
+    "type": "engagement",
+    "titre": "Gendarmerie",
+    "description": "Discussions en cours avec l'État pour la construction d'une nouvelle gendarmerie à Vizille.",
+    "partenaires": "État (Ministère de l'Intérieur)",
+    "statut": "En discussion"
+  },
+  {
+    "id": 651,
+    "theme": "Travaux",
+    "type": "engagement",
+    "titre": "Investissements patrimoine communal",
+    "description": "Programme continu 2026-2032 : entretien et rénovation des bâtiments communaux, écoles, équipements sportifs. 30 agents municipaux mobilisés.",
+    "echeance": "Programme continu 2026-2032",
+    "statut": "En cours"
   }
 ]
