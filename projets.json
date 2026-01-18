@@ -1597,132 +1597,256 @@
     "numero": "1/5"
   },
   {
-    "id": 621,
-    "theme": "Démocratie et concertation",
-    "importance": 3,
-    "titre": "Objectif 2 - Éducation populaire et culture pour tous",
-    "soustitre": "Culture critique et émancipatrice",
-    "description": "Garantir l'accès à une culture critique, émancipatrice et accessible.",
-    "slogan": "Apprendre • Partager • S'émanciper",
-    "enjeux": [
-      "Rendre la culture accessible à tous",
-      "Favoriser la pensée critique",
-      "Soutenir les acteurs locaux"
-    ],
+    "id": 625,
+    "titre": "Objectif - Faire vivre une démocratie active, inclusive et émancipatrice",
+    "theme": "Démocratie locale",
+    "type": "objectif",
+    "statut": "Programmé",
+    "annee": 2026,
+    "resume": "Renforcer la démocratie locale par l'éducation populaire",
+    "description": "Ancrer le programme municipal sur la base de l'éducation populaire pour renforcer la démocratie, l'émancipation individuelle et collective, et la concertation citoyenne.",
+    "importance": 1,
     "axes_action": [
-      "Création d'un centre d'éducation populaire permanent (style maison des jeunes)",
-      "Café-débats, ciné-débats, théâtre-forums sur les enjeux sociaux, environnementaux, politiques",
-      "Appuis financiers aux associations locales d'éducation populaire (conventions avec l'Escale)",
-      "Résidences d'artistes ou de chercheurs dans les écoles ou les quartiers"
-    ],
-    "indicateurs": [
-      "Événements organisés",
-      "Participants",
-      "Associations soutenues"
-    ],
-    "vision": "La culture comme outil d'émancipation pour tous.",
-    "tags": [
-      "Culture",
-      "Éducation populaire",
-      "Débats"
-    ],
-    "numero": "2/5"
+      "Créer des conseils de quartier actifs",
+      "Ouvrir un lieu dédié à l'écoute, ateliers, débats, formations",
+      "Inclure jeunes, personnes précaires et seniors dans la concertation"
+    ]
   },
   {
-    "id": 622,
-    "theme": "Démocratie et concertation",
-    "importance": 3,
-    "titre": "Objectif 3 - Jeunesse et émancipation",
-    "soustitre": "Acteurs de leur vie et territoire",
-    "description": "Donner les moyens aux jeunes de devenir acteurs de leur vie et de leur territoire.",
-    "slogan": "Penser • Agir • S'engager",
-    "enjeux": [
-      "Encourager l'engagement des jeunes",
-      "Développer l'esprit critique",
-      "Préserver l'intégrité intellectuelle"
-    ],
+    "id": 626,
+    "titre": "Engagement 1 - Conseils de quartier",
+    "theme": "Démocratie locale",
+    "type": "engagement",
+    "statut": "Programmé",
+    "annee": 2026,
+    "resume": "Mettre en place des conseils de quartier participatifs",
+    "description": "Créer des conseils de quartier pour permettre aux habitants de participer activement aux décisions qui concernent leur cadre de vie.",
+    "importance": 2
+  },
+  {
+    "id": 627,
+    "titre": "Engagement 2 - Lieu d'écoute et de concertation",
+    "theme": "Démocratie locale",
+    "type": "engagement",
+    "statut": "Programmé",
+    "annee": 2027,
+    "resume": "Créer un lieu ouvert dédié à l'écoute et aux débats",
+    "description": "Ouvrir un espace permanent dédié à l'écoute citoyenne, aux ateliers participatifs, débats et formations pour tous les publics : jeunes, seniors, personnes précaires.",
+    "importance": 2
+  },
+  {
+    "id": 628,
+    "titre": "Objectif - Garantir l'accès à une culture critique et émancipatrice",
+    "theme": "Culture",
+    "type": "objectif",
+    "statut": "Programmé",
+    "annee": 2026,
+    "resume": "Culture accessible et émancipatrice pour tous",
+    "description": "Garantir l'accès à une culture critique, émancipatrice et accessible à tous les Vizillois, en s'appuyant sur les principes de l'éducation populaire.",
+    "importance": 1,
+    "axes_action": [
+      "Création d'un centre d'éducation populaire permanent",
+      "Café-débats, ciné-débats, théâtre-forums",
+      "Soutien aux associations d'éducation populaire",
+      "Résidences d'artistes dans les écoles et quartiers"
+    ]
+  },
+  {
+    "id": 629,
+    "titre": "Engagement 1 - Centre d'éducation populaire",
+    "theme": "Culture",
+    "type": "engagement",
+    "statut": "Étude",
+    "annee": 2027,
+    "resume": "Créer un centre d'éducation populaire permanent (style MJC)",
+    "description": "Création d'un centre d'éducation populaire permanent, sur le modèle des maisons des jeunes et de la culture, pour accueillir des activités éducatives, culturelles et citoyennes.",
+    "importance": 2
+  },
+  {
+    "id": 630,
+    "titre": "Engagement 2 - Café-débats et ciné-débats",
+    "theme": "Culture",
+    "type": "engagement",
+    "statut": "Programmé",
+    "annee": 2026,
+    "resume": "Organiser des débats citoyens réguliers",
+    "description": "Mettre en place des café-débats, ciné-débats et théâtre-forums sur les enjeux sociaux, environnementaux et politiques pour favoriser la réflexion collective.",
+    "importance": 2
+  },
+  {
+    "id": 631,
+    "titre": "Engagement 3 - Soutien aux associations d'éducation populaire",
+    "theme": "Culture",
+    "type": "engagement",
+    "statut": "Programmé",
+    "annee": 2026,
+    "resume": "Conventionner avec les associations locales (L'Escale...)",
+    "description": "Renforcer les appuis financiers aux associations locales d'éducation populaire par des conventions pluriannuelles (L'Escale, etc.).",
+    "importance": 2
+  },
+  {
+    "id": 632,
+    "titre": "Engagement 4 - Résidences d'artistes et chercheurs",
+    "theme": "Culture",
+    "type": "engagement",
+    "statut": "Programmé",
+    "annee": 2027,
+    "resume": "Accueillir des artistes et chercheurs dans les écoles et quartiers",
+    "description": "Développer des résidences d'artistes ou de chercheurs dans les écoles et les quartiers pour créer des rencontres entre création, recherche et habitants.",
+    "importance": 3
+  },
+  {
+    "id": 633,
+    "titre": "Objectif - Donner aux jeunes les moyens d'être acteurs de leur vie",
+    "theme": "Enfance",
+    "type": "objectif",
+    "statut": "Programmé",
+    "annee": 2026,
+    "resume": "Émancipation et participation des jeunes",
+    "description": "Donner les moyens aux jeunes de devenir acteurs de leur vie et de leur territoire, par la participation citoyenne et le développement de l'esprit critique.",
+    "importance": 1,
     "axes_action": [
       "Création d'un conseil municipal des jeunes",
-      "Atelier d'autodéfense intellectuelle (pensée critique, préserver l'intégrité intellectuelle)",
-      "Chantiers jeunes participatifs (service civique local)"
-    ],
-    "indicateurs": [
-      "Jeunes engagés",
-      "Projets portés",
-      "Chantiers réalisés"
-    ],
-    "vision": "Des jeunes citoyens actifs et éclairés.",
-    "tags": [
-      "Jeunesse",
-      "Émancipation",
-      "Engagement"
-    ],
-    "numero": "3/5"
+      "Ateliers d'autodéfense intellectuelle",
+      "Chantiers jeunes participatifs"
+    ]
   },
   {
-    "id": 623,
-    "theme": "Démocratie et concertation",
-    "importance": 3,
-    "titre": "Objectif 4 - Lutte contre les inégalités",
-    "soustitre": "Émancipation sociale",
-    "description": "Faire de l'éducation populaire un outil d'émancipation pour les personnes les plus éloignées des droits.",
-    "slogan": "Comprendre • Accéder • S'émanciper",
-    "enjeux": [
-      "Réduire les inégalités d'accès aux droits",
-      "Accompagner les publics fragiles",
-      "Favoriser l'autonomie"
-    ],
+    "id": 634,
+    "titre": "Engagement 1 - Conseil municipal des jeunes",
+    "theme": "Enfance",
+    "type": "engagement",
+    "statut": "Programmé",
+    "annee": 2026,
+    "resume": "Créer un conseil municipal des jeunes",
+    "description": "Mettre en place un conseil municipal des jeunes pour permettre aux jeunes Vizillois de s'impliquer dans la vie démocratique locale et de porter leurs projets.",
+    "importance": 1
+  },
+  {
+    "id": 635,
+    "titre": "Engagement 2 - Ateliers pensée critique",
+    "theme": "Enfance",
+    "type": "engagement",
+    "statut": "Programmé",
+    "annee": 2027,
+    "resume": "Ateliers d'autodéfense intellectuelle pour les jeunes",
+    "description": "Organiser des ateliers d'autodéfense intellectuelle pour développer la pensée critique et préserver l'intégrité intellectuelle des jeunes face à la désinformation.",
+    "importance": 2
+  },
+  {
+    "id": 636,
+    "titre": "Engagement 3 - Chantiers jeunes participatifs",
+    "theme": "Enfance",
+    "type": "engagement",
+    "statut": "Programmé",
+    "annee": 2027,
+    "resume": "Service civique local et chantiers participatifs",
+    "description": "Développer des chantiers jeunes participatifs et un service civique local pour permettre aux jeunes de s'engager concrètement dans des projets collectifs.",
+    "importance": 2
+  },
+  {
+    "id": 637,
+    "titre": "Objectif - L'éducation populaire comme outil d'émancipation sociale",
+    "theme": "Solidarité",
+    "type": "objectif",
+    "statut": "Programmé",
+    "annee": 2026,
+    "resume": "Émancipation pour les personnes éloignées des droits",
+    "description": "Faire de l'éducation populaire un outil d'émancipation pour les personnes les plus éloignées des droits, en favorisant l'accès aux savoirs et à la participation.",
+    "importance": 1,
     "axes_action": [
       "Soutien à l'apprentissage du français",
-      "Ateliers juridiques, économiques et sociaux (comprendre ses droits, les institutions, le fonctionnement des aides)",
-      "Accès gratuit à des lieux de convivialité et d'apprentissage (jardins partagés, médiathèque animée, Escale, associations culturelles)",
-      "Promotion de la santé : CLSM (Conseil Local à la Santé Mentale), outil de démocratie en santé"
-    ],
-    "indicateurs": [
-      "Personnes accompagnées",
-      "Ateliers réalisés",
-      "Accès aux droits facilités"
-    ],
-    "vision": "Personne ne doit rester éloigné de ses droits.",
-    "tags": [
-      "Solidarité",
-      "Droits",
-      "Inclusion"
-    ],
-    "numero": "4/5"
+      "Ateliers juridiques, économiques et sociaux",
+      "Lieux de convivialité gratuits",
+      "Promotion de la santé mentale (CLSM)"
+    ]
   },
   {
-    "id": 624,
-    "theme": "Démocratie et concertation",
-    "importance": 3,
-    "titre": "Objectif 5 - Transition écologique et savoirs partagés",
-    "soustitre": "Au cœur de l'éducation populaire",
-    "description": "Faire de la transition un projet collectif, compris et maîtrisé localement.",
-    "slogan": "Comprendre • Expérimenter • Agir ensemble",
-    "enjeux": [
-      "Approfondir les actions pédagogiques sur le climat",
-      "Renforcer les actions de santé publique",
-      "Former les citoyens aux enjeux climatiques"
-    ],
-    "axes_action": [
-      "Sur la base du plan climat, approfondir les actions pédagogiques et sociétales",
-      "Renforcer les actions autour de la santé publique (pollution, dangers professionnels, habitat)",
-      "Formation citoyenne sur les enjeux climatiques et les transitions",
-      "Expérimentations collectives (potagers urbains, déchets...)",
-      "Soutien pédagogique, projets dans les écoles",
-      "Café-débats, ciné-débats"
-    ],
-    "indicateurs": [
-      "Formations réalisées",
-      "Projets école",
-      "Expérimentations collectives"
-    ],
-    "vision": "La transition écologique comprise et portée par tous.",
-    "tags": [
-      "Écologie",
-      "Éducation",
-      "Plan climat"
-    ],
-    "numero": "5/5"
+    "id": 638,
+    "titre": "Engagement 1 - Apprentissage du français",
+    "theme": "Solidarité",
+    "type": "engagement",
+    "statut": "Programmé",
+    "annee": 2026,
+    "resume": "Soutenir l'apprentissage du français",
+    "description": "Développer le soutien à l'apprentissage du français pour les personnes allophones, en partenariat avec les associations locales.",
+    "importance": 2
+  },
+  {
+    "id": 639,
+    "titre": "Engagement 2 - Ateliers droits et institutions",
+    "theme": "Solidarité",
+    "type": "engagement",
+    "statut": "Programmé",
+    "annee": 2026,
+    "resume": "Comprendre ses droits, les institutions, les aides",
+    "description": "Organiser des ateliers juridiques, économiques et sociaux pour aider les habitants à comprendre leurs droits, le fonctionnement des institutions et l'accès aux aides.",
+    "importance": 2
+  },
+  {
+    "id": 640,
+    "titre": "Engagement 3 - Lieux de convivialité gratuits",
+    "theme": "Solidarité",
+    "type": "engagement",
+    "statut": "Programmé",
+    "annee": 2026,
+    "resume": "Jardins partagés, médiathèque animée, associations",
+    "description": "Garantir l'accès gratuit à des lieux de convivialité et d'apprentissage : jardins partagés, médiathèque animée, L'Escale, associations culturelles.",
+    "importance": 2
+  },
+  {
+    "id": 641,
+    "titre": "Engagement 4 - Conseil Local de Santé Mentale",
+    "theme": "Santé",
+    "type": "engagement",
+    "statut": "Étude",
+    "annee": 2027,
+    "resume": "CLSM - Outil de démocratie en santé",
+    "description": "Promouvoir la santé mentale via la création ou le renforcement d'un Conseil Local de Santé Mentale (CLSM), outil de démocratie en santé.",
+    "importance": 2
+  },
+  {
+    "id": 642,
+    "titre": "Engagement 10 - Formation citoyenne climat",
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "statut": "Programmé",
+    "annee": 2026,
+    "resume": "Formation citoyenne sur les enjeux climatiques et les transitions",
+    "description": "Organiser des formations citoyennes sur les enjeux climatiques et les transitions pour permettre à chacun de comprendre et d'agir.",
+    "importance": 2
+  },
+  {
+    "id": 643,
+    "titre": "Engagement 11 - Expérimentations collectives",
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "statut": "Programmé",
+    "annee": 2026,
+    "resume": "Potagers urbains, gestion des déchets participative",
+    "description": "Développer des expérimentations collectives : potagers urbains, compostage partagé, réduction des déchets, pour apprendre ensemble la transition.",
+    "importance": 2
+  },
+  {
+    "id": 644,
+    "titre": "Engagement 12 - Projets pédagogiques écoles",
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "statut": "Programmé",
+    "annee": 2026,
+    "resume": "Soutien pédagogique et projets environnementaux dans les écoles",
+    "description": "Renforcer le soutien pédagogique aux projets environnementaux dans les écoles : jardins, tri, biodiversité, énergie.",
+    "importance": 2
+  },
+  {
+    "id": 645,
+    "titre": "Engagement 13 - Débats santé-environnement",
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "statut": "Programmé",
+    "annee": 2026,
+    "resume": "Café-débats sur pollution, habitat, santé publique",
+    "description": "Organiser des café-débats et ciné-débats sur les liens entre santé et environnement : pollution, dangers professionnels, habitat, qualité de l'air.",
+    "importance": 2
   }
 ]
