@@ -9,7 +9,8 @@
     "resume": "Accès aux soins",
     "description": "",
     "importance": 2,
-    "chiffres": []
+    "chiffres": [],
+    "type": "engagement"
   },
   {
     "id": 34,
@@ -21,7 +22,8 @@
     "resume": "Présence métropolitaine",
     "description": "",
     "importance": 2,
-    "chiffres": []
+    "chiffres": [],
+    "type": "engagement"
   },
   {
     "id": 101,
@@ -58,7 +60,8 @@
     ],
     "vision": "Aucune hypothèse n'est écartée pour connecter Vizille au territoire.",
     "numero": "1/7",
-    "image": "images/objectifs/objectif_1.png"
+    "image": "images/objectifs/objectif_1.png",
+    "type": "engagement"
   },
   {
     "id": 102,
@@ -95,7 +98,8 @@
     ],
     "vision": "Un réseau cyclable continu, de quartier à quartier, de vallée à montagne.",
     "numero": "2/7",
-    "image": "images/objectifs/objectif_2.png"
+    "image": "images/objectifs/objectif_2.png",
+    "type": "engagement"
   },
   {
     "id": 103,
@@ -133,7 +137,8 @@
     ],
     "vision": "Des déplacements sûrs et accessibles pour tous, à chaque âge de la vie.",
     "numero": "3/7",
-    "image": "images/objectifs/objectif_3.png"
+    "image": "images/objectifs/objectif_3.png",
+    "type": "engagement"
   },
   {
     "id": 104,
@@ -170,7 +175,8 @@
     ],
     "vision": "Des quartiers protégés du transit, pour une vie quotidienne apaisée.",
     "numero": "4/7",
-    "image": "images/objectifs/objectif_4.png"
+    "image": "images/objectifs/objectif_4.png",
+    "type": "engagement"
   },
   {
     "id": 105,
@@ -207,7 +213,8 @@
     ],
     "vision": "Un plan lisible pour des déplacements simples et cohérents.",
     "numero": "5/7",
-    "image": "images/objectifs/objectif_5.png"
+    "image": "images/objectifs/objectif_5.png",
+    "type": "engagement"
   },
   {
     "id": 106,
@@ -244,7 +251,8 @@
     ],
     "vision": "Un centre-ville apaisé, vivant et connecté à son patrimoine.",
     "numero": "6/7",
-    "image": "images/objectifs/objectif_6.png"
+    "image": "images/objectifs/objectif_6.png",
+    "type": "engagement"
   },
   {
     "id": 107,
@@ -281,7 +289,8 @@
     ],
     "vision": "Transparence des données, régulation adaptée, bouchons réduits.",
     "numero": "7/7",
-    "image": "images/objectifs/objectif_7.png"
+    "image": "images/objectifs/objectif_7.png",
+    "type": "engagement"
   },
   {
     "id": 201,
@@ -318,7 +327,8 @@
     ],
     "vision": "Une présence stratégique : être là où et quand c'est utile.",
     "numero": "1/11",
-    "image": "images/objectifs/tranquillite_1.png"
+    "image": "images/objectifs/tranquillite_1.png",
+    "type": "engagement"
   },
   {
     "id": 202,
@@ -355,7 +365,8 @@
     ],
     "vision": "Une implication directe des élus dans la médiation et la prévention.",
     "numero": "2/11",
-    "image": "images/objectifs/tranquillite_2.png"
+    "image": "images/objectifs/tranquillite_2.png",
+    "type": "engagement"
   },
   {
     "id": 203,
@@ -392,7 +403,8 @@
     ],
     "vision": "Des règles connues, des contrôles ciblés, une réactivité sans faille.",
     "numero": "3/11",
-    "image": "images/objectifs/tranquillite_3.png"
+    "image": "images/objectifs/tranquillite_3.png",
+    "type": "engagement"
   },
   {
     "id": 204,
@@ -429,7 +441,8 @@
     ],
     "vision": "Faire respecter des règles qui permettent à chacun de circuler en sécurité.",
     "numero": "4/11",
-    "image": "images/objectifs/tranquillite_4.png"
+    "image": "images/objectifs/tranquillite_4.png",
+    "type": "engagement"
   },
   {
     "id": 205,
@@ -466,7 +479,8 @@
     ],
     "vision": "Un espace public où l'on se sent en sécurité, de jour comme de nuit.",
     "numero": "5/11",
-    "image": "images/objectifs/tranquillite_5.png"
+    "image": "images/objectifs/tranquillite_5.png",
+    "type": "engagement"
   },
   {
     "id": 206,
@@ -503,7 +517,8 @@
     ],
     "vision": "Un outil efficace au service de la tranquillité, dans le respect du cadre légal.",
     "numero": "6/11",
-    "image": "images/objectifs/tranquillite_6.png"
+    "image": "images/objectifs/tranquillite_6.png",
+    "type": "engagement"
   },
   {
     "id": 207,
@@ -540,7 +555,8 @@
     ],
     "vision": "Une ville propre où les règles communes sont respectées.",
     "numero": "7/11",
-    "image": "images/objectifs/tranquillite_7.png"
+    "image": "images/objectifs/tranquillite_7.png",
+    "type": "engagement"
   },
   {
     "id": 208,
@@ -577,7 +593,8 @@
     ],
     "vision": "Des relais humains identifiés dans chaque quartier.",
     "numero": "8/11",
-    "image": "images/objectifs/tranquillite_8.png"
+    "image": "images/objectifs/tranquillite_8.png",
+    "type": "engagement"
   },
   {
     "id": 209,
@@ -614,7 +631,8 @@
     ],
     "vision": "Une chaîne de réponse partagée entre tous les acteurs.",
     "numero": "9/11",
-    "image": "images/objectifs/tranquillite_9.png"
+    "image": "images/objectifs/tranquillite_9.png",
+    "type": "engagement"
   },
   {
     "id": 210,
@@ -651,7 +669,8 @@
     ],
     "vision": "La méthode : identifier, agir, mesurer, publier.",
     "numero": "10/11",
-    "image": "images/objectifs/tranquillite_10.png"
+    "image": "images/objectifs/tranquillite_10.png",
+    "type": "engagement"
   },
   {
     "id": 211,
@@ -688,7 +707,8 @@
     ],
     "vision": "Une culture du risque partagée, sans dramatisation.",
     "numero": "11/11",
-    "image": "images/objectifs/tranquillite_11.png"
+    "image": "images/objectifs/tranquillite_11.png",
+    "type": "engagement"
   },
   {
     "id": 507,
@@ -726,7 +746,8 @@
       "Crèche",
       "SICCE",
       "Petite enfance"
-    ]
+    ],
+    "type": "engagement"
   },
   {
     "id": 508,
@@ -764,7 +785,8 @@
       "Démocratie",
       "Jeunesse",
       "Participation"
-    ]
+    ],
+    "type": "engagement"
   },
   {
     "id": 509,
@@ -802,7 +824,8 @@
       "Écoles",
       "Canicule",
       "Confort"
-    ]
+    ],
+    "type": "engagement"
   },
   {
     "id": 510,
@@ -840,7 +863,8 @@
       "Engagement",
       "Pompiers",
       "Bénévolat"
-    ]
+    ],
+    "type": "engagement"
   },
   {
     "id": 511,
@@ -878,7 +902,8 @@
       "Adolescents",
       "Prévention",
       "Accompagnement"
-    ]
+    ],
+    "type": "engagement"
   },
   {
     "id": 512,
@@ -916,7 +941,8 @@
       "Associations",
       "Bénévolat",
       "Soutien"
-    ]
+    ],
+    "type": "engagement"
   },
   {
     "id": 513,
@@ -954,7 +980,8 @@
       "Handicap",
       "Inclusion",
       "Accessibilité"
-    ]
+    ],
+    "type": "engagement"
   },
   {
     "id": 514,
@@ -992,7 +1019,8 @@
       "Numérique",
       "Devoirs",
       "Égalité"
-    ]
+    ],
+    "type": "engagement"
   },
   {
     "id": 601,
