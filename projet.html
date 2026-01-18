@@ -567,6 +567,17 @@ function applyFilters() {
     });
 
     filteredData.sort((a, b) => {
+        // Objectifs en premier, puis engagements, puis le reste
+        const typeOrder = { 'objectif': 0, 'engagement': 1 };
+        const typeA = typeOrder[a.type] !== undefined ? typeOrder[a.type] : 2;
+        const typeB = typeOrder[b.type] !== undefined ? typeOrder[b.type] : 2;
+        if (typeA !== typeB) return typeA - typeB;
+        
+        // Ensuite par ID pour garder l'ordre numérique
+        if (a.type && b.type && a.type === b.type) {
+            return (a.id || 0) - (b.id || 0);
+        }
+        
         let valA = a[sortColumn] || '';
         let valB = b[sortColumn] || '';
 
