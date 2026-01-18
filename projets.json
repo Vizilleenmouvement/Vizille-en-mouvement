@@ -1252,7 +1252,8 @@
       "Favoriser les achats responsables"
     ],
     "vision": "L'environnement au cœur de chaque décision municipale.",
-    "numero": "1/2"
+    "numero": "1/2",
+    "type": "objectif"
   },
   {
     "id": 602,
@@ -1283,7 +1284,8 @@
       "Sensibiliser aux transitions"
     ],
     "vision": "Cultiver les savoirs pour agir ensemble.",
-    "numero": "2/2"
+    "numero": "2/2",
+    "type": "objectif"
   },
   {
     "id": 611,
@@ -1312,7 +1314,8 @@
       "Développer le solaire sur les bâtiments publics"
     ],
     "vision": "Vizille, territoire à énergie positive.",
-    "numero": "E1/9"
+    "numero": "E1/9",
+    "type": "engagement"
   },
   {
     "id": 612,
@@ -1342,7 +1345,8 @@
       "Plantation d'arbres pour zones d'ombrage"
     ],
     "vision": "Des cours d'écoles vertes et fraîches pour nos enfants.",
-    "numero": "E2/9"
+    "numero": "E2/9",
+    "type": "engagement"
   },
   {
     "id": 613,
@@ -1371,7 +1375,8 @@
       "Maintien en fonction de la piscine municipale"
     ],
     "vision": "Des îlots de fraîcheur pour tous.",
-    "numero": "E3/9"
+    "numero": "E3/9",
+    "type": "engagement"
   },
   {
     "id": 614,
@@ -1400,7 +1405,8 @@
       "Lutte contre les espèces invasives"
     ],
     "vision": "Une ville où la nature a sa place.",
-    "numero": "E4/9"
+    "numero": "E4/9",
+    "type": "engagement"
   },
   {
     "id": 615,
@@ -1429,7 +1435,8 @@
       "Faciliter l'installation de maraîchers"
     ],
     "vision": "Manger local, c'est agir local.",
-    "numero": "E5/9"
+    "numero": "E5/9",
+    "type": "engagement"
   },
   {
     "id": 616,
@@ -1458,7 +1465,8 @@
       "Favoriser la transmission des exploitations"
     ],
     "vision": "Pas de béton sur les terres nourricières.",
-    "numero": "E6/9"
+    "numero": "E6/9",
+    "type": "engagement"
   },
   {
     "id": 617,
@@ -1487,7 +1495,8 @@
       "Protéger les zones humides"
     ],
     "vision": "L'eau, un bien commun à préserver.",
-    "numero": "E7/9"
+    "numero": "E7/9",
+    "type": "engagement"
   },
   {
     "id": 618,
@@ -1523,7 +1532,8 @@
       "Organiser des sorties nature"
     ],
     "vision": "Une forêt préservée, un poumon vert pour tous les Vizillois.",
-    "numero": "E8/9"
+    "numero": "E8/9",
+    "type": "engagement"
   },
   {
     "id": 619,
@@ -1552,7 +1562,8 @@
       "Adaptation des horaires d'éclairage"
     ],
     "vision": "Un éclairage intelligent qui respecte la nuit.",
-    "numero": "E9/9"
+    "numero": "E9/9",
+    "type": "engagement"
   },
   {
     "id": 620,

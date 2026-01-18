@@ -828,7 +828,15 @@ function renderCardsView() {
     filteredData.forEach((projet, index) => {
         const themes = getProjectThemes(projet);
         const primaryTheme = themes[0] || 'Non défini';
-        const config = themeConfig[primaryTheme] || { icon: '📌', color: '#1a3a5c' };
+        let config = themeConfig[primaryTheme] || { icon: '📌', color: '#1a3a5c' };
+        
+        // Couleurs distinctes pour objectifs (violet) et engagements (vert) en Transition écologique
+        if (projet.type === 'objectif') {
+            config = { icon: '🎯', color: '#8e44ad' }; // Violet foncé pour objectifs
+        } else if (projet.type === 'engagement') {
+            config = { icon: '🌱', color: '#27ae60' }; // Vert pour engagements
+        }
+        
         const horizon = projet.horizon || projet.statut || 'Non défini';
         const horizonClass = getHorizonClass(horizon);
 
