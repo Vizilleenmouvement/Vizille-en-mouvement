@@ -836,6 +836,34 @@ function renderCardsView() {
     const container = document.getElementById('view-cards');
 
     let html = '';
+    
+    // Bandeau spécial pour Concertation citoyenne
+    const selectedTheme = document.getElementById('filter-theme')?.value;
+    if (selectedTheme === 'Concertation citoyenne' || filteredData.some(p => getProjectThemes(p).includes('Concertation citoyenne'))) {
+        const hasTheme = filteredData.some(p => getProjectThemes(p).includes('Concertation citoyenne'));
+        if (hasTheme && (selectedTheme === 'Concertation citoyenne' || selectedTheme === '')) {
+            html += `
+                <div class="theme-banner-special" style="
+                    grid-column: 1 / -1;
+                    background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+                    color: white;
+                    padding: 1.5rem 2rem;
+                    border-radius: 12px;
+                    margin-bottom: 1.5rem;
+                    text-align: center;
+                    box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+                ">
+                    <h2 style="margin: 0 0 0.5rem 0; font-size: 1.4rem; font-weight: 700;">
+                        🗣️ ANCRER LE PROGRAMME MUNICIPAL SUR LA BASE DE L'ÉDUCATION POPULAIRE
+                    </h2>
+                    <p style="margin: 0; opacity: 0.9; font-size: 1rem;">
+                        → Renforcer la démocratie • L'émancipation individuelle et collective • La concertation citoyenne
+                    </p>
+                </div>
+            `;
+        }
+    }
+    
     filteredData.forEach((projet, index) => {
         const themes = getProjectThemes(projet);
         const primaryTheme = themes[0] || 'Non défini';

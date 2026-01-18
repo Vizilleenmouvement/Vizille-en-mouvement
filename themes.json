@@ -1,5 +1,10 @@
 [
   {
+    "theme": "Concertation citoyenne",
+    "icon": "🗣️",
+    "color": "#e67e22"
+  },
+  {
     "theme": "Culture",
     "icon": "🎭",
     "color": "#9b59b6"
