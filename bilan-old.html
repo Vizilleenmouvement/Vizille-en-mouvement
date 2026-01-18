@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilan 2020-2026 – Vizille en Mouvement</title>
+    <meta name="description" content="Bilan complet du mandat 2020-2026 : plus de 330 actions réalisées pour Vizille.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vizilleenmouvement.fr/bilan.html">
+    <meta property="og:title" content="Bilan 2020-2026 - Vizille en Mouvement">
+    <meta property="og:description" content="Bilan complet du mandat 2020-2026 : plus de 330 actions réalisées pour Vizille.">
+    <meta property="og:image" content="https://vizilleenmouvement.fr/images/logo.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        /* ===== PAGE BILAN ===== */
+        body { padding-top: 110px; }
+        
+        /* Hero compact avec logo pulsant */
+        .bilan-hero {
+            background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair));
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+        .bilan-hero .logo-pulse {
+            width: 100px;
+            height: auto;
+            margin-bottom: 0.8rem;
+            animation: pulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.5));
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.5)); }
+            50% { transform: scale(1.08); filter: drop-shadow(0 8px 24px rgba(201, 162, 39, 0.8)); }
+        }
+        .bilan-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin: 0 0 0.3rem 0;
+        }
+        .bilan-hero .slogan {
+            color: var(--or-clair);
+            font-size: 1rem;
+            margin: 0;
+        }
+        .bilan-hero .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .bilan-hero .stat { text-align: center; }
+        .bilan-hero .stat-val { font-size: 2rem; font-weight: 700; color: var(--or-clair); }
+        .bilan-hero .stat-label { font-size: 0.85rem; opacity: 0.9; }
+        
+        /* Onglets principaux */
+        .tabs-container {
+            background: white;
+            border-bottom: 2px solid var(--gris-doux);
+            position: sticky;
+            top: 110px;
+            z-index: 100;
+        }
+        .tabs {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            overflow-x: auto;
+            padding: 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .tab {
+            padding: 0.7rem 0.9rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            white-space: nowrap;
+            transition: all 0.2s;
+            font-weight: 500;
+            color: var(--gris-texte);
+            font-size: 0.85rem;
+        }
+        .tab:hover { background: var(--blanc-casse); }
+        .tab.active { font-weight: 700; border-bottom-color: var(--bleu-vizille); color: var(--bleu-vizille); }
+        .tab .badge {
+            background: var(--gris-doux);
+            color: var(--gris-texte);
+            padding: 0.1rem 0.4rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+        }
+        .tab.active .badge { background: var(--bleu-vizille); color: white; }
+        .tab.special { background: linear-gradient(135deg, #2c3e50, #34495e); color: white !important; border-radius: 4px 4px 0 0; }
+        .tab.special:hover { background: linear-gradient(135deg, #34495e, #2c3e50); }
+        .tab.special .badge { background: #9b59b6; color: white; }
+        
+        /* Sous-onglets */
+        .subtabs-container { background: var(--blanc-casse); padding: 0.8rem 0; }
+        .subtabs {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0.4rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+        .subtab {
+            padding: 0.4rem 0.8rem;
+            cursor: pointer;
+            border-radius: 16px;
+            font-size: 0.8rem;
+            background: white;
+            color: var(--gris-texte);
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+        .subtab:hover { border-color: var(--bleu-clair); }
+        .subtab.active { background: var(--bleu-vizille); color: white; }
+        .subtab .count { opacity: 0.7; margin-left: 0.2rem; }
+        
+        /* Bandeau thème */
+        .theme-banner-container { max-width: 1400px; margin: 0 auto; padding: 0.8rem 1rem 0; }
+        .theme-banner {
+            background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair));
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .theme-banner .icon { font-size: 2rem; }
+        .theme-banner .text h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin: 0 0 0.2rem 0; }
+        .theme-banner .text p { opacity: 0.9; font-size: 0.9rem; margin: 0; }
+        .theme-banner.plan-climat { background: linear-gradient(135deg, #2c3e50, #34495e); }
+        
+        /* Grille de cartes */
+        .cards-container { max-width: 1400px; margin: 1.5rem auto; padding: 0 1rem; }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.2rem; }
+        
+        /* Carte */
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+        .card-header {
+            padding: 0.9rem 1rem;
+            background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair));
+            color: white;
+        }
+        .card-header h3 { font-size: 0.95rem; line-height: 1.3; margin: 0; }
+        .card-meta { display: flex; gap: 0.4rem; margin-top: 0.4rem; flex-wrap: wrap; }
+        .card-meta span { font-size: 0.7rem; padding: 0.15rem 0.4rem; border-radius: 4px; background: rgba(255,255,255,0.2); }
+        .card-body { padding: 0.9rem 1rem; }
+        .card-body p { font-size: 0.85rem; color: var(--gris-texte); line-height: 1.5; margin: 0; }
+        .card-chiffres { display: flex; gap: 0.8rem; margin-top: 0.8rem; flex-wrap: wrap; }
+        .chiffre { text-align: center; }
+        .chiffre-val { font-size: 1.2rem; font-weight: 700; color: var(--bleu-vizille); }
+        .chiffre-label { font-size: 0.65rem; color: var(--gris-texte); }
+        
+        .card.objectif .card-header { background: linear-gradient(135deg, #2c3e50, #34495e); }
+        .card.objectif { border-left: 4px solid #9b59b6; }
+        
+        .statut { padding: 0.15rem 0.5rem; border-radius: 10px; font-size: 0.65rem; font-weight: 600; }
+        .statut.realise { background: var(--vert-realise); color: white; }
+        .statut.encours { background: var(--orange-encours); color: white; }
+        .statut.objectif { background: #9b59b6; color: white; }
+        
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal {
+            background: white;
+            border-radius: 14px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .modal-header {
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair));
+            color: white;
+            position: relative;
+        }
+        .modal-header h2 { font-size: 1.2rem; padding-right: 2rem; margin: 0; }
+        .modal-close {
+            position: absolute;
+            top: 0.8rem; right: 0.8rem;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        .modal-body { padding: 1.2rem; }
+        .modal-section { margin-bottom: 1.2rem; }
+        .modal-section h4 { color: var(--bleu-vizille); margin: 0 0 0.4rem 0; font-size: 0.95rem; }
+        .modal-section p { margin: 0; line-height: 1.6; font-size: 0.9rem; }
+        .modal-chiffres { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+        .modal-chiffre { background: var(--gris-doux); padding: 0.8rem; border-radius: 8px; text-align: center; min-width: 90px; }
+        .modal-chiffre .val { font-size: 1.3rem; font-weight: 700; color: var(--bleu-vizille); }
+        .modal-chiffre .label { font-size: 0.75rem; }
+        .chrono-item { padding: 0.4rem 0; border-left: 3px solid var(--bleu-clair); padding-left: 0.8rem; margin-left: 0.4rem; margin-bottom: 0.4rem; }
+        .chrono-date { background: var(--bleu-vizille); color: white; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.7rem; }
+        .source-btn {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            background: var(--gris-doux);
+            border-radius: 6px;
+            color: var(--bleu-vizille);
+            text-decoration: none;
+            font-size: 0.8rem;
+            margin: 0.2rem;
+        }
+        .source-btn:hover { background: var(--bleu-vizille); color: white; }
+        
+        .results-count { text-align: center; padding: 0.8rem; color: var(--gris-texte); font-size: 0.85rem; }
+        
+        @media (max-width: 768px) {
+            body { padding-top: 80px; }
+            .tabs-container { top: 80px; }
+            .bilan-hero { padding: 1rem; }
+            .bilan-hero .logo-pulse { width: 70px; }
+            .bilan-hero h1 { font-size: 1.4rem; }
+            .bilan-hero .stat-val { font-size: 1.6rem; }
+            .cards-grid { grid-template-columns: 1fr; }
+            .tabs { justify-content: flex-start; }
+            .tab { padding: 0.5rem 0.6rem; font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <header class="header">
+        <div class="header-top"><p>Vizille en Mouvement - Municipales 2026</p></div>
+        <div class="header-main">
+            <a href="index.html"><img src="images/logo.png" alt="Vizille en Mouvement" class="nav-header-logo"></a>
+            <button class="menu-toggle" aria-label="Menu">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="bilan.html" class="active">Bilan</a></li>
+                    <li><a href="projet.html">Projet</a></li>
+                    <li><a href="blog.html">Actualités</a></li>
+                    <li><a href="equipe.html">Equipe</a></li>
+                    <li><a href="faq.html">Construisons ensemble</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script src="js/menu-mobile.js"></script>
+
+    <section class="bilan-hero" id="main-content">
+        <img src="images/logo.png" alt="Vizille en Mouvement" class="logo-pulse">
+        <h1>Bilan 2020-2026</h1>
+        <p class="slogan">Ce que nous avons accompli ensemble</p>
+        <div class="stats" id="hero-stats"></div>
+    </section>
+    
+    <div class="tabs-container">
+        <div class="tabs" id="tabs"></div>
+    </div>
+    
+    <div class="theme-banner-container">
+        <div class="theme-banner" id="theme-banner"></div>
+    </div>
+    
+    <div class="subtabs-container">
+        <div class="subtabs" id="subtabs"></div>
+    </div>
+    
+    <div class="results-count" id="results-count"></div>
+    
+    <div class="cards-container">
+        <div class="cards-grid" id="cards-grid"></div>
+    </div>
+    
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+<script>
+const THEMES = [
+    { id: 'Plan Climat', label: '🌍 Plan Climat', icon: '📋', special: true },
+    { id: 'Culture', label: 'Culture', icon: '🎭' },
+    { id: 'Environnement', label: 'Environnement', icon: '🌿' },
+    { id: 'Travaux', label: 'Travaux', icon: '🏗️' },
+    { id: 'Patrimoine', label: 'Patrimoine', icon: '🏛️' },
+    { id: 'Solidarité', label: 'Solidarité', icon: '🤝' },
+    { id: 'Sport', label: 'Sport', icon: '⚽' },
+    { id: 'Enfance', label: 'Enfance', icon: '👶' },
+    { id: 'Mobilités', label: 'Mobilités', icon: '🚲' },
+    { id: 'Urbanisme', label: 'Urbanisme', icon: '🏘️' },
+    { id: 'Tranquillité publique', label: 'Tranquillité', icon: '🛡️' },
+    { id: 'Finance', label: 'Finance', icon: '💰' },
+    { id: 'Santé', label: 'Santé', icon: '🏥' },
+    { id: 'Intercommunalité', label: 'Interco', icon: '🏙️' },
+    { id: 'Administration', label: 'Admin', icon: '📋' },
+    { id: 'Jumelages', label: 'Jumelages', icon: '🌍' },
+    { id: 'Personnel', label: 'Personnel', icon: '👥' }
+];
+
+const SUBCATEGORIES = {
+    'Plan Climat': [
+        { id: 'Axe 1 - Adaptation', label: 'Adaptation', icon: '🌳' },
+        { id: 'Axe 2 - Énergie & Air', label: 'Énergie', icon: '⚡' },
+        { id: 'Axe 3 - Ressources', label: 'Ressources', icon: '♻️' },
+        { id: 'Axe 4 - Mobilisation', label: 'Mobilisation', icon: '👥' },
+        { id: 'Axe 5 - Exemplarité', label: 'Exemplarité', icon: '⭐' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ],
+    'Culture': [
+        { id: 'Festivals', label: 'Festivals', icon: '🎉' },
+        { id: 'Jeunesse & Scolaires', label: 'Jeunesse', icon: '👦' },
+        { id: 'Médiathèque', label: 'Médiathèque', icon: '📚' },
+        { id: 'Jeu de Paume', label: 'Jeu de Paume', icon: '🎭' },
+        { id: 'Associations & Partenariats', label: 'Associations', icon: '🤝' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ],
+    'Environnement': [
+        { id: 'Énergie & Climat', label: 'Énergie', icon: '⚡' },
+        { id: 'Déchets & Recyclage', label: 'Déchets', icon: '♻️' },
+        { id: 'Nature & Biodiversité', label: 'Nature', icon: '🌳' },
+        { id: 'Eau', label: 'Eau', icon: '💧' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ],
+    'Travaux': [
+        { id: 'Voirie & Espaces publics', label: 'Voirie', icon: '🛤️' },
+        { id: 'Équipements', label: 'Équipements', icon: '🏗️' },
+        { id: 'Bâtiments', label: 'Bâtiments', icon: '🏢' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ],
+    'Patrimoine': [
+        { id: 'Monuments', label: 'Monuments', icon: '⛪' },
+        { id: 'Circuits & Tourisme', label: 'Tourisme', icon: '🗺️' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ],
+    'Solidarité': [
+        { id: 'Aide internationale', label: 'International', icon: '🌍' },
+        { id: 'Actions sociales', label: 'Social', icon: '🏠' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ],
+    'Sport': [
+        { id: 'Équipements', label: 'Équipements', icon: '🏟️' },
+        { id: 'Événements', label: 'Événements', icon: '🏆' },
+        { id: 'Associations & Partenariats', label: 'Associations', icon: '🤝' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ],
+    'Enfance': [
+        { id: 'Écoles', label: 'Écoles', icon: '🏫' },
+        { id: 'Petite enfance', label: 'Petite enfance', icon: '👶' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ],
+    'Mobilités': [
+        { id: 'Piétons & Vélos', label: 'Vélos', icon: '🚲' },
+        { id: 'Circulation', label: 'Circulation', icon: '🚗' },
+        { id: 'Stationnement', label: 'Parking', icon: '🅿️' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ],
+    'Urbanisme': [
+        { id: 'Grands projets', label: 'Projets', icon: '🏗️' },
+        { id: 'Logement', label: 'Logement', icon: '🏠' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ],
+    'Tranquillité publique': [
+        { id: 'Vidéo-protection', label: 'Vidéo', icon: '📹' },
+        { id: 'Police municipale', label: 'Police', icon: '👮' },
+        { id: 'Prévention', label: 'Prévention', icon: '🛡️' },
+        { id: 'Sécurité civile', label: 'Sécurité', icon: '🚒' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ],
+    'Finance': [
+        { id: 'Budget', label: 'Budget', icon: '📊' },
+        { id: 'Fiscalité', label: 'Fiscalité', icon: '💶' },
+        { id: 'Gestion', label: 'Gestion', icon: '📁' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ],
+    'Santé': [
+        { id: 'Accès aux soins', label: 'Soins', icon: '🏥' },
+        { id: 'Prévention', label: 'Prévention', icon: '💊' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ],
+    'Intercommunalité': [
+        { id: 'Métropole', label: 'Métropole', icon: '🏙️' },
+        { id: 'Participations', label: 'Participations', icon: '🤝' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ],
+    'Administration': [
+        { id: 'Conseil municipal', label: 'Conseil', icon: '🏛️' },
+        { id: 'Gestion', label: 'Gestion', icon: '📁' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ],
+    'Jumelages': [
+        { id: 'Échanges', label: 'Échanges', icon: '🤝' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ],
+    'Personnel': [
+        { id: 'Postes', label: 'Postes', icon: '👤' },
+        { id: 'Gestion RH', label: 'RH', icon: '📋' },
+        { id: 'all', label: 'Tout', icon: '👁️' }
+    ]
+};
+
+let allData = [];
+let currentTheme = 'Culture';
+let currentSubcat = 'Festivals';
+
+async function init() {
+    const r = await fetch('data.json');
+    allData = await r.json();
+    renderHeroStats();
+    renderTabs();
+    renderBanner();
+    renderSubtabs();
+    renderCards();
+}
+
+function renderHeroStats() {
+    const actionsCount = allData.filter(p => !p.suspendu && p.theme !== 'Plan Climat').length;
+    const themesCount = new Set(allData.filter(p => !p.suspendu && p.theme !== 'Plan Climat').map(p => p.theme)).size;
+    document.getElementById('hero-stats').innerHTML = `
+        <div class="stat"><div class="stat-val">${actionsCount}</div><div class="stat-label">actions réalisées</div></div>
+        <div class="stat"><div class="stat-val">${themesCount}</div><div class="stat-label">domaines</div></div>
+        <div class="stat"><div class="stat-val">6 ans</div><div class="stat-label">de mandat</div></div>
+    `;
+}
+
+function renderTabs() {
+    document.getElementById('tabs').innerHTML = THEMES.map(t => {
+        const count = allData.filter(p => p.theme === t.id && !p.suspendu).length;
+        const specialClass = t.special ? 'special' : '';
+        return `<div class="tab ${t.id === currentTheme ? 'active' : ''} ${specialClass}" onclick="selectTheme('${t.id}')">
+            <span>${t.icon}</span><span>${t.label}</span><span class="badge">${count}</span>
+        </div>`;
+    }).join('');
+}
+
+function renderSubtabs() {
+    const subcats = SUBCATEGORIES[currentTheme] || [{ id: 'all', label: 'Tout', icon: '👁️' }];
+    document.getElementById('subtabs').innerHTML = subcats.map(s => {
+        const count = s.id === 'all' 
+            ? allData.filter(p => p.theme === currentTheme && !p.suspendu).length
+            : allData.filter(p => p.theme === currentTheme && p.sous_categorie === s.id && !p.suspendu).length;
+        if (count === 0 && s.id !== 'all') return '';
+        return `<div class="subtab ${s.id === currentSubcat ? 'active' : ''}" onclick="selectSubcat('${s.id}')">${s.icon} ${s.label} <span class="count">(${count})</span></div>`;
+    }).join('');
+}
+
+function renderBanner() {
+    const t = THEMES.find(t => t.id === currentTheme);
+    const count = allData.filter(p => p.theme === currentTheme && !p.suspendu).length;
+    const isPlanClimat = currentTheme === 'Plan Climat';
+    const descs = {
+        'Plan Climat': 'Engagements Charte PCAEM 2020-2026',
+        'Culture': 'Festivals, spectacles, médiathèque',
+        'Environnement': 'Transition écologique',
+        'Travaux': 'Rénovations et aménagements',
+        'Patrimoine': 'Valorisation du patrimoine',
+        'Solidarité': 'Actions sociales',
+        'Sport': 'Équipements sportifs',
+        'Enfance': 'Écoles et jeunesse',
+        'Mobilités': 'Déplacements doux',
+        'Urbanisme': 'Aménagement',
+        'Tranquillité publique': 'Sécurité et prévention',
+        'Finance': 'Gestion budgétaire',
+        'Santé': 'Accès aux soins',
+        'Intercommunalité': 'Coopération métropolitaine',
+        'Administration': 'Services municipaux',
+        'Jumelages': 'Échanges internationaux',
+        'Personnel': 'Équipe municipale'
+    };
+    const label = isPlanClimat ? 'objectif' : 'action';
+    document.getElementById('theme-banner').className = 'theme-banner' + (isPlanClimat ? ' plan-climat' : '');
+    document.getElementById('theme-banner').innerHTML = `
+        <div class="icon">${t.icon}</div>
+        <div class="text"><h2>${t.id}</h2><p>${descs[currentTheme] || ''} • ${count} ${label}${count > 1 ? 's' : ''}</p></div>
+    `;
+}
+
+function renderCards() {
+    let filtered = allData.filter(p => p.theme === currentTheme && !p.suspendu);
+    if (currentSubcat !== 'all') filtered = filtered.filter(p => p.sous_categorie === currentSubcat);
+    filtered.sort((a, b) => (a.importance || 5) - (b.importance || 5) || (b.annee || '').localeCompare(a.annee || ''));
+    
+    const isPlanClimat = currentTheme === 'Plan Climat';
+    document.getElementById('results-count').textContent = `${filtered.length} ${isPlanClimat ? 'objectif' : 'action'}${filtered.length > 1 ? 's' : ''}`;
+    
+    document.getElementById('cards-grid').innerHTML = filtered.map(p => {
+        const isObj = p.statut === 'Objectif';
+        const statCls = isObj ? 'objectif' : (p.statut === 'Réalisé' ? 'realise' : 'encours');
+        let chiffres = '';
+        if (p.chiffres && p.chiffres.length) {
+            chiffres = `<div class="card-chiffres">${p.chiffres.slice(0,3).map(c => 
+                `<div class="chiffre"><div class="chiffre-val">${c.valeur}</div><div class="chiffre-label">${c.label}</div></div>`
+            ).join('')}</div>`;
+        }
+        return `<div class="card ${isObj ? 'objectif' : ''}" onclick="openModal(${p.id})">
+            <div class="card-header"><h3>${p.titre}</h3>
+                <div class="card-meta">
+                    ${p.statut ? `<span class="statut ${statCls}">${p.statut}</span>` : ''}
+                    ${p.annee ? `<span>📅 ${p.annee}</span>` : ''}
+                    ${p.budget ? `<span>💰 ${p.budget.toLocaleString('fr-FR')} €</span>` : ''}
+                </div>
+            </div>
+            <div class="card-body"><p>${(p.resume || p.description || '').slice(0, 140)}${(p.resume || p.description || '').length > 140 ? '...' : ''}</p>${chiffres}</div>
+        </div>`;
+    }).join('');
+}
+
+function selectTheme(theme) {
+    currentTheme = theme;
+    const subcats = SUBCATEGORIES[currentTheme];
+    currentSubcat = subcats && subcats.length > 0 ? subcats[0].id : 'all';
+    renderTabs(); renderBanner(); renderSubtabs(); renderCards();
+}
+
+function selectSubcat(subcat) {
+    currentSubcat = subcat;
+    renderSubtabs(); renderCards();
+}
+
+function openModal(id) {
+    const p = allData.find(x => x.id === id);
+    if (!p) return;
+    document.getElementById('modal-title').textContent = p.titre;
+    let html = '';
+    if (p.description) html += `<div class="modal-section"><p>${p.description}</p></div>`;
+    if (p.chiffres && p.chiffres.length) {
+        html += `<div class="modal-section"><h4>📊 Chiffres clés</h4><div class="modal-chiffres">`;
+        p.chiffres.forEach(c => html += `<div class="modal-chiffre"><div class="val">${c.valeur}</div><div class="label">${c.label}</div></div>`);
+        html += `</div></div>`;
+    }
+    if (p.details) html += `<div class="modal-section"><h4>📋 Détails</h4><p>${p.details}</p></div>`;
+    if (p.chronologie && p.chronologie.length) {
+        html += `<div class="modal-section"><h4>📆 Chronologie</h4>`;
+        p.chronologie.slice(0, 5).forEach(c => html += `<div class="chrono-item"><span class="chrono-date">${c.date}</span> ${c.evenement}</div>`);
+        html += `</div>`;
+    }
+    if (p.lien_source && p.lien_source.length) {
+        html += `<div class="modal-section"><h4>🔗 Sources</h4>`;
+        p.lien_source.forEach(s => html += `<a href="${s.url}" target="_blank" class="source-btn">${s.label}</a>`);
+        html += `</div>`;
+    }
+    document.getElementById('modal-body').innerHTML = html;
+    document.getElementById('modal-overlay').classList.add('active');
+}
+
+function closeModal() { document.getElementById('modal-overlay').classList.remove('active'); }
+document.getElementById('modal-overlay').addEventListener('click', e => { if (e.target.id === 'modal-overlay') closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+init();
+</script>
+</body>
+</html>

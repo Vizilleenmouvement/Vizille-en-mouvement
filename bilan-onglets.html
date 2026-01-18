@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilan 2020-2026 – Vizille en Mouvement</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bleu-vizille: #1a3a5c; --bleu-clair: #2d5a87; --or: #c9a227; --or-clair: #e8c84a;
+            --blanc-casse: #f8f6f1; --gris-doux: #e8e6e1; --gris-texte: #4a4a4a;
+            --col-culture: #9b59b6; --col-environnement: #27ae60; --col-travaux: #e67e22;
+            --col-patrimoine: #8b4513; --col-solidarite: #e91e63; --col-sport: #3498db;
+            --col-enfance: #ff69b4; --col-mobilites: #1abc9c; --col-urbanisme: #34495e;
+            --col-tranquillite: #7f8c8d; --col-economie: #f39c12; --col-finance: #2ecc71;
+            --col-sante: #e74c3c; --col-interco: #9b59b6; --col-admin: #95a5a6;
+            --col-jumelages: #3498db; --col-personnel: #1abc9c;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Source Sans 3', sans-serif; background: var(--blanc-casse); color: var(--gris-texte); }
+        
+        /* Header */
+        .header { background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair)); color: white; }
+        .header-top { background: rgba(0,0,0,0.2); padding: 0.4rem; text-align: center; font-size: 0.85rem; }
+        .header-main { max-width: 1200px; margin: 0 auto; padding: 1rem; display: flex; align-items: center; justify-content: space-between; }
+        .header-main img { height: 60px; }
+        .header-main nav ul { display: flex; list-style: none; gap: 1.5rem; }
+        .header-main nav a { color: white; text-decoration: none; font-weight: 500; padding: 0.5rem; border-radius: 6px; }
+        .header-main nav a:hover, .header-main nav a.active { background: rgba(255,255,255,0.15); }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair)); color: white; padding: 2rem 1rem; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 0.5rem; }
+        .hero .slogan { color: var(--or-clair); font-size: 1.1rem; }
+        
+        /* Onglets */
+        .tabs-container { background: white; border-bottom: 1px solid var(--gris-doux); position: sticky; top: 0; z-index: 100; }
+        .tabs { max-width: 1200px; margin: 0 auto; display: flex; overflow-x: auto; padding: 0; justify-content: center; flex-wrap: wrap; }
+        .tab { padding: 0.8rem 0.8rem; cursor: pointer; border-bottom: 4px solid transparent; display: flex; align-items: center; gap: 0.3rem; white-space: nowrap; transition: all 0.2s; font-weight: 500; color: var(--gris-texte); font-size: 0.85rem; }
+        .tab:hover { background: var(--blanc-casse); }
+        .tab.active { font-weight: 700; }
+        .tab .icon { font-size: 1.3rem; }
+        .tab .badge { background: var(--gris-doux); color: var(--gris-texte); padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600; }
+        .tab.active .badge { color: white; }
+        
+        /* Couleurs onglets */
+        .tab[data-theme="Culture"].active { border-bottom-color: var(--col-culture); color: var(--col-culture); }
+        .tab[data-theme="Culture"].active .badge { background: var(--col-culture); }
+        .tab[data-theme="Environnement"].active { border-bottom-color: var(--col-environnement); color: var(--col-environnement); }
+        .tab[data-theme="Environnement"].active .badge { background: var(--col-environnement); }
+        .tab[data-theme="Travaux"].active { border-bottom-color: var(--col-travaux); color: var(--col-travaux); }
+        .tab[data-theme="Travaux"].active .badge { background: var(--col-travaux); }
+        .tab[data-theme="Patrimoine"].active { border-bottom-color: var(--col-patrimoine); color: var(--col-patrimoine); }
+        .tab[data-theme="Patrimoine"].active .badge { background: var(--col-patrimoine); }
+        .tab[data-theme="Solidarité"].active { border-bottom-color: var(--col-solidarite); color: var(--col-solidarite); }
+        .tab[data-theme="Solidarité"].active .badge { background: var(--col-solidarite); }
+        .tab[data-theme="Sport"].active { border-bottom-color: var(--col-sport); color: var(--col-sport); }
+        .tab[data-theme="Sport"].active .badge { background: var(--col-sport); }
+        .tab[data-theme="Enfance"].active { border-bottom-color: var(--col-enfance); color: var(--col-enfance); }
+        .tab[data-theme="Enfance"].active .badge { background: var(--col-enfance); }
+        .tab[data-theme="Mobilités"].active { border-bottom-color: var(--col-mobilites); color: var(--col-mobilites); }
+        .tab[data-theme="Mobilités"].active .badge { background: var(--col-mobilites); }
+        .tab[data-theme="Urbanisme"].active { border-bottom-color: var(--col-urbanisme); color: var(--col-urbanisme); }
+        .tab[data-theme="Urbanisme"].active .badge { background: var(--col-urbanisme); }
+        .tab[data-theme="Tranquillité publique"].active { border-bottom-color: var(--col-tranquillite); color: var(--col-tranquillite); }
+        .tab[data-theme="Tranquillité publique"].active .badge { background: var(--col-tranquillite); }
+        .tab[data-theme="Économie"].active { border-bottom-color: var(--col-economie); color: var(--col-economie); }
+        .tab[data-theme="Économie"].active .badge { background: var(--col-economie); }
+        .tab[data-theme="Finance"].active { border-bottom-color: var(--col-finance); color: var(--col-finance); }
+        .tab[data-theme="Finance"].active .badge { background: var(--col-finance); }
+        .tab[data-theme="Santé"].active { border-bottom-color: var(--col-sante); color: var(--col-sante); }
+        .tab[data-theme="Santé"].active .badge { background: var(--col-sante); }
+        .tab[data-theme="Intercommunalité"].active { border-bottom-color: var(--col-interco); color: var(--col-interco); }
+        .tab[data-theme="Intercommunalité"].active .badge { background: var(--col-interco); }
+        .tab[data-theme="Administration"].active { border-bottom-color: var(--col-admin); color: var(--col-admin); }
+        .tab[data-theme="Administration"].active .badge { background: var(--col-admin); }
+        .tab[data-theme="Jumelages"].active { border-bottom-color: var(--col-jumelages); color: var(--col-jumelages); }
+        .tab[data-theme="Jumelages"].active .badge { background: var(--col-jumelages); }
+        .tab[data-theme="Personnel"].active { border-bottom-color: var(--col-personnel); color: var(--col-personnel); }
+        .tab[data-theme="Personnel"].active .badge { background: var(--col-personnel); }
+        
+        /* Container principal */
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+        
+        /* Navigation projet */
+        .project-nav { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem; }
+        .nav-arrow { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--gris-doux); background: white; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; color: var(--bleu-vizille); }
+        .nav-arrow:hover:not(:disabled) { background: var(--bleu-vizille); color: white; border-color: var(--bleu-vizille); }
+        .nav-arrow:disabled { opacity: 0.3; cursor: not-allowed; }
+        .nav-counter { font-size: 1rem; color: #888; font-weight: 600; min-width: 80px; text-align: center; }
+        .nav-counter .current { font-size: 1.5rem; color: var(--bleu-vizille); }
+        
+        /* Indicateurs (dots) */
+        .nav-dots { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .nav-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--gris-doux); cursor: pointer; transition: all 0.2s; }
+        .nav-dot:hover { background: #ccc; }
+        .nav-dot.active { background: var(--bleu-vizille); transform: scale(1.2); }
+        
+        /* Carte projet unique */
+        .project-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .project-card.theme-culture { border-top: 5px solid var(--col-culture); }
+        .project-card.theme-environnement { border-top: 5px solid var(--col-environnement); }
+        .project-card.theme-travaux { border-top: 5px solid var(--col-travaux); }
+        .project-card.theme-patrimoine { border-top: 5px solid var(--col-patrimoine); }
+        .project-card.theme-solidarite { border-top: 5px solid var(--col-solidarite); }
+        .project-card.theme-sport { border-top: 5px solid var(--col-sport); }
+        .project-card.theme-enfance { border-top: 5px solid var(--col-enfance); }
+        .project-card.theme-mobilites { border-top: 5px solid var(--col-mobilites); }
+        .project-card.theme-urbanisme { border-top: 5px solid var(--col-urbanisme); }
+        .project-card.theme-tranquillite { border-top: 5px solid var(--col-tranquillite); }
+        .project-card.theme-economie { border-top: 5px solid var(--col-economie); }
+        .project-card.theme-finance { border-top: 5px solid var(--col-finance); }
+        .project-card.theme-sante { border-top: 5px solid var(--col-sante); }
+        .project-card.theme-interco { border-top: 5px solid var(--col-interco); }
+        .project-card.theme-admin { border-top: 5px solid var(--col-admin); }
+        .project-card.theme-jumelages { border-top: 5px solid var(--col-jumelages); }
+        .project-card.theme-personnel { border-top: 5px solid var(--col-personnel); }
+        
+        /* Bandeau thématique */
+        .theme-banner { padding: 0.8rem 1rem; text-align: center; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.5px; text-transform: uppercase; }
+        .theme-banner.democratie { background: linear-gradient(135deg, var(--col-democratie), #e67e22); color: white; }
+        .theme-banner.ecologie { background: linear-gradient(135deg, var(--col-transition), #27ae60); color: white; }
+        
+        .project-header { padding: 1.5rem 2rem 1rem; }
+        .project-theme-badge { display: inline-block; font-size: 0.75rem; padding: 0.3rem 0.8rem; border-radius: 20px; background: var(--gris-doux); color: var(--gris-texte); margin-bottom: 0.5rem; font-weight: 600; }
+        .project-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--bleu-vizille); line-height: 1.3; margin-bottom: 0.5rem; }
+        .project-slogan { font-size: 1rem; color: var(--or); font-weight: 600; }
+        
+        .project-body { padding: 0 2rem 1.5rem; }
+        .project-description { font-size: 1rem; color: #555; line-height: 1.6; margin-bottom: 1.5rem; }
+        
+        .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .tag { font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 20px; background: var(--blanc-casse); color: var(--gris-texte); border: 1px solid var(--gris-doux); }
+        
+        .project-section { background: var(--blanc-casse); border-radius: 12px; padding: 1.2rem 1.5rem; margin-bottom: 1rem; }
+        .project-section h4 { font-size: 0.85rem; color: var(--bleu-vizille); margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 0.5rem; }
+        .project-section ul { list-style: none; }
+        .project-section li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; font-size: 0.95rem; line-height: 1.4; }
+        .project-section.enjeux li::before { content: "→"; position: absolute; left: 0; color: var(--or); font-weight: bold; }
+        .project-section.actions { background: #e8f4f8; }
+        .project-section.actions li::before { content: "✓"; position: absolute; left: 0; color: var(--col-economie); font-weight: bold; }
+        
+        /* Vignette fiche en bas */
+        .project-fiche { padding: 1.5rem 2rem; background: var(--blanc-casse); border-top: 1px solid var(--gris-doux); }
+        .project-fiche-label { font-size: 0.8rem; color: #888; margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .project-thumbnail { display: inline-block; position: relative; cursor: pointer; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: all 0.3s; }
+        .project-thumbnail:hover { transform: scale(1.02); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        .project-thumbnail img { width: 180px; height: auto; display: block; }
+        .project-thumbnail .thumb-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; }
+        .project-thumbnail:hover .thumb-overlay { opacity: 1; }
+        .project-thumbnail .thumb-overlay span { background: white; color: var(--bleu-vizille); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        
+        .project-footer { padding: 1.5rem 2rem; background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair)); }
+        
+        /* Styles spécifiques bilan */
+        .statut-badge { padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+        .statut-badge.realise { background: #27ae60; color: white; }
+        .statut-badge.encours { background: #f39c12; color: white; }
+        .statut-badge.programme { background: #3498db; color: white; }
+        
+        .chiffres-container { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0; }
+        .chiffre-box { background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair)); color: white; padding: 1rem 1.5rem; border-radius: 12px; text-align: center; min-width: 120px; }
+        .chiffre-valeur { font-size: 1.5rem; font-weight: 700; color: var(--or-clair); }
+        .chiffre-label { font-size: 0.85rem; opacity: 0.9; margin-top: 0.3rem; }
+        
+        .chrono-list { list-style: none; padding: 0; }
+        .chrono-list li { padding: 0.5rem 0; border-left: 3px solid var(--bleu-clair); padding-left: 1rem; margin-left: 0.5rem; }
+        .chrono-date { background: var(--bleu-vizille); color: white; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem; }
+        .chrono-more { font-style: italic; color: var(--gris-texte); opacity: 0.7; }
+        
+        .sources-list { display: flex; flex-direction: column; gap: 0.5rem; }
+        .source-link { display: inline-block; padding: 0.5rem 1rem; background: var(--gris-doux); border-radius: 8px; color: var(--bleu-vizille); text-decoration: none; font-size: 0.9rem; transition: all 0.2s; }
+        .source-link:hover { background: var(--bleu-vizille); color: white; }
+        .project-vision { font-size: 1rem; font-style: italic; color: white; text-align: center; line-height: 1.5; }
+        .project-vision::before { content: "« "; color: var(--or-clair); font-weight: bold; font-size: 1.2rem; }
+        .project-vision::after { content: " »"; color: var(--or-clair); font-weight: bold; font-size: 1.2rem; }
+        
+        /* Projet simple (sans détails) */
+        .project-simple { padding: 2rem; text-align: center; }
+        .project-simple .project-title { margin-bottom: 1rem; }
+        .project-simple .project-resume { font-size: 1.1rem; color: #666; }
+        
+        /* Empty state */
+        .empty-state { text-align: center; padding: 4rem 2rem; background: white; border-radius: 16px; }
+        .empty-state .icon { font-size: 4rem; margin-bottom: 1rem; }
+        .empty-state p { font-size: 1.1rem; color: #888; }
+        
+        /* LIGHTBOX */
+        .lightbox { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.95); z-index: 9999; display: none; align-items: center; justify-content: center; padding: 1rem; }
+        .lightbox.active { display: flex; }
+        .lightbox-content { position: relative; max-width: 95vw; max-height: 95vh; animation: zoomIn 0.3s ease; }
+        @keyframes zoomIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        .lightbox-content img { max-width: 100%; max-height: 90vh; border-radius: 8px; box-shadow: 0 10px 50px rgba(0,0,0,0.5); }
+        .lightbox-close { position: absolute; top: -15px; right: -15px; width: 40px; height: 40px; background: white; border: none; border-radius: 50%; font-size: 1.5rem; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
+        .lightbox-close:hover { background: var(--or); }
+        .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; background: white; border: none; border-radius: 50%; font-size: 1.5rem; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .lightbox-nav:hover { background: var(--or); }
+        .lightbox-nav.prev { left: 1rem; }
+        .lightbox-nav.next { right: 1rem; }
+        .lightbox-caption { position: absolute; bottom: -50px; left: 0; right: 0; text-align: center; color: white; font-size: 1rem; }
+        
+        /* Footer */
+        .footer { background: var(--bleu-vizille); color: white; padding: 2rem 1rem; margin-top: 3rem; text-align: center; }
+        .footer a { color: var(--or-clair); }
+        
+        /* Raccourcis clavier */
+        .keyboard-hint { text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #aaa; }
+        .keyboard-hint kbd { background: white; border: 1px solid #ddd; padding: 0.2rem 0.5rem; border-radius: 4px; font-family: inherit; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .tabs { flex-wrap: nowrap; }
+            .tab { padding: 0.8rem 1rem; flex: none; }
+            .tab .label { display: none; }
+            .tab .icon { font-size: 1.5rem; }
+            .project-header, .project-body, .project-fiche { padding-left: 1.5rem; padding-right: 1.5rem; }
+            .project-footer { padding: 1.2rem 1.5rem; }
+            .nav-arrow { width: 44px; height: 44px; }
+            .lightbox-nav { display: none; }
+            .project-thumbnail img { width: 150px; }
+        }
+        @media (max-width: 500px) {
+            .header-main nav { display: none; }
+            .project-title { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">Bilan • Mandat 2020-2026</div>
+        <div class="header-main">
+            <a href="index.html"><img src="images/logo.png" alt="Vizille en Mouvement"></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="bilan.html">Bilan</a></li>
+                    <li><a href="projet.html" class="active">Projet</a></li>
+                    <li><a href="blog.html">Actualités</a></li>
+                    <li><a href="equipe.html">Équipe</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <h1>Bilan 2020-2026</h1>
+        <p class="slogan">350 actions réalisées en 17 thématiques</p>
+    </section>
+    
+    <div class="tabs-container">
+        <div class="tabs" id="tabs"></div>
+    </div>
+    
+    <div class="container">
+        <div class="project-nav">
+            <button class="nav-arrow" id="btn-prev" title="Projet précédent">←</button>
+            <div class="nav-counter"><span class="current" id="nav-current">1</span> / <span id="nav-total">1</span></div>
+            <button class="nav-arrow" id="btn-next" title="Projet suivant">→</button>
+        </div>
+        
+        <div class="nav-dots" id="nav-dots"></div>
+        
+        <div id="project-container"></div>
+        
+        <p class="keyboard-hint">💡 <kbd>←</kbd> <kbd>→</kbd> pour naviguer</p>
+    </div>
+    
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close">×</button>
+            <button class="lightbox-nav prev" id="lightbox-prev">←</button>
+            <button class="lightbox-nav next" id="lightbox-next">→</button>
+            <img src="" alt="" id="lightbox-img">
+            <p class="lightbox-caption" id="lightbox-caption"></p>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>© 2026 Vizille en Mouvement · <a href="mentions-legales.html">Mentions légales</a> · <a href="contact.html">Contact</a></p>
+    </footer>
+
+<script>
+const THEMES = [
+    { id: 'Culture', label: 'Culture', icon: '🎭' },
+    { id: 'Environnement', label: 'Environnement', icon: '🌿' },
+    { id: 'Travaux', label: 'Travaux', icon: '🏗️' },
+    { id: 'Patrimoine', label: 'Patrimoine', icon: '🏛️' },
+    { id: 'Solidarité', label: 'Solidarité', icon: '🤝' },
+    { id: 'Sport', label: 'Sport', icon: '⚽' },
+    { id: 'Enfance', label: 'Enfance', icon: '👶' },
+    { id: 'Mobilités', label: 'Mobilités', icon: '🚲' },
+    { id: 'Urbanisme', label: 'Urbanisme', icon: '🏘️' },
+    { id: 'Tranquillité publique', label: 'Tranquillité', icon: '🛡️' },
+    { id: 'Économie', label: 'Économie', icon: '🏪' },
+    { id: 'Finance', label: 'Finance', icon: '💰' },
+    { id: 'Santé', label: 'Santé', icon: '🏥' },
+    { id: 'Intercommunalité', label: 'Interco', icon: '🏙️' },
+    { id: 'Administration', label: 'Admin', icon: '📋' },
+    { id: 'Jumelages', label: 'Jumelages', icon: '🌍' },
+    { id: 'Personnel', label: 'Personnel', icon: '👥' }
+];
+
+let allProjets = [];
+let filteredProjets = [];
+let currentTheme = 'Culture';
+let currentIndex = 0;
+
+const themeClass = t => {
+    const mapping = {
+        'Culture': 'culture',
+        'Environnement': 'environnement',
+        'Travaux': 'travaux',
+        'Patrimoine': 'patrimoine',
+        'Solidarité': 'solidarite',
+        'Sport': 'sport',
+        'Enfance': 'enfance',
+        'Mobilités': 'mobilites',
+        'Urbanisme': 'urbanisme',
+        'Tranquillité publique': 'tranquillite',
+        'Économie': 'economie',
+        'Finance': 'finance',
+        'Santé': 'sante',
+        'Intercommunalité': 'interco',
+        'Administration': 'admin',
+        'Jumelages': 'jumelages',
+        'Personnel': 'personnel'
+    };
+    return mapping[t] || '';
+};
+
+async function loadData() {
+    try {
+        const r = await fetch('data.json');
+        allProjets = await r.json();
+        filterByTheme(currentTheme);
+        renderTabs();
+    } catch(e) {
+        console.error(e);
+        document.getElementById('project-container').innerHTML = '<div class="empty-state"><div class="icon">⚠️</div><p>Erreur de chargement</p></div>';
+    }
+}
+
+function filterByTheme(theme) {
+    currentTheme = theme;
+    filteredProjets = allProjets.filter(p => p.theme === theme);
+    filteredProjets.sort((a, b) => {
+        if (b.importance !== a.importance) return b.importance - a.importance;
+        return (a.id || 0) - (b.id || 0);
+    });
+    currentIndex = 0;
+    render();
+}
+
+function renderTabs() {
+    const html = THEMES.map(th => {
+        const count = allProjets.filter(p => p.theme === th.id).length;
+        return `<div class="tab ${currentTheme === th.id ? 'active' : ''}" data-theme="${th.id}">
+            <span class="icon">${th.icon}</span>
+            <span class="label">${th.label}</span>
+            <span class="badge">${count}</span>
+        </div>`;
+    }).join('');
+    document.getElementById('tabs').innerHTML = html;
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.onclick = () => filterByTheme(tab.dataset.theme);
+    });
+}
+
+function renderDots() {
+    const html = filteredProjets.map((_, i) => 
+        `<div class="nav-dot ${i === currentIndex ? 'active' : ''}" data-index="${i}"></div>`
+    ).join('');
+    document.getElementById('nav-dots').innerHTML = html;
+    document.querySelectorAll('.nav-dot').forEach(dot => {
+        dot.onclick = () => { currentIndex = parseInt(dot.dataset.index); renderProject(); };
+    });
+}
+
+function renderProject() {
+    const container = document.getElementById('project-container');
+    
+    if (filteredProjets.length === 0) {
+        container.innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>Aucun projet dans cette thématique</p></div>';
+        document.getElementById('nav-current').textContent = '0';
+        document.getElementById('nav-total').textContent = '0';
+        return;
+    }
+    
+    const p = filteredProjets[currentIndex];
+    const hasDetails = p.chiffres || p.chronologie || p.details || p.lien_source;
+    
+    let html = `<div class="project-card theme-${themeClass(p.theme)}">`;
+    
+    // Header avec statut et année
+    html += `<div class="project-header">`;
+    html += `<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">`;
+    html += `<span class="project-theme-badge">${p.theme}</span>`;
+    if (p.statut) {
+        const statutClass = p.statut === 'Réalisé' ? 'realise' : (p.statut === 'En cours' ? 'encours' : 'programme');
+        html += `<span class="statut-badge ${statutClass}">${p.statut}</span>`;
+    }
+    html += `</div>`;
+    html += `<h2 class="project-title">${p.titre}</h2>`;
+    if (p.annee) html += `<div class="project-slogan">📅 ${p.annee}${p.annee_fin && p.annee_fin !== p.annee ? ' - ' + p.annee_fin : ''}</div>`;
+    html += `</div>`;
+    
+    // Body
+    html += `<div class="project-body">`;
+    if (p.description) html += `<p class="project-description">${p.description}</p>`;
+    
+    // Chiffres clés
+    if (p.chiffres && p.chiffres.length) {
+        html += `<div class="chiffres-container">`;
+        p.chiffres.forEach(c => {
+            html += `<div class="chiffre-box"><div class="chiffre-valeur">${c.valeur}</div><div class="chiffre-label">${c.label}</div></div>`;
+        });
+        html += `</div>`;
+    }
+    
+    // Détails
+    if (p.details) {
+        html += `<div class="project-section details"><h4>📋 Détails</h4><p>${p.details}</p></div>`;
+    }
+    
+    // Chronologie
+    if (p.chronologie && p.chronologie.length) {
+        html += `<div class="project-section chronologie"><h4>📆 Chronologie</h4><ul class="chrono-list">`;
+        p.chronologie.slice(0, 5).forEach(c => {
+            html += `<li><span class="chrono-date">${c.date}</span> ${c.evenement}</li>`;
+        });
+        if (p.chronologie.length > 5) html += `<li class="chrono-more">... et ${p.chronologie.length - 5} autres événements</li>`;
+        html += `</ul></div>`;
+    }
+    
+    // Sources / Liens
+    if (p.lien_source && p.lien_source.length) {
+        html += `<div class="project-section sources"><h4>🔗 Sources</h4><div class="sources-list">`;
+        p.lien_source.slice(0, 3).forEach(s => {
+            html += `<a href="${s.url}" target="_blank" class="source-link">${s.type}: ${s.label}</a>`;
+        });
+        html += `</div></div>`;
+    }
+    
+    html += `</div>`;
+    
+    // Budget si disponible
+    if (p.budget && p.budget > 0) {
+        html += `<div class="project-footer"><p class="project-vision">💰 Budget : ${p.budget.toLocaleString('fr-FR')} €</p></div>`;
+    }
+    
+    html += `</div>`;
+    container.innerHTML = html;
+    
+    // MAJ navigation
+    document.getElementById('nav-current').textContent = currentIndex + 1;
+    document.getElementById('nav-total').textContent = filteredProjets.length;
+    document.getElementById('btn-prev').disabled = currentIndex === 0;
+    document.getElementById('btn-next').disabled = currentIndex === filteredProjets.length - 1;
+    
+    document.querySelectorAll('.nav-dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+    });
+}
+
+function render() {
+    renderTabs();
+    renderDots();
+    renderProject();
+}
+
+function prev() { if (currentIndex > 0) { currentIndex--; renderProject(); } }
+function next() { if (currentIndex < filteredProjets.length - 1) { currentIndex++; renderProject(); } }
+
+// LIGHTBOX
+function openLightbox(src, caption) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').textContent = caption;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function lightboxPrev() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        renderProject();
+        const p = filteredProjets[currentIndex];
+        if (p.image) {
+            document.getElementById('lightbox-img').src = p.image;
+            document.getElementById('lightbox-caption').textContent = p.titre;
+        }
+    }
+}
+
+function lightboxNext() {
+    if (currentIndex < filteredProjets.length - 1) {
+        currentIndex++;
+        renderProject();
+        const p = filteredProjets[currentIndex];
+        if (p.image) {
+            document.getElementById('lightbox-img').src = p.image;
+            document.getElementById('lightbox-caption').textContent = p.titre;
+        }
+    }
+}
+
+// Events
+document.getElementById('btn-prev').onclick = prev;
+document.getElementById('btn-next').onclick = next;
+document.getElementById('lightbox-close').onclick = closeLightbox;
+document.getElementById('lightbox-prev').onclick = lightboxPrev;
+document.getElementById('lightbox-next').onclick = lightboxNext;
+document.getElementById('lightbox').onclick = e => { if (e.target.id === 'lightbox') closeLightbox(); };
+
+// Clavier
+document.addEventListener('keydown', e => {
+    const lightboxOpen = document.getElementById('lightbox').classList.contains('active');
+    if (e.key === 'Escape' && lightboxOpen) closeLightbox();
+    if (e.key === 'ArrowLeft') lightboxOpen ? lightboxPrev() : prev();
+    if (e.key === 'ArrowRight') lightboxOpen ? lightboxNext() : next();
+});
+
+// Swipe mobile
+let touchStartX = 0;
+document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
+document.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
+});
+
+loadData();
+</script>
+</body>
+</html>

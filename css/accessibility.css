@@ -1,0 +1,331 @@
+/* ===== ACCESSIBILITÉ - Vizille en Mouvement ===== */
+/* Corrections WCAG 2.1 AA */
+
+/* ===== 1. SKIP LINK ===== */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bleu-vizille);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0 0 8px 8px;
+    z-index: 10000;
+    font-weight: 600;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--or);
+    outline-offset: 2px;
+}
+
+/* ===== 2. FOCUS VISIBLE (clavier uniquement) ===== */
+
+/* Style de focus global */
+:focus-visible {
+    outline: 3px solid var(--or);
+    outline-offset: 3px;
+}
+
+/* Liens */
+a:focus-visible {
+    outline: 3px solid var(--or);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Boutons */
+.btn:focus-visible {
+    outline: 3px solid var(--or);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px rgba(201, 162, 39, 0.25);
+}
+
+/* Navigation */
+nav a:focus-visible {
+    background: rgba(201, 162, 39, 0.2);
+    outline: 2px solid var(--or);
+    outline-offset: 2px;
+}
+
+/* Cartes cliquables */
+.card:focus-visible,
+.action-card:focus-visible,
+.projet-card:focus-visible {
+    outline: 3px solid var(--or);
+    outline-offset: 2px;
+    box-shadow: var(--shadow-lg), 0 0 0 6px rgba(201, 162, 39, 0.2);
+}
+
+/* Boutons de fermeture modale */
+.modal-close:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 2px;
+    background: rgba(255,255,255,0.4);
+}
+
+/* Menu mobile toggle */
+.menu-toggle:focus-visible {
+    outline: 3px solid var(--or);
+    outline-offset: 2px;
+}
+
+/* Filtres/badges cliquables */
+.theme-btn:focus-visible,
+.filter-btn:focus-visible {
+    outline: 3px solid var(--bleu-vizille);
+    outline-offset: 2px;
+}
+
+/* ===== 3. CONTRASTE AMÉLIORÉ (WCAG 2.1 AA) ===== */
+
+/* Bouton or : texte sombre au lieu de blanc */
+.btn-gold {
+    background: var(--or);
+    color: #1a1a1a; /* Noir au lieu de blanc pour meilleur contraste */
+    font-weight: 700;
+}
+
+.btn-gold:hover {
+    background: #d4ad2e;
+    color: #1a1a1a;
+}
+
+/* Badge or : texte sombre */
+.badge-gold {
+    background: var(--or);
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+/* Liens or dans footer : assombrir */
+footer a {
+    color: #e8c84a; /* Or plus clair pour meilleur contraste sur fond sombre */
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* Signature/slogan : texte or accessible (ratio 4.5:1) */
+.signature,
+.mot-texte .signature {
+    color: var(--or-texte, #8a6d14) !important;
+}
+
+/* Texte or sur fond blanc - utiliser la version assombrie */
+.slogan,
+.header-slogan,
+.footer-slogan {
+    color: var(--or-texte, #8a6d14);
+}
+
+/* Sous-titres portrait */
+.portrait-wrapper span,
+.leader-role {
+    color: var(--or-texte, #8a6d14) !important;
+}
+
+/* Textes secondaires gris - minimum #595959 pour ratio 7:1 */
+.item-desc,
+.card-description,
+.article-excerpt,
+.team-bio,
+.faq-answer p,
+small,
+.text-muted,
+.text-secondary {
+    color: var(--gris-secondaire, #595959);
+}
+
+/* Métadonnées articles */
+.article-meta,
+.article-date {
+    color: var(--gris-secondaire, #595959);
+}
+
+/* Placeholders de formulaires */
+::placeholder {
+    color: #767676; /* Ratio 4.5:1 sur blanc */
+    opacity: 1;
+}
+
+/* ===== 4. TAILLE CIBLE TACTILE ===== */
+/* Minimum 44x44px pour éléments interactifs (WCAG 2.5.5) */
+
+.social-links a {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.menu-toggle {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+/* ===== 5. ANIMATIONS RÉDUITES ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .card:hover {
+        transform: none;
+    }
+    
+    .btn:hover {
+        transform: none;
+    }
+}
+
+/* ===== 6. INDICATEURS VISUELS NON-COULEUR ===== */
+/* Ne pas se fier uniquement à la couleur */
+
+/* Liens : soulignement en plus de la couleur */
+.mot-texte a,
+.card-body a,
+article a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.mot-texte a:hover,
+.card-body a:hover,
+article a:hover {
+    text-decoration-thickness: 3px;
+}
+
+/* Champs obligatoires */
+.form-group.required label::after {
+    content: " *";
+    color: #c0392b;
+}
+
+/* Erreurs : icône en plus de la couleur rouge */
+.error-message::before {
+    content: "⚠️ ";
+}
+
+.success-message::before {
+    content: "✅ ";
+}
+
+/* ===== 7. ESPACEMENT TEXTE ===== */
+/* WCAG 1.4.12 - Text Spacing */
+
+body {
+    word-spacing: 0.1em;
+}
+
+p, li {
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+}
+
+/* ===== 8. FOCUS TRAP MODAL ===== */
+/* Empêcher le focus de sortir des modales */
+
+.modal-overlay:not(.active) {
+    visibility: hidden;
+}
+
+.modal-overlay.active [tabindex="-1"] {
+    outline: none;
+}
+
+/* ===== 9. CARTES CLIQUABLES ACCESSIBLES ===== */
+/* Navigation clavier pour les cartes interactives */
+
+.action-card[tabindex="0"],
+.theme-card[tabindex="0"],
+.team-card[tabindex="0"],
+.article-card[tabindex="0"],
+.faq-item[tabindex="0"] {
+    cursor: pointer;
+}
+
+.action-card[tabindex="0"]:focus-visible,
+.theme-card[tabindex="0"]:focus-visible,
+.team-card[tabindex="0"]:focus-visible,
+.article-card[tabindex="0"]:focus-visible {
+    outline: 3px solid var(--or);
+    outline-offset: 3px;
+    box-shadow: var(--shadow-lg), 0 0 0 6px rgba(201, 162, 39, 0.2);
+}
+
+/* ===== 10. LIENS RÉSEAUX SOCIAUX ===== */
+/* Icônes décoratives masquées, aria-label pour accessibilité */
+
+.social-links a[aria-label] {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a[aria-label] span[aria-hidden="true"] {
+    font-size: 1.5rem;
+}
+
+/* ===== 11. ATTRIBUTS ARIA MODALES ===== */
+
+.modal-overlay[role="dialog"] {
+    /* Styles de base déjà définis */
+}
+
+.modal-overlay[role="dialog"][aria-modal="true"] .modal {
+    /* Focus trap actif */
+}
+
+/* ===== 12. IMAGES DÉCORATIVES ===== */
+
+img[alt=""][role="presentation"] {
+    /* Images purement décoratives */
+}
+
+/* ===== 13. ÉTATS INTERACTIFS VISIBLES ===== */
+
+/* Bouton actif/pressé */
+button:active,
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* État désactivé visible */
+button:disabled,
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ===== 14. TEXTE REDIMENSIONNABLE ===== */
+/* Support du zoom texte jusqu'à 200% */
+
+html {
+    font-size: 100%; /* Base 16px, respecte préférences utilisateur */
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 100%;
+    }
+}

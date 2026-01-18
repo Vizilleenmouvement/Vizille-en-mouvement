@@ -12,18 +12,6 @@
     "chiffres": []
   },
   {
-    "id": 33,
-    "titre": "Renforcer la transparence (open data)",
-    "theme": "Démocratie locale",
-    "statut": "Programmé",
-    "annee": 2027,
-    "budget": 0,
-    "resume": "Transparence",
-    "description": "",
-    "importance": 1,
-    "chiffres": []
-  },
-  {
     "id": 34,
     "titre": "Le maire siègera personnellement aux conseils métropolitains",
     "theme": "Métropole",
@@ -156,7 +144,7 @@
     "budget": 0,
     "resume": "Protéger les quartiers habités",
     "description": "Réduire les nuisances du transit : bruit, vitesses excessives, à-coups de circulation.",
-    "importance": 2,
+    "importance": 3,
     "chiffres": [],
     "tags": [
       "Tranquillité",
@@ -193,7 +181,7 @@
     "budget": 0,
     "resume": "Un plan de circulation lisible",
     "description": "Clarifier les itinéraires, hiérarchiser les axes, réduire détours et conflits d'usages.",
-    "importance": 2,
+    "importance": 3,
     "chiffres": [],
     "tags": [
       "Lisibilité",
@@ -948,13 +936,32 @@
       "Délais d'inscription",
       "Satisfaction familles"
     ],
-    "image": "images/objectifs/enfance_1.png"
+    "image": "images/objectifs/enfance_1.png",
+    "description": "Renforcer notre implication au sein du SICCE pour sécuriser le fonctionnement et l'accessibilité de la crèche Les Petits Drôles, dans un contexte de circulation contraint.",
+    "slogan": "Accompagner • Sécuriser • Faciliter",
+    "enjeux": [
+      "Garantir l'accès à la crèche pour les familles vizilloises",
+      "Peser sur les orientations stratégiques du SICCE",
+      "Coordonner avec le LAEP Bleu Citron et le Relais PE"
+    ],
+    "axes_action": [
+      "Participation active à la gouvernance du SICCE",
+      "Dialogue renforcé avec la CAF et le Département",
+      "Amélioration de l'accessibilité (stationnement, accès)",
+      "Étude des besoins complémentaires"
+    ],
+    "vision": "Une offre petite enfance accessible et de qualité pour toutes les familles vizilloises.",
+    "tags": [
+      "Crèche",
+      "SICCE",
+      "Petite enfance"
+    ]
   },
   {
     "id": 508,
     "theme": "Enfance/Jeunesse",
     "titre": "Conseil des jeunes",
-    "soustitre": "Donner la parole aux enfants",
+    "soustitre": "Former les citoyens de demain",
     "idee_force": "Former les citoyens de demain commence dès l'école. Le conseil des jeunes permet aux élèves de s'initier à la démocratie locale et de participer à la vie de la commune.",
     "actions": [
       "Créer un conseil des jeunes (élèves d'élémentaire)",
@@ -963,11 +970,30 @@
       "Permettre aux jeunes de porter des projets concrets"
     ],
     "indicateurs": [
-      "Participants",
+      "Nombre de participants",
       "Projets proposés",
       "Écoles participantes"
     ],
-    "image": "images/objectifs/enfance_2.png"
+    "image": "images/objectifs/enfance_2.png",
+    "description": "Créer un conseil des jeunes ciblant prioritairement les élèves d'élémentaire, public le plus réceptif à cette démarche d'initiation à la démocratie locale.",
+    "slogan": "Écouter • Impliquer • Former",
+    "enjeux": [
+      "Former les futurs citoyens dès l'école",
+      "Donner la parole aux enfants",
+      "Créer du lien entre jeunes et élus"
+    ],
+    "axes_action": [
+      "S'inspirer des dispositifs des communes voisines",
+      "Organiser des séances régulières avec les élus",
+      "Permettre aux jeunes de porter des projets concrets",
+      "Valoriser leurs réalisations"
+    ],
+    "vision": "Les citoyens de demain se forment aujourd'hui.",
+    "tags": [
+      "Démocratie",
+      "Jeunesse",
+      "Participation"
+    ]
   },
   {
     "id": 509,
@@ -984,15 +1010,34 @@
     "indicateurs": [
       "Températures relevées",
       "Classes équipées",
-      "Signalements"
+      "Alertes canicule"
     ],
-    "image": "images/objectifs/enfance_3.png"
+    "image": "images/objectifs/enfance_3.png",
+    "description": "Alerte sur les températures excessives dans les salles de classe l'été (jusqu'à 44°C mesurés). Un plan d'action est nécessaire en attendant que les arbres plantés arrivent à maturité.",
+    "slogan": "Protéger • Rafraîchir • Anticiper",
+    "enjeux": [
+      "Protéger la santé des enfants et enseignants",
+      "Maintenir des conditions d'apprentissage correctes",
+      "Anticiper les épisodes caniculaires"
+    ],
+    "axes_action": [
+      "Déploiement de protections solaires (lames de bois, stores)",
+      "Étude géothermique des écoles",
+      "Renforcement du plan canicule",
+      "Végétalisation des cours (ombrage naturel)"
+    ],
+    "vision": "Des écoles où il fait bon apprendre, même en été.",
+    "tags": [
+      "Écoles",
+      "Canicule",
+      "Confort"
+    ]
   },
   {
     "id": 510,
     "theme": "Enfance/Jeunesse",
     "titre": "Engagement citoyen des jeunes",
-    "soustitre": "Valoriser l'engagement et les compétences",
+    "soustitre": "Valoriser l'engagement",
     "idee_force": "Encourager les jeunes à s'engager dans des actions utiles à la collectivité : premiers secours, pompiers, bénévolat associatif. Un jeune référent peut inspirer ses pairs.",
     "actions": [
       "Identifier des jeunes référents (pompiers, associations)",
@@ -1005,13 +1050,32 @@
       "Actions de bénévolat",
       "Référents identifiés"
     ],
-    "image": "images/objectifs/enfance_4.png"
+    "image": "images/objectifs/enfance_4.png",
+    "description": "Valoriser l'engagement des jeunes Vizillois à travers des actions concrètes : premiers secours, pompiers, bénévolat associatif.",
+    "slogan": "S'engager • Apprendre • Transmettre",
+    "enjeux": [
+      "Encourager l'engagement citoyen des jeunes",
+      "Développer des compétences utiles",
+      "Créer des vocations"
+    ],
+    "axes_action": [
+      "Identifier des jeunes référents engagement citoyen",
+      "Formation aux gestes de premiers secours avec les pompiers",
+      "Mise en valeur des parcours d'engagement",
+      "Partenariat avec les associations locales"
+    ],
+    "vision": "Des jeunes acteurs de leur territoire.",
+    "tags": [
+      "Engagement",
+      "Pompiers",
+      "Bénévolat"
+    ]
   },
   {
     "id": 511,
     "theme": "Enfance/Jeunesse",
     "titre": "Aller vers les adolescents",
-    "soustitre": "Créer du lien avec les jeunes « dehors »",
+    "soustitre": "Créer du lien",
     "idee_force": "Certains adolescents ne fréquentent pas les structures existantes. Il faut aller à leur rencontre, comprendre leurs besoins. L'objectif n'est pas de surveiller mais d'accompagner.",
     "actions": [
       "Actions « aller-vers » dans l'espace public",
@@ -1021,16 +1085,35 @@
     ],
     "indicateurs": [
       "Jeunes rencontrés",
-      "Activités proposées",
-      "Projets accompagnés"
+      "Accompagnements réalisés",
+      "Orientation vers structures"
     ],
-    "image": "images/objectifs/enfance_5.png"
+    "image": "images/objectifs/enfance_5.png",
+    "description": "Constat de jeunes 'dehors' sans activité identifiée. Comment les atteindre et les impliquer ? L'objectif n'est pas de surveiller mais d'accompagner.",
+    "slogan": "Écouter • Comprendre • Accompagner",
+    "enjeux": [
+      "Aller à la rencontre des jeunes",
+      "Comprendre leurs besoins",
+      "Proposer des accompagnements adaptés"
+    ],
+    "axes_action": [
+      "Dispositifs 'aller-vers'",
+      "Accompagnement dans les démarches administratives",
+      "S'appuyer sur l'expérience associative locale",
+      "Créer des espaces de dialogue"
+    ],
+    "vision": "Aucun jeune ne doit rester sans solution.",
+    "tags": [
+      "Adolescents",
+      "Prévention",
+      "Accompagnement"
+    ]
   },
   {
     "id": 512,
     "theme": "Enfance/Jeunesse",
     "titre": "Accompagner les associations",
-    "soustitre": "Simplifier les démarches pour les jeunes",
+    "soustitre": "Soutenir la jeunesse associative",
     "idee_force": "Les jeunes ont des idées mais se heurtent souvent à la complexité administrative. La commune peut les accompagner dans leurs démarches de création et de financement.",
     "actions": [
       "Permanence d'aide aux démarches associatives",
@@ -1040,16 +1123,35 @@
     ],
     "indicateurs": [
       "Associations créées",
-      "Jeunes accompagnés",
+      "Bénévoles accompagnés",
       "Projets soutenus"
     ],
-    "image": "images/objectifs/enfance_6.png"
+    "image": "images/objectifs/enfance_6.png",
+    "description": "Les associations sont un levier essentiel pour l'épanouissement des jeunes. Le personnel doit se sentir bien pour porter des projets (attention aux RPS).",
+    "slogan": "Soutenir • Simplifier • Écouter",
+    "enjeux": [
+      "Favoriser la création d'associations jeunesse",
+      "Simplifier les démarches administratives",
+      "Prévenir les risques psychosociaux"
+    ],
+    "axes_action": [
+      "Soutien aux créations d'associations",
+      "Simplification des démarches",
+      "Écoute des attentes et besoins",
+      "Accompagnement des bénévoles"
+    ],
+    "vision": "Des associations dynamiques pour des jeunes épanouis.",
+    "tags": [
+      "Associations",
+      "Bénévolat",
+      "Soutien"
+    ]
   },
   {
     "id": 513,
     "theme": "Enfance/Jeunesse",
     "titre": "Handicap & inclusion",
-    "soustitre": "État des lieux et accompagnement",
+    "soustitre": "Une place pour chacun",
     "idee_force": "L'inclusion des enfants en situation de handicap est un enjeu majeur. Nous ferons un état des lieux de l'accessibilité et améliorerons l'accompagnement des familles.",
     "actions": [
       "État des lieux accessibilité (écoles, crèche, périscolaire)",
@@ -1058,17 +1160,36 @@
       "Formation des personnels à l'accueil du handicap"
     ],
     "indicateurs": [
-      "Enfants accueillis",
+      "Structures accessibles",
       "Familles accompagnées",
       "Personnels formés"
     ],
-    "image": "images/objectifs/enfance_7.png"
+    "image": "images/objectifs/enfance_7.png",
+    "description": "État des lieux nécessaire de ce qui existe déjà dans les écoles et l'accueil petite enfance. Coordination avec le Pôle Ressources Handicap du SICCE.",
+    "slogan": "Diagnostiquer • Accompagner • Inclure",
+    "enjeux": [
+      "Garantir l'accessibilité des structures",
+      "Accompagner les familles concernées",
+      "Coordonner avec les partenaires spécialisés"
+    ],
+    "axes_action": [
+      "Diagnostic accessibilité des écoles",
+      "Accompagnement des parents",
+      "Coordination avec le Pôle Ressources Handicap du SICCE",
+      "Formation des personnels"
+    ],
+    "vision": "Une école et des structures ouvertes à tous.",
+    "tags": [
+      "Handicap",
+      "Inclusion",
+      "Accessibilité"
+    ]
   },
   {
     "id": 514,
     "theme": "Enfance/Jeunesse",
     "titre": "Numérique & aide aux devoirs",
-    "soustitre": "Réduire les inégalités, soutenir la réussite",
+    "soustitre": "Réduire la fracture numérique",
     "idee_force": "Tous les enfants n'ont pas les mêmes chances face au numérique et à l'aide aux devoirs. La commune agira pour réduire ces inégalités et offrir un soutien adapté à tous.",
     "actions": [
       "Accès au numérique pour tous (équipements, connexion)",
@@ -1077,10 +1198,520 @@
       "Formation des parents aux outils numériques"
     ],
     "indicateurs": [
-      "Enfants aidés",
-      "Familles accompagnées",
-      "Équipements fournis"
+      "Jeunes accompagnés",
+      "Séances d'aide aux devoirs",
+      "Formations réalisées"
     ],
-    "image": "images/objectifs/enfance_8.png"
+    "image": "images/objectifs/enfance_8.png",
+    "description": "Tous les jeunes ne sont pas égaux face au numérique. L'aide aux devoirs est un besoin identifié pour accompagner la réussite scolaire.",
+    "slogan": "Accompagner • Former • Équiper",
+    "enjeux": [
+      "Réduire la fracture numérique",
+      "Accompagner la réussite scolaire",
+      "Former aux outils numériques"
+    ],
+    "axes_action": [
+      "Créer des espaces numériques accompagnés",
+      "Mettre en place des dispositifs d'aide aux devoirs",
+      "Former les jeunes et les familles au numérique",
+      "Équiper les structures en matériel adapté"
+    ],
+    "vision": "Le numérique au service de la réussite de tous.",
+    "tags": [
+      "Numérique",
+      "Devoirs",
+      "Égalité"
+    ]
+  },
+  {
+    "id": 601,
+    "titre": "Objectif 1 - Intégrer l'environnement dans chaque projet municipal",
+    "theme": "Transition écologique",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Démarches durables pour les générations futures",
+    "description": "Engager des démarches durables pour les générations futures et promouvoir une approche responsable et solidaire de la transition environnementale et énergétique.",
+    "importance": 3,
+    "chiffres": [],
+    "tags": [
+      "Durabilité",
+      "Transversalité",
+      "Responsabilité"
+    ],
+    "slogan": "Penser durable • Agir responsable",
+    "enjeux": [
+      "Engager des démarches durables pour les générations futures",
+      "Promouvoir une approche responsable et solidaire",
+      "Structurer ces enjeux via la transition numérique responsable"
+    ],
+    "axes_action": [
+      "Intégrer des critères environnementaux dans tous les projets",
+      "Évaluer l'impact carbone des décisions",
+      "Former les élus et agents aux enjeux écologiques",
+      "Favoriser les achats responsables"
+    ],
+    "vision": "L'environnement au cœur de chaque décision municipale.",
+    "numero": "1/2"
+  },
+  {
+    "id": 602,
+    "titre": "Objectif 2 - Faire de la transition un projet collectif",
+    "theme": "Transition écologique",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Projet collectif compris et maîtrisé localement",
+    "description": "Faire de la transition environnementale un projet collectif compris et maîtrisé localement par tous les Vizillois.",
+    "importance": 3,
+    "chiffres": [],
+    "tags": [
+      "Pédagogie",
+      "Collectif",
+      "Local"
+    ],
+    "slogan": "Comprendre • Partager • Agir ensemble",
+    "enjeux": [
+      "Approfondir les actions pédagogiques sur la base du Plan Climat",
+      "Renforcer les actions autour de la santé publique",
+      "Former les citoyens aux enjeux climatiques"
+    ],
+    "axes_action": [
+      "Développer des expérimentations collectives (potagers urbains, déchets)",
+      "Soutenir les projets pédagogiques dans les écoles",
+      "Organiser café-débats et ciné-débats",
+      "Sensibiliser aux transitions"
+    ],
+    "vision": "Cultiver les savoirs pour agir ensemble.",
+    "numero": "2/2"
+  },
+  {
+    "id": 611,
+    "titre": "Engagement 1 - Énergies renouvelables",
+    "theme": "Transition écologique",
+    "statut": "Étude",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Réseau de chaleur urbain",
+    "description": "Déployer des énergies renouvelables sur la commune avec des projets communaux et un accompagnement des citoyens.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": [
+      "Énergie",
+      "Chaleur",
+      "Renouvelable"
+    ],
+    "slogan": "Produire local • Consommer moins",
+    "enjeux": [
+      "Réduire la dépendance aux énergies fossiles",
+      "Diminuer les factures énergétiques des habitants"
+    ],
+    "axes_action": [
+      "Étudier un réseau de chaleur urbain (quartier nord/centre-ville)",
+      "Accompagner les copropriétés dans la transition énergétique",
+      "Développer le solaire sur les bâtiments publics"
+    ],
+    "vision": "Vizille, territoire à énergie positive.",
+    "numero": "E1/9"
+  },
+  {
+    "id": 612,
+    "titre": "Engagement 2 - Végétalisation",
+    "theme": "Transition écologique",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Désimperméabilisation des cours d'écoles",
+    "description": "Végétaliser et désimperméabiliser les espaces publics pour lutter contre les îlots de chaleur.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": [
+      "Végétalisation",
+      "Écoles",
+      "Fraîcheur"
+    ],
+    "slogan": "Verdir • Rafraîchir • Respirer",
+    "enjeux": [
+      "Lutter contre les îlots de chaleur",
+      "Améliorer le cadre de vie des enfants",
+      "Favoriser l'infiltration des eaux pluviales"
+    ],
+    "axes_action": [
+      "Désimperméabilisation cours écoles Joliot Curie, maternelle centre, école château",
+      "Aménagement place Henri Barbusse (place du marché)",
+      "Plantation d'arbres pour zones d'ombrage"
+    ],
+    "vision": "Des cours d'écoles vertes et fraîches pour nos enfants.",
+    "numero": "E2/9"
+  },
+  {
+    "id": 613,
+    "titre": "Engagement 3 - Accès à la fraîcheur",
+    "theme": "Transition écologique",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Valorisation des canaux et espaces de fraîcheur",
+    "description": "Garantir l'accès à la fraîcheur pour tous les habitants en période de canicule.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": [
+      "Fraîcheur",
+      "Canaux",
+      "Piscine"
+    ],
+    "slogan": "Se rafraîchir • Se ressourcer",
+    "enjeux": [
+      "Offrir des espaces de fraîcheur accessibles",
+      "Valoriser le patrimoine hydraulique"
+    ],
+    "axes_action": [
+      "Valorisation des canaux de la commune",
+      "Création d'espaces de fraîcheur",
+      "Maintien en fonction de la piscine municipale"
+    ],
+    "vision": "Des îlots de fraîcheur pour tous.",
+    "numero": "E3/9"
+  },
+  {
+    "id": 614,
+    "titre": "Engagement 4 - Biodiversité",
+    "theme": "Transition écologique",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Protection de la faune et de la flore",
+    "description": "Protéger et favoriser la biodiversité sur le territoire communal.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": [
+      "Biodiversité",
+      "Nature",
+      "Protection"
+    ],
+    "slogan": "Protéger • Préserver • Diversifier",
+    "enjeux": [
+      "Préserver les espèces locales",
+      "Maintenir les corridors écologiques"
+    ],
+    "axes_action": [
+      "Gestion différenciée des espaces verts",
+      "Création de refuges pour la faune",
+      "Lutte contre les espèces invasives"
+    ],
+    "vision": "Une ville où la nature a sa place.",
+    "numero": "E4/9"
+  },
+  {
+    "id": 615,
+    "titre": "Engagement 5 - Agriculture locale",
+    "theme": "Transition écologique",
+    "statut": "Programmé",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Soutien aux circuits courts",
+    "description": "Soutenir l'agriculture locale et les circuits courts.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": [
+      "Agriculture",
+      "Local",
+      "Circuits courts"
+    ],
+    "slogan": "Produire • Consommer • Local",
+    "enjeux": [
+      "Favoriser l'approvisionnement local",
+      "Soutenir les producteurs du territoire"
+    ],
+    "axes_action": [
+      "Développer les circuits courts pour la restauration scolaire",
+      "Soutenir les marchés de producteurs",
+      "Faciliter l'installation de maraîchers"
+    ],
+    "vision": "Manger local, c'est agir local.",
+    "numero": "E5/9"
+  },
+  {
+    "id": 616,
+    "titre": "Engagement 6 - Préserver la fonction agricole",
+    "theme": "Transition écologique",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "Protection des terres agricoles",
+    "description": "Préserver les terres agricoles face à l'urbanisation.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": [
+      "Terres",
+      "Agriculture",
+      "Préservation"
+    ],
+    "slogan": "Protéger les terres • Nourrir demain",
+    "enjeux": [
+      "Limiter l'artificialisation des sols",
+      "Maintenir le potentiel agricole"
+    ],
+    "axes_action": [
+      "Protéger les zones agricoles dans les documents d'urbanisme",
+      "Lutter contre la spéculation foncière",
+      "Favoriser la transmission des exploitations"
+    ],
+    "vision": "Pas de béton sur les terres nourricières.",
+    "numero": "E6/9"
+  },
+  {
+    "id": 617,
+    "titre": "Engagement 7 - Eau et biodiversité aquatique",
+    "theme": "Transition écologique",
+    "statut": "Programmé",
+    "annee": 2027,
+    "budget": 0,
+    "resume": "Protection des milieux aquatiques",
+    "description": "Protéger la ressource en eau et les milieux aquatiques.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": [
+      "Eau",
+      "Rivières",
+      "Aquatique"
+    ],
+    "slogan": "Préserver l'eau • Source de vie",
+    "enjeux": [
+      "Protéger la qualité de l'eau",
+      "Préserver les milieux humides"
+    ],
+    "axes_action": [
+      "Réduire les pollutions",
+      "Restaurer les berges de la Romanche",
+      "Protéger les zones humides"
+    ],
+    "vision": "L'eau, un bien commun à préserver.",
+    "numero": "E7/9"
+  },
+  {
+    "id": 618,
+    "titre": "Engagement 8 - Forêt communale",
+    "theme": "Transition écologique",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "125 ha de forêt à préserver",
+    "description": "Protéger et valoriser les 125 ha de forêt communale.",
+    "importance": 2,
+    "chiffres": [
+      {
+        "valeur": "125 ha",
+        "label": "de forêt communale"
+      }
+    ],
+    "tags": [
+      "Forêt",
+      "Biodiversité",
+      "Loisirs"
+    ],
+    "slogan": "Protéger • Gérer • Partager",
+    "enjeux": [
+      "Fonction environnementale : protection biodiversité, sols, paysage",
+      "Fonction économique : production de bois durable",
+      "Fonction sociale : promenades, randonnées, découverte nature"
+    ],
+    "axes_action": [
+      "Poursuivre le partenariat avec l'ONF et le Département",
+      "Créer des sentiers pédagogiques",
+      "Protéger les zones sensibles",
+      "Organiser des sorties nature"
+    ],
+    "vision": "Une forêt préservée, un poumon vert pour tous les Vizillois.",
+    "numero": "E8/9"
+  },
+  {
+    "id": 619,
+    "titre": "Engagement 9 - Éclairage public sobre",
+    "theme": "Transition écologique",
+    "statut": "Programmé",
+    "annee": 2026,
+    "budget": 0,
+    "resume": "LEDs et pilotage intelligent",
+    "description": "Moderniser l'éclairage public pour réduire la consommation énergétique.",
+    "importance": 2,
+    "chiffres": [],
+    "tags": [
+      "Éclairage",
+      "LED",
+      "Économie"
+    ],
+    "slogan": "Éclairer juste • Consommer moins",
+    "enjeux": [
+      "Réduire la consommation énergétique",
+      "Limiter la pollution lumineuse"
+    ],
+    "axes_action": [
+      "Généralisation des LEDs",
+      "Systèmes de pilotage (détection de présence)",
+      "Adaptation des horaires d'éclairage"
+    ],
+    "vision": "Un éclairage intelligent qui respecte la nuit.",
+    "numero": "E9/9"
+  },
+  {
+    "id": 620,
+    "theme": "Démocratie et concertation",
+    "importance": 3,
+    "titre": "Objectif 1 - Démocratie locale et concertation citoyenne",
+    "soustitre": "Faire vivre une démocratie active",
+    "description": "L'idée est de faire vivre une démocratie active, inclusive et émancipatrice.",
+    "slogan": "Écouter • Débattre • Décider ensemble",
+    "enjeux": [
+      "Impliquer tous les habitants dans la vie locale",
+      "Favoriser l'expression de chacun",
+      "Créer du lien entre générations"
+    ],
+    "axes_action": [
+      "Conseil de quartier",
+      "Associer jeunes, personnes précaires, seniors",
+      "Lieu ouvert dédié à l'écoute, ateliers, débats, formations"
+    ],
+    "indicateurs": [
+      "Réunions de quartier",
+      "Participants aux débats",
+      "Propositions citoyennes"
+    ],
+    "vision": "Une démocratie vivante où chaque voix compte.",
+    "tags": [
+      "Démocratie",
+      "Quartiers",
+      "Concertation"
+    ],
+    "numero": "1/5"
+  },
+  {
+    "id": 621,
+    "theme": "Démocratie et concertation",
+    "importance": 3,
+    "titre": "Objectif 2 - Éducation populaire et culture pour tous",
+    "soustitre": "Culture critique et émancipatrice",
+    "description": "Garantir l'accès à une culture critique, émancipatrice et accessible.",
+    "slogan": "Apprendre • Partager • S'émanciper",
+    "enjeux": [
+      "Rendre la culture accessible à tous",
+      "Favoriser la pensée critique",
+      "Soutenir les acteurs locaux"
+    ],
+    "axes_action": [
+      "Création d'un centre d'éducation populaire permanent (style maison des jeunes)",
+      "Café-débats, ciné-débats, théâtre-forums sur les enjeux sociaux, environnementaux, politiques",
+      "Appuis financiers aux associations locales d'éducation populaire (conventions avec l'Escale)",
+      "Résidences d'artistes ou de chercheurs dans les écoles ou les quartiers"
+    ],
+    "indicateurs": [
+      "Événements organisés",
+      "Participants",
+      "Associations soutenues"
+    ],
+    "vision": "La culture comme outil d'émancipation pour tous.",
+    "tags": [
+      "Culture",
+      "Éducation populaire",
+      "Débats"
+    ],
+    "numero": "2/5"
+  },
+  {
+    "id": 622,
+    "theme": "Démocratie et concertation",
+    "importance": 3,
+    "titre": "Objectif 3 - Jeunesse et émancipation",
+    "soustitre": "Acteurs de leur vie et territoire",
+    "description": "Donner les moyens aux jeunes de devenir acteurs de leur vie et de leur territoire.",
+    "slogan": "Penser • Agir • S'engager",
+    "enjeux": [
+      "Encourager l'engagement des jeunes",
+      "Développer l'esprit critique",
+      "Préserver l'intégrité intellectuelle"
+    ],
+    "axes_action": [
+      "Création d'un conseil municipal des jeunes",
+      "Atelier d'autodéfense intellectuelle (pensée critique, préserver l'intégrité intellectuelle)",
+      "Chantiers jeunes participatifs (service civique local)"
+    ],
+    "indicateurs": [
+      "Jeunes engagés",
+      "Projets portés",
+      "Chantiers réalisés"
+    ],
+    "vision": "Des jeunes citoyens actifs et éclairés.",
+    "tags": [
+      "Jeunesse",
+      "Émancipation",
+      "Engagement"
+    ],
+    "numero": "3/5"
+  },
+  {
+    "id": 623,
+    "theme": "Démocratie et concertation",
+    "importance": 3,
+    "titre": "Objectif 4 - Lutte contre les inégalités",
+    "soustitre": "Émancipation sociale",
+    "description": "Faire de l'éducation populaire un outil d'émancipation pour les personnes les plus éloignées des droits.",
+    "slogan": "Comprendre • Accéder • S'émanciper",
+    "enjeux": [
+      "Réduire les inégalités d'accès aux droits",
+      "Accompagner les publics fragiles",
+      "Favoriser l'autonomie"
+    ],
+    "axes_action": [
+      "Soutien à l'apprentissage du français",
+      "Ateliers juridiques, économiques et sociaux (comprendre ses droits, les institutions, le fonctionnement des aides)",
+      "Accès gratuit à des lieux de convivialité et d'apprentissage (jardins partagés, médiathèque animée, Escale, associations culturelles)",
+      "Promotion de la santé : CLSM (Conseil Local à la Santé Mentale), outil de démocratie en santé"
+    ],
+    "indicateurs": [
+      "Personnes accompagnées",
+      "Ateliers réalisés",
+      "Accès aux droits facilités"
+    ],
+    "vision": "Personne ne doit rester éloigné de ses droits.",
+    "tags": [
+      "Solidarité",
+      "Droits",
+      "Inclusion"
+    ],
+    "numero": "4/5"
+  },
+  {
+    "id": 624,
+    "theme": "Démocratie et concertation",
+    "importance": 3,
+    "titre": "Objectif 5 - Transition écologique et savoirs partagés",
+    "soustitre": "Au cœur de l'éducation populaire",
+    "description": "Faire de la transition un projet collectif, compris et maîtrisé localement.",
+    "slogan": "Comprendre • Expérimenter • Agir ensemble",
+    "enjeux": [
+      "Approfondir les actions pédagogiques sur le climat",
+      "Renforcer les actions de santé publique",
+      "Former les citoyens aux enjeux climatiques"
+    ],
+    "axes_action": [
+      "Sur la base du plan climat, approfondir les actions pédagogiques et sociétales",
+      "Renforcer les actions autour de la santé publique (pollution, dangers professionnels, habitat)",
+      "Formation citoyenne sur les enjeux climatiques et les transitions",
+      "Expérimentations collectives (potagers urbains, déchets...)",
+      "Soutien pédagogique, projets dans les écoles",
+      "Café-débats, ciné-débats"
+    ],
+    "indicateurs": [
+      "Formations réalisées",
+      "Projets école",
+      "Expérimentations collectives"
+    ],
+    "vision": "La transition écologique comprise et portée par tous.",
+    "tags": [
+      "Écologie",
+      "Éducation",
+      "Plan climat"
+    ],
+    "numero": "5/5"
   }
 ]
