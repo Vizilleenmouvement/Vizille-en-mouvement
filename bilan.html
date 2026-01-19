@@ -15,53 +15,7 @@
         /* ===== PAGE BILAN CARTES ===== */
         body { padding-top: 110px; }
         
-        /* Hero compact avec logo pulsant */
-        .bilan-hero {
-            background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair));
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-        .bilan-hero .logo-pulse {
-            width: 120px;
-            height: auto;
-            margin-bottom: 1rem;
-            animation: pulse 2s ease-in-out infinite;
-            filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.5));
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.5)); }
-            50% { transform: scale(1.05); filter: drop-shadow(0 8px 24px rgba(201, 162, 39, 0.8)); }
-        }
-        .bilan-hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin: 0 0 0.5rem 0;
-        }
-        .bilan-hero .slogan {
-            color: var(--or-clair);
-            font-size: 1.1rem;
-            margin: 0;
-        }
-        .bilan-hero .stats {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-        .bilan-hero .stat {
-            text-align: center;
-        }
-        .bilan-hero .stat-val {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--or-clair);
-        }
-        .bilan-hero .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
+        /* Hero utilise .hero-unified de page-header.css */
         
         /* Onglets principaux (thèmes) */
         .tabs-container {
@@ -287,8 +241,8 @@
     </header>
     <script src="js/menu-mobile.js"></script>
 
-    <section class="bilan-hero" id="main-content">
-        <img src="images/logo.png" alt="Vizille en Mouvement" class="logo-pulse">
+    <section class="hero-unified" id="main-content">
+        <img src="images/logo.png" alt="Vizille en Mouvement" class="hero-logo">
         <h1>Bilan 2020-2026</h1>
         <p class="slogan">Ce que nous avons accompli ensemble</p>
         <div class="stats" id="hero-stats"></div>

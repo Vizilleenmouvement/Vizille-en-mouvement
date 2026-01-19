@@ -1,5 +1,96 @@
 /* ===== PAGE HEADER (Hero Banner) - Vizille en Mouvement ===== */
 
+/* ===== HERO UNIFIÉ (style bilan - référence) ===== */
+.hero-unified {
+    background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair));
+    color: white;
+    padding: 2rem 1rem;
+    padding-top: calc(2rem + 110px); /* Compense le header fixe */
+    text-align: center;
+}
+
+.hero-unified .hero-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 1rem;
+    animation: pulse 2s ease-in-out infinite;
+    filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.5));
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.5)); }
+    50% { transform: scale(1.05); filter: drop-shadow(0 8px 24px rgba(201, 162, 39, 0.8)); }
+}
+
+.hero-unified h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.hero-unified .slogan {
+    color: var(--or-clair);
+    font-size: 1.1rem;
+    margin: 0;
+    font-style: italic;
+}
+
+.hero-unified .hero-subtitle {
+    opacity: 0.9;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Stats optionnelles (comme sur bilan) */
+.hero-unified .stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.hero-unified .stat {
+    text-align: center;
+}
+
+.hero-unified .stat-val {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--or-clair);
+}
+
+.hero-unified .stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Responsive hero unifié */
+@media (max-width: 768px) {
+    .hero-unified {
+        padding-top: calc(1.5rem + 70px);
+        padding-bottom: 1.5rem;
+    }
+    
+    .hero-unified .hero-logo {
+        width: 100px;
+    }
+    
+    .hero-unified h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-unified .slogan {
+        font-size: 1rem;
+    }
+    
+    .hero-unified .stat-val {
+        font-size: 2rem;
+    }
+}
+
+/* ===== ANCIEN HERO BANNER (avec image panorama) - conservé pour compatibilité ===== */
+
 /* Hero banner style index */
 .hero-banner {
     position: relative;

@@ -1316,13 +1316,13 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Zones Accélération Énergies Renouvelables",
-    "description": "Hydro, PV, réseau chaleur - unanimité",
+    "description": "Zones d'Accélération des Énergies Renouvelables (ZAEnR) validées sur tout le territoire communal. Filières retenues : hydroélectricité, photovoltaïque, réseau de chaleur urbain. Vote à l'unanimité.",
     "annee": "2025",
     "annee_fin": "2025",
     "budget": 0,
     "source": "Délib 2025-02-18-05",
     "importance": 1,
-    "resume": "Hydro, PV, réseau chaleur - unanimité",
+    "resume": "Hydroélectricité, photovoltaïque, réseau chaleur urbain - unanimité",
     "chiffres": [],
     "chronologie": [
       {
@@ -1369,13 +1369,13 @@
     "color": "#27ae60",
     "statut": "En cours",
     "titre": "Réseau de chaleur urbain",
-    "description": "Projet de réseau de chaleur urbain pour les quartiers nord et centre-ville de Vizille. Installation prévue en 2028.",
+    "description": "Réseau de chaleur urbain alimenté par une chaufferie bois, en partenariat avec Grenoble-Alpes Métropole (GAM). Desserte quartiers nord et centre-ville. Cession parcelle Chantefeuille (700m²) pour implantation chaufferie. Installation prévue 2028.",
     "annee": "2025",
     "annee_fin": "",
     "budget": 0,
     "source": "Délib 2025-09-30-15",
     "importance": 1,
-    "resume": "Création votée sept 2025, secteur nord",
+    "resume": "Création votée sept 2025, chaufferie bois avec GAM, secteur nord",
     "chiffres": [],
     "chronologie": [
       {
@@ -2307,14 +2307,14 @@
     "icon": "🌿",
     "color": "#27ae60",
     "statut": "En cours",
-    "titre": "Création étang dans le Plan",
-    "description": "Mare pédagogique zone verte",
+    "titre": "Mare pédagogique du Plan",
+    "description": "Création de la mare pédagogique dans le secteur du Plan, en partenariat avec l'Espace Belledonne. Outil de sensibilisation à la biodiversité et aux zones humides.",
     "annee": "2025",
     "annee_fin": "",
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "Mare pédagogique zone verte",
+    "resume": "Mare pédagogique zone verte, partenariat Espace Belledonne",
     "chiffres": [],
     "chronologie": [
       {
@@ -7555,13 +7555,13 @@
     "color": "#795548",
     "statut": "Réalisé",
     "titre": "Renégociation DEXIA",
-    "description": "Fonds soutien prêts structurés jusqu'au 31/12/2028",
+    "description": "Renégociation des conditions d'emprunt DEXIA. Bénéfice du fonds de soutien aux prêts structurés jusqu'au 31/12/2028.",
     "annee": "2024",
     "annee_fin": "2028",
     "budget": 0,
     "source": "Délib 2024-02-15-02",
     "importance": 1,
-    "resume": "Fonds soutien prêts structurés jusqu'au 31/12/2028",
+    "resume": "Fonds soutien prêts structurés jusqu'au 31/12/2028, renégociation conditions",
     "chiffres": [],
     "chronologie": [
       {
@@ -9140,59 +9140,6 @@
     "sous_categorie": "Gestion"
   },
   {
-    "id": 227,
-    "theme": "Environnement",
-    "icon": "🌿",
-    "color": "#27ae60",
-    "statut": "Réalisé",
-    "titre": "Zones d'Accélération EnR (ZAEnR) validées",
-    "description": "Hydroélectricité, photovoltaïque, réseau chaleur urbain - tout territoire",
-    "annee": "2025",
-    "annee_fin": "",
-    "budget": 0,
-    "source": "Délib 2025-02-18-05",
-    "importance": 1,
-    "resume": "Hydroélectricité, photovoltaïque, réseau chaleur urbain - tout territoire",
-    "chiffres": [],
-    "chronologie": [
-      {
-        "date": "2025",
-        "evenement": "Réalisation"
-      }
-    ],
-    "details": "",
-    "sources": [
-      {
-        "type": "doc",
-        "ref": "Délib 2025-02-18-05",
-        "desc": ""
-      }
-    ],
-    "lien_source": [
-      {
-        "type": "Page dédiée",
-        "label": "Eau et assainissement",
-        "url": "https://www.ville-vizille.fr/12659-eau-et-assainissement.htm"
-      },
-      {
-        "type": "Délibération",
-        "label": "Délibérations du Conseil Municipal",
-        "url": "https://www.ville-vizille.fr/12600-deliberations.htm"
-      },
-      {
-        "type": "Page thématique",
-        "label": "Environnement sur ville-vizille.fr",
-        "url": "https://www.ville-vizille.fr/12658-environnement.htm"
-      },
-      {
-        "type": "Page",
-        "label": "Transition écologique",
-        "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
-      }
-    ],
-    "sous_categorie": "Énergie & Climat"
-  },
-  {
     "id": 228,
     "theme": "Enfance",
     "icon": "👶",
@@ -10545,49 +10492,6 @@
       }
     ],
     "sous_categorie": "Renouvelables"
-  },
-  {
-    "id": 271,
-    "theme": "Finance",
-    "icon": "💰",
-    "color": "#795548",
-    "statut": "Réalisé",
-    "titre": "Renégociation emprunt DEXIA",
-    "description": "Renégociation des conditions d'emprunt",
-    "annee": "2023",
-    "annee_fin": "",
-    "budget": 0,
-    "source": "Délib",
-    "importance": 1,
-    "resume": "Renégociation des conditions d'emprunt",
-    "chiffres": [],
-    "chronologie": [
-      {
-        "date": "2023",
-        "evenement": "Réalisation"
-      }
-    ],
-    "details": "",
-    "sources": [
-      {
-        "type": "doc",
-        "ref": "Délib",
-        "desc": ""
-      }
-    ],
-    "lien_source": [
-      {
-        "type": "Délibération",
-        "label": "Délibérations du Conseil Municipal",
-        "url": "https://www.ville-vizille.fr/12600-deliberations.htm"
-      },
-      {
-        "type": "Page",
-        "label": "Budget",
-        "url": "https://www.ville-vizille.fr/12599-budget.htm"
-      }
-    ],
-    "sous_categorie": "Gestion"
   },
   {
     "id": 273,
@@ -12926,20 +12830,6 @@
     "budget": 0,
     "source": "Bilan adjoint culture - Espace Belledonne",
     "sous_categorie": "Mise à disposition"
-  },
-  {
-    "id": 351,
-    "theme": "Environnement",
-    "icon": "🐸",
-    "color": "#27ae60",
-    "statut": "Réalisé",
-    "titre": "Mare pédagogique",
-    "description": "Création de la mare pédagogique en partenariat avec l'Espace Belledonne. Outil de sensibilisation à l'environnement et à la biodiversité.",
-    "annee": "2024",
-    "annee_fin": "2024",
-    "budget": 0,
-    "source": "Bilan adjoint culture - Espace Belledonne",
-    "sous_categorie": "Énergie & Climat"
   },
   {
     "id": 352,
@@ -15678,10 +15568,11 @@
     "sous_categorie": "Énergie & Climat",
     "statut": "En cours",
     "titre": "Réunion publique chauffage urbain (janv. 2026)",
-    "description": "Réunion publique sur la future centrale de chauffage urbain (2028) pour les quartiers nord et centre-ville. Présentation des enjeux environnementaux, économiques et modalités de raccordement.",
-    "details": "Réunion organisée par la mairie avec l'accompagnement de la Métropole pour présenter le projet de réseau de chaleur urbain prévu pour 2028. Éclairages apportés sur les enjeux de la transition énergétique et les conditions de raccordement pour les habitants et copropriétés concernés.",
+    "description": "Réunion publique de concertation sur le projet de réseau de chaleur urbain. Présentation des enjeux environnementaux, économiques et des modalités de raccordement pour les habitants et copropriétés.",
+    "details": "Réunion organisée par la mairie avec l'accompagnement de Grenoble-Alpes Métropole. Démarche de concertation citoyenne dans le cadre de la transition environnementale. Information sur les conditions de raccordement au futur réseau alimenté par chaufferie bois.",
     "annee": "2026",
-    "importance": 2
+    "importance": 2,
+    "resume": "Concertation citoyenne janvier 2026"
   },
   {
     "id": 932,
