@@ -112,6 +112,12 @@
         .card.engagement .card-header { background: linear-gradient(135deg, #1e8449, var(--vert-engagement)); }
         .card.engagement { border-left: 4px solid var(--vert-engagement); }
         
+        /* Sections détaillées dans les cartes */
+        .card-section { margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px dashed var(--gris-doux); }
+        .card-section strong { color: var(--bleu-vizille); font-size: 0.85rem; display: block; margin-bottom: 0.3rem; }
+        .card-section p { margin: 0; font-size: 0.85rem; color: var(--gris-texte); line-height: 1.4; }
+        .card-desc { color: var(--bleu-vizille); margin-bottom: 0.5rem !important; }
+        
         @media (max-width: 768px) {
             body { padding-top: 80px; }
             .tabs-container { top: 80px; }
@@ -341,19 +347,28 @@ function renderThemeCards() {
         const cardClass = p.type === 'objectif' ? 'objectif' : (p.type === 'engagement' ? 'engagement' : '');
         const icon = p.type === 'objectif' ? '🎯' : (p.type === 'engagement' ? '🌱' : '📋');
         
+        // Afficher TOUS les détails dans la carte
+        let detailsHtml = '';
+        if (p.details) detailsHtml += `<div class="card-section"><strong>📋 Ce qu'on fait :</strong><p>${p.details}</p></div>`;
+        if (p.benefices) detailsHtml += `<div class="card-section"><strong>✅ Bénéfices :</strong><p>${p.benefices}</p></div>`;
+        if (p.indicateurs) detailsHtml += `<div class="card-section"><strong>📊 Indicateurs :</strong><p>${p.indicateurs}</p></div>`;
+        
         let metaHtml = '';
-        if (p.echeance || p.partenaires || p.financement) {
+        if (p.echeance || p.partenaires || p.financement || p.perimetre) {
             metaHtml = '<div class="meta">';
+            if (p.perimetre) metaHtml += `<span>📍 ${p.perimetre}</span>`;
             if (p.echeance) metaHtml += `<span>📅 ${p.echeance}</span>`;
-            if (p.partenaires) metaHtml += `<span>🤝 ${p.partenaires.substring(0, 50)}${p.partenaires.length > 50 ? '...' : ''}</span>`;
-            if (p.financement) metaHtml += `<span>💰 ${p.financement.substring(0, 40)}${p.financement.length > 40 ? '...' : ''}</span>`;
+            if (p.partenaires) metaHtml += `<span>🤝 ${p.partenaires}</span>`;
+            if (p.financement) metaHtml += `<span>💰 ${p.financement}</span>`;
             metaHtml += '</div>';
         }
         
         html += `<div class="card ${cardClass}">
             <div class="card-header"><h3>${icon} ${p.titre}</h3></div>
             <div class="card-body">
-                <p>${(p.description || p.resume || '').slice(0, 180)}${(p.description || '').length > 180 ? '...' : ''}</p>
+                <p class="card-desc"><strong>${p.resume || ''}</strong></p>
+                <p>${p.description || ''}</p>
+                ${detailsHtml}
                 ${metaHtml}
             </div>
         </div>`;
