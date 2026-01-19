@@ -4320,9 +4320,20 @@
         // ===== FAQ =====
         function renderFaq() {
             document.getElementById('faq-count').textContent = data.faq.length;
-            document.getElementById('faq-list').innerHTML = data.faq.length === 0
+            
+            // Trier par date décroissante (plus récente en premier)
+            const sortedFaq = [...data.faq].map((f, originalIndex) => ({...f, originalIndex}))
+                .sort((a, b) => {
+                    if (!a.date && !b.date) return 0;
+                    if (!a.date) return 1;
+                    if (!b.date) return -1;
+                    return new Date(b.date) - new Date(a.date);
+                });
+            
+            document.getElementById('faq-list').innerHTML = sortedFaq.length === 0
                 ? '<div class="empty-state"><div class="icon">❓</div><p>Aucune question</p></div>'
-                : data.faq.map((f, i) => {
+                : sortedFaq.map((f) => {
+                    const i = f.originalIndex;
                     const origineIcons = {
                         'Site web': '🌐',
                         'Facebook': '📘',
