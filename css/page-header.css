@@ -4,15 +4,15 @@
 .hero-unified {
     background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair));
     color: white;
-    padding: 2rem 1rem;
-    padding-top: calc(2rem + 110px); /* Compense le header fixe */
+    padding: 1.5rem 1rem;
+    padding-top: calc(1.5rem + 110px); /* Compense le header fixe */
     text-align: center;
 }
 
 .hero-unified .hero-logo {
-    width: 120px;
+    width: 200px;
     height: auto;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     animation: pulse 2s ease-in-out infinite;
     filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.5));
 }
@@ -68,24 +68,24 @@
 /* Responsive hero unifié */
 @media (max-width: 768px) {
     .hero-unified {
-        padding-top: calc(1.5rem + 70px);
-        padding-bottom: 1.5rem;
+        padding: 1rem;
+        padding-top: calc(1rem + 70px);
     }
     
     .hero-unified .hero-logo {
-        width: 100px;
+        width: 140px;
     }
     
     .hero-unified h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     
     .hero-unified .slogan {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     
     .hero-unified .stat-val {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 }
 
