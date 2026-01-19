@@ -111,8 +111,8 @@
 
         <!-- Section Vos Questions -->
         <div class="questions-header">
-            <h2>💬 Vos questions</h2>
-            <p>Les réponses aux questions posées par les Vizillois</p>
+            <h2>💬 Vos questions & messages</h2>
+            <p>Les échanges avec les Vizillois</p>
         </div>
 
         <div class="faq-list" id="faq-list">
@@ -182,14 +182,20 @@
                 if (!response.ok) throw new Error('Erreur');
 
                 faqData = await response.json();
-                faqData.sort((a, b) => (a.ordre || 99) - (b.ordre || 99));
+                // Trier par date décroissante (plus récent en premier)
+                faqData.sort((a, b) => {
+                    if (!a.date && !b.date) return 0;
+                    if (!a.date) return 1;
+                    if (!b.date) return -1;
+                    return new Date(b.date) - new Date(a.date);
+                });
                 renderFaq();
             } catch (err) {
                 document.getElementById('faq-list').innerHTML = `
                     <div class="empty-state">
                         <div class="icon">❓</div>
                         <h3>Aucune question pour le moment</h3>
-                        <p>Soyez le premier à poser une question !</p>
+                        <p>Soyez le premier à nous écrire !</p>
                     </div>
                 `;
             }
@@ -203,7 +209,7 @@
                     <div class="empty-state">
                         <div class="icon">❓</div>
                         <h3>Aucune question pour le moment</h3>
-                        <p>Soyez le premier à poser une question !</p>
+                        <p>Soyez le premier à nous écrire !</p>
                     </div>
                 `;
                 return;
@@ -211,12 +217,42 @@
 
             container.innerHTML = faqData.map((faq, index) => {
                 const isFacebook = faq.source === 'facebook';
+                const hasReponse = faq.reponse && faq.reponse.trim();
                 const borderStyle = isFacebook ? 'border-left: 4px solid #1877F2;' : '';
-                const sourceLabel = isFacebook
-                    ? `<div style="font-size: 0.85rem; color: #1877F2; margin-bottom: 0.5rem;">
-                         📘 Question de <strong>${faq.auteur || 'un internaute'}</strong> sur Facebook
-                       </div>`
-                    : '';
+                
+                // Source label
+                let sourceLabel = '';
+                if (isFacebook) {
+                    sourceLabel = `<div style="font-size: 0.85rem; color: #1877F2; margin-bottom: 0.5rem;">
+                         📘 Message de <strong>${faq.auteur || faq.pseudo || 'un internaute'}</strong> sur Facebook
+                       </div>`;
+                } else if (faq.origine) {
+                    const origineIcons = {
+                        'Site web': '🌐',
+                        'Facebook': '📘',
+                        'WhatsApp': '💬',
+                        'Permanence': '🏛️',
+                        'Email': '📧',
+                        'Autre': '📝'
+                    };
+                    const icon = origineIcons[faq.origine] || '📝';
+                    sourceLabel = `<div style="font-size: 0.85rem; color: #666; margin-bottom: 0.5rem;">
+                         ${icon} ${faq.pseudo ? `<strong>${faq.pseudo}</strong>` : 'Un Vizillois'}${faq.date ? ` • ${new Date(faq.date).toLocaleDateString('fr-FR')}` : ''}
+                       </div>`;
+                }
+
+                // Si pas de réponse, afficher comme message de soutien
+                if (!hasReponse) {
+                    return `
+                    <div class="faq-item message-soutien" style="${borderStyle} background: linear-gradient(135deg, #f0f9ff 0%, #e8f4fc 100%);">
+                        <div style="padding: 1rem;">
+                            ${sourceLabel}
+                            <p style="margin: 0; font-style: italic; color: #333;">" ${faq.question} "</p>
+                            ${faq.categorie ? `<span class="faq-category" style="margin-top: 0.5rem; display: inline-block;">${faq.categorie}</span>` : ''}
+                        </div>
+                    </div>
+                `;
+                }
 
                 return `
                 <div class="faq-item" style="${borderStyle}">
