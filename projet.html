@@ -26,6 +26,11 @@
         .projet-hero h1 { font-family: 'Playfair Display', serif; font-size: 2rem; margin: 0 0 0.5rem 0; }
         .projet-hero .slogan { color: var(--or-clair); font-size: 1.1rem; margin: 0; }
         
+        /* Bouton Admin */
+        .admin-btn { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.2); border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 1.2rem; cursor: pointer; transition: all 0.3s; text-decoration: none; display: flex; align-items: center; justify-content: center; }
+        .admin-btn:hover { background: rgba(255,255,255,0.4); transform: rotate(90deg); }
+        .projet-hero { position: relative; }
+        
         /* Onglets thèmes */
         .tabs-container { background: white; border-bottom: 2px solid var(--gris-doux); position: sticky; top: 110px; z-index: 100; }
         .tabs { max-width: 1400px; margin: 0 auto; display: flex; overflow-x: auto; justify-content: center; flex-wrap: wrap; gap: 0.5rem; padding: 0.8rem 1rem; }
@@ -135,6 +140,7 @@
     <script src="js/menu-mobile.js"></script>
 
     <section class="projet-hero">
+        <a href="admin.html" class="admin-btn" title="Administration">⚙️</a>
         <img src="images/logo.png" alt="Vizille en Mouvement" class="logo-pulse">
         <h1>Projet 2026-2032</h1>
         <p class="slogan">Nos engagements pour Vizille</p>
