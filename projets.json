@@ -1,6 +1,132 @@
 [
   {
+    "id": 1,
+    "theme": "Transition écologique",
+    "type": "objectif",
+    "titre": "Objectif 1 - Intégrer l'environnement dans chaque projet municipal",
+    "resume": "Dans chaque projet municipal, dès la conception.",
+    "description": "Pour que chaque décision (travaux, achats, urbanisme, services) réduise l'empreinte écologique et améliore la qualité de vie, aujourd'hui et demain.",
+    "details": "Ce qu'on fait : Évaluer l'impact environnemental et énergétique des projets. Favoriser des solutions sobres, réparables et durables. Structurer une démarche commune : transition numérique responsable & responsabilité sociétale.",
+    "benefices": "Moins de dépenses d'énergie et de ressources. Des projets cohérents, lisibles et mesurables. Une commune plus résiliente et exemplaire.",
+    "indicateurs": "% de projets avec bilan d'impact • kWh économisés/an • Part d'achats responsables"
+  },
+  {
+    "id": 2,
+    "theme": "Transition écologique",
+    "type": "objectif",
+    "titre": "Objectif 2 - Faire de la transition un projet collectif",
+    "resume": "Un projet collectif, compris et maîtrisé localement.",
+    "description": "Parce que la transition réussit quand elle est partagée : pédagogie, participation, santé publique et actions concrètes au plus près des habitants.",
+    "details": "Ce qu'on fait : S'appuyer sur le Plan Climat du territoire pour amplifier les actions. Renforcer la santé publique (pollution, risques, expositions). Former et informer sur les enjeux climatiques. Lancer des expérimentations (potagers, déchets). Soutenir les projets scolaires. Cultiver les savoirs : cafés-débats, ciné-débat.",
+    "benefices": "Des habitants acteurs, mieux informés. Des choix collectifs plus acceptés. Des initiatives locales qui essaiment.",
+    "indicateurs": "Nb d'actions pédagogiques/an • Nb de participants • Nb de projets écoles/assos"
+  },
+  {
+    "id": 3,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 1 - Énergies renouvelables",
+    "resume": "Réseau de chaleur & accompagnement des copropriétés.",
+    "description": "Décarboner l'énergie locale et réduire la facture, en priorisant un réseau de chaleur urbain (quartier nord / centre-ville).",
+    "details": "Ce qu'on fait : Déployer des ENR sur la commune (projets communaux). Accompagner habitants et copropriétés pour le raccordement. Informer sur les gains et les modalités.",
+    "benefices": "Moins de CO₂. Une énergie plus stable et locale. Des logements mieux valorisés.",
+    "indicateurs": "Taux de raccordement • tCO₂ évitées/an • Nb de copropriétés accompagnées",
+    "perimetre": "Quartier nord / centre-ville"
+  },
+  {
+    "id": 4,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 2 - Désimperméabiliser les cours d'écoles",
+    "resume": "Cours d'écoles prioritaires.",
+    "description": "Limiter les ruissellements et rafraîchir les cours, au bénéfice des enfants et du voisinage.",
+    "details": "Ce qu'on fait : Sols perméables + végétalisation. Priorité : Joliot-Curie, maternelle centre, école du château. Co-conception avec équipes éducatives & parents.",
+    "benefices": "Moins d'îlots de chaleur. Meilleure gestion des eaux pluviales. Cours plus agréables et sûres.",
+    "indicateurs": "m² désimperméabilisés • Nb d'écoles concernées • Suivi température / confort",
+    "perimetre": "Joliot-Curie, maternelle centre, école du château"
+  },
+  {
+    "id": 5,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 3 - Réaménager la Place Henri Barbusse",
+    "resume": "Place Henri Barbusse (marché).",
+    "description": "Créer un cœur de ville plus ombragé, plus convivial et mieux adapté aux usages du marché.",
+    "details": "Ce qu'on fait : Repenser circulations & usages. Ajouter ombrage, végétation, sols perméables. Co-concevoir avec commerçants & habitants.",
+    "benefices": "Marché plus attractif. Confort été/hiver. Espace public apaisé.",
+    "indicateurs": "% surface ombragée • Nb d'événements/usages • Satisfaction usagers",
+    "perimetre": "Place Henri Barbusse"
+  },
+  {
+    "id": 6,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 4 - Planter des arbres",
+    "resume": "Développer les zones d'ombrage.",
+    "description": "Accélérer la création d'ombre naturelle et de corridors de biodiversité.",
+    "details": "Ce qu'on fait : Plan de plantation pluriannuel. Essences adaptées au climat. Suivi : arrosage, protection, remplacement.",
+    "benefices": "Plus de fraîcheur. Biodiversité renforcée. Cadre de vie amélioré.",
+    "indicateurs": "Nb d'arbres plantés/an • Taux de reprise • m² d'ombre créée"
+  },
+  {
+    "id": 7,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 5 - Accès à la fraîcheur",
+    "resume": "Canaux, espaces de fraîcheur, piscine.",
+    "description": "Offrir des refuges de fraîcheur lors des épisodes chauds et valoriser les canaux comme atout local.",
+    "details": "Ce qu'on fait : Valoriser les canaux. Identifier et aménager des espaces de fraîcheur. Maintenir la piscine municipale en fonctionnement.",
+    "benefices": "Meilleure adaptation aux canicules. Bien-être pour tous. Attractivité estivale.",
+    "indicateurs": "Nb d'espaces de fraîcheur • Fréquentation • Jours d'ouverture piscine"
+  },
+  {
+    "id": 8,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 6 - Éclairage public sobre",
+    "resume": "LED + pilotage intelligent.",
+    "description": "Réduire la consommation tout en gardant un éclairage adapté aux usages et à la sécurité.",
+    "details": "Ce qu'on fait : Généraliser les LED. Déployer pilotage (détection présence, scénarios). Ajuster selon lieux et horaires.",
+    "benefices": "Baisse des factures. Moins de pollution lumineuse. Confort & sécurité.",
+    "indicateurs": "% points lumineux en LED • kWh économisés/an • Nb de zones pilotées"
+  },
+  {
+    "id": 9,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 7 - Rénovation énergétique des bâtiments",
+    "resume": "Bâtiments communaux, priorité écoles.",
+    "description": "Rationaliser le patrimoine bâti, réduire les charges et améliorer les conditions d'apprentissage et de travail.",
+    "details": "Ce qu'on fait : Stratégie de rénovation + conformité. Études pour prioriser. Priorité groupes scolaires. Intégrer qualité de l'air intérieur.",
+    "benefices": "Économies durables. Confort thermique. Santé & performance à l'école.",
+    "indicateurs": "kWh/m²/an • € charges réduites • Nb de bâtiments rénovés"
+  },
+  {
     "id": 10,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 8 - Numérique responsable",
+    "resume": "Inclusion, réparation, accessibilité, vigilance IA.",
+    "description": "Mettre le numérique au service de tous, en limitant l'empreinte et en protégeant les données.",
+    "details": "Ce qu'on fait : Lutter contre la fracture numérique. Former les personnes en difficulté. Réparer/donner/recycler plutôt que remplacer. Créer un repair café ou Fablab. Accessibilité des sites. Cadre d'usage IA + frugalité + données.",
+    "benefices": "Plus d'autonomie. Moins de déchets électroniques. Services publics plus accessibles.",
+    "indicateurs": "Nb d'ateliers/an • Nb d'appareils réparés • Taux d'accessibilité des sites"
+  },
+  {
+    "id": 11,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 9 - Forêt communale",
+    "resume": "Gestion durable & résilience (125 ha).",
+    "description": "Protéger un patrimoine naturel majeur et accompagner sa résilience face au climat avec l'ONF et les partenaires.",
+    "details": "Ce qu'on fait : Biodiversité, sols, paysages. Production de bois encadrée. Accueil du public : promenade, rando, découverte. Actions avec Département pour l'entretien.",
+    "benefices": "Forêt plus résiliente. Espace nature accessible. Atout écologique et récréatif.",
+    "indicateurs": "Actions ONF/partenaires • Indicateurs biodiversité • Entretien & fréquentation",
+    "partenaires": "ONF, Département",
+    "perimetre": "125 ha de forêt communale"
+  },
+  {
+    "id": 12,
     "titre": "Rendre la Maison de Santé pleinement opérationnelle",
     "theme": "Santé",
     "statut": "Programmé",
@@ -12,7 +138,7 @@
     "financement": 0
   },
   {
-    "id": 34,
+    "id": 13,
     "titre": "Le maire siègera personnellement aux conseils métropolitains",
     "theme": "Métropole",
     "statut": "Programmé",
@@ -24,7 +150,7 @@
     "financement": 0
   },
   {
-    "id": 101,
+    "id": 14,
     "titre": "Objectif 1 - Mobilités structurantes",
     "theme": "Mobilités",
     "statut": "Étude",
@@ -61,7 +187,7 @@
     "financement": 0
   },
   {
-    "id": 102,
+    "id": 15,
     "titre": "Objectif 2 - Renforcer les mobilités cyclables",
     "theme": "Mobilités",
     "statut": "Programmé",
@@ -98,7 +224,7 @@
     "financement": 0
   },
   {
-    "id": 103,
+    "id": 16,
     "titre": "Objectif 3 - Sécuriser les usagers vulnérables",
     "theme": "Mobilités",
     "statut": "Prioritaire",
@@ -136,7 +262,7 @@
     "financement": 0
   },
   {
-    "id": 104,
+    "id": 17,
     "titre": "Objectif 4 - Apaiser la circulation",
     "theme": "Mobilités",
     "statut": "Programmé",
@@ -173,7 +299,7 @@
     "financement": 0
   },
   {
-    "id": 105,
+    "id": 18,
     "titre": "Objectif 5 - Organiser les flux",
     "theme": "Mobilités",
     "statut": "Étude",
@@ -210,7 +336,7 @@
     "financement": 0
   },
   {
-    "id": 106,
+    "id": 19,
     "titre": "Objectif 6 - Centre-ville et espaces partagés",
     "theme": "Mobilités",
     "statut": "Étude",
@@ -247,7 +373,7 @@
     "financement": 0
   },
   {
-    "id": 107,
+    "id": 20,
     "titre": "Objectif 7 - Feu de Jarrie (PPRT)",
     "theme": "Mobilités",
     "statut": "Prioritaire",
@@ -284,7 +410,7 @@
     "financement": 0
   },
   {
-    "id": 201,
+    "id": 21,
     "titre": "Objectif 1 - Présence sur le terrain",
     "theme": "Tranquillité publique",
     "statut": "Programmé",
@@ -321,7 +447,7 @@
     "financement": 0
   },
   {
-    "id": 202,
+    "id": 22,
     "titre": "Objectif 2 - Médiation & prévention",
     "theme": "Tranquillité publique",
     "statut": "Programmé",
@@ -358,7 +484,7 @@
     "financement": 0
   },
   {
-    "id": 203,
+    "id": 23,
     "titre": "Objectif 3 - Bruit, incivilités, nuisances",
     "theme": "Tranquillité publique",
     "statut": "Programmé",
@@ -395,7 +521,7 @@
     "financement": 0
   },
   {
-    "id": 204,
+    "id": 24,
     "titre": "Objectif 4 - Circulation, vitesse, rodéos",
     "theme": "Tranquillité publique",
     "statut": "Programmé",
@@ -432,7 +558,7 @@
     "financement": 0
   },
   {
-    "id": 205,
+    "id": 25,
     "titre": "Objectif 5 - Éclairage & aménagements",
     "theme": "Tranquillité publique",
     "statut": "Étude",
@@ -469,7 +595,7 @@
     "financement": 0
   },
   {
-    "id": 206,
+    "id": 26,
     "titre": "Objectif 6 - Vidéoprotection",
     "theme": "Tranquillité publique",
     "statut": "Programmé",
@@ -506,7 +632,7 @@
     "financement": 0
   },
   {
-    "id": 207,
+    "id": 27,
     "titre": "Objectif 7 - Propreté & cadre de vie",
     "theme": "Tranquillité publique",
     "statut": "Programmé",
@@ -543,7 +669,7 @@
     "financement": 0
   },
   {
-    "id": 208,
+    "id": 28,
     "titre": "Objectif 8 - Lien direct habitants",
     "theme": "Tranquillité publique",
     "statut": "Programmé",
@@ -580,7 +706,7 @@
     "financement": 0
   },
   {
-    "id": 209,
+    "id": 29,
     "titre": "Objectif 9 - Travailler ensemble",
     "theme": "Tranquillité publique",
     "statut": "Programmé",
@@ -617,7 +743,7 @@
     "financement": 0
   },
   {
-    "id": 210,
+    "id": 30,
     "titre": "Objectif 10 - Méthode & transparence",
     "theme": "Tranquillité publique",
     "statut": "Programmé",
@@ -654,7 +780,7 @@
     "financement": 0
   },
   {
-    "id": 211,
+    "id": 31,
     "titre": "Objectif 11 - PCS & culture du risque",
     "theme": "Tranquillité publique",
     "statut": "Programmé",
@@ -691,7 +817,7 @@
     "financement": 0
   },
   {
-    "id": 507,
+    "id": 32,
     "theme": "Enfance/Jeunesse",
     "titre": "Petite enfance",
     "soustitre": "Accompagner le SICCE",
@@ -729,7 +855,7 @@
     ]
   },
   {
-    "id": 508,
+    "id": 33,
     "theme": "Enfance/Jeunesse",
     "titre": "Conseil des jeunes",
     "soustitre": "Former les citoyens de demain",
@@ -767,7 +893,7 @@
     ]
   },
   {
-    "id": 509,
+    "id": 34,
     "theme": "Enfance/Jeunesse",
     "titre": "Confort thermique des écoles",
     "soustitre": "Lutter contre les fortes chaleurs",
@@ -805,7 +931,7 @@
     ]
   },
   {
-    "id": 510,
+    "id": 35,
     "theme": "Enfance/Jeunesse",
     "titre": "Engagement citoyen des jeunes",
     "soustitre": "Valoriser l'engagement",
@@ -843,7 +969,7 @@
     ]
   },
   {
-    "id": 511,
+    "id": 36,
     "theme": "Enfance/Jeunesse",
     "titre": "Aller vers les adolescents",
     "soustitre": "Créer du lien",
@@ -881,7 +1007,7 @@
     ]
   },
   {
-    "id": 512,
+    "id": 37,
     "theme": "Enfance/Jeunesse",
     "titre": "Accompagner les associations",
     "soustitre": "Soutenir la jeunesse associative",
@@ -919,7 +1045,7 @@
     ]
   },
   {
-    "id": 513,
+    "id": 38,
     "theme": "Enfance/Jeunesse",
     "titre": "Handicap & inclusion",
     "soustitre": "Une place pour chacun",
@@ -957,7 +1083,7 @@
     ]
   },
   {
-    "id": 514,
+    "id": 39,
     "theme": "Enfance/Jeunesse",
     "titre": "Numérique & aide aux devoirs",
     "soustitre": "Réduire la fracture numérique",
@@ -995,349 +1121,7 @@
     ]
   },
   {
-    "id": 601,
-    "titre": "Objectif 1 - Intégrer l'environnement dans chaque projet municipal",
-    "theme": "Transition écologique",
-    "statut": "Programmé",
-    "annee": 2026,
-    "resume": "Démarches durables pour les générations futures",
-    "description": "Engager des démarches durables pour les générations futures et promouvoir une approche responsable et solidaire de la transition environnementale et énergétique.",
-    "importance": 3,
-    "chiffres": [],
-    "tags": [
-      "Durabilité",
-      "Transversalité",
-      "Responsabilité"
-    ],
-    "slogan": "Penser durable • Agir responsable",
-    "enjeux": [
-      "Engager des démarches durables pour les générations futures",
-      "Promouvoir une approche responsable et solidaire",
-      "Structurer ces enjeux via la transition numérique responsable"
-    ],
-    "axes_action": [
-      "Intégrer des critères environnementaux dans tous les projets",
-      "Évaluer l'impact carbone des décisions",
-      "Former les élus et agents aux enjeux écologiques",
-      "Favoriser les achats responsables"
-    ],
-    "vision": "L'environnement au cœur de chaque décision municipale.",
-    "numero": "1/2",
-    "type": "objectif",
-    "financement": 0
-  },
-  {
-    "id": 602,
-    "titre": "Objectif 2 - Faire de la transition un projet collectif",
-    "theme": "Transition écologique",
-    "statut": "Programmé",
-    "annee": 2026,
-    "resume": "Projet collectif compris et maîtrisé localement",
-    "description": "Faire de la transition environnementale un projet collectif compris et maîtrisé localement par tous les Vizillois.",
-    "importance": 3,
-    "chiffres": [],
-    "tags": [
-      "Pédagogie",
-      "Collectif",
-      "Local"
-    ],
-    "slogan": "Comprendre • Partager • Agir ensemble",
-    "enjeux": [
-      "Approfondir les actions pédagogiques sur la base du Plan Climat",
-      "Renforcer les actions autour de la santé publique",
-      "Former les citoyens aux enjeux climatiques"
-    ],
-    "axes_action": [
-      "Développer des expérimentations collectives (potagers urbains, déchets)",
-      "Soutenir les projets pédagogiques dans les écoles",
-      "Organiser café-débats et ciné-débats",
-      "Sensibiliser aux transitions"
-    ],
-    "vision": "Cultiver les savoirs pour agir ensemble.",
-    "numero": "2/2",
-    "type": "objectif",
-    "financement": 0
-  },
-  {
-    "id": 611,
-    "titre": "Engagement 1 - Énergies renouvelables",
-    "theme": "Transition écologique",
-    "statut": "Étude",
-    "annee": 2027,
-    "resume": "Réseau de chaleur urbain",
-    "description": "Déployer des énergies renouvelables sur la commune avec des projets communaux et un accompagnement des citoyens.",
-    "importance": 2,
-    "chiffres": [],
-    "tags": [
-      "Énergie",
-      "Chaleur",
-      "Renouvelable"
-    ],
-    "slogan": "Produire local • Consommer moins",
-    "enjeux": [
-      "Réduire la dépendance aux énergies fossiles",
-      "Diminuer les factures énergétiques des habitants"
-    ],
-    "axes_action": [
-      "Étudier un réseau de chaleur urbain (quartier nord/centre-ville)",
-      "Accompagner les copropriétés dans la transition énergétique",
-      "Développer le solaire sur les bâtiments publics"
-    ],
-    "vision": "Vizille, territoire à énergie positive.",
-    "numero": "E1/9",
-    "type": "engagement",
-    "financement": 0
-  },
-  {
-    "id": 612,
-    "titre": "Engagement 2 - Végétalisation",
-    "theme": "Transition écologique",
-    "statut": "Programmé",
-    "annee": 2026,
-    "resume": "Désimperméabilisation des cours d'écoles",
-    "description": "Végétaliser et désimperméabiliser les espaces publics pour lutter contre les îlots de chaleur.",
-    "importance": 2,
-    "chiffres": [],
-    "tags": [
-      "Végétalisation",
-      "Écoles",
-      "Fraîcheur"
-    ],
-    "slogan": "Verdir • Rafraîchir • Respirer",
-    "enjeux": [
-      "Lutter contre les îlots de chaleur",
-      "Améliorer le cadre de vie des enfants",
-      "Favoriser l'infiltration des eaux pluviales"
-    ],
-    "axes_action": [
-      "Désimperméabilisation cours écoles Joliot Curie, maternelle centre, école château",
-      "Aménagement place Henri Barbusse (place du marché)",
-      "Plantation d'arbres pour zones d'ombrage"
-    ],
-    "vision": "Des cours d'écoles vertes et fraîches pour nos enfants.",
-    "numero": "E2/9",
-    "type": "engagement",
-    "financement": 0
-  },
-  {
-    "id": 613,
-    "titre": "Engagement 3 - Accès à la fraîcheur",
-    "theme": "Transition écologique",
-    "statut": "Programmé",
-    "annee": 2026,
-    "resume": "Valorisation des canaux et espaces de fraîcheur",
-    "description": "Garantir l'accès à la fraîcheur pour tous les habitants en période de canicule.",
-    "importance": 2,
-    "chiffres": [],
-    "tags": [
-      "Fraîcheur",
-      "Canaux",
-      "Piscine"
-    ],
-    "slogan": "Se rafraîchir • Se ressourcer",
-    "enjeux": [
-      "Offrir des espaces de fraîcheur accessibles",
-      "Valoriser le patrimoine hydraulique"
-    ],
-    "axes_action": [
-      "Valorisation des canaux de la commune",
-      "Création d'espaces de fraîcheur",
-      "Maintien en fonction de la piscine municipale"
-    ],
-    "vision": "Des îlots de fraîcheur pour tous.",
-    "numero": "E3/9",
-    "type": "engagement",
-    "financement": 0
-  },
-  {
-    "id": 614,
-    "titre": "Engagement 4 - Biodiversité",
-    "theme": "Transition écologique",
-    "statut": "Programmé",
-    "annee": 2026,
-    "resume": "Protection de la faune et de la flore",
-    "description": "Protéger et favoriser la biodiversité sur le territoire communal.",
-    "importance": 2,
-    "chiffres": [],
-    "tags": [
-      "Biodiversité",
-      "Nature",
-      "Protection"
-    ],
-    "slogan": "Protéger • Préserver • Diversifier",
-    "enjeux": [
-      "Préserver les espèces locales",
-      "Maintenir les corridors écologiques"
-    ],
-    "axes_action": [
-      "Gestion différenciée des espaces verts",
-      "Création de refuges pour la faune",
-      "Lutte contre les espèces invasives"
-    ],
-    "vision": "Une ville où la nature a sa place.",
-    "numero": "E4/9",
-    "type": "engagement",
-    "financement": 0
-  },
-  {
-    "id": 615,
-    "titre": "Engagement 5 - Agriculture locale",
-    "theme": "Transition écologique",
-    "statut": "Programmé",
-    "annee": 2027,
-    "resume": "Soutien aux circuits courts",
-    "description": "Soutenir l'agriculture locale et les circuits courts.",
-    "importance": 2,
-    "chiffres": [],
-    "tags": [
-      "Agriculture",
-      "Local",
-      "Circuits courts"
-    ],
-    "slogan": "Produire • Consommer • Local",
-    "enjeux": [
-      "Favoriser l'approvisionnement local",
-      "Soutenir les producteurs du territoire"
-    ],
-    "axes_action": [
-      "Développer les circuits courts pour la restauration scolaire",
-      "Soutenir les marchés de producteurs",
-      "Faciliter l'installation de maraîchers"
-    ],
-    "vision": "Manger local, c'est agir local.",
-    "numero": "E5/9",
-    "type": "engagement",
-    "financement": 0
-  },
-  {
-    "id": 616,
-    "titre": "Engagement 6 - Préserver la fonction agricole",
-    "theme": "Transition écologique",
-    "statut": "Programmé",
-    "annee": 2026,
-    "resume": "Protection des terres agricoles",
-    "description": "Préserver les terres agricoles face à l'urbanisation.",
-    "importance": 2,
-    "chiffres": [],
-    "tags": [
-      "Terres",
-      "Agriculture",
-      "Préservation"
-    ],
-    "slogan": "Protéger les terres • Nourrir demain",
-    "enjeux": [
-      "Limiter l'artificialisation des sols",
-      "Maintenir le potentiel agricole"
-    ],
-    "axes_action": [
-      "Protéger les zones agricoles dans les documents d'urbanisme",
-      "Lutter contre la spéculation foncière",
-      "Favoriser la transmission des exploitations"
-    ],
-    "vision": "Pas de béton sur les terres nourricières.",
-    "numero": "E6/9",
-    "type": "engagement",
-    "financement": 0
-  },
-  {
-    "id": 617,
-    "titre": "Engagement 7 - Eau et biodiversité aquatique",
-    "theme": "Transition écologique",
-    "statut": "Programmé",
-    "annee": 2027,
-    "resume": "Protection des milieux aquatiques",
-    "description": "Protéger la ressource en eau et les milieux aquatiques.",
-    "importance": 2,
-    "chiffres": [],
-    "tags": [
-      "Eau",
-      "Rivières",
-      "Aquatique"
-    ],
-    "slogan": "Préserver l'eau • Source de vie",
-    "enjeux": [
-      "Protéger la qualité de l'eau",
-      "Préserver les milieux humides"
-    ],
-    "axes_action": [
-      "Réduire les pollutions",
-      "Restaurer les berges de la Romanche",
-      "Protéger les zones humides"
-    ],
-    "vision": "L'eau, un bien commun à préserver.",
-    "numero": "E7/9",
-    "type": "engagement",
-    "financement": 0
-  },
-  {
-    "id": 618,
-    "titre": "Engagement 8 - Forêt communale",
-    "theme": "Transition écologique",
-    "statut": "Programmé",
-    "annee": 2026,
-    "resume": "125 ha de forêt à préserver",
-    "description": "Protéger et valoriser les 125 ha de forêt communale.",
-    "importance": 2,
-    "chiffres": [
-      {
-        "valeur": "125 ha",
-        "label": "de forêt communale"
-      }
-    ],
-    "tags": [
-      "Forêt",
-      "Biodiversité",
-      "Loisirs"
-    ],
-    "slogan": "Protéger • Gérer • Partager",
-    "enjeux": [
-      "Fonction environnementale : protection biodiversité, sols, paysage",
-      "Fonction économique : production de bois durable",
-      "Fonction sociale : promenades, randonnées, découverte nature"
-    ],
-    "axes_action": [
-      "Poursuivre le partenariat avec l'ONF et le Département",
-      "Créer des sentiers pédagogiques",
-      "Protéger les zones sensibles",
-      "Organiser des sorties nature"
-    ],
-    "vision": "Une forêt préservée, un poumon vert pour tous les Vizillois.",
-    "numero": "E8/9",
-    "type": "engagement",
-    "financement": 0
-  },
-  {
-    "id": 619,
-    "titre": "Engagement 9 - Éclairage public sobre",
-    "theme": "Transition écologique",
-    "statut": "Programmé",
-    "annee": 2026,
-    "resume": "LEDs et pilotage intelligent",
-    "description": "Moderniser l'éclairage public pour réduire la consommation énergétique.",
-    "importance": 2,
-    "chiffres": [],
-    "tags": [
-      "Éclairage",
-      "LED",
-      "Économie"
-    ],
-    "slogan": "Éclairer juste • Consommer moins",
-    "enjeux": [
-      "Réduire la consommation énergétique",
-      "Limiter la pollution lumineuse"
-    ],
-    "axes_action": [
-      "Généralisation des LEDs",
-      "Systèmes de pilotage (détection de présence)",
-      "Adaptation des horaires d'éclairage"
-    ],
-    "vision": "Un éclairage intelligent qui respecte la nuit.",
-    "numero": "E9/9",
-    "type": "engagement",
-    "financement": 0
-  },
-  {
-    "id": 621,
+    "id": 40,
     "titre": "Axe 1 - Démocratie locale et concertation citoyenne",
     "theme": "Concertation citoyenne",
     "type": "objectif",
@@ -1350,7 +1134,7 @@
     "sous_categorie": "Axe 1"
   },
   {
-    "id": 622,
+    "id": 41,
     "titre": "Conseils de quartier",
     "theme": "Concertation citoyenne",
     "type": "engagement",
@@ -1362,7 +1146,7 @@
     "sous_categorie": "Axe 1"
   },
   {
-    "id": 623,
+    "id": 42,
     "titre": "Lieu d'écoute et de concertation",
     "theme": "Concertation citoyenne",
     "type": "engagement",
@@ -1374,7 +1158,7 @@
     "sous_categorie": "Axe 1"
   },
   {
-    "id": 624,
+    "id": 43,
     "titre": "Axe 2 - Éducation populaire et culture pour tous",
     "theme": "Concertation citoyenne",
     "type": "objectif",
@@ -1387,7 +1171,7 @@
     "sous_categorie": "Axe 2"
   },
   {
-    "id": 625,
+    "id": 44,
     "titre": "Centre d'éducation populaire",
     "theme": "Concertation citoyenne",
     "type": "engagement",
@@ -1399,7 +1183,7 @@
     "sous_categorie": "Axe 2"
   },
   {
-    "id": 626,
+    "id": 45,
     "titre": "Café-débats et ciné-débats",
     "theme": "Concertation citoyenne",
     "type": "engagement",
@@ -1411,7 +1195,7 @@
     "sous_categorie": "Axe 2"
   },
   {
-    "id": 627,
+    "id": 46,
     "titre": "Soutien aux associations d'éducation populaire",
     "theme": "Concertation citoyenne",
     "type": "engagement",
@@ -1423,7 +1207,7 @@
     "sous_categorie": "Axe 2"
   },
   {
-    "id": 628,
+    "id": 47,
     "titre": "Résidences d'artistes et chercheurs",
     "theme": "Concertation citoyenne",
     "type": "engagement",
@@ -1435,7 +1219,7 @@
     "sous_categorie": "Axe 2"
   },
   {
-    "id": 629,
+    "id": 48,
     "titre": "Axe 3 - Jeunesse et émancipation",
     "theme": "Concertation citoyenne",
     "type": "objectif",
@@ -1448,7 +1232,7 @@
     "sous_categorie": "Axe 3"
   },
   {
-    "id": 630,
+    "id": 49,
     "titre": "Conseil municipal des jeunes",
     "theme": "Concertation citoyenne",
     "type": "engagement",
@@ -1460,7 +1244,7 @@
     "sous_categorie": "Axe 3"
   },
   {
-    "id": 631,
+    "id": 50,
     "titre": "Ateliers pensée critique",
     "theme": "Concertation citoyenne",
     "type": "engagement",
@@ -1472,7 +1256,7 @@
     "sous_categorie": "Axe 3"
   },
   {
-    "id": 632,
+    "id": 51,
     "titre": "Chantiers jeunes participatifs",
     "theme": "Concertation citoyenne",
     "type": "engagement",
@@ -1484,7 +1268,7 @@
     "sous_categorie": "Axe 3"
   },
   {
-    "id": 633,
+    "id": 52,
     "titre": "Axe 4 - Lutte contre les inégalités et émancipation sociale",
     "theme": "Concertation citoyenne",
     "type": "objectif",
@@ -1497,7 +1281,7 @@
     "sous_categorie": "Axe 4"
   },
   {
-    "id": 634,
+    "id": 53,
     "titre": "Apprentissage du français",
     "theme": "Concertation citoyenne",
     "type": "engagement",
@@ -1509,7 +1293,7 @@
     "sous_categorie": "Axe 4"
   },
   {
-    "id": 635,
+    "id": 54,
     "titre": "Ateliers droits et institutions",
     "theme": "Concertation citoyenne",
     "type": "engagement",
@@ -1521,7 +1305,7 @@
     "sous_categorie": "Axe 4"
   },
   {
-    "id": 636,
+    "id": 55,
     "titre": "Lieux de convivialité gratuits",
     "theme": "Concertation citoyenne",
     "type": "engagement",
@@ -1533,7 +1317,7 @@
     "sous_categorie": "Axe 4"
   },
   {
-    "id": 637,
+    "id": 56,
     "titre": "Conseil Local de Santé Mentale (CLSM)",
     "theme": "Concertation citoyenne",
     "type": "engagement",
@@ -1545,7 +1329,7 @@
     "sous_categorie": "Axe 4"
   },
   {
-    "id": 638,
+    "id": 57,
     "titre": "Axe 5 - Transition écologique et savoirs partagés",
     "theme": "Concertation citoyenne",
     "type": "objectif",
@@ -1558,7 +1342,7 @@
     "sous_categorie": "Axe 5"
   },
   {
-    "id": 639,
+    "id": 58,
     "theme": "Urbanisme",
     "type": "objectif",
     "titre": "Objectif - Revitaliser le centre-ville",
@@ -1566,7 +1350,7 @@
     "resume": "Transformation complète du centre-ville avec l'ORT (horizon 2030) et le projet Centralité Vizilloise piloté avec la Métropole."
   },
   {
-    "id": 640,
+    "id": 59,
     "theme": "Urbanisme",
     "type": "engagement",
     "titre": "ORT - Opération de Revitalisation de Territoire",
@@ -1577,7 +1361,7 @@
     "financement": "Accès aides ANAH, Action Cœur de Ville, fonds de revitalisation, exonérations fiscales"
   },
   {
-    "id": 641,
+    "id": 60,
     "theme": "Urbanisme",
     "type": "engagement",
     "titre": "Projet Centralité Vizilloise",
@@ -1587,7 +1371,7 @@
     "echeance": "En cours - suite aux concertations"
   },
   {
-    "id": 642,
+    "id": 61,
     "theme": "Urbanisme",
     "type": "engagement",
     "titre": "Secteur Tanneries",
@@ -1599,7 +1383,7 @@
     "financement": "Foncier maîtrisé par la Ville et le LPV"
   },
   {
-    "id": 643,
+    "id": 62,
     "theme": "Urbanisme",
     "type": "engagement",
     "titre": "OPAH-RU Réno'Vizille",
@@ -1610,7 +1394,7 @@
     "financement": "Subventions ANAH (jusqu'à 50%), aides Métropole, accompagnement gratuit"
   },
   {
-    "id": 644,
+    "id": 63,
     "theme": "Urbanisme",
     "type": "engagement",
     "titre": "Les Terrasses de la Romanche (Alliance Textile)",
@@ -1621,7 +1405,7 @@
     "echeance": "Phase 1 : 2e semestre 2026 (logements + commerce) | Phase 2 : livraison 2028"
   },
   {
-    "id": 645,
+    "id": 64,
     "theme": "Travaux",
     "type": "objectif",
     "titre": "Objectif - Moderniser les infrastructures",
@@ -1629,7 +1413,7 @@
     "resume": "Gestion rigoureuse du patrimoine et investissements continus pour réhabiliter les bâtiments communaux."
   },
   {
-    "id": 646,
+    "id": 65,
     "theme": "Travaux",
     "type": "engagement",
     "titre": "Rue Général de Gaulle - Réseaux",
@@ -1640,7 +1424,7 @@
     "financement": "Financement Métropole (compétences eau/assainissement)"
   },
   {
-    "id": 647,
+    "id": 66,
     "theme": "Travaux",
     "type": "engagement",
     "titre": "Voie partagée Rue Général de Gaulle",
@@ -1651,7 +1435,7 @@
     "financement": "Financement Métropole (Centralité Vizilloise) + Ville de Vizille"
   },
   {
-    "id": 648,
+    "id": 67,
     "theme": "Travaux",
     "type": "engagement",
     "titre": "Maison de Santé Pluri-professionnelle",
@@ -1661,7 +1445,7 @@
     "echeance": "Études et maîtrise d'œuvre 2026 | Travaux 2027 | Livraison début 2028"
   },
   {
-    "id": 649,
+    "id": 68,
     "theme": "Travaux",
     "type": "engagement",
     "titre": "Chapelle du Péage de Vizille",
@@ -1671,7 +1455,7 @@
     "echeance": "Réunion publique courant 2026"
   },
   {
-    "id": 650,
+    "id": 69,
     "theme": "Travaux",
     "type": "engagement",
     "titre": "Gendarmerie",
@@ -1681,7 +1465,7 @@
     "echeance": "Discussions en cours avec l'État"
   },
   {
-    "id": 651,
+    "id": 70,
     "theme": "Travaux",
     "type": "engagement",
     "titre": "Investissements patrimoine communal",
