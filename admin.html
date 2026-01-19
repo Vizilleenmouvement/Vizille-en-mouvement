@@ -1536,18 +1536,18 @@
         <section class="tab-content" id="tab-faq">
             <div class="card">
                 <div class="card-header">
-                    <h2>🤝 Construisons ensemble - Questions / Réponses</h2>
+                    <h2>🤝 Construisons ensemble - Questions & Messages</h2>
                     <div class="publish-bar">
                         <span class="status saved" id="status-faq">✓ À jour</span>
                         <button class="btn-publish" onclick="publish('faq')">🚀 Publier</button>
                     </div>
                 </div>
                 <div class="card-body">
-                    <button class="btn btn-primary" onclick="openAddFaq()">+ Ajouter une question</button>
+                    <button class="btn btn-primary" onclick="openAddFaq()">+ Ajouter une question / message</button>
                     
                     <div class="items-list">
                         <div class="items-header">
-                            <h3>Questions (<span id="faq-count">0</span>)</h3>
+                            <h3>Questions & Messages (<span id="faq-count">0</span>)</h3>
                         </div>
                         <div id="faq-list"></div>
                     </div>
@@ -4416,7 +4416,7 @@
         }
 
         function showFaqModal(f) {
-            document.getElementById('modal-title').textContent = currentEdit.index === -1 ? '➕ Ajouter une question' : '✏️ Modifier la question';
+            document.getElementById('modal-title').textContent = currentEdit.index === -1 ? '➕ Ajouter une question / message' : '✏️ Modifier';
             document.getElementById('modal-body').innerHTML = `
                 <div class="form-row">
                     <div class="form-group">
@@ -4441,12 +4441,12 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Question *</label>
-                    <input type="text" id="edit-question" value="${f.question || ''}">
+                    <label>Question ou message de soutien *</label>
+                    <textarea id="edit-question" rows="4">${f.question || ''}</textarea>
                 </div>
                 <div class="form-group">
-                    <label>Réponse *</label>
-                    <textarea id="edit-reponse" rows="5">${f.reponse || ''}</textarea>
+                    <label>Réponse (optionnelle)</label>
+                    <textarea id="edit-reponse" rows="5" placeholder="Laissez vide pour un message de soutien sans réponse">${f.reponse || ''}</textarea>
                 </div>
                 <div class="form-group">
                     <label>Catégorie / Thème</label>
@@ -4465,8 +4465,8 @@
             const pseudo = document.getElementById('edit-pseudo').value.trim();
             const date = document.getElementById('edit-date').value;
             
-            if (!question || !reponse) {
-                showToast('⚠️ Question et réponse obligatoires', 'warning');
+            if (!question) {
+                showToast('⚠️ Question ou message obligatoire', 'warning');
                 return;
             }
 
@@ -4479,15 +4479,15 @@
             markModified('faq');
             renderFaq();
             closeModal();
-            showToast('✅ Question enregistrée', 'success');
+            showToast('✅ Enregistré', 'success');
         }
 
         function deleteFaq(index) {
-            if (confirm('Supprimer cette question ?')) {
+            if (confirm('Supprimer cet élément ?')) {
                 data.faq.splice(index, 1);
                 markModified('faq');
                 renderFaq();
-                showToast('🗑️ Question supprimée', 'success');
+                showToast('🗑️ Supprimé', 'success');
             }
         }
 
