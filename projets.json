@@ -1268,16 +1268,22 @@
     "theme": "Transition écologique",
     "type": "objectif",
     "titre": "Objectif 1 - Intégrer l'environnement dans chaque projet municipal",
-    "resume": "Engager des démarches durables pour les générations futures.",
-    "description": "• Promouvoir une approche responsable et solidaire de la transition environnementale et énergétique.\n• Structurer ces enjeux au sein de la commune par le biais de la transition numérique responsable et de la responsabilité sociétale."
+    "resume": "Dans chaque projet municipal, dès la conception.",
+    "description": "Pour que chaque décision (travaux, achats, urbanisme, services) réduise l'empreinte écologique et améliore la qualité de vie, aujourd'hui et demain.",
+    "details": "Ce qu'on fait : Évaluer l'impact environnemental et énergétique des projets. Favoriser des solutions sobres, réparables et durables. Structurer une démarche commune : transition numérique responsable & responsabilité sociétale.",
+    "benefices": "Moins de dépenses d'énergie et de ressources. Des projets cohérents, lisibles et mesurables. Une commune plus résiliente et exemplaire.",
+    "indicateurs": "% de projets avec bilan d'impact • kWh économisés/an • Part d'achats responsables"
   },
   {
     "id": 626,
     "theme": "Transition écologique",
     "type": "objectif",
     "titre": "Objectif 2 - Faire de la transition un projet collectif compris et maîtrisé localement",
-    "resume": "Sur la base du Plan Climat de notre Territoire, approfondir les actions pédagogiques et sociétales.",
-    "description": "• Renforcer les actions autour de la santé publique (la pollution, les dangers professionnels).\n• Formation citoyenne sur les enjeux climatiques et les transitions.\n• Expérimentations collectives (potagers urbains, déchets).\n• Soutiens pédagogiques, projets dans les écoles.\n• Cultiver les savoirs : café-débats, ciné-débat."
+    "resume": "Un projet collectif, compris et maîtrisé localement.",
+    "description": "Parce que la transition réussit quand elle est partagée : pédagogie, participation, santé publique et actions concrètes au plus près des habitants.",
+    "details": "Ce qu'on fait : S'appuyer sur le Plan Climat du territoire pour amplifier les actions. Renforcer la santé publique (pollution, risques, expositions). Former et informer sur les enjeux climatiques. Lancer des expérimentations (potagers, déchets). Soutenir les projets scolaires. Cultiver les savoirs : cafés-débats, ciné-débat.",
+    "benefices": "Des habitants acteurs, mieux informés. Des choix collectifs plus acceptés. Des initiatives locales qui essaiment.",
+    "indicateurs": "Nb d'actions pédagogiques/an • Nb de participants • Nb de projets écoles/assos"
   },
   {
     "id": 627,
@@ -1374,5 +1380,109 @@
     "titre": "Gendarmerie",
     "resume": "Échéance primordiale pour conserver la gendarmerie sur la commune.",
     "description": "Études et échanges menés tout au long du mandat.\nPropositions discutées avec les services de l'État.\nL'équipe met toutes les forces nécessaires pour conserver la gendarmerie sur la commune."
+  },
+  {
+    "id": 639,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 1 - Énergies renouvelables",
+    "resume": "Réseau de chaleur & accompagnement des copropriétés.",
+    "description": "Décarboner l'énergie locale et réduire la facture, en priorisant un réseau de chaleur urbain (quartier nord / centre-ville).",
+    "details": "Ce qu'on fait : Déployer des ENR sur la commune (projets communaux). Accompagner habitants et copropriétés pour le raccordement. Informer sur les gains et les modalités.",
+    "benefices": "Moins de CO₂. Une énergie plus stable et locale. Des logements mieux valorisés.",
+    "indicateurs": "Taux de raccordement • tCO₂ évitées/an • Nb de copropriétés accompagnées",
+    "perimetre": "Quartier nord / centre-ville"
+  },
+  {
+    "id": 640,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 2 - Désimperméabiliser les cours d'écoles",
+    "resume": "Cours d'écoles prioritaires.",
+    "description": "Limiter les ruissellements et rafraîchir les cours, au bénéfice des enfants et du voisinage.",
+    "details": "Ce qu'on fait : Sols perméables + végétalisation. Priorité : Joliot-Curie, maternelle centre, école du château. Co-conception avec équipes éducatives & parents.",
+    "benefices": "Moins d'îlots de chaleur. Meilleure gestion des eaux pluviales. Cours plus agréables et sûres.",
+    "indicateurs": "m² désimperméabilisés • Nb d'écoles concernées • Suivi température / confort",
+    "perimetre": "Joliot-Curie, maternelle centre, école du château"
+  },
+  {
+    "id": 641,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 3 - Réaménager la Place Henri Barbusse",
+    "resume": "Place Henri Barbusse (marché).",
+    "description": "Créer un cœur de ville plus ombragé, plus convivial et mieux adapté aux usages du marché.",
+    "details": "Ce qu'on fait : Repenser circulations & usages. Ajouter ombrage, végétation, sols perméables. Co-concevoir avec commerçants & habitants.",
+    "benefices": "Marché plus attractif. Confort été/hiver. Espace public apaisé.",
+    "indicateurs": "% surface ombragée • Nb d'événements/usages • Satisfaction usagers",
+    "perimetre": "Place Henri Barbusse"
+  },
+  {
+    "id": 642,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 4 - Planter des arbres",
+    "resume": "Développer les zones d'ombrage.",
+    "description": "Accélérer la création d'ombre naturelle et de corridors de biodiversité.",
+    "details": "Ce qu'on fait : Plan de plantation pluriannuel. Essences adaptées au climat. Suivi : arrosage, protection, remplacement.",
+    "benefices": "Plus de fraîcheur. Biodiversité renforcée. Cadre de vie amélioré.",
+    "indicateurs": "Nb d'arbres plantés/an • Taux de reprise • m² d'ombre créée"
+  },
+  {
+    "id": 643,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 5 - Accès à la fraîcheur",
+    "resume": "Canaux, espaces de fraîcheur, piscine.",
+    "description": "Offrir des refuges de fraîcheur lors des épisodes chauds et valoriser les canaux comme atout local.",
+    "details": "Ce qu'on fait : Valoriser les canaux. Identifier et aménager des espaces de fraîcheur. Maintenir la piscine municipale en fonctionnement.",
+    "benefices": "Meilleure adaptation aux canicules. Bien-être pour tous. Attractivité estivale.",
+    "indicateurs": "Nb d'espaces de fraîcheur • Fréquentation • Jours d'ouverture piscine"
+  },
+  {
+    "id": 644,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 6 - Éclairage public sobre",
+    "resume": "LED + pilotage intelligent.",
+    "description": "Réduire la consommation tout en gardant un éclairage adapté aux usages et à la sécurité.",
+    "details": "Ce qu'on fait : Généraliser les LED. Déployer pilotage (détection présence, scénarios). Ajuster selon lieux et horaires.",
+    "benefices": "Baisse des factures. Moins de pollution lumineuse. Confort & sécurité.",
+    "indicateurs": "% points lumineux en LED • kWh économisés/an • Nb de zones pilotées"
+  },
+  {
+    "id": 645,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 7 - Rénovation énergétique des bâtiments",
+    "resume": "Bâtiments communaux, priorité écoles.",
+    "description": "Rationaliser le patrimoine bâti, réduire les charges et améliorer les conditions d'apprentissage et de travail.",
+    "details": "Ce qu'on fait : Stratégie de rénovation + conformité. Études pour prioriser. Priorité groupes scolaires. Intégrer qualité de l'air intérieur.",
+    "benefices": "Économies durables. Confort thermique. Santé & performance à l'école.",
+    "indicateurs": "kWh/m²/an • € charges réduites • Nb de bâtiments rénovés"
+  },
+  {
+    "id": 646,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 8 - Numérique responsable",
+    "resume": "Inclusion, réparation, accessibilité, vigilance IA.",
+    "description": "Mettre le numérique au service de tous, en limitant l'empreinte et en protégeant les données.",
+    "details": "Ce qu'on fait : Lutter contre la fracture numérique. Former les personnes en difficulté. Réparer/donner/recycler plutôt que remplacer. Créer un repair café ou Fablab. Accessibilité des sites. Cadre d'usage IA + frugalité + données.",
+    "benefices": "Plus d'autonomie. Moins de déchets électroniques. Services publics plus accessibles.",
+    "indicateurs": "Nb d'ateliers/an • Nb d'appareils réparés • Taux d'accessibilité des sites"
+  },
+  {
+    "id": 647,
+    "theme": "Transition écologique",
+    "type": "engagement",
+    "titre": "Engagement 9 - Forêt communale",
+    "resume": "Gestion durable & résilience (125 ha).",
+    "description": "Protéger un patrimoine naturel majeur et accompagner sa résilience face au climat avec l'ONF et les partenaires.",
+    "details": "Ce qu'on fait : Biodiversité, sols, paysages. Production de bois encadrée. Accueil du public : promenade, rando, découverte. Actions avec Département pour l'entretien.",
+    "benefices": "Forêt plus résiliente. Espace nature accessible. Atout écologique et récréatif.",
+    "indicateurs": "Actions ONF/partenaires • Indicateurs biodiversité • Entretien & fréquentation",
+    "partenaires": "ONF, Département",
+    "perimetre": "125 ha de forêt communale"
   }
 ]
