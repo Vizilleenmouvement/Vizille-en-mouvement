@@ -206,6 +206,26 @@
         /* Compteur */
         .results-count { text-align: center; padding: 1rem; color: var(--gris-texte); font-size: 0.9rem; }
         
+        /* ===== ACCORDÉON MOBILE POUR LES ONGLETS ===== */
+        .tabs-toggle {
+            display: none;
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--bleu-vizille);
+            text-align: left;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .tabs-toggle .toggle-icon { transition: transform 0.3s; font-size: 0.8rem; }
+        .tabs-toggle.open .toggle-icon { transform: rotate(180deg); }
+        .tabs-toggle .current-theme { display: flex; align-items: center; gap: 0.5rem; }
+        .tabs-toggle .hint { font-size: 0.75rem; color: var(--gris-texte); font-weight: 400; }
+        
         @media (max-width: 768px) {
             body { padding-top: 80px; }
             .tabs-container { top: 80px; }
@@ -214,7 +234,30 @@
             .bilan-hero h1 { font-size: 1.5rem; }
             .bilan-hero .stat-val { font-size: 2rem; }
             .cards-grid { grid-template-columns: 1fr; }
-            .tabs { justify-content: flex-start; }
+            
+            /* Accordéon mobile */
+            .tabs-toggle { display: flex; }
+            .tabs {
+                display: none;
+                flex-direction: column;
+                background: white;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                max-height: 60vh;
+                overflow-y: auto;
+            }
+            .tabs.open { display: flex; }
+            .tabs .tab {
+                justify-content: flex-start;
+                padding: 0.7rem 1rem;
+                border-bottom: 1px solid var(--gris-doux);
+                border-left: 4px solid transparent;
+            }
+            .tabs .tab.active { border-left-color: var(--bleu-vizille); background: var(--blanc-casse); }
+            .tabs .tab:last-child { border-bottom: none; }
+            
+            /* Sous-onglets plus compacts */
+            .subtabs { gap: 0.3rem; padding: 0 0.5rem; }
+            .subtab { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -251,6 +294,10 @@
     </section>
     
     <div class="tabs-container">
+        <button class="tabs-toggle" id="tabs-toggle" onclick="toggleTabs()">
+            <span class="current-theme" id="current-theme-display">🎭 Culture (43)</span>
+            <span class="toggle-icon">▼</span>
+        </button>
         <div class="tabs" id="tabs"></div>
     </div>
     
@@ -468,6 +515,20 @@ function renderTabs() {
             <span class="badge">${count}</span>
         </div>`;
     }).join('');
+    // Mise à jour bouton accordéon mobile
+    const themeInfo = THEMES.find(t => t.id === currentTheme);
+    const count = allData.filter(p => p.theme === currentTheme && !p.suspendu).length;
+    document.getElementById('current-theme-display').innerHTML = `${themeInfo.icon} ${themeInfo.label} <span class="hint">(${count}) — Changer</span>`;
+}
+
+function toggleTabs() {
+    document.getElementById('tabs').classList.toggle('open');
+    document.getElementById('tabs-toggle').classList.toggle('open');
+}
+
+function closeTabs() {
+    document.getElementById('tabs').classList.remove('open');
+    document.getElementById('tabs-toggle').classList.remove('open');
 }
 
 function renderSubtabs() {
@@ -573,6 +634,7 @@ function selectTheme(theme) {
     } else {
         currentSubcat = 'all';
     }
+    closeTabs();
     renderTabs();
     renderBanner();
     renderSubtabs();
