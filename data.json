@@ -2736,7 +2736,7 @@
   },
   {
     "id": 50,
-    "theme": "Tranquillité publique",
+    "theme": "Tranquillité",
     "icon": "🛡️",
     "color": "#2c3e50",
     "statut": "Réalisé",
@@ -8678,10 +8678,10 @@
   },
   {
     "id": 207,
-    "theme": "Tranquillité publique",
+    "theme": "Tranquillité",
     "icon": "🛡️",
     "color": "#2c3e50",
-    "statut": "Décidé",
+    "statut": "Réalisé",
     "titre": "Vidéo-protection Z14 parking Tissages",
     "description": "Déploiement d'un système de vidéo-protection avec subvention FIPD 50%. Coordination avec CSU et gendarmerie.",
     "annee": "2025",
@@ -15883,7 +15883,7 @@
   },
   {
     "id": 954,
-    "theme": "Tranquillité publique",
+    "theme": "Tranquillité",
     "icon": "🛡️",
     "color": "#3498db",
     "statut": "Réalisé",
