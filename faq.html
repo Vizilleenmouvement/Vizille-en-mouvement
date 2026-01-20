@@ -27,6 +27,46 @@
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/pages/faq.css">
+    <style>
+        /* CSS pour l'accordéon FAQ */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer.open {
+            max-height: 1000px;
+            transition: max-height 0.5s ease;
+        }
+        
+        .faq-question {
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            background: transparent;
+            border: none;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .faq-question .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer-content {
+            padding: 0 1rem 1rem 1rem;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -370,3 +410,4 @@
     <script src="js/site-features.js"></script>
 </body>
 </html>
+
