@@ -321,18 +321,39 @@
         }
 
         function toggleFaq(index) {
+            console.log('🔵 toggleFaq appelé, index:', index);
+            
             const question = document.querySelectorAll('.faq-question')[index];
             const answer = document.getElementById(`faq-answer-${index}`);
+            
+            console.log('🔵 Question trouvée:', question);
+            console.log('🔵 Answer trouvée:', answer);
+            
+            // Vérifier que les éléments existent
+            if (!question || !answer) {
+                console.error('❌ Élément FAQ introuvable pour index:', index);
+                return;
+            }
 
+            // Fermer toutes les autres FAQs
             document.querySelectorAll('.faq-question').forEach((q, i) => {
                 if (i !== index) {
                     q.classList.remove('active');
-                    document.getElementById(`faq-answer-${i}`).classList.remove('open');
+                    const otherAnswer = document.getElementById(`faq-answer-${i}`);
+                    if (otherAnswer) {
+                        otherAnswer.classList.remove('open');
+                    }
                 }
             });
 
+            // Toggle la FAQ cliquée
+            const wasOpen = answer.classList.contains('open');
             question.classList.toggle('active');
             answer.classList.toggle('open');
+            
+            console.log('✅ Après toggle - Question active:', question.classList.contains('active'));
+            console.log('✅ Après toggle - Answer open:', answer.classList.contains('open'));
+            console.log('✅ État: ' + (wasOpen ? 'FERMÉE' : 'OUVERTE'));
         }
 
         function setSubject(subject) {
