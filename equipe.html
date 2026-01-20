@@ -246,7 +246,7 @@
                     .filter(c => c.ordre !== 1)
                     .sort((a, b) => (a.ordre || 99) - (b.ordre || 99));
 
-                renderLeader();
+                // Catherine sera affichée au milieu dans renderTeam()
                 renderTeam();
             } catch (err) {
                 document.getElementById('team-grid').innerHTML = `
@@ -272,8 +272,56 @@
             }
 
             if (currentView === 'list') {
-                // VUE LISTE
+                // VUE LISTE - Catherine au milieu
                 grid.style.display = 'block';
+                
+                // Diviser les candidats pour mettre Catherine au milieu
+                const middleIndex = Math.floor(candidatsData.length / 2);
+                const firstHalf = candidatsData.slice(0, middleIndex);
+                const secondHalf = candidatsData.slice(middleIndex);
+                
+                // Générer les lignes pour la première moitié
+                const firstHalfRows = firstHalf.map((candidat, index) => `
+                    <tr style="border-bottom: 1px solid #eee; cursor: pointer;" onclick="openCandidatModal(${index})" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='white'">
+                        <td style="padding: 0.5rem;">
+                            ${candidat.photo 
+                                ? `<img src="${candidat.photo}" alt="${candidat.nom}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">`
+                                : `<div style="width: 40px; height: 40px; border-radius: 50%; background: #e0e0e0; display: flex; align-items: center; justify-content: center;">👤</div>`
+                            }
+                        </td>
+                        <td style="padding: 0.5rem; font-weight: 600;">${candidat.nom}</td>
+                        <td style="padding: 0.5rem; color: #666;">${candidat.role || candidat.delegation || '—'}</td>
+                    </tr>
+                `).join('');
+                
+                // Ligne de Catherine
+                const catherineRow = `
+                    <tr style="border-bottom: 1px solid #eee; background: #fffbeb; cursor: pointer;" onclick="alert('Catherine Troton\\n\\nCandidate Tête de Liste\\n\\nEngagée depuis plus de 20 ans pour Vizille. Porte les valeurs de solidarité, d\\'écoute et de proximité au cœur de son action municipale.')">
+                        <td style="padding: 0.5rem;">
+                            <img src="images/catherine-troton.jpg" alt="Catherine Troton" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 3px solid var(--or);">
+                        </td>
+                        <td style="padding: 0.5rem; font-weight: 600;">⭐ Catherine Troton</td>
+                        <td style="padding: 0.5rem; color: #666;">Candidate Tête de Liste</td>
+                    </tr>
+                `;
+                
+                // Générer les lignes pour la seconde moitié
+                const secondHalfRows = secondHalf.map((candidat, index) => {
+                    const actualIndex = middleIndex + index;
+                    return `
+                        <tr style="border-bottom: 1px solid #eee; cursor: pointer;" onclick="openCandidatModal(${actualIndex})" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='white'">
+                            <td style="padding: 0.5rem;">
+                                ${candidat.photo 
+                                    ? `<img src="${candidat.photo}" alt="${candidat.nom}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">`
+                                    : `<div style="width: 40px; height: 40px; border-radius: 50%; background: #e0e0e0; display: flex; align-items: center; justify-content: center;">👤</div>`
+                                }
+                            </td>
+                            <td style="padding: 0.5rem; font-weight: 600;">${candidat.nom}</td>
+                            <td style="padding: 0.5rem; color: #666;">${candidat.role || candidat.delegation || '—'}</td>
+                        </tr>
+                    `;
+                }).join('');
+                
                 grid.innerHTML = `
                     <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
                         <thead>
@@ -284,25 +332,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            ${candidatsData.map((candidat, index) => `
-                                <tr style="border-bottom: 1px solid #eee; cursor: pointer;" onclick="openCandidatModal(${index})" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='white'">
-                                    <td style="padding: 0.5rem;">
-                                        ${candidat.photo 
-                                            ? `<img src="${candidat.photo}" alt="${candidat.nom}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">`
-                                            : `<div style="width: 40px; height: 40px; border-radius: 50%; background: #e0e0e0; display: flex; align-items: center; justify-content: center;">👤</div>`
-                                        }
-                                    </td>
-                                    <td style="padding: 0.5rem; font-weight: 600;">${candidat.nom}</td>
-                                    <td style="padding: 0.5rem; color: #666;">${candidat.role || candidat.delegation || '—'}</td>
-                                </tr>
-                            `).join('')}
+                            ${firstHalfRows}
+                            ${catherineRow}
+                            ${secondHalfRows}
                         </tbody>
                     </table>
                 `;
             } else {
-                // VUE CARTES
+                // VUE CARTES - Catherine au milieu
                 grid.style.display = 'grid';
-                grid.innerHTML = candidatsData.map((candidat, index) => {
+                
+                // Diviser les candidats en deux parties pour mettre Catherine au milieu
+                const middleIndex = Math.floor(candidatsData.length / 2);
+                const firstHalf = candidatsData.slice(0, middleIndex);
+                const secondHalf = candidatsData.slice(middleIndex);
+                
+                // Générer les cartes pour la première moitié
+                const firstHalfHTML = firstHalf.map((candidat, index) => {
                     const photoHtml = candidat.photo
                         ? `<img src="${candidat.photo}" alt="${candidat.nom}" class="team-photo">`
                         : `<div style="width:100%;height:250px;display:flex;align-items:center;justify-content:center;background:#e0e0e0;font-size:4rem;">👤</div>`;
@@ -317,6 +363,38 @@
                         </div>
                     `;
                 }).join('');
+                
+                // Carte de Catherine
+                const catherineHTML = `
+                    <div class="team-card" style="border: 3px solid var(--or);" onclick="alert('Catherine Troton\\n\\nCandidate Tête de Liste\\n\\nEngagée depuis plus de 20 ans pour Vizille. Porte les valeurs de solidarité, d\\'écoute et de proximité au cœur de son action municipale.')">
+                        <img src="images/catherine-troton.jpg" alt="Catherine Troton" class="team-photo">
+                        <div class="team-info">
+                            <h3 class="team-name">⭐ Catherine Troton</h3>
+                            <p class="team-role">Candidate Tête de Liste</p>
+                        </div>
+                    </div>
+                `;
+                
+                // Générer les cartes pour la seconde moitié
+                const secondHalfHTML = secondHalf.map((candidat, index) => {
+                    const actualIndex = middleIndex + index;
+                    const photoHtml = candidat.photo
+                        ? `<img src="${candidat.photo}" alt="${candidat.nom}" class="team-photo">`
+                        : `<div style="width:100%;height:250px;display:flex;align-items:center;justify-content:center;background:#e0e0e0;font-size:4rem;">👤</div>`;
+
+                    return `
+                        <div class="team-card" onclick="openCandidatModal(${actualIndex})" tabindex="0" role="button" aria-label="${candidat.nom}">
+                            ${photoHtml}
+                            <div class="team-info">
+                                <h3 class="team-name">${candidat.nom}</h3>
+                                ${candidat.role ? `<p class="team-role">${candidat.role}</p>` : ''}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                // Assembler tout
+                grid.innerHTML = firstHalfHTML + catherineHTML + secondHalfHTML;
             }
         }
 
@@ -439,3 +517,4 @@
     <script src="js/site-features.js"></script>
 </body>
 </html>
+
