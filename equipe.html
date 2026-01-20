@@ -246,6 +246,9 @@
                     .filter(c => c.ordre !== 1)
                     .sort((a, b) => (a.ordre || 99) - (b.ordre || 99));
 
+                // Vider le leader-container car Catherine est maintenant dans team-grid
+                document.getElementById('leader-container').innerHTML = '';
+                
                 // Catherine sera affichée au milieu dans renderTeam()
                 renderTeam();
             } catch (err) {
@@ -340,7 +343,7 @@
                 `;
             } else {
                 // VUE CARTES - Catherine au milieu
-                grid.style.display = 'grid';
+                grid.style.display = 'block';
                 
                 // Diviser les candidats en deux parties pour mettre Catherine au milieu
                 const middleIndex = Math.floor(candidatsData.length / 2);
@@ -393,8 +396,8 @@
                     `;
                 }).join('');
                 
-                // Assembler tout
-                grid.innerHTML = firstHalfHTML + catherineHTML + secondHalfHTML;
+                // Assembler tout dans une div avec la classe team-grid
+                grid.innerHTML = `<div class="team-grid">${firstHalfHTML}${catherineHTML}${secondHalfHTML}</div>`;
             }
         }
 
@@ -517,4 +520,5 @@
     <script src="js/site-features.js"></script>
 </body>
 </html>
+
 
