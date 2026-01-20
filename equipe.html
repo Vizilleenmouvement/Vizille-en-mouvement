@@ -289,13 +289,15 @@
                 const cards = orderedCandidats.map((candidat, index) => {
                     const isCatherine = candidat.ordre === 1;
                     const borderStyle = isCatherine ? 'border: 3px solid var(--or);' : '';
+                    // Style spécial pour centrer Catherine
+                    const centerStyle = isCatherine ? 'grid-column: 1 / -1; justify-self: center; max-width: 350px;' : '';
                     const nom = isCatherine ? `⭐ ${candidat.nom}` : candidat.nom;
                     const photoHtml = candidat.photo
                         ? `<img src="${candidat.photo}" alt="${candidat.nom}" class="team-photo">`
                         : `<div style="width:100%;height:250px;display:flex;align-items:center;justify-content:center;background:#e0e0e0;font-size:4rem;">👤</div>`;
 
                     return `
-                        <div class="team-card" style="${borderStyle}" onclick="openCandidatModal(${index})" tabindex="0" role="button" aria-label="${candidat.nom}">
+                        <div class="team-card" style="${borderStyle} ${centerStyle}" onclick="openCandidatModal(${index})" tabindex="0" role="button" aria-label="${candidat.nom}">
                             ${photoHtml}
                             <div class="team-info">
                                 <h3 class="team-name">${nom}</h3>
@@ -428,6 +430,7 @@
     <script src="js/site-features.js"></script>
 </body>
 </html>
+
 
 
 
