@@ -1484,14 +1484,29 @@
                             <button class="theme-btn" data-theme="Intercommunalité" onclick="filterActions('Intercommunalité')">
                                 🏛️ Intercommunalité (<span id="count-Intercommunalité">0</span>)
                             </button>
-                            <button class="theme-btn" data-theme="Tranquillité" onclick="filterActions('Tranquillité')">
-                                🛡️ Tranquillité (<span id="count-Tranquillité">0</span>)
+                            <button class="theme-btn" data-theme="Tranquillité publique" onclick="filterActions('Tranquillité publique')">
+                                🛡️ Tranquillité (<span id="count-Tranquillité publique">0</span>)
                             </button>
                             <button class="theme-btn" data-theme="Mobilités" onclick="filterActions('Mobilités')">
                                 🚲 Mobilités (<span id="count-Mobilités">0</span>)
                             </button>
                             <button class="theme-btn" data-theme="Finance" onclick="filterActions('Finance')">
                                 💰 Finance (<span id="count-Finance">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Travaux" onclick="filterActions('Travaux')">
+                                🏗️ Travaux (<span id="count-Travaux">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Administration" onclick="filterActions('Administration')">
+                                📋 Administration (<span id="count-Administration">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Jumelages" onclick="filterActions('Jumelages')">
+                                🌍 Jumelages (<span id="count-Jumelages">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Personnel" onclick="filterActions('Personnel')">
+                                👥 Personnel (<span id="count-Personnel">0</span>)
+                            </button>
+                            <button class="theme-btn" data-theme="Plan Climat" onclick="filterActions('Plan Climat')">
+                                🌍 Plan Climat (<span id="count-Plan Climat">0</span>)
                             </button>
                         </div>
                     </div>
@@ -1974,10 +1989,15 @@
             { value: 'Solidarité', label: '🤝 Solidarité' },
             { value: 'Sport', label: '⚽ Sport' },
             { value: 'Économie', label: '💼 Économie' },
-            { value: 'Intercommunalité', label: '🏛️ Intercommunalité' },
-            { value: 'Tranquillité', label: '🛡️ Tranquillité' },
+            { value: 'Intercommunalité', label: '🏙️ Intercommunalité' },
+            { value: 'Tranquillité publique', label: '🛡️ Tranquillité publique' },
             { value: 'Mobilités', label: '🚲 Mobilités' },
-            { value: 'Finance', label: '💰 Finance' }
+            { value: 'Finance', label: '💰 Finance' },
+            { value: 'Travaux', label: '🏗️ Travaux' },
+            { value: 'Administration', label: '📋 Administration' },
+            { value: 'Jumelages', label: '🌍 Jumelages' },
+            { value: 'Personnel', label: '👥 Personnel' },
+            { value: 'Plan Climat', label: '🌍 Plan Climat' }
         ];
 
         // ===== DONNÉES =====
@@ -2896,7 +2916,7 @@
             { theme: 'Sport', icon: '⚽', color: '#4caf50' },
             { theme: 'Économie', icon: '💼', color: '#f39c12' },
             { theme: 'Intercommunalité', icon: '🏛️', color: '#607d8b' },
-            { theme: 'Tranquillité', icon: '🛡️', color: '#2c3e50' },
+            { theme: 'Tranquillité publique', icon: '🛡️', color: '#2c3e50' },
             { theme: 'Mobilités', icon: '🚴', color: '#1abc9c' },
             { theme: 'Seniors', icon: '👴', color: '#795548' },
             { theme: 'Démocratie locale', icon: '🗣️', color: '#607d8b' },
@@ -3737,10 +3757,15 @@
             'Solidarité': { icon: '🤝', color: '#e74c3c' },
             'Sport': { icon: '⚽', color: '#2ecc71' },
             'Économie': { icon: '💼', color: '#f39c12' },
-            'Intercommunalité': { icon: '🏛️', color: '#607d8b' },
+            'Intercommunalité': { icon: '🏙️', color: '#607d8b' },
             'Mobilités': { icon: '🚴', color: '#1abc9c' },
-            'Tranquillité': { icon: '🛡️', color: '#2c3e50' },
-            'Finance': { icon: '💰', color: '#795548' }
+            'Tranquillité publique': { icon: '🛡️', color: '#2c3e50' },
+            'Finance': { icon: '💰', color: '#795548' },
+            'Travaux': { icon: '🏗️', color: '#ff5722' },
+            'Administration': { icon: '📋', color: '#455a64' },
+            'Jumelages': { icon: '🌍', color: '#00bcd4' },
+            'Personnel': { icon: '👥', color: '#9c27b0' },
+            'Plan Climat': { icon: '🌍', color: '#4caf50' }
         };
 
         // Variable pour suivre le thème actuellement affiché en détail pour les actions
