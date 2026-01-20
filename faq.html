@@ -262,6 +262,9 @@
                 return;
             }
 
+            // Compteur séparé pour les FAQs cliquables (avec réponse)
+            let clickableIndex = 0;
+
             container.innerHTML = faqData.map((faq, index) => {
                 const isFacebook = faq.source === 'facebook';
                 const hasReponse = faq.reponse && faq.reponse.trim();
@@ -303,14 +306,18 @@
 
                 return `
                 <div class="faq-item" style="${borderStyle}">
-                    <button class="faq-question" onclick="toggleFaq(${index})">
+                // Pour les FAQs avec réponse, utiliser clickableIndex puis l'incrémenter
+                const myIndex = clickableIndex;
+                clickableIndex++;
+
+                    <button class="faq-question" onclick="toggleFaq(${myIndex})">
                         <div>
                             ${sourceLabel}
                             <span>${faq.question}</span>
                         </div>
                         <span class="faq-icon">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-answer-${index}">
+                    <div class="faq-answer" id="faq-answer-${myIndex}">
                         <div class="faq-answer-content">
                             ${faq.categorie ? `<span class="faq-category">${faq.categorie}</span>` : ''}
                             <p>${faq.reponse.replace(/\n/g, '<br>')}</p>
@@ -438,4 +445,5 @@
     <script src="js/site-features.js"></script>
 </body>
 </html>
+
 
