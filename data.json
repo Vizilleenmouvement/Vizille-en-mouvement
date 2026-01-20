@@ -2350,17 +2350,17 @@
     "icon": "🛡️",
     "color": "#2c3e50",
     "statut": "Réalisé",
-    "titre": "Vidéo-protection 27 caméras",
-    "description": "Déploiement d'un système de vidéo-protection avec subvention FIPD 50%. Coordination avec CSU et gendarmerie.",
+    "titre": "Vidéo-protection 29 caméras",
+    "description": "Déploiement de 29 caméras sur les parkings, entrées de ville et centre-ville. Subvention FIPD 50%. Coordination avec CSU et gendarmerie pour les enquêtes.",
     "annee": "2021",
     "annee_fin": "2024",
     "budget": 223623,
     "source": "Délib 2021-02-23-02",
     "importance": 2,
-    "resume": "Déploiement d'un système de vidéo-protection avec subvention FIPD 50%. Coordination avec CSU et gendarmerie.",
+    "resume": "Déploiement de 29 caméras sur les parkings, entrées de ville et centre-ville. Subvention FIPD 50%. Coordination avec CSU et gendarmerie pour les enquêtes.",
     "chiffres": [
       {
-        "valeur": "24+",
+        "valeur": "29",
         "label": "Caméras"
       },
       {
@@ -2394,7 +2394,7 @@
         "evenement": "Avenant accord-cadre vidéoprotection (14 249€ HT)"
       }
     ],
-    "details": "Le réseau de vidéo-protection communal compte 27 caméras déployées sur les points stratégiques de la ville. Le système bénéficie de mises à jour régulières avec avenants pour études préparatoires et évolutions techniques. L'objectif est d'assurer la tranquillité publique tout en respectant les libertés individuelles.",
+    "details": "3 parkings équipés. Ce dispositif montre son efficacité et répond à une demande de la gendarmerie qui sollicite nos services pour faire avancer certaines enquêtes.",
     "sources": [
       {
         "type": "doc",
@@ -2586,23 +2586,27 @@
     "theme": "Tranquillité publique",
     "icon": "🛡️",
     "color": "#2c3e50",
-    "statut": "En cours",
+    "statut": "Réalisé",
     "titre": "Refonte Plan Communal Sauvegarde",
-    "description": "PCS",
+    "description": "Plan Communal de Sauvegarde validé. Intégration au PICS (Plan Intercommunal de Sauvegarde). Exercice grandeur nature le 1er avril 2025.",
     "annee": "2024",
-    "annee_fin": "",
+    "annee_fin": "2025",
     "budget": 0,
     "source": "Délib 2024-12-17-16",
     "importance": 1,
-    "resume": "PCS",
+    "resume": "Plan Communal de Sauvegarde validé. Intégration au PICS (Plan Intercommunal de Sauvegarde). Exercice grandeur nature le 1er avril 2025.",
     "chiffres": [],
     "chronologie": [
       {
         "date": "2024",
         "evenement": "Réalisation"
+      },
+      {
+        "date": "2025-04-01",
+        "evenement": "Exercice PCS/PICS grandeur nature - test des dispositifs"
       }
     ],
-    "details": "Le Plan Communal de Sauvegarde (PCS) est refondu en collaboration avec les pompiers pour répondre à l'accroissement des phénomènes climatiques extrêmes (incendies de forêts, sécheresse). La mise en place d'une réserve citoyenne est également à l'étude pour renforcer la résilience du territoire face aux risques identifiés.",
+    "details": "Le PCS de la commune est à jour et validé. L'intégration au PICS s'est faite naturellement. L'exercice du 1er avril 2025 a permis de tester les différents dispositifs et de se conformer à l'obligation légale d'organiser au moins un exercice tous les 5 ans.",
     "sources": [
       {
         "type": "doc",
@@ -15763,5 +15767,204 @@
     "description": "Sensibiliser les agents à la sobriété, réduire les déchets, achats publics responsables, événements éco-responsables.",
     "details": "Actions : plan de sensibilisation, tri sélectif, composteurs, supprimer plastique usage unique, réduire papier, clauses environnementales dans les marchés, charte éco-événements, usage numérique responsable.",
     "importance": 1
+  },
+  {
+    "id": 951,
+    "theme": "Tranquillité publique",
+    "icon": "🛡️",
+    "color": "#3498db",
+    "statut": "En cours",
+    "titre": "Recrutement 3ème policier municipal",
+    "description": "Campagne de recrutement en cours pour renforcer l'équipe et élargir le champ d'actions sur les communes voisines.",
+    "annee": "2025",
+    "annee_fin": "",
+    "budget": 0,
+    "source": "Bilan Tranquillité",
+    "importance": 2,
+    "resume": "Campagne de recrutement en cours pour renforcer l'équipe et élargir le champ d'actions sur les communes voisines.",
+    "chiffres": [],
+    "chronologie": [
+      {
+        "date": "2025-05",
+        "evenement": "Recrutement 2ème PM effectif"
+      },
+      {
+        "date": "2025",
+        "evenement": "Campagne recrutement 3ème PM lancée"
+      }
+    ],
+    "details": "Le service PM a fonctionné pendant plusieurs mois avec 1 seul agent. Aujourd'hui 2 agents sont en poste. La campagne continue pour un 3ème agent.",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Bilan Tranquillité",
+        "desc": ""
+      }
+    ],
+    "lien_source": [],
+    "sous_categorie": "Police municipale"
+  },
+  {
+    "id": 952,
+    "theme": "Tranquillité publique",
+    "icon": "🛡️",
+    "color": "#3498db",
+    "statut": "Réalisé",
+    "titre": "Équipements police municipale",
+    "description": "Nouveau véhicule adapté, cinémomètre (contrôle vitesse) et PIE (pistolet à impulsion électrique) pour renforcer les moyens de la PM.",
+    "annee": "2024",
+    "annee_fin": "2025",
+    "budget": 0,
+    "source": "Bilan Tranquillité",
+    "importance": 2,
+    "resume": "Nouveau véhicule adapté, cinémomètre et PIE pour la police municipale.",
+    "chiffres": [
+      {
+        "valeur": "1",
+        "label": "Véhicule neuf"
+      },
+      {
+        "valeur": "1",
+        "label": "Cinémomètre"
+      },
+      {
+        "valeur": "1",
+        "label": "PIE"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2024-2025",
+        "evenement": "Acquisition équipements PM"
+      }
+    ],
+    "details": "L'acquisition d'un véhicule plus adapté et du matériel plus récent renforce ce service. Le cinémomètre permet le contrôle de vitesse. Le PIE (pistolet à impulsion électrique) complète l'équipement des agents.",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Bilan Tranquillité",
+        "desc": ""
+      }
+    ],
+    "lien_source": [],
+    "sous_categorie": "Police municipale"
+  },
+  {
+    "id": 953,
+    "theme": "Tranquillité publique",
+    "icon": "🛡️",
+    "color": "#3498db",
+    "statut": "Réalisé",
+    "titre": "Wary'me - Système d'alerte écoles",
+    "description": "Application d'alerte déployée dans toutes les écoles permettant aux enseignants de communiquer rapidement et discrètement en cas de problème.",
+    "annee": "2024",
+    "annee_fin": "2024",
+    "budget": 0,
+    "source": "Bilan Tranquillité",
+    "importance": 1,
+    "resume": "Application Wary'me pour la sécurité des écoles, en lien avec la police municipale.",
+    "chiffres": [],
+    "chronologie": [
+      {
+        "date": "2024",
+        "evenement": "Déploiement Wary'me dans toutes les écoles"
+      }
+    ],
+    "details": "Pour la sécurité de nos écoles, tous les enseignants sont équipés d'un téléphone avec l'application Wary'me permettant de communiquer rapidement et discrètement entre eux et avec l'extérieur (dont PM) en cas de problème.",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Bilan Tranquillité",
+        "desc": ""
+      }
+    ],
+    "lien_source": [],
+    "sous_categorie": "Prévention"
+  },
+  {
+    "id": 954,
+    "theme": "Tranquillité publique",
+    "icon": "🛡️",
+    "color": "#3498db",
+    "statut": "Réalisé",
+    "titre": "Aménagements sécurité routière",
+    "description": "Aménagements pour limiter la vitesse et fluidifier la circulation sur Jean-Jaurès, route d'Uriage, Aristide-Briand, Vénaria, en partenariat avec la Métropole.",
+    "annee": "2021",
+    "annee_fin": "2025",
+    "budget": 0,
+    "source": "Bilan Tranquillité",
+    "importance": 2,
+    "resume": "Aménagements de sécurité routière sur les axes principaux en partenariat avec la Métropole.",
+    "chiffres": [],
+    "chronologie": [
+      {
+        "date": "2021-2025",
+        "evenement": "Aménagements progressifs sur les axes principaux"
+      }
+    ],
+    "details": "Le nombre important de véhicules voit la circulation et les comportements dangereux s'accentuer. De nombreux aménagements ont été faits pour limiter la vitesse et fluidifier la circulation sur certains axes, en partenariat avec les services de la Métropole : avenue Jean-Jaurès, route d'Uriage, avenue Aristide-Briand, avenue de Vénaria.",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Bilan Tranquillité",
+        "desc": ""
+      }
+    ],
+    "lien_source": [],
+    "sous_categorie": "Prévention"
+  },
+  {
+    "id": 955,
+    "theme": "Tranquillité publique",
+    "icon": "🛡️",
+    "color": "#3498db",
+    "statut": "Réalisé",
+    "titre": "Arrêtés circulation vacances scolaires",
+    "description": "Arrêtés de circulation pris pendant les vacances scolaires pour permettre aux riverains de circuler face à l'afflux vers les stations.",
+    "annee": "2022",
+    "annee_fin": "2025",
+    "budget": 0,
+    "source": "Bilan Tranquillité",
+    "importance": 3,
+    "resume": "Arrêtés de circulation pendant les vacances scolaires sur Digue, St-Pierre, Paute, Prieuré.",
+    "chiffres": [],
+    "chronologie": [],
+    "details": "Les périodes de vacances scolaires voient s'accroître le passage des véhicules sur la commune en direction des stations. Des arrêtés sont pris pour permettre aux riverains de circuler : Digue, pont de St Pierre, Chemin de la Paute et du Prieuré.",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Bilan Tranquillité",
+        "desc": ""
+      }
+    ],
+    "lien_source": [],
+    "sous_categorie": "Prévention"
+  },
+  {
+    "id": 956,
+    "theme": "Tranquillité publique",
+    "icon": "🛡️",
+    "color": "#3498db",
+    "statut": "En cours",
+    "titre": "Médiation et tranquillité de voisinage",
+    "description": "Écoute et médiation par la PM et les élus pour les conflits de voisinage. Orientation vers médiateur judiciaire si nécessaire.",
+    "annee": "2020",
+    "annee_fin": "",
+    "budget": 0,
+    "source": "Bilan Tranquillité",
+    "importance": 3,
+    "resume": "Service de médiation pour les problèmes de voisinage par la PM et les élus.",
+    "chiffres": [],
+    "chronologie": [],
+    "details": "La PM et les élus sont souvent sollicités pour des problèmes de voisinage : mésentente, chien qui aboie, bruits, stationnement. Notre rôle est d'être à l'écoute de tous pour éviter ou stopper des conflits. Une simple médiation, en rappelant les devoirs de chacun, peut dans la plupart des cas ramener de la sérénité. Dans le cas contraire, orientation vers les services adaptés (médiateur judiciaire).",
+    "sources": [
+      {
+        "type": "doc",
+        "ref": "Bilan Tranquillité",
+        "desc": ""
+      }
+    ],
+    "lien_source": [],
+    "sous_categorie": "Prévention"
   }
 ]
