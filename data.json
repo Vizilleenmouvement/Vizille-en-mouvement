@@ -2868,7 +2868,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Médiathèque"
   },
   {
     "id": 52,
@@ -2936,7 +2937,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Cinéma"
   },
   {
     "id": 53,
@@ -2988,7 +2990,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Festivals & Fêtes"
   },
   {
     "id": 54,
@@ -3052,7 +3055,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Festivals & Fêtes"
   },
   {
     "id": 55,
@@ -3094,7 +3098,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Festivals & Fêtes"
   },
   {
     "id": 56,
@@ -3154,7 +3159,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Festivals & Fêtes"
   },
   {
     "id": 57,
@@ -3196,7 +3202,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Festivals & Fêtes"
   },
   {
     "id": 58,
@@ -3253,7 +3260,7 @@
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
     ],
-    "sous_categorie": "Festivals"
+    "sous_categorie": "Festivals & Fêtes"
   },
   {
     "id": 59,
@@ -3300,7 +3307,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Spectacles"
   },
   {
     "id": 60,
@@ -3380,7 +3388,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Art & Création"
   },
   {
     "id": 61,
@@ -3452,7 +3461,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Associations"
   },
   {
     "id": 62,
@@ -3500,7 +3510,7 @@
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
     ],
-    "sous_categorie": "Autres"
+    "sous_categorie": "Gouvernance"
   },
   {
     "id": 63,
@@ -3547,7 +3557,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Festivals & Fêtes"
   },
   {
     "id": 64,
@@ -3590,7 +3601,7 @@
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
     ],
-    "sous_categorie": "Associations & Partenariats"
+    "sous_categorie": "Associations"
   },
   {
     "id": 65,
@@ -3655,7 +3666,7 @@
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
     ],
-    "sous_categorie": "Associations & Partenariats"
+    "sous_categorie": "Associations"
   },
   {
     "id": 66,
@@ -3698,7 +3709,7 @@
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
     ],
-    "sous_categorie": "Associations & Partenariats"
+    "sous_categorie": "Associations"
   },
   {
     "id": 67,
@@ -3749,7 +3760,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Cinéma"
   },
   {
     "id": 68,
@@ -3791,7 +3803,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Art & Création"
   },
   {
     "id": 69,
@@ -3833,7 +3846,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Art & Création"
   },
   {
     "id": 70,
@@ -3875,7 +3889,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Numérique"
   },
   {
     "id": 71,
@@ -3922,7 +3937,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Animations"
   },
   {
     "id": 72,
@@ -10943,7 +10959,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Spectacles"
   },
   {
     "id": 217,
@@ -10990,7 +11007,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Spectacles"
   },
   {
     "id": 218,
@@ -11037,7 +11055,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Spectacles"
   },
   {
     "id": 219,
@@ -11084,7 +11103,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Spectacles"
   },
   {
     "id": 220,
@@ -11131,7 +11151,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Spectacles"
   },
   {
     "id": 221,
@@ -11173,7 +11194,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Spectacles"
   },
   {
     "id": 222,
@@ -11215,7 +11237,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Associations"
   },
   {
     "id": 223,
@@ -11545,7 +11568,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Festivals & Fêtes"
   },
   {
     "id": 230,
@@ -12086,7 +12110,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Jeunesse"
   },
   {
     "id": 245,
@@ -12133,7 +12158,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Jeunesse"
   },
   {
     "id": 246,
@@ -12180,7 +12206,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Jeunesse"
   },
   {
     "id": 247,
@@ -12227,7 +12254,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Jeunesse"
   },
   {
     "id": 248,
@@ -12274,7 +12302,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Festivals & Fêtes"
   },
   {
     "id": 250,
@@ -13190,7 +13219,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Associations"
   },
   {
     "id": 269,
@@ -13232,7 +13262,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Associations"
   },
   {
     "id": 271,
@@ -13490,7 +13521,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Spectacles"
   },
   {
     "id": 276,
@@ -13538,7 +13570,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Festivals & Fêtes"
   },
   {
     "id": 277,
@@ -13872,7 +13905,8 @@
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
     ],
-    "details": "Événement culturel annuel organisé dans différents lieux de la ville pour célébrer la musique sous toutes ses formes."
+    "details": "Événement culturel annuel organisé dans différents lieux de la ville pour célébrer la musique sous toutes ses formes.",
+    "sous_categorie": "Festivals & Fêtes"
   },
   {
     "id": 285,
@@ -14527,7 +14561,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Gouvernance"
   },
   {
     "id": 301,
@@ -14773,7 +14808,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Spectacles"
   },
   {
     "id": 307,
@@ -15190,7 +15226,8 @@
         "label": "Service culturel",
         "url": "https://www.ville-vizille.fr/12625-service-culturel.htm"
       }
-    ]
+    ],
+    "sous_categorie": "Animations"
   },
   {
     "id": 317,
@@ -15941,7 +15978,7 @@
     "annee_fin": "2025",
     "budget": 0,
     "source": "Bilan adjoint culture",
-    "sous_categorie": "Jeu de Paume"
+    "sous_categorie": "Spectacles"
   },
   {
     "id": 333,
@@ -15955,7 +15992,7 @@
     "annee_fin": "2024",
     "budget": 0,
     "source": "Bilan adjoint culture",
-    "sous_categorie": "Festivals"
+    "sous_categorie": "Animations"
   },
   {
     "id": 334,
@@ -15968,7 +16005,8 @@
     "annee": "2021",
     "annee_fin": "2025",
     "budget": 0,
-    "source": "Bilan adjoint culture"
+    "source": "Bilan adjoint culture",
+    "sous_categorie": "Festivals & Fêtes"
   },
   {
     "id": 335,
@@ -15981,7 +16019,8 @@
     "annee": "2021",
     "annee_fin": "2025",
     "budget": 0,
-    "source": "Bilan adjoint culture"
+    "source": "Bilan adjoint culture",
+    "sous_categorie": "Médiathèque"
   },
   {
     "id": 336,
@@ -15994,7 +16033,8 @@
     "annee": "2020",
     "annee_fin": "2025",
     "budget": 0,
-    "source": "Bilan adjoint culture"
+    "source": "Bilan adjoint culture",
+    "sous_categorie": "Animations"
   },
   {
     "id": 337,
@@ -16007,7 +16047,8 @@
     "annee": "2020",
     "annee_fin": "2025",
     "budget": 0,
-    "source": "Bilan adjoint culture"
+    "source": "Bilan adjoint culture",
+    "sous_categorie": "Spectacles"
   },
   {
     "id": 338,
@@ -16021,7 +16062,7 @@
     "annee_fin": "2025",
     "budget": 0,
     "source": "Bilan adjoint culture",
-    "sous_categorie": "Autres"
+    "sous_categorie": "Gouvernance"
   },
   {
     "id": 339,
@@ -16034,7 +16075,8 @@
     "annee": "2022",
     "annee_fin": "2024",
     "budget": 0,
-    "source": "Bilan adjoint culture"
+    "source": "Bilan adjoint culture",
+    "sous_categorie": "Festivals & Fêtes"
   },
   {
     "id": 340,
@@ -16229,7 +16271,8 @@
     "budget": 0,
     "source": "Bilan adjoint culture",
     "importance": 1,
-    "resume": "Actions littéraires communes entre médiathèque et librairie locale."
+    "resume": "Actions littéraires communes entre médiathèque et librairie locale.",
+    "sous_categorie": "Médiathèque"
   },
   {
     "id": 354,
@@ -16244,7 +16287,8 @@
     "budget": 0,
     "source": "Bilan adjoint culture",
     "importance": 1,
-    "resume": "Expositions régulières au Jeu de Paume et à la Mairie."
+    "resume": "Expositions régulières au Jeu de Paume et à la Mairie.",
+    "sous_categorie": "Spectacles"
   },
   {
     "id": 355,
@@ -16259,7 +16303,8 @@
     "budget": 0,
     "source": "Bilan adjoint culture",
     "importance": 1,
-    "resume": "Animations culturelles lors du Marché de Noël."
+    "resume": "Animations culturelles lors du Marché de Noël.",
+    "sous_categorie": "Festivals & Fêtes"
   },
   {
     "id": 356,
@@ -16275,7 +16320,7 @@
     "source": "Bilan adjoint culture",
     "importance": 1,
     "resume": "Événement printanier avec les écoles.",
-    "sous_categorie": "Festivals"
+    "sous_categorie": "Festivals & Fêtes"
   },
   {
     "id": 357,
@@ -16291,7 +16336,7 @@
     "source": "Bilan adjoint culture",
     "importance": 2,
     "resume": "Aides financières et logistiques aux associations culturelles locales.",
-    "sous_categorie": "Festivals"
+    "sous_categorie": "Associations"
   },
   {
     "id": 358,
