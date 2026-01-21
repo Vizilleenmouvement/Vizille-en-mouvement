@@ -1997,8 +1997,22 @@ function selectThemeButton(theme) {
         btn.classList.toggle('active', btn.dataset.theme === theme);
     });
     
+    // Passer en vue cartes si un thème est sélectionné
+    if (theme) {
+        document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+        document.querySelector('.view-btn[data-view="cards"]').classList.add('active');
+        currentView = 'cards';
+    }
+    
     // Appliquer les filtres
     applyFilters();
+    
+    // Scroller vers les résultats si un thème est sélectionné
+    if (theme) {
+        setTimeout(() => {
+            document.getElementById('view-cards').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+    }
 }
 
 // ===== EVENT LISTENERS =====
@@ -2155,11 +2169,26 @@ function renderThemesView() {
         `;
         
         card.addEventListener('click', () => {
+            // Mettre à jour le filtre
             document.getElementById('filter-theme').value = themeName;
+            
+            // Mettre à jour les boutons de filtre visuels
+            document.querySelectorAll('.theme-filter-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.theme === themeName);
+            });
+            
+            // Passer en vue cartes
             document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
             document.querySelector('.view-btn[data-view="cards"]').classList.add('active');
             currentView = 'cards';
+            
+            // Appliquer les filtres
             applyFilters();
+            
+            // Scroller vers les résultats
+            setTimeout(() => {
+                document.getElementById('view-cards').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
         });
         
         container.appendChild(card);
