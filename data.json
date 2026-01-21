@@ -15966,5 +15966,250 @@
     ],
     "lien_source": [],
     "sous_categorie": "Prévention"
+  },
+  {
+    "id": 957,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "Réalisé",
+    "titre": "Veillées de Belledonne - Partenariat Espace Belledonne",
+    "description": "Partenariat avec l'Espace Belledonne depuis 2004 pour l'organisation des Veillées de Belledonne, moments d'échange citoyens sur les enjeux du territoire.",
+    "annee": 2022,
+    "budget": 0,
+    "importance": 2,
+    "sous_categorie": "Veillées de Belledonne"
+  },
+  {
+    "id": 958,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "Réalisé",
+    "titre": "Veillée Belledonne - Végétalisation avril 2022",
+    "description": "Veillée citoyenne sur le Plan Canopée et la végétalisation urbaine à Vizille.",
+    "annee": 2022,
+    "budget": 0,
+    "importance": 2,
+    "sous_categorie": "Veillées de Belledonne"
+  },
+  {
+    "id": 959,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "Réalisé",
+    "titre": "Concertation désimperméabilisation école Jean-Jaurès",
+    "description": "Concertation citoyenne avec l'Atelier des Cairns pour le réaménagement de la cour d'école. Inauguration juin 2024.",
+    "annee": 2022,
+    "budget": 0,
+    "importance": 3,
+    "sous_categorie": "Écoles participatives"
+  },
+  {
+    "id": 960,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "Réalisé",
+    "titre": "Enquête participative éclairage public",
+    "description": "Consultation citoyenne sur l'extinction nocturne de l'éclairage public. Résultat : 93% favorables à l'extinction 22h-6h.",
+    "annee": 2023,
+    "budget": 0,
+    "importance": 3,
+    "chiffres": [
+      {
+        "valeur": "93%",
+        "label": "favorables extinction"
+      }
+    ],
+    "sous_categorie": "Enquêtes citoyennes"
+  },
+  {
+    "id": 961,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "Réalisé",
+    "titre": "Concertation Zone Faible Émission (ZFE)",
+    "description": "Participation à la concertation métropolitaine sur la Zone à Faibles Émissions.",
+    "annee": 2023,
+    "budget": 0,
+    "importance": 2,
+    "sous_categorie": "Concertations publiques"
+  },
+  {
+    "id": 962,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "Réalisé",
+    "titre": "Plateforme numérique participative",
+    "description": "Mise en place d'une plateforme numérique pour faciliter la participation citoyenne aux décisions municipales.",
+    "annee": 2023,
+    "budget": 0,
+    "importance": 2,
+    "sous_categorie": "Participation citoyenne"
+  },
+  {
+    "id": 963,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "Réalisé",
+    "titre": "Concertation Secteur Tanneries / CROS",
+    "description": "Concertation publique sur l'aménagement du secteur Tanneries/CROS. Budget études : 192 000€ pour 5 hectares.",
+    "annee": 2023,
+    "budget": 192000,
+    "importance": 3,
+    "chiffres": [
+      {
+        "valeur": "5 ha",
+        "label": "secteur concerné"
+      }
+    ],
+    "sous_categorie": "Concertations publiques"
+  },
+  {
+    "id": 964,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "Réalisé",
+    "titre": "Participation citoyenne - 12 référents de quartier",
+    "description": "Mise en place d'un réseau de 12 référents citoyens pour relayer les préoccupations des habitants.",
+    "annee": 2024,
+    "budget": 0,
+    "importance": 3,
+    "chiffres": [
+      {
+        "valeur": "12",
+        "label": "référents quartier"
+      }
+    ],
+    "sous_categorie": "Participation citoyenne"
+  },
+  {
+    "id": 965,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "Réalisé",
+    "titre": "Concertation centre-ville",
+    "description": "Concertation citoyenne sur la revitalisation du centre-ville de Vizille.",
+    "annee": 2024,
+    "budget": 0,
+    "importance": 2,
+    "sous_categorie": "Concertations publiques"
+  },
+  {
+    "id": 966,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "Réalisé",
+    "titre": "Concertation désimperméabilisation école Paul Langevin",
+    "description": "Concertation citoyenne pour le réaménagement participatif de la cour d'école. Inauguration janvier 2026.",
+    "annee": 2024,
+    "budget": 0,
+    "importance": 3,
+    "sous_categorie": "Écoles participatives"
+  },
+  {
+    "id": 967,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "Réalisé",
+    "titre": "Veillée Belledonne - Énergies renouvelables nov. 2024",
+    "description": "Veillée citoyenne sur les énergies renouvelables avec présentation de la maquette réalisée par les collégiens.",
+    "annee": 2024,
+    "budget": 0,
+    "importance": 2,
+    "sous_categorie": "Veillées de Belledonne"
+  },
+  {
+    "id": 968,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "Réalisé",
+    "titre": "Prix 3 étoiles Trophées de la Participation 2024",
+    "description": "Vizille récompensée par 3 étoiles aux Trophées de la Participation et de la Concertation 2024 pour sa démarche exemplaire.",
+    "annee": 2024,
+    "budget": 0,
+    "importance": 3,
+    "chiffres": [
+      {
+        "valeur": "3 ⭐",
+        "label": "Trophées Participation"
+      }
+    ],
+    "sous_categorie": "Événements"
+  },
+  {
+    "id": 969,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "Réalisé",
+    "titre": "Veillée Belledonne - La Cuisine nov. 2025",
+    "description": "Veillée citoyenne sur le thème de l'alimentation durable et locale.",
+    "annee": 2025,
+    "budget": 0,
+    "importance": 2,
+    "sous_categorie": "Veillées de Belledonne"
+  },
+  {
+    "id": 970,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "En cours",
+    "titre": "Concertation réseau de chaleur urbain",
+    "description": "Concertation citoyenne sur le projet de réseau de chaleur urbain pour Vizille (2025-2026).",
+    "annee": 2025,
+    "budget": 0,
+    "importance": 3,
+    "sous_categorie": "Concertations publiques"
+  },
+  {
+    "id": 971,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "En cours",
+    "titre": "Campagne mesure îlots de chaleur",
+    "description": "Campagne participative de mesure des îlots de chaleur urbains avec les citoyens.",
+    "annee": 2025,
+    "budget": 0,
+    "importance": 2,
+    "sous_categorie": "Enquêtes citoyennes"
+  },
+  {
+    "id": 972,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "Programmé",
+    "titre": "Réunion publique chauffage urbain janv. 2026",
+    "description": "Réunion publique d'information et de concertation sur le projet de chauffage urbain.",
+    "annee": 2026,
+    "budget": 0,
+    "importance": 2,
+    "sous_categorie": "Événements"
+  },
+  {
+    "id": 973,
+    "theme": "Concertation Citoyenne",
+    "icon": "🗳️",
+    "color": "#8e24aa",
+    "statut": "Programmé",
+    "titre": "Inauguration participative école Paul Langevin janv. 2026",
+    "description": "Inauguration de la cour d'école réaménagée avec la participation des enfants et des familles.",
+    "annee": 2026,
+    "budget": 0,
+    "importance": 2,
+    "sous_categorie": "Écoles participatives"
   }
 ]
