@@ -27,6 +27,53 @@
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/pages/faq.css">
+    <style>
+        /* CSS pour l'accordéon FAQ - FORCÉ */
+        .faq-answer {
+            max-height: 0 !important;
+            overflow: hidden !important;
+            transition: max-height 0.3s ease !important;
+            opacity: 0 !important;
+        }
+        
+        .faq-answer.open {
+            max-height: 2000px !important;
+            opacity: 1 !important;
+            transition: max-height 0.5s ease, opacity 0.3s ease !important;
+        }
+        
+        .faq-question {
+            cursor: pointer !important;
+            width: 100% !important;
+            text-align: left !important;
+            background: transparent !important;
+            border: none !important;
+            padding: 1rem !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            font-size: 1.1rem !important;
+            font-weight: 600 !important;
+        }
+        
+        .faq-question:hover {
+            background: rgba(0,0,0,0.02) !important;
+        }
+        
+        .faq-question .faq-icon {
+            font-size: 1.5rem !important;
+            transition: transform 0.3s ease !important;
+            display: inline-block !important;
+        }
+        
+        .faq-question.active .faq-icon {
+            transform: rotate(45deg) !important;
+        }
+        
+        .faq-answer-content {
+            padding: 0 1rem 1rem 1rem !important;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -54,11 +101,13 @@
     </header>
     <script src="js/menu-mobile.js"></script>
 
-    <section class="page-header page-header-compact">
-        <img src="images/logo.png" alt="Vizille en Mouvement" class="header-logo">
-        <p class="header-slogan">« Ensemble pour une ville dynamique et solidaire : construisons ensemble »</p>
-        <h1>🤝 Construisons ensemble</h1>
-        <p>Vos questions, vos idées, vos suggestions – participez à la vie de votre ville</p>
+    <section class="hero-unified">
+        <img src="images/logo.png" alt="Vizille en Mouvement" class="hero-logo">
+        <div class="hero-text">
+            <h1>🤝 Construisons ensemble</h1>
+            <p class="slogan">Ensemble pour une ville dynamique et solidaire</p>
+            <p class="hero-subtitle">Vos questions, vos idées, vos suggestions – participez à la vie de votre ville</p>
+        </div>
     </section>
 
     <main class="content">
@@ -109,8 +158,8 @@
 
         <!-- Section Vos Questions -->
         <div class="questions-header">
-            <h2>💬 Vos questions</h2>
-            <p>Les réponses aux questions posées par les Vizillois</p>
+            <h2>💬 Vos questions & messages</h2>
+            <p>Les échanges avec les Vizillois</p>
         </div>
 
         <div class="faq-list" id="faq-list">
@@ -180,14 +229,20 @@
                 if (!response.ok) throw new Error('Erreur');
 
                 faqData = await response.json();
-                faqData.sort((a, b) => (a.ordre || 99) - (b.ordre || 99));
+                // Trier par date décroissante (plus récent en premier)
+                faqData.sort((a, b) => {
+                    if (!a.date && !b.date) return 0;
+                    if (!a.date) return 1;
+                    if (!b.date) return -1;
+                    return new Date(b.date) - new Date(a.date);
+                });
                 renderFaq();
             } catch (err) {
                 document.getElementById('faq-list').innerHTML = `
                     <div class="empty-state">
                         <div class="icon">❓</div>
                         <h3>Aucune question pour le moment</h3>
-                        <p>Soyez le premier à poser une question !</p>
+                        <p>Soyez le premier à nous écrire !</p>
                     </div>
                 `;
             }
@@ -201,31 +256,68 @@
                     <div class="empty-state">
                         <div class="icon">❓</div>
                         <h3>Aucune question pour le moment</h3>
-                        <p>Soyez le premier à poser une question !</p>
+                        <p>Soyez le premier à nous écrire !</p>
                     </div>
                 `;
                 return;
             }
 
+            // Compteur séparé pour les FAQs cliquables (avec réponse)
+            let clickableIndex = 0;
+
             container.innerHTML = faqData.map((faq, index) => {
                 const isFacebook = faq.source === 'facebook';
+                const hasReponse = faq.reponse && faq.reponse.trim();
                 const borderStyle = isFacebook ? 'border-left: 4px solid #1877F2;' : '';
-                const sourceLabel = isFacebook
-                    ? `<div style="font-size: 0.85rem; color: #1877F2; margin-bottom: 0.5rem;">
-                         📘 Question de <strong>${faq.auteur || 'un internaute'}</strong> sur Facebook
-                       </div>`
-                    : '';
+                
+                // Source label
+                let sourceLabel = '';
+                if (isFacebook) {
+                    sourceLabel = `<div style="font-size: 0.85rem; color: #1877F2; margin-bottom: 0.5rem;">
+                         📘 Message de <strong>${faq.auteur || faq.pseudo || 'un internaute'}</strong> sur Facebook
+                       </div>`;
+                } else if (faq.origine) {
+                    const origineIcons = {
+                        'Site web': '🌐',
+                        'Facebook': '📘',
+                        'WhatsApp': '💬',
+                        'Permanence': '🏛️',
+                        'Email': '📧',
+                        'Autre': '📝'
+                    };
+                    const icon = origineIcons[faq.origine] || '📝';
+                    sourceLabel = `<div style="font-size: 0.85rem; color: #666; margin-bottom: 0.5rem;">
+                         ${icon} ${faq.pseudo ? `<strong>${faq.pseudo}</strong>` : 'Un Vizillois'}${faq.date ? ` • ${new Date(faq.date).toLocaleDateString('fr-FR')}` : ''}
+                       </div>`;
+                }
+
+                // Si pas de réponse, afficher comme message de soutien
+                if (!hasReponse) {
+                    return `
+                    <div class="faq-item message-soutien" style="${borderStyle} background: linear-gradient(135deg, #f0f9ff 0%, #e8f4fc 100%);">
+                        <div style="padding: 1rem;">
+                            ${sourceLabel}
+                            <p style="margin: 0; font-style: italic; color: #333;">" ${faq.question} "</p>
+                            ${faq.categorie ? `<span class="faq-category" style="margin-top: 0.5rem; display: inline-block;">${faq.categorie}</span>` : ''}
+                        </div>
+                    </div>
+                `;
+                }
+
+                // Pour les FAQs avec réponse, utiliser clickableIndex puis l'incrémenter
+                const myIndex = clickableIndex;
+                clickableIndex++;
 
                 return `
                 <div class="faq-item" style="${borderStyle}">
-                    <button class="faq-question" onclick="toggleFaq(${index})">
+                    <button class="faq-question" onclick="toggleFaq(${myIndex})">
                         <div>
                             ${sourceLabel}
                             <span>${faq.question}</span>
                         </div>
                         <span class="faq-icon">+</span>
                     </button>
-                    <div class="faq-answer" id="faq-answer-${index}">
+                    <div class="faq-answer" id="faq-answer-${myIndex}">
                         <div class="faq-answer-content">
                             ${faq.categorie ? `<span class="faq-category">${faq.categorie}</span>` : ''}
                             <p>${faq.reponse.replace(/\n/g, '<br>')}</p>
@@ -236,18 +328,39 @@
         }
 
         function toggleFaq(index) {
+            console.log('🔵 toggleFaq appelé, index:', index);
+            
             const question = document.querySelectorAll('.faq-question')[index];
             const answer = document.getElementById(`faq-answer-${index}`);
+            
+            console.log('🔵 Question trouvée:', question);
+            console.log('🔵 Answer trouvée:', answer);
+            
+            // Vérifier que les éléments existent
+            if (!question || !answer) {
+                console.error('❌ Élément FAQ introuvable pour index:', index);
+                return;
+            }
 
+            // Fermer toutes les autres FAQs
             document.querySelectorAll('.faq-question').forEach((q, i) => {
                 if (i !== index) {
                     q.classList.remove('active');
-                    document.getElementById(`faq-answer-${i}`).classList.remove('open');
+                    const otherAnswer = document.getElementById(`faq-answer-${i}`);
+                    if (otherAnswer) {
+                        otherAnswer.classList.remove('open');
+                    }
                 }
             });
 
+            // Toggle la FAQ cliquée
+            const wasOpen = answer.classList.contains('open');
             question.classList.toggle('active');
             answer.classList.toggle('open');
+            
+            console.log('✅ Après toggle - Question active:', question.classList.contains('active'));
+            console.log('✅ Après toggle - Answer open:', answer.classList.contains('open'));
+            console.log('✅ État: ' + (wasOpen ? 'FERMÉE' : 'OUVERTE'));
         }
 
         function setSubject(subject) {
@@ -332,3 +445,6 @@
     <script src="js/site-features.js"></script>
 </body>
 </html>
+
+
+
