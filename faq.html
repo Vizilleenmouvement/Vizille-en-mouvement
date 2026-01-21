@@ -304,12 +304,12 @@
                 `;
                 }
 
-                return `
-                <div class="faq-item" style="${borderStyle}">
                 // Pour les FAQs avec réponse, utiliser clickableIndex puis l'incrémenter
                 const myIndex = clickableIndex;
                 clickableIndex++;
 
+                return `
+                <div class="faq-item" style="${borderStyle}">
                     <button class="faq-question" onclick="toggleFaq(${myIndex})">
                         <div>
                             ${sourceLabel}
@@ -445,5 +445,6 @@
     <script src="js/site-features.js"></script>
 </body>
 </html>
+
 
 
