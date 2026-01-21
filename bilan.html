@@ -10,59 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/footer.css">
     
     <style>
         /* ===== PAGE BILAN CARTES ===== */
         body { padding-top: 110px; }
         
-        /* Hero compact avec logo pulsant */
-        .bilan-hero {
-            background: linear-gradient(135deg, var(--bleu-vizille), var(--bleu-clair));
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-        .bilan-hero .logo-pulse {
-            width: 120px;
-            height: auto;
-            margin-bottom: 1rem;
-            animation: pulse 2s ease-in-out infinite;
-            filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.5));
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.5)); }
-            50% { transform: scale(1.05); filter: drop-shadow(0 8px 24px rgba(201, 162, 39, 0.8)); }
-        }
-        .bilan-hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin: 0 0 0.5rem 0;
-        }
-        .bilan-hero .slogan {
-            color: var(--or-clair);
-            font-size: 1.1rem;
-            margin: 0;
-        }
-        .bilan-hero .stats {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-        .bilan-hero .stat {
-            text-align: center;
-        }
-        .bilan-hero .stat-val {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--or-clair);
-        }
-        .bilan-hero .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
+        /* Hero utilise .hero-unified de page-header.css */
         
         /* Onglets principaux (thèmes) */
         .tabs-container {
@@ -253,6 +206,26 @@
         /* Compteur */
         .results-count { text-align: center; padding: 1rem; color: var(--gris-texte); font-size: 0.9rem; }
         
+        /* ===== ACCORDÉON MOBILE POUR LES ONGLETS ===== */
+        .tabs-toggle {
+            display: none;
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--bleu-vizille);
+            text-align: left;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .tabs-toggle .toggle-icon { transition: transform 0.3s; font-size: 0.8rem; }
+        .tabs-toggle.open .toggle-icon { transform: rotate(180deg); }
+        .tabs-toggle .current-theme { display: flex; align-items: center; gap: 0.5rem; }
+        .tabs-toggle .hint { font-size: 0.75rem; color: var(--gris-texte); font-weight: 400; }
+        
         @media (max-width: 768px) {
             body { padding-top: 80px; }
             .tabs-container { top: 80px; }
@@ -261,7 +234,30 @@
             .bilan-hero h1 { font-size: 1.5rem; }
             .bilan-hero .stat-val { font-size: 2rem; }
             .cards-grid { grid-template-columns: 1fr; }
-            .tabs { justify-content: flex-start; }
+            
+            /* Accordéon mobile */
+            .tabs-toggle { display: flex; }
+            .tabs {
+                display: none;
+                flex-direction: column;
+                background: white;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                max-height: 60vh;
+                overflow-y: auto;
+            }
+            .tabs.open { display: flex; }
+            .tabs .tab {
+                justify-content: flex-start;
+                padding: 0.7rem 1rem;
+                border-bottom: 1px solid var(--gris-doux);
+                border-left: 4px solid transparent;
+            }
+            .tabs .tab.active { border-left-color: var(--bleu-vizille); background: var(--blanc-casse); }
+            .tabs .tab:last-child { border-bottom: none; }
+            
+            /* Sous-onglets plus compacts */
+            .subtabs { gap: 0.3rem; padding: 0 0.5rem; }
+            .subtab { padding: 0.4rem 0.7rem; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -281,20 +277,27 @@
                     <li><a href="blog.html">Actualités</a></li>
                     <li><a href="equipe.html">Equipe</a></li>
                     <li><a href="faq.html">Construisons ensemble</a></li>
+                    <li><a href="admin.html" class="admin-link" title="Administration">⚙️</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <script src="js/menu-mobile.js"></script>
 
-    <section class="bilan-hero" id="main-content">
-        <img src="images/logo.png" alt="Vizille en Mouvement" class="logo-pulse">
-        <h1>Bilan 2020-2026</h1>
-        <p class="slogan">Ce que nous avons accompli ensemble</p>
-        <div class="stats" id="hero-stats"></div>
+    <section class="hero-unified" id="main-content">
+        <img src="images/logo.png" alt="Vizille en Mouvement" class="hero-logo">
+        <div class="hero-text">
+            <h1>Bilan 2020-2026</h1>
+            <p class="slogan">Ce que nous avons accompli ensemble</p>
+            <div class="stats" id="hero-stats"></div>
+        </div>
     </section>
     
     <div class="tabs-container">
+        <button class="tabs-toggle" id="tabs-toggle" onclick="toggleTabs()">
+            <span class="current-theme" id="current-theme-display">🎭 Culture (43)</span>
+            <span class="toggle-icon">▼</span>
+        </button>
         <div class="tabs" id="tabs"></div>
     </div>
     
@@ -325,48 +328,42 @@
 
 <script>
 const THEMES = [
-    { id: 'Concertation Citoyenne', label: '🗳️ Concertation', icon: '🗳️', special: true },
-    { id: 'Administration', label: 'Admin', icon: '📋' },
+    { id: 'Plan Climat', label: '🌍 Plan Climat', icon: '📋', special: true },
     { id: 'Culture', label: 'Culture', icon: '🎭' },
-    { id: 'Économie', label: 'Économie', icon: '💼' },
-    { id: 'Enfance', label: 'Enfance', icon: '👶' },
     { id: 'Environnement', label: 'Environnement', icon: '🌿' },
-    { id: 'Finance', label: 'Finance', icon: '💰' },
-    { id: 'Intercommunalité', label: 'Interco', icon: '🏙️' },
-    { id: 'Mobilités', label: 'Mobilités', icon: '🚲' },
+    { id: 'Travaux', label: 'Travaux', icon: '🏗️' },
     { id: 'Patrimoine', label: 'Patrimoine', icon: '🏛️' },
-    { id: 'Personnel', label: 'Personnel', icon: '👥' },
-    { id: 'Santé', label: 'Santé', icon: '🏥' },
-    { id: 'Sécurité', label: 'Sécurité', icon: '🛡️' },
     { id: 'Solidarité', label: 'Solidarité', icon: '🤝' },
     { id: 'Sport', label: 'Sport', icon: '⚽' },
-    { id: 'Travaux', label: 'Travaux', icon: '🏗️' },
-    { id: 'Urbanisme', label: 'Urbanisme', icon: '🏘️' }
+    { id: 'Enfance', label: 'Enfance', icon: '👶' },
+    { id: 'Mobilités', label: 'Mobilités', icon: '🚲' },
+    { id: 'Urbanisme', label: 'Urbanisme', icon: '🏘️' },
+    { id: 'Tranquillité publique', label: 'Tranquillité', icon: '🛡️' },
+    { id: 'Finance', label: 'Finance', icon: '💰' },
+    { id: 'Santé', label: 'Santé', icon: '🏥' },
+    { id: 'Intercommunalité', label: 'Interco', icon: '🏙️' },
+    { id: 'Administration', label: 'Admin', icon: '📋' },
+    { id: 'Jumelages', label: 'Jumelages', icon: '🌍' },
+    { id: 'Personnel', label: 'Personnel', icon: '👥' }
 ];
 
 const SUBCATEGORIES = {
-    'Concertation Citoyenne': [
-        { id: 'Veillées de Belledonne', label: 'Veillées', icon: '🏔️' },
-        { id: 'Concertations publiques', label: 'Concertations', icon: '🗣️' },
-        { id: 'Écoles participatives', label: 'Écoles', icon: '🏫' },
-        { id: 'Enquêtes citoyennes', label: 'Enquêtes', icon: '📊' },
-        { id: 'Participation citoyenne', label: 'Participation', icon: '👥' },
-        { id: 'Transition énergétique', label: 'Énergie', icon: '⚡' },
-        { id: 'Événements', label: 'Événements', icon: '🎉' },
-        { id: 'Outils numériques', label: 'Numérique', icon: '💻' },
+    'Plan Climat': [
+        { id: 'Axe 1 - Adaptation', label: 'Axe 1 - Adaptation', icon: '🌳' },
+        { id: 'Axe 2 - Énergie & Air', label: 'Axe 2 - Énergie', icon: '⚡' },
+        { id: 'Axe 3 - Ressources', label: 'Axe 3 - Ressources', icon: '♻️' },
+        { id: 'Axe 4 - Mobilisation', label: 'Axe 4 - Mobilisation', icon: '👥' },
+        { id: 'Axe 5 - Exemplarité', label: 'Axe 5 - Exemplarité', icon: '⭐' },
         { id: 'all', label: 'Tout voir', icon: '👁️' }
     ],
     'Culture': [
-        { id: 'Festivals & Fêtes', label: 'Festivals', icon: '🎉' },
-        { id: 'Spectacles', label: 'Spectacles', icon: '🎭' },
-        { id: 'Associations', label: 'Associations', icon: '🤝' },
-        { id: 'Animations', label: 'Animations', icon: '🎵' },
-        { id: 'Jeunesse', label: 'Jeunesse', icon: '👦' },
+        { id: 'Festivals', label: 'Festivals & Fêtes', icon: '🎉' },
+        { id: 'Jeunesse & Scolaires', label: 'Jeunesse', icon: '👦' },
         { id: 'Médiathèque', label: 'Médiathèque', icon: '📚' },
+        { id: 'Jeu de Paume', label: 'Jeu de Paume', icon: '🎭' },
+        { id: 'Associations & Partenariats', label: 'Associations', icon: '🤝' },
         { id: 'Art & Création', label: 'Art', icon: '🎨' },
-        { id: 'Gouvernance', label: 'Gouvernance', icon: '🏛️' },
-        { id: 'Cinéma', label: 'Cinéma', icon: '🎬' },
-        { id: 'Numérique', label: 'Numérique', icon: '💻' },
+        { id: 'Autres', label: 'Autres', icon: '📋' },
         { id: 'all', label: 'Tout voir', icon: '👁️' }
     ],
     'Environnement': [
@@ -434,7 +431,7 @@ const SUBCATEGORIES = {
         { id: 'Autres', label: 'Autres', icon: '📋' },
         { id: 'all', label: 'Tout voir', icon: '👁️' }
     ],
-    'Sécurité': [
+    'Tranquillité publique': [
         { id: 'Vidéo-protection', label: 'Vidéo-protection', icon: '📹' },
         { id: 'Prévention', label: 'Prévention', icon: '🛡️' },
         { id: 'Police municipale', label: 'Police', icon: '👮' },
@@ -470,11 +467,10 @@ const SUBCATEGORIES = {
         { id: 'Marchés', label: 'Marchés', icon: '📋' },
         { id: 'all', label: 'Tout voir', icon: '👁️' }
     ],
-    'Économie': [
-        { id: 'Commerce', label: 'Commerce', icon: '🏪' },
-        { id: 'Développement', label: 'Développement', icon: '📈' },
-        { id: 'Fiscalité', label: 'Fiscalité', icon: '💶' },
-        { id: 'Concertation', label: 'Concertation', icon: '🗣️' },
+    'Jumelages': [
+        { id: 'Échanges', label: 'Échanges', icon: '🤝' },
+        { id: 'Villes partenaires', label: 'Villes', icon: '🏘️' },
+        { id: 'Gouvernance', label: 'Gouvernance', icon: '📋' },
         { id: 'all', label: 'Tout voir', icon: '👁️' }
     ],
     'Personnel': [
@@ -519,6 +515,20 @@ function renderTabs() {
             <span class="badge">${count}</span>
         </div>`;
     }).join('');
+    // Mise à jour bouton accordéon mobile
+    const themeInfo = THEMES.find(t => t.id === currentTheme);
+    const count = allData.filter(p => p.theme === currentTheme && !p.suspendu).length;
+    document.getElementById('current-theme-display').innerHTML = `${themeInfo.icon} ${themeInfo.label} <span class="hint">(${count}) — Changer</span>`;
+}
+
+function toggleTabs() {
+    document.getElementById('tabs').classList.toggle('open');
+    document.getElementById('tabs-toggle').classList.toggle('open');
+}
+
+function closeTabs() {
+    document.getElementById('tabs').classList.remove('open');
+    document.getElementById('tabs-toggle').classList.remove('open');
 }
 
 function renderSubtabs() {
@@ -624,6 +634,7 @@ function selectTheme(theme) {
     } else {
         currentSubcat = 'all';
     }
+    closeTabs();
     renderTabs();
     renderBanner();
     renderSubtabs();
@@ -729,5 +740,7 @@ init();
         </div>
     </footer>
 
+    <script src="js/site-features.js"></script>
 </body>
 </html>
+
