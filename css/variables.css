@@ -91,3 +91,57 @@
     border-color: var(--border-color, #30363d);
     color: var(--text-primary, #f0f6fc);
 }
+
+/* Mode sombre - Lettre de Catherine (index.html) */
+[data-theme="dark"] .lettre-section {
+    background: var(--bg-body, #0d1117);
+}
+
+[data-theme="dark"] .lettre-texte,
+[data-theme="dark"] .lettre-texte p {
+    color: var(--text-primary, #f0f6fc);
+}
+
+[data-theme="dark"] .lettre-intro {
+    color: var(--text-primary, #f0f6fc);
+}
+
+[data-theme="dark"] .lettre-nom {
+    color: #ff6b9d;
+}
+
+[data-theme="dark"] .lettre-titre {
+    color: #5dd3e8;
+}
+
+[data-theme="dark"] .lettre-citation {
+    color: #5dd3e8;
+}
+
+[data-theme="dark"] .lettre-chaleureusement,
+[data-theme="dark"] .lettre-signature-block {
+    color: var(--text-primary, #f0f6fc);
+}
+
+[data-theme="dark"] .lettre-signature {
+    color: #ff6b9d;
+}
+
+/* Mode sombre - Modales et contenus PDF/articles */
+[data-theme="dark"] .modal-content,
+[data-theme="dark"] .modal-body {
+    background: var(--bg-card, #161b22);
+    color: var(--text-primary, #f0f6fc);
+}
+
+[data-theme="dark"] .modal-section p,
+[data-theme="dark"] .modal-bio,
+[data-theme="dark"] .modal-pedigree,
+[data-theme="dark"] .modal-objectifs,
+[data-theme="dark"] .modal-citation {
+    color: var(--text-primary, #f0f6fc);
+}
+
+[data-theme="dark"] .modal-section-title {
+    color: var(--or-clair, #f0d86a);
+}
