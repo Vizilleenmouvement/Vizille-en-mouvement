@@ -603,7 +603,7 @@ function renderCards() {
         filtered = filtered.filter(p => p.sous_categorie === currentSubcat);
     }
     
-    filtered.sort((a, b) => (a.importance || 5) - (b.importance || 5) || (b.annee || '').localeCompare(a.annee || ''));
+    filtered.sort((a, b) => (a.importance || 5) - (b.importance || 5) || (b.annee || 0) - (a.annee || 0));
     
     const isPlanClimat = currentTheme === 'Plan Climat';
     const entityLabel = isPlanClimat ? 'objectif' : 'action';
