@@ -157,12 +157,7 @@
     "source": "Magazine",
     "importance": 3,
     "resume": "Face à la désertification médicale, la municipalité crée une Maison de Santé Pluriprofessionnelle. Médecins accueillis provisoirement salle de l'Avant-Garde depuis 2023.",
-    "chiffres": [
-      {
-        "valeur": "80 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2023",
@@ -385,12 +380,7 @@
     "source": "Magazine",
     "importance": 1,
     "resume": "Personnes isolées 75 ans+",
-    "chiffres": [
-      {
-        "valeur": "16 000 €",
-        "label": "1er versement 2024"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "12/12/2022",
