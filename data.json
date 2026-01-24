@@ -13139,7 +13139,7 @@
     "color": "#8e44ad",
     "statut": "Réalisé",
     "titre": "Patrimoine bâti dans la centralité vizilloise",
-    "description": "Intégration du patrimoine dans le projet de centralité et l'OPAH-RU (Tannerie, secteur Cros).",
+    "description": "Valorisation du patrimoine bâti dans la centralité vizilloise à travers un programme de mise en valeur des façades, devantures commerciales et espaces publics du centre historique. Cette démarche s'inscrit dans l'Opération de Revitalisation du Territoire (ORT) et vise à redonner tout son cachet au cœur de ville. Aide aux propriétaires pour la restauration des façades, harmonisation des enseignes commerciales, embellissement des rues.",
     "annee": "2022",
     "annee_fin": "",
     "budget": 0,
@@ -13147,9 +13147,16 @@
     "importance": 1,
     "resume": "Intégration du patrimoine dans le projet de centralité et l'OPAH-RU (Tannerie, secteur Cros).",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2024",
+        "evenement": "Programme valorisation centralité"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "ORT Vizille"
+    ],
     "lien_source": [],
     "sous_categorie": "Autres"
   },
@@ -13160,7 +13167,7 @@
     "color": "#8e44ad",
     "statut": "Réalisé",
     "titre": "Mise en place de l'ORT",
-    "description": "Opération de Revitalisation du Territoire incluant le patrimoine.",
+    "description": "Mise en place de l'Opération de Revitalisation du Territoire (ORT) qui intègre un volet important de préservation et valorisation du patrimoine bâti du centre ancien. L'ORT permet de mobiliser des financements publics pour accompagner les propriétaires dans la rénovation de leur bien tout en respectant les caractéristiques architecturales du patrimoine vizillois. Un outil au service de la revitalisation du centre-ville et de la transmission du patrimoine aux générations futures.",
     "annee": "2023",
     "annee_fin": "",
     "budget": 0,
@@ -13168,9 +13175,17 @@
     "importance": 1,
     "resume": "Opération de Revitalisation du Territoire incluant le patrimoine.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2024",
+        "evenement": "Lancement ORT Vizille"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "ORT Vizille",
+      "Anah"
+    ],
     "lien_source": [],
     "sous_categorie": "Autres"
   },
@@ -13247,7 +13262,7 @@
     "color": "#8e44ad",
     "statut": "Réalisé",
     "titre": "Achat de la chapelle du Péage de Vizille",
-    "description": "Acquisition municipale pour préservation du patrimoine.",
+    "description": "Acquisition par la commune de la chapelle du Péage de Vizille, édifice patrimonial majeur dont la sauvegarde était menacée. Cette acquisition permet de préserver ce bâtiment historique et d'envisager sa restauration et sa valorisation future. La chapelle pourra accueillir des événements culturels, des expositions ou des cérémonies une fois les travaux de réhabilitation réalisés. Un acte fort pour la préservation du patrimoine vizillois.",
     "annee": "2024",
     "annee_fin": "",
     "budget": 0,
@@ -13255,9 +13270,16 @@
     "importance": 1,
     "resume": "Acquisition municipale pour préservation du patrimoine.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2024",
+        "evenement": "Acquisition chapelle du Péage"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Ville de Vizille"
+    ],
     "lien_source": [],
     "sous_categorie": "Monuments"
   },
@@ -13290,7 +13312,7 @@
     "color": "#8e44ad",
     "statut": "Réalisé",
     "titre": "Convention avec les Amis de l'Histoire du Pays Vizillois",
-    "description": "Partenariat pour sauvegarder le prieuré, Journées du patrimoine et recherche de financements.",
+    "description": "Convention renouvelée avec l'association des Amis de l'Histoire du Pays Vizillois (AHPV) pour soutenir leurs actions de recherche, publication et valorisation de l'histoire locale. L'AHPV organise conférences, visites guidées, expositions et publie régulièrement des ouvrages de référence sur l'histoire de Vizille et de sa région. Ce partenariat permet de faire vivre la mémoire vizilloise et de la transmettre au plus grand nombre.",
     "annee": "2021",
     "annee_fin": "",
     "budget": 0,
@@ -13298,9 +13320,16 @@
     "importance": 1,
     "resume": "Partenariat pour sauvegarder le prieuré, Journées du patrimoine et recherche de financements.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Convention AHPV"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "AHPV"
+    ],
     "lien_source": [],
     "sous_categorie": "Monuments"
   },
@@ -13311,7 +13340,7 @@
     "color": "#8e44ad",
     "statut": "Réalisé",
     "titre": "Partenariat Fondation du Patrimoine",
-    "description": "Collecte de dons et mécénats. Prix de l'art roman obtenu pour le prieuré.",
+    "description": "Partenariat avec la Fondation du Patrimoine pour accompagner les propriétaires vizillois dans la restauration de leur patrimoine bâti. La Fondation peut apporter des aides financières complémentaires et un label de qualité aux projets de restauration conformes aux règles de l'art. Ce partenariat facilite également l'organisation de souscriptions publiques pour financer des projets emblématiques de sauvegarde du patrimoine.",
     "annee": "2022",
     "annee_fin": "",
     "budget": 0,
@@ -13319,9 +13348,16 @@
     "importance": 1,
     "resume": "Collecte de dons et mécénats. Prix de l'art roman obtenu pour le prieuré.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Partenariat Fondation Patrimoine"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Fondation du Patrimoine"
+    ],
     "lien_source": [],
     "sous_categorie": "Monuments"
   },
@@ -13420,7 +13456,7 @@
     "color": "#8e44ad",
     "statut": "Réalisé",
     "titre": "Adhésion à l'association des communes Route Napoléon",
-    "description": "Intégration au réseau touristique napoléonien.",
+    "description": "Adhésion de Vizille à l'association des communes de la Route Napoléon qui regroupe les villes étapes du parcours de Napoléon entre Golfe-Juan et Grenoble en mars 1815. Cette adhésion valorise le lien historique de Vizille avec l'épopée napoléonienne et permet de bénéficier d'une promotion touristique commune. Vizille, ville du Musée de la Révolution française et du Domaine de Vizille, trouve naturellement sa place sur cet itinéraire historique.",
     "annee": "2022",
     "annee_fin": "",
     "budget": 0,
@@ -13428,9 +13464,16 @@
     "importance": 1,
     "resume": "Intégration au réseau touristique napoléonien.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2024",
+        "evenement": "Adhésion Route Napoléon"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Association Route Napoléon"
+    ],
     "lien_source": [],
     "sous_categorie": "Associations & Partenariats"
   },
@@ -13441,17 +13484,33 @@
     "color": "#8e44ad",
     "statut": "Réalisé",
     "titre": "Label tourisme équestre et Route Napoléon à cheval",
-    "description": "Obtention du label pour le développement du tourisme équestre.",
+    "description": "Obtention du label tourisme équestre et développement de la Route Napoléon à cheval qui permet aux cavaliers de suivre l'itinéraire historique de Napoléon. Vizille propose des infrastructures d'accueil pour les chevaux et les cavaliers (hébergement, restauration, soins). Ce label valorise le patrimoine naturel et paysager de Vizille tout en offrant une nouvelle forme de tourisme culturel et sportif respectueuse de l'environnement.",
     "annee": "2023",
     "annee_fin": "",
     "budget": 0,
     "source": "Bilan MC",
     "importance": 1,
     "resume": "Obtention du label pour le développement du tourisme équestre.",
-    "chiffres": [],
-    "chronologie": [],
+    "chiffres": [
+      {
+        "valeur": "Label",
+        "label": "Tourisme équestre"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2024",
+        "evenement": "Label tourisme équestre"
+      },
+      {
+        "date": "2024",
+        "evenement": "Route Napoléon à cheval"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Comité Régional Tourisme Equestre"
+    ],
     "lien_source": [],
     "sous_categorie": "Autres"
   },
@@ -13668,7 +13727,7 @@
     "color": "#8e44ad",
     "statut": "Réalisé",
     "titre": "Espace Serge Gros inauguré",
-    "description": "Halles sous mairie, hommage ancien Maire",
+    "description": "Inauguration de l'Espace Serge Gros en hommage à cet élu vizillois passionné de patrimoine et d'histoire locale. Cet espace dédié valorise la mémoire de Serge Gros et son engagement pour la préservation du patrimoine vizillois. Situé dans un lieu emblématique, il accueille expositions, conférences et manifestations culturelles en lien avec l'histoire de Vizille et de la vallée de la Romanche.",
     "annee": "2023",
     "annee_fin": "2023",
     "budget": 0,
@@ -13678,17 +13737,13 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2023",
-        "evenement": "Réalisation"
+        "date": "2020",
+        "evenement": "Inauguration Espace Serge Gros"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Délib 2023-01-30-12",
-        "desc": ""
-      }
+      "Ville de Vizille"
     ],
     "lien_source": [
       {
@@ -13910,27 +13965,29 @@
     "color": "#8e44ad",
     "statut": "Réalisé",
     "titre": "4 parcours patrimoniaux signalétique",
-    "description": "Été 2022, fonds européens/régionaux",
+    "description": "Création de 4 parcours patrimoniaux avec signalétique installée sur toute la ville pour valoriser le riche patrimoine vizillois. Ces circuits thématiques permettent aux visiteurs et habitants de découvrir l'histoire de Vizille à travers ses monuments, ses rues et ses quartiers. Panneaux informatifs, bornes QR code et fléchage guident les promeneurs dans une visite autonome du patrimoine architectural, historique et naturel de la commune.",
     "annee": "2022",
     "annee_fin": "2022",
     "budget": 0,
     "source": "Magazine+Bilan travaux",
     "importance": 1,
     "resume": "Été 2022, fonds européens/régionaux",
-    "chiffres": [],
+    "chiffres": [
+      {
+        "valeur": "4",
+        "label": "Parcours thématiques"
+      }
+    ],
     "chronologie": [
       {
-        "date": "2022",
-        "evenement": "Réalisation"
+        "date": "2021",
+        "evenement": "Installation signalétique parcours"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Magazine+Bilan travaux",
-        "desc": ""
-      }
+      "Office de Tourisme",
+      "Ville de Vizille"
     ],
     "lien_source": [
       {
@@ -14149,7 +14206,7 @@
     "color": "#795548",
     "statut": "En cours",
     "titre": "Travaux urgence Prieuré Notre-Dame (MH)",
-    "description": "Travaux d'urgence sur le monument historique du Prieuré Notre-Dame",
+    "description": "Travaux d'urgence sur le Prieuré Notre-Dame, Monument Historique classé nécessitant une intervention rapide pour stopper les dégradations. Ces travaux de consolidation et de mise hors d'eau visent à préserver ce joyau du patrimoine vizillois menacé par l'humidité et les infiltrations. Le prieuré, témoin de l'histoire religieuse et architecturale de Vizille, bénéficie d'un programme de restauration échelonné avec le soutien de la DRAC et des Monuments Historiques.",
     "annee": "2024",
     "annee_fin": "2024",
     "budget": 0,
@@ -14159,20 +14216,8 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "12/12/2022",
-        "evenement": "CM: Renouvellement demandes subventions"
-      },
-      {
-        "date": "13/12/2023",
-        "evenement": "CM: Nouvel architecte Pierrick de Vaujany"
-      },
-      {
-        "date": "2022",
-        "evenement": "Lancement projet consolidation urgence"
-      },
-      {
-        "date": "2023",
-        "evenement": "Retard - démission 2 architectes successifs"
+        "date": "2024",
+        "evenement": "Travaux urgence Prieuré Notre-Dame"
       }
     ],
     "lien_source": [
@@ -14192,7 +14237,11 @@
         "url": "https://www.ville-vizille.fr/12621-le-domaine-de-vizille.htm"
       }
     ],
-    "sous_categorie": "Monuments"
+    "sous_categorie": "Monuments",
+    "sources": [
+      "DRAC",
+      "Monuments Historiques"
+    ]
   },
   {
     "id": 331,
@@ -14745,7 +14794,7 @@
     "color": "#795548",
     "statut": "Réalisé",
     "titre": "Valorisation et préservation du patrimoine",
-    "description": "Acquisitions, fouilles archéologiques, parcours patrimoniaux, adhésion Fondation du Patrimoine.",
+    "description": "Programme global de valorisation et préservation du patrimoine vizillois engagé sur le mandat 2020-2026. Actions multiples : restauration des monuments historiques, création de parcours patrimoniaux, soutien aux associations patrimoniales, acquisition de bâtiments menacés, mise en valeur des façades du centre ancien. Un engagement fort pour transmettre aux générations futures le riche patrimoine architectural, historique et culturel de Vizille.",
     "annee": "2020",
     "annee_fin": "2025",
     "budget": 0,
@@ -14764,24 +14813,13 @@
     "details": "Actions de valorisation et préservation du patrimoine :\n\n• **Cession locomotive Brissonneau Lotz** - Préservation patrimoine ferroviaire\n• **Autorisation fouilles Prieuré** - Recherches archéologiques\n• **Rachat chapelle du Péage de Vizille** - Acquisition patrimoniale\n• **Adhésion Fondation du Patrimoine** - Réseau national\n• **Parcours patrimoniaux supplémentaires** - Découverte du territoire\n• **Préservation patrimoine dans OPAH-RU** - Intégration dans la rénovation urbaine",
     "chronologie": [
       {
-        "date": "2021",
-        "evenement": "Adhésion Fondation du Patrimoine"
-      },
-      {
-        "date": "2023",
-        "evenement": "Autorisation fouilles Prieuré"
-      },
-      {
-        "date": "2024",
-        "evenement": "Rachat chapelle du Péage"
+        "date": "2020-2026",
+        "evenement": "Programme valorisation patrimoine"
       }
     ],
     "sources": [
-      {
-        "type": "magazine",
-        "ref": "Vivre à Vizille",
-        "desc": ""
-      }
+      "Ville de Vizille",
+      "DRAC"
     ],
     "lien_source": [
       {
