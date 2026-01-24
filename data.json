@@ -9771,12 +9771,7 @@
     "source": "Convention CPOM",
     "importance": 1,
     "resume": "10 000€/an, Espace France Services, 205 chemin Mattons",
-    "chiffres": [
-      {
-        "valeur": "10 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2025",
