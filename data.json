@@ -3776,7 +3776,7 @@
     "icon": "🤝",
     "color": "#e74c3c",
     "statut": "Réalisé",
-    "titre": "Aide Ukraine 5000€",
+    "titre": "Aide Ukraine",
     "description": "Secours Populaire, unanimité",
     "annee": "2022",
     "annee_fin": "2022",
@@ -3784,12 +3784,7 @@
     "source": "Délib 2022-03-08-01",
     "importance": 1,
     "resume": "Secours Populaire, unanimité",
-    "chiffres": [
-      {
-        "valeur": "5 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2022",
@@ -3834,7 +3829,7 @@
     "icon": "🤝",
     "color": "#e74c3c",
     "statut": "Réalisé",
-    "titre": "Aide Turquie/Syrie séisme 1000€",
+    "titre": "Aide Turquie/Syrie séisme",
     "description": "Secours Populaire",
     "annee": "2023",
     "annee_fin": "2023",
@@ -3842,12 +3837,7 @@
     "source": "Délib 2023-03-14-26",
     "importance": 1,
     "resume": "Secours Populaire",
-    "chiffres": [
-      {
-        "valeur": "1 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2023",
@@ -3892,7 +3882,7 @@
     "icon": "🤝",
     "color": "#e74c3c",
     "statut": "Réalisé",
-    "titre": "Aide Maroc séisme + Libye 2000€",
+    "titre": "Aide Maroc séisme + Libye",
     "description": "Secours Populaire + Alpes Solidarité Maroc",
     "annee": "2023",
     "annee_fin": "2023",
@@ -3900,12 +3890,7 @@
     "source": "Délib 2023-10-09-10",
     "importance": 1,
     "resume": "Secours Populaire + Alpes Solidarité Maroc",
-    "chiffres": [
-      {
-        "valeur": "2 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2023",
@@ -3950,7 +3935,7 @@
     "icon": "🤝",
     "color": "#e74c3c",
     "statut": "Réalisé",
-    "titre": "Don Mayotte cyclone Chido 1000€",
+    "titre": "Don Mayotte cyclone Chido",
     "description": "Fonds concours Ministère Outre-mer",
     "annee": "2025",
     "annee_fin": "2025",
@@ -3958,12 +3943,7 @@
     "source": "Délib 2025-02-18-10",
     "importance": 1,
     "resume": "Fonds concours Ministère Outre-mer",
-    "chiffres": [
-      {
-        "valeur": "1 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2025",
