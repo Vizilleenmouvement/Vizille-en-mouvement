@@ -584,10 +584,6 @@
     "resume": "Opération de Revitalisation du Territoire pilotée avec la Métropole. 4 secteurs prioritaires: Tannerie, Tissages, Centre historique, Place du Château.",
     "chiffres": [
       {
-        "valeur": "192 k€",
-        "label": "Études tannerie 2024"
-      },
-      {
         "valeur": "5 ha",
         "label": "Site tannerie"
       },
@@ -662,12 +658,7 @@
     "source": "Délib 2025-09-30-06",
     "importance": 1,
     "resume": "5 ha, concertation 2024-2025, bilan sept 2025",
-    "chiffres": [
-      {
-        "valeur": "192 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2023",
@@ -832,10 +823,6 @@
     "resume": "OPAH-RU 'Réno'Vizille' pour accompagner les propriétaires dans la rénovation des façades et logements du centre-ville avec subventions jusqu'à 50%.",
     "chiffres": [
       {
-        "valeur": "290 k€",
-        "label": "Budget 2024"
-      },
-      {
         "valeur": "250",
         "label": "Façades ciblées"
       },
@@ -946,10 +933,6 @@
     "importance": 3,
     "resume": "Opération de Revitalisation du Territoire pilotée avec la Métropole. 4 secteurs prioritaires: Tannerie, Tissages, Centre historique, Place du Château.",
     "chiffres": [
-      {
-        "valeur": "192 k€",
-        "label": "Études tannerie 2024"
-      },
       {
         "valeur": "5 ha",
         "label": "Site tannerie"
@@ -1435,12 +1418,7 @@
     "source": "Magazine+Délib",
     "importance": 1,
     "resume": "28% du parc, économie 30-45k€/an",
-    "chiffres": [
-      {
-        "valeur": "45 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2022",
@@ -1488,12 +1466,7 @@
     "source": "Délib 2022-11-09-01",
     "importance": 1,
     "resume": "70 000€/an, objectif -60% horizon 2035",
-    "chiffres": [
-      {
-        "valeur": "70 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2022",
@@ -1541,12 +1514,7 @@
     "source": "Magazine+Bilan travaux",
     "importance": 1,
     "resume": "Pompe à chaleur réversible",
-    "chiffres": [
-      {
-        "valeur": "17 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2021",
@@ -1779,12 +1747,7 @@
     "source": "Délib 2023-11-28-12",
     "importance": 1,
     "resume": "3,2€/hab/an = 23 897,60€/an",
-    "chiffres": [
-      {
-        "valeur": "23 898 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2023",
@@ -1836,12 +1799,7 @@
     "source": "Délib 2024-10-02-10",
     "importance": 1,
     "resume": "85 corbeilles + nouvelles tri sélectif",
-    "chiffres": [
-      {
-        "valeur": "32 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2024",
@@ -2044,12 +2002,7 @@
     "source": "Délib 2021-03-23-15",
     "importance": 1,
     "resume": "Service efficacité énergétique SPL ALEC",
-    "chiffres": [
-      {
-        "valeur": "2 340 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2021",
@@ -2140,12 +2093,7 @@
     "source": "Délib 2021-06-29-38",
     "importance": 1,
     "resume": "30 Millions d'Amis, 10-15 chats/an",
-    "chiffres": [
-      {
-        "valeur": "550 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2021",
@@ -2241,12 +2189,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "À venir",
-    "chiffres": [
-      {
-        "valeur": "16 000 €",
-        "label": "1er versement 2024"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "12/12/2022",
@@ -2633,12 +2576,7 @@
     "source": "Délib 2022-12-12-18",
     "importance": 1,
     "resume": "49 communes, 385€/an",
-    "chiffres": [
-      {
-        "valeur": "385 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2022",
@@ -2777,12 +2715,7 @@
     "source": "Magazine n°162+Bilan travaux",
     "importance": 1,
     "resume": "26→30 enfants, 3 unités, cuisine sur place",
-    "chiffres": [
-      {
-        "valeur": "450 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "11/07/2023",
@@ -2834,12 +2767,7 @@
     "source": "Magazine+Bilan travaux",
     "importance": 2,
     "resume": "Désimperméabilisation et végétalisation de la cour, projet phare d'adaptation au changement climatique.",
-    "chiffres": [
-      {
-        "valeur": "230 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2022-07",
@@ -2899,12 +2827,7 @@
     "source": "Délib+Bilan travaux",
     "importance": 1,
     "resume": "Maîtrise d'œuvre 2024, travaux 2025",
-    "chiffres": [
-      {
-        "valeur": "230 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2024",
@@ -2956,12 +2879,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "Accessibilité",
-    "chiffres": [
-      {
-        "valeur": "360 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2021",
@@ -3009,12 +2927,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "Confort thermique, 2021-2025",
-    "chiffres": [
-      {
-        "valeur": "600 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2021",
@@ -3162,14 +3075,6 @@
       {
         "valeur": "1 200",
         "label": "Petits déjeuners distribués (2024)"
-      },
-      {
-        "valeur": "1,30 €",
-        "label": "Coût unitaire max"
-      },
-      {
-        "valeur": "1 560 €",
-        "label": "Budget total TTC"
       }
     ],
     "chronologie": [
@@ -3223,12 +3128,7 @@
     "source": "Délib annuels",
     "importance": 1,
     "resume": "Villard-de-Lans, 50-60 élèves/an",
-    "chiffres": [
-      {
-        "valeur": "25 600 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2020",
@@ -3489,10 +3389,6 @@
     "resume": "Opération de Revitalisation du Territoire pilotée avec la Métropole. 4 secteurs prioritaires: Tannerie, Tissages, Centre historique, Place du Château.",
     "chiffres": [
       {
-        "valeur": "192 k€",
-        "label": "Études tannerie 2024"
-      },
-      {
         "valeur": "5 ha",
         "label": "Site tannerie"
       },
@@ -3503,10 +3399,6 @@
       {
         "valeur": "34",
         "label": "Séances nautiques été 2024"
-      },
-      {
-        "valeur": "2 €/enfant",
-        "label": "Tarif réduit (vs 12€ public)"
       }
     ],
     "chronologie": [
@@ -3581,20 +3473,12 @@
     "resume": "Opération de Revitalisation du Territoire pilotée avec la Métropole. 4 secteurs prioritaires: Tannerie, Tissages, Centre historique, Place du Château.",
     "chiffres": [
       {
-        "valeur": "192 k€",
-        "label": "Études tannerie 2024"
-      },
-      {
         "valeur": "5 ha",
         "label": "Site tannerie"
       },
       {
         "valeur": "4",
         "label": "Secteurs prioritaires"
-      },
-      {
-        "valeur": "10 €",
-        "label": "Maximum/enfant/an"
       },
       {
         "valeur": "6-18 ans",
@@ -3679,12 +3563,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "Jean Jaurès, Château, Joliot-Curie",
-    "chiffres": [
-      {
-        "valeur": "100 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2021",
@@ -3732,12 +3611,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "Amélioration thermique",
-    "chiffres": [
-      {
-        "valeur": "40 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2023",
@@ -4474,12 +4348,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "Parc",
-    "chiffres": [
-      {
-        "valeur": "155 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2022",
@@ -4522,24 +4391,7 @@
     "source": "Magazine+Bilan travaux",
     "importance": 1,
     "resume": "Budget 60-80k€/an travaux, estivale",
-    "chiffres": [
-      {
-        "valeur": "60 000 €",
-        "label": "Budget"
-      },
-      {
-        "valeur": "3 €",
-        "label": "Tarif enfant -12 ans"
-      },
-      {
-        "valeur": "5 €",
-        "label": "Tarif adulte"
-      },
-      {
-        "valeur": "25 €",
-        "label": "Carte 10 entrées adulte"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "01/07-31/08/2024",
@@ -4598,12 +4450,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "40 000€",
-    "chiffres": [
-      {
-        "valeur": "40 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2022",
@@ -4647,10 +4494,6 @@
     "importance": 3,
     "resume": "Opération de Revitalisation du Territoire pilotée avec la Métropole. 4 secteurs prioritaires: Tannerie, Tissages, Centre historique, Place du Château.",
     "chiffres": [
-      {
-        "valeur": "192 k€",
-        "label": "Études tannerie 2024"
-      },
       {
         "valeur": "5 ha",
         "label": "Site tannerie"
@@ -4762,20 +4605,12 @@
     "resume": "Opération de Revitalisation du Territoire pilotée avec la Métropole. 4 secteurs prioritaires: Tannerie, Tissages, Centre historique, Place du Château.",
     "chiffres": [
       {
-        "valeur": "192 k€",
-        "label": "Études tannerie 2024"
-      },
-      {
         "valeur": "5 ha",
         "label": "Site tannerie"
       },
       {
         "valeur": "4",
         "label": "Secteurs prioritaires"
-      },
-      {
-        "valeur": "10 €",
-        "label": "Maximum/enfant/an"
       },
       {
         "valeur": "6-18 ans",
@@ -4858,10 +4693,6 @@
     "resume": "Opération de Revitalisation du Territoire pilotée avec la Métropole. 4 secteurs prioritaires: Tannerie, Tissages, Centre historique, Place du Château.",
     "chiffres": [
       {
-        "valeur": "192 k€",
-        "label": "Études tannerie 2024"
-      },
-      {
         "valeur": "5 ha",
         "label": "Site tannerie"
       },
@@ -4931,12 +4762,7 @@
     "source": "Délib 2022-12-12-19",
     "importance": 2,
     "resume": "9e édition 2022, 4000€ subvention",
-    "chiffres": [
-      {
-        "valeur": "4 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2022",
@@ -5178,12 +5004,7 @@
     "source": "Délib 2024-02-15-27",
     "importance": 1,
     "resume": "6 séances à partir mars",
-    "chiffres": [
-      {
-        "valeur": "2 500 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2025",
@@ -5612,10 +5433,6 @@
     "resume": "Réaménagement complet avec piétonisation partielle, végétalisation et modernisation. Précédé par un chantier majeur de mise en conformité des réseaux (7,9 M€).",
     "chiffres": [
       {
-        "valeur": "7,9 M€",
-        "label": "Travaux réseaux"
-      },
-      {
         "valeur": "8 mois",
         "label": "Durée phase 1"
       }
@@ -5861,12 +5678,7 @@
     "source": "Délib 2021-02-23-19",
     "importance": 1,
     "resume": "17 000€, fin 2021",
-    "chiffres": [
-      {
-        "valeur": "17 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2021",
@@ -6048,12 +5860,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "23 000€",
-    "chiffres": [
-      {
-        "valeur": "23 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2022",
@@ -6091,12 +5898,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "48 000€",
-    "chiffres": [
-      {
-        "valeur": "48 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2022",
@@ -6134,12 +5936,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "15 000€ toute la ville",
-    "chiffres": [
-      {
-        "valeur": "15 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2021",
@@ -6182,12 +5979,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "Désimperméabilisation, 11 500€",
-    "chiffres": [
-      {
-        "valeur": "11 500 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2022",
@@ -6225,12 +6017,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "17 200€",
-    "chiffres": [
-      {
-        "valeur": "17 200 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "20/03/2024",
@@ -6272,12 +6059,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "10 000€",
-    "chiffres": [
-      {
-        "valeur": "10 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2023",
@@ -6315,12 +6097,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "9 500€",
-    "chiffres": [
-      {
-        "valeur": "9 500 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2022",
@@ -6358,12 +6135,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "40 000€",
-    "chiffres": [
-      {
-        "valeur": "40 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2023",
@@ -6401,12 +6173,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "13 000€",
-    "chiffres": [
-      {
-        "valeur": "13 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2023",
@@ -6444,12 +6211,7 @@
     "source": "Magazine+Bilan travaux",
     "importance": 1,
     "resume": "7,9 M€ Métropole, fin début 2025",
-    "chiffres": [
-      {
-        "valeur": "7 900 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2024",
@@ -6492,12 +6254,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "13 200€",
-    "chiffres": [
-      {
-        "valeur": "13 200 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2021",
@@ -6611,12 +6368,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "12 000€",
-    "chiffres": [
-      {
-        "valeur": "12 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2021",
@@ -6654,12 +6406,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "15 000€",
-    "chiffres": [
-      {
-        "valeur": "15 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2023",
@@ -6697,12 +6444,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "40 000€, espaces verts",
-    "chiffres": [
-      {
-        "valeur": "40 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2023",
@@ -6740,12 +6482,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "3 500€/an",
-    "chiffres": [
-      {
-        "valeur": "3 500 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2021",
@@ -6821,12 +6558,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "3 000€/an",
-    "chiffres": [
-      {
-        "valeur": "3 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2021",
@@ -6959,12 +6691,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "28 000€",
-    "chiffres": [
-      {
-        "valeur": "28 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2022",
@@ -7040,16 +6767,7 @@
     "source": "Délib 2024-02-15-28",
     "importance": 1,
     "resume": "145 906€ TTC, subv 7 500€ LCA",
-    "chiffres": [
-      {
-        "valeur": "145 906 €",
-        "label": "Budget"
-      },
-      {
-        "valeur": "29 500 €",
-        "label": "Subvention annuelle 2024"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "20/03/2024",
@@ -7096,12 +6814,7 @@
     "source": "Délib 2020-12-15-12",
     "importance": 1,
     "resume": "15 230€ HT/an enveloppe proximité",
-    "chiffres": [
-      {
-        "valeur": "15 230 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2020",
@@ -7762,12 +7475,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "LED, vannes, menuiseries, sécurisations",
-    "chiffres": [
-      {
-        "valeur": "226 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2024",
@@ -7805,12 +7513,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "Végétalisation cimetière, bordures, LED, fleurissement",
-    "chiffres": [
-      {
-        "valeur": "215 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2024",
@@ -7848,12 +7551,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "Assainissement Escale, terrasse Locomotive, toitures",
-    "chiffres": [
-      {
-        "valeur": "156 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2024",
@@ -7891,12 +7589,7 @@
     "source": "Bilan travaux",
     "importance": 1,
     "resume": "Aires jeux, Plan Lumière, sanitaires cimetière",
-    "chiffres": [
-      {
-        "valeur": "182 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2024",
@@ -8091,12 +7784,7 @@
     "source": "CM 24/06/2025",
     "importance": 1,
     "resume": "Phase incitative jusqu'à janvier 2028, guide architectural et chromatique",
-    "chiffres": [
-      {
-        "valeur": "16 000 €",
-        "label": "1er versement 2024"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "12/12/2022",
@@ -8327,12 +8015,7 @@
     "source": "CM 24/06/2025",
     "importance": 1,
     "resume": "Collecte hors foyer, soutien 34 560€ pour équipements, projet lauréat 19/12/2024",
-    "chiffres": [
-      {
-        "valeur": "34 560 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2025",
@@ -8522,12 +8205,7 @@
     "source": "CM 24/06/2025",
     "importance": 1,
     "resume": "1 641,63€ par élève (base CA 2024)",
-    "chiffres": [
-      {
-        "valeur": "1 642 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2025",
@@ -8664,10 +8342,6 @@
       {
         "valeur": "50%",
         "label": "Subvention FIPD"
-      },
-      {
-        "valeur": "14 249 €",
-        "label": "Surcoût avenant (HT)"
       }
     ],
     "chronologie": [
@@ -9171,12 +8845,7 @@
     "source": "Délib 2025-02-18-09",
     "importance": 1,
     "resume": "550€ (10 chats, 50% commune), stérilisation/identification",
-    "chiffres": [
-      {
-        "valeur": "550 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2025",
@@ -9224,12 +8893,7 @@
     "source": "Décision 2025-MP-02",
     "importance": 1,
     "resume": "102 000€ TTC, marché 2025-MP-02",
-    "chiffres": [
-      {
-        "valeur": "102 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2025",
@@ -9267,12 +8931,7 @@
     "source": "Décision 2025-AG-01",
     "importance": 1,
     "resume": "250€/an, Institut des Risques Majeurs",
-    "chiffres": [
-      {
-        "valeur": "250 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2023-11-28",
@@ -9414,12 +9073,7 @@
     "source": "Délib 2025-04-08-07",
     "importance": 1,
     "resume": "64 957€ HT, subvention métro 19 487€ (30%), optimisation énergie",
-    "chiffres": [
-      {
-        "valeur": "64 957 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2025",
@@ -9467,10 +9121,6 @@
     "importance": 3,
     "resume": "Opération de Revitalisation du Territoire pilotée avec la Métropole. 4 secteurs prioritaires: Tannerie, Tissages, Centre historique, Place du Château.",
     "chiffres": [
-      {
-        "valeur": "192 k€",
-        "label": "Études tannerie 2024"
-      },
       {
         "valeur": "5 ha",
         "label": "Site tannerie"
@@ -9617,12 +9267,7 @@
     "source": "Décision 2025-MP-08",
     "importance": 1,
     "resume": "18 945€ HT (max 30 000€ à bons de commande)",
-    "chiffres": [
-      {
-        "valeur": "18 945 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2025",
@@ -9665,12 +9310,7 @@
     "source": "Délib 2025-09-30-15",
     "importance": 1,
     "resume": "21 650€, parcelle AP0103 (~700m²) à Métropole",
-    "chiffres": [
-      {
-        "valeur": "21 650 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2025",
@@ -9718,12 +9358,7 @@
     "source": "Lettre intention 08/04/2025",
     "importance": 1,
     "resume": "Participation 2 000€ prévue, soutien reprise salariés plateforme",
-    "chiffres": [
-      {
-        "valeur": "2 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2025",
@@ -10054,16 +9689,7 @@
     "source": "Magazine",
     "importance": 3,
     "resume": "Arrêtés pendant vacances scolaires décembre-janvier",
-    "chiffres": [
-      {
-        "valeur": "353 892 €",
-        "label": "Coût travaux HT"
-      },
-      {
-        "valeur": "424 670 €",
-        "label": "Coût TTC"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "12/12/2022",
@@ -10419,12 +10045,7 @@
     "source": "Délib",
     "importance": 1,
     "resume": "Installation sur toiture Lidl, amortissement 9 ans",
-    "chiffres": [
-      {
-        "valeur": "168 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2023",
@@ -10473,10 +10094,6 @@
     "importance": 2,
     "resume": "Partenariat pour le semi-marathon Grenoble-Vizille",
     "chiffres": [
-      {
-        "valeur": "4 000 €",
-        "label": "Subvention municipale"
-      },
       {
         "valeur": "9",
         "label": "Éditions"
@@ -12069,28 +11686,7 @@
     "source": "Délib+VAV#168",
     "importance": 3,
     "resume": "Programme pluriannuel d'investissements voté au budget primitif 2025, représentant 5,4 M€ d'équipements pour la commune.",
-    "chiffres": [
-      {
-        "valeur": "360 K€",
-        "label": "Maison de santé"
-      },
-      {
-        "valeur": "545 K€",
-        "label": "Centre technique"
-      },
-      {
-        "valeur": "300 K€",
-        "label": "Cour P. Langevin"
-      },
-      {
-        "valeur": "213 K€",
-        "label": "Rue Gal de Gaulle"
-      },
-      {
-        "valeur": "137 K€",
-        "label": "Études Tanneries"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2025-04-08",
@@ -13960,12 +13556,7 @@
     "source": "Délib 2022-12-12-21",
     "importance": 2,
     "resume": "1ère édition nov 2022",
-    "chiffres": [
-      {
-        "valeur": "4 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2022",
@@ -14179,16 +13770,7 @@
     "source": "Délib 2023-03-14-24",
     "importance": 1,
     "resume": "Demande AHPV, 1800€ total",
-    "chiffres": [
-      {
-        "valeur": "1 800 €",
-        "label": "Budget"
-      },
-      {
-        "valeur": "130 €",
-        "label": "Cotisation annuelle"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2023",
@@ -14240,12 +13822,7 @@
     "source": "Délib+Bilan travaux",
     "importance": 2,
     "resume": "Restauration de l'orgue historique Callinet (1846) classé MH. Concerts mensuels de collecte par les Amis de l'Orgue de Vizille.",
-    "chiffres": [
-      {
-        "valeur": "80 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "11/07/2023",
@@ -14319,12 +13896,7 @@
     "source": "Délib 2023-12-13-17/18/19",
     "importance": 3,
     "resume": "Monument Historique, 353 892€ HT",
-    "chiffres": [
-      {
-        "valeur": "310 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "12/12/2022",
@@ -14392,12 +13964,7 @@
     "source": "Magazine+Bilan travaux",
     "importance": 1,
     "resume": "Été 2022, fonds européens/régionaux",
-    "chiffres": [
-      {
-        "valeur": "15 000 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2022",
@@ -14441,10 +14008,6 @@
     "importance": 3,
     "resume": "Opération de Revitalisation du Territoire pilotée avec la Métropole. 4 secteurs prioritaires: Tannerie, Tissages, Centre historique, Place du Château.",
     "chiffres": [
-      {
-        "valeur": "192 k€",
-        "label": "Études tannerie 2024"
-      },
       {
         "valeur": "5 ha",
         "label": "Site tannerie"
@@ -14640,16 +14203,7 @@
     "source": "Délib",
     "importance": 3,
     "resume": "Travaux d'urgence sur le monument historique du Prieuré Notre-Dame",
-    "chiffres": [
-      {
-        "valeur": "353 892 €",
-        "label": "Coût travaux HT"
-      },
-      {
-        "valeur": "424 670 €",
-        "label": "Coût TTC"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "12/12/2022",
@@ -14906,12 +14460,7 @@
     "source": "CM 24/06/2025",
     "importance": 1,
     "resume": "Redevance 475€/mois (5€/m² pour 95m²), indexation IRL",
-    "chiffres": [
-      {
-        "valeur": "5 700 €",
-        "label": "Budget"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2025",
@@ -15047,10 +14596,6 @@
       {
         "valeur": "Gratuit",
         "label": "Accès majoritaire"
-      },
-      {
-        "valeur": "32,400€",
-        "label": "Budget annuel"
       }
     ],
     "details": "Chaque année, Vizille propose un programme riche d'événements culturels gratuits ou à tarif accessible :\n\n• **Festival P'tits Mots P'tits Mômes** - Spectacles jeune public (12 000€/an)\n• **Festival Film pour Enfants** - Cinéma jeunesse (partenariat LCA)\n• **Festival Rock'n Road** - Concerts rock\n• **Estivales** - Spectacles + 5 concerts gratuits en plein air (7 500€)\n• **Fête de la Musique** - Animations musicales dans la ville\n• **Fête de la Science** - Parcours scientifique intercommunal avec la Casemate et Territoire de Sciences : village sciences, animations scolaires, médiathèque\n• **10 Jours de la Culture** - Événement métropolitain, spectacles gratuits\n• **Cinéma plein air estival** - Projections gratuites\n• **Veillées de Belledonne** - Soirées d'échanges intergénérationnelles (partenariat Espace Belledonne)\n• **Patinoire éphémère de Noël** - Animation hivernale\n• **Animations Marché de Noël** - Spectacles et ambiance festive\n\n**Partenariats métropolitains :**\n• Participation aux assises de la culture métropolitaine\n• Lien avec la Casemate et Territoire de Sciences\n• Participation au COST",
@@ -15113,10 +14658,6 @@
       {
         "valeur": "5",
         "label": "Concerts Estivales"
-      },
-      {
-        "valeur": "25,705€",
-        "label": "Budget spectacles"
       }
     ],
     "details": "Le théâtre du Jeu de Paume propose chaque saison une programmation diversifiée de spectacles vivants :\n\n**Saison 2024-2025 (13 spectacles) :**\n• 'Le Voisin' - Benoît Turjman (1 429€)\n• 'Les Swingirls - Révolutions' (1 794€)\n• 'Les Sœurs K - Ni Fleurs Ni Couronne' (2 300€)\n• 'Le Dékoncert' - Solfasirc (2 356€)\n• 'Alice Guy' - Black Dogg (8 400€)\n\n**P'tits Mots P'tits Mômes 2025 :**\n• Lou(hou)p - Cie NAJICO (1 195€)\n• Ça Cartonne - Green Piste Records (2 637€)\n• Jeux d'Enfants - Cie Commun Accord (2 004€)\n• Direction artistique Hélène Jusselme (2 840€)\n\n**Estivales** : 5 concerts gratuits en plein air chaque été\n\nLa billetterie en ligne facilite l'accès aux spectacles.",
@@ -15167,14 +14708,6 @@
       {
         "valeur": "Gratuit",
         "label": "Médiathèque Vizillois"
-      },
-      {
-        "valeur": "29 500€",
-        "label": "Convention cinéma"
-      },
-      {
-        "valeur": "28 000€",
-        "label": "Convention MPA"
       }
     ],
     "details": "Réseau de partenariats avec les acteurs culturels locaux :\n\n**Médiathèque Jules Vallès :**\n• **Gratuité totale pour tous les Vizillois**\n• Très nombreuses animations autour du livre et de l'écriture\n• Actions avec les écoles et structures petite enfance\n• Programme Lire et Faire Lire dans les classes\n• Partenariat avec la librairie locale\n• Lieu d'exposition\n\n**Cinéma :**\n• Convention Cinémas Associés / LCA (29 500€/an)\n• Village Cinéma, Festival du film pour enfants\n• Billetterie en ligne\n\n**Musique :**\n• Convention MPA - Musiques en Pays d'Allevard (28 000€/an)\n• Partenariat en augmentation (prise en charge solidaire élèves)\n\n**Jeu de Paume :**\n• Mise à disposition pour associations\n• Mise à disposition Médiane santé Prévention\n• Partenariat Éducation nationale (collège, lycée, écoles)\n• Expositions Jeu de Paume et Mairie\n\n**Actions intergénérationnelles :**\n• Animations culturelles Résidence La Romanche, Escale\n• Lien avec le Secours Populaire",
@@ -16160,10 +15693,6 @@
       {
         "valeur": "5 ha",
         "label": "de zone à aménager"
-      },
-      {
-        "valeur": "192 000€",
-        "label": "budget études préalables"
       }
     ],
     "sous_categorie": "Concertations publiques",
