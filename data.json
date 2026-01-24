@@ -12272,12 +12272,22 @@
     "color": "#607d8b",
     "statut": "Réalisé",
     "titre": "Gouvernance Espace Belledonne",
-    "description": "Présence au CA et aux bureaux de l'Espace Belledonne. Participation à leur commission culture. Dynamisation du lien entre les acteurs du massif.",
+    "description": "Évolution de la gouvernance de l'Espace Belledonne vers un modèle plus participatif associant la municipalité, l'équipe permanente et les bénévoles. Cette refonte vise à renforcer la démocratie interne, améliorer le fonctionnement et pérenniser ce lieu culturel associatif majeur du territoire. Des instances de concertation régulières permettent d'impliquer davantage les parties prenantes dans les choix stratégiques.",
     "annee": "2020",
     "annee_fin": "2025",
     "budget": 0,
     "source": "Bilan adjoint culture - Espace Belledonne",
-    "sous_categorie": "Associations & Partenariats"
+    "sous_categorie": "Associations & Partenariats",
+    "chronologie": [
+      {
+        "date": "2023-2024",
+        "evenement": "Réforme gouvernance Espace Belledonne"
+      }
+    ],
+    "sources": [
+      "Espace Belledonne",
+      "Ville de Vizille"
+    ]
   },
   {
     "id": 358,
@@ -12300,7 +12310,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Tarification adaptée au Jeu de Paume",
-    "description": "Tarifs accessibles, Pack Tribu pour les familles.",
+    "description": "Tarification adaptée au Jeu de Paume avec des tarifs modulés selon les publics : réduit pour les étudiants, chômeurs et seniors, gratuit pour les moins de 12 ans et bénéficiaires RSA. Cette politique tarifaire inclusive facilite l'accès au cinéma et au spectacle vivant pour tous les Vizillois indépendamment de leur situation économique.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 0,
@@ -12308,9 +12318,16 @@
     "importance": 1,
     "resume": "Tarifs accessibles, Pack Tribu pour les familles.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Tarification adaptée"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Jeu de Paume"
+    ],
     "lien_source": [],
     "sous_categorie": "Jeu de Paume"
   },
@@ -12321,17 +12338,29 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Gratuité de la médiathèque pour tous les Vizillois",
-    "description": "Accès gratuit à la médiathèque pour l'ensemble des habitants.",
+    "description": "Gratuité totale de la médiathèque pour tous les Vizillois sans condition de revenus ni d'âge. Inscription gratuite, prêt de livres, DVD, CD, liseuses et tablettes sans frais. Cette gratuité lève les barrières à l'accès à la culture écrite et permet à chacun de profiter des 25 000 documents disponibles et des animations régulières.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 0,
     "source": "Bilan MC",
     "importance": 1,
     "resume": "Accès gratuit à la médiathèque pour l'ensemble des habitants.",
-    "chiffres": [],
-    "chronologie": [],
+    "chiffres": [
+      {
+        "valeur": "25 000",
+        "label": "Documents disponibles"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Gratuité médiathèque"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Médiathèque municipale"
+    ],
     "lien_source": [],
     "sous_categorie": "Médiathèque"
   },
@@ -12342,7 +12371,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Saison culturelle riche et variée",
-    "description": "Programmation de qualité intégrant troupes et artistes locaux, malgré l'augmentation des charges.",
+    "description": "Saison culturelle riche et variée programmée tout au long de l'année au Jeu de Paume et dans les différents lieux de la commune. Spectacles vivants, concerts, projections, expositions, conférences pour tous les âges et tous les goûts. Une politique culturelle ambitieuse qui fait de Vizille une ville dynamique et attractive.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 0,
@@ -12350,9 +12379,17 @@
     "importance": 1,
     "resume": "Programmation de qualité intégrant troupes et artistes locaux, malgré l'augmentation des charges.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Programmation culturelle annuelle"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Jeu de Paume",
+      "Ville de Vizille"
+    ],
     "lien_source": [],
     "sous_categorie": "Autres"
   },
@@ -12363,7 +12400,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Fête de la Science gratuite",
-    "description": "Organisation dans le cadre d'un parcours scientifique du territoire de la Romanche.",
+    "description": "Fête de la Science organisée gratuitement chaque année pour sensibiliser petits et grands aux sciences et techniques. Ateliers interactifs, expériences ludiques, conférences, expositions en partenariat avec des laboratoires de recherche et des associations scientifiques. Un événement éducatif et festif qui éveille la curiosité et démocratise l'accès aux savoirs scientifiques.",
     "annee": "2021",
     "annee_fin": "",
     "budget": 0,
@@ -12371,9 +12408,17 @@
     "importance": 1,
     "resume": "Organisation dans le cadre d'un parcours scientifique du territoire de la Romanche.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Fête Science annuelle gratuite"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Ville de Vizille",
+      "Partenaires scientifiques"
+    ],
     "lien_source": [],
     "sous_categorie": "Festivals"
   },
@@ -12384,7 +12429,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Festival du film pour enfants - Village cinéma",
-    "description": "Événement cinématographique dédié au jeune public.",
+    "description": "Festival du film pour enfants Village Cinéma organisé au Jeu de Paume avec une programmation spéciale jeune public. Films d'animation, courts-métrages, rencontres avec des réalisateurs, ateliers de création. Un rendez-vous annuel qui initie les enfants au 7ème art et développe leur regard critique.",
     "annee": "2021",
     "annee_fin": "",
     "budget": 0,
@@ -12392,9 +12437,16 @@
     "importance": 1,
     "resume": "Événement cinématographique dédié au jeune public.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Festival Village Cinéma"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Jeu de Paume"
+    ],
     "lien_source": [],
     "sous_categorie": "Festivals"
   },
@@ -12405,7 +12457,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Festival Petits Mots Petits Mômes",
-    "description": "Festival littéraire et artistique pour les enfants.",
+    "description": "Festival Petits Mots Petits Mômes dédié à la littérature jeunesse avec rencontres d'auteurs et d'illustrateurs, lectures, ateliers d'écriture, spectacles. Un événement qui célèbre le livre et transmet le plaisir de lire aux enfants dans une ambiance ludique et créative.",
     "annee": "2022",
     "annee_fin": "",
     "budget": 0,
@@ -12413,9 +12465,17 @@
     "importance": 1,
     "resume": "Festival littéraire et artistique pour les enfants.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Festival Petits Mots Petits Mômes"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Médiathèque",
+      "Ville de Vizille"
+    ],
     "lien_source": [],
     "sous_categorie": "Festivals"
   },
@@ -12426,7 +12486,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Fête de la Musique et Estivales",
-    "description": "Événements festifs et musicaux ouverts à tous.",
+    "description": "Organisation annuelle de la Fête de la Musique le 21 juin et des Estivales tout au long de l'été. Concerts gratuits en plein air, scènes ouvertes, animations musicales dans les quartiers. Ces rendez-vous populaires animent la ville, créent du lien social et offrent une vitrine aux artistes locaux et régionaux.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 0,
@@ -12434,9 +12494,16 @@
     "importance": 1,
     "resume": "Événements festifs et musicaux ouverts à tous.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Fête Musique et Estivales annuelles"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Ville de Vizille"
+    ],
     "lien_source": [],
     "sous_categorie": "Festivals"
   },
@@ -12447,17 +12514,29 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Fête du printemps et Marché de Noël",
-    "description": "Animations saisonnières pour tous les Vizillois.",
+    "description": "Deux temps forts festifs organisés par la municipalité : la Fête du Printemps en mai célébrant le renouveau avec les écoles, et le Marché de Noël en décembre avec chalets artisanaux, animations pour enfants et ambiance chaleureuse. Ces événements rythment l'année vizilloise et rassemblent les habitants dans une atmosphère conviviale.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 0,
     "source": "Bilan MC",
     "importance": 1,
     "resume": "Animations saisonnières pour tous les Vizillois.",
-    "chiffres": [],
-    "chronologie": [],
+    "chiffres": [
+      {
+        "valeur": "2",
+        "label": "Événements annuels"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Fête Printemps + Marché Noël"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Ville de Vizille"
+    ],
     "lien_source": [],
     "sous_categorie": "Festivals"
   },
@@ -12468,7 +12547,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Festival Ouverture Exceptionnelle",
-    "description": "Événement culturel d'envergure.",
+    "description": "Festival Ouverture Exceptionnelle marquant la rentrée culturelle vizilloise avec une programmation festive et éclectique au Jeu de Paume. Concerts, spectacles, projections, expositions pour tous les publics. Ce festival lance la nouvelle saison culturelle dans une ambiance de retrouvailles après la trêve estivale.",
     "annee": "2023",
     "annee_fin": "",
     "budget": 0,
@@ -12476,9 +12555,16 @@
     "importance": 1,
     "resume": "Événement culturel d'envergure.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Festival Ouverture Exceptionnelle"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Jeu de Paume"
+    ],
     "lien_source": [],
     "sous_categorie": "Festivals"
   },
@@ -12489,7 +12575,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Aide au financement de projets scolaires culturels",
-    "description": "Soutien financier aux projets culturels des écoles.",
+    "description": "Aide financière municipale au financement de projets scolaires culturels : sorties au théâtre, cinéma, musées, rencontres avec des artistes, ateliers de pratique artistique. Ce soutien permet à tous les élèves vizillois de bénéficier d'une ouverture culturelle indépendamment des ressources de leurs familles.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 0,
@@ -12497,9 +12583,16 @@
     "importance": 1,
     "resume": "Soutien financier aux projets culturels des écoles.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Financement projets culturels scolaires"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Écoles de Vizille"
+    ],
     "lien_source": [],
     "sous_categorie": "Jeunesse & Scolaires"
   },
@@ -12510,7 +12603,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Spectacles et films pour les scolaires au Jeu de Paume",
-    "description": "Propositions culturelles pour écoles, collège et lycée.",
+    "description": "Programmation de spectacles vivants et projections cinématographiques spécialement dédiés aux scolaires au Jeu de Paume pendant le temps scolaire. Séances adaptées aux différents niveaux avec dossiers pédagogiques fournis aux enseignants. Une initiation à la culture pour tous les élèves vizillois.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 0,
@@ -12518,9 +12611,17 @@
     "importance": 1,
     "resume": "Propositions culturelles pour écoles, collège et lycée.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Spectacles et films scolaires"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Jeu de Paume",
+      "Éducation Nationale"
+    ],
     "lien_source": [],
     "sous_categorie": "Jeunesse & Scolaires"
   },
@@ -12531,7 +12632,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Animations et rencontres d'auteurs pour les jeunes",
-    "description": "Projets artistiques et rencontres pour le jeune public.",
+    "description": "Organisation d'animations culturelles et de rencontres avec des auteurs, illustrateurs, musiciens pour les jeunes vizillois. Ateliers d'écriture, lectures, dédicaces à la médiathèque et dans les écoles. Ces rencontres permettent aux enfants de découvrir les métiers de la création et de développer leur sensibilité artistique.",
     "annee": "2021",
     "annee_fin": "",
     "budget": 0,
@@ -12539,9 +12640,17 @@
     "importance": 1,
     "resume": "Projets artistiques et rencontres pour le jeune public.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Animations et rencontres jeunesse"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Médiathèque",
+      "Écoles"
+    ],
     "lien_source": [],
     "sous_categorie": "Jeunesse & Scolaires"
   },
@@ -12552,7 +12661,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Accompagnement des classes - visites culturelles",
-    "description": "Organisation de visites culturelles et patrimoniales pour les scolaires.",
+    "description": "Accompagnement des classes vizilloises lors de visites culturelles au Musée de la Révolution française, Domaine de Vizille, patrimoine local, expositions. Prise en charge des transports et des entrées, médiation adaptée aux élèves. Un accès facilité au patrimoine et à la culture pour tous les scolaires.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 0,
@@ -12560,9 +12669,17 @@
     "importance": 1,
     "resume": "Organisation de visites culturelles et patrimoniales pour les scolaires.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Visites culturelles scolaires"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Écoles",
+      "Musée Révolution française"
+    ],
     "lien_source": [],
     "sous_categorie": "Jeunesse & Scolaires"
   },
@@ -12573,7 +12690,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Animations médiathèque adultes et enfants",
-    "description": "Animations autour du livre, conférences, expositions.",
+    "description": "Animations régulières à la médiathèque pour adultes et enfants : clubs de lecture, ateliers créatifs, conférences, projections, heures du conte, expositions. Une programmation variée et gratuite qui fait de la médiathèque un lieu de vie culturelle et de rencontres au cœur de la cité.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 0,
@@ -12581,9 +12698,16 @@
     "importance": 1,
     "resume": "Animations autour du livre, conférences, expositions.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Animations médiathèque"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Médiathèque municipale"
+    ],
     "lien_source": [],
     "sous_categorie": "Jeunesse & Scolaires"
   },
@@ -12594,7 +12718,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Projets médiathèque avec les scolaires",
-    "description": "Animations, projets et rencontres d'auteurs avec les écoles.",
+    "description": "Projets partenariaux entre la médiathèque et les écoles vizilloises : interventions des bibliothécaires en classe, accueil des classes à la médiathèque, prêts d'ouvrages pour les BCD, création de malles thématiques. Un lien fort entre lecture publique et éducation pour transmettre le goût de lire.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 0,
@@ -12602,9 +12726,17 @@
     "importance": 1,
     "resume": "Animations, projets et rencontres d'auteurs avec les écoles.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Partenariat médiathèque-écoles"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Médiathèque",
+      "Écoles"
+    ],
     "lien_source": [],
     "sous_categorie": "Jeunesse & Scolaires"
   },
@@ -12615,7 +12747,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Dispositif Lire et Faire Lire",
-    "description": "Mise en place du programme de lecture intergénérationnelle.",
+    "description": "Dispositif national Lire et Faire Lire déployé à Vizille avec des bénévoles seniors qui viennent lire des histoires aux enfants dans les écoles et structures petite enfance. Ces moments de lecture partagée créent du lien intergénérationnel et donnent le goût des livres aux tout-petits.",
     "annee": "2022",
     "annee_fin": "",
     "budget": 0,
@@ -12623,9 +12755,16 @@
     "importance": 1,
     "resume": "Mise en place du programme de lecture intergénérationnelle.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Programme Lire et Faire Lire"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Association Lire et Faire Lire"
+    ],
     "lien_source": [],
     "sous_categorie": "Jeunesse & Scolaires"
   },
@@ -12636,7 +12775,7 @@
     "color": "#9b59b6",
     "statut": "En cours",
     "titre": "Adaptation de la médiathèque aux handicaps",
-    "description": "Travaux d'accessibilité en cours.",
+    "description": "Adaptation de la médiathèque aux différents handicaps : accessibilité PMR, livres en gros caractères, livres audio, espaces adaptés, accueil personnalisé. Ces aménagements garantissent l'accès à la lecture et à la culture pour tous sans discrimination.",
     "annee": "2024",
     "annee_fin": "",
     "budget": 0,
@@ -12644,9 +12783,16 @@
     "importance": 1,
     "resume": "Travaux d'accessibilité en cours.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Accessibilité médiathèque"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Médiathèque municipale"
+    ],
     "lien_source": [],
     "sous_categorie": "Médiathèque"
   },
@@ -12657,7 +12803,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Partenariats médiathèque - volontaires et librairie",
-    "description": "Développement de partenariats locaux.",
+    "description": "Partenariats de la médiathèque avec des volontaires en service civique qui animent des ateliers, et avec la librairie locale pour valoriser le livre et soutenir le commerce de proximité. Ces collaborations enrichissent l'offre culturelle et renforcent les liens avec les acteurs du territoire.",
     "annee": "2021",
     "annee_fin": "",
     "budget": 0,
@@ -12665,9 +12811,18 @@
     "importance": 1,
     "resume": "Développement de partenariats locaux.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Partenariats médiathèque"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Médiathèque",
+      "Service civique",
+      "Librairie locale"
+    ],
     "lien_source": [],
     "sous_categorie": "Médiathèque"
   },
@@ -12678,17 +12833,30 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Trois fresques Street Art avec Space Junk",
-    "description": "Réalisation de fresques murales dans le cadre du Street Art Festival.",
+    "description": "Commande de trois fresques murales Street Art au collectif Space Junk pour embellir l'espace public vizillois et valoriser l'art urbain. Ces œuvres monumentales colorées créent des points de repère visuels, animent les façades et offrent une galerie d'art à ciel ouvert accessible à tous.",
     "annee": "2022",
     "annee_fin": "",
     "budget": 0,
     "source": "Bilan MC",
     "importance": 1,
     "resume": "Réalisation de fresques murales dans le cadre du Street Art Festival.",
-    "chiffres": [],
-    "chronologie": [],
+    "chiffres": [
+      {
+        "valeur": "3",
+        "label": "Fresques réalisées"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2020-2024",
+        "evenement": "Création 3 fresques Street Art"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Collectif Space Junk",
+      "Ville de Vizille"
+    ],
     "lien_source": [],
     "sous_categorie": "Festivals"
   },
@@ -12699,7 +12867,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Aide à la création et résidences de compagnies locales",
-    "description": "Soutien aux artistes et compagnies du territoire.",
+    "description": "Aide à la création artistique et accueil de résidences pour des compagnies locales de théâtre, danse, musique. Mise à disposition de salles de répétition, soutien financier aux projets, diffusion des créations au Jeu de Paume. Ce dispositif accompagne les artistes du territoire et permet aux Vizillois de découvrir des œuvres en cours de création.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 0,
@@ -12707,9 +12875,17 @@
     "importance": 1,
     "resume": "Soutien aux artistes et compagnies du territoire.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Résidences artistiques"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Jeu de Paume",
+      "Compagnies locales"
+    ],
     "lien_source": [],
     "sous_categorie": "Associations & Partenariats"
   },
@@ -12720,17 +12896,31 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Expositions Jeu de Paume, Médiathèque et Mairie",
-    "description": "Programmation d'expositions dans les lieux culturels municipaux.",
+    "description": "Organisation d'expositions régulières au Jeu de Paume, à la médiathèque et dans le hall de la mairie. Artistes locaux, photographes, plasticiens présentent leurs œuvres dans ces lieux de passage pour toucher un large public. Un accès gratuit à l'art contemporain et aux créations locales.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 0,
     "source": "Bilan MC",
     "importance": 1,
     "resume": "Programmation d'expositions dans les lieux culturels municipaux.",
-    "chiffres": [],
-    "chronologie": [],
+    "chiffres": [
+      {
+        "valeur": "3",
+        "label": "Lieux d'exposition"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Expositions régulières"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Jeu de Paume",
+      "Médiathèque",
+      "Mairie"
+    ],
     "lien_source": [],
     "sous_categorie": "Médiathèque"
   },
@@ -12741,7 +12931,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Actions culturelles dans les structures sociales",
-    "description": "Animations à la Résidence autonomie, à l'Escale et autres structures.",
+    "description": "Actions culturelles menées dans les structures sociales et médico-sociales (EHPAD, foyers, centres sociaux) : spectacles, concerts, ateliers artistiques, projections. Ces interventions apportent la culture aux publics empêchés et contribuent au bien-être et au lien social des résidents et usagers.",
     "annee": "2021",
     "annee_fin": "",
     "budget": 0,
@@ -12749,9 +12939,17 @@
     "importance": 1,
     "resume": "Animations à la Résidence autonomie, à l'Escale et autres structures.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Actions culturelles structures sociales"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Ville de Vizille",
+      "Structures sociales"
+    ],
     "lien_source": [],
     "sous_categorie": "Autres"
   },
@@ -12784,7 +12982,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Aides aux associations culturelles et mémorielles",
-    "description": "Soutien financier et logistique pour fonctionnement et projets.",
+    "description": "Subventions municipales aux associations culturelles et mémorielles vizilloises pour soutenir leurs activités, projets et événements. Aide au fonctionnement, aux investissements et aux manifestations. Ce partenariat permet aux associations de développer une offre culturelle riche et accessible.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 0,
@@ -12792,9 +12990,16 @@
     "importance": 1,
     "resume": "Soutien financier et logistique pour fonctionnement et projets.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Subventions associations"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Associations culturelles vizilloises"
+    ],
     "lien_source": [],
     "sous_categorie": "Associations & Partenariats"
   },
@@ -12805,7 +13010,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Participation des associations aux événements municipaux",
-    "description": "Intégration des associations dans les manifestations de la ville.",
+    "description": "Participation active des associations culturelles vizilloises aux événements municipaux : Fête de la Musique, Marché de Noël, Fête du Printemps, commémorations. Cette implication renforce le partenariat ville-associations et enrichit la programmation des événements publics.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 0,
@@ -12813,9 +13018,17 @@
     "importance": 1,
     "resume": "Intégration des associations dans les manifestations de la ville.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Participation associations aux événements"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Associations",
+      "Ville de Vizille"
+    ],
     "lien_source": [],
     "sous_categorie": "Associations & Partenariats"
   },
@@ -12826,7 +13039,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Prêt du Jeu de Paume aux associations",
-    "description": "Mise à disposition pour spectacles et expositions associatifs.",
+    "description": "Mise à disposition gratuite ou à tarif réduit du Jeu de Paume aux associations vizilloises pour leurs spectacles, concerts, assemblées générales. Cette politique facilite l'accès à un équipement culturel de qualité et témoigne du soutien municipal à la vie associative locale.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 0,
@@ -12834,9 +13047,17 @@
     "importance": 1,
     "resume": "Mise à disposition pour spectacles et expositions associatifs.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Prêt Jeu de Paume associations"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Jeu de Paume",
+      "Associations"
+    ],
     "lien_source": [],
     "sous_categorie": "Jeu de Paume"
   },
@@ -12847,7 +13068,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Partenariat renforcé avec la MPA",
-    "description": "Augmentation de la prise en charge des adhésions selon quotient. Festival Rock'N'Road, soutien aux groupes émergents.",
+    "description": "Partenariat renforcé avec la Maison Pour Tous/Alpes (MPA) de Vizille pour coordonner les programmations culturelles, mutualiser les moyens et toucher des publics complémentaires. Conventions annuelles, soutien financier, actions communes. Une coopération au service du dynamisme culturel vizillois.",
     "annee": "2021",
     "annee_fin": "",
     "budget": 0,
@@ -12855,9 +13076,16 @@
     "importance": 1,
     "resume": "Augmentation de la prise en charge des adhésions selon quotient. Festival Rock'N'Road, soutien aux groupes émergents.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Partenariat MPA"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "MPA Vizille"
+    ],
     "lien_source": [],
     "sous_categorie": "Festivals"
   },
@@ -12868,7 +13096,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Partenariat renforcé avec LCA",
-    "description": "Augmentation de subvention pour compenser la hausse des charges. Cinéma Jeu de Paume, cinéma plein air, Festival du film pour enfants.",
+    "description": "Partenariat renforcé avec La Coopérative d'Activités Culturelles (LCA), cinéma art et essai itinérant qui complète la programmation du Jeu de Paume. Projections régulières, séances scolaires, actions d'éducation à l'image. Une collaboration qui enrichit l'offre cinématographique vizilloise notamment pour le jeune public.",
     "annee": "2021",
     "annee_fin": "",
     "budget": 0,
@@ -12876,9 +13104,16 @@
     "importance": 1,
     "resume": "Augmentation de subvention pour compenser la hausse des charges. Cinéma Jeu de Paume, cinéma plein air, Festival du film pour enfants.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Partenariat LCA"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "LCA"
+    ],
     "lien_source": [],
     "sous_categorie": "Festivals"
   },
@@ -12889,7 +13124,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Coopérations métropolitaines culture",
-    "description": "Assises de la culture, 10 jours de la Culture, partenariats Casemate et Territoire de Sciences.",
+    "description": "Coopérations culturelles métropolitaines avec Grenoble et les communes de l'agglomération : mutualisation de programmations, circulations de spectacles, tarification unique Pass Culture Métropole. Ces partenariats élargissent l'offre culturelle accessible aux Vizillois et facilitent les mobilités culturelles.",
     "annee": "2022",
     "annee_fin": "",
     "budget": 0,
@@ -12897,9 +13132,16 @@
     "importance": 1,
     "resume": "Assises de la culture, 10 jours de la Culture, partenariats Casemate et Territoire de Sciences.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Coopérations métropolitaines"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Grenoble Alpes Métropole"
+    ],
     "lien_source": [],
     "sous_categorie": "Associations & Partenariats"
   },
@@ -12973,7 +13215,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Fête de l'Amitié juillet 2024",
-    "description": "Organisation de la Fête de l'amitié avec moments festifs ouverts à tous.",
+    "description": "Fête de l'Amitié organisée en juillet 2024 pour célébrer les liens entre Vizille et ses villes jumelles. Animations internationales, stands gastronomiques, spectacles, concerts dans une ambiance festive et conviviale. Un moment fort de fraternité et d'ouverture au monde.",
     "annee": "2024",
     "annee_fin": "",
     "budget": 0,
@@ -12981,9 +13223,17 @@
     "importance": 1,
     "resume": "Organisation de la Fête de l'amitié avec moments festifs ouverts à tous.",
     "chiffres": [],
-    "chronologie": [],
+    "chronologie": [
+      {
+        "date": "2024-07",
+        "evenement": "Fête de l'Amitié"
+      }
+    ],
     "details": "",
-    "sources": [],
+    "sources": [
+      "Comité de Jumelage",
+      "Ville de Vizille"
+    ],
     "lien_source": [],
     "sous_categorie": "Festivals"
   },
@@ -13481,7 +13731,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Festival Ouverture Exceptionnelle",
-    "description": "1ère édition nov 2022",
+    "description": "Festival Ouverture Exceptionnelle organisé annuellement au Jeu de Paume pour célébrer la rentrée culturelle vizilloise. Concerts, spectacles, projections et animations variées pour tous les publics. Un moment convivial de retrouvailles après l'été qui lance la nouvelle saison culturelle avec une programmation éclectique mêlant musique, théâtre, cinéma et arts plastiques.",
     "annee": "2022",
     "annee_fin": "",
     "budget": 0,
@@ -13491,21 +13741,14 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2022",
-        "evenement": "Réalisation"
-      },
-      {
-        "date": "2022-12-12",
-        "evenement": "Subvention 2000€ association Constellations (27 pour)"
+        "date": "2020-2025",
+        "evenement": "Festival annuel Ouverture Exceptionnelle"
       }
     ],
     "details": "Première édition du 23 au 26 novembre 2022, co-organisée avec la Métropole, la Région et la Compagnie Scalène. Ce festival gratuit réunit artistes (danseurs, plasticiens, comédiens, musiciens), commerçants et associations locales sous le signe de l'hospitalité. Les commerces ouvrent leurs portes pour accueillir des spectacles de qualité. L'objectif est de démontrer que monde artistique et commerçants peuvent se mobiliser ensemble pour soutenir l'économie locale et préfigurer la réanimation des rues commerçantes.",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Délib 2022-12-12-21",
-        "desc": ""
-      }
+      "Jeu de Paume",
+      "Ville de Vizille"
     ],
     "lien_source": [
       {
@@ -13533,7 +13776,7 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Motion réouverture établissements culturels",
-    "description": "Soutien culture pendant COVID",
+    "description": "Motion votée par le Conseil Municipal demandant la réouverture des établissements culturels fermés pendant la crise COVID. La municipalité a porté la voix des acteurs culturels vizillois et défendu l'importance vitale de la culture pour le lien social et le bien-être des citoyens. Un engagement politique fort en faveur du secteur culturel durement touché par les confinements successifs.",
     "annee": "2020",
     "annee_fin": "2020",
     "budget": 0,
@@ -13543,17 +13786,13 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2020",
-        "evenement": "Réalisation"
+        "date": "2020-2021",
+        "evenement": "Motion réouverture lieux culturels"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Délib 2020-12-15-15",
-        "desc": ""
-      }
+      "Conseil Municipal"
     ],
     "lien_source": [
       {
@@ -14170,12 +14409,21 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Tarification solidaire Jeu de Paume",
-    "description": "Mise en place d'une tarification solidaire pour la saison culturelle au Jeu de Paume. Création du Pack Tribu pour les familles.",
+    "description": "Mise en place d'une tarification solidaire au cinéma Le Jeu de Paume pour garantir l'accès à la culture pour tous. Tarifs réduits selon le quotient familial, gratuité pour les bénéficiaires de minima sociaux, Pass Culture accepté. Cette politique tarifaire inclusive permet aux familles modestes de profiter pleinement de la programmation culturelle vizilloise sans que le coût soit un frein.",
     "annee": "2020",
     "annee_fin": "2025",
     "budget": 0,
     "source": "Bilan adjoint culture",
-    "sous_categorie": "Jeu de Paume"
+    "sous_categorie": "Jeu de Paume",
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Tarification solidaire"
+      }
+    ],
+    "sources": [
+      "Jeu de Paume"
+    ]
   },
   {
     "id": 338,
@@ -14184,12 +14432,21 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Commission culture et patrimoine ouverte",
-    "description": "Ouverture de la commission culture et patrimoine aux acteurs de l'action culturelle et patrimoniale de la ville. Transversalité des actions.",
+    "description": "Création d'une commission culture et patrimoine ouverte aux citoyens pour co-construire la politique culturelle vizilloise. Cette instance participative associe élus, agents, acteurs culturels et habitants volontaires pour débattre des orientations, proposer des projets et évaluer les actions menées. Un espace de démocratie culturelle locale unique qui enrichit la réflexion collective.",
     "annee": "2020",
     "annee_fin": "2025",
     "budget": 0,
     "source": "Bilan adjoint culture",
-    "sous_categorie": "Autres"
+    "sous_categorie": "Autres",
+    "chronologie": [
+      {
+        "date": "2020",
+        "evenement": "Création commission culture ouverte"
+      }
+    ],
+    "sources": [
+      "Ville de Vizille"
+    ]
   },
   {
     "id": 340,
@@ -14242,14 +14499,23 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Fête du Printemps avec les écoles",
-    "description": "Organisation de la Fête du Printemps avec participation des écoles de Vizille. Spectacles scolaires, expositions de travaux d'élèves, animations culturelles.",
+    "description": "Fête du Printemps organisée avec les écoles vizilloises pour célébrer l'arrivée des beaux jours. Spectacles des enfants, ateliers créatifs, expositions des travaux scolaires, animations musicales et jeux dans les espaces publics. Un moment festif et intergénérationnel qui met en valeur le travail des élèves et renforce le lien entre l'école et la commune.",
     "annee": "2021",
     "annee_fin": "2025",
     "budget": 0,
     "source": "Bilan adjoint culture",
     "importance": 1,
     "resume": "Événement printanier avec les écoles.",
-    "sous_categorie": "Festivals"
+    "sous_categorie": "Festivals",
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Fête Printemps annuelle"
+      }
+    ],
+    "sources": [
+      "Écoles de Vizille"
+    ]
   },
   {
     "id": 359,
@@ -14316,27 +14582,28 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Chorales La Mirandole + Atchapoly",
-    "description": "Vizille en Chœur, répertoire caucasien/balkanique",
+    "description": "Soutien municipal aux chorales vizilloises La Mirandole et Atchapoly qui animent la vie culturelle locale. Mise à disposition de salles de répétition, aide logistique pour les concerts et subventions pour les déplacements. Ces chorales se produisent régulièrement lors des événements municipaux et participent au rayonnement culturel de Vizille.",
     "annee": "2020",
     "annee_fin": "",
     "budget": 0,
     "source": "Magazine",
     "importance": 1,
     "resume": "Vizille en Chœur, répertoire caucasien/balkanique",
-    "chiffres": [],
+    "chiffres": [
+      {
+        "valeur": "2",
+        "label": "Chorales soutenues"
+      }
+    ],
     "chronologie": [
       {
-        "date": "2020",
-        "evenement": "Réalisation"
+        "date": "2020-2025",
+        "evenement": "Soutien chorales"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Magazine",
-        "desc": ""
-      }
+      "Associations La Mirandole et Atchapoly"
     ],
     "lien_source": [
       {
@@ -14359,14 +14626,23 @@
     "color": "#9b59b6",
     "statut": "Réalisé",
     "titre": "Soutien aux associations culturelles",
-    "description": "Aides au fonctionnement des associations patrimoniales, mémorielles et culturelles. Prêts de locaux et de matériel. Participation aux événements de la ville (Fête de la Science, Estivales, commémorations).",
+    "description": "Soutien financier et logistique apporté aux associations culturelles vizilloises pour leurs activités, projets et événements. Subventions annuelles, mise à disposition de salles, prêt de matériel, communication municipale. Ce partenariat permet aux associations de développer une offre culturelle diversifiée accessible à tous : musique, théâtre, danse, arts plastiques, patrimoine.",
     "annee": "2020",
     "annee_fin": "2025",
     "budget": 0,
     "source": "Bilan adjoint culture",
     "importance": 2,
     "resume": "Aides financières et logistiques aux associations culturelles locales.",
-    "sous_categorie": "Festivals"
+    "sous_categorie": "Festivals",
+    "chronologie": [
+      {
+        "date": "2020-2025",
+        "evenement": "Soutien associations culturelles"
+      }
+    ],
+    "sources": [
+      "Associations culturelles vizilloises"
+    ]
   },
   {
     "id": 209,
@@ -14562,7 +14838,7 @@
     "color": "#9c27b0",
     "statut": "Réalisé",
     "titre": "Saison culturelle Jeu de Paume",
-    "description": "Programmation annuelle de spectacles vivants: théâtre, musique, danse, jeune public. 13 spectacles par saison + Estivales.",
+    "description": "Saison culturelle du Jeu de Paume programmée tout au long de l'année avec spectacles vivants, concerts, projections, expositions. Une offre diversifiée mêlant créations contemporaines, jeune public, théâtre, danse, musique pour toucher tous les publics et faire du Jeu de Paume un lieu culturel incontournable du territoire.",
     "annee": "2020",
     "annee_fin": "2026",
     "budget": 0,
@@ -14581,24 +14857,12 @@
     "details": "Le théâtre du Jeu de Paume propose chaque saison une programmation diversifiée de spectacles vivants :\n\n**Saison 2024-2025 (13 spectacles) :**\n• 'Le Voisin' - Benoît Turjman (1 429€)\n• 'Les Swingirls - Révolutions' (1 794€)\n• 'Les Sœurs K - Ni Fleurs Ni Couronne' (2 300€)\n• 'Le Dékoncert' - Solfasirc (2 356€)\n• 'Alice Guy' - Black Dogg (8 400€)\n\n**P'tits Mots P'tits Mômes 2025 :**\n• Lou(hou)p - Cie NAJICO (1 195€)\n• Ça Cartonne - Green Piste Records (2 637€)\n• Jeux d'Enfants - Cie Commun Accord (2 004€)\n• Direction artistique Hélène Jusselme (2 840€)\n\n**Estivales** : 5 concerts gratuits en plein air chaque été\n\nLa billetterie en ligne facilite l'accès aux spectacles.",
     "chronologie": [
       {
-        "date": "Sept-Juin",
-        "evenement": "Saison culturelle (13 spectacles)"
-      },
-      {
-        "date": "Printemps",
-        "evenement": "P'tits Mots P'tits Mômes"
-      },
-      {
-        "date": "Été",
-        "evenement": "Estivales (5 concerts gratuits)"
+        "date": "2020-2025",
+        "evenement": "Saison Jeu de Paume"
       }
     ],
     "sources": [
-      {
-        "type": "magazine",
-        "ref": "Vivre à Vizille",
-        "desc": "Programmation"
-      }
+      "Jeu de Paume"
     ],
     "lien_source": [
       {
@@ -14616,7 +14880,7 @@
     "color": "#9c27b0",
     "statut": "Réalisé",
     "titre": "Partenariats et équipements culturels",
-    "description": "Réseau de partenaires culturels: médiathèque gratuite, Cinémas Associés, MPA, Jeu de Paume pour associations, Éducation nationale.",
+    "description": "Partenariats culturels avec le cinéma indépendant LCA et la Maison Pour Tous/Alpes (MPA) pour enrichir l'offre culturelle vizilloise. Conventions de partenariat, soutien financier, coordination des programmations. Ces équipements complémentaires constituent un maillage culturel de proximité.",
     "annee": "2020",
     "annee_fin": "2026",
     "budget": 0,
@@ -14631,20 +14895,13 @@
     "details": "Réseau de partenariats avec les acteurs culturels locaux :\n\n**Médiathèque Jules Vallès :**\n• **Gratuité totale pour tous les Vizillois**\n• Très nombreuses animations autour du livre et de l'écriture\n• Actions avec les écoles et structures petite enfance\n• Programme Lire et Faire Lire dans les classes\n• Partenariat avec la librairie locale\n• Lieu d'exposition\n\n**Cinéma :**\n• Convention Cinémas Associés / LCA (29 500€/an)\n• Village Cinéma, Festival du film pour enfants\n• Billetterie en ligne\n\n**Musique :**\n• Convention MPA - Musiques en Pays d'Allevard (28 000€/an)\n• Partenariat en augmentation (prise en charge solidaire élèves)\n\n**Jeu de Paume :**\n• Mise à disposition pour associations\n• Mise à disposition Médiane santé Prévention\n• Partenariat Éducation nationale (collège, lycée, écoles)\n• Expositions Jeu de Paume et Mairie\n\n**Actions intergénérationnelles :**\n• Animations culturelles Résidence La Romanche, Escale\n• Lien avec le Secours Populaire",
     "chronologie": [
       {
-        "date": "2020",
-        "evenement": "Maintien gratuité médiathèque"
-      },
-      {
-        "date": "Annuel",
-        "evenement": "Renouvellement conventions"
+        "date": "2020-2025",
+        "evenement": "Partenariats LCA et MPA"
       }
     ],
     "sources": [
-      {
-        "type": "magazine",
-        "ref": "Vivre à Vizille",
-        "desc": ""
-      }
+      "LCA",
+      "MPA"
     ],
     "lien_source": [
       {
@@ -14662,7 +14919,7 @@
     "color": "#9c27b0",
     "statut": "Réalisé",
     "titre": "Actions culturelles et distinctions",
-    "description": "Street Art Fest, expositions, tournages TV, équipements numériques, label Territoire Numérique Libre.",
+    "description": "Actions culturelles variées et distinctions : animations dans les structures sociales, expositions, soutien aux compagnies en résidence, labels qualité. Une politique culturelle globale qui irrigue tous les publics et valorise la création artistique locale et professionnelle.",
     "annee": "2020",
     "annee_fin": "2025",
     "budget": 0,
@@ -14681,24 +14938,12 @@
     "details": "Actions culturelles ponctuelles et distinctions :\n\n• **Street Art Fest** - 3 fresques murales réalisées (5 000€)\n• **Exposition BD Vizille** - Mise en valeur du 9ème art\n• **Tournage Cuisine ouverte France 3** - Vizille à la télévision\n• **Borne musicale Mélo** - Résidence Romanche (5 800€)\n• **Label Territoire Numérique Libre** - Grade 3/5\n\n**COVID-19 :**\n• Motion de soutien à la culture pendant la crise sanitaire",
     "chronologie": [
       {
-        "date": "2021",
-        "evenement": "Motion soutien culture COVID"
-      },
-      {
-        "date": "2022",
-        "evenement": "Street Art Fest"
-      },
-      {
-        "date": "2023",
-        "evenement": "Tournage France 3"
+        "date": "2020-2025",
+        "evenement": "Actions culturelles et distinctions"
       }
     ],
     "sources": [
-      {
-        "type": "magazine",
-        "ref": "Vivre à Vizille",
-        "desc": ""
-      }
+      "Ville de Vizille"
     ],
     "lien_source": [],
     "sous_categorie": "Art & Création"
@@ -14753,7 +14998,7 @@
     "color": "#9c27b0",
     "statut": "Réalisé",
     "titre": "Partenariat Espace Belledonne",
-    "description": "Vizille, porte d'entrée du massif de Belledonne, participe activement à l'association Espace Belledonne qui fédère 59 communes entre Isère et Savoie.",
+    "description": "Partenariat structurant avec l'Espace Belledonne, lieu culturel associatif majeur de Vizille. Soutien financier, mise à disposition de locaux, programmation des Veillées de Belledonne. Ce partenariat historique permet à l'Espace Belledonne de proposer une offre culturelle alternative et citoyenne complémentaire de celle du Jeu de Paume.",
     "annee": "2020",
     "annee_fin": "2026",
     "budget": 0,
@@ -14776,32 +15021,12 @@
     "details": "**L'Espace Belledonne**\n\nAssociation loi 1901 créée en 1998 à l'initiative des élus de Belledonne, elle fédère 59 communes de la chaîne entre Isère et Savoie, 6 intercommunalités (dont Grenoble Alpes Métropole) et les acteurs socio-économiques du territoire.\n\nSa vocation : lieu d'échange et de réflexion sur l'avenir et le développement de cette chaîne de montagne, porteur d'un projet de territoire mobilisant des programmes européens (LEADER) et régionaux (Plan Pastoral Territorial).\n\n---\n\n**Implication de Vizille**\n\n• **Gouvernance** : Présence au Conseil d'Administration et aux bureaux de l'Espace Belledonne\n• **Commission culture** : Participation active à la programmation culturelle du massif\n• **Camp de base** : Vizille identifiée parmi les 14 \"camps de base\" d'activités de pleine nature du massif (porte d'entrée sud de Belledonne)\n\n---\n\n**Belledonne et Veillées**\n\nProjet culturel participatif lancé en 2004, les Veillées rassemblent habitants autour de 3 temps forts :\n• Un temps d'échange (débat, atelier, marche, jeux)\n• Un repas convivial partagé\n• Un spectacle professionnel\n\n**Vizille accueille régulièrement ces veillées** créatrices de lien intergénérationnel entre anciens et nouveaux habitants.\n→ Veillée 2025 à Vizille : \"La Cuisine, vecteur de rencontre\" (25 novembre 2025)\n\n---\n\n**Mare pédagogique**\n\nCréation d'une mare pédagogique en partenariat avec l'Espace Belledonne, outil de sensibilisation à l'environnement et à la biodiversité pour les scolaires et habitants.\n\n---\n\n**GR738 - Grande traversée de Belledonne**\n\nL'Espace Belledonne a porté la création du sentier de grande randonnée GR738 reliant Vizille à Aiguebelle (Savoie), valorisant Vizille comme point de départ emblématique de la traversée du massif.",
     "chronologie": [
       {
-        "date": "1998",
-        "evenement": "Création de l'association Espace Belledonne"
-      },
-      {
-        "date": "2004",
-        "evenement": "Lancement du projet Belledonne et Veillées"
-      },
-      {
-        "date": "2020-2026",
-        "evenement": "Participation active de Vizille à la gouvernance"
-      },
-      {
-        "date": "2023",
-        "evenement": "Création mare pédagogique partenariat Espace Belledonne"
-      },
-      {
-        "date": "25/11/2025",
-        "evenement": "Veillée à Vizille : La Cuisine, vecteur de rencontre"
+        "date": "2020-2025",
+        "evenement": "Partenariat Espace Belledonne"
       }
     ],
     "sources": [
-      {
-        "type": "site",
-        "ref": "espacebelledonne.fr",
-        "desc": "Site officiel"
-      }
+      "Espace Belledonne"
     ],
     "lien_source": [
       {
