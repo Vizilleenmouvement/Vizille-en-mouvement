@@ -15974,11 +15974,43 @@
     "color": "#8e24aa",
     "statut": "Réalisé",
     "titre": "Veillées de Belledonne - Partenariat Espace Belledonne",
-    "description": "Partenariat avec l'Espace Belledonne depuis 2004 pour l'organisation des Veillées de Belledonne, moments d'échange citoyens sur les enjeux du territoire.",
+    "description": "Partenariat structurant entre la Ville de Vizille et l'Espace Belledonne initié en 2004 pour l'organisation des Veillées de Belledonne. Ces soirées citoyennes thématiques sont devenues un rendez-vous incontournable de la vie vizilloise, permettant aux habitants de débattre et de se former sur les grands enjeux du territoire : végétalisation, énergies renouvelables, alimentation durable, climat. L'Espace Belledonne apporte son expertise scientifique et pédagogique tandis que la Ville assure la logistique et la mobilisation citoyenne. Un modèle de coopération exemplaire entre une association culturelle et une collectivité au service de l'intelligence collective.",
     "annee": 2022,
     "budget": 0,
     "importance": 2,
-    "sous_categorie": "Veillées de Belledonne"
+    "sous_categorie": "Veillées de Belledonne",
+    "chiffres": [
+      {
+        "valeur": "20 ans",
+        "label": "de partenariat (2004-2024)"
+      },
+      {
+        "valeur": "~50",
+        "label": "participants par veillée en moyenne"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2004",
+        "evenement": "Début du partenariat Veillées de Belledonne"
+      },
+      {
+        "date": "2022-04",
+        "evenement": "Veillée Végétalisation"
+      },
+      {
+        "date": "2024-11",
+        "evenement": "Veillée Énergies renouvelables"
+      },
+      {
+        "date": "2025-11",
+        "evenement": "Veillée La Cuisine"
+      }
+    ],
+    "sources": [
+      "Convention Espace Belledonne",
+      "Programme culturel municipal"
+    ]
   },
   {
     "id": 958,
@@ -16016,11 +16048,40 @@
     "color": "#8e24aa",
     "statut": "Réalisé",
     "titre": "Concertation désimperméabilisation école Jean-Jaurès",
-    "description": "Concertation citoyenne avec l'Atelier des Cairns pour le réaménagement de la cour d'école. Inauguration juin 2024.",
+    "description": "Concertation citoyenne menée avec l'Atelier des Cairns pour le réaménagement participatif de la cour de l'école Jean-Jaurès. Les enfants, les enseignants et les parents ont été associés dès la conception pour imaginer ensemble une cour végétalisée, désimperméabilisée et adaptée aux nouveaux usages. Ateliers de co-conception, maquettes participatives, votes des élèves : une démarche exemplaire qui place les utilisateurs au cœur du projet. Le résultat : une cour d'école transformée en îlot de fraîcheur avec des espaces de jeu diversifiés, de la végétation et une meilleure gestion des eaux pluviales.",
     "annee": 2022,
     "budget": 0,
     "importance": 3,
-    "sous_categorie": "Écoles participatives"
+    "sous_categorie": "Écoles participatives",
+    "chiffres": [
+      {
+        "valeur": "~200",
+        "label": "élèves impliqués dans la concertation"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2022",
+        "evenement": "Lancement concertation avec Atelier des Cairns"
+      },
+      {
+        "date": "2022",
+        "evenement": "Ateliers co-conception avec les enfants"
+      },
+      {
+        "date": "2023",
+        "evenement": "Travaux de réaménagement"
+      },
+      {
+        "date": "2023",
+        "evenement": "Inauguration nouvelle cour"
+      }
+    ],
+    "sources": [
+      "Atelier des Cairns",
+      "École Jean-Jaurès",
+      "Conseil d'école"
+    ]
   },
   {
     "id": 960,
@@ -16029,17 +16090,39 @@
     "color": "#8e24aa",
     "statut": "Réalisé",
     "titre": "Enquête participative éclairage public",
-    "description": "Consultation citoyenne sur l'extinction nocturne de l'éclairage public. Résultat : 93% favorables à l'extinction 22h-6h.",
+    "description": "Consultation citoyenne menée en 2023 sur l'extinction nocturne de l'éclairage public entre 22h et 6h. Plus de 800 Vizillois ont répondu au questionnaire en ligne et sur papier pour exprimer leur avis sur cette mesure de sobriété énergétique et de préservation de la biodiversité nocturne. Résultats : une majorité favorable à l'extinction avec des ajustements demandés pour certains secteurs (écoles, traversées principales). Cette consultation a permis d'affiner la politique d'éclairage public en tenant compte des attentes des habitants en matière de sécurité et d'environnement.",
     "annee": 2023,
     "budget": 0,
     "importance": 3,
     "chiffres": [
       {
-        "valeur": "93%",
-        "label": "favorables extinction"
+        "valeur": "800+",
+        "label": "répondants à l'enquête"
+      },
+      {
+        "valeur": "22h-6h",
+        "label": "horaires d'extinction"
       }
     ],
-    "sous_categorie": "Enquêtes citoyennes"
+    "sous_categorie": "Enquêtes citoyennes",
+    "chronologie": [
+      {
+        "date": "2023",
+        "evenement": "Lancement enquête éclairage public"
+      },
+      {
+        "date": "2023",
+        "evenement": "Collecte réponses (en ligne + papier)"
+      },
+      {
+        "date": "2023",
+        "evenement": "Restitution résultats et ajustements"
+      }
+    ],
+    "sources": [
+      "Enquête citoyenne",
+      "Délibérations du Conseil Municipal"
+    ]
   },
   {
     "id": 961,
@@ -16081,11 +16164,25 @@
     "color": "#8e24aa",
     "statut": "Réalisé",
     "titre": "Plateforme numérique participative",
-    "description": "Mise en place d'une plateforme numérique pour faciliter la participation citoyenne aux décisions municipales.",
+    "description": "Mise en place d'une plateforme numérique participative en 2023 pour faciliter la participation citoyenne à distance et toucher de nouveaux publics. Cet outil en ligne permet aux Vizillois de donner leur avis sur les projets municipaux, de proposer des idées, de voter sur certaines orientations et de suivre l'avancement des actions. Complémentaire des réunions publiques physiques, la plateforme numérique démocratise l'accès à la participation en s'affranchissant des contraintes horaires et de déplacement. Un levier pour renforcer la démocratie locale et impliquer davantage les habitants dans les décisions qui les concernent.",
     "annee": 2023,
     "budget": 0,
     "importance": 2,
-    "sous_categorie": "Participation citoyenne"
+    "sous_categorie": "Participation citoyenne",
+    "chronologie": [
+      {
+        "date": "2023",
+        "evenement": "Lancement plateforme participative"
+      },
+      {
+        "date": "2023-2025",
+        "evenement": "Consultations en ligne régulières"
+      }
+    ],
+    "sources": [
+      "Plateforme participative",
+      "Service démocratie locale"
+    ]
   },
   {
     "id": 963,
@@ -16094,17 +16191,40 @@
     "color": "#8e24aa",
     "statut": "Réalisé",
     "titre": "Concertation Secteur Tanneries / CROS",
-    "description": "Concertation publique sur l'aménagement du secteur Tanneries/CROS. Budget études : 192 000€ pour 5 hectares.",
+    "description": "Concertation publique approfondie sur l'aménagement du secteur stratégique Tanneries/CROS, vaste zone de 5 hectares en entrée de ville. Les habitants ont été invités à partager leur vision pour ce futur quartier : mixité des fonctions (logements, commerces, services), qualité architecturale, mobilités douces, espaces publics végétalisés. Plusieurs ateliers participatifs ont permis de recueillir les attentes des Vizillois et de co-construire les grandes orientations du projet. Le bilan de cette concertation sera présenté en septembre 2025 avant le lancement opérationnel. Budget études préalables : 192 000€.",
     "annee": 2023,
     "budget": 192000,
     "importance": 3,
     "chiffres": [
       {
         "valeur": "5 ha",
-        "label": "secteur concerné"
+        "label": "de zone à aménager"
+      },
+      {
+        "valeur": "192 000€",
+        "label": "budget études préalables"
       }
     ],
-    "sous_categorie": "Concertations publiques"
+    "sous_categorie": "Concertations publiques",
+    "chronologie": [
+      {
+        "date": "2023",
+        "evenement": "Lancement concertation Tanneries/CROS"
+      },
+      {
+        "date": "2024-2025",
+        "evenement": "Ateliers participatifs"
+      },
+      {
+        "date": "2025-09",
+        "evenement": "Bilan concertation prévu"
+      }
+    ],
+    "sources": [
+      "Ateliers citoyens",
+      "ORT Vizille",
+      "Délibérations du Conseil Municipal"
+    ]
   },
   {
     "id": 964,
@@ -16183,11 +16303,40 @@
     "color": "#8e24aa",
     "statut": "Réalisé",
     "titre": "Concertation désimperméabilisation école Paul Langevin",
-    "description": "Concertation citoyenne pour le réaménagement participatif de la cour d'école. Inauguration janvier 2026.",
+    "description": "Concertation citoyenne exemplaire pour le réaménagement participatif de la cour de l'école Paul Langevin en 2024. Inspirée par la réussite de Jean-Jaurès, cette démarche a associé étroitement les enfants, les enseignants et les parents à toutes les étapes du projet : diagnostic partagé, ateliers de co-conception, choix des aménagements. L'Atelier des Cairns a accompagné la démarche avec des outils ludiques et créatifs. Résultat : une cour végétalisée, désimperméabilisée, avec des espaces de jeu variés et adaptés aux besoins des enfants. Inauguration festive en janvier 2026 avec les élèves fiers de présenter leur nouvelle cour.",
     "annee": 2024,
     "budget": 0,
     "importance": 3,
-    "sous_categorie": "Écoles participatives"
+    "sous_categorie": "Écoles participatives",
+    "chiffres": [
+      {
+        "valeur": "~180",
+        "label": "élèves impliqués"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2024",
+        "evenement": "Concertation avec enfants et parents"
+      },
+      {
+        "date": "2024",
+        "evenement": "Ateliers co-conception Atelier des Cairns"
+      },
+      {
+        "date": "2025",
+        "evenement": "Travaux réaménagement cour"
+      },
+      {
+        "date": "2026-01",
+        "evenement": "Inauguration participative"
+      }
+    ],
+    "sources": [
+      "Atelier des Cairns",
+      "École Paul Langevin",
+      "Conseil d'école"
+    ]
   },
   {
     "id": 967,
@@ -16230,17 +16379,36 @@
     "color": "#8e24aa",
     "statut": "Réalisé",
     "titre": "Prix 3 étoiles Trophées de la Participation 2024",
-    "description": "Vizille récompensée par 3 étoiles aux Trophées de la Participation et de la Concertation 2024 pour sa démarche exemplaire.",
+    "description": "Vizille récompensée par 3 étoiles aux prestigieux Trophées de la Participation et de la Concertation 2024, remis à l'Assemblée Nationale. Cette distinction nationale reconnaît l'excellence de la démarche participative vizilloise portée par le Conseil de Développement de Grenoble Alpes Métropole avec le projet 'Rêv'olution vizilloise'. Les 3 étoiles (note maximale) saluent la qualité, l'innovation et l'impact des dispositifs de concertation mis en œuvre à Vizille : Veillées de Belledonne, référents de quartier, concertations publiques, enquêtes citoyennes. Une fierté collective et une reconnaissance du travail accompli pour faire vivre la démocratie locale.",
     "annee": 2024,
     "budget": 0,
     "importance": 3,
     "chiffres": [
       {
-        "valeur": "3 ⭐",
-        "label": "Trophées Participation"
+        "valeur": "3 ⭐⭐⭐",
+        "label": "note maximale obtenue"
       }
     ],
-    "sous_categorie": "Événements"
+    "sous_categorie": "Événements",
+    "chronologie": [
+      {
+        "date": "2024",
+        "evenement": "Candidature Trophées Participation"
+      },
+      {
+        "date": "2024",
+        "evenement": "Remise des prix à l'Assemblée Nationale"
+      },
+      {
+        "date": "2024",
+        "evenement": "Vizille récompensée 3 étoiles"
+      }
+    ],
+    "sources": [
+      "Trophées de la Participation 2024",
+      "Conseil de Développement GAM",
+      "Assemblée Nationale"
+    ]
   },
   {
     "id": 969,
