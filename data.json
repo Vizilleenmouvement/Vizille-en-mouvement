@@ -16158,7 +16158,39 @@
     "annee": 2025,
     "budget": 0,
     "importance": 2,
-    "sous_categorie": "Veillées de Belledonne"
+    "sous_categorie": "Veillées de Belledonne",
+    "chiffres": [
+      {
+        "valeur": "20 ans",
+        "label": "de partenariat avec l'Espace Belledonne"
+      },
+      {
+        "valeur": "~50",
+        "label": "participants par veillée en moyenne"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2004",
+        "evenement": "Début du partenariat Veillées de Belledonne"
+      },
+      {
+        "date": "2022-04",
+        "evenement": "Veillée Végétalisation"
+      },
+      {
+        "date": "2024-11",
+        "evenement": "Veillée Énergies renouvelables"
+      },
+      {
+        "date": "2025-11",
+        "evenement": "Veillée La Cuisine - alimentation durable"
+      }
+    ],
+    "sources": [
+      "Partenariat Espace Belledonne",
+      "Programme culturel municipal"
+    ]
   },
   {
     "id": 970,
