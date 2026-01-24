@@ -1352,7 +1352,7 @@
     "budget": 0,
     "source": "Magazine+Délib",
     "importance": 1,
-    "resume": "28% du parc, économie 30-45k€/an",
+    "resume": "28% du parc, économie 30-/an",
     "chiffres": [],
     "chronologie": [
       {
@@ -1396,7 +1396,7 @@
     "budget": 0,
     "source": "Délib 2022-11-09-01",
     "importance": 1,
-    "resume": "70 000€/an, objectif -60% horizon 2035",
+    "resume": "/an, objectif -60% horizon 2035",
     "chiffres": [
       {
         "valeur": "78/an",
@@ -1665,7 +1665,7 @@
     "budget": 0,
     "source": "Délib 2023-11-28-12",
     "importance": 1,
-    "resume": "3,2€/hab/an = 23 897,60€/an",
+    "resume": "/hab/an = 23 /an",
     "chiffres": [],
     "chronologie": [
       {
@@ -1805,7 +1805,7 @@
     "budget": 0,
     "source": "Magazine n°163",
     "importance": 1,
-    "resume": "1,08€/hab/an",
+    "resume": "/hab/an",
     "chiffres": [],
     "chronologie": [
       {
@@ -1844,7 +1844,7 @@
     "budget": 0,
     "source": "Délib 2023-11-28-10",
     "importance": 1,
-    "resume": "100-200-300€ selon jours",
+    "resume": "100-200- selon jours",
     "chiffres": [],
     "chronologie": [
       {
@@ -2432,7 +2432,7 @@
     "budget": 0,
     "source": "Délib 2022-12-12-18",
     "importance": 1,
-    "resume": "49 communes, 385€/an",
+    "resume": "49 communes, /an",
     "chiffres": [],
     "chronologie": [
       {
@@ -4247,7 +4247,7 @@
     "budget": 0,
     "source": "Magazine+Bilan travaux",
     "importance": 1,
-    "resume": "Budget 60-80k€/an travaux, estivale",
+    "resume": "Budget 60-/an travaux, estivale",
     "chiffres": [],
     "chronologie": [
       {
@@ -4306,7 +4306,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "40 000€",
+    "resume": "",
     "chiffres": [],
     "chronologie": [
       {
@@ -4618,7 +4618,7 @@
     "budget": 0,
     "source": "Délib 2022-12-12-19",
     "importance": 2,
-    "resume": "9e édition 2022, 4000€ subvention",
+    "resume": "9e édition 2022, subvention",
     "chiffres": [],
     "chronologie": [
       {
@@ -4969,7 +4969,7 @@
     "budget": 0,
     "source": "Magazine n°166",
     "importance": 1,
-    "resume": "800 000€, ouverture automne 2025",
+    "resume": "ouverture automne 2025",
     "chiffres": [],
     "chronologie": [
       {
@@ -5018,7 +5018,7 @@
     "budget": 0,
     "source": "Magazine n°164",
     "importance": 1,
-    "resume": "20+ adhérents, 6000 collaborateurs, 20k€ subv Métro",
+    "resume": "20+ adhérents, 6000 collaborateurs, subv Métro",
     "chiffres": [],
     "chronologie": [
       {
@@ -5287,7 +5287,7 @@
     "budget": 0,
     "source": "Magazine+Bilan travaux",
     "importance": 2,
-    "resume": "Réaménagement complet avec piétonisation partielle, végétalisation et modernisation. Précédé par un chantier majeur de mise en conformité des réseaux (7,9 M€).",
+    "resume": "Réaménagement complet avec piétonisation partielle, végétalisation et modernisation. Précédé par un chantier majeur de mise en conformité des réseaux .",
     "chiffres": [
       {
         "valeur": "8 mois",
@@ -5534,7 +5534,7 @@
     "budget": 0,
     "source": "Délib 2021-02-23-19",
     "importance": 1,
-    "resume": "17 000€, fin 2021",
+    "resume": "fin 2021",
     "chiffres": [],
     "chronologie": [
       {
@@ -5716,7 +5716,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "23 000€",
+    "resume": "",
     "chiffres": [],
     "chronologie": [
       {
@@ -5750,7 +5750,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "48 000€",
+    "resume": "",
     "chiffres": [],
     "chronologie": [
       {
@@ -5784,7 +5784,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "15 000€ toute la ville",
+    "resume": "toute la ville",
     "chiffres": [
       {
         "valeur": "4",
@@ -5828,7 +5828,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "Désimperméabilisation, 11 500€",
+    "resume": "Désimperméabilisation",
     "chiffres": [],
     "chronologie": [
       {
@@ -5862,7 +5862,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "17 200€",
+    "resume": "",
     "chiffres": [],
     "chronologie": [
       {
@@ -5896,7 +5896,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "10 000€",
+    "resume": "",
     "chiffres": [],
     "chronologie": [
       {
@@ -5930,7 +5930,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "9 500€",
+    "resume": "",
     "chiffres": [
       {
         "valeur": "3",
@@ -5969,7 +5969,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "40 000€",
+    "resume": "",
     "chiffres": [],
     "chronologie": [
       {
@@ -6003,7 +6003,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "13 000€",
+    "resume": "",
     "chiffres": [],
     "chronologie": [
       {
@@ -6037,7 +6037,7 @@
     "budget": 0,
     "source": "Magazine+Bilan travaux",
     "importance": 1,
-    "resume": "7,9 M€ Métropole, fin début 2025",
+    "resume": "Métropole, fin début 2025",
     "chiffres": [],
     "chronologie": [
       {
@@ -6080,7 +6080,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "13 200€",
+    "resume": "",
     "chiffres": [],
     "chronologie": [
       {
@@ -6190,7 +6190,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "12 000€",
+    "resume": "",
     "chiffres": [],
     "chronologie": [
       {
@@ -6224,7 +6224,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "15 000€",
+    "resume": "",
     "chiffres": [
       {
         "valeur": "2",
@@ -6263,7 +6263,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "40 000€, espaces verts",
+    "resume": "espaces verts",
     "chiffres": [],
     "chronologie": [
       {
@@ -6297,7 +6297,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "3 500€/an",
+    "resume": "/an",
     "chiffres": [
       {
         "valeur": "10/an",
@@ -6374,7 +6374,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "3 000€/an",
+    "resume": "/an",
     "chiffres": [
       {
         "valeur": "1/200m",
@@ -6504,7 +6504,7 @@
     "budget": 0,
     "source": "Bilan travaux",
     "importance": 1,
-    "resume": "28 000€",
+    "resume": "",
     "chiffres": [],
     "chronologie": [
       {
@@ -6576,7 +6576,7 @@
     "budget": 0,
     "source": "Délib 2024-02-15-28",
     "importance": 1,
-    "resume": "145 906€ TTC, subv 7 500€ LCA",
+    "resume": "TTC, subv LCA",
     "chiffres": [],
     "chronologie": [
       {
@@ -6615,7 +6615,7 @@
     "budget": 0,
     "source": "Délib 2020-12-15-12",
     "importance": 1,
-    "resume": "15 230€ HT/an enveloppe proximité",
+    "resume": "HT/an enveloppe proximité",
     "chiffres": [],
     "chronologie": [
       {
@@ -7531,7 +7531,7 @@
     "budget": 0,
     "source": "CM 24/06/2025",
     "importance": 1,
-    "resume": "Ingénieur 33,38€/h - Technicien 34,01€/h - Adjoint technique 22,34€/h",
+    "resume": "Ingénieur /h - Technicien /h - Adjoint technique /h",
     "chiffres": [],
     "chronologie": [
       {
@@ -7800,7 +7800,7 @@
     "budget": 0,
     "source": "CM 24/06/2025",
     "importance": 1,
-    "resume": "Collecte hors foyer, soutien 34 560€ pour équipements, projet lauréat 19/12/2024",
+    "resume": "Collecte hors foyer, soutien pour équipements, projet lauréat 19/12/2024",
     "chiffres": [],
     "chronologie": [
       {
@@ -7970,7 +7970,7 @@
     "budget": 0,
     "source": "CM 24/06/2025",
     "importance": 1,
-    "resume": "1 641,63€ par élève (base CA 2024)",
+    "resume": "1 par élève (base CA 2024)",
     "chiffres": [],
     "chronologie": [
       {
@@ -8013,7 +8013,7 @@
     "budget": 0,
     "source": "CM 24/06/2025",
     "importance": 1,
-    "resume": "38,50€/élève + 142€/classe + 79€/classe maternelle (livres)",
+    "resume": "/élève + /classe + /classe maternelle (livres)",
     "chiffres": [],
     "chronologie": [
       {
@@ -8056,7 +8056,7 @@
     "budget": 0,
     "source": "CM 24/06/2025",
     "importance": 1,
-    "resume": "CLSH Corniers : 9,40€ à 17,83€/journée selon quotient familial",
+    "resume": "CLSH Corniers : à /journée selon quotient familial",
     "chiffres": [],
     "chronologie": [
       {
@@ -8562,7 +8562,7 @@
     "budget": 0,
     "source": "Délib 2025-02-18-06",
     "importance": 1,
-    "resume": "Forfaits 18-20,50€, SATA GROUP",
+    "resume": "Forfaits 18-, SATA GROUP",
     "chiffres": [],
     "chronologie": [
       {
@@ -8610,7 +8610,7 @@
     "budget": 0,
     "source": "Délib 2025-02-18-09",
     "importance": 1,
-    "resume": "550€ (10 chats, 50% commune), stérilisation/identification",
+    "resume": "(10 chats, 50% commune), stérilisation/identification",
     "chiffres": [],
     "chronologie": [
       {
@@ -8654,7 +8654,7 @@
     "budget": 0,
     "source": "Décision 2025-MP-02",
     "importance": 1,
-    "resume": "102 000€ TTC, marché 2025-MP-02",
+    "resume": "TTC, marché 2025-MP-02",
     "chiffres": [],
     "chronologie": [
       {
@@ -8688,7 +8688,7 @@
     "budget": 0,
     "source": "Décision 2025-AG-01",
     "importance": 1,
-    "resume": "250€/an, Institut des Risques Majeurs",
+    "resume": "/an, Institut des Risques Majeurs",
     "chiffres": [],
     "chronologie": [
       {
@@ -8827,7 +8827,7 @@
     "budget": 0,
     "source": "Délib 2025-04-08-07",
     "importance": 1,
-    "resume": "64 957€ HT, subvention métro 19 487€ (30%), optimisation énergie",
+    "resume": "HT, subvention métro (30%), optimisation énergie",
     "chiffres": [
       {
         "valeur": "15",
@@ -9011,7 +9011,7 @@
     "budget": 0,
     "source": "Décision 2025-MP-08",
     "importance": 1,
-    "resume": "18 945€ HT (max 30 000€ à bons de commande)",
+    "resume": "HT (max à bons de commande)",
     "chiffres": [],
     "chronologie": [
       {
@@ -9054,7 +9054,7 @@
     "budget": 0,
     "source": "Délib 2025-09-30-15",
     "importance": 1,
-    "resume": "21 650€, parcelle AP0103 (~700m²) à Métropole",
+    "resume": "parcelle AP0103 (~700m²) à Métropole",
     "chiffres": [],
     "chronologie": [
       {
@@ -9102,7 +9102,7 @@
     "budget": 0,
     "source": "Lettre intention 08/04/2025",
     "importance": 1,
-    "resume": "Participation 2 000€ prévue, soutien reprise salariés plateforme",
+    "resume": "Participation prévue, soutien reprise salariés plateforme",
     "chiffres": [],
     "chronologie": [
       {
@@ -9146,7 +9146,7 @@
     "budget": 0,
     "source": "Convention CPOM",
     "importance": 1,
-    "resume": "10 000€/an, Espace France Services, 205 chemin Mattons",
+    "resume": "/an, Espace France Services, 205 chemin Mattons",
     "chiffres": [],
     "chronologie": [
       {
@@ -11401,7 +11401,7 @@
     "budget": 0,
     "source": "Délib+VAV#168",
     "importance": 3,
-    "resume": "Programme pluriannuel d'investissements voté au budget primitif 2025, représentant 5,4 M€ d'équipements pour la commune.",
+    "resume": "Programme pluriannuel d'investissements voté au budget primitif 2025, représentant d'équipements pour la commune.",
     "chiffres": [],
     "chronologie": [
       {
@@ -13811,7 +13811,7 @@
     "budget": 0,
     "source": "Délib 2023-03-14-24",
     "importance": 1,
-    "resume": "Demande AHPV, 1800€ total",
+    "resume": "Demande AHPV, total",
     "chiffres": [],
     "chronologie": [
       {
@@ -13937,7 +13937,7 @@
     "budget": 0,
     "source": "Délib 2023-12-13-17/18/19",
     "importance": 3,
-    "resume": "Monument Historique, 353 892€ HT",
+    "resume": "Monument Historique, HT",
     "chiffres": [],
     "chronologie": [
       {
@@ -14532,7 +14532,7 @@
     "budget": 0,
     "source": "CM 24/06/2025",
     "importance": 1,
-    "resume": "Redevance 475€/mois (5€/m² pour 95m²), indexation IRL",
+    "resume": "Redevance /mois (/m² pour 95m²), indexation IRL",
     "chiffres": [],
     "chronologie": [
       {
