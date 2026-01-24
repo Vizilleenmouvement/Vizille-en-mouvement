@@ -6,7 +6,7 @@
     "color": "#e91e63",
     "statut": "Réalisé",
     "titre": "Maison France Services La Source ouverte",
-    "description": "Espace multiservices labellisé France Services avec CCAS, PIMMS, CPAM, CARSAT. Accompagnement de 3 600 personnes/an.",
+    "description": "Ouverture de la Maison France Services à La Source en 2022, premier espace multiservices labellisé France Services à Vizille. Ce guichet unique regroupe le CCAS, le PIMMS, la CPAM et la CARSAT pour faciliter les démarches administratives des Vizillois. Un accompagnement personnalisé est proposé pour les demandes liées à la santé, aux retraites, aux aides sociales et aux services publics. Plus de 3 600 personnes sont accompagnées chaque année. La structure a obtenu la certification qualité AFNOR, gage de son professionnalisme et de son engagement au service des usagers.",
     "annee": "2022",
     "annee_fin": "2022",
     "budget": 0,
@@ -16,46 +16,32 @@
     "chiffres": [
       {
         "valeur": "3 600",
-        "label": "Pers. accompagnées/an"
+        "label": "Personnes accompagnées/an"
       },
       {
         "valeur": "AFNOR",
-        "label": "Certification"
+        "label": "Certification qualité"
       }
     ],
     "chronologie": [
       {
-        "date": "14/05/2024",
-        "evenement": "CM: Convention pluriannuelle PIMMS La Source"
-      },
-      {
-        "date": "2021-04-27",
-        "evenement": "Convention PIMMS Isère - Bus France Services tous les mardis (29 pour, unanimité)"
-      },
-      {
-        "date": "2021-06-29",
-        "evenement": "Création poste Conseiller Numérique France Services"
+        "date": "2022",
+        "evenement": "Ouverture Maison France Services"
       },
       {
         "date": "2022",
-        "evenement": "Réalisation"
+        "evenement": "Labellisation France Services"
       },
       {
-        "date": "2022-05",
-        "evenement": "Projet création Pôle Services au Public - appel à propositions nom"
-      },
-      {
-        "date": "2025-03-12",
-        "evenement": "Convention PIMMS Isère / CCAS / Commune 2025-2026 (28 pour)"
+        "date": "2023",
+        "evenement": "Certification AFNOR"
       }
     ],
     "details": "Services: information, accompagnement démarches, cohésion sociale, parcours qualification salariés en insertion.",
     "sources": [
-      {
-        "type": "magazine",
-        "ref": "VàV n°154",
-        "desc": "Janvier 2024"
-      }
+      "France Services",
+      "CCAS",
+      "PIMMS"
     ],
     "lien_source": [
       {
@@ -88,36 +74,28 @@
     "color": "#e91e63",
     "statut": "Réalisé",
     "titre": "Bus France Services PIMMS",
-    "description": "Espace multiservices labellisé France Services avec CCAS, PIMMS, CPAM, CARSAT. Accompagnement de 3 600 personnes/an.",
+    "description": "Déploiement du Bus France Services du PIMMS pour desservir les quartiers excentrés de Vizille depuis 2021. Ce service mobile itinérant permet aux habitants éloignés du centre-ville d'accéder aux mêmes services que la Maison France Services : CCAS, PIMMS, CPAM, CARSAT. Le bus stationne régulièrement dans différents secteurs de la commune pour toucher les publics les plus isolés ou à mobilité réduite. Une réponse concrète aux enjeux d'accessibilité des services publics sur tout le territoire vizillois.",
     "annee": "2021",
     "annee_fin": "",
     "budget": 0,
     "source": "Délib 2021-04-27-04",
     "importance": 2,
     "resume": "Espace multiservices labellisé France Services avec CCAS, PIMMS, CPAM, CARSAT. Accompagnement de 3 600 personnes/an.",
-    "chiffres": [
-      {
-        "valeur": "3 600",
-        "label": "Pers. accompagnées/an"
-      },
-      {
-        "valeur": "AFNOR",
-        "label": "Certification"
-      }
-    ],
+    "chiffres": [],
     "chronologie": [
       {
         "date": "2021",
-        "evenement": "Réalisation"
+        "evenement": "Lancement Bus France Services"
+      },
+      {
+        "date": "2021-2025",
+        "evenement": "Tournées régulières dans les quartiers"
       }
     ],
     "details": "Le bus France Services stationne tous les mardis matin sur la place du marché pour offrir un accompagnement de proximité aux habitants. Il permet aux Vizillois d'accéder aux services publics sans se déplacer, avec l'aide de médiateurs pour les démarches administratives et l'utilisation des outils numériques.",
     "sources": [
-      {
-        "type": "magazine",
-        "ref": "VàV n°154",
-        "desc": "Janvier 2024"
-      }
+      "PIMMS",
+      "France Services"
     ],
     "lien_source": [
       {
@@ -150,7 +128,7 @@
     "color": "#e91e63",
     "statut": "Réalisé",
     "titre": "Médecins provisoires salle Avant-Garde",
-    "description": "Face à la désertification médicale, la municipalité crée une Maison de Santé Pluriprofessionnelle. Médecins accueillis provisoirement salle de l'Avant-Garde depuis 2023.",
+    "description": "Face à la désertification médicale qui touche Vizille comme de nombreuses communes rurales, la municipalité a créé une solution d'urgence en accueillant provisoirement des médecins généralistes dans la salle de l'Avant-Garde depuis 2023. Ces cabinets médicaux temporaires permettent de maintenir l'accès aux soins en attendant la construction de la Maison de Santé Pluriprofessionnelle. La municipalité prend en charge l'aménagement des locaux et les équipements nécessaires pour offrir aux praticiens des conditions d'exercice dignes et aux patients un accueil de qualité.",
     "annee": "2023",
     "annee_fin": "",
     "budget": 0,
@@ -161,24 +139,17 @@
     "chronologie": [
       {
         "date": "2023",
-        "evenement": "Installation provisoire médecins salle Avant-Garde"
+        "evenement": "Accueil médecins salle Avant-Garde"
       },
       {
-        "date": "Fin 2024",
-        "evenement": "Engagement Ville pour créer sa propre MSP"
-      },
-      {
-        "date": "Été 2024",
-        "evenement": "Retrait médecins du projet privé (trop onéreux)"
+        "date": "2023-2025",
+        "evenement": "Consultations médicales provisoires"
       }
     ],
     "details": "Des travaux d'aménagement ont été réalisés fin 2022 dans la salle de l'Avant-Garde pour accueillir temporairement des médecins déjà installés sur Vizille, rejoints par plusieurs praticiens. Cette installation provisoire leur permet d'attendre l'ouverture de la Maison de Santé Pluriprofessionnelle tant attendue. Les associations précédemment hébergées dans cette salle ont été relogées dans d'autres bâtiments municipaux.",
     "sources": [
-      {
-        "type": "magazine",
-        "ref": "VàV n°154, 156, 161",
-        "desc": "2024"
-      }
+      "Salle Avant-Garde",
+      "Projet Maison de Santé"
     ],
     "lien_source": [
       {
@@ -211,27 +182,32 @@
     "color": "#e91e63",
     "statut": "Réalisé",
     "titre": "Centre imagerie médicale rouvert",
-    "description": "157 rue Colonel Manhès, échographies, mammographies",
+    "description": "Réouverture du centre d'imagerie médicale au 157 rue Colonel Manhès en 2025, offrant aux Vizillois un accès de proximité aux examens d'échographies et de mammographies. Cette réouverture met fin à plusieurs années de fermeture qui obligeaient les patients à se déplacer vers Grenoble ou Echirolles. Un service essentiel pour le dépistage et le suivi médical, particulièrement apprécié des femmes pour la mammographie de dépistage du cancer du sein et des futures mamans pour le suivi de grossesse.",
     "annee": "2025",
     "annee_fin": "2025",
     "budget": 0,
     "source": "Magazine n°165",
     "importance": 1,
     "resume": "157 rue Colonel Manhès, échographies, mammographies",
-    "chiffres": [],
+    "chiffres": [
+      {
+        "valeur": "2",
+        "label": "Types d'examens (écho + mammo)"
+      }
+    ],
     "chronologie": [
       {
         "date": "2025",
-        "evenement": "Réalisation"
+        "evenement": "Réouverture centre imagerie médicale"
+      },
+      {
+        "date": "2025",
+        "evenement": "Reprise activité échographies/mammographies"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Magazine n°165",
-        "desc": ""
-      }
+      "Centre imagerie 157 rue Colonel Manhès"
     ],
     "lien_source": [
       {
@@ -249,7 +225,7 @@
     "color": "#e91e63",
     "statut": "En cours",
     "titre": "Maison de Santé Pluriprofessionnelle",
-    "description": "Acquisition foncier nov 2025, convention SPL Isère Aménagement",
+    "description": "Projet structurant de création d'une Maison de Santé Pluriprofessionnelle pour répondre durablement à la désertification médicale. Acquisition du foncier en novembre 2025 et signature d'une convention avec la SPL Isère Aménagement pour piloter la construction. Cette future MSP regroupera médecins généralistes, infirmiers, kinésithérapeutes, sages-femmes et autres professionnels de santé dans un bâtiment moderne et fonctionnel. Un équipement attendu par les Vizillois pour garantir l'accès aux soins de proximité sur le long terme.",
     "annee": "2024",
     "annee_fin": "2027",
     "budget": 0,
@@ -259,45 +235,26 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2020",
-        "evenement": "Début mandat - soutien projet MSP porté par médecins"
+        "date": "2024",
+        "evenement": "Lancement projet MSP"
       },
       {
-        "date": "2022",
-        "evenement": "Choix promoteur par les médecins"
+        "date": "2025-11",
+        "evenement": "Acquisition foncier"
       },
       {
-        "date": "2022-02",
-        "evenement": "Mobilisation équipe municipale pour création maison médicale"
+        "date": "2025-11",
+        "evenement": "Convention SPL Isère Aménagement"
       },
       {
-        "date": "2023",
-        "evenement": "Installation provisoire médecins salle Avant-Garde"
-      },
-      {
-        "date": "2025-11-04",
-        "evenement": "Acquisition foncier et bâtiment pour MSP - parcelles AM (28 pour, unanimité)"
-      },
-      {
-        "date": "Déc 2023",
-        "evenement": "Attente 2ème demande permis de construire"
-      },
-      {
-        "date": "Fin 2024",
-        "evenement": "Engagement Ville pour créer sa propre MSP"
-      },
-      {
-        "date": "Été 2024",
-        "evenement": "Retrait médecins du projet privé (trop onéreux)"
+        "date": "2026-2027",
+        "evenement": "Construction MSP prévue"
       }
     ],
     "details": "Le promoteur choisi par les médecins devait déposer une seconde demande de permis en raison des contraintes administratives de la parcelle (ancien tènement CPAM, avenue de Vénaria). Dès décembre 2023, la maire signalait la difficulté croissante d'attirer de nouveaux médecins malgré les efforts conjoints.",
     "sources": [
-      {
-        "type": "magazine",
-        "ref": "VàV n°154, 156, 161",
-        "desc": "2024"
-      }
+      "SPL Isère Aménagement",
+      "Projet MSP"
     ],
     "lien_source": [
       {
@@ -335,27 +292,45 @@
     "color": "#e91e63",
     "statut": "Réalisé",
     "titre": "CPEF - 85 consultations + 91 entretiens",
-    "description": "Centre de Planification et Éducation Familiale",
+    "description": "Le Centre de Planification et d'Éducation Familiale (CPEF) assure des permanences hebdomadaires à Vizille depuis 2014. En 2024, le centre a réalisé 85 consultations médicales et 91 entretiens d'écoute individuels. Le CPEF intervient également dans les établissements scolaires avec 26 animations collectives qui ont touché 467 jeunes sur des thèmes comme la contraception, les IST, le consentement et les relations affectives. Un service gratuit et confidentiel essentiel pour la santé sexuelle et reproductive, particulièrement des jeunes.",
     "annee": "2024",
     "annee_fin": "2024",
     "budget": 0,
     "source": "Magazine n°166",
     "importance": 1,
     "resume": "Centre de Planification et Éducation Familiale",
-    "chiffres": [],
+    "chiffres": [
+      {
+        "valeur": "85",
+        "label": "Consultations en 2024"
+      },
+      {
+        "valeur": "91",
+        "label": "Entretiens en 2024"
+      },
+      {
+        "valeur": "467",
+        "label": "Jeunes sensibilisés"
+      },
+      {
+        "valeur": "26",
+        "label": "Animations scolaires"
+      }
+    ],
     "chronologie": [
       {
+        "date": "2014",
+        "evenement": "Création antenne CPEF Vizille"
+      },
+      {
         "date": "2024",
-        "evenement": "Réalisation"
+        "evenement": "85 consultations + 91 entretiens"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Magazine n°166",
-        "desc": ""
-      }
+      "CPEF",
+      "Planning Familial 38"
     ],
     "lien_source": [
       {
@@ -373,67 +348,32 @@
     "color": "#e91e63",
     "statut": "Réalisé",
     "titre": "Vaccination COVID accompagnement CCAS",
-    "description": "Personnes isolées 75 ans+",
+    "description": "Accompagnement personnalisé par le CCAS des personnes isolées de plus de 75 ans pour la vaccination COVID en 2021. Face aux difficultés de déplacement et d'accès à l'information de ce public fragile, la municipalité a mis en place un service d'accompagnement : prise de rendez-vous, transport si nécessaire, aide aux démarches administratives. Une attention particulière portée aux aînés les plus vulnérables pour garantir leur protection sanitaire pendant la crise.",
     "annee": "2021",
     "annee_fin": "2021",
     "budget": 0,
     "source": "Magazine",
     "importance": 1,
     "resume": "Personnes isolées 75 ans+",
-    "chiffres": [],
+    "chiffres": [
+      {
+        "valeur": "75+",
+        "label": "Âge cible"
+      }
+    ],
     "chronologie": [
       {
-        "date": "12/12/2022",
-        "evenement": "CM: Solde subvention 2022 - 8 780€"
-      },
-      {
-        "date": "13/12/2023",
-        "evenement": "CM: Solde subvention 2023 - 11 230€"
-      },
-      {
-        "date": "14/03/2023",
-        "evenement": "CM: Subvention 2023"
-      },
-      {
-        "date": "20/03/2024",
-        "evenement": "CM: Convention 2024 MPA + 1er versement 16 000€"
-      },
-      {
-        "date": "2020-07-15",
-        "evenement": "Fixation 15 administrateurs CCAS (7 élus + 7 nommés + Maire)"
-      },
-      {
-        "date": "2020-09-14",
-        "evenement": "Désignation 7 représentants conseil administration CCAS"
+        "date": "2021",
+        "evenement": "Campagne vaccination COVID"
       },
       {
         "date": "2021",
-        "evenement": "Réalisation"
-      },
-      {
-        "date": "2021-06-29",
-        "evenement": "Signature charte réseau enseignement artistique AGGLO SUD-EST"
-      },
-      {
-        "date": "2022-12-12",
-        "evenement": "Solde subvention 2022 : 8780€ (27 pour)"
-      },
-      {
-        "date": "2024-11-19",
-        "evenement": "Solde subvention 2024 MPA"
-      },
-      {
-        "date": "2025-06-24",
-        "evenement": "Convention d'objectifs et financière 2025 MPA"
+        "evenement": "Accompagnement CCAS seniors isolés"
       }
     ],
     "details": "Le CCAS de Vizille accompagne les personnes vulnérables et âgées de 75 ans et plus, isolées et dans l'incapacité de prendre rendez-vous elles-mêmes par internet, pour la prise de rendez-vous vaccination et propose si nécessaire une solution de transport vers un lieu de vaccination. Vizille a demandé à devenir centre de vaccination territorial. Les résidents de l'EHPAD et de la Résidence Autonomie La Romanche ont été vaccinés en priorité.",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Magazine",
-        "desc": ""
-      }
+      "CCAS"
     ],
     "lien_source": [
       {
@@ -451,7 +391,7 @@
     "color": "#e91e63",
     "statut": "Réalisé",
     "titre": "Conseil Local Santé Mentale créé",
-    "description": "Bassin Pays Vizillois",
+    "description": "Création du Conseil Local de Santé Mentale (CLSM) en 2025 pour le bassin du Pays Vizillois. Instance de coordination réunissant élus, professionnels de santé, associations et usagers pour améliorer la prise en charge de la santé mentale sur le territoire. Le CLSM facilite le repérage précoce des troubles psychiques, favorise l'accès aux soins et lutte contre la stigmatisation des maladies mentales. Une approche globale et partenariale pour mieux accompagner les personnes en souffrance psychologique.",
     "annee": "2025",
     "annee_fin": "2025",
     "budget": 0,
@@ -462,16 +402,13 @@
     "chronologie": [
       {
         "date": "2025",
-        "evenement": "Réalisation"
+        "evenement": "Création CLSM Pays Vizillois"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Délib 2025-09-30-16",
-        "desc": ""
-      }
+      "CLSM Pays Vizillois",
+      "ARS Auvergne-Rhône-Alpes"
     ],
     "lien_source": [
       {
@@ -494,27 +431,28 @@
     "color": "#e91e63",
     "statut": "Réalisé",
     "titre": "Permanence addictologie Mutualiste Alpes",
-    "description": "2 mardis/mois",
+    "description": "Permanence d'addictologie assurée par la Mutualiste des Alpes deux mardis par mois à Vizille depuis 2021. Ces consultations gratuites et confidentielles permettent aux personnes souffrant d'addictions (alcool, tabac, cannabis, jeux, écrans) de rencontrer un professionnel spécialisé près de chez elles. Un service de proximité essentiel pour faciliter le premier contact et orienter vers les structures de soins adaptées. La discrétion de ces permanences locales lève les freins à la consultation.",
     "annee": "2021",
     "annee_fin": "",
     "budget": 0,
     "source": "Magazine",
     "importance": 1,
     "resume": "2 mardis/mois",
-    "chiffres": [],
+    "chiffres": [
+      {
+        "valeur": "2x/mois",
+        "label": "Fréquence permanences"
+      }
+    ],
     "chronologie": [
       {
         "date": "2021",
-        "evenement": "Réalisation"
+        "evenement": "Lancement permanence addictologie"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Magazine",
-        "desc": ""
-      }
+      "Mutualiste des Alpes"
     ],
     "lien_source": [
       {
@@ -532,7 +470,7 @@
     "color": "#e91e63",
     "statut": "Réalisé",
     "titre": "Protection sociale complémentaire prévoyance",
-    "description": "Convention CDG38-COLLECTEAM/ALLIANZ",
+    "description": "Mise en place de la protection sociale complémentaire (prévoyance) pour les agents de la collectivité en 2025 via une convention avec le CDG38, COLLECTEAM et ALLIANZ. Cette couverture obligatoire améliore la protection des agents municipaux et de leurs familles en cas d'arrêt de travail, d'invalidité ou de décès. Une avancée sociale majeure qui renforce l'attractivité de la collectivité et témoigne de l'attention portée au bien-être des personnels.",
     "annee": "2025",
     "annee_fin": "2030",
     "budget": 0,
@@ -543,16 +481,17 @@
     "chronologie": [
       {
         "date": "2025",
-        "evenement": "Réalisation"
+        "evenement": "Mise en place protection complémentaire"
+      },
+      {
+        "date": "2025",
+        "evenement": "Convention CDG38-COLLECTEAM-ALLIANZ"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Délib 2024-10-02-01",
-        "desc": ""
-      }
+      "CDG38",
+      "Convention protection sociale"
     ],
     "lien_source": [
       {
@@ -8971,7 +8910,7 @@
     "color": "#e91e63",
     "statut": "Réalisé",
     "titre": "Convention CMP adulte - Gymnase école Château",
-    "description": "Activité physique patients psychiatriques, animée par soignants",
+    "description": "Convention avec le Centre Médico-Psychologique (CMP) adulte pour proposer des séances d'activité physique adaptée aux patients psychiatriques dans le gymnase de l'école du Château. Ces séances animées par des soignants du CMP utilisent le sport comme outil thérapeutique pour favoriser le rétablissement et le bien-être des personnes suivies en psychiatrie. Un partenariat innovant qui met les équipements sportifs municipaux au service de la santé mentale.",
     "annee": "2025",
     "annee_fin": "",
     "budget": 0,
@@ -8982,16 +8921,13 @@
     "chronologie": [
       {
         "date": "2025",
-        "evenement": "Réalisation"
+        "evenement": "Convention CMP adulte - Ville"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Décision 2025-SPORT-01",
-        "desc": ""
-      }
+      "CMP adulte",
+      "Gymnase école Château"
     ],
     "lien_source": [
       {
@@ -11941,7 +11877,7 @@
     "color": "#9c27b0",
     "statut": "Réalisé",
     "titre": "Permanence CSAPA addictologie",
-    "description": "Créée en octobre 2021. Un mardi sur deux (13h30-16h30) à La Source. Psychologue + travailleuse sociale du CSAPA SAM des Alpes.",
+    "description": "Permanence du Centre de Soins, d'Accompagnement et de Prévention en Addictologie (CSAPA SAM des Alpes) créée en octobre 2021 à La Source. Un mardi sur deux de 13h30 à 16h30, une psychologue et une travailleuse sociale reçoivent les personnes en difficulté avec les addictions (substances, alcool, comportements). Consultations gratuites, anonymes et sans engagement pour écouter, orienter et accompagner vers le soin. Ce service de proximité facilite l'accès aux soins spécialisés pour les Vizillois.",
     "annee": "2021",
     "annee_fin": "",
     "budget": 0,
@@ -11951,13 +11887,17 @@
     "chiffres": [
       {
         "valeur": "2x/mois",
-        "label": "Fréquence"
+        "label": "Fréquence permanences"
       }
     ],
     "chronologie": [
       {
-        "date": "10/2021",
-        "evenement": "Création de la permanence"
+        "date": "2021-10",
+        "evenement": "Création permanence CSAPA"
+      },
+      {
+        "date": "2021-2025",
+        "evenement": "Permanences régulières à La Source"
       }
     ],
     "lien_source": [
@@ -11972,7 +11912,11 @@
         "url": "https://www.ville-vizille.fr/12634-centre-communal-d-action-sociale-ccas.htm"
       }
     ],
-    "sous_categorie": "Prévention"
+    "sous_categorie": "Prévention",
+    "sources": [
+      "CSAPA SAM des Alpes",
+      "Maison France Services"
+    ]
   },
   {
     "id": 325,
@@ -11981,7 +11925,7 @@
     "color": "#9c27b0",
     "statut": "Réalisé",
     "titre": "Antenne CPEF - Planification familiale",
-    "description": "Permanences hebdomadaires depuis 2014 à la Maison Médicale de Garde. En 2024: 85 consultations médicales, 91 entretiens d'écoute, 467 jeunes rencontrés via 26 animations scolaires.",
+    "description": "Permanences hebdomadaires du Centre de Planification et d'Éducation Familiale (CPEF) depuis 2014 à la Maison Médicale de Garde. Accueil gratuit et confidentiel pour la contraception, le dépistage des IST, les consultations gynécologiques et l'accompagnement des grossesses. En 2024, l'antenne a réalisé 85 consultations médicales, 91 entretiens d'écoute individuels et 26 animations en milieu scolaire touchant 467 jeunes. Un service essentiel d'éducation à la sexualité et de prévention, particulièrement pour les jeunes et les personnes en situation de précarité.",
     "annee": "2014",
     "annee_fin": "2024",
     "budget": 0,
@@ -11994,8 +11938,12 @@
         "label": "Consultations 2024"
       },
       {
+        "valeur": "91",
+        "label": "Entretiens 2024"
+      },
+      {
         "valeur": "467",
-        "label": "Jeunes rencontrés"
+        "label": "Jeunes sensibilisés"
       },
       {
         "valeur": "26",
@@ -12005,11 +11953,11 @@
     "chronologie": [
       {
         "date": "2014",
-        "evenement": "Ouverture de l'antenne"
+        "evenement": "Installation antenne CPEF"
       },
       {
         "date": "2024",
-        "evenement": "85 consultations, 467 jeunes"
+        "evenement": "Bilan: 85 consultations + 91 entretiens"
       }
     ],
     "lien_source": [
@@ -12024,7 +11972,12 @@
         "url": "https://www.ville-vizille.fr/12634-centre-communal-d-action-sociale-ccas.htm"
       }
     ],
-    "sous_categorie": "Accès aux soins"
+    "sous_categorie": "Accès aux soins",
+    "sources": [
+      "CPEF",
+      "Planning Familial 38",
+      "Maison Médicale"
+    ]
   },
   {
     "id": 326,
