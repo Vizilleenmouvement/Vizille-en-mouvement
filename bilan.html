@@ -497,7 +497,7 @@ let currentTheme = 'Concertation Citoyenne';
 let currentSubcat = 'all';
 
 async function init() {
-    const r = await fetch('data.json?v=' + Date.now());
+    const r = await fetch('data.json?v=20260124-1800');
     allData = await r.json();
     renderHeroStats();
     renderTabs();
