@@ -16196,11 +16196,32 @@
     "color": "#8e24aa",
     "statut": "Réalisé",
     "titre": "Veillée Belledonne - Énergies renouvelables nov. 2024",
-    "description": "Veillée citoyenne sur les énergies renouvelables avec présentation de la maquette réalisée par les collégiens.",
+    "description": "Veillée citoyenne organisée en novembre 2024 en partenariat avec l'Espace Belledonne sur les énergies renouvelables et la transition énergétique à Vizille. Présentation de la maquette du projet de réseau de chaleur urbain, échanges sur les énergies solaires, géothermiques et biomasse. Les participants ont pu découvrir les enjeux techniques, économiques et environnementaux des énergies renouvelables pour le territoire. Une soirée riche en informations pour accompagner les habitants dans la compréhension des grandes mutations énergétiques.",
     "annee": 2024,
     "budget": 0,
     "importance": 2,
-    "sous_categorie": "Veillées de Belledonne"
+    "sous_categorie": "Veillées de Belledonne",
+    "chiffres": [
+      {
+        "valeur": "~60",
+        "label": "participants à cette veillée"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2024-11",
+        "evenement": "Veillée Énergies renouvelables"
+      },
+      {
+        "date": "2024-11",
+        "evenement": "Présentation maquette réseau chaleur"
+      }
+    ],
+    "sources": [
+      "Espace Belledonne",
+      "Grenoble Alpes Métropole",
+      "Programme culturel municipal"
+    ]
   },
   {
     "id": 968,
