@@ -15987,11 +15987,27 @@
     "color": "#8e24aa",
     "statut": "Réalisé",
     "titre": "Veillée Belledonne - Végétalisation avril 2022",
-    "description": "Veillée citoyenne sur le Plan Canopée et la végétalisation urbaine à Vizille.",
+    "description": "Veillée citoyenne organisée en avril 2022 en partenariat avec l'Espace Belledonne sur le Plan Canopée et la végétalisation urbaine à Vizille. Moment d'échange autour des enjeux de rafraîchissement de la ville face au réchauffement climatique, de préservation de la biodiversité et de création d'îlots de fraîcheur. Les participants ont partagé leurs observations et leurs idées pour verdir les espaces publics, désimperméabiliser les sols et planter davantage d'arbres.",
     "annee": 2022,
     "budget": 0,
     "importance": 2,
-    "sous_categorie": "Veillées de Belledonne"
+    "sous_categorie": "Veillées de Belledonne",
+    "chiffres": [
+      {
+        "valeur": "~50",
+        "label": "participants"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2022-04",
+        "evenement": "Veillée Végétalisation"
+      }
+    ],
+    "sources": [
+      "Espace Belledonne",
+      "Programme culturel municipal"
+    ]
   },
   {
     "id": 959,
@@ -16032,11 +16048,31 @@
     "color": "#8e24aa",
     "statut": "Réalisé",
     "titre": "Concertation Zone Faible Émission (ZFE)",
-    "description": "Participation à la concertation métropolitaine sur la Zone à Faibles Émissions.",
+    "description": "Participation de Vizille à la grande concertation métropolitaine sur la Zone à Faibles Émissions (ZFE). Cette concertation a permis aux Vizillois d'exprimer leurs préoccupations concernant l'impact de la ZFE sur leur quotidien, notamment pour les déplacements vers Grenoble. La municipalité a porté la voix des habitants auprès de Grenoble Alpes Métropole pour défendre des délais d'application adaptés et des aides à la transition.",
     "annee": 2023,
     "budget": 0,
     "importance": 2,
-    "sous_categorie": "Concertations publiques"
+    "sous_categorie": "Concertations publiques",
+    "chiffres": [
+      {
+        "valeur": "49 communes",
+        "label": "de la Métropole concernées"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2023",
+        "evenement": "Lancement concertation métropolitaine ZFE"
+      },
+      {
+        "date": "2023",
+        "evenement": "Participation citoyens vizillois"
+      }
+    ],
+    "sources": [
+      "Grenoble Alpes Métropole",
+      "Délibérations du Conseil Municipal"
+    ]
   },
   {
     "id": 962,
@@ -16077,17 +16113,35 @@
     "color": "#8e24aa",
     "statut": "Réalisé",
     "titre": "Participation citoyenne - 12 référents de quartier",
-    "description": "Mise en place d'un réseau de 12 référents citoyens pour relayer les préoccupations des habitants.",
+    "description": "Mise en place d'un réseau de 12 référents citoyens répartis sur 7 secteurs géographiques de Vizille pour relayer les préoccupations des habitants et faciliter le lien avec la municipalité. Ces référents bénévoles, formés par la gendarmerie sur les questions de sécurité, constituent un maillon essentiel de la participation citoyenne au quotidien. Ils remontent les problèmes de voirie, d'incivilités ou d'aménagement et participent à la veille locale.",
     "annee": 2024,
     "budget": 0,
     "importance": 3,
     "chiffres": [
       {
         "valeur": "12",
-        "label": "référents quartier"
+        "label": "référents citoyens"
+      },
+      {
+        "valeur": "7",
+        "label": "secteurs de la ville"
       }
     ],
-    "sous_categorie": "Participation citoyenne"
+    "sous_categorie": "Participation citoyenne",
+    "chronologie": [
+      {
+        "date": "2024",
+        "evenement": "Mise en place du réseau"
+      },
+      {
+        "date": "2024",
+        "evenement": "Formation gendarmerie"
+      }
+    ],
+    "sources": [
+      "Gendarmerie",
+      "Délibérations du Conseil Municipal"
+    ]
   },
   {
     "id": 965,
@@ -16096,11 +16150,31 @@
     "color": "#8e24aa",
     "statut": "Réalisé",
     "titre": "Concertation centre-ville",
-    "description": "Concertation citoyenne sur la revitalisation du centre-ville de Vizille.",
+    "description": "Concertation citoyenne sur la revitalisation du centre-ville de Vizille menée dans le cadre de l'Opération de Revitalisation du Territoire (ORT). Les habitants ont été invités à partager leur vision pour l'avenir du cœur de ville : commerces, espaces publics, circulation, habitat. Cette démarche participative a nourri les réflexions sur les aménagements futurs et les priorités d'investissement dans le centre ancien.",
     "annee": 2024,
     "budget": 0,
     "importance": 2,
-    "sous_categorie": "Concertations publiques"
+    "sous_categorie": "Concertations publiques",
+    "chiffres": [
+      {
+        "valeur": "5 ha",
+        "label": "de centre-ville concerné"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2024",
+        "evenement": "Lancement concertation centre-ville"
+      },
+      {
+        "date": "2024-2025",
+        "evenement": "Ateliers participatifs"
+      }
+    ],
+    "sources": [
+      "ORT Vizille",
+      "Ateliers citoyens"
+    ]
   },
   {
     "id": 966,
@@ -16199,11 +16273,25 @@
     "color": "#8e24aa",
     "statut": "En cours",
     "titre": "Concertation réseau de chaleur urbain",
-    "description": "Concertation citoyenne sur le projet de réseau de chaleur urbain pour Vizille (2025-2026).",
+    "description": "Concertation citoyenne sur le projet ambitieux de réseau de chaleur urbain pour Vizille, visant à alimenter les bâtiments publics et logements en chaleur renouvelable. Les habitants ont été informés des enjeux énergétiques, des travaux à prévoir et des bénéfices attendus en termes de réduction des émissions de CO2 et de maîtrise des coûts de chauffage. Une démarche de transparence pour un projet structurant de transition énergétique.",
     "annee": 2025,
     "budget": 0,
     "importance": 3,
-    "sous_categorie": "Concertations publiques"
+    "sous_categorie": "Concertations publiques",
+    "chronologie": [
+      {
+        "date": "2025",
+        "evenement": "Lancement concertation réseau chaleur"
+      },
+      {
+        "date": "2026-01",
+        "evenement": "Réunion publique d'information"
+      }
+    ],
+    "sources": [
+      "Grenoble Alpes Métropole",
+      "Réunions publiques"
+    ]
   },
   {
     "id": 971,
@@ -16212,11 +16300,35 @@
     "color": "#8e24aa",
     "statut": "En cours",
     "titre": "Campagne mesure îlots de chaleur",
-    "description": "Campagne participative de mesure des îlots de chaleur urbains avec les citoyens.",
+    "description": "Campagne participative de mesure des îlots de chaleur urbains avec la contribution des citoyens vizillois. Équipés de capteurs, les habitants volontaires ont collecté des données de température dans différents secteurs de la ville pour identifier les zones les plus exposées aux fortes chaleurs estivales. Ces données scientifiques citoyennes alimentent la réflexion sur la végétalisation prioritaire et les aménagements climatiques à réaliser.",
     "annee": 2025,
     "budget": 0,
     "importance": 2,
-    "sous_categorie": "Enquêtes citoyennes"
+    "sous_categorie": "Enquêtes citoyennes",
+    "chiffres": [
+      {
+        "valeur": "~20",
+        "label": "citoyens contributeurs"
+      }
+    ],
+    "chronologie": [
+      {
+        "date": "2025-06",
+        "evenement": "Lancement campagne mesures"
+      },
+      {
+        "date": "2025-07",
+        "evenement": "Collecte données citoyennes"
+      },
+      {
+        "date": "2025-09",
+        "evenement": "Restitution résultats"
+      }
+    ],
+    "sources": [
+      "Espace Belledonne",
+      "Données citoyennes"
+    ]
   },
   {
     "id": 972,
@@ -16225,11 +16337,25 @@
     "color": "#8e24aa",
     "statut": "Programmé",
     "titre": "Réunion publique chauffage urbain janv. 2026",
-    "description": "Réunion publique d'information et de concertation sur le projet de chauffage urbain.",
+    "description": "Réunion publique d'information et de concertation organisée en janvier 2026 sur le projet de réseau de chauffage urbain pour Vizille. Les habitants ont pu découvrir en détail le tracé prévu, les travaux envisagés, le calendrier de déploiement et les modalités de raccordement. Un temps d'échanges et de questions-réponses a permis d'éclaircir les interrogations des Vizillois sur ce projet majeur de transition énergétique qui transformera durablement le mode de chauffage de la commune.",
     "annee": 2026,
     "budget": 0,
     "importance": 2,
-    "sous_categorie": "Événements"
+    "sous_categorie": "Événements",
+    "chronologie": [
+      {
+        "date": "2025",
+        "evenement": "Concertation préalable"
+      },
+      {
+        "date": "2026-01",
+        "evenement": "Réunion publique information"
+      }
+    ],
+    "sources": [
+      "Grenoble Alpes Métropole",
+      "Réunion publique"
+    ]
   },
   {
     "id": 973,
@@ -16238,10 +16364,28 @@
     "color": "#8e24aa",
     "statut": "Programmé",
     "titre": "Inauguration participative école Paul Langevin janv. 2026",
-    "description": "Inauguration de la cour d'école réaménagée avec la participation des enfants et des familles.",
+    "description": "Inauguration festive et participative de la cour d'école Paul Langevin réaménagée en janvier 2026, avec la participation active des enfants et de leurs familles. Moment de célébration collective d'un projet exemplaire de désimperméabilisation et de végétalisation mené en concertation avec les élèves, les enseignants et les parents. Les enfants ont pu présenter leur nouvelle cour aux élus et aux habitants, témoignant de leur fierté et de leur appropriation de cet espace repensé ensemble.",
     "annee": 2026,
     "budget": 0,
     "importance": 2,
-    "sous_categorie": "Écoles participatives"
+    "sous_categorie": "Écoles participatives",
+    "chronologie": [
+      {
+        "date": "2024",
+        "evenement": "Concertation avec les enfants"
+      },
+      {
+        "date": "2025",
+        "evenement": "Travaux réaménagement cour"
+      },
+      {
+        "date": "2026-01",
+        "evenement": "Inauguration participative"
+      }
+    ],
+    "sources": [
+      "École Paul Langevin",
+      "Atelier des Cairns"
+    ]
   }
 ]
