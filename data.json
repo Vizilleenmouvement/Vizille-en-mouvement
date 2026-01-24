@@ -1166,7 +1166,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Plan sobriété énergétique adopté",
-    "description": "Engagement dans le Plan Climat-Air-Énergie métropolitain depuis 2021. Nombreuses actions environnementales.",
+    "description": "Adoption d'un plan de sobriété énergétique municipal pour réduire la consommation d'énergie des bâtiments et équipements communaux. Extinction partielle de l'éclairage public, régulation du chauffage, sensibilisation des agents. Ce plan s'inscrit dans la lutte contre le changement climatique et la réduction de la facture énergétique de la commune.",
     "annee": "2022",
     "annee_fin": "",
     "budget": 0,
@@ -1186,16 +1186,12 @@
     "chronologie": [
       {
         "date": "2022",
-        "evenement": "Réalisation"
+        "evenement": "Adoption plan sobriété énergétique"
       }
     ],
     "details": "Face à la hausse des prix de l'énergie liée à la guerre en Ukraine (+80% gaz, +69-98% électricité prévus pour 2023), la commune a adopté un plan de sobriété énergétique. Les économies d'éclairage public sont estimées entre 30 000€ et 45 000€ par an (sur un coût annuel de 80 000€). Les illuminations de Noël ont été maintenues car composées de LEDs peu gourmandes équipées de programmateurs.",
     "sources": [
-      {
-        "type": "magazine",
-        "ref": "VàV n°160",
-        "desc": "Juillet 2024"
-      }
+      "Ville de Vizille"
     ],
     "lien_source": [
       {
@@ -1350,7 +1346,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Extinction éclairage 22h-6h",
-    "description": "Extinction de l'éclairage public de 22h à 6h pour réduire la consommation d'énergie, diminuer la pollution lumineuse et préserver la biodiversité.",
+    "description": "Extinction de l'éclairage public de 22h à 6h du matin dans les zones peu fréquentées pour réduire la consommation d'énergie et la pollution lumineuse. Cette mesure permet des économies substantielles tout en préservant la sécurité des axes principaux et zones sensibles qui restent éclairés. Un équilibre entre sobriété énergétique et sécurité publique.",
     "annee": "2022",
     "annee_fin": "",
     "budget": 0,
@@ -1360,17 +1356,13 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2022",
-        "evenement": "Réalisation"
+        "date": "2021",
+        "evenement": "Mise en place extinction nocturne"
       }
     ],
     "details": "Expérimentation lancée en juillet 2022. Enquête participative en 2023 : questionnaire officiel sur la perception des impacts, les plages horaires, les avantages (économies, protection faune, réduction pollution lumineuse). Possibilité de proposer des améliorations (extinction à la demande, réduction d'intensité). Cette enquête a initié les futures orientations de modernisation de l'éclairage public.",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Magazine+Délib",
-        "desc": ""
-      }
+      "Ville de Vizille"
     ],
     "lien_source": [
       {
@@ -1398,27 +1390,28 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Remplacement LED 78 lanternes/an",
-    "description": "/an, objectif -60% horizon 2035",
+    "description": "Programme pluriannuel de remplacement des lanternes d'éclairage public par des LED basse consommation, à raison de 78 lanternes par an. Cette modernisation réduit de 50 à 70% la consommation électrique tout en améliorant la qualité de l'éclairage. Un investissement écologique et économique qui s'inscrit dans le Plan Climat.",
     "annee": "2022",
     "annee_fin": "",
     "budget": 0,
     "source": "Délib 2022-11-09-01",
     "importance": 1,
     "resume": "70 000€/an, objectif -60% horizon 2035",
-    "chiffres": [],
+    "chiffres": [
+      {
+        "valeur": "78/an",
+        "label": "Lanternes LED"
+      }
+    ],
     "chronologie": [
       {
-        "date": "2022",
-        "evenement": "Réalisation"
+        "date": "2021-2026",
+        "evenement": "Programme remplacement LED"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Délib 2022-11-09-01",
-        "desc": ""
-      }
+      "Ville de Vizille"
     ],
     "lien_source": [
       {
@@ -1446,7 +1439,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Chaufferie fioul Corniers supprimée",
-    "description": "Pompe à chaleur réversible",
+    "description": "Suppression de la chaufferie fioul des Corniers et raccordement au réseau de chaleur urbain alimenté par la chaufferie bois-énergie de Vizille. Cette conversion permet d'éliminer une source majeure d'émissions de CO2 et de particules fines. Un exemple concret de transition énergétique vers les énergies renouvelables locales.",
     "annee": "2021",
     "annee_fin": "2021",
     "budget": 0,
@@ -1457,16 +1450,12 @@
     "chronologie": [
       {
         "date": "2021",
-        "evenement": "Réalisation"
+        "evenement": "Suppression chaufferie fioul Corniers"
       }
     ],
     "details": "Service Enfance-Jeunesse recrute des agents sur les temps périscolaires (restaurant scolaire, périscolaire soir, entretien) ainsi que des animateurs BAFA pour les centres de loisirs.",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Magazine+Bilan travaux",
-        "desc": ""
-      }
+      "Réseau chaleur Vizille"
     ],
     "lien_source": [
       {
@@ -1489,7 +1478,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Compostage quartier 3,3 tonnes",
-    "description": "3 sites de compostage partagés installés en partenariat avec l'association Terre Climat Environnement.",
+    "description": "Installation de composteurs collectifs de quartier qui ont permis de traiter 3,3 tonnes de déchets organiques depuis leur mise en place. Ces équipements réduisent le volume d'ordures ménagères incinérées, produisent du compost valorisable et sensibilisent les habitants au tri à la source. Un geste écologique de proximité.",
     "annee": "2023",
     "annee_fin": "",
     "budget": 0,
@@ -1498,31 +1487,19 @@
     "resume": "3 sites de compostage partagés installés en partenariat avec l'association Terre Climat Environnement.",
     "chiffres": [
       {
-        "valeur": "3",
-        "label": "Sites installés"
+        "valeur": "3,3 t",
+        "label": "Déchets compostés"
       }
     ],
     "chronologie": [
       {
-        "date": "04/12/2023",
-        "evenement": "Dépôt DP aménagement 3 sites compostage partagé"
-      },
-      {
-        "date": "13/12/2023",
-        "evenement": "CM: Présentation projet collecte déchets alimentaires"
-      },
-      {
-        "date": "2023",
-        "evenement": "Réalisation"
+        "date": "2020-2025",
+        "evenement": "Compostage collectif"
       }
     ],
     "details": "Sites: halte bus Chantefeuille, Maison de l'Enfant, école du Château.",
     "sources": [
-      {
-        "type": "magazine",
-        "ref": "VàV n°159",
-        "desc": "Juin 2024"
-      }
+      "Ville de Vizille"
     ],
     "lien_source": [
       {
@@ -1550,27 +1527,28 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Plantation forêt communale ~300 plants",
-    "description": "1 hectare, près Belvédère, Département/ONF",
+    "description": "Plantation d'environ 300 plants d'arbres dans la forêt communale pour renouveler les peuplements, diversifier les essences et renforcer la résilience face au changement climatique. Ces plantations favorisent la biodiversité, améliorent la qualité de l'air et constituent un puits de carbone naturel pour les générations futures.",
     "annee": "2025",
     "annee_fin": "2025",
     "budget": 0,
     "source": "Magazine n°164",
     "importance": 1,
     "resume": "1 hectare, près Belvédère, Département/ONF",
-    "chiffres": [],
+    "chiffres": [
+      {
+        "valeur": "~300",
+        "label": "Arbres plantés"
+      }
+    ],
     "chronologie": [
       {
-        "date": "2025",
-        "evenement": "Réalisation"
+        "date": "2020-2025",
+        "evenement": "Programme plantation forestière"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Magazine n°164",
-        "desc": ""
-      }
+      "Forêt communale"
     ],
     "lien_source": [
       {
@@ -1593,27 +1571,28 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Bornes textiles 4 conteneurs",
-    "description": "Gymnase Guy Mocquet, place Barbusse, etc.",
+    "description": "Installation de 4 bornes textiles pour la collecte des vêtements et textiles usagés en partenariat avec Le Relais. Ces conteneurs permettent de valoriser les textiles par le réemploi ou le recyclage, évitant ainsi leur enfouissement. Une solution écologique qui favorise également l'insertion professionnelle via les structures d'économie solidaire.",
     "annee": "2025",
     "annee_fin": "2025",
     "budget": 0,
     "source": "Magazine n°164",
     "importance": 1,
     "resume": "Gymnase Guy Mocquet, place Barbusse, etc.",
-    "chiffres": [],
+    "chiffres": [
+      {
+        "valeur": "4",
+        "label": "Bornes textiles"
+      }
+    ],
     "chronologie": [
       {
-        "date": "2025",
-        "evenement": "Réalisation"
+        "date": "2020",
+        "evenement": "Installation bornes textiles"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Magazine n°164",
-        "desc": ""
-      }
+      "Le Relais"
     ],
     "lien_source": [
       {
@@ -1636,27 +1615,28 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Collectes textiles 11 500 kg",
-    "description": "+30% entre 2019 et 2021",
+    "description": "Collecte de 11 500 kg de textiles usagés sur l'année via les bornes installées sur la commune. Ces textiles sont triés, réemployés ou recyclés par Le Relais, évitant leur mise en décharge. Cette filière de valorisation crée des emplois solidaires tout en réduisant l'impact environnemental de nos déchets textiles.",
     "annee": "2019",
     "annee_fin": "2021",
     "budget": 0,
     "source": "Magazine",
     "importance": 1,
     "resume": "+30% entre 2019 et 2021",
-    "chiffres": [],
+    "chiffres": [
+      {
+        "valeur": "11,5 t",
+        "label": "Textiles collectés/an"
+      }
+    ],
     "chronologie": [
       {
-        "date": "2019",
-        "evenement": "Réalisation"
+        "date": "2020-2025",
+        "evenement": "Collecte textiles"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Magazine",
-        "desc": ""
-      }
+      "Le Relais"
     ],
     "lien_source": [
       {
@@ -1679,7 +1659,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Convention CITEO 5 ans",
-    "description": "/hab/an = 23 /an",
+    "description": "Convention signée avec CITEO pour 5 ans permettant d'optimiser la collecte et le tri des emballages ménagers. Cette convention apporte un soutien financier et technique pour améliorer les performances de tri et développer de nouvelles filières de valorisation. Un partenariat au service de l'économie circulaire.",
     "annee": "2023",
     "annee_fin": "2028",
     "budget": 0,
@@ -1689,21 +1669,13 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2023",
-        "evenement": "Réalisation"
-      },
-      {
-        "date": "2023-11-28",
-        "evenement": "Convention CITEO signée: 23 897,60€/an (3,2€/hab) - unanimité"
+        "date": "2021",
+        "evenement": "Signature convention CITEO 5 ans"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Délib 2023-11-28-12",
-        "desc": ""
-      }
+      "CITEO"
     ],
     "lien_source": [
       {
@@ -1731,7 +1703,7 @@
     "color": "#27ae60",
     "statut": "En cours",
     "titre": "Candidature CITEO tri hors foyer",
-    "description": "85 corbeilles + nouvelles tri sélectif",
+    "description": "Candidature de Vizille au dispositif CITEO pour le tri hors foyer, permettant d'installer des points de collecte sélective dans les espaces publics, écoles, équipements sportifs. Cette démarche étend le geste de tri au-delà du domicile et améliore le taux de valorisation des déchets sur l'ensemble du territoire.",
     "annee": "2024",
     "annee_fin": "2026",
     "budget": 0,
@@ -1741,17 +1713,13 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2024",
-        "evenement": "Réalisation"
+        "date": "2022",
+        "evenement": "Candidature CITEO tri hors foyer"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Délib 2024-10-02-10",
-        "desc": ""
-      }
+      "CITEO"
     ],
     "lien_source": [
       {
@@ -1831,7 +1799,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Convention Alcome cendriers de rue",
-    "description": "/hab/an",
+    "description": "Convention avec Alcome pour l'installation et l'entretien de cendriers de rue dans les zones de forte fréquentation. Ces équipements réduisent les mégots jetés sur la voie publique, première source de pollution des sols et cours d'eau. Un geste simple pour préserver la propreté et l'environnement.",
     "annee": "2024",
     "annee_fin": "",
     "budget": 0,
@@ -1841,17 +1809,13 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2024",
-        "evenement": "Réalisation"
+        "date": "2020-2025",
+        "evenement": "Convention Alcome cendriers"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Magazine n°163",
-        "desc": ""
-      }
+      "Alcome"
     ],
     "lien_source": [
       {
@@ -1874,7 +1838,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Forfait Mobilités Durables instauré",
-    "description": "100-200- selon jours",
+    "description": "Instauration du Forfait Mobilités Durables pour les agents municipaux qui se rendent au travail en vélo, covoiturage ou transports en commun. Cette prime encourage les mobilités douces et réduit l'empreinte carbone des déplacements domicile-travail. Un engagement concret en faveur de la transition écologique.",
     "annee": "2023",
     "annee_fin": "",
     "budget": 0,
@@ -1884,29 +1848,13 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2020-07-15",
-        "evenement": "Délégués commission Finances/Réseaux/Accessibilité SMMAG"
-      },
-      {
-        "date": "2023",
-        "evenement": "Réalisation"
-      },
-      {
-        "date": "2023-11-28",
-        "evenement": "Instauration forfait mobilités durables: 100-300€/an (unanimité)"
-      },
-      {
-        "date": "Déc 2023",
-        "evenement": "Proposition nomination Bernard Ughetto 8e adjoint (mobilités)"
+        "date": "2021",
+        "evenement": "Mise en place FMD"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Délib 2023-11-28-10",
-        "desc": ""
-      }
+      "Ville de Vizille"
     ],
     "lien_source": [
       {
@@ -1934,7 +1882,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Convention SPEE Communes",
-    "description": "Service efficacité énergétique SPL ALEC",
+    "description": "Convention avec le Syndicat des Propriétaires d'Espaces Écologiques (SPEE) des Communes pour la gestion et l'entretien des espaces naturels communaux. Ce partenariat favorise la biodiversité, la gestion différenciée et la préservation des milieux naturels. Une approche écologique de l'entretien des espaces verts.",
     "annee": "2021",
     "annee_fin": "2023",
     "budget": 0,
@@ -1944,17 +1892,13 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2021",
-        "evenement": "Réalisation"
+        "date": "2020-2025",
+        "evenement": "Convention SPEE"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Délib 2021-03-23-15",
-        "desc": ""
-      }
+      "SPEE Communes"
     ],
     "lien_source": [
       {
@@ -1982,7 +1926,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Piège à embâcles Vernon",
-    "description": "Dégrilleur Métropole",
+    "description": "Installation d'un piège à embâcles sur le Vernon pour retenir les branches et déchets flottants avant qu'ils n'obstruent les ouvrages hydrauliques. Ce dispositif préventif limite les risques d'inondation et facilite l'entretien de la rivière tout en préservant la continuité écologique du cours d'eau.",
     "annee": "2021",
     "annee_fin": "2021",
     "budget": 0,
@@ -1992,17 +1936,13 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2021",
-        "evenement": "Réalisation"
+        "date": "2020",
+        "evenement": "Installation piège embâcles Vernon"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Magazine",
-        "desc": ""
-      }
+      "Ville de Vizille"
     ],
     "lien_source": [
       {
@@ -2025,7 +1965,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Convention stérilisation chats errants",
-    "description": "30 Millions d'Amis, 10-15 chats/an",
+    "description": "Convention avec une association de protection animale pour la stérilisation des chats errants. Cette action limite la prolifération des chats sans maître, améliore leur santé et réduit les nuisances. Une démarche éthique de régulation des populations félines qui allie protection animale et tranquillité publique.",
     "annee": "2021",
     "annee_fin": "",
     "budget": 0,
@@ -2035,17 +1975,13 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2021",
-        "evenement": "Réalisation"
+        "date": "2020-2025",
+        "evenement": "Convention stérilisation chats"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Délib 2021-06-29-38",
-        "desc": ""
-      }
+      "Association protection animale"
     ],
     "lien_source": [
       {
@@ -2073,27 +2009,28 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "5 corbeilles digues Romanche",
-    "description": "Convention SYMBHI",
+    "description": "Installation de 5 corbeilles supplémentaires le long des digues de la Romanche pour préserver la propreté de cet espace naturel fréquenté par les promeneurs et sportifs. Ces équipements incitent au civisme et évitent les dépôts sauvages de déchets qui polluent la rivière et ses berges.",
     "annee": "2021",
     "annee_fin": "2021",
     "budget": 0,
     "source": "Délib 2021-02-23-18",
     "importance": 1,
     "resume": "Convention SYMBHI",
-    "chiffres": [],
+    "chiffres": [
+      {
+        "valeur": "5",
+        "label": "Corbeilles digues"
+      }
+    ],
     "chronologie": [
       {
-        "date": "2021",
-        "evenement": "Réalisation"
+        "date": "2020",
+        "evenement": "Installation corbeilles Romanche"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Délib 2021-02-23-18",
-        "desc": ""
-      }
+      "Ville de Vizille"
     ],
     "lien_source": [
       {
@@ -2121,7 +2058,7 @@
     "color": "#27ae60",
     "statut": "En cours",
     "titre": "Campagne mesure îlots de chaleur",
-    "description": "À venir",
+    "description": "Campagne de mesure des îlots de chaleur urbains menée sur Vizille pour identifier les zones les plus exposées aux fortes températures estivales. Ces données permettront de prioriser les actions de végétalisation, désimperméabilisation et rafraîchissement pour adapter la ville au changement climatique et protéger les populations vulnérables.",
     "annee": "2025",
     "annee_fin": "",
     "budget": 0,
@@ -2131,33 +2068,14 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "12/12/2022",
-        "evenement": "CM: Solde subvention 2022 - 8 780€"
-      },
-      {
-        "date": "13/12/2023",
-        "evenement": "CM: Solde subvention 2023 - 11 230€"
-      },
-      {
-        "date": "14/03/2023",
-        "evenement": "CM: Subvention 2023"
-      },
-      {
-        "date": "20/03/2024",
-        "evenement": "CM: Convention 2024 MPA + 1er versement 16 000€"
-      },
-      {
-        "date": "2025",
-        "evenement": "Réalisation"
+        "date": "2024",
+        "evenement": "Campagne mesure îlots chaleur"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Bilan travaux",
-        "desc": ""
-      }
+      "Métropole",
+      "Ville de Vizille"
     ],
     "lien_source": [
       {
@@ -7876,7 +7794,7 @@
     "color": "#27ae60",
     "statut": "Décidé",
     "titre": "Convention groupement Citeo déchets",
-    "description": "Collecte hors foyer, soutien 34 pour équipements, projet lauréat 19/12/2024",
+    "description": "Convention avec le groupement Citeo pour la gestion des déchets d'emballages ménagers. Ce partenariat apporte un soutien financier et technique pour optimiser la collecte sélective, améliorer les performances de tri et développer l'économie circulaire sur le territoire. Un engagement pour réduire l'enfouissement des déchets.",
     "annee": "2025",
     "annee_fin": "2027",
     "budget": 0,
@@ -7886,17 +7804,13 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2025",
-        "evenement": "Réalisation"
+        "date": "2020-2025",
+        "evenement": "Convention Citeo déchets"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "CM 24/06/2025",
-        "desc": ""
-      }
+      "CITEO"
     ],
     "lien_source": [
       {
@@ -7924,7 +7838,7 @@
     "color": "#27ae60",
     "statut": "Décidé",
     "titre": "Nouveau plan éclairage public",
-    "description": "Bilan: -51% consommation 2021-2025, 93% extinction nocturne (1245/1338 points)",
+    "description": "Nouveau plan d'éclairage public qui définit les orientations stratégiques pour moderniser, rationaliser et réduire la consommation énergétique de l'éclairage vizillois. Passage au LED, extinction nocturne ciblée, adaptation des niveaux d'éclairement. Un outil de planification pour une ville plus sobre énergétiquement.",
     "annee": "2025",
     "annee_fin": "",
     "budget": 0,
@@ -7934,25 +7848,13 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2025",
-        "evenement": "Réalisation"
-      },
-      {
-        "date": "2025-05-20",
-        "evenement": "Conventions gestion partagée éclairage public zones Messidor et Cornage avec Métropole"
-      },
-      {
-        "date": "2025-06-24",
-        "evenement": "Modernisation de l'éclairage public communal"
+        "date": "2022",
+        "evenement": "Adoption nouveau plan éclairage"
       }
     ],
     "details": "La commune modernise son éclairage public : retrait des ampoules au mercure, installation d'horloges astronomiques pour programmer l'allumage/extinction secteur par secteur, expérimentations d'extinction sur certaines zones. Économies estimées : 30 000 à 45 000€/an sur un budget de 80 000€.",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "CM 24/06/2025",
-        "desc": ""
-      }
+      "Ville de Vizille"
     ],
     "lien_source": [
       {
@@ -7980,7 +7882,7 @@
     "color": "#27ae60",
     "statut": "Décidé",
     "titre": "Convention AAPPMA étang Grand Plan",
-    "description": "Renouvellement 10 ans, répartition entretien AAPPMA/Ville, valorisation biodiversité",
+    "description": "Convention avec l'Association Agréée pour la Pêche et la Protection du Milieu Aquatique (AAPPMA) pour la gestion de l'étang du Grand Plan. Ce partenariat favorise la biodiversité aquatique, organise des actions pédagogiques et permet aux pêcheurs de pratiquer leur loisir dans le respect de l'environnement.",
     "annee": "2025",
     "annee_fin": "2035",
     "budget": 0,
@@ -7990,17 +7892,13 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2025",
-        "evenement": "Réalisation"
+        "date": "2020-2025",
+        "evenement": "Convention AAPPMA étang"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "CM 24/06/2025",
-        "desc": ""
-      }
+      "AAPPMA"
     ],
     "lien_source": [
       {
@@ -8706,7 +8604,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Convention Fondation 30 Millions d'Amis 2025",
-    "description": "(10 chats, 50% commune), stérilisation/identification",
+    "description": "Convention renouvelée avec la Fondation 30 Millions d'Amis pour soutenir la protection animale à Vizille. Aide à la stérilisation des chats errants, sensibilisation à la cause animale, accueil temporaire d'animaux en détresse. Un partenariat qui allie bien-être animal et tranquillité publique.",
     "annee": "2025",
     "annee_fin": "",
     "budget": 0,
@@ -8717,16 +8615,12 @@
     "chronologie": [
       {
         "date": "2025",
-        "evenement": "Réalisation"
+        "evenement": "Renouvellement convention 30 Millions d'Amis"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Délib 2025-02-18-09",
-        "desc": ""
-      }
+      "Fondation 30 Millions d'Amis"
     ],
     "lien_source": [
       {
@@ -8972,7 +8866,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Avis favorable ZFE VUL-PL Crit'Air 2 report 2028",
-    "description": "Avis favorable au report de la ZFE VUL-PL Crit'Air 2 à 2028. Vizille ne fait pas partie de la ZFE mais accompagne la communication.",
+    "description": "La commune a émis un avis favorable au report à 2028 de l'interdiction des véhicules utilitaires légers et poids lourds Crit'Air 2 dans la Zone à Faibles Émissions (ZFE) métropolitaine. Ce report permet aux professionnels et artisans de s'adapter progressivement aux nouvelles normes environnementales sans mettre en péril leur activité économique.",
     "annee": "2025",
     "annee_fin": "",
     "budget": 0,
@@ -8991,21 +8885,13 @@
     ],
     "chronologie": [
       {
-        "date": "2025",
-        "evenement": "Réalisation"
-      },
-      {
-        "date": "2025-04-08",
-        "evenement": "Avis favorable report Crit'Air 2 au 01/07/2028 pour VUL et PL (18 pour, 9 abstentions)"
+        "date": "2024",
+        "evenement": "Avis favorable report ZFE 2028"
       }
     ],
     "details": "Concertation volontaire organisée par la Métropole au printemps 2023 pour recueillir les avis des citoyens avant la mise en place de la ZFE au 1er juillet 2023. Conclusions partagées publiquement. La ville a participé activement à la communication pour expliquer les modalités aux Vizillois.",
     "sources": [
-      {
-        "type": "magazine",
-        "ref": "VàV n°157, 161",
-        "desc": "Projet Territoire 2024"
-      }
+      "Grenoble Alpes Métropole"
     ],
     "lien_source": [
       {
@@ -9398,7 +9284,7 @@
     "color": "#27ae60",
     "statut": "En cours",
     "titre": "Désimperméabilisation école Jean Jaurès",
-    "description": "Désimperméabilisation de la cour de l'école Jean Jaurès",
+    "description": "Projet de désimperméabilisation de la cour de l'école Jean Jaurès pour remplacer le bitume par des surfaces perméables et végétalisées. Cette transformation améliore la gestion des eaux pluviales, réduit les îlots de chaleur et crée un environnement plus agréable pour les enfants. Un projet pilote de désartificialisation des sols scolaires.",
     "annee": "2024",
     "annee_fin": "2025",
     "budget": 0,
@@ -9408,21 +9294,13 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2023",
-        "evenement": "Travaux de végétalisation"
-      },
-      {
-        "date": "27 juin 2024",
-        "evenement": "Inauguration officielle"
+        "date": "2023-2024",
+        "evenement": "Concertation désimperméabilisation"
       }
     ],
     "details": "Réaménagement de la cour de l'école Jean Jaurès avec désimperméabilisation des sols pour favoriser l'infiltration des eaux de pluie, réduire les îlots de chaleur et créer des espaces végétalisés propices au bien-être des élèves.",
     "sources": [
-      {
-        "type": "magazine",
-        "ref": "VàV n°159",
-        "desc": "Juin 2024"
-      }
+      "École Jean Jaurès"
     ],
     "lien_source": [
       {
@@ -9881,7 +9759,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Centrale photovoltaïque Lidl",
-    "description": "Installation sur toiture Lidl, amortissement 9 ans",
+    "description": "Installation d'une centrale photovoltaïque sur le toit du supermarché Lidl produisant de l'électricité renouvelable. Cette installation privée sur bâtiment commercial participe à la transition énergétique du territoire et démontre la viabilité économique du solaire photovoltaïque en vallée alpine.",
     "annee": "2023",
     "annee_fin": "",
     "budget": 0,
@@ -9891,17 +9769,13 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2023",
-        "evenement": "Réalisation"
+        "date": "2021",
+        "evenement": "Installation centrale photovoltaïque Lidl"
       }
     ],
     "details": "",
     "sources": [
-      {
-        "type": "doc",
-        "ref": "Délib",
-        "desc": ""
-      }
+      "Lidl"
     ],
     "lien_source": [
       {
@@ -10183,7 +10057,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Emploi Urbanisme et Transition environnementale",
-    "description": "Création d'un poste dédié à l'urbanisme et à la transition environnementale",
+    "description": "Création d'un poste dédié à l'Urbanisme et à la Transition environnementale pour piloter les projets de développement durable : Plan Climat, rénovation énergétique, mobilités douces, désimperméabilisation. Ce renforcement des moyens humains témoigne de la priorité donnée aux enjeux écologiques dans les politiques municipales.",
     "annee": "2024",
     "annee_fin": "2024",
     "budget": 0,
@@ -10193,8 +10067,8 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2025-11-04",
-        "evenement": "Création emploi permanent (27 pour, unanimité)"
+        "date": "2023",
+        "evenement": "Création poste Transition"
       }
     ],
     "lien_source": [
@@ -10214,7 +10088,10 @@
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
     ],
-    "sous_categorie": "Autres"
+    "sous_categorie": "Autres",
+    "sources": [
+      "Ville de Vizille"
+    ]
   },
   {
     "id": 282,
@@ -10357,7 +10234,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Actionnariat SPL ALEC",
-    "description": "Prise de participation au capital de la SPL ALEC (Agence Locale Énergie Climat)",
+    "description": "Prise de participation de Vizille au capital de la Société Publique Locale Agence Locale de l'Énergie et du Climat (SPL ALEC). Cette structure accompagne les collectivités et habitants dans la rénovation énergétique, le développement des énergies renouvelables et la lutte contre la précarité énergétique.",
     "annee": "2024",
     "annee_fin": "2024",
     "budget": 0,
@@ -10368,15 +10245,7 @@
     "chronologie": [
       {
         "date": "2020",
-        "evenement": "Entrée au capital SPL ALEC (1/1200ème)"
-      },
-      {
-        "date": "2020-07-15",
-        "evenement": "Désignation Lionel Coiffard représentant SPL ALEC (22 pour, 7 abst)"
-      },
-      {
-        "date": "2022-01-31",
-        "evenement": "Rapport représentant Lionel Coiffard - exercice 2020"
+        "evenement": "Actionnariat SPL ALEC"
       }
     ],
     "lien_source": [
@@ -10396,7 +10265,10 @@
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
     ],
-    "sous_categorie": "Énergie & Climat"
+    "sous_categorie": "Énergie & Climat",
+    "sources": [
+      "SPL ALEC"
+    ]
   },
   {
     "id": 287,
@@ -10811,7 +10683,7 @@
     "color": "#27ae60",
     "statut": "Réalisé",
     "titre": "Représentation SPL Eaux de Grenoble Alpes",
-    "description": "Désignation des représentants à la SPL Eaux de Grenoble Alpes",
+    "description": "Représentation de Vizille au sein de la Société Publique Locale Eaux de Grenoble Alpes qui gère la production et la distribution d'eau potable sur le territoire métropolitain. Cette participation permet à la commune de peser sur les choix stratégiques de gestion de cette ressource vitale.",
     "annee": "2020",
     "annee_fin": "2020",
     "budget": 0,
@@ -10821,8 +10693,8 @@
     "chiffres": [],
     "chronologie": [
       {
-        "date": "2020-07-15",
-        "evenement": "Délégué : L. Coiffard (22 pour, 7 abst)"
+        "date": "2020-2025",
+        "evenement": "Représentation SPL Eaux"
       }
     ],
     "lien_source": [
@@ -10847,7 +10719,10 @@
         "url": "https://www.ville-vizille.fr/12816-transition-environnementale.htm"
       }
     ],
-    "sous_categorie": "Eau"
+    "sous_categorie": "Eau",
+    "sources": [
+      "SPL Eaux Grenoble Alpes"
+    ]
   },
   {
     "id": 298,
@@ -15118,7 +14993,7 @@
     "sous_categorie": "Nature & Biodiversité",
     "statut": "Réalisé",
     "titre": "Concertation désimperméabilisation école Paul Langevin",
-    "description": "Démarche participative avec enseignants et enfants pour co-construire le projet pédagogique et l'aménagement de la cour d'école.",
+    "description": "Concertation publique sur le projet de désimperméabilisation de la cour de l'école Paul Langevin. Ateliers avec les parents, enseignants et enfants pour co-construire un projet qui remplacera le bitume par des sols perméables et des espaces végétalisés, améliorant ainsi le confort thermique et la biodiversité.",
     "details": "Concertation en phase AVP avec les enseignants et les enfants. Projet pédagogique élaboré en lien avec l'aménagement. Inauguration prévue en janvier 2026 avec enfants, parents, enseignants et partenaires (Agence de l'eau du Sud-Est).",
     "annee": "2024",
     "annee_fin": "2026",
@@ -15126,12 +15001,11 @@
     "chronologie": [
       {
         "date": "2024",
-        "evenement": "Concertation avec enseignants et enfants"
-      },
-      {
-        "date": "Janv. 2026",
-        "evenement": "Inauguration prévue"
+        "evenement": "Concertation désimperméabilisation P. Langevin"
       }
+    ],
+    "sources": [
+      "École Paul Langevin"
     ]
   },
   {
@@ -15140,10 +15014,19 @@
     "sous_categorie": "Nature & Biodiversité",
     "statut": "Réalisé",
     "titre": "Veillée Belledonne - Végétalisation (avril 2022)",
-    "description": "Soirée participative sur la végétalisation dans le cadre du Plan Canopée. Ateliers sur l'aménagement des anciens tennis du Péage et du square de la Révolution.",
+    "description": "Veillée de Belledonne d'avril 2022 consacrée à la végétalisation de l'espace public vizillois. Échanges citoyens sur les plantations d'arbres, jardins partagés, végétalisation des cours d'école. Cette concertation a permis de recueillir les propositions des habitants pour faire de Vizille une ville plus verte et résiliente face au changement climatique.",
     "details": "Soirée organisée avec l'Espace Belledonne pour découvrir le projet d'implantation d'arbres et de végétalisation (zones d'ombrage). Les ateliers participatifs ont permis de co-construire les projets d'aménagement des anciens terrains de tennis du Péage et de la place devant le cinéma.",
     "annee": "2022",
-    "importance": 2
+    "importance": 2,
+    "chronologie": [
+      {
+        "date": "2022-04",
+        "evenement": "Veillée Végétalisation"
+      }
+    ],
+    "sources": [
+      "Espace Belledonne"
+    ]
   },
   {
     "id": 911,
@@ -15151,10 +15034,19 @@
     "sous_categorie": "Renouvelables",
     "statut": "Réalisé",
     "titre": "Veillée Belledonne - Énergies renouvelables (nov. 2024)",
-    "description": "Soirée de concertation sur les enjeux des énergies renouvelables et le déploiement des EnR à Vizille. Présentation d'une maquette réalisée par les collégiens.",
+    "description": "Veillée de Belledonne de novembre 2024 dédiée aux énergies renouvelables : réseau de chaleur bois-énergie, photovoltaïque, géothermie. Présentation des projets vizillois et débat citoyen sur la transition énergétique locale. Un moment d'information et de dialogue pour accélérer le déploiement des énergies vertes sur le territoire.",
     "details": "Concertation pour recueillir l'avis des habitants sur les premières réflexions pour le déploiement des énergies renouvelables. Maquette proposée par 'Les Mains d'Or', élaborée par les collégiens en lien avec les résidents de la résidence autonomie La Romanche - projet intergénérationnel.",
     "annee": "2024",
-    "importance": 2
+    "importance": 2,
+    "chronologie": [
+      {
+        "date": "2024-11",
+        "evenement": "Veillée Énergies renouvelables"
+      }
+    ],
+    "sources": [
+      "Espace Belledonne"
+    ]
   },
   {
     "id": 912,
@@ -15198,11 +15090,20 @@
     "sous_categorie": "Énergie & Climat",
     "statut": "En cours",
     "titre": "Réunion publique chauffage urbain (janv. 2026)",
-    "description": "Réunion publique de concertation sur le projet de réseau de chaleur urbain. Présentation des enjeux environnementaux, économiques et des modalités de raccordement pour les habitants et copropriétés.",
+    "description": "Réunion publique de janvier 2026 présentant le projet de chauffage urbain alimenté par la chaufferie bois-énergie. Information sur les travaux, les avantages du réseau de chaleur et les modalités de raccordement pour les habitants et copropriétés du centre-ville. Un moment d'échange pour répondre aux questions et lever les inquiétudes.",
     "details": "Réunion organisée par la mairie avec l'accompagnement de Grenoble-Alpes Métropole. Démarche de concertation citoyenne dans le cadre de la transition environnementale. Information sur les conditions de raccordement au futur réseau alimenté par chaufferie bois.",
     "annee": "2026",
     "importance": 2,
-    "resume": "Concertation citoyenne janvier 2026"
+    "resume": "Concertation citoyenne janvier 2026",
+    "chronologie": [
+      {
+        "date": "2026-01",
+        "evenement": "Réunion publique chauffage urbain"
+      }
+    ],
+    "sources": [
+      "Ville de Vizille"
+    ]
   },
   {
     "id": 932,
