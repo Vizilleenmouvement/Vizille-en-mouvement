@@ -326,7 +326,7 @@
 
         async function loadArticles() {
             try {
-                const res = await fetch('articles.json');
+                const res = await fetch('articles.json?v=' + Date.now());
                 articlesData = await res.json();
                 renderFilters();
                 renderMagazine();
