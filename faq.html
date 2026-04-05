@@ -273,13 +273,11 @@
 
         // ===== STATISTIQUES =====
         function updateStats() {
-            const total = faqData.length;
-            const reponses = faqData.filter(f => f.reponse && f.reponse.trim()).length;
-            const themes = new Set(faqData.map(f => f.categorie).filter(c => c && c.trim())).size;
-
-            document.getElementById('stat-total').textContent = total;
-            document.getElementById('stat-reponses').textContent = reponses;
-            document.getElementById('stat-themes').textContent = themes;
+            // Stats retirées du HTML, fonction conservée par sécurité
+            const el = (id) => document.getElementById(id);
+            if (el('stat-total')) el('stat-total').textContent = faqData.length;
+            if (el('stat-reponses')) el('stat-reponses').textContent = faqData.filter(f => f.reponse && f.reponse.trim()).length;
+            if (el('stat-themes')) el('stat-themes').textContent = new Set(faqData.map(f => f.categorie).filter(c => c && c.trim())).size;
         }
 
         // ===== FILTRES =====
