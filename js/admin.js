@@ -3846,7 +3846,8 @@ function showFaqModal(f) {
                 <option value="">-- Choisir un thème --</option>
                 <option value="Urbanisme" ${f.categorie === 'Urbanisme' ? 'selected' : ''}>🏗️ Urbanisme</option>
                 <option value="Vie quotidienne" ${f.categorie === 'Vie quotidienne' ? 'selected' : ''}>🏡 Vie quotidienne</option>
-                <option value="Culture & Sport" ${f.categorie === 'Culture & Sport' ? 'selected' : ''}>🎭 Culture & Sport</option>
+                <option value="Culture" ${f.categorie === 'Culture' ? 'selected' : ''}>🎭 Culture</option>
+                <option value="Sport" ${f.categorie === 'Sport' ? 'selected' : ''}>⚽ Sport</option>
                 <option value="Social & Solidarité" ${f.categorie === 'Social & Solidarité' ? 'selected' : ''}>🤝 Social & Solidarité</option>
                 <option value="Environnement" ${f.categorie === 'Environnement' ? 'selected' : ''}>🌿 Environnement</option>
                 <option value="Tranquillité" ${f.categorie === 'Tranquillité' ? 'selected' : ''}>🛡️ Tranquillité</option>
