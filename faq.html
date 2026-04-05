@@ -214,6 +214,7 @@
             'Urbanisme': { icon: '🏗️', color: '#e3f2fd' },
             'Vie quotidienne': { icon: '🏡', color: '#fff3e0' },
             'Culture': { icon: '🎭', color: '#f3e5f5' },
+            'Culture & Sport': { icon: '🎭', color: '#f3e5f5' },
             'Sport': { icon: '⚽', color: '#e8f5e9' },
             'Social & Solidarité': { icon: '🤝', color: '#fce4ec' },
             'Environnement': { icon: '🌿', color: '#e8f5e9' },
@@ -244,7 +245,7 @@
         // ===== CHARGEMENT =====
         async function loadFaq() {
             try {
-                const response = await fetch('faq.json?v=2026.03');
+                const response = await fetch('faq.json?v=' + Date.now());
                 if (!response.ok) throw new Error('Erreur');
 
                 faqData = await response.json();
