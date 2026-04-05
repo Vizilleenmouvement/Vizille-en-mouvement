@@ -114,76 +114,46 @@
         </div>
     </section>
 
-    <!-- BLOC À LA UNE — carousel photos à gauche + texte article à droite -->
+    <!-- BLOC À LA UNE — deux articles prioritaires -->
     <style>
-    #bloc-a-la-une { background:#f7f4ef; border-bottom:3px solid #c9a84c; padding:0; display:none; }
-    #alaune-grid { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; }
-    #alaune-carousel { position:relative; overflow:hidden; background:#111; }
-    #alaune-track { display:flex; transition:transform 0.5s cubic-bezier(.4,0,.2,1); }
-    .alaune-slide { flex:0 0 100%; }
-    .alaune-slide img { width:100%; height:100%; object-fit:cover; object-position:center 30%; display:block; max-height:420px; cursor:zoom-in; }
-    .alaune-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.45); color:#fff; border:none; font-size:2.2rem; line-height:1; padding:0.05rem 0.55rem 0.2rem; border-radius:3px; cursor:pointer; z-index:2; }
-    .alaune-btn:hover { background:rgba(0,0,0,0.75); }
-    #alaune-prev { left:0.5rem; } #alaune-next { right:0.5rem; }
-    #alaune-dots { position:absolute; bottom:0.55rem; left:50%; transform:translateX(-50%); display:flex; gap:0.4rem; z-index:2; }
-    .alaune-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.45); cursor:pointer; display:inline-block; }
-    .alaune-dot.on { background:#fff; }
-    #alaune-counter { position:absolute; top:0.5rem; right:0.7rem; background:rgba(0,0,0,0.38); color:#fff; font-size:0.7rem; padding:0.15rem 0.5rem; border-radius:20px; z-index:2; font-family:"Source Sans 3",sans-serif; }
-    #alaune-text { padding:2rem 2.5rem; display:flex; flex-direction:column; justify-content:center; }
-    @media(max-width:700px){ #alaune-grid{grid-template-columns:1fr;} .alaune-slide img{max-height:260px;} #alaune-text{padding:1.5rem 1.2rem;} }
+    #bloc-a-la-une { background:#f7f4ef; border-bottom:3px solid #c9a84c; padding:2rem 1rem; display:none; }
+    .alaune-container { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+    .alaune-card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08); transition:transform 0.2s; }
+    .alaune-card:hover { transform:translateY(-3px); }
+    .alaune-card img { width:100%; height:220px; object-fit:cover; object-position:center 30%; display:block; }
+    .alaune-card-body { padding:1.5rem; }
+    .alaune-card-meta { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:#c9a84c; font-weight:700; margin:0 0 0.5rem; }
+    .alaune-card-title { font-family:'Playfair Display',serif; font-size:clamp(1rem,2vw,1.3rem); font-weight:600; color:#1a3a6b; margin:0 0 0.6rem; line-height:1.3; }
+    .alaune-card-extrait { font-size:0.88rem; color:#555; line-height:1.7; margin:0 0 1rem; }
+    .alaune-card-btn { display:inline-block; background:#1a3a6b; color:#fff; padding:0.5rem 1.2rem; border-radius:3px; text-decoration:none; font-size:0.8rem; letter-spacing:0.04em; }
+    .alaune-card-btn:hover { background:#c9a84c; }
+    @media(max-width:700px){ .alaune-container{grid-template-columns:1fr;} .alaune-card img{height:180px;} }
     </style>
     <section id="bloc-a-la-une">
-        <div id="alaune-grid">
-            <div id="alaune-carousel">
-                <div id="alaune-track"></div>
-                <button class="alaune-btn" id="alaune-prev" onclick="alauneMove(-1)" aria-label="Photo précédente">&#8249;</button>
-                <button class="alaune-btn" id="alaune-next" onclick="alauneMove(1)" aria-label="Photo suivante">&#8250;</button>
-                <div id="alaune-dots"></div>
-                <div id="alaune-counter"></div>
-            </div>
-            <div id="alaune-text"></div>
-        </div>
+        <div class="alaune-container" id="alaune-container"></div>
     </section>
     <script>
     (function() {
-        var AL={idx:0,imgs:[],timer:null,DELAY:4000};
-        AL.go=function(n){
-            var N=AL.imgs.length; AL.idx=((n%N)+N)%N;
-            document.getElementById('alaune-track').style.transform='translateX(-'+(AL.idx*100)+'%)';
-            var dots=document.getElementById('alaune-dots').children;
-            for(var i=0;i<dots.length;i++) dots[i].className='alaune-dot'+(i===AL.idx?' on':'');
-            document.getElementById('alaune-counter').textContent=(AL.idx+1)+' / '+N;
-        };
-        AL.start=function(){ AL.stop(); AL.timer=setInterval(function(){ AL.go(AL.idx+1); },AL.DELAY); };
-        AL.stop=function(){ if(AL.timer){ clearInterval(AL.timer); AL.timer=null; } };
-        window.alauneMove=function(d){ AL.stop(); AL.go(AL.idx+d); AL.start(); };
-        fetch('articles.json').then(function(r){ return r.json(); }).then(function(articles){
-            var sorted=articles.slice().sort(function(a,b){ return new Date(b.date)-new Date(a.date); });
-            var art=sorted.find(function(a){ return a.a_la_une; })||sorted[0];
-            if(!art) return;
-            var imgs=art.images&&art.images.length?art.images:(art.image?[art.image]:[]);
-            var track=document.getElementById('alaune-track');
-            var dotsEl=document.getElementById('alaune-dots');
-            AL.imgs=imgs;
-            imgs.forEach(function(src,i){
-                var sl=document.createElement('div'); sl.className='alaune-slide';
-                var im=document.createElement('img'); im.src=src; im.alt='';
-                im.onclick=function(){ if(window.openLightbox) openLightbox(src); };
-                sl.appendChild(im); track.appendChild(sl);
-                var dot=document.createElement('span'); dot.className='alaune-dot'+(i===0?' on':'');
-                dot.onclick=(function(n){ return function(){ AL.stop(); AL.go(n); AL.start(); }; })(i);
-                dotsEl.appendChild(dot);
-            });
-            if(imgs.length>1){ AL.go(0); AL.start(); }
-            else{ ['alaune-counter','alaune-prev','alaune-next','alaune-dots'].forEach(function(id){ var el=document.getElementById(id); if(el) el.style.display='none'; }); }
-            var d=art.date?new Date(art.date):null;
-            var ds=d?d.toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'}):'';
-            var cat=art.categorie?' · '+art.categorie:'';
-            document.getElementById('alaune-text').innerHTML=
-                '<p style="font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:#c9a84c;font-weight:700;margin:0 0 0.5rem;">'+ds+cat+'</p>'
-                +'<h2 style="font-family:\'Playfair Display\',serif;font-size:clamp(1.1rem,2.5vw,1.6rem);font-weight:600;color:#1a3a6b;margin:0 0 0.8rem;line-height:1.3;">'+art.titre+'</h2>'
-                +'<p style="font-size:0.88rem;color:#555;line-height:1.75;margin:0 0 1.2rem;">'+(art.extrait||'')+'</p>'
-                +'<a href="blog.html?article='+art.id+'" style="display:inline-block;background:#1a3a6b;color:#fff;padding:0.6rem 1.3rem;border-radius:3px;text-decoration:none;font-size:0.8rem;letter-spacing:0.04em;">📰 Lire l\'article complet →</a>';
+        fetch('articles.json?v=' + Date.now()).then(function(r){ return r.json(); }).then(function(articles){
+            var prioritaires = articles.filter(function(a){ return a.priorite; })
+                .sort(function(a,b){ return new Date(b.date)-new Date(a.date); })
+                .slice(0, 2);
+            if(prioritaires.length === 0) return;
+            var container = document.getElementById('alaune-container');
+            container.innerHTML = prioritaires.map(function(art){
+                var img = art.image || (art.images && art.images[0]) || '';
+                var d = art.date ? new Date(art.date) : null;
+                var ds = d ? d.toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'}) : '';
+                var cat = art.categorie ? ' · ' + art.categorie : '';
+                return '<div class="alaune-card">'
+                    + (img ? '<img src="'+img+'" alt="">' : '')
+                    + '<div class="alaune-card-body">'
+                    + '<p class="alaune-card-meta">'+ds+cat+'</p>'
+                    + '<h2 class="alaune-card-title">'+art.titre+'</h2>'
+                    + '<p class="alaune-card-extrait">'+(art.extrait||'')+'</p>'
+                    + '<a href="blog.html?article='+art.id+'" class="alaune-card-btn">📰 Lire l\'article complet →</a>'
+                    + '</div></div>';
+            }).join('');
             document.getElementById('bloc-a-la-une').style.display='block';
         });
     })();
