@@ -412,32 +412,126 @@
 
     <!-- SECTION PRIX CARBURANTS VIZILLE -->
     <style>
-    .carburants-section { background: #f7f4ef; padding: 2rem 1rem; border-bottom: 1px solid #e8e0d0; }
-    .carburants-container { max-width: 1100px; margin: 0 auto; }
-    .carburants-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #1a3a5c; text-align: center; margin-bottom: 1.5rem; }
-    .carburants-title small { display: block; font-family: 'Source Sans 3', sans-serif; font-size: 0.75rem; color: #888; font-weight: 400; margin-top: 0.3rem; }
+    .carburants-section {
+        background: linear-gradient(135deg, #1a3a5c 0%, #2d5a87 100%);
+        padding: 3rem 1.5rem;
+        position: relative;
+        overflow: hidden;
+    }
+    .carburants-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(201,162,39,0.08) 0%, transparent 70%);
+        border-radius: 50%;
+    }
+    .carburants-container { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+    .carburants-header { text-align: center; margin-bottom: 2rem; }
+    .carburants-badge {
+        display: inline-block;
+        background: rgba(201,162,39,0.2);
+        color: #e8c84a;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 0.35rem 1rem;
+        border-radius: 20px;
+        margin-bottom: 1rem;
+        border: 1px solid rgba(201,162,39,0.3);
+    }
+    .carburants-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(1.4rem, 3vw, 1.8rem);
+        color: #fff;
+        margin: 0 0 0.5rem;
+        line-height: 1.3;
+    }
+    .carburants-subtitle {
+        font-family: 'Source Sans 3', sans-serif;
+        font-size: 0.9rem;
+        color: rgba(255,255,255,0.65);
+        margin: 0;
+    }
+    .carburants-live {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.7rem;
+        color: #4ade80;
+        margin-top: 0.6rem;
+        font-weight: 600;
+    }
+    .carburants-live .dot {
+        width: 6px; height: 6px;
+        background: #4ade80;
+        border-radius: 50%;
+        animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+        0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
+        50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(74,222,128,0); }
+    }
     .stations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .station-card { background: #fff; border-radius: 12px; padding: 1.2rem 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-    .station-name { font-weight: 700; color: #1a3a5c; font-size: 1.05rem; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.5rem; }
-    .station-addr { font-size: 0.8rem; color: #888; margin-bottom: 0.3rem; }
-    .station-horaires { font-size: 0.72rem; color: #27ae60; margin-bottom: 0.8rem; }
+    .station-card {
+        background: rgba(255,255,255,0.07);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 16px;
+        padding: 1.5rem;
+        transition: transform 0.2s, border-color 0.2s;
+    }
+    .station-card:hover { transform: translateY(-3px); border-color: rgba(201,162,39,0.4); }
+    .station-name {
+        font-weight: 700;
+        color: #fff;
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .station-addr { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem; }
+    .station-horaires { font-size: 0.75rem; color: #4ade80; margin-bottom: 1rem; font-weight: 500; }
     .prix-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 0.5rem; }
-    .prix-item { background: #f0f7ff; border-radius: 8px; padding: 0.5rem; text-align: center; }
-    .prix-item.rupture { background: #fff0f0; }
-    .prix-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: #666; }
-    .prix-val { font-size: 1.15rem; font-weight: 700; color: #1a3a5c; }
-    .prix-val.indispo { font-size: 0.75rem; color: #e74c3c; font-weight: 600; }
-    .prix-date { font-size: 0.6rem; color: #aaa; margin-top: 0.15rem; }
-    .carburants-loading { text-align: center; padding: 2rem; color: #888; }
-    .carburants-source { text-align: center; font-size: 0.7rem; color: #aaa; margin-top: 1rem; }
-    .carburants-source a { color: #888; }
-    @media(max-width:700px){ .stations-grid{grid-template-columns:1fr;} }
+    .prix-item {
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 10px;
+        padding: 0.6rem 0.4rem;
+        text-align: center;
+        transition: background 0.2s;
+    }
+    .prix-item:hover { background: rgba(255,255,255,0.1); }
+    .prix-item.rupture { background: rgba(231,76,60,0.15); border-color: rgba(231,76,60,0.25); }
+    .prix-label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); }
+    .prix-val { font-size: 1.2rem; font-weight: 700; color: #e8c84a; margin-top: 0.15rem; }
+    .prix-val.indispo { font-size: 0.7rem; color: #f87171; font-weight: 600; }
+    .prix-date { font-size: 0.58rem; color: rgba(255,255,255,0.3); margin-top: 0.2rem; }
+    .carburants-loading { text-align: center; padding: 2rem; color: rgba(255,255,255,0.5); }
+    .carburants-footer { text-align: center; margin-top: 1.5rem; }
+    .carburants-source { font-size: 0.7rem; color: rgba(255,255,255,0.35); }
+    .carburants-source a { color: rgba(255,255,255,0.5); text-decoration: underline; }
+    @media(max-width:700px){
+        .stations-grid { grid-template-columns: 1fr; }
+        .carburants-section { padding: 2rem 1rem; }
+    }
     </style>
     <section class="carburants-section" id="section-carburants">
         <div class="carburants-container">
-            <h2 class="carburants-title">⛽ Prix des carburants à Vizille<small>Données officielles en temps réel</small></h2>
+            <div class="carburants-header">
+                <div class="carburants-badge">Vizille en Mouvement vous informe</div>
+                <h2 class="carburants-title">Prix des carburants à Vizille</h2>
+                <p class="carburants-subtitle">Les tarifs des stations vizilloises, actualisés en temps réel</p>
+                <div class="carburants-live"><span class="dot"></span> Données actualisées automatiquement</div>
+            </div>
             <div id="carburants-content" class="carburants-loading">Chargement des prix...</div>
-            <p class="carburants-source">Source : <a href="https://www.prix-carburants.gouv.fr/" target="_blank" rel="noopener">prix-carburants.gouv.fr</a> — Données ouvertes du Ministère de l'Économie</p>
+            <div class="carburants-footer">
+                <p class="carburants-source">Source officielle : <a href="https://www.prix-carburants.gouv.fr/" target="_blank" rel="noopener">Ministère de l'Économie — prix-carburants.gouv.fr</a></p>
+            </div>
         </div>
     </section>
     <script>
