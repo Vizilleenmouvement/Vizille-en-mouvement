@@ -410,6 +410,86 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape') fermerTheme(); });
     </script>
 
+    <!-- SECTION PRIX CARBURANTS VIZILLE -->
+    <style>
+    .carburants-section { background: #f7f4ef; padding: 2rem 1rem; border-bottom: 1px solid #e8e0d0; }
+    .carburants-container { max-width: 1100px; margin: 0 auto; }
+    .carburants-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #1a3a5c; text-align: center; margin-bottom: 1.5rem; }
+    .carburants-title small { display: block; font-family: 'Source Sans 3', sans-serif; font-size: 0.75rem; color: #888; font-weight: 400; margin-top: 0.3rem; }
+    .stations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .station-card { background: #fff; border-radius: 12px; padding: 1.2rem 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .station-name { font-weight: 700; color: #1a3a5c; font-size: 1rem; margin-bottom: 0.2rem; }
+    .station-addr { font-size: 0.8rem; color: #888; margin-bottom: 0.8rem; }
+    .prix-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 0.5rem; }
+    .prix-item { background: #f0f7ff; border-radius: 8px; padding: 0.5rem; text-align: center; }
+    .prix-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: #666; }
+    .prix-val { font-size: 1.2rem; font-weight: 700; color: #1a3a5c; }
+    .prix-date { font-size: 0.6rem; color: #aaa; margin-top: 0.15rem; }
+    .carburants-loading { text-align: center; padding: 2rem; color: #888; }
+    .carburants-source { text-align: center; font-size: 0.7rem; color: #aaa; margin-top: 1rem; }
+    .carburants-source a { color: #888; }
+    @media(max-width:700px){ .stations-grid{grid-template-columns:1fr;} }
+    </style>
+    <section class="carburants-section" id="section-carburants">
+        <div class="carburants-container">
+            <h2 class="carburants-title">⛽ Prix des carburants à Vizille<small>Données officielles en temps réel</small></h2>
+            <div id="carburants-content" class="carburants-loading">Chargement des prix...</div>
+            <p class="carburants-source">Source : <a href="https://www.prix-carburants.gouv.fr/" target="_blank" rel="noopener">prix-carburants.gouv.fr</a> — Données ouvertes du Ministère de l'Économie</p>
+        </div>
+    </section>
+    <script>
+    (function(){
+        var API = 'https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/prix-des-carburants-en-france-flux-instantane-v2/records';
+        var params = '?where=cp%3D%2238220%22&limit=10';
+        fetch(API + params)
+            .then(function(r){ return r.json(); })
+            .then(function(data){
+                var records = data.results || data.records || [];
+                if(!records.length){
+                    document.getElementById('carburants-content').innerHTML = '<p>Aucune donnée disponible pour Vizille.</p>';
+                    return;
+                }
+                var html = '<div class="stations-grid">';
+                records.forEach(function(rec){
+                    var f = rec.fields || rec;
+                    var nom = f.enseignes || f.nom || f.marque || 'Station';
+                    var addr = f.adresse || '';
+                    html += '<div class="station-card">';
+                    html += '<div class="station-name">' + nom + '</div>';
+                    html += '<div class="station-addr">' + addr + ' — 38220 Vizille</div>';
+                    html += '<div class="prix-grid">';
+                    var carburants = ['gazole','sp95','sp98','e10','e85','gplc'];
+                    var labels = {gazole:'Gazole',sp95:'SP95',sp98:'SP98',e10:'E10',e85:'E85',gplc:'GPLc'};
+                    carburants.forEach(function(c){
+                        var prix = f[c+'_prix'] || f['prix_' + c];
+                        var maj = f[c+'_maj'] || f['maj_' + c];
+                        if(prix){
+                            var prixNum = (typeof prix === 'number' ? prix : parseFloat(prix));
+                            var prixStr = prixNum < 10 ? prixNum.toFixed(3) : (prixNum/1000).toFixed(3);
+                            var dateStr = '';
+                            if(maj){
+                                var d = new Date(maj);
+                                dateStr = d.toLocaleDateString('fr-FR',{day:'numeric',month:'short'});
+                            }
+                            html += '<div class="prix-item">';
+                            html += '<div class="prix-label">' + (labels[c]||c) + '</div>';
+                            html += '<div class="prix-val">' + prixStr + ' €</div>';
+                            if(dateStr) html += '<div class="prix-date">màj ' + dateStr + '</div>';
+                            html += '</div>';
+                        }
+                    });
+                    html += '</div></div>';
+                });
+                html += '</div>';
+                document.getElementById('carburants-content').innerHTML = html;
+            })
+            .catch(function(e){
+                console.warn('Carburants API:', e);
+                document.getElementById('carburants-content').innerHTML = '<p style="color:#888;">Service temporairement indisponible. <a href="https://www.prix-carburants.gouv.fr/" target="_blank">Consulter prix-carburants.gouv.fr</a></p>';
+            });
+    })();
+    </script>
+
     <!-- SECTION ACTUALITÉS DYNAMIQUES -->
     <section class="actualites-section" id="section-actualites">
         <div class="actualites-container">
