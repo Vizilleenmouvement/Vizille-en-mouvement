@@ -1,5 +1,20 @@
 [
   {
+    "id": 1775600000000,
+    "titre": "⛽ Prix des carburants à Vizille — En temps réel",
+    "date": "2026-04-07",
+    "categorie": "Communiqué",
+    "extrait": "Vizille en Mouvement vous informe : consultez les prix du Gazole, SP95, SP98, E10 aux stations Intermarché et TotalEnergies de Vizille, actualisés automatiquement.",
+    "contenu": "Vizille en Mouvement vous informe en temps réel !\n\nRetrouvez désormais sur notre site les prix des carburants des deux stations-service de Vizille :\n\n⛽ Intermarché — 315 rue Ambroise Croizat\n⛽ TotalEnergies — Avenue Maurice Thorez (Automate 24h/24)\n\nLes données sont issues du site officiel du Ministère de l'Économie (prix-carburants.gouv.fr) et actualisées automatiquement.\n\nDisponibilités, ruptures temporaires, dates de mise à jour : tout est affiché en direct sur la page d'accueil de vizilleenmouvement.fr\n\n👉 vizilleenmouvement.fr",
+    "images": [
+      "images/articles/equipe-adjoints-2026.jpg"
+    ],
+    "image": "images/articles/equipe-adjoints-2026.jpg",
+    "priorite": true,
+    "lien": "article-carburants.html",
+    "modifie_le": "2026-04-07T08:00:00.000Z"
+  },
+  {
     "id": 1775500000000,
     "titre": "Construisons ensemble — Un Vizillois propose, l'équipe municipale répond",
     "date": "2026-04-05",

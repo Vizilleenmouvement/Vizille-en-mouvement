@@ -114,6 +114,84 @@
         </div>
     </section>
 
+    <!-- SECTION PRIX CARBURANTS VIZILLE -->
+    <style>
+    .carburants-section { background: linear-gradient(135deg, #1a3a5c 0%, #2d5a87 100%); padding: 3rem 1.5rem; position: relative; overflow: hidden; }
+    .carburants-section::before { content: ''; position: absolute; top: -50%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(201,162,39,0.08) 0%, transparent 70%); border-radius: 50%; }
+    .carburants-container { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+    .carburants-header { text-align: center; margin-bottom: 2rem; }
+    .carburants-badge { display: inline-block; background: rgba(201,162,39,0.2); color: #e8c84a; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 20px; margin-bottom: 1rem; border: 1px solid rgba(201,162,39,0.3); }
+    .carburants-title { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 3vw, 1.8rem); color: #fff; margin: 0 0 0.5rem; line-height: 1.3; }
+    .carburants-subtitle { font-family: 'Source Sans 3', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.65); margin: 0; }
+    .carburants-live { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.7rem; color: #4ade80; margin-top: 0.6rem; font-weight: 600; }
+    .carburants-live .dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; animation: pulse-dot 2s infinite; }
+    @keyframes pulse-dot { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74,222,128,0.4); } 50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(74,222,128,0); } }
+    .stations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .station-card { background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.5rem; transition: transform 0.2s, border-color 0.2s; }
+    .station-card:hover { transform: translateY(-3px); border-color: rgba(201,162,39,0.4); }
+    .station-name { font-weight: 700; color: #fff; font-size: 1.1rem; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.5rem; }
+    .station-addr { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem; }
+    .station-horaires { font-size: 0.75rem; color: #4ade80; margin-bottom: 1rem; font-weight: 500; }
+    .prix-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 0.5rem; }
+    .prix-item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 0.6rem 0.4rem; text-align: center; transition: background 0.2s; }
+    .prix-item:hover { background: rgba(255,255,255,0.1); }
+    .prix-item.rupture { background: rgba(231,76,60,0.15); border-color: rgba(231,76,60,0.25); }
+    .prix-label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); }
+    .prix-val { font-size: 1.2rem; font-weight: 700; color: #e8c84a; margin-top: 0.15rem; }
+    .prix-val.indispo { font-size: 0.7rem; color: #f87171; font-weight: 600; }
+    .prix-date { font-size: 0.58rem; color: rgba(255,255,255,0.3); margin-top: 0.2rem; }
+    .carburants-loading { text-align: center; padding: 2rem; color: rgba(255,255,255,0.5); }
+    .carburants-footer { text-align: center; margin-top: 1.5rem; }
+    .carburants-source { font-size: 0.7rem; color: rgba(255,255,255,0.35); }
+    .carburants-source a { color: rgba(255,255,255,0.5); text-decoration: underline; }
+    @media(max-width:700px){ .stations-grid { grid-template-columns: 1fr; } .carburants-section { padding: 2rem 1rem; } }
+    </style>
+    <section class="carburants-section" id="section-carburants">
+        <div class="carburants-container">
+            <div class="carburants-header">
+                <div class="carburants-badge">Vizille en Mouvement vous informe</div>
+                <h2 class="carburants-title">Prix des carburants à Vizille</h2>
+                <p class="carburants-subtitle">Les tarifs des stations vizilloises, actualisés en temps réel</p>
+                <div class="carburants-live"><span class="dot"></span> Données actualisées automatiquement</div>
+            </div>
+            <div id="carburants-content" class="carburants-loading">Chargement des prix...</div>
+            <div class="carburants-footer">
+                <p class="carburants-source">Source officielle : <a href="https://www.prix-carburants.gouv.fr/" target="_blank" rel="noopener">Ministère de l'Économie — prix-carburants.gouv.fr</a></p>
+            </div>
+        </div>
+    </section>
+    <script>
+    (function(){
+        var NOMS = { 38220003: 'Intermarché', 38220002: 'TotalEnergies' };
+        var API = 'https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/prix-des-carburants-en-france-flux-instantane-v2/records';
+        fetch(API + '?where=cp%3D%2238220%22&limit=10')
+            .then(function(r){ return r.json(); })
+            .then(function(data){
+                var records = data.results || [];
+                if(!records.length){ document.getElementById('carburants-content').innerHTML = '<p>Aucune donnée disponible.</p>'; return; }
+                var html = '<div class="stations-grid">';
+                records.forEach(function(f){
+                    var nom = NOMS[f.id] || 'Station';
+                    var h24 = f.horaires_automate_24_24 === 'Oui';
+                    html += '<div class="station-card"><div class="station-name">⛽ ' + nom + '</div>';
+                    html += '<div class="station-addr">' + (f.adresse||'') + ', Vizille</div>';
+                    html += '<div class="station-horaires">' + (h24 ? '🟢 Automate 24h/24' : '🕐 Voir horaires sur place') + '</div><div class="prix-grid">';
+                    var carbs = ['gazole','sp95','sp98','e10','e85','gplc'];
+                    var labs = {gazole:'Gazole',sp95:'SP95',sp98:'SP98',e10:'E10',e85:'E85',gplc:'GPLc'};
+                    carbs.forEach(function(c){
+                        var p = f[c+'_prix'], m = f[c+'_maj'], rt = f[c+'_rupture_type'];
+                        if(p){ var d = m ? new Date(m).toLocaleDateString('fr-FR',{day:'numeric',month:'short'}) : '';
+                            html += '<div class="prix-item"><div class="prix-label">'+labs[c]+'</div><div class="prix-val">'+parseFloat(p).toFixed(3)+' €</div>'+(d?'<div class="prix-date">màj '+d+'</div>':'')+'</div>';
+                        } else if(rt==='temporaire'){ html += '<div class="prix-item rupture"><div class="prix-label">'+labs[c]+'</div><div class="prix-val indispo">Rupture temp.</div></div>'; }
+                    });
+                    html += '</div></div>';
+                });
+                html += '</div>';
+                document.getElementById('carburants-content').innerHTML = html;
+            }).catch(function(){ document.getElementById('carburants-content').innerHTML = '<p style="color:rgba(255,255,255,0.5);">Service temporairement indisponible. <a href="https://www.prix-carburants.gouv.fr/" target="_blank" style="color:rgba(255,255,255,0.7);">Consulter prix-carburants.gouv.fr</a></p>'; });
+    })();
+    </script>
+
     <!-- BLOC À LA UNE — deux articles prioritaires -->
     <style>
     #bloc-a-la-une { background:#f7f4ef; border-bottom:3px solid #c9a84c; padding:2rem 1rem; display:none; }
@@ -410,186 +488,6 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape') fermerTheme(); });
     </script>
 
-    <!-- SECTION PRIX CARBURANTS VIZILLE -->
-    <style>
-    .carburants-section {
-        background: linear-gradient(135deg, #1a3a5c 0%, #2d5a87 100%);
-        padding: 3rem 1.5rem;
-        position: relative;
-        overflow: hidden;
-    }
-    .carburants-section::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        right: -10%;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(circle, rgba(201,162,39,0.08) 0%, transparent 70%);
-        border-radius: 50%;
-    }
-    .carburants-container { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
-    .carburants-header { text-align: center; margin-bottom: 2rem; }
-    .carburants-badge {
-        display: inline-block;
-        background: rgba(201,162,39,0.2);
-        color: #e8c84a;
-        font-size: 0.65rem;
-        font-weight: 700;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        padding: 0.35rem 1rem;
-        border-radius: 20px;
-        margin-bottom: 1rem;
-        border: 1px solid rgba(201,162,39,0.3);
-    }
-    .carburants-title {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(1.4rem, 3vw, 1.8rem);
-        color: #fff;
-        margin: 0 0 0.5rem;
-        line-height: 1.3;
-    }
-    .carburants-subtitle {
-        font-family: 'Source Sans 3', sans-serif;
-        font-size: 0.9rem;
-        color: rgba(255,255,255,0.65);
-        margin: 0;
-    }
-    .carburants-live {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-        font-size: 0.7rem;
-        color: #4ade80;
-        margin-top: 0.6rem;
-        font-weight: 600;
-    }
-    .carburants-live .dot {
-        width: 6px; height: 6px;
-        background: #4ade80;
-        border-radius: 50%;
-        animation: pulse-dot 2s infinite;
-    }
-    @keyframes pulse-dot {
-        0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
-        50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(74,222,128,0); }
-    }
-    .stations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .station-card {
-        background: rgba(255,255,255,0.07);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 16px;
-        padding: 1.5rem;
-        transition: transform 0.2s, border-color 0.2s;
-    }
-    .station-card:hover { transform: translateY(-3px); border-color: rgba(201,162,39,0.4); }
-    .station-name {
-        font-weight: 700;
-        color: #fff;
-        font-size: 1.1rem;
-        margin-bottom: 0.3rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    .station-addr { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem; }
-    .station-horaires { font-size: 0.75rem; color: #4ade80; margin-bottom: 1rem; font-weight: 500; }
-    .prix-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 0.5rem; }
-    .prix-item {
-        background: rgba(255,255,255,0.06);
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 10px;
-        padding: 0.6rem 0.4rem;
-        text-align: center;
-        transition: background 0.2s;
-    }
-    .prix-item:hover { background: rgba(255,255,255,0.1); }
-    .prix-item.rupture { background: rgba(231,76,60,0.15); border-color: rgba(231,76,60,0.25); }
-    .prix-label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); }
-    .prix-val { font-size: 1.2rem; font-weight: 700; color: #e8c84a; margin-top: 0.15rem; }
-    .prix-val.indispo { font-size: 0.7rem; color: #f87171; font-weight: 600; }
-    .prix-date { font-size: 0.58rem; color: rgba(255,255,255,0.3); margin-top: 0.2rem; }
-    .carburants-loading { text-align: center; padding: 2rem; color: rgba(255,255,255,0.5); }
-    .carburants-footer { text-align: center; margin-top: 1.5rem; }
-    .carburants-source { font-size: 0.7rem; color: rgba(255,255,255,0.35); }
-    .carburants-source a { color: rgba(255,255,255,0.5); text-decoration: underline; }
-    @media(max-width:700px){
-        .stations-grid { grid-template-columns: 1fr; }
-        .carburants-section { padding: 2rem 1rem; }
-    }
-    </style>
-    <section class="carburants-section" id="section-carburants">
-        <div class="carburants-container">
-            <div class="carburants-header">
-                <div class="carburants-badge">Vizille en Mouvement vous informe</div>
-                <h2 class="carburants-title">Prix des carburants à Vizille</h2>
-                <p class="carburants-subtitle">Les tarifs des stations vizilloises, actualisés en temps réel</p>
-                <div class="carburants-live"><span class="dot"></span> Données actualisées automatiquement</div>
-            </div>
-            <div id="carburants-content" class="carburants-loading">Chargement des prix...</div>
-            <div class="carburants-footer">
-                <p class="carburants-source">Source officielle : <a href="https://www.prix-carburants.gouv.fr/" target="_blank" rel="noopener">Ministère de l'Économie — prix-carburants.gouv.fr</a></p>
-            </div>
-        </div>
-    </section>
-    <script>
-    (function(){
-        var NOMS = { 38220003: 'Intermarché', 38220002: 'TotalEnergies' };
-        var API = 'https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/prix-des-carburants-en-france-flux-instantane-v2/records';
-        var params = '?where=cp%3D%2238220%22&limit=10';
-        fetch(API + params)
-            .then(function(r){ return r.json(); })
-            .then(function(data){
-                var records = data.results || [];
-                if(!records.length){
-                    document.getElementById('carburants-content').innerHTML = '<p>Aucune donnée disponible pour Vizille.</p>';
-                    return;
-                }
-                var html = '<div class="stations-grid">';
-                records.forEach(function(f){
-                    var nom = NOMS[f.id] || f.ville || 'Station';
-                    var addr = f.adresse || '';
-                    var h24 = f.horaires_automate_24_24 === 'Oui';
-                    html += '<div class="station-card">';
-                    html += '<div class="station-name">⛽ ' + nom + '</div>';
-                    html += '<div class="station-addr">' + addr + ', Vizille</div>';
-                    html += '<div class="station-horaires">' + (h24 ? '🟢 Automate 24h/24' : '🕐 Voir horaires sur place') + '</div>';
-                    html += '<div class="prix-grid">';
-                    var carburants = ['gazole','sp95','sp98','e10','e85','gplc'];
-                    var labels = {gazole:'Gazole',sp95:'SP95',sp98:'SP98',e10:'E10',e85:'E85',gplc:'GPLc'};
-                    carburants.forEach(function(c){
-                        var prix = f[c+'_prix'];
-                        var maj = f[c+'_maj'];
-                        var ruptureType = f[c+'_rupture_type'];
-                        if(prix){
-                            var prixStr = parseFloat(prix).toFixed(3);
-                            var d = maj ? new Date(maj) : null;
-                            var dateStr = d ? d.toLocaleDateString('fr-FR',{day:'numeric',month:'short'}) : '';
-                            html += '<div class="prix-item">';
-                            html += '<div class="prix-label">' + labels[c] + '</div>';
-                            html += '<div class="prix-val">' + prixStr + ' €</div>';
-                            if(dateStr) html += '<div class="prix-date">màj ' + dateStr + '</div>';
-                            html += '</div>';
-                        } else if(ruptureType === 'temporaire'){
-                            html += '<div class="prix-item rupture">';
-                            html += '<div class="prix-label">' + labels[c] + '</div>';
-                            html += '<div class="prix-val indispo">Rupture temp.</div>';
-                            html += '</div>';
-                        }
-                    });
-                    html += '</div></div>';
-                });
-                html += '</div>';
-                document.getElementById('carburants-content').innerHTML = html;
-            })
-            .catch(function(e){
-                console.warn('Carburants API:', e);
-                document.getElementById('carburants-content').innerHTML = '<p style="color:#888;">Service temporairement indisponible. <a href="https://www.prix-carburants.gouv.fr/" target="_blank">Consulter prix-carburants.gouv.fr</a></p>';
-            });
-    })();
-    </script>
 
     <!-- SECTION ACTUALITÉS DYNAMIQUES -->
     <section class="actualites-section" id="section-actualites">
