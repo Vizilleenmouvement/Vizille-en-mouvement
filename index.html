@@ -163,8 +163,8 @@
     <script>
     (function(){
         var API = 'https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/prix-des-carburants-en-france-flux-instantane-v2/records';
-        // Recherche par coordonnées : rayon de 8km autour de Vizille (lat 45.084, lon 5.766)
-        var query = '?where=within_distance(geom,geom\'POINT(5.766 45.084)\',8km)&limit=20&order_by=distance(geom,geom\'POINT(5.766 45.084)\')';
+        // Recherche par coordonnées : rayon de 15km autour de Vizille (lat 45.084, lon 5.766)
+        var query = '?where=within_distance(geom,geom\'POINT(5.766 45.084)\',15km)&limit=30&order_by=distance(geom,geom\'POINT(5.766 45.084)\')';
         fetch(API + query)
             .then(function(r){ return r.json(); })
             .then(function(data){
@@ -189,7 +189,7 @@
                     if(dispos.length){
                         html += '<h3 style="color:rgba(255,255,255,0.6);font-family:\'Playfair Display\',serif;font-size:1rem;margin:1.5rem 0 1rem;text-align:center;">Disponibilités à proximité</h3>';
                         html += '<div class="stations-grid">';
-                        dispos.slice(0,6).forEach(function(f){ html += renderStation(f, false); });
+                        dispos.slice(0,8).forEach(function(f){ html += renderStation(f, false); });
                         html += '</div>';
                     }
                 }
@@ -198,12 +198,20 @@
 
         var NOMS = {
             38220002: 'TotalEnergies — Rond-point Muzet',
-            38220003: 'Intermarché'
+            38220003: 'Intermarché Vizille',
+            38130004: 'E.Leclerc Comboire',
+            38130005: 'E.Leclerc Échirolles'
         };
         function renderStation(f, isVizille){
             var ville = f.ville || '';
             var villeCap = ville.charAt(0).toUpperCase() + ville.slice(1).toLowerCase();
             var nom = NOMS[f.id] || villeCap;
+            // Détecter Leclerc par les services ou l'adresse
+            if(!NOMS[f.id]){
+                var services = (f.services_service || []).join(' ').toLowerCase();
+                var addr = (f.adresse || '').toLowerCase();
+                if(addr.indexOf('leclerc') > -1 || services.indexOf('leclerc') > -1) nom = 'E.Leclerc ' + villeCap;
+            }
             var h24 = f.horaires_automate_24_24 === 'Oui';
             var cardStyle = isVizille ? '' : ' style="opacity:0.85;"';
             var s = '<div class="station-card"'+cardStyle+'>';
