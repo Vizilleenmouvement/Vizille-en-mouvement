@@ -126,7 +126,7 @@
     .carburants-live { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.7rem; color: #4ade80; margin-top: 0.6rem; font-weight: 600; }
     .carburants-live .dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; animation: pulse-dot 2s infinite; }
     @keyframes pulse-dot { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74,222,128,0.4); } 50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(74,222,128,0); } }
-    .stations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .stations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
     .station-card { background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.5rem; transition: transform 0.2s, border-color 0.2s; }
     .station-card:hover { transform: translateY(-3px); border-color: rgba(201,162,39,0.4); }
     .station-name { font-weight: 700; color: #fff; font-size: 1.1rem; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.5rem; }
@@ -196,13 +196,18 @@
                 document.getElementById('carburants-content').innerHTML = html;
             }).catch(function(){ document.getElementById('carburants-content').innerHTML = '<p style="color:rgba(255,255,255,0.5);">Service temporairement indisponible. <a href="https://www.prix-carburants.gouv.fr/" target="_blank" style="color:rgba(255,255,255,0.7);">Consulter prix-carburants.gouv.fr</a></p>'; });
 
+        var NOMS = {
+            38220002: 'TotalEnergies — Rond-point Muzet',
+            38220003: 'Intermarché'
+        };
         function renderStation(f, isVizille){
             var ville = f.ville || '';
             var villeCap = ville.charAt(0).toUpperCase() + ville.slice(1).toLowerCase();
+            var nom = NOMS[f.id] || villeCap;
             var h24 = f.horaires_automate_24_24 === 'Oui';
             var cardStyle = isVizille ? '' : ' style="opacity:0.85;"';
             var s = '<div class="station-card"'+cardStyle+'>';
-            s += '<div class="station-name">⛽ ' + villeCap + '</div>';
+            s += '<div class="station-name">⛽ ' + nom + '</div>';
             s += '<div class="station-addr">' + (f.adresse||'') + (isVizille ? '' : ', ' + villeCap) + '</div>';
             s += '<div class="station-horaires">' + (h24 ? '🟢 Automate 24h/24' : '🕐 Horaires en station') + '</div>';
             s += '<div class="prix-grid">';
