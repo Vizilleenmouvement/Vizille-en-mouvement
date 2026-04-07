@@ -142,6 +142,12 @@
     .prix-date { font-size: 0.58rem; color: rgba(255,255,255,0.3); margin-top: 0.2rem; }
     .carburants-loading { text-align: center; padding: 2rem; color: rgba(255,255,255,0.5); }
     .carburants-footer { text-align: center; margin-top: 1.5rem; }
+    .carburants-penurie { background: rgba(231,76,60,0.15); border: 1px solid rgba(231,76,60,0.3); border-radius: 10px; padding: 0.8rem 1.2rem; margin-bottom: 1.5rem; text-align: center; display: none; }
+    .carburants-penurie.visible { display: block; }
+    .carburants-penurie-title { font-size: 0.85rem; font-weight: 700; color: #f87171; margin-bottom: 0.3rem; }
+    .carburants-penurie-details { font-size: 0.78rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+    .carburants-penurie-bar { height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; margin-top: 0.5rem; overflow: hidden; }
+    .carburants-penurie-fill { height: 100%; border-radius: 3px; transition: width 1s ease; }
     .carburants-source { font-size: 0.7rem; color: rgba(255,255,255,0.35); }
     .carburants-source a { color: rgba(255,255,255,0.5); text-decoration: underline; }
     @media(max-width:700px){ .stations-grid { grid-template-columns: 1fr; } .carburants-section { padding: 2rem 1rem; } }
@@ -154,6 +160,7 @@
                 <p class="carburants-subtitle">Vizille et alentours — tarifs et disponibilités en temps réel</p>
                 <div class="carburants-live"><span class="dot"></span> Données actualisées automatiquement</div>
             </div>
+            <div id="carburants-penurie" class="carburants-penurie"></div>
             <div id="carburants-content" class="carburants-loading">Chargement des prix...</div>
             <div class="carburants-footer">
                 <p class="carburants-source">Source officielle : <a href="https://www.prix-carburants.gouv.fr/" target="_blank" rel="noopener">Ministère de l'Économie — prix-carburants.gouv.fr</a></p>
@@ -239,6 +246,40 @@
             s += '</div>';
             return s;
         }
+
+        // --- Indicateur pénurie nationale ---
+        var API_NAT = 'https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/prix-des-carburants-en-france-flux-instantane-v2/records';
+        // Total stations
+        fetch(API_NAT + '?limit=0')
+            .then(function(r){ return r.json(); })
+            .then(function(totalData){
+                var total = totalData.total_count || 0;
+                if(!total) return;
+                // Stations avec au moins une rupture temporaire de gazole
+                return fetch(API_NAT + '?where=gazole_rupture_type%3D%22temporaire%22&limit=0')
+                    .then(function(r){ return r.json(); })
+                    .then(function(gazData){
+                        var gazRupture = gazData.total_count || 0;
+                        // Stations avec rupture totale (aucun carburant dispo)
+                        return fetch(API_NAT + '?where=carburants_disponibles%20is%20null&limit=0')
+                            .then(function(r){ return r.json(); })
+                            .then(function(secData){
+                                var aSec = secData.total_count || 0;
+                                var pctSec = ((aSec / total) * 100).toFixed(1);
+                                var pctGaz = ((gazRupture / total) * 100).toFixed(1);
+                                var el = document.getElementById('carburants-penurie');
+                                var couleur = pctSec > 15 ? '#ef4444' : pctSec > 5 ? '#f59e0b' : '#4ade80';
+                                var niveau = pctSec > 15 ? '🔴 Situation tendue' : pctSec > 5 ? '🟠 Tensions modérées' : '🟢 Approvisionnement normal';
+                                el.innerHTML = '<div class="carburants-penurie-title">🇫🇷 Situation nationale — ' + niveau + '</div>'
+                                    + '<div class="carburants-penurie-details">'
+                                    + '<strong>' + pctSec + '%</strong> des stations en rupture totale (' + aSec.toLocaleString('fr-FR') + ' / ' + total.toLocaleString('fr-FR') + ')'
+                                    + (gazRupture > 0 ? ' · <strong>' + pctGaz + '%</strong> sans Gazole' : '')
+                                    + '</div>'
+                                    + '<div class="carburants-penurie-bar"><div class="carburants-penurie-fill" style="width:' + Math.min(pctSec * 2, 100) + '%;background:' + couleur + ';"></div></div>';
+                                el.classList.add('visible');
+                            });
+                    });
+            }).catch(function(){});
     })();
     </script>
 
