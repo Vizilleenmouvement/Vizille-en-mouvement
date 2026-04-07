@@ -283,6 +283,195 @@
     })();
     </script>
 
+    <!-- SECTION TRANSPORTS VIZILLE -->
+    <style>
+    .transports-section {
+        background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+        padding: 3rem 1.5rem;
+        position: relative;
+    }
+    .transports-container { max-width: 1100px; margin: 0 auto; }
+    .transports-header { text-align: center; margin-bottom: 2rem; }
+    .transports-badge { display: inline-block; background: rgba(74,222,128,0.15); color: #4ade80; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 20px; margin-bottom: 1rem; border: 1px solid rgba(74,222,128,0.3); }
+    .transports-title { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 3vw, 1.8rem); color: #fff; margin: 0 0 0.5rem; }
+    .transports-subtitle { font-size: 0.9rem; color: rgba(255,255,255,0.55); margin: 0; }
+    .transports-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+    .transport-card { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.5rem; }
+    .transport-card-title { font-weight: 700; color: #fff; font-size: 1.05rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+
+    /* TRAFIC */
+    .trafic-status { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; }
+    .trafic-indicator { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+    .trafic-label { font-size: 0.9rem; color: #fff; font-weight: 600; }
+    .trafic-detail { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+    .trafic-trajet { display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); border-radius: 8px; padding: 0.6rem 1rem; margin-top: 0.8rem; }
+    .trafic-trajet-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+    .trafic-trajet-time { font-size: 1.3rem; font-weight: 700; color: #4ade80; }
+    .trafic-link { display: inline-block; margin-top: 0.8rem; font-size: 0.85rem; color: #4ade80; text-decoration: none; font-weight: 600; }
+
+    /* BUS */
+    .bus-line { display: flex; align-items: center; gap: 0.6rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .bus-line:last-child { border-bottom: none; }
+    .bus-num { background: #e74c3c; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.5rem; border-radius: 4px; min-width: 36px; text-align: center; }
+    .bus-num.exp { background: #9b59b6; }
+    .bus-dest { flex: 1; font-size: 0.82rem; color: rgba(255,255,255,0.75); }
+    .bus-time { font-size: 0.9rem; font-weight: 700; color: #4ade80; }
+    .bus-loading { text-align: center; padding: 1rem; color: rgba(255,255,255,0.4); font-size: 0.85rem; }
+
+    .transports-footer { text-align: center; margin-top: 1.5rem; }
+    .transports-source { font-size: 0.7rem; color: rgba(255,255,255,0.3); }
+    .transports-source a { color: rgba(255,255,255,0.45); text-decoration: underline; }
+    @media(max-width:700px){ .transports-grid { grid-template-columns: 1fr; } .transports-section { padding: 2rem 1rem; } }
+    </style>
+    <section class="transports-section">
+        <div class="transports-container">
+            <div class="transports-header">
+                <div class="transports-badge">Vizille en Mouvement vous informe</div>
+                <h2 class="transports-title">Transports — Vizille / Grenoble</h2>
+                <p class="transports-subtitle">Trafic routier et prochains départs en temps réel</p>
+            </div>
+            <div class="transports-grid">
+                <!-- TRAFIC RN85 -->
+                <div class="transport-card">
+                    <div class="transport-card-title">🚗 Trafic RN85 — Vizille ↔ Grenoble</div>
+                    <div id="trafic-content">
+                        <div class="bus-loading">Chargement du trafic...</div>
+                    </div>
+                    <a href="https://www.google.com/maps/dir/Vizille/Grenoble/@45.1266,5.7408,12z/data=!5m1!1e1" target="_blank" rel="noopener" class="trafic-link">📍 Voir sur Google Maps →</a>
+                </div>
+                <!-- PROCHAINS BUS -->
+                <div class="transport-card">
+                    <div class="transport-card-title">🚌 Prochains départs — Vizille</div>
+                    <div id="bus-content">
+                        <div class="bus-loading">Chargement des horaires...</div>
+                    </div>
+                    <a href="https://www.tag.fr/" target="_blank" rel="noopener" class="trafic-link">🕐 Tous les horaires TAG →</a>
+                </div>
+            </div>
+            <div class="transports-footer">
+                <p class="transports-source">Sources : <a href="https://www.mobilites-m.fr/" target="_blank" rel="noopener">Mobilités m</a> · <a href="https://www.tag.fr/" target="_blank" rel="noopener">TAG</a> · <a href="https://www.google.com/maps" target="_blank" rel="noopener">Google Maps</a></p>
+            </div>
+        </div>
+    </section>
+    <script>
+    // === TRAFIC RN85 ===
+    (function(){
+        fetch('https://data.mobilites-m.fr/api/dyn/trr/json')
+            .then(function(r){ return r.json(); })
+            .then(function(data){
+                // Chercher les tronçons de la RN85 / D1085 entre Vizille et Grenoble
+                var features = data.features || data || [];
+                var rn85 = [];
+                if(Array.isArray(features)){
+                    features.forEach(function(f){
+                        var props = f.properties || f;
+                        var nom = (props.nom || props.name || props.libelle || '').toLowerCase();
+                        var id = (props.id || '').toLowerCase();
+                        if(nom.indexOf('rn85') > -1 || nom.indexOf('n85') > -1 || nom.indexOf('d1085') > -1 ||
+                           nom.indexOf('vizille') > -1 || nom.indexOf('jarrie') > -1 || nom.indexOf('pont-de-claix') > -1 ||
+                           id.indexOf('rn85') > -1 || id.indexOf('d1085') > -1){
+                            rn85.push(props);
+                        }
+                    });
+                }
+                var el = document.getElementById('trafic-content');
+                if(rn85.length > 0){
+                    // Calculer le niveau moyen
+                    var niveaux = rn85.map(function(t){ return t.niveau || t.level || t.niveauService || 0; });
+                    var moy = niveaux.reduce(function(a,b){return a+b;},0) / niveaux.length;
+                    var couleur, texte;
+                    if(moy <= 1.5){ couleur = '#4ade80'; texte = 'Trafic fluide'; }
+                    else if(moy <= 2.5){ couleur = '#fbbf24'; texte = 'Trafic dense'; }
+                    else if(moy <= 3.5){ couleur = '#f97316'; texte = 'Trafic ralenti'; }
+                    else { couleur = '#ef4444'; texte = 'Trafic très perturbé'; }
+                    el.innerHTML = '<div class="trafic-status"><div class="trafic-indicator" style="background:'+couleur+';box-shadow:0 0 8px '+couleur+';"></div><div class="trafic-label">'+texte+'</div></div>'
+                        + '<div class="trafic-detail">'+rn85.length+' tronçons analysés sur l\'axe Vizille — Grenoble</div>'
+                        + '<div class="trafic-trajet"><div><div class="trafic-trajet-label">Temps estimé habituel</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">Vizille → Grenoble centre</div></div><div class="trafic-trajet-time">~25 min</div></div>';
+                } else {
+                    // Pas de tronçons trouvés, afficher lien Google Maps
+                    el.innerHTML = '<div class="trafic-status"><div class="trafic-indicator" style="background:#888;"></div><div class="trafic-label">Consultez le trafic en direct</div></div>'
+                        + '<div class="trafic-detail">Axe RN85 / D1085 Vizille — Jarrie — Pont-de-Claix — Grenoble</div>'
+                        + '<div class="trafic-trajet"><div><div class="trafic-trajet-label">Temps normal</div></div><div class="trafic-trajet-time">~25 min</div></div>';
+                }
+            }).catch(function(){
+                document.getElementById('trafic-content').innerHTML = '<div class="trafic-status"><div class="trafic-indicator" style="background:#888;"></div><div class="trafic-label">Données indisponibles</div></div>'
+                    + '<div class="trafic-detail">Consultez Google Maps pour le trafic en temps réel.</div>';
+            });
+    })();
+
+    // === PROCHAINS BUS VIZILLE ===
+    (function(){
+        // Arrêts principaux de Vizille — on teste plusieurs formats d'ID
+        var arrets = [
+            { id: 'SEM:VIZCHF', nom: 'Vizille Chantefeuille' },
+            { id: 'SEM:VIZLYC', nom: 'Vizille Lycée' },
+            { id: 'SEM:VIZPEG', nom: 'Vizille Le Péage' },
+            { id: 'SEM:VIZCHAT', nom: 'Vizille Château' }
+        ];
+        var API_BUS = 'https://data.mobilites-m.fr/api/routers/default/index/stops/';
+        var allDepartures = [];
+        var loaded = 0;
+        var total = arrets.length;
+
+        arrets.forEach(function(arret){
+            fetch(API_BUS + arret.id + '/stoptimes')
+                .then(function(r){ return r.ok ? r.json() : []; })
+                .then(function(data){
+                    if(Array.isArray(data)){
+                        data.forEach(function(pattern){
+                            var route = pattern.pattern || {};
+                            var routeId = route.id || '';
+                            var routeDesc = route.desc || '';
+                            var times = pattern.times || [];
+                            times.slice(0, 3).forEach(function(t){
+                                var secs = t.realtimeDeparture || t.scheduledDeparture || 0;
+                                var h = Math.floor(secs / 3600);
+                                var m = Math.floor((secs % 3600) / 60);
+                                var now = new Date();
+                                var nowSecs = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+                                var diff = secs - nowSecs;
+                                if(diff > 0 && diff < 7200){
+                                    var ligne = routeId.split(':').pop() || '?';
+                                    allDepartures.push({
+                                        ligne: ligne,
+                                        direction: routeDesc || arret.nom,
+                                        depart: (h < 10 ? '0' : '') + h + ':' + (m < 10 ? '0' : '') + m,
+                                        dans: Math.round(diff / 60),
+                                        arret: arret.nom
+                                    });
+                                }
+                            });
+                        });
+                    }
+                }).catch(function(){})
+                .finally(function(){
+                    loaded++;
+                    if(loaded >= total) renderBus();
+                });
+        });
+
+        function renderBus(){
+            var el = document.getElementById('bus-content');
+            allDepartures.sort(function(a,b){ return a.dans - b.dans; });
+            var top = allDepartures.slice(0, 6);
+            if(top.length === 0){
+                el.innerHTML = '<div class="bus-loading">Pas de départ imminent ou données indisponibles.<br><a href="https://www.tag.fr/" target="_blank" style="color:#4ade80;">Consulter les horaires TAG →</a></div>';
+                return;
+            }
+            var html = '';
+            top.forEach(function(d){
+                var isExpress = d.ligne.indexOf('X') === 0 || d.ligne.indexOf('30') === 0;
+                html += '<div class="bus-line">'
+                    + '<span class="bus-num' + (isExpress ? ' exp' : '') + '">' + d.ligne + '</span>'
+                    + '<span class="bus-dest">' + d.direction + '</span>'
+                    + '<span class="bus-time">' + d.dans + ' min</span>'
+                    + '</div>';
+            });
+            el.innerHTML = html;
+        }
+    })();
+    </script>
+
     <!-- BLOC À LA UNE — deux articles prioritaires -->
     <style>
     #bloc-a-la-une { background:#f7f4ef; border-bottom:3px solid #c9a84c; padding:2rem 1rem; display:none; }
