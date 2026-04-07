@@ -418,12 +418,15 @@
     .carburants-title small { display: block; font-family: 'Source Sans 3', sans-serif; font-size: 0.75rem; color: #888; font-weight: 400; margin-top: 0.3rem; }
     .stations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .station-card { background: #fff; border-radius: 12px; padding: 1.2rem 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-    .station-name { font-weight: 700; color: #1a3a5c; font-size: 1rem; margin-bottom: 0.2rem; }
-    .station-addr { font-size: 0.8rem; color: #888; margin-bottom: 0.8rem; }
-    .prix-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 0.5rem; }
+    .station-name { font-weight: 700; color: #1a3a5c; font-size: 1.05rem; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 0.5rem; }
+    .station-addr { font-size: 0.8rem; color: #888; margin-bottom: 0.3rem; }
+    .station-horaires { font-size: 0.72rem; color: #27ae60; margin-bottom: 0.8rem; }
+    .prix-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 0.5rem; }
     .prix-item { background: #f0f7ff; border-radius: 8px; padding: 0.5rem; text-align: center; }
+    .prix-item.rupture { background: #fff0f0; }
     .prix-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: #666; }
-    .prix-val { font-size: 1.2rem; font-weight: 700; color: #1a3a5c; }
+    .prix-val { font-size: 1.15rem; font-weight: 700; color: #1a3a5c; }
+    .prix-val.indispo { font-size: 0.75rem; color: #e74c3c; font-weight: 600; }
     .prix-date { font-size: 0.6rem; color: #aaa; margin-top: 0.15rem; }
     .carburants-loading { text-align: center; padding: 2rem; color: #888; }
     .carburants-source { text-align: center; font-size: 0.7rem; color: #aaa; margin-top: 1rem; }
@@ -439,42 +442,46 @@
     </section>
     <script>
     (function(){
+        var NOMS = { 38220003: 'Intermarché', 38220002: 'TotalEnergies' };
         var API = 'https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/prix-des-carburants-en-france-flux-instantane-v2/records';
         var params = '?where=cp%3D%2238220%22&limit=10';
         fetch(API + params)
             .then(function(r){ return r.json(); })
             .then(function(data){
-                var records = data.results || data.records || [];
+                var records = data.results || [];
                 if(!records.length){
                     document.getElementById('carburants-content').innerHTML = '<p>Aucune donnée disponible pour Vizille.</p>';
                     return;
                 }
                 var html = '<div class="stations-grid">';
-                records.forEach(function(rec){
-                    var f = rec.fields || rec;
-                    var nom = f.enseignes || f.nom || f.marque || 'Station';
+                records.forEach(function(f){
+                    var nom = NOMS[f.id] || f.ville || 'Station';
                     var addr = f.adresse || '';
+                    var h24 = f.horaires_automate_24_24 === 'Oui';
                     html += '<div class="station-card">';
-                    html += '<div class="station-name">' + nom + '</div>';
-                    html += '<div class="station-addr">' + addr + ' — 38220 Vizille</div>';
+                    html += '<div class="station-name">⛽ ' + nom + '</div>';
+                    html += '<div class="station-addr">' + addr + ', Vizille</div>';
+                    html += '<div class="station-horaires">' + (h24 ? '🟢 Automate 24h/24' : '🕐 Voir horaires sur place') + '</div>';
                     html += '<div class="prix-grid">';
                     var carburants = ['gazole','sp95','sp98','e10','e85','gplc'];
                     var labels = {gazole:'Gazole',sp95:'SP95',sp98:'SP98',e10:'E10',e85:'E85',gplc:'GPLc'};
                     carburants.forEach(function(c){
-                        var prix = f[c+'_prix'] || f['prix_' + c];
-                        var maj = f[c+'_maj'] || f['maj_' + c];
+                        var prix = f[c+'_prix'];
+                        var maj = f[c+'_maj'];
+                        var ruptureType = f[c+'_rupture_type'];
                         if(prix){
-                            var prixNum = (typeof prix === 'number' ? prix : parseFloat(prix));
-                            var prixStr = prixNum < 10 ? prixNum.toFixed(3) : (prixNum/1000).toFixed(3);
-                            var dateStr = '';
-                            if(maj){
-                                var d = new Date(maj);
-                                dateStr = d.toLocaleDateString('fr-FR',{day:'numeric',month:'short'});
-                            }
+                            var prixStr = parseFloat(prix).toFixed(3);
+                            var d = maj ? new Date(maj) : null;
+                            var dateStr = d ? d.toLocaleDateString('fr-FR',{day:'numeric',month:'short'}) : '';
                             html += '<div class="prix-item">';
-                            html += '<div class="prix-label">' + (labels[c]||c) + '</div>';
+                            html += '<div class="prix-label">' + labels[c] + '</div>';
                             html += '<div class="prix-val">' + prixStr + ' €</div>';
                             if(dateStr) html += '<div class="prix-date">màj ' + dateStr + '</div>';
+                            html += '</div>';
+                        } else if(ruptureType === 'temporaire'){
+                            html += '<div class="prix-item rupture">';
+                            html += '<div class="prix-label">' + labels[c] + '</div>';
+                            html += '<div class="prix-val indispo">Rupture temp.</div>';
                             html += '</div>';
                         }
                     });
