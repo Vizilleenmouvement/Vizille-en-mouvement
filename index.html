@@ -229,7 +229,14 @@
                     s += '<div class="prix-item rupture"><div class="prix-label">'+labs[c]+'</div><div class="prix-val indispo">Rupture temp.</div></div>';
                 }
             });
-            s += '</div></div>';
+            s += '</div>';
+            // Lien Google Maps trafic
+            var lat = f.geom ? f.geom.lat : null;
+            var lon = f.geom ? f.geom.lon : null;
+            if(lat && lon){
+                s += '<a href="https://www.google.com/maps/search/station+essence/@'+lat+','+lon+',16z/data=!5m1!1e1" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.8rem;font-size:0.75rem;color:#4ade80;text-decoration:none;opacity:0.8;">📍 Voir le trafic en direct →</a>';
+            }
+            s += '</div>';
             return s;
         }
     })();
