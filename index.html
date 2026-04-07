@@ -151,7 +151,7 @@
             <div class="carburants-header">
                 <div class="carburants-badge">Vizille en Mouvement vous informe</div>
                 <h2 class="carburants-title">Prix des carburants à Vizille</h2>
-                <p class="carburants-subtitle">Les tarifs des stations vizilloises, actualisés en temps réel</p>
+                <p class="carburants-subtitle">Vizille et alentours — tarifs et disponibilités en temps réel</p>
                 <div class="carburants-live"><span class="dot"></span> Données actualisées automatiquement</div>
             </div>
             <div id="carburants-content" class="carburants-loading">Chargement des prix...</div>
@@ -162,33 +162,63 @@
     </section>
     <script>
     (function(){
-        var NOMS = { 38220003: 'Intermarché', 38220002: 'TotalEnergies' };
         var API = 'https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/prix-des-carburants-en-france-flux-instantane-v2/records';
-        fetch(API + '?where=cp%3D%2238220%22&limit=10')
+        // Recherche par coordonnées : rayon de 8km autour de Vizille (lat 45.084, lon 5.766)
+        var query = '?where=within_distance(geom,geom\'POINT(5.766 45.084)\',8km)&limit=20&order_by=distance(geom,geom\'POINT(5.766 45.084)\')';
+        fetch(API + query)
             .then(function(r){ return r.json(); })
             .then(function(data){
                 var records = data.results || [];
                 if(!records.length){ document.getElementById('carburants-content').innerHTML = '<p>Aucune donnée disponible.</p>'; return; }
-                var html = '<div class="stations-grid">';
-                records.forEach(function(f){
-                    var nom = NOMS[f.id] || 'Station';
-                    var h24 = f.horaires_automate_24_24 === 'Oui';
-                    html += '<div class="station-card"><div class="station-name">⛽ ' + nom + '</div>';
-                    html += '<div class="station-addr">' + (f.adresse||'') + ', Vizille</div>';
-                    html += '<div class="station-horaires">' + (h24 ? '🟢 Automate 24h/24' : '🕐 Voir horaires sur place') + '</div><div class="prix-grid">';
-                    var carbs = ['gazole','sp95','sp98','e10','e85','gplc'];
-                    var labs = {gazole:'Gazole',sp95:'SP95',sp98:'SP98',e10:'E10',e85:'E85',gplc:'GPLc'};
-                    carbs.forEach(function(c){
-                        var p = f[c+'_prix'], m = f[c+'_maj'], rt = f[c+'_rupture_type'];
-                        if(p){ var d = m ? new Date(m).toLocaleDateString('fr-FR',{day:'numeric',month:'short'}) : '';
-                            html += '<div class="prix-item"><div class="prix-label">'+labs[c]+'</div><div class="prix-val">'+parseFloat(p).toFixed(3)+' €</div>'+(d?'<div class="prix-date">màj '+d+'</div>':'')+'</div>';
-                        } else if(rt==='temporaire'){ html += '<div class="prix-item rupture"><div class="prix-label">'+labs[c]+'</div><div class="prix-val indispo">Rupture temp.</div></div>'; }
-                    });
-                    html += '</div></div>';
-                });
-                html += '</div>';
+                // Séparer Vizille et alentours
+                var vizille = records.filter(function(f){ return f.cp === '38220'; });
+                var alentours = records.filter(function(f){ return f.cp !== '38220'; });
+
+                var html = '';
+                // --- VIZILLE ---
+                if(vizille.length){
+                    html += '<h3 style="color:#e8c84a;font-family:\'Playfair Display\',serif;font-size:1.1rem;margin:0 0 1rem;text-align:center;">À Vizille</h3>';
+                    html += '<div class="stations-grid">';
+                    vizille.forEach(function(f){ html += renderStation(f, true); });
+                    html += '</div>';
+                }
+                // --- ALENTOURS ---
+                if(alentours.length){
+                    // Ne garder que celles avec au moins un carburant disponible
+                    var dispos = alentours.filter(function(f){ return f.carburants_disponibles && f.carburants_disponibles.length > 0; });
+                    if(dispos.length){
+                        html += '<h3 style="color:rgba(255,255,255,0.6);font-family:\'Playfair Display\',serif;font-size:1rem;margin:1.5rem 0 1rem;text-align:center;">Disponibilités à proximité</h3>';
+                        html += '<div class="stations-grid">';
+                        dispos.slice(0,6).forEach(function(f){ html += renderStation(f, false); });
+                        html += '</div>';
+                    }
+                }
                 document.getElementById('carburants-content').innerHTML = html;
             }).catch(function(){ document.getElementById('carburants-content').innerHTML = '<p style="color:rgba(255,255,255,0.5);">Service temporairement indisponible. <a href="https://www.prix-carburants.gouv.fr/" target="_blank" style="color:rgba(255,255,255,0.7);">Consulter prix-carburants.gouv.fr</a></p>'; });
+
+        function renderStation(f, isVizille){
+            var ville = f.ville || '';
+            var villeCap = ville.charAt(0).toUpperCase() + ville.slice(1).toLowerCase();
+            var h24 = f.horaires_automate_24_24 === 'Oui';
+            var cardStyle = isVizille ? '' : ' style="opacity:0.85;"';
+            var s = '<div class="station-card"'+cardStyle+'>';
+            s += '<div class="station-name">⛽ ' + villeCap + '</div>';
+            s += '<div class="station-addr">' + (f.adresse||'') + (isVizille ? '' : ', ' + villeCap) + '</div>';
+            s += '<div class="station-horaires">' + (h24 ? '🟢 Automate 24h/24' : '🕐 Horaires en station') + '</div>';
+            s += '<div class="prix-grid">';
+            var carbs = ['gazole','sp95','sp98','e10','e85','gplc'];
+            var labs = {gazole:'Gazole',sp95:'SP95',sp98:'SP98',e10:'E10',e85:'E85',gplc:'GPLc'};
+            carbs.forEach(function(c){
+                var p = f[c+'_prix'], m = f[c+'_maj'], rt = f[c+'_rupture_type'];
+                if(p){ var d = m ? new Date(m).toLocaleDateString('fr-FR',{day:'numeric',month:'short'}) : '';
+                    s += '<div class="prix-item"><div class="prix-label">'+labs[c]+'</div><div class="prix-val">'+parseFloat(p).toFixed(3)+' €</div>'+(d?'<div class="prix-date">màj '+d+'</div>':'')+'</div>';
+                } else if(rt==='temporaire'){
+                    s += '<div class="prix-item rupture"><div class="prix-label">'+labs[c]+'</div><div class="prix-val indispo">Rupture temp.</div></div>';
+                }
+            });
+            s += '</div></div>';
+            return s;
+        }
     })();
     </script>
 
