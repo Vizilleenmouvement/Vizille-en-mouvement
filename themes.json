@@ -1,6 +1,6 @@
 [
   {
-    "theme": "Concertation citoyenne",
+    "theme": "Concertation Citoyenne",
     "icon": "🗣️",
     "color": "#e67e22"
   },
@@ -103,5 +103,35 @@
     "theme": "Gouvernance",
     "icon": "🏛️",
     "color": "#5c6bc0"
+  },
+  {
+    "theme": "Plan Climat",
+    "icon": "🌍",
+    "color": "#26a69a"
+  },
+  {
+    "theme": "Finance",
+    "icon": "💰",
+    "color": "#ffc107"
+  },
+  {
+    "theme": "Intercommunalité",
+    "icon": "🔗",
+    "color": "#00acc1"
+  },
+  {
+    "theme": "Administration",
+    "icon": "📋",
+    "color": "#546e7a"
+  },
+  {
+    "theme": "Jumelages",
+    "icon": "🌐",
+    "color": "#ff7043"
+  },
+  {
+    "theme": "Personnel",
+    "icon": "🧑‍💼",
+    "color": "#78909c"
   }
 ]
