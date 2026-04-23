@@ -567,6 +567,21 @@
                 + '<span class="theme-arrow" aria-hidden="true">→</span>'
                 + '</button>';
         }).join('');
+
+        // Observer les nouvelles cartes (ajoutées après le scan initial de site-features.js)
+        if (window.IntersectionObserver) {
+            var cardObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        cardObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            grid.querySelectorAll('.animate-on-scroll').forEach(function(el) { cardObserver.observe(el); });
+        } else {
+            grid.querySelectorAll('.animate-on-scroll').forEach(function(el) { el.classList.add('animated'); });
+        }
     }
 
     window.ouvrirTheme = function(theme) {
