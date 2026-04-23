@@ -559,7 +559,7 @@
 
         grid.innerHTML = themesAvecActions.map(function(t) {
             var count = allActions.filter(function(a){ return a.theme === t.theme && !a.suspendu; }).length;
-            return '<button class="theme-card animate-on-scroll" onclick="ouvrirTheme(\''+escHtml(t.theme)+'\')">'
+            return '<button class="theme-card" onclick="ouvrirTheme(\''+escHtml(t.theme)+'\')">'
                 + '<div class="theme-icon">'+t.icon+'</div>'
                 + '<h3>'+escHtml(t.theme)+'</h3>'
                 + '<p>'+count+' action'+(count>1?'s':'')+' réalisée'+(count>1?'s':'')+'</p>'
@@ -567,21 +567,6 @@
                 + '<span class="theme-arrow" aria-hidden="true">→</span>'
                 + '</button>';
         }).join('');
-
-        // Observer les nouvelles cartes — le CSS de cette page utilise .visible (pas .animated)
-        if (window.IntersectionObserver) {
-            var cardObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        cardObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-            grid.querySelectorAll('.animate-on-scroll').forEach(function(el) { cardObserver.observe(el); });
-        } else {
-            grid.querySelectorAll('.animate-on-scroll').forEach(function(el) { el.classList.add('visible'); });
-        }
     }
 
     window.ouvrirTheme = function(theme) {
