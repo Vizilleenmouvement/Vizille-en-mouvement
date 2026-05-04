@@ -8,7 +8,7 @@
       "date": "2026-02-27",
       "lieu": "Vizille",
       "description": "Réunions publiques et de quartier avec les Vizillois",
-      "cover": "images/articles/art_4_0.jpg",
+      "cover": "images/articles/art_4_0.webp",
       "photos": [
         1770199482972.77,
         1770199482972.7898,
@@ -32,7 +32,7 @@
       "date": "2026-01-20",
       "lieu": "Vizille",
       "description": "À la rencontre des Vizillois sur les marchés",
-      "cover": "images/articles/art_2_0.jpg",
+      "cover": "images/articles/art_2_0.webp",
       "photos": [
         1770199482972.3562
       ]
@@ -45,7 +45,7 @@
       "date": "2026-02-07",
       "lieu": "Vizille",
       "description": "Au contact des Vizillois au quotidien",
-      "cover": "images/articles/article_12_0.png",
+      "cover": "images/articles/article_12_0.webp",
       "photos": [
         1770199482972.231,
         1770137790420,
@@ -60,7 +60,7 @@
       "date": "2024-06-21",
       "lieu": "Vizille",
       "description": "Vie culturelle et festivités à Vizille",
-      "cover": "images/actions/culture/fete-musique-2023.jpg",
+      "cover": "images/actions/culture/fete-musique-2023.webp",
       "photos": [
         9001,
         9002,
@@ -79,7 +79,7 @@
       "date": "2024-01-01",
       "lieu": "Vizille",
       "description": "Architecture et patrimoine historique de Vizille",
-      "cover": "images/actions/patrimoine/place-chateau.jpg",
+      "cover": "images/actions/patrimoine/place-chateau.webp",
       "photos": [
         9101,
         9102,
@@ -98,7 +98,7 @@
       "date": "2024-01-01",
       "lieu": "Vizille",
       "description": "Vie sportive et événements à Vizille",
-      "cover": "images/actions/sport/rugby-champion-alpes.jpg",
+      "cover": "images/actions/sport/rugby-champion-alpes.webp",
       "photos": [
         9201,
         9202,
@@ -232,7 +232,7 @@
     {
       "id": 1770127914621,
       "titre": "Réunion chez l'habitant",
-      "src": "images/medias/whatsapp_image_2026-02-02_at_14.24.15.jpeg",
+      "src": "images/medias/whatsapp_image_2026-02-02_at_14.24.15.webp",
       "thumbnail": null,
       "date": "2026-02-02",
       "description": "",
@@ -241,7 +241,7 @@
     {
       "id": 1770128308750,
       "titre": "Réunion chez l'habitant",
-      "src": "images/medias/whatsapp_image_2026-02-02_at_14.24.01.jpeg",
+      "src": "images/medias/whatsapp_image_2026-02-02_at_14.24.01.webp",
       "thumbnail": null,
       "date": "2026-02-03",
       "description": "",
@@ -250,7 +250,7 @@
     {
       "id": 1770137790420,
       "titre": "Pour une ville dynamique et solidaire",
-      "src": "images/medias/615406480_122109496719169933_2030527121759158223_n.jpg",
+      "src": "images/medias/615406480_122109496719169933_2030527121759158223_n.webp",
       "thumbnail": null,
       "date": "2026-02-03",
       "description": "",
@@ -259,8 +259,8 @@
     {
       "id": 1770199482972.3562,
       "titre": "Présence sur les marchés",
-      "src": "images/articles/art_2_0.jpg",
-      "thumbnail": "images/articles/art_2_0.jpg",
+      "src": "images/articles/art_2_0.webp",
+      "thumbnail": "images/articles/art_2_0.webp",
       "categorie": "Événement",
       "date": "2026-01-20",
       "description": "Présence sur les marchés",
@@ -289,8 +289,8 @@
     {
       "id": 1770199482972.77,
       "titre": "Réunion publique #1 — Bilan du mandat",
-      "src": "images/articles/art_4_0.jpg",
-      "thumbnail": "images/articles/art_4_0.jpg",
+      "src": "images/articles/art_4_0.webp",
+      "thumbnail": "images/articles/art_4_0.webp",
       "categorie": "Événement",
       "date": "2026-01-30",
       "description": "Réunion publique #1 — Bilan du mandat",
@@ -319,8 +319,8 @@
     {
       "id": 1770199482972.788,
       "titre": "Réunion publique #2 — Projets pour Vizille",
-      "src": "images/articles/art_5_0.jpg",
-      "thumbnail": "images/articles/art_5_0.jpg",
+      "src": "images/articles/art_5_0.webp",
+      "thumbnail": "images/articles/art_5_0.webp",
       "categorie": "Événement",
       "date": "2026-02-27",
       "description": "Réunion publique #2 — Projets pour Vizille",
@@ -329,8 +329,8 @@
     {
       "id": 1770199482972.9185,
       "titre": "Réunion de quartier - Centre-ville",
-      "src": "images/articles/art_8_0.jpg",
-      "thumbnail": "images/articles/art_8_0.jpg",
+      "src": "images/articles/art_8_0.webp",
+      "thumbnail": "images/articles/art_8_0.webp",
       "categorie": "Réunion de quartier",
       "date": "2026-02-04",
       "description": "Réunion de quartier - Centre-ville",
@@ -339,8 +339,8 @@
     {
       "id": 1770199482972.9792,
       "titre": "Réunion de quartier - Le Péage",
-      "src": "images/articles/art_9_0.jpg",
-      "thumbnail": "images/articles/art_9_0.jpg",
+      "src": "images/articles/art_9_0.webp",
+      "thumbnail": "images/articles/art_9_0.webp",
       "categorie": "Réunion de quartier",
       "date": "2026-02-04",
       "description": "Réunion de quartier - Le Péage",
@@ -379,8 +379,8 @@
     {
       "id": 9001,
       "titre": "Fête de la musique 2023",
-      "src": "images/actions/culture/fete-musique-2023.jpg",
-      "thumbnail": "images/actions/culture/fete-musique-2023.jpg",
+      "src": "images/actions/culture/fete-musique-2023.webp",
+      "thumbnail": "images/actions/culture/fete-musique-2023.webp",
       "categorie": "Culture",
       "date": "2023-06-21",
       "description": "Fête de la musique à Vizille",
@@ -389,8 +389,8 @@
     {
       "id": 9002,
       "titre": "Fête de l'amitié 2024",
-      "src": "images/actions/culture/fete-amitie-2024.jpg",
-      "thumbnail": "images/actions/culture/fete-amitie-2024.jpg",
+      "src": "images/actions/culture/fete-amitie-2024.webp",
+      "thumbnail": "images/actions/culture/fete-amitie-2024.webp",
       "categorie": "Culture",
       "date": "2024-07-01",
       "description": "Fête de l'amitié à Vizille",
@@ -399,8 +399,8 @@
     {
       "id": 9003,
       "titre": "Fête de la science",
-      "src": "images/actions/culture/fete-science.jpg",
-      "thumbnail": "images/actions/culture/fete-science.jpg",
+      "src": "images/actions/culture/fete-science.webp",
+      "thumbnail": "images/actions/culture/fete-science.webp",
       "categorie": "Culture",
       "date": "2024-10-01",
       "description": "Fête de la science à Vizille",
@@ -409,8 +409,8 @@
     {
       "id": 9004,
       "titre": "80 ans de la Libération",
-      "src": "images/actions/culture/80-ans-liberation.jpg",
-      "thumbnail": "images/actions/culture/80-ans-liberation.jpg",
+      "src": "images/actions/culture/80-ans-liberation.webp",
+      "thumbnail": "images/actions/culture/80-ans-liberation.webp",
       "categorie": "Culture",
       "date": "2024-08-25",
       "description": "Commémoration des 80 ans de la Libération",
@@ -439,8 +439,8 @@
     {
       "id": 9101,
       "titre": "Place du Château",
-      "src": "images/actions/patrimoine/place-chateau.jpg",
-      "thumbnail": "images/actions/patrimoine/place-chateau.jpg",
+      "src": "images/actions/patrimoine/place-chateau.webp",
+      "thumbnail": "images/actions/patrimoine/place-chateau.webp",
       "categorie": "Patrimoine",
       "date": "2024-01-01",
       "description": "Place du Château de Vizille",
@@ -449,8 +449,8 @@
     {
       "id": 9102,
       "titre": "Ancienne Tannerie",
-      "src": "images/actions/patrimoine/ancienne-tannerie.jpg",
-      "thumbnail": "images/actions/patrimoine/ancienne-tannerie.jpg",
+      "src": "images/actions/patrimoine/ancienne-tannerie.webp",
+      "thumbnail": "images/actions/patrimoine/ancienne-tannerie.webp",
       "categorie": "Patrimoine",
       "date": "2022-01-01",
       "description": "Ancienne tannerie de Vizille",
@@ -459,8 +459,8 @@
     {
       "id": 9103,
       "titre": "Poterne de Vizille",
-      "src": "images/actions/patrimoine/poterne-vizille.jpg",
-      "thumbnail": "images/actions/patrimoine/poterne-vizille.jpg",
+      "src": "images/actions/patrimoine/poterne-vizille.webp",
+      "thumbnail": "images/actions/patrimoine/poterne-vizille.webp",
       "categorie": "Patrimoine",
       "date": "2023-01-01",
       "description": "Poterne historique de Vizille",
@@ -469,8 +469,8 @@
     {
       "id": 9104,
       "titre": "Restauration de la Poterne",
-      "src": "images/actions/patrimoine/restauration-poterne.jpg",
-      "thumbnail": "images/actions/patrimoine/restauration-poterne.jpg",
+      "src": "images/actions/patrimoine/restauration-poterne.webp",
+      "thumbnail": "images/actions/patrimoine/restauration-poterne.webp",
       "categorie": "Patrimoine",
       "date": "2023-06-01",
       "description": "Travaux de restauration de la poterne",
@@ -479,8 +479,8 @@
     {
       "id": 9105,
       "titre": "Chapelle du Péage",
-      "src": "images/actions/patrimoine/chapelle-peage.jpg",
-      "thumbnail": "images/actions/patrimoine/chapelle-peage.jpg",
+      "src": "images/actions/patrimoine/chapelle-peage.webp",
+      "thumbnail": "images/actions/patrimoine/chapelle-peage.webp",
       "categorie": "Patrimoine",
       "date": "2024-01-01",
       "description": "Chapelle du Péage",
@@ -489,8 +489,8 @@
     {
       "id": 9106,
       "titre": "Sites Clunisiens",
-      "src": "images/actions/patrimoine/sites-clunisiens.jpg",
-      "thumbnail": "images/actions/patrimoine/sites-clunisiens.jpg",
+      "src": "images/actions/patrimoine/sites-clunisiens.webp",
+      "thumbnail": "images/actions/patrimoine/sites-clunisiens.webp",
       "categorie": "Patrimoine",
       "date": "2024-01-01",
       "description": "Sites clunisiens de Vizille",
@@ -499,8 +499,8 @@
     {
       "id": 9201,
       "titre": "Rugby — Champions des Alpes",
-      "src": "images/actions/sport/rugby-champion-alpes.jpg",
-      "thumbnail": "images/actions/sport/rugby-champion-alpes.jpg",
+      "src": "images/actions/sport/rugby-champion-alpes.webp",
+      "thumbnail": "images/actions/sport/rugby-champion-alpes.webp",
       "categorie": "Sport",
       "date": "2024-01-01",
       "description": "L'entente rugby de Vizille championne des Alpes",
@@ -519,8 +519,8 @@
     {
       "id": 9203,
       "titre": "Grenoble - Vizille",
-      "src": "images/actions/sport/grenoble-vizille.jpg",
-      "thumbnail": "images/actions/sport/grenoble-vizille.jpg",
+      "src": "images/actions/sport/grenoble-vizille.webp",
+      "thumbnail": "images/actions/sport/grenoble-vizille.webp",
       "categorie": "Sport",
       "date": "2024-01-01",
       "description": "Événement sportif Grenoble-Vizille",
@@ -529,8 +529,8 @@
     {
       "id": 9204,
       "titre": "Viziclette — Vélo smoothie",
-      "src": "images/actions/sport/viziclette-velo-smoothie.jpg",
-      "thumbnail": "images/actions/sport/viziclette-velo-smoothie.jpg",
+      "src": "images/actions/sport/viziclette-velo-smoothie.webp",
+      "thumbnail": "images/actions/sport/viziclette-velo-smoothie.webp",
       "categorie": "Sport",
       "date": "2024-01-01",
       "description": "Viziclette — événement vélo et smoothie",
@@ -559,8 +559,8 @@
     {
       "id": 9205,
       "titre": "Bilan sportif — Vizille en Mouvement",
-      "src": "images/facebook/bilan-sport.jpg",
-      "thumbnail": "images/facebook/bilan-sport.jpg",
+      "src": "images/facebook/bilan-sport.webp",
+      "thumbnail": "images/facebook/bilan-sport.webp",
       "categorie": "Sport",
       "date": "2026-02-05",
       "description": "Bilan sportif : modernisation, vitalité et perspectives sportives",
@@ -569,8 +569,8 @@
     {
       "id": 9206,
       "titre": "Journée olympique au Domaine de Vizille",
-      "src": "images/facebook/journee-olympique-vizille.jpg",
-      "thumbnail": "images/facebook/journee-olympique-vizille.jpg",
+      "src": "images/facebook/journee-olympique-vizille.webp",
+      "thumbnail": "images/facebook/journee-olympique-vizille.webp",
       "categorie": "Sport",
       "date": "2024-07-26",
       "description": "Journée olympique organisée par le Département de l'Isère au Domaine de Vizille",
@@ -599,8 +599,8 @@
     {
       "id": 9208,
       "titre": "Tour Auvergne Rhône-Alpes — Départ Vizille",
-      "src": "images/facebook/tour-auvergne-vizille.jpg",
-      "thumbnail": "images/facebook/tour-auvergne-vizille.jpg",
+      "src": "images/facebook/tour-auvergne-vizille.webp",
+      "thumbnail": "images/facebook/tour-auvergne-vizille.webp",
       "categorie": "Sport",
       "date": "2026-02-05",
       "description": "78e édition du Tour Auvergne Rhône-Alpes — Étape 1 au départ de Vizille, 7 juin 2026",
@@ -609,8 +609,8 @@
     {
       "id": 1771341733577.8318,
       "titre": "🚇 𝐌𝐎𝐁𝐈𝐋𝐈𝐓𝐄́𝐒 𝐒𝐓𝐑𝐔𝐂𝐓𝐔𝐑𝐀𝐍𝐓𝐄𝐒 : LE DÉFI",
-      "src": "images/articles/article_1770988386909.jpg",
-      "thumbnail": "images/articles/article_1770988386909.jpg",
+      "src": "images/articles/article_1770988386909.webp",
+      "thumbnail": "images/articles/article_1770988386909.webp",
       "categorie": "Action",
       "date": "2026-02-13",
       "description": "🚇 𝐌𝐎𝐁𝐈𝐋𝐈𝐓𝐄́𝐒 𝐒𝐓𝐑𝐔𝐂𝐓𝐔𝐑𝐀𝐍𝐓𝐄𝐒 : LE DÉFI"
@@ -645,8 +645,8 @@
     {
       "id": 1771341733577.0723,
       "titre": "La concertation citoyenne",
-      "src": "images/articles/article_1770799700996_sans_titre_6.jpg",
-      "thumbnail": "images/articles/article_1770799700996_sans_titre_6.jpg",
+      "src": "images/articles/article_1770799700996_sans_titre_6.webp",
+      "thumbnail": "images/articles/article_1770799700996_sans_titre_6.webp",
       "categorie": "Bilan",
       "date": "2026-02-11",
       "description": "La concertation citoyenne"
@@ -681,8 +681,8 @@
     {
       "id": 1771341733577.2441,
       "titre": "Vizille en Mouvement : Bilan & Vision 2026 avec Catherine Troton",
-      "src": "images/articles/article_1770480896470.jpg",
-      "thumbnail": "images/articles/article_1770480896470.jpg",
+      "src": "images/articles/article_1770480896470.webp",
+      "thumbnail": "images/articles/article_1770480896470.webp",
       "categorie": "Communiqué",
       "date": "2026-02-07",
       "description": "Vizille en Mouvement : Bilan & Vision 2026 avec Catherine Troton"
@@ -699,8 +699,8 @@
     {
       "id": 1771341733577.7258,
       "titre": "Rencontre devant l'école Jean-Jaurès",
-      "src": "images/articles/article_1770312964217_627675958_122113625025169933_7414508203650644926_n.jpg",
-      "thumbnail": "images/articles/article_1770312964217_627675958_122113625025169933_7414508203650644926_n.jpg",
+      "src": "images/articles/article_1770312964217_627675958_122113625025169933_7414508203650644926_n.webp",
+      "thumbnail": "images/articles/article_1770312964217_627675958_122113625025169933_7414508203650644926_n.webp",
       "categorie": "Événement",
       "date": "2026-02-06",
       "description": "Rencontre devant l'école Jean-Jaurès"
@@ -708,8 +708,8 @@
     {
       "id": 1771341733577.042,
       "titre": "Nos candidates et candidats",
-      "src": "images/articles/article_1771315458073_liste.jpg",
-      "thumbnail": "images/articles/article_1771315458073_liste.jpg",
+      "src": "images/articles/article_1771315458073_liste.webp",
+      "thumbnail": "images/articles/article_1771315458073_liste.webp",
       "categorie": "Communiqué",
       "date": "2026-02-17",
       "description": "Nos candidates et candidats"
@@ -717,8 +717,8 @@
     {
       "id": 1771609428937.29,
       "titre": "𝐑𝐍𝟖𝟓 – 𝐅𝐞𝐮 𝐝𝐞 𝐉𝐚𝐫𝐫𝐢𝐞 : 𝐜𝐞 𝐪𝐮𝐞 𝐝𝐢𝐬𝐞𝐧𝐭 𝐥𝐞𝐬 𝐞́𝐭𝐮𝐝𝐞𝐬 𝐨𝐟𝐟𝐢𝐜𝐢𝐞𝐥𝐥𝐞𝐬 🚦",
-      "src": "images/articles/article_1771342900881.jpg",
-      "thumbnail": "images/articles/article_1771342900881.jpg",
+      "src": "images/articles/article_1771342900881.webp",
+      "thumbnail": "images/articles/article_1771342900881.webp",
       "categorie": "Action",
       "date": "2026-02-17",
       "description": "𝐑𝐍𝟖𝟓 – 𝐅𝐞𝐮 𝐝𝐞 𝐉𝐚𝐫𝐫𝐢𝐞 : 𝐜𝐞 𝐪𝐮𝐞 𝐝𝐢𝐬𝐞𝐧𝐭 𝐥𝐞𝐬 𝐞́𝐭𝐮𝐝𝐞𝐬 𝐨𝐟𝐟𝐢𝐜𝐢𝐞𝐥𝐥𝐞𝐬 🚦"
@@ -726,8 +726,8 @@
     {
       "id": 1771609428937.4114,
       "titre": "𝐀𝐂𝐓𝐈𝐎𝐍 𝐒𝐎𝐂𝐈𝐀𝐋𝐄 : 𝐋𝐄 𝐁𝐈𝐋𝐀𝐍 𝟐𝟎𝟐𝟎-𝟐𝟎𝟐𝟔",
-      "src": "images/articles/article_1771343019797.jpg",
-      "thumbnail": "images/articles/article_1771343019797.jpg",
+      "src": "images/articles/article_1771343019797.webp",
+      "thumbnail": "images/articles/article_1771343019797.webp",
       "categorie": "Actualités",
       "date": "2026-02-17",
       "description": "𝐀𝐂𝐓𝐈𝐎𝐍 𝐒𝐎𝐂𝐈𝐀𝐋𝐄 : 𝐋𝐄 𝐁𝐈𝐋𝐀𝐍 𝟐𝟎𝟐𝟎-𝟐𝟎𝟐𝟔"
@@ -753,8 +753,8 @@
     {
       "id": 1773051805439.3665,
       "titre": "𝐀𝐜𝐜𝐨𝐦𝐩𝐚𝐠𝐧𝐞𝐫 𝐞𝐭 𝐚𝐢𝐝𝐞𝐫 𝐭𝐨𝐮𝐬 𝐥𝐞𝐬 𝐣𝐞𝐮𝐧𝐞𝐬 — 𝐝𝐚𝐧𝐬 𝐥𝐞 𝐫𝐞𝐬𝐩𝐞𝐜𝐭 𝐝𝐞 𝐥𝐚 𝐬𝐢𝐧𝐠𝐮𝐥𝐚𝐫𝐢𝐭é 𝐝𝐞 𝐜𝐡𝐚𝐜𝐮𝐧, 𝐬𝐮𝐫 𝐥𝐞 𝐜𝐡𝐞𝐦𝐢𝐧 𝐝𝐞 𝐥𝐞𝐮𝐫 𝐝é𝐯𝐞𝐥𝐨𝐩𝐩𝐞𝐦𝐞𝐧𝐭 𝐩𝐞𝐫𝐬𝐨𝐧𝐧𝐞𝐥 𝐞𝐭 𝐜𝐢𝐭𝐨𝐲𝐞𝐧.",
-      "src": "images/articles/article_1771695217880.jpg",
-      "thumbnail": "images/articles/article_1771695217880.jpg",
+      "src": "images/articles/article_1771695217880.webp",
+      "thumbnail": "images/articles/article_1771695217880.webp",
       "categorie": "Projet",
       "date": "2026-02-21",
       "description": "𝐀𝐜𝐜𝐨𝐦𝐩𝐚𝐠𝐧𝐞𝐫 𝐞𝐭 𝐚𝐢𝐝𝐞𝐫 𝐭𝐨𝐮𝐬 𝐥𝐞𝐬 𝐣𝐞𝐮𝐧𝐞𝐬 — 𝐝𝐚𝐧𝐬 𝐥𝐞 𝐫𝐞𝐬𝐩𝐞𝐜𝐭 𝐝𝐞 𝐥𝐚 𝐬𝐢𝐧𝐠𝐮𝐥𝐚𝐫𝐢𝐭é 𝐝𝐞 𝐜𝐡𝐚𝐜𝐮𝐧, 𝐬𝐮𝐫 𝐥𝐞 𝐜𝐡𝐞𝐦𝐢𝐧 𝐝𝐞 𝐥𝐞𝐮𝐫 𝐝é𝐯𝐞𝐥𝐨𝐩𝐩𝐞𝐦𝐞𝐧𝐭 𝐩𝐞𝐫𝐬𝐨𝐧𝐧𝐞𝐥 𝐞𝐭 𝐜𝐢𝐭𝐨𝐲𝐞𝐧."
@@ -762,8 +762,8 @@
     {
       "id": 1773051805439.9558,
       "titre": "Nos soutiens",
-      "src": "images/articles/article_1772613458046_strappazzon.jpg",
-      "thumbnail": "images/articles/article_1772613458046_strappazzon.jpg",
+      "src": "images/articles/article_1772613458046_strappazzon.webp",
+      "thumbnail": "images/articles/article_1772613458046_strappazzon.webp",
       "categorie": "Communiqué",
       "date": "2026-03-04",
       "description": "Nos soutiens"
@@ -771,8 +771,8 @@
     {
       "id": 1773051805439.5562,
       "titre": "Vizille en mouvement !￼",
-      "src": "images/articles/article_1772613620949.jpg",
-      "thumbnail": "images/articles/article_1772613620949.jpg",
+      "src": "images/articles/article_1772613620949.webp",
+      "thumbnail": "images/articles/article_1772613620949.webp",
       "categorie": "Communiqué",
       "date": "2026-03-04",
       "description": "Vizille en mouvement !￼"
@@ -780,8 +780,8 @@
     {
       "id": 1774719543880.1548,
       "titre": "Organisation de l'équipe municipale — Les délégations se précisent",
-      "src": "images/articles/equipe-adjoints-2026.jpg",
-      "thumbnail": "images/articles/equipe-adjoints-2026.jpg",
+      "src": "images/articles/equipe-adjoints-2026.webp",
+      "thumbnail": "images/articles/equipe-adjoints-2026.webp",
       "categorie": "Communiqué",
       "date": "2026-03-28",
       "description": "Organisation de l'équipe municipale — Les délégations se précisent"
@@ -789,8 +789,8 @@
     {
       "id": 1774719543880.3354,
       "titre": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés",
-      "src": "images/conseil-2026/conseil-01.jpg",
-      "thumbnail": "images/conseil-2026/conseil-01.jpg",
+      "src": "images/conseil-2026/conseil-01.webp",
+      "thumbnail": "images/conseil-2026/conseil-01.webp",
       "categorie": "Communiqué",
       "date": "2026-03-22",
       "description": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés"
@@ -798,8 +798,8 @@
     {
       "id": 1774719543880.549,
       "titre": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés",
-      "src": "images/conseil-2026/conseil-02.jpg",
-      "thumbnail": "images/conseil-2026/conseil-02.jpg",
+      "src": "images/conseil-2026/conseil-02.webp",
+      "thumbnail": "images/conseil-2026/conseil-02.webp",
       "categorie": "Communiqué",
       "date": "2026-03-22",
       "description": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés"
@@ -807,8 +807,8 @@
     {
       "id": 1774719543880.233,
       "titre": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés",
-      "src": "images/conseil-2026/conseil-03.jpg",
-      "thumbnail": "images/conseil-2026/conseil-03.jpg",
+      "src": "images/conseil-2026/conseil-03.webp",
+      "thumbnail": "images/conseil-2026/conseil-03.webp",
       "categorie": "Communiqué",
       "date": "2026-03-22",
       "description": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés"
@@ -816,8 +816,8 @@
     {
       "id": 1774719543880.4893,
       "titre": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés",
-      "src": "images/conseil-2026/conseil-04.jpg",
-      "thumbnail": "images/conseil-2026/conseil-04.jpg",
+      "src": "images/conseil-2026/conseil-04.webp",
+      "thumbnail": "images/conseil-2026/conseil-04.webp",
       "categorie": "Communiqué",
       "date": "2026-03-22",
       "description": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés"
@@ -834,8 +834,8 @@
     {
       "id": 1774719543880.5872,
       "titre": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés",
-      "src": "images/conseil-2026/conseil-06.jpg",
-      "thumbnail": "images/conseil-2026/conseil-06.jpg",
+      "src": "images/conseil-2026/conseil-06.webp",
+      "thumbnail": "images/conseil-2026/conseil-06.webp",
       "categorie": "Communiqué",
       "date": "2026-03-22",
       "description": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés"
@@ -843,8 +843,8 @@
     {
       "id": 1774719543880.8787,
       "titre": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés",
-      "src": "images/conseil-2026/conseil-07.jpg",
-      "thumbnail": "images/conseil-2026/conseil-07.jpg",
+      "src": "images/conseil-2026/conseil-07.webp",
+      "thumbnail": "images/conseil-2026/conseil-07.webp",
       "categorie": "Communiqué",
       "date": "2026-03-22",
       "description": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés"
@@ -852,8 +852,8 @@
     {
       "id": 1774719543880.3281,
       "titre": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés",
-      "src": "images/conseil-2026/conseil-08.jpg",
-      "thumbnail": "images/conseil-2026/conseil-08.jpg",
+      "src": "images/conseil-2026/conseil-08.webp",
+      "thumbnail": "images/conseil-2026/conseil-08.webp",
       "categorie": "Communiqué",
       "date": "2026-03-22",
       "description": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés"
@@ -861,8 +861,8 @@
     {
       "id": 1774719543880.3335,
       "titre": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés",
-      "src": "images/conseil-2026/conseil-09.jpg",
-      "thumbnail": "images/conseil-2026/conseil-09.jpg",
+      "src": "images/conseil-2026/conseil-09.webp",
+      "thumbnail": "images/conseil-2026/conseil-09.webp",
       "categorie": "Communiqué",
       "date": "2026-03-22",
       "description": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés"
@@ -870,8 +870,8 @@
     {
       "id": 1774719543880.9956,
       "titre": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés",
-      "src": "images/conseil-2026/conseil-10.jpg",
-      "thumbnail": "images/conseil-2026/conseil-10.jpg",
+      "src": "images/conseil-2026/conseil-10.webp",
+      "thumbnail": "images/conseil-2026/conseil-10.webp",
       "categorie": "Communiqué",
       "date": "2026-03-22",
       "description": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés"
@@ -879,8 +879,8 @@
     {
       "id": 1774719543880.3186,
       "titre": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés",
-      "src": "images/articles/article_1774203274906.jpg",
-      "thumbnail": "images/articles/article_1774203274906.jpg",
+      "src": "images/articles/article_1774203274906.webp",
+      "thumbnail": "images/articles/article_1774203274906.webp",
       "categorie": "Communiqué",
       "date": "2026-03-22",
       "description": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés"
@@ -888,8 +888,8 @@
     {
       "id": 1774719543880.2473,
       "titre": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés",
-      "src": "images/articles/article_1774203337541.jpg",
-      "thumbnail": "images/articles/article_1774203337541.jpg",
+      "src": "images/articles/article_1774203337541.webp",
+      "thumbnail": "images/articles/article_1774203337541.webp",
       "categorie": "Communiqué",
       "date": "2026-03-22",
       "description": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés"
@@ -897,8 +897,8 @@
     {
       "id": 1774719543880.9473,
       "titre": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés",
-      "src": "images/articles/article_1774203359582.jpg",
-      "thumbnail": "images/articles/article_1774203359582.jpg",
+      "src": "images/articles/article_1774203359582.webp",
+      "thumbnail": "images/articles/article_1774203359582.webp",
       "categorie": "Communiqué",
       "date": "2026-03-22",
       "description": "Premier conseil municipal — Catherine Troton élue Maire, 8 adjoints désignés"

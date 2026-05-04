@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://vizilleenmouvement.fr/">
     <meta property="og:title" content="Vizille en Mouvement — Mandat 2026-2032">
     <meta property="og:description" content="Catherine Troton élue Maire, 26 élus au service des Vizillois. Découvrez notre programme et notre équipe pour le mandat 2026-2032.">
-    <meta property="og:image" content="https://vizilleenmouvement.fr/images/og-image.jpg">
+    <meta property="og:image" content="https://vizilleenmouvement.fr/images/og-image.webp">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
@@ -24,7 +24,7 @@
     <meta name="twitter:url" content="https://vizilleenmouvement.fr/">
     <meta name="twitter:title" content="Vizille en Mouvement — Mandat 2026-2032">
     <meta name="twitter:description" content="Catherine Troton élue Maire, 26 élus au service des Vizillois. Découvrez notre programme et notre équipe pour le mandat 2026-2032.">
-    <meta name="twitter:image" content="https://vizilleenmouvement.fr/images/og-image.jpg">
+    <meta name="twitter:image" content="https://vizilleenmouvement.fr/images/og-image.webp">
 
     <!-- Données structurées Schema.org -->
     <script type="application/ld+json">
@@ -99,7 +99,7 @@
 
     <!-- BANNIÈRE DE BIENVENUE -->
     <section class="vote-banner-section">
-        <img src="images/photo-equipe.jpg" alt="L'équipe Vizille en Mouvement" class="vote-banner-img">
+        <img loading="lazy" src="images/photo-equipe.webp" alt="L'équipe Vizille en Mouvement" class="vote-banner-img">
         <div class="vote-banner-post">
             <div class="vbp-titre-wrap">
                 <p class="vbp-titre">Vizille en Mouvement<span class="ligne2">Mandat 2026-2032 — Au service des Vizillois</span></p>
@@ -504,7 +504,7 @@
                 var ds = d ? d.toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'}) : '';
                 var cat = art.categorie ? ' · ' + art.categorie : '';
                 return '<div class="alaune-card">'
-                    + (img ? '<img src="'+img+'" alt="">' : '')
+                    + (img ? '<img loading="lazy" src="'+img+'" alt="">' : '')
                     + '<div class="alaune-card-body">'
                     + '<p class="alaune-card-meta">'+ds+cat+'</p>'
                     + '<h2 class="alaune-card-title">'+art.titre+'</h2>'
@@ -546,7 +546,7 @@
             <!-- Colonne gauche : portrait -->
             <div class="hero-left animate-fade-in">
                 <div class="hero-portrait">
-                    <img src="images/catherine-troton.jpg" alt="Catherine Troton, Maire de Vizille" class="hero-candidate-photo">
+                    <img fetchpriority="high" src="images/catherine-troton.jpg" alt="Catherine Troton, Maire de Vizille" class="hero-candidate-photo">
                     <div class="hero-portrait-ring"></div>
                 </div>
                 <h1 class="hero-candidate-name">Vizille en Mouvement</h1>

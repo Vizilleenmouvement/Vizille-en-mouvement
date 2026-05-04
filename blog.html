@@ -267,7 +267,7 @@
         </div>
         <div class="header-main">
             <a href="index.html">
-                <img src="images/logo-header.png" alt="Vizille en Mouvement" class="nav-header-logo">
+                <img loading="lazy" src="images/logo-header.png" alt="Vizille en Mouvement" class="nav-header-logo">
             </a>
             <button class="menu-toggle" aria-label="Menu">☰</button>
             <nav>
@@ -288,7 +288,7 @@
     <script src="js/menu-mobile.js"></script>
 
     <section class="hero-unified">
-        <img src="images/logo.png" alt="Vizille en Mouvement" class="hero-logo">
+        <img loading="lazy" src="images/logo.png" alt="Vizille en Mouvement" class="hero-logo">
         <div class="hero-text">
             <h1>Actualités</h1>
             <p class="slogan">Ensemble pour une ville dynamique et solidaire</p>
@@ -316,7 +316,7 @@
 
     <div class="lightbox-overlay" id="lightbox-overlay" onclick="closeLightbox(event)">
         <button class="lightbox-close" onclick="closeLightbox(event)">✕</button>
-        <img src="" alt="" class="lightbox-image" id="lightbox-image">
+        <img loading="lazy" src="" alt="" class="lightbox-image" id="lightbox-image">
     </div>
 
 
@@ -485,7 +485,7 @@
                 imgHtml = '<div class="article-carousel" id="carousel-' + id + '">'
                     + '<div class="carousel-track">'
                     + imgs.map((src, i) => '<div class="carousel-slide' + (i===0?' active':'') + '">'
-                        + '<img src="' + src + '" alt="" onclick="openLightbox(\'' + src + '\')" title="Agrandir">'
+                        + '<img loading="lazy" src="' + src + '" alt="" onclick="openLightbox(\'' + src + '\')" title="Agrandir">'
                         + '</div>').join('')
                     + '</div>'
                     + '<button class="carousel-btn prev" onclick="carouselMove(\'' + id + '\',-1)" aria-label="Photo précédente">&#8249;</button>'
@@ -495,7 +495,7 @@
                     + '</div>'
                     + '</div>';
             } else if (imgs.length === 1) {
-                imgHtml = '<img src="' + imgs[0] + '" alt="" class="article-full-image" onclick="openLightbox(\'' + imgs[0] + '\')" title="Agrandir">';
+                imgHtml = '<img loading="lazy" src="' + imgs[0] + '" alt="" class="article-full-image" onclick="openLightbox(\'' + imgs[0] + '\')" title="Agrandir">';
             }
             document.getElementById('article-full-content').innerHTML =
                 imgHtml +

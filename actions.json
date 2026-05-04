@@ -666,10 +666,10 @@
     ],
     "sous_categorie": "Grands projets",
     "images": [
-      "images/actions-extracted/action_11_0.jpg",
-      "images/actions-extracted/action_11_1.jpg"
+      "images/actions-extracted/action_11_0.webp",
+      "images/actions-extracted/action_11_1.webp"
     ],
-    "image": "images/actions-extracted/action_11_main.jpg"
+    "image": "images/actions-extracted/action_11_main.webp"
   },
   {
     "id": 12,
@@ -735,10 +735,10 @@
       }
     ],
     "sous_categorie": "Grands projets",
-    "image": "images/actions/patrimoine/ancienne-tannerie.jpg",
+    "image": "images/actions/patrimoine/ancienne-tannerie.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/ancienne-tannerie.jpg",
+        "url": "images/actions/patrimoine/ancienne-tannerie.webp",
         "legende": "Ancienne Tannerie Cros - Patrimoine industriel"
       }
     ]
@@ -960,10 +960,10 @@
       }
     ],
     "sous_categorie": "Grands projets",
-    "image": "images/actions/patrimoine/ancienne-tannerie.jpg",
+    "image": "images/actions/patrimoine/ancienne-tannerie.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/ancienne-tannerie.jpg",
+        "url": "images/actions/patrimoine/ancienne-tannerie.webp",
         "legende": "Ancienne Tannerie Cros - Patrimoine industriel"
       }
     ]
@@ -1059,10 +1059,10 @@
       }
     ],
     "sous_categorie": "Grands projets",
-    "image": "images/actions/patrimoine/roue-moulin.jpg",
+    "image": "images/actions/patrimoine/roue-moulin.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/roue-moulin.jpg",
+        "url": "images/actions/patrimoine/roue-moulin.webp",
         "legende": "Roue du moulin - Patrimoine bâti vizillois"
       }
     ]
@@ -2967,10 +2967,10 @@
     ],
     "sous_categorie": "Associations & Partenariats",
     "suspendu": true,
-    "image": "images/actions/patrimoine/prieure.jpg",
+    "image": "images/actions/patrimoine/prieure.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/prieure.jpg",
+        "url": "images/actions/patrimoine/prieure.webp",
         "legende": "Prieuré Sainte-Marie"
       }
     ]
@@ -3065,10 +3065,10 @@
       }
     ],
     "sous_categorie": "Autres",
-    "image": "images/actions/patrimoine/place-chateau.jpg",
+    "image": "images/actions/patrimoine/place-chateau.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/place-chateau.jpg",
+        "url": "images/actions/patrimoine/place-chateau.webp",
         "legende": "Place du Château et Musée de la Révolution française"
       }
     ]
@@ -3133,10 +3133,10 @@
       }
     ],
     "sous_categorie": "Monuments",
-    "image": "images/actions/patrimoine/portail-prieure.jpg",
+    "image": "images/actions/patrimoine/portail-prieure.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/portail-prieure.jpg",
+        "url": "images/actions/patrimoine/portail-prieure.webp",
         "legende": "Portail roman du Prieuré Sainte-Marie"
       }
     ]
@@ -3294,10 +3294,10 @@
       }
     ],
     "sous_categorie": "Monuments",
-    "image": "images/actions/patrimoine/portail-prieure.jpg",
+    "image": "images/actions/patrimoine/portail-prieure.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/portail-prieure.jpg",
+        "url": "images/actions/patrimoine/portail-prieure.webp",
         "legende": "Portail roman du Prieuré Sainte-Marie"
       }
     ]
@@ -3349,10 +3349,10 @@
       }
     ],
     "sous_categorie": "Circuits & Tourisme",
-    "image": "images/actions/patrimoine/place-chateau.jpg",
+    "image": "images/actions/patrimoine/place-chateau.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/place-chateau.jpg",
+        "url": "images/actions/patrimoine/place-chateau.webp",
         "legende": "Place du Château et Musée de la Révolution française"
       }
     ]
@@ -3436,10 +3436,10 @@
       }
     ],
     "sous_categorie": "Monuments",
-    "image": "images/actions/patrimoine/portail-prieure.jpg",
+    "image": "images/actions/patrimoine/portail-prieure.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/portail-prieure.jpg",
+        "url": "images/actions/patrimoine/portail-prieure.webp",
         "legende": "Portail roman du Prieuré Sainte-Marie"
       }
     ]
@@ -3514,10 +3514,10 @@
     ],
     "sous_categorie": "Monuments",
     "suspendu": true,
-    "image": "images/actions/patrimoine/prieure.jpg",
+    "image": "images/actions/patrimoine/prieure.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/prieure.jpg",
+        "url": "images/actions/patrimoine/prieure.webp",
         "legende": "Prieuré Sainte-Marie"
       }
     ]
@@ -3570,10 +3570,10 @@
     ],
     "sous_categorie": "Monuments",
     "suspendu": true,
-    "image": "images/actions/patrimoine/portail-prieure.jpg",
+    "image": "images/actions/patrimoine/portail-prieure.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/portail-prieure.jpg",
+        "url": "images/actions/patrimoine/portail-prieure.webp",
         "legende": "Portail roman du Prieuré Sainte-Marie"
       }
     ]
@@ -5830,10 +5830,10 @@
       }
     ],
     "sous_categorie": "Événements",
-    "image": "images/actions/sport/grenoble-vizille.jpg",
+    "image": "images/actions/sport/grenoble-vizille.webp",
     "images": [
       {
-        "url": "images/actions/sport/grenoble-vizille.jpg",
+        "url": "images/actions/sport/grenoble-vizille.webp",
         "legende": "Coureurs du Grenoble-Vizille dans le parc du Domaine"
       }
     ]
@@ -5923,10 +5923,10 @@
       }
     ],
     "sous_categorie": "Événements",
-    "image": "images/actions/sport/rugby-champion-alpes.jpg",
+    "image": "images/actions/sport/rugby-champion-alpes.webp",
     "images": [
       {
-        "url": "images/actions/sport/rugby-champion-alpes.jpg",
+        "url": "images/actions/sport/rugby-champion-alpes.webp",
         "legende": "L'équipe célèbre le titre de Champion des Alpes"
       },
       {
@@ -6034,10 +6034,10 @@
       }
     ],
     "sous_categorie": "Événements",
-    "image": "images/actions/sport/viziclette-velo-smoothie.jpg",
+    "image": "images/actions/sport/viziclette-velo-smoothie.webp",
     "images": [
       {
-        "url": "images/actions/sport/viziclette-velo-smoothie.jpg",
+        "url": "images/actions/sport/viziclette-velo-smoothie.webp",
         "legende": "Vélo-smoothie à la Viziclette"
       }
     ]
@@ -6384,10 +6384,10 @@
     ],
     "sous_categorie": "Concertation",
     "suspendu": true,
-    "image": "images/actions/patrimoine/roue-moulin.jpg",
+    "image": "images/actions/patrimoine/roue-moulin.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/roue-moulin.jpg",
+        "url": "images/actions/patrimoine/roue-moulin.webp",
         "legende": "Roue du moulin - Patrimoine bâti vizillois"
       }
     ]
@@ -6792,10 +6792,10 @@
       }
     ],
     "sous_categorie": "Piétons & Vélos",
-    "image": "images/actions/patrimoine/place-chateau.jpg",
+    "image": "images/actions/patrimoine/place-chateau.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/place-chateau.jpg",
+        "url": "images/actions/patrimoine/place-chateau.webp",
         "legende": "Place du Château et Musée de la Révolution française"
       }
     ]
@@ -11437,10 +11437,10 @@
       }
     ],
     "sous_categorie": "Monuments",
-    "image": "images/actions/patrimoine/portail-prieure.jpg",
+    "image": "images/actions/patrimoine/portail-prieure.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/portail-prieure.jpg",
+        "url": "images/actions/patrimoine/portail-prieure.webp",
         "legende": "Portail roman du Prieuré Sainte-Marie"
       }
     ]
@@ -11497,10 +11497,10 @@
       }
     ],
     "sous_categorie": "Événements",
-    "image": "images/actions/sport/grenoble-vizille.jpg",
+    "image": "images/actions/sport/grenoble-vizille.webp",
     "images": [
       {
-        "url": "images/actions/sport/grenoble-vizille.jpg",
+        "url": "images/actions/sport/grenoble-vizille.webp",
         "legende": "Coureurs du Grenoble-Vizille dans le parc du Domaine"
       }
     ]
@@ -11634,10 +11634,10 @@
       }
     ],
     "sous_categorie": "Équipements",
-    "image": "images/actions/patrimoine/poterne-vizille.jpg",
+    "image": "images/actions/patrimoine/poterne-vizille.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/poterne-vizille.jpg",
+        "url": "images/actions/patrimoine/poterne-vizille.webp",
         "legende": "La Poterne du Château du Roi"
       }
     ]
@@ -11677,10 +11677,10 @@
     ],
     "sous_categorie": "Vœux & Actions",
     "details": "Vizille, étape majeure sur la Route Napoléon (lieu du ralliement des troupes en 1815), participe aux actions de valorisation touristique et culturelle de cet itinéraire mythique reliant Golfe-Juan à Grenoble.",
-    "image": "images/actions/patrimoine/place-chateau.jpg",
+    "image": "images/actions/patrimoine/place-chateau.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/place-chateau.jpg",
+        "url": "images/actions/patrimoine/place-chateau.webp",
         "legende": "Place du Château de Vizille"
       }
     ]
@@ -13806,10 +13806,10 @@
     "source": "Bilan adjoint culture",
     "sous_categorie": "Monuments",
     "suspendu": true,
-    "image": "images/actions/patrimoine/restauration-poterne.jpg",
+    "image": "images/actions/patrimoine/restauration-poterne.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/restauration-poterne.jpg",
+        "url": "images/actions/patrimoine/restauration-poterne.webp",
         "legende": "Restauration de la poterne du Château du Roi"
       }
     ]
@@ -13827,10 +13827,10 @@
     "budget": 0,
     "source": "Bilan adjoint culture",
     "sous_categorie": "Circuits & Tourisme",
-    "image": "images/actions/patrimoine/place-chateau.jpg",
+    "image": "images/actions/patrimoine/place-chateau.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/place-chateau.jpg",
+        "url": "images/actions/patrimoine/place-chateau.webp",
         "legende": "Patrimoine vizillois"
       }
     ]
@@ -13849,10 +13849,10 @@
     "source": "Bilan adjoint culture",
     "sous_categorie": "Monuments",
     "suspendu": true,
-    "image": "images/actions/patrimoine/portail-prieure.jpg",
+    "image": "images/actions/patrimoine/portail-prieure.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/portail-prieure.jpg",
+        "url": "images/actions/patrimoine/portail-prieure.webp",
         "legende": "Portail roman du Prieuré Sainte-Marie"
       }
     ]
@@ -13913,10 +13913,10 @@
     "source": "Bilan adjoint culture - Espace Belledonne",
     "sous_categorie": "Autres",
     "details": "Création du Camp de base de Vizille, hub pour les activités de pleine nature : sentiers de randonnée, parcours vélo, falaise d'escalade du Château du Roi. Vizille se positionne comme porte d'entrée vers les activités outdoor de montagne.",
-    "image": "images/actions/patrimoine/poterne-vizille.jpg",
+    "image": "images/actions/patrimoine/poterne-vizille.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/poterne-vizille.jpg",
+        "url": "images/actions/patrimoine/poterne-vizille.webp",
         "legende": "La Poterne du Château du Roi"
       }
     ]
@@ -13935,10 +13935,10 @@
     "source": "Bilan adjoint culture - Espace Belledonne",
     "sous_categorie": "Équipements",
     "details": "Remise en fonctionnement de la falaise d'escalade du Château du Roi, intégrée au Camp de base de Vizille. Un équipement unique qui attire grimpeurs et amateurs de pleine nature.",
-    "image": "images/actions/patrimoine/poterne-vizille.jpg",
+    "image": "images/actions/patrimoine/poterne-vizille.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/poterne-vizille.jpg",
+        "url": "images/actions/patrimoine/poterne-vizille.webp",
         "legende": "La Poterne du Château du Roi"
       }
     ]
@@ -14038,10 +14038,10 @@
     "source": "Bilan adjoint culture",
     "sous_categorie": "Monuments",
     "suspendu": true,
-    "image": "images/actions/patrimoine/portail-prieure.jpg",
+    "image": "images/actions/patrimoine/portail-prieure.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/portail-prieure.jpg",
+        "url": "images/actions/patrimoine/portail-prieure.webp",
         "legende": "Portail roman du Prieuré Sainte-Marie"
       }
     ]
@@ -14108,10 +14108,10 @@
     "sources": [],
     "lien_source": [],
     "sous_categorie": "Autres",
-    "image": "images/actions/culture/fete-musique-2023.jpg",
+    "image": "images/actions/culture/fete-musique-2023.webp",
     "images": [
       {
-        "url": "images/actions/culture/fete-musique-2023.jpg",
+        "url": "images/actions/culture/fete-musique-2023.webp",
         "legende": "Fête de la Musique 2023"
       }
     ]
@@ -14138,11 +14138,11 @@
     "sous_categorie": "Festivals",
     "images": [
       {
-        "url": "images/actions/culture/fete-science.jpg",
+        "url": "images/actions/culture/fete-science.webp",
         "legende": "Fête de la Science - Sortie nature"
       }
     ],
-    "image": "images/actions/culture/fete-science.jpg"
+    "image": "images/actions/culture/fete-science.webp"
   },
   {
     "id": 364,
@@ -14165,7 +14165,7 @@
     "lien_source": [],
     "sous_categorie": "Festivals",
     "images": [
-      "images/actions/culture-vizille.jpg"
+      "images/actions/culture-vizille.webp"
     ]
   },
   {
@@ -14189,7 +14189,7 @@
     "lien_source": [],
     "sous_categorie": "Festivals",
     "images": [
-      "images/actions/culture-vizille.jpg"
+      "images/actions/culture-vizille.webp"
     ]
   },
   {
@@ -14214,11 +14214,11 @@
     "sous_categorie": "Festivals",
     "images": [
       {
-        "url": "images/actions/culture/fete-musique-2023.jpg",
+        "url": "images/actions/culture/fete-musique-2023.webp",
         "legende": "Fête de la Musique 2023 à Vizille"
       }
     ],
-    "image": "images/actions/culture/fete-musique-2023.jpg"
+    "image": "images/actions/culture/fete-musique-2023.webp"
   },
   {
     "id": 367,
@@ -14262,7 +14262,7 @@
     "lien_source": [],
     "sous_categorie": "Festivals",
     "images": [
-      "images/actions/culture-vizille.jpg"
+      "images/actions/culture-vizille.webp"
     ]
   },
   {
@@ -14475,7 +14475,7 @@
     "lien_source": [],
     "sous_categorie": "Festivals",
     "images": [
-      "images/actions/culture-vizille.jpg"
+      "images/actions/culture-vizille.webp"
     ]
   },
   {
@@ -14590,10 +14590,10 @@
     "sources": [],
     "lien_source": [],
     "sous_categorie": "Associations & Partenariats",
-    "image": "images/actions/culture/80-ans-liberation.jpg",
+    "image": "images/actions/culture/80-ans-liberation.webp",
     "images": [
       {
-        "url": "images/actions/culture/80-ans-liberation.jpg",
+        "url": "images/actions/culture/80-ans-liberation.webp",
         "legende": "80 ans de la Libération - Reconstitution historique"
       }
     ]
@@ -14661,7 +14661,7 @@
     "lien_source": [],
     "sous_categorie": "Festivals",
     "images": [
-      "images/actions/culture-vizille.jpg"
+      "images/actions/culture-vizille.webp"
     ]
   },
   {
@@ -14685,7 +14685,7 @@
     "lien_source": [],
     "sous_categorie": "Festivals",
     "images": [
-      "images/actions/culture-vizille.jpg"
+      "images/actions/culture-vizille.webp"
     ]
   },
   {
@@ -14729,10 +14729,10 @@
     "sources": [],
     "lien_source": [],
     "sous_categorie": "Échanges",
-    "image": "images/actions/culture/fete-amitie-2024.jpg",
+    "image": "images/actions/culture/fete-amitie-2024.webp",
     "images": [
       {
-        "url": "images/actions/culture/fete-amitie-2024.jpg",
+        "url": "images/actions/culture/fete-amitie-2024.webp",
         "legende": "Fête de l'Amitié 2024 à Vizille"
       }
     ]
@@ -14801,11 +14801,11 @@
     "sous_categorie": "Échanges",
     "images": [
       {
-        "url": "images/actions/culture/fete-amitie-2024.jpg",
+        "url": "images/actions/culture/fete-amitie-2024.webp",
         "legende": "Fête de l'Amitié 2024 à Vizille"
       }
     ],
-    "image": "images/actions/culture/fete-amitie-2024.jpg"
+    "image": "images/actions/culture/fete-amitie-2024.webp"
   },
   {
     "id": 393,
@@ -14899,10 +14899,10 @@
     "sources": [],
     "lien_source": [],
     "sous_categorie": "Autres",
-    "image": "images/actions/patrimoine/roue-moulin.jpg",
+    "image": "images/actions/patrimoine/roue-moulin.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/roue-moulin.jpg",
+        "url": "images/actions/patrimoine/roue-moulin.webp",
         "legende": "Roue du moulin - Patrimoine bâti vizillois"
       }
     ]
@@ -14927,10 +14927,10 @@
     "sources": [],
     "lien_source": [],
     "sous_categorie": "Autres",
-    "image": "images/actions/patrimoine/ancienne-tannerie.jpg",
+    "image": "images/actions/patrimoine/ancienne-tannerie.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/ancienne-tannerie.jpg",
+        "url": "images/actions/patrimoine/ancienne-tannerie.webp",
         "legende": "Ancienne Tannerie Cros - Patrimoine industriel"
       }
     ]
@@ -14956,10 +14956,10 @@
     "lien_source": [],
     "sous_categorie": "Monuments",
     "suspendu": true,
-    "image": "images/actions/patrimoine/prieure.jpg",
+    "image": "images/actions/patrimoine/prieure.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/prieure.jpg",
+        "url": "images/actions/patrimoine/prieure.webp",
         "legende": "Prieuré Sainte-Marie"
       }
     ]
@@ -14985,10 +14985,10 @@
     "lien_source": [],
     "sous_categorie": "Monuments",
     "suspendu": true,
-    "image": "images/actions/patrimoine/portail-prieure.jpg",
+    "image": "images/actions/patrimoine/portail-prieure.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/portail-prieure.jpg",
+        "url": "images/actions/patrimoine/portail-prieure.webp",
         "legende": "Portail roman du Prieuré Sainte-Marie"
       }
     ]
@@ -15014,10 +15014,10 @@
     "lien_source": [],
     "sous_categorie": "Monuments",
     "suspendu": true,
-    "image": "images/actions/patrimoine/restauration-poterne.jpg",
+    "image": "images/actions/patrimoine/restauration-poterne.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/restauration-poterne.jpg",
+        "url": "images/actions/patrimoine/restauration-poterne.webp",
         "legende": "Restauration de la poterne du Château du Roi"
       }
     ]
@@ -15042,10 +15042,10 @@
     "sources": [],
     "lien_source": [],
     "sous_categorie": "Monuments",
-    "image": "images/actions/patrimoine/chapelle-peage.jpg",
+    "image": "images/actions/patrimoine/chapelle-peage.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/chapelle-peage.jpg",
+        "url": "images/actions/patrimoine/chapelle-peage.webp",
         "legende": "Chapelle du Péage de Vizille"
       }
     ]
@@ -15071,10 +15071,10 @@
     "lien_source": [],
     "sous_categorie": "Monuments",
     "suspendu": true,
-    "image": "images/actions/patrimoine/prieure.jpg",
+    "image": "images/actions/patrimoine/prieure.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/prieure.jpg",
+        "url": "images/actions/patrimoine/prieure.webp",
         "legende": "Prieuré Sainte-Marie"
       }
     ]
@@ -15164,10 +15164,10 @@
     "lien_source": [],
     "sous_categorie": "Circuits & Tourisme",
     "suspendu": true,
-    "image": "images/actions/patrimoine/place-chateau.jpg",
+    "image": "images/actions/patrimoine/place-chateau.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/place-chateau.jpg",
+        "url": "images/actions/patrimoine/place-chateau.webp",
         "legende": "Patrimoine vizillois"
       }
     ]
@@ -15193,10 +15193,10 @@
     "lien_source": [],
     "sous_categorie": "Monuments",
     "suspendu": true,
-    "image": "images/actions/patrimoine/portail-prieure.jpg",
+    "image": "images/actions/patrimoine/portail-prieure.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/portail-prieure.jpg",
+        "url": "images/actions/patrimoine/portail-prieure.webp",
         "legende": "Portail roman du Prieuré Sainte-Marie"
       }
     ]
@@ -15222,10 +15222,10 @@
     "lien_source": [],
     "sous_categorie": "Monuments",
     "suspendu": true,
-    "image": "images/actions/patrimoine/portail-prieure.jpg",
+    "image": "images/actions/patrimoine/portail-prieure.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/portail-prieure.jpg",
+        "url": "images/actions/patrimoine/portail-prieure.webp",
         "legende": "Portail roman du Prieuré Sainte-Marie"
       }
     ]
@@ -15250,10 +15250,10 @@
     "sources": [],
     "lien_source": [],
     "sous_categorie": "Associations & Partenariats",
-    "image": "images/actions/patrimoine/place-chateau.jpg",
+    "image": "images/actions/patrimoine/place-chateau.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/place-chateau.jpg",
+        "url": "images/actions/patrimoine/place-chateau.webp",
         "legende": "Place du Château de Vizille"
       }
     ]
@@ -15278,10 +15278,10 @@
     "sources": [],
     "lien_source": [],
     "sous_categorie": "Autres",
-    "image": "images/actions/patrimoine/place-chateau.jpg",
+    "image": "images/actions/patrimoine/place-chateau.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/place-chateau.jpg",
+        "url": "images/actions/patrimoine/place-chateau.webp",
         "legende": "Place du Château de Vizille"
       }
     ]
@@ -15353,11 +15353,11 @@
     "sous_categorie": "Festivals",
     "images": [
       {
-        "url": "images/actions/culture/fete-musique-2023.jpg",
+        "url": "images/actions/culture/fete-musique-2023.webp",
         "legende": "Fête de la Musique 2023 à Vizille"
       }
     ],
-    "image": "images/actions/culture/fete-musique-2023.jpg"
+    "image": "images/actions/culture/fete-musique-2023.webp"
   },
   {
     "id": 902,
@@ -15416,10 +15416,10 @@
       }
     ],
     "sous_categorie": "Festivals",
-    "image": "images/actions/culture/fete-musique-2023.jpg",
+    "image": "images/actions/culture/fete-musique-2023.webp",
     "images": [
       {
-        "url": "images/actions/culture/fete-musique-2023.jpg",
+        "url": "images/actions/culture/fete-musique-2023.webp",
         "legende": "Fête de la Musique 2023 à Vizille"
       }
     ]
@@ -15579,10 +15579,10 @@
       }
     ],
     "sous_categorie": "Circuits & Tourisme",
-    "image": "images/actions/patrimoine/chapelle-peage.jpg",
+    "image": "images/actions/patrimoine/chapelle-peage.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/chapelle-peage.jpg",
+        "url": "images/actions/patrimoine/chapelle-peage.webp",
         "legende": "Chapelle du Péage de Vizille"
       }
     ]
@@ -16000,10 +16000,10 @@
     "description": "Suivre les consommations énergétiques, rationaliser le patrimoine, rénover les bâtiments publics.",
     "details": "Actions : suivi annuel des consommations, instrumentation des bâtiments énergivores, programmation pluriannuelle de rénovation, remplacement des chaudières fioul, passage à l'éclairage LED, conformité décret tertiaire.",
     "importance": 1,
-    "image": "images/actions/patrimoine/roue-moulin.jpg",
+    "image": "images/actions/patrimoine/roue-moulin.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/roue-moulin.jpg",
+        "url": "images/actions/patrimoine/roue-moulin.webp",
         "legende": "Roue du moulin - Patrimoine bâti vizillois"
       }
     ]
@@ -16359,10 +16359,10 @@
       }
     ],
     "sous_categorie": "Concertations publiques",
-    "image": "images/actions/patrimoine/ancienne-tannerie.jpg",
+    "image": "images/actions/patrimoine/ancienne-tannerie.webp",
     "images": [
       {
-        "url": "images/actions/patrimoine/ancienne-tannerie.jpg",
+        "url": "images/actions/patrimoine/ancienne-tannerie.webp",
         "legende": "Ancienne Tannerie Cros - Patrimoine industriel"
       }
     ]
