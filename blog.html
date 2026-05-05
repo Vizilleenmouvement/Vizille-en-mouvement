@@ -369,6 +369,40 @@
             setMeta('og:url', url);
         }
 
+        // Rendu du contenu d'article : préserve les blocs HTML (iframe, embed, video, blockquote)
+        // et entoure les paragraphes texte normaux dans des <p>.
+        function renderArticleContent(txt) {
+            if (!txt) return '';
+            // Balises HTML qu'on autorise à passer telles quelles (sans <p> autour)
+            // On découpe le texte en repérant les blocs HTML autonomes.
+            var blockRe = /<(iframe|embed|video|blockquote|div|figure|table|script|img)[^>]*>[\s\S]*?<\/\1>|<(iframe|embed|img)[^>]*\/?>/gi;
+            var out = '';
+            var lastIdx = 0;
+            var m;
+            while ((m = blockRe.exec(txt)) !== null) {
+                // Tout le texte avant le bloc HTML : split par lignes, paragraphes
+                var before = txt.substring(lastIdx, m.index);
+                out += before.split('\n').map(function (p) {
+                    var t = p.trim();
+                    return t ? '<p>' + t + '</p>' : '';
+                }).join('');
+                // Le bloc HTML lui-même, intact (responsive wrapper pour iframe)
+                if (/^<iframe/i.test(m[0])) {
+                    out += '<div class="article-embed" style="margin:1.5rem 0;display:flex;justify-content:center">' + m[0] + '</div>';
+                } else {
+                    out += m[0];
+                }
+                lastIdx = m.index + m[0].length;
+            }
+            // Reste du texte après le dernier bloc HTML
+            var rest = txt.substring(lastIdx);
+            out += rest.split('\n').map(function (p) {
+                var t = p.trim();
+                return t ? '<p>' + t + '</p>' : '';
+            }).join('');
+            return out;
+        }
+
         function shareOnFB(id) {
             var url = SITE + '/blog.html?article=' + id;
             window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), 'fb-share', 'width=600,height=500');
@@ -506,7 +540,7 @@
                 '<h1 style="font-family:\'Playfair Display\',serif;font-size:1.8rem;color:#1a3a5c;margin:0.5rem 0 1rem;line-height:1.3;">' + cleanTitle(a.titre) + '</h1>' +
                 (a.auteur ? '<p style="color:#888;font-size:0.9rem;">Par ' + a.auteur + '</p>' : '') +
                 (a.source ? '<p style="color:#888;font-size:0.9rem;">Source : ' + a.source + '</p>' : '') +
-                '<div class="article-full-content">' + a.contenu.split('\n').map(function(p) { return p.trim() ? '<p>' + p + '</p>' : ''; }).join('') + '</div>' +
+                '<div class="article-full-content">' + renderArticleContent(a.contenu) + '</div>' +
                 '<div class="share-bar">' +
                 '<button class="fb-share-btn" onclick="shareOnFB(' + a.id + ')">' +
                 '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>' +
