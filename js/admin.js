@@ -157,7 +157,8 @@ function cleanBase64FromData(obj) {
 }
 
 // ===== COMPRESSION IMAGES =====
-// Compresse et redimensionne les images avant upload
+// Compresse et redimensionne les images avant upload.
+// Les PNG restent en PNG (transparence préservée), tout autre format devient JPEG.
 async function compressImage(file, maxWidth = 1920, quality = 0.85) {
     return new Promise((resolve, reject) => {
         // Si ce n'est pas une image, retourner tel quel
@@ -165,6 +166,11 @@ async function compressImage(file, maxWidth = 1920, quality = 0.85) {
             resolve(file);
             return;
         }
+
+        // PNG : on garde le format pour préserver la transparence
+        const isPng = file.type === 'image/png';
+        const outputType = isPng ? 'image/png' : 'image/jpeg';
+        const outputExt = isPng ? '.png' : '.jpg';
 
         const img = new Image();
         const canvas = document.createElement('canvas');
@@ -185,20 +191,29 @@ async function compressImage(file, maxWidth = 1920, quality = 0.85) {
             // Dessiner l'image redimensionnée
             ctx.drawImage(img, 0, 0, width, height);
 
-            // Convertir en blob JPEG compressé
+            // Convertir en blob (PNG sans perte ou JPEG compressé selon le format d'origine)
+            // Note : pour le PNG, le paramètre quality est ignoré par toBlob.
             canvas.toBlob((blob) => {
                 if (blob) {
-                    // Créer un nouveau fichier avec le blob compressé
-                    const compressedFile = new File([blob], file.name.replace(/\.[^.]+$/, '.jpg'), {
-                        type: 'image/jpeg',
+                    // Si la "compression" PNG a augmenté la taille (cas rare quand
+                    // l'original était déjà optimisé et qu'on n'a pas redimensionné),
+                    // on garde l'original.
+                    if (isPng && width === img.naturalWidth && blob.size > file.size) {
+                        console.log(`🗜️ PNG conservé tel quel (recompression défavorable: ${(file.size/1024).toFixed(0)} Ko → ${(blob.size/1024).toFixed(0)} Ko)`);
+                        resolve(file);
+                        return;
+                    }
+                    const compressedFile = new File([blob], file.name.replace(/\.[^.]+$/, outputExt), {
+                        type: outputType,
                         lastModified: Date.now()
                     });
-                    console.log(`🗜️ Image compressée: ${(file.size/1024).toFixed(0)} Ko → ${(blob.size/1024).toFixed(0)} Ko (${Math.round((1-blob.size/file.size)*100)}% réduit)`);
+                    const fmt = isPng ? 'PNG' : 'JPEG';
+                    console.log(`🗜️ Image compressée (${fmt}): ${(file.size/1024).toFixed(0)} Ko → ${(blob.size/1024).toFixed(0)} Ko (${Math.round((1-blob.size/file.size)*100)}% réduit)`);
                     resolve(compressedFile);
                 } else {
                     resolve(file); // Fallback si échec
                 }
-            }, 'image/jpeg', quality);
+            }, outputType, quality);
         };
 
         img.onerror = () => resolve(file); // Fallback si erreur
