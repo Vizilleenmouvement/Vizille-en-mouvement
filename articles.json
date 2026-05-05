@@ -445,8 +445,8 @@
     "categorie": "Info",
     "extrait": "",
     "contenu": "",
-    "source": "<iframe src=\"https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fville.vizille.officiel%2Fposts%2Fpfbid0i1bR2bozEkGER4destrLVvune53THhfGd1eTvAqeYRbDJKHdEQnyqbg3npPx5Xdnl&show_text=true&width=500\" width=\"500\" height=\"727\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowfullscreen=\"true\" allow=\"autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share\"></iframe>",
-    "priorite": false,
-    "modifie_le": "2026-05-05T07:53:29.517Z"
+    "source": "<iframe src=",
+    "priorite": true,
+    "modifie_le": "2026-05-05T07:55:58.173Z"
   }
 ]
