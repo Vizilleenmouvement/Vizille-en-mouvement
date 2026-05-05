@@ -6,8 +6,10 @@
     "categorie": "Communiqué",
     "extrait": "Une annonce des Amis de l'Histoire du Pays Vizillois (AHPV), relayée par la Mairie de Vizille sur sa page officielle.",
     "contenu": "Les Amis de l'Histoire du Pays Vizillois (AHPV) partagent une annonce, relayée par la Mairie de Vizille sur sa page officielle.\n\n<iframe src=\"https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fville.vizille.officiel%2Fposts%2Fpfbid0i1bR2bozEkGER4destrLVvune53THhfGd1eTvAqeYRbDJKHdEQnyqbg3npPx5Xdnl&show_text=true&width=500\" width=\"500\" height=\"727\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowfullscreen=\"true\" allow=\"autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share\"></iframe>",
-    "priorite": true,
-    "modifie_le": "2026-05-05T12:07:21.818Z"
+    "image": "",
+    "images": [],
+    "modifie_le": "",
+    "slug": "les-amis-de-l-histoire-du-pays-vizillois-annoncent"
   },
   {
     "id": 1775600000000,
@@ -21,7 +23,8 @@
     ],
     "image": "images/articles/article_1775540250970.jpg",
     "priorite": true,
-    "modifie_le": "2026-04-07T05:38:26.771Z"
+    "modifie_le": "2026-04-07T05:38:26.771Z",
+    "slug": "prix-des-carburants-a-vizille-en-temps-reel"
   },
   {
     "id": 1775500000000,
@@ -35,7 +38,8 @@
     ],
     "image": "images/articles/article_1775369222947.webp",
     "priorite": true,
-    "modifie_le": "2026-04-05T06:17:26.976Z"
+    "modifie_le": "2026-04-05T06:17:26.976Z",
+    "slug": "construisons-ensemble-un-vizillois-propose-l-equipe-municipa"
   },
   {
     "id": 1775400000000,
@@ -49,7 +53,8 @@
     ],
     "image": "images/articles/article_1775370254003.webp",
     "priorite": true,
-    "modifie_le": "2026-04-05T06:24:21.659Z"
+    "modifie_le": "2026-04-05T06:24:21.659Z",
+    "slug": "le-dialogue-ne-s-arrete-pas-apres-les-elections"
   },
   {
     "id": 1774900000000,
@@ -64,7 +69,8 @@
     "image": "images/articles/equipe-adjoints-2026.webp",
     "priorite": true,
     "lien": "article-delegations.html",
-    "modifie_le": "2026-03-28T20:00:00.000Z"
+    "modifie_le": "2026-03-28T20:00:00.000Z",
+    "slug": "organisation-de-l-equipe-municipale-les-delegations-se-preci"
   },
   {
     "id": 1773828669349,
@@ -91,7 +97,8 @@
     ],
     "image": "images/conseil-2026/conseil-01.webp",
     "priorite": true,
-    "modifie_le": "2026-03-22T18:18:58.575Z"
+    "modifie_le": "2026-03-22T18:18:58.575Z",
+    "slug": "premier-conseil-municipal-catherine-troton-elue-maire-8-adjo"
   },
   {
     "id": 6,
@@ -105,7 +112,8 @@
     ],
     "image": "images/actions/patrimoine/place-chateau.webp",
     "priorite": true,
-    "modifie_le": "2026-03-04T13:40:17.486Z"
+    "modifie_le": "2026-03-04T13:40:17.486Z",
+    "slug": "rencontre-conviviale-place-du-chateau"
   },
   {
     "id": 1770988442513,
@@ -119,7 +127,8 @@
     ],
     "image": "images/articles/article_1770988386909.webp",
     "auteur": "VEM",
-    "modifie_le": "2026-02-13T13:14:02.513Z"
+    "modifie_le": "2026-02-13T13:14:02.513Z",
+    "slug": "le-defi"
   },
   {
     "id": 1770459733021,
@@ -133,7 +142,8 @@
     ],
     "image": "images/articles/article_1770459477243_img_0402.jpg",
     "priorite": true,
-    "modifie_le": "2026-03-09T08:27:20.966Z"
+    "modifie_le": "2026-03-09T08:27:20.966Z",
+    "slug": "reunion-de-quartier-ecole-du-chateau-le-10-mars"
   },
   {
     "id": 9,
@@ -147,7 +157,8 @@
     ],
     "image": "images/articles/article_1771695308949_640300047_122116217907169933_8066348312329664465_n.jpg",
     "priorite": false,
-    "modifie_le": "2026-03-05T03:42:16.080Z"
+    "modifie_le": "2026-03-05T03:42:16.080Z",
+    "slug": "a-votre-rencontre-le-24-fevrier-au-peage-ecole-langevin"
   },
   {
     "id": 1770916706868,
@@ -161,7 +172,8 @@
     ],
     "image": "images/articles/article_1770916645505.jpg",
     "auteur": "Vizille en Mouvement",
-    "modifie_le": "2026-02-12T17:18:26.868Z"
+    "modifie_le": "2026-02-12T17:18:26.868Z",
+    "slug": "article-1770916706868"
   },
   {
     "id": 1770799718760,
@@ -174,7 +186,8 @@
       "images/articles/article_1770799700996_sans_titre_6.webp"
     ],
     "image": "images/articles/article_1770799700996_sans_titre_6.webp",
-    "modifie_le": "2026-02-11T08:48:38.760Z"
+    "modifie_le": "2026-02-11T08:48:38.760Z",
+    "slug": "la-concertation-citoyenne"
   },
   {
     "id": 1770715510195,
@@ -187,7 +200,8 @@
       "images/articles/article_1770715434633_631765494_122114361057169933_1900431989562195837_n.jpg"
     ],
     "image": "images/articles/article_1770715434633_631765494_122114361057169933_1900431989562195837_n.jpg",
-    "modifie_le": "2026-02-10T09:25:10.196Z"
+    "modifie_le": "2026-02-10T09:25:10.196Z",
+    "slug": "un-cadre-de-vie-fluide-et-serein"
   },
   {
     "id": 1770576168627,
@@ -200,7 +214,8 @@
       "images/articles/article_1770576158353_climat.jpg"
     ],
     "image": "images/articles/article_1770576158353_climat.jpg",
-    "modifie_le": "2026-02-08T18:42:48.627Z"
+    "modifie_le": "2026-02-08T18:42:48.627Z",
+    "slug": "article-1770576168627"
   },
   {
     "id": 1770537839832,
@@ -213,7 +228,8 @@
       "images/articles/article_1770538735092_couverture-facebook-equipe.jpg"
     ],
     "image": "images/articles/article_1770538735092_couverture-facebook-equipe.jpg",
-    "modifie_le": "2026-02-08T08:19:11.190Z"
+    "modifie_le": "2026-02-08T08:19:11.190Z",
+    "slug": "vizille-en-mouvement-premieres-presentations"
   },
   {
     "id": 1770480990392,
@@ -227,7 +243,8 @@
       "<iframe src=\"https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0TZFMasuNX6eBY1hsAXQWTq4bDcgUsmPBZG6hoLakhHViJUML7ts4bMUfVcgT6fM3l%26id%3D61585097998743&show_text=true&width=500\" width=\"500\" height=\"370\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowfullscreen=\"true\" allow=\"autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share\"></iframe>"
     ],
     "image": "images/articles/article_1770480896470.webp",
-    "modifie_le": "2026-02-07T16:16:30.392Z"
+    "modifie_le": "2026-02-07T16:16:30.392Z",
+    "slug": "vizille-en-mouvement-bilan-vision-2026-avec-catherine-troton"
   },
   {
     "id": 5,
@@ -241,7 +258,8 @@
     ],
     "image": "images/articles/article_1771695082983_whatsapp_image_2026-02-21_at_15.42.55.jpg",
     "priorite": false,
-    "modifie_le": "2026-03-05T09:14:36.804Z"
+    "modifie_le": "2026-03-05T09:14:36.804Z",
+    "slug": "reunion-publique-2-projets-pour-vizille"
   },
   {
     "id": 12,
@@ -254,7 +272,8 @@
       "images/articles/article_1770312964217_627675958_122113625025169933_7414508203650644926_n.webp"
     ],
     "image": "images/articles/article_1770312964217_627675958_122113625025169933_7414508203650644926_n.webp",
-    "modifie_le": "2026-02-05T18:00:00.000Z"
+    "modifie_le": "2026-02-05T18:00:00.000Z",
+    "slug": "rencontre-devant-l-ecole-jean-jaures"
   },
   {
     "id": 10,
@@ -268,7 +287,8 @@
       "images/articles/art_10_1.jpg"
     ],
     "image": "images/articles/art_10_main.jpg",
-    "modifie_le": "2026-02-03T15:24:07.418Z"
+    "modifie_le": "2026-02-03T15:24:07.418Z",
+    "slug": "reunion-de-quartier-chez-l-habitant"
   },
   {
     "id": 2,
@@ -282,7 +302,8 @@
     ],
     "image": "images/articles/art_2_main.webp",
     "youtube": "https://www.youtube.com/watch?v=FxuZfxrORLs",
-    "modifie_le": "2026-02-03T14:14:34.402Z"
+    "modifie_le": "2026-02-03T14:14:34.402Z",
+    "slug": "presence-sur-les-marches"
   },
   {
     "id": 3,
@@ -297,7 +318,8 @@
     ],
     "image": "images/articles/art_3_main.jpg",
     "youtube": "https://www.youtube.com/watch?v=0jqtkQCRHUM",
-    "modifie_le": "2026-02-02T18:15:13.071Z"
+    "modifie_le": "2026-02-02T18:15:13.071Z",
+    "slug": "reunion-de-quartier-les-mattons"
   },
   {
     "id": 4,
@@ -313,7 +335,8 @@
     ],
     "image": "images/articles/art_4_main.webp",
     "youtube": "https://www.youtube.com/watch?v=KWA9YgAsjQY",
-    "modifie_le": "2026-02-02T18:00:39.473Z"
+    "modifie_le": "2026-02-02T18:00:39.473Z",
+    "slug": "reunion-publique-1-bilan-du-mandat"
   },
   {
     "id": 11,
@@ -324,7 +347,8 @@
     "contenu": "Dans son édition du 17 janvier 2026, Le Dauphiné Libéré consacre un article à la candidature de Catherine Troton pour les élections municipales de mars 2026.\n\nL'article revient sur le premier mandat de la maire sortante, entre satisfactions et défis, et sur sa volonté de « continuer le travail, pour accompagner les projets ».\n\n**Bilan et espoirs**\n\nCatherine Troton rappelle les réalisations du mandat : la création de la Maison France Services « La Source », l'installation des médecins à l'Avant-garde, le soutien à la petite enfance avec la crèche des P'tits drôles, la réouverture de la piscine en 2021.\n\nParmi les projets à venir : la création d'un conseil municipal des enfants et la réflexion autour d'un plan d'eau.\n\n**Une méthode basée sur l'écoute**\n\nLa maire défend sa méthode de travail : « Je vis à Vizille, j'y fais mes courses, je rencontre les gens, ils m'interpellent : je suis là pour ça, et j'agis toujours sincèrement. »\n\nL'article évoque également les travaux de la rue de Gaulle et sa piétonnisation, ainsi que le changement de sens de la rue de la République.\n\n**Citation**\n\n« Ma méthode est simple : on s'écoute. Ce n'est pas la loi du plus fort. On travaille ensemble, dans le respect. Si la confiance est là, on progresse. »\n\n— Catherine Troton",
     "image": "images/article-dl-web.jpg",
     "source": "Le Dauphiné Libéré",
-    "auteur": "Isabelle Calendre"
+    "auteur": "Isabelle Calendre",
+    "slug": "le-dauphine-libere-poursuivre-la-dynamique"
   },
   {
     "id": 1,
@@ -334,7 +358,8 @@
     "extrait": "Catherine Troton, Maire de Vizille, annonce sa candidature pour un deuxième mandat municipal.",
     "contenu": "Chères Vizilloises, chers Vizillois,\n\nC'est avec beaucoup d'émotion et d'enthousiasme que je sollicite votre confiance pour un deuxième mandat municipal. Depuis le début de notre action en 2020, j'ai eu l'honneur de servir notre ville avec conviction, énergie, attachement sincère et proximité. Vizille est un lieu de vie, de rencontres et de projets partagés.\n\nJ'ai toujours été touchée par la richesse de sa vie locale, associative, culturelle, sportive et par les liens qu'elle crée entre les habitants. J'ai eu la joie d'élever ici mes enfants, j'ai plaisir chaque jour à vivre ici, à entretenir cette proximité avec chacun d'entre vous. Ensemble, nous avons engagé des actions pour dynamiser la commune, améliorer le quotidien et préparer l'avenir.\n\nLes projets, imaginés depuis de longues années pour développer la commune, se concrétisent enfin aujourd'hui. Plus de 330 actions ont été menées pendant notre mandat pour améliorer la vie des Vizillois : création de la Maison France Services, végétalisation de cours d'écoles, réouverture de la piscine, travaux d'assainissement, embellissement de la rue Général de Gaulle, rénovation des logements en centre-ville, déploiement de la vidéoprotection, création d'itinéraires cyclables, soutien au monde associatif...\n\nNous avons la volonté claire, avec une équipe renouvelée, de poursuivre et amplifier la dynamique engagée autour de valeurs fortes :\n• La solidarité pour que le service public apporte des solutions à chacun\n• La transition environnementale, indispensable pour répondre aux défis climatiques tout en améliorant notre cadre de vie\n• La proximité et l'écoute des besoins quotidiens des habitants\n\nJe crois en une action municipale proche des citoyens, fondée sur le dialogue, la construction collective et la confiance. C'est avec vous, avec respect et solidarité, que nous nous engageons à rendre notre ville plus vivante, solidaire et tournée vers l'avenir.\n\nEnsemble, poursuivons ce chemin avec enthousiasme et exigence, et surtout bonheur de vivre ici.\n\nCatherine TROTON\nMaire de Vizille",
     "image": "images/catherine-troton.jpg",
-    "prochain": true
+    "prochain": true,
+    "slug": "declaration-de-candidature"
   },
   {
     "id": 1771315463707,
@@ -348,7 +373,8 @@
     ],
     "image": "images/articles/article_1771315458073_liste.webp",
     "priorite": true,
-    "modifie_le": "2026-02-17T08:04:23.707Z"
+    "modifie_le": "2026-02-17T08:04:23.707Z",
+    "slug": "nos-candidates-et-candidats"
   },
   {
     "id": 1771342951079,
@@ -362,7 +388,8 @@
     ],
     "image": "images/articles/article_1771342900881.webp",
     "priorite": false,
-    "modifie_le": "2026-02-17T15:42:31.079Z"
+    "modifie_le": "2026-02-17T15:42:31.079Z",
+    "slug": "article-1771342951079"
   },
   {
     "id": 1771343028609,
@@ -376,7 +403,8 @@
     ],
     "image": "images/articles/article_1771343019797.webp",
     "priorite": false,
-    "modifie_le": "2026-02-17T15:43:48.609Z"
+    "modifie_le": "2026-02-17T15:43:48.609Z",
+    "slug": "article-1771343028609"
   },
   {
     "id": 1771695242875,
@@ -390,7 +418,8 @@
     ],
     "image": "images/articles/article_1771695217880.webp",
     "priorite": true,
-    "modifie_le": "2026-02-21T17:34:02.875Z"
+    "modifie_le": "2026-02-21T17:34:02.875Z",
+    "slug": "e-e"
   },
   {
     "id": 1772613463148,
@@ -404,7 +433,8 @@
     ],
     "image": "images/articles/article_1772613458046_strappazzon.webp",
     "priorite": false,
-    "modifie_le": "2026-03-04T08:37:43.148Z"
+    "modifie_le": "2026-03-04T08:37:43.148Z",
+    "slug": "nos-soutiens"
   },
   {
     "id": 1772613626974,
@@ -418,7 +448,8 @@
     ],
     "image": "images/articles/article_1772613620949.webp",
     "priorite": false,
-    "modifie_le": "2026-03-04T08:40:26.974Z"
+    "modifie_le": "2026-03-04T08:40:26.974Z",
+    "slug": "vizille-en-mouvement"
   },
   {
     "id": 1773051892194,
@@ -432,7 +463,8 @@
     ],
     "image": "images/articles/article_1773051838366.jpg",
     "priorite": false,
-    "modifie_le": "2026-03-09T10:24:52.194Z"
+    "modifie_le": "2026-03-09T10:24:52.194Z",
+    "slug": "article-1773051892194"
   },
   {
     "id": 1773828669348,
@@ -446,6 +478,19 @@
     ],
     "image": "images/articles/article_1774082511562_sans_titre.jpg",
     "priorite": true,
-    "modifie_le": "2026-03-21T08:41:57.431Z"
+    "modifie_le": "2026-03-21T08:41:57.431Z",
+    "slug": "vizille-en-mouvement-elue"
+  },
+  {
+    "id": 1777967609517,
+    "titre": "Less Amis de l'histoire du pays Vizillois annoncent",
+    "date": "2026-05-05",
+    "categorie": "Info",
+    "extrait": "",
+    "contenu": "",
+    "source": "<iframe src=",
+    "priorite": true,
+    "modifie_le": "2026-05-05T07:55:58.173Z",
+    "slug": "less-amis-de-l-histoire-du-pays-vizillois-annoncent"
   }
 ]

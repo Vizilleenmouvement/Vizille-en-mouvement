@@ -7,6 +7,9 @@ cd "$(dirname "$0")"
 
 MSG="${1:-mise à jour}"
 
+echo "🔧 Génération des pages-passerelles articles (pour preview Facebook)..."
+node scripts/generer-pages-articles.js
+
 echo "📦 Commit et push..."
 git add -A
 git commit -m "$MSG" 2>/dev/null || echo "  (rien à committer)"

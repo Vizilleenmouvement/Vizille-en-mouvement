@@ -328,6 +328,7 @@
             try {
                 const res = await fetch('articles.json?v=' + Date.now());
                 articlesData = await res.json();
+                window.articlesData = articlesData; // exposé pour shareOnFB et autres
                 renderFilters();
                 renderMagazine();
             } catch (e) {
@@ -403,8 +404,19 @@
             return out;
         }
 
+        // Construit l'URL à partager sur Facebook : préfère la page-passerelle
+        // /articles/<slug>.html (qui contient les bonnes balises og:) plutôt que
+        // /blog.html?article=<id> (qui ne marche pas pour le preview FB).
+        function shareUrlForArticle(a) {
+            if (a && a.slug) return SITE + '/articles/' + a.slug + '.html';
+            return SITE + '/blog.html?article=' + (a ? a.id : '');
+        }
+
         function shareOnFB(id) {
-            var url = SITE + '/blog.html?article=' + id;
+            // On retrouve l'article et on partage l'URL de sa page-passerelle
+            // (qui contient les bonnes balises og: pour un preview Facebook correct).
+            var a = (window.articlesData || []).find(function (x) { return x.id == id; });
+            var url = shareUrlForArticle(a || { id: id });
             window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), 'fb-share', 'width=600,height=500');
         }
 
