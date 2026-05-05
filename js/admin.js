@@ -4338,9 +4338,97 @@ function showArticleModal(a) {
 
     document.getElementById('modal-save').onclick = saveArticle;
     document.getElementById('modal-edit').classList.add('active');
-    
+
     // Initialize rich text preview
     setTimeout(() => updateRichTextPreview('edit-contenu'), 100);
+
+    // Brouillon : proposer la restauration uniquement si on crée un NOUVEL article
+    if (currentEdit.index === -1) {
+        const draft = getArticleDraft();
+        if (draft) {
+            const restore = confirm("📝 Un brouillon d'article a été trouvé (sauvegardé le " + new Date(draft._timestamp).toLocaleString('fr-FR') + "). Voulez-vous le restaurer ?");
+            if (restore) {
+                restoreArticleDraft(draft);
+                showToast('📝 Brouillon restauré', 'info');
+            } else {
+                clearArticleDraft();
+            }
+        }
+    }
+    // Auto-save toutes les 5 secondes pendant que le modal est ouvert
+    if (window._articleDraftInterval) clearInterval(window._articleDraftInterval);
+    window._articleDraftInterval = setInterval(() => {
+        if (document.getElementById('modal-edit').classList.contains('active')
+            && currentEdit && currentEdit.type === 'article') {
+            saveArticleDraft();
+        }
+    }, 5000);
+}
+
+// ===== BROUILLON ARTICLE (localStorage) =====
+const ARTICLE_DRAFT_KEY = 'vizille_draft_article';
+
+function saveArticleDraft() {
+    const fields = ['edit-titre', 'edit-date', 'edit-categorie', 'edit-a-preciser',
+                    'edit-priorite', 'edit-extrait', 'edit-contenu', 'edit-youtube',
+                    'edit-images', 'edit-source', 'edit-auteur', 'edit-url-source'];
+    const draft = {};
+    fields.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) draft[id] = el.value;
+    });
+    const aLaUne = document.getElementById('edit-a-la-une');
+    if (aLaUne) draft['edit-a-la-une'] = aLaUne.checked;
+    draft._timestamp = Date.now();
+    // Considère vide si ni titre ni contenu : on évite de polluer le storage
+    const hasContent = (draft['edit-titre'] || '').trim() || (draft['edit-contenu'] || '').trim();
+    if (!hasContent) return;
+    try {
+        localStorage.setItem(ARTICLE_DRAFT_KEY, JSON.stringify(draft));
+    } catch(e) { /* localStorage plein ou indisponible */ }
+}
+
+function getArticleDraft() {
+    try {
+        const raw = localStorage.getItem(ARTICLE_DRAFT_KEY);
+        if (!raw) return null;
+        const draft = JSON.parse(raw);
+        // Ignorer les brouillons de plus de 7 jours
+        if (draft._timestamp && (Date.now() - draft._timestamp) > 7 * 24 * 60 * 60 * 1000) {
+            clearArticleDraft();
+            return null;
+        }
+        const hasContent = (draft['edit-titre'] || '').trim() || (draft['edit-contenu'] || '').trim();
+        return hasContent ? draft : null;
+    } catch(e) { return null; }
+}
+
+function restoreArticleDraft(draft) {
+    Object.keys(draft).forEach(id => {
+        if (id.startsWith('_')) return;
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (id === 'edit-a-la-une') {
+            el.checked = !!draft[id];
+        } else {
+            el.value = draft[id] || '';
+        }
+    });
+    // Ré-afficher la galerie d'images depuis edit-images
+    try {
+        const imgs = JSON.parse(document.getElementById('edit-images').value || '[]');
+        if (typeof setArticleImages === 'function') setArticleImages(imgs);
+    } catch(e) {}
+    // Mettre à jour le preview du texte riche
+    if (typeof updateRichTextPreview === 'function') updateRichTextPreview('edit-contenu');
+}
+
+function clearArticleDraft() {
+    try { localStorage.removeItem(ARTICLE_DRAFT_KEY); } catch(e) {}
+    if (window._articleDraftInterval) {
+        clearInterval(window._articleDraftInterval);
+        window._articleDraftInterval = null;
+    }
 }
 
 function getYoutubeEmbed(url) {
@@ -4558,6 +4646,8 @@ function saveArticle() {
     markModified('articles');
     renderArticles();
     updateFacebookArticleSelect();
+    // Effacer le brouillon : l'article est maintenant enregistré
+    if (typeof clearArticleDraft === 'function') clearArticleDraft();
     closeModal();
     showToast('✅ Article enregistré', 'success');
 }
