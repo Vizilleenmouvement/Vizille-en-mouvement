@@ -480,5 +480,19 @@
     "priorite": true,
     "modifie_le": "2026-03-21T08:41:57.431Z",
     "slug": "vizille-en-mouvement-elue"
+  },
+  {
+    "id": 1777995317426,
+    "titre": "Arnaques en ligne : ne tombez pas dans le piège",
+    "date": "2026-05-05",
+    "categorie": "",
+    "extrait": "",
+    "contenu": "VOS BOUCLIERS\nRéflexes et signalements\nSTOP\nFace au doute:\nne réagissez pas dans l'urgence\n› Ne cliquez sur aucun lien.\n• N'ouvrez aucune pièce jointe.\n\" Ne répondez jamais au mail.\n' Ne payez rien, ne donnez aucune donnée.",
+    "images": [
+      "images/articles/article_1777995294733_vizille_arnaques_full_1.jpg"
+    ],
+    "image": "images/articles/article_1777995294733_vizille_arnaques_full_1.jpg",
+    "priorite": false,
+    "modifie_le": "2026-05-05T15:35:17.426Z"
   }
 ]
