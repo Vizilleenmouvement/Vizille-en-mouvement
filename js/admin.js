@@ -4627,7 +4627,7 @@ function saveArticle() {
     articleData.priorite = priorite;
     // À la une : un seul à la fois
     if (aLaUne) {
-        articlesData.forEach(a => { delete a.a_la_une; });
+        data.articles.forEach(a => { delete a.a_la_une; });
         articleData.a_la_une = true;
     } else {
         delete articleData.a_la_une;
