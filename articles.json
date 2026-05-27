@@ -494,5 +494,21 @@
     "image": "images/articles/article_1777995294733_vizille_arnaques_full_1.jpg",
     "priorite": false,
     "modifie_le": "2026-05-05T15:35:17.426Z"
+  },
+  {
+    "id": 1779863614007,
+    "titre": "L’eau et l’intelligence artificielle",
+    "date": "2026-05-27",
+    "categorie": "Info",
+    "extrait": "",
+    "contenu": "",
+    "images": [
+      "https://kitcreanet.fr/wp-content/uploads/2026/05/kitcreanet-eau-IA.webp"
+    ],
+    "image": "https://kitcreanet.fr/wp-content/uploads/2026/05/kitcreanet-eau-IA.webp",
+    "source": "https://kitcreanet.fr/leau-et-lintelligence-artificielle/",
+    "priorite": true,
+    "a_la_une": true,
+    "modifie_le": "2026-05-27T06:33:34.007Z"
   }
 ]
