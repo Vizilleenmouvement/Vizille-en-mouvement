@@ -464,7 +464,7 @@
                             <div class="flip-front-body">
                                 <div class="flip-front-pourquoi">${truncExtrait}</div>
                                 <div class="flip-front-hint">
-                                    <span class="flip-icon">🔄</span> Retourner pour lire
+                                    <span class="flip-icon">📰</span> Lire l'article
                                 </div>
                             </div>
                         </div>
@@ -512,11 +512,12 @@
                     return buildBlogFlipCard(a, color);
                 }).join('') + '</div>';
 
-            // Attacher les événements flip
+            // Clic sur une carte = ouverture directe de l'article (plus de flip)
             container.querySelectorAll('.flip-card').forEach(card => {
-                card.addEventListener('click', (e) => {
-                    if (e.target.closest('.flip-back-footer')) return;
-                    card.classList.toggle('flipped');
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', () => {
+                    const id = parseInt(card.dataset.id, 10);
+                    if (id) showArticle(id);
                 });
             });
         }
