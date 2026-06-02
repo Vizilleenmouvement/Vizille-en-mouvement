@@ -114,6 +114,25 @@
         </div>
     </section>
 
+    <!-- BLOC À LA UNE — deux articles prioritaires -->
+    <style>
+    #bloc-a-la-une { background:#f7f4ef; border-bottom:3px solid #c9a84c; padding:2rem 1rem; display:none; }
+    .alaune-container { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+    .alaune-card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08); transition:transform 0.2s; }
+    .alaune-card:hover { transform:translateY(-3px); }
+    .alaune-card img { width:100%; height:220px; object-fit:cover; object-position:center 30%; display:block; }
+    .alaune-card-body { padding:1.5rem; }
+    .alaune-card-meta { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:#c9a84c; font-weight:700; margin:0 0 0.5rem; }
+    .alaune-card-title { font-family:'Playfair Display',serif; font-size:clamp(1rem,2vw,1.3rem); font-weight:600; color:#1a3a6b; margin:0 0 0.6rem; line-height:1.3; }
+    .alaune-card-extrait { font-size:0.88rem; color:#555; line-height:1.7; margin:0 0 1rem; }
+    .alaune-card-btn { display:inline-block; background:#1a3a6b; color:#fff; padding:0.5rem 1.2rem; border-radius:3px; text-decoration:none; font-size:0.8rem; letter-spacing:0.04em; }
+    .alaune-card-btn:hover { background:#c9a84c; }
+    @media(max-width:700px){ .alaune-container{grid-template-columns:1fr;} .alaune-card img{height:180px;} }
+    </style>
+    <section id="bloc-a-la-une">
+        <div class="alaune-container" id="alaune-container"></div>
+    </section>
+
     <!-- SECTION PRIX CARBURANTS VIZILLE -->
     <style>
     .carburants-section { background: linear-gradient(135deg, #1a3a5c 0%, #2d5a87 100%); padding: 3rem 1.5rem; position: relative; overflow: hidden; }
@@ -170,8 +189,8 @@
     <script>
     (function(){
         var API = 'https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/prix-des-carburants-en-france-flux-instantane-v2/records';
-        // Recherche par coordonnées : rayon de 15km autour de Vizille (lat 45.084, lon 5.766)
-        var query = '?where=within_distance(geom,geom\'POINT(5.766 45.084)\',15km)&limit=30&order_by=distance(geom,geom\'POINT(5.766 45.084)\')';
+        // Recherche par coordonnées : rayon de 5km autour de Vizille (lat 45.084, lon 5.766)
+        var query = '?where=within_distance(geom,geom\'POINT(5.766 45.084)\',5km)&limit=30&order_by=distance(geom,geom\'POINT(5.766 45.084)\')';
         fetch(API + query)
             .then(function(r){ return r.json(); })
             .then(function(data){
@@ -471,25 +490,6 @@
         }
     })();
     </script>
-
-    <!-- BLOC À LA UNE — deux articles prioritaires -->
-    <style>
-    #bloc-a-la-une { background:#f7f4ef; border-bottom:3px solid #c9a84c; padding:2rem 1rem; display:none; }
-    .alaune-container { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
-    .alaune-card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08); transition:transform 0.2s; }
-    .alaune-card:hover { transform:translateY(-3px); }
-    .alaune-card img { width:100%; height:220px; object-fit:cover; object-position:center 30%; display:block; }
-    .alaune-card-body { padding:1.5rem; }
-    .alaune-card-meta { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:#c9a84c; font-weight:700; margin:0 0 0.5rem; }
-    .alaune-card-title { font-family:'Playfair Display',serif; font-size:clamp(1rem,2vw,1.3rem); font-weight:600; color:#1a3a6b; margin:0 0 0.6rem; line-height:1.3; }
-    .alaune-card-extrait { font-size:0.88rem; color:#555; line-height:1.7; margin:0 0 1rem; }
-    .alaune-card-btn { display:inline-block; background:#1a3a6b; color:#fff; padding:0.5rem 1.2rem; border-radius:3px; text-decoration:none; font-size:0.8rem; letter-spacing:0.04em; }
-    .alaune-card-btn:hover { background:#c9a84c; }
-    @media(max-width:700px){ .alaune-container{grid-template-columns:1fr;} .alaune-card img{height:180px;} }
-    </style>
-    <section id="bloc-a-la-une">
-        <div class="alaune-container" id="alaune-container"></div>
-    </section>
     <script>
     (function() {
         fetch('articles.json?v=' + Date.now()).then(function(r){ return r.json(); }).then(function(articles){
