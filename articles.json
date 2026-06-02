@@ -529,5 +529,21 @@
     "a_la_une": true,
     "modifie_le": "2026-06-02T16:40:54.000Z",
     "slug": "vizille-ville-depart-du-tour-auvergne-rhone-alpes-dimanche-7"
+  },
+  {
+    "id": 1780421169691,
+    "titre": "Vous avez la parole",
+    "date": "2026-06-02",
+    "categorie": "Communiqué",
+    "extrait": "Au-delà de l'élection, le dialogue continue. Suggestions, questions, remarques — votre voix nourrit notre action.",
+    "contenu": "Que vous souhaitiez explorer le site, réfléchir à ce que vous pouvez faire de votre temps libre — en famille, avec vos enfants, vos amis, ou même seul —, ou que vous cherchiez un service, une information municipale, un appui : vous êtes au bon endroit.\n\nVizille est une ville où il fait bon vivre, au cœur de grands projets pour l'avenir. Encore faut-il que la parole circule entre celles et ceux qui la font vivre — habitants, associations, élus, services.\n\nNotre volonté est claire : améliorer la communication entre la municipalité et les citoyens. Nous n'y parviendrons qu'en développant nos canaux d'échange — à commencer par le numérique, sans jamais renoncer au contact direct.\n\nAvez-vous des questions ? Des remarques et suggestions pour enrichir notre action ?\n\nUtilisez activement cette boîte aux lettres : contact@vizilleenmouvement.fr\n\nAu plaisir de vous lire.\n\n— L'équipe Vizille en Mouvement",
+    "images": [
+      "images/articles/article_1780421169691_dialogue.png"
+    ],
+    "image": "images/articles/article_1780421169691_dialogue.png",
+    "auteur": "L'équipe Vizille en Mouvement",
+    "priorite": true,
+    "modifie_le": "2026-06-02T17:26:09.000Z",
+    "slug": "vous-avez-la-parole"
   }
 ]
