@@ -493,7 +493,8 @@
     ],
     "image": "images/articles/article_1777995294733_vizille_arnaques_full_1.jpg",
     "priorite": false,
-    "modifie_le": "2026-05-05T15:35:17.426Z"
+    "modifie_le": "2026-05-05T15:35:17.426Z",
+    "slug": "arnaques-en-ligne-ne-tombez-pas-dans-le-piege"
   },
   {
     "id": 1779863614007,
@@ -508,7 +509,23 @@
     "image": "https://kitcreanet.fr/wp-content/uploads/2026/05/kitcreanet-eau-IA.webp",
     "source": "https://kitcreanet.fr/leau-et-lintelligence-artificielle/",
     "priorite": true,
+    "modifie_le": "2026-05-27T06:39:50.798Z",
+    "slug": "l-eau-et-l-intelligence-artificielle"
+  },
+  {
+    "id": 1780414823000,
+    "titre": "🚴 Vizille, ville-départ du Tour Auvergne-Rhône-Alpes — dimanche 7 juin",
+    "date": "2026-05-26",
+    "categorie": "Événement",
+    "extrait": "Le 7 juin, les champions cyclistes partent de la place du Château pour la 1ʳᵉ étape du Tour AuRA 2026 (ex-Critérium du Dauphiné). Une vitrine pour Vizille et un signal pour les mobilités douces.",
+    "contenu": "Dimanche 7 juin, Vizille accueille le Grand départ du Tour Auvergne-Rhône-Alpes 2026 — le nouveau nom du mythique Critérium du Dauphiné. C'est depuis la place du Château que sera donné le départ de la 1ʳᵉ étape, à 11h, devant le public.\n\nLE PROGRAMME\n• 9h — Arrivée des équipes\n• 9h50–10h50 — Signature des coureurs sur le podium\n• 11h — Départ rue Jean Jaurès\n• Toute la matinée — Exposition de vélos anciens (Chaîne de vélo) et animations (Mvélo+)\n\nL'ÉTAPE\n146 km de Vizille à Saint-Ismier, à travers trois massifs : Vercors, Chartreuse et Belledonne.\n\nVENIR, SE GARER\nStationnement interdit du samedi 6 juin 16h au dimanche 7 juin 16h dans le centre-ville. Circulation interdite dimanche 7 juin de 3h à 16h. Parkings public conseillés : Locomotive, Chantefeuille, lycée.\n\nTRANSPORTS\n• C13 — interruption entre 10h et 11h\n• Ligne 23 — déviation par Brié-et-Angonnes jusqu'à 14h30\n• RD1091 / RN85 — fermées de 10h30 à 11h30\n\nPOURQUOI C'EST IMPORTANT POUR NOUS\nAccueillir une grande course cycliste, c'est aussi réaffirmer notre engagement pour les mobilités douces : voie verte Grenoble-Oisans, pistes cyclables, mobilités du quotidien. Le vélo, ce n'est pas qu'une fête sportive — c'est un projet de territoire.",
+    "images": [
+      "images/articles/article_1780414823000_tour-aura-2026.png"
+    ],
+    "image": "images/articles/article_1780414823000_tour-aura-2026.png",
+    "priorite": true,
     "a_la_une": true,
-    "modifie_le": "2026-05-27T06:39:50.798Z"
+    "modifie_le": "2026-06-02T15:43:37.000Z",
+    "slug": "vizille-ville-depart-du-tour-auvergne-rhone-alpes-dimanche-7"
   }
 ]
