@@ -514,11 +514,11 @@
   },
   {
     "id": 1780414823000,
-    "titre": "🚴 Vizille, ville-départ du Tour Auvergne-Rhône-Alpes — dimanche 7 juin",
+    "titre": "Vizille, ville-départ du Tour Auvergne-Rhône-Alpes — dimanche 7 juin",
     "date": "2026-05-26",
     "categorie": "Événement",
-    "extrait": "Le 7 juin, les champions cyclistes partent de la place du Château pour la 1ʳᵉ étape du Tour AuRA 2026 (ex-Critérium du Dauphiné). Une vitrine pour Vizille et un signal pour les mobilités douces.",
-    "contenu": "Dimanche 7 juin, Vizille accueille le Grand départ du Tour Auvergne-Rhône-Alpes 2026 — le nouveau nom du mythique Critérium du Dauphiné. C'est depuis la place du Château que sera donné le départ de la 1ʳᵉ étape, à 11h, devant le public.\n\nLE PROGRAMME\n• 9h — Arrivée des équipes\n• 9h50–10h50 — Signature des coureurs sur le podium\n• 11h — Départ rue Jean Jaurès\n• Toute la matinée — Exposition de vélos anciens (Chaîne de vélo) et animations (Mvélo+)\n\nL'ÉTAPE\n146 km de Vizille à Saint-Ismier, à travers trois massifs : Vercors, Chartreuse et Belledonne.\n\nVENIR, SE GARER\nStationnement interdit du samedi 6 juin 16h au dimanche 7 juin 16h dans le centre-ville. Circulation interdite dimanche 7 juin de 3h à 16h. Parkings public conseillés : Locomotive, Chantefeuille, lycée.\n\nTRANSPORTS\n• C13 — interruption entre 10h et 11h\n• Ligne 23 — déviation par Brié-et-Angonnes jusqu'à 14h30\n• RD1091 / RN85 — fermées de 10h30 à 11h30\n\nPOURQUOI C'EST IMPORTANT POUR NOUS\nAccueillir une grande course cycliste, c'est aussi réaffirmer notre engagement pour les mobilités douces : voie verte Grenoble-Oisans, pistes cyclables, mobilités du quotidien. Le vélo, ce n'est pas qu'une fête sportive — c'est un projet de territoire.",
+    "extrait": "Dimanche 7 juin, le peloton du Tour Auvergne-Rhône-Alpes — successeur du Critérium du Dauphiné — s'élancera de la place du Château. Une matinée de fête, et un signal pour la place du vélo à Vizille.",
+    "contenu": "Dimanche 7 juin, Vizille accueille le Grand Départ du Tour Auvergne-Rhône-Alpes 2026, qui succède au mythique Critérium du Dauphiné. À onze heures, les coureurs s'élanceront de la place du Château, en plein cœur de notre ville, pour rejoindre Saint-Ismier cent quarante-six kilomètres plus loin, au terme d'une étape qui traversera trois massifs : Vercors, Chartreuse, Belledonne.\n\nVoir partir un peloton de la place du Château, c'est aussi voir Vizille s'inscrire, l'espace d'une matinée, sur la carte sportive nationale — et offrir aux habitants comme aux visiteurs un moment de fête partagée.\n\nLA MATINÉE\nDès neuf heures, les équipes prendront possession de la place du Château. Une heure plus tard, le rituel de la signature des coureurs sur le podium ouvrira la cérémonie de départ. À onze heures précises, le peloton s'élancera par la rue Jean-Jaurès. En parallèle, l'association Chaîne de Vélo exposera des vélos anciens, tandis que Mvélo+ animera la matinée.\n\nACCÈS ET STATIONNEMENT\nLe centre-ville sera fermé à la circulation le dimanche 7 juin, de trois heures à seize heures. Le stationnement sera interdit dès la veille à seize heures, et jusqu'au lendemain à la même heure. Trois parkings restent accessibles au public : la Locomotive, Chantefeuille et le lycée.\n\nTRANSPORTS EN COMMUN\nLes liaisons par bus seront partiellement perturbées. La ligne C13 sera interrompue entre dix et onze heures. La ligne 23 sera déviée par Brié-et-Angonnes jusqu'en milieu d'après-midi. Les deux grands axes routiers — route départementale 1091 et route nationale 85 — seront fermés entre dix heures trente et onze heures trente.\n\nUNE FÊTE, ET UN SIGNAL\nAccueillir une grande course cycliste, ce n'est pas seulement offrir aux Vizillois et aux visiteurs un dimanche de fête sportive. C'est aussi réaffirmer la place que nous voulons donner au vélo dans la ville : voie verte entre Grenoble et l'Oisans, pistes cyclables sécurisées, mobilités du quotidien. Le vélo n'est pas un loisir d'occasion — c'est un projet de territoire.",
     "images": [
       "images/articles/article_1780414823000_tour-aura-2026.png",
       "images/articles/article_1780415679078.jpg",
@@ -527,6 +527,7 @@
     "image": "images/articles/article_1780414823000_tour-aura-2026.png",
     "priorite": true,
     "a_la_une": true,
-    "modifie_le": "2026-06-02T15:54:59.996Z"
+    "modifie_le": "2026-06-02T16:40:54.000Z",
+    "slug": "vizille-ville-depart-du-tour-auvergne-rhone-alpes-dimanche-7"
   }
 ]
