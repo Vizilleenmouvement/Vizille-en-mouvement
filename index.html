@@ -350,13 +350,15 @@
                 <p class="transports-subtitle">Trafic routier et prochains départs en temps réel</p>
             </div>
             <div class="transports-grid">
-                <!-- TRAFIC RN85 -->
+                <!-- TRAFIC TEMPS RÉEL — Waze Live Map -->
                 <div class="transport-card">
-                    <div class="transport-card-title">🚗 Trafic RN85 — Vizille ↔ Grenoble</div>
-                    <div id="trafic-content">
-                        <div class="bus-loading">Chargement du trafic...</div>
-                    </div>
-                    <a href="https://www.google.com/maps/dir/Vizille/Grenoble/@45.1266,5.7408,12z/data=!5m1!1e1" target="_blank" rel="noopener" class="trafic-link">📍 Voir sur Google Maps →</a>
+                    <div class="transport-card-title">🚗 Trafic en direct — Vizille / RN85 / Grenoble</div>
+                    <iframe src="https://embed.waze.com/iframe?zoom=11&lat=45.13&lon=5.74&ct=livemap"
+                            width="100%" height="280" frameborder="0"
+                            style="border:0;border-radius:10px;display:block"
+                            allowfullscreen loading="lazy"
+                            title="Carte du trafic en direct autour de Vizille"></iframe>
+                    <a href="https://www.waze.com/fr/live-map/?zoom=11&lat=45.13&lon=5.74" target="_blank" rel="noopener" class="trafic-link">🗺️ Ouvrir en plein écran →</a>
                 </div>
                 <!-- PROCHAINS BUS -->
                 <div class="transport-card">
@@ -373,50 +375,7 @@
         </div>
     </section>
     <script>
-    // === TRAFIC RN85 ===
-    (function(){
-        fetch('https://data.mobilites-m.fr/api/dyn/trr/json')
-            .then(function(r){ return r.json(); })
-            .then(function(data){
-                // Chercher les tronçons de la RN85 / D1085 entre Vizille et Grenoble
-                var features = data.features || data || [];
-                var rn85 = [];
-                if(Array.isArray(features)){
-                    features.forEach(function(f){
-                        var props = f.properties || f;
-                        var nom = (props.nom || props.name || props.libelle || '').toLowerCase();
-                        var id = (props.id || '').toLowerCase();
-                        if(nom.indexOf('rn85') > -1 || nom.indexOf('n85') > -1 || nom.indexOf('d1085') > -1 ||
-                           nom.indexOf('vizille') > -1 || nom.indexOf('jarrie') > -1 || nom.indexOf('pont-de-claix') > -1 ||
-                           id.indexOf('rn85') > -1 || id.indexOf('d1085') > -1){
-                            rn85.push(props);
-                        }
-                    });
-                }
-                var el = document.getElementById('trafic-content');
-                if(rn85.length > 0){
-                    // Calculer le niveau moyen
-                    var niveaux = rn85.map(function(t){ return t.niveau || t.level || t.niveauService || 0; });
-                    var moy = niveaux.reduce(function(a,b){return a+b;},0) / niveaux.length;
-                    var couleur, texte;
-                    if(moy <= 1.5){ couleur = '#4ade80'; texte = 'Trafic fluide'; }
-                    else if(moy <= 2.5){ couleur = '#fbbf24'; texte = 'Trafic dense'; }
-                    else if(moy <= 3.5){ couleur = '#f97316'; texte = 'Trafic ralenti'; }
-                    else { couleur = '#ef4444'; texte = 'Trafic très perturbé'; }
-                    el.innerHTML = '<div class="trafic-status"><div class="trafic-indicator" style="background:'+couleur+';box-shadow:0 0 8px '+couleur+';"></div><div class="trafic-label">'+texte+'</div></div>'
-                        + '<div class="trafic-detail">'+rn85.length+' tronçons analysés sur l\'axe Vizille — Grenoble</div>'
-                        + '<div class="trafic-trajet"><div><div class="trafic-trajet-label">Temps estimé habituel</div><div style="font-size:0.75rem;color:rgba(255,255,255,0.4);">Vizille → Grenoble centre</div></div><div class="trafic-trajet-time">~25 min</div></div>';
-                } else {
-                    // Pas de tronçons trouvés, afficher lien Google Maps
-                    el.innerHTML = '<div class="trafic-status"><div class="trafic-indicator" style="background:#888;"></div><div class="trafic-label">Consultez le trafic en direct</div></div>'
-                        + '<div class="trafic-detail">Axe RN85 / D1085 Vizille — Jarrie — Pont-de-Claix — Grenoble</div>'
-                        + '<div class="trafic-trajet"><div><div class="trafic-trajet-label">Temps normal</div></div><div class="trafic-trajet-time">~25 min</div></div>';
-                }
-            }).catch(function(){
-                document.getElementById('trafic-content').innerHTML = '<div class="trafic-status"><div class="trafic-indicator" style="background:#888;"></div><div class="trafic-label">Données indisponibles</div></div>'
-                    + '<div class="trafic-detail">Consultez Google Maps pour le trafic en temps réel.</div>';
-            });
-    })();
+    // (Trafic RN85 : remplacé par iframe Waze Live Map — plus aucun JS de fetch nécessaire.)
 
     // === PROCHAINS BUS VIZILLE ===
     (function(){
