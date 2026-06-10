@@ -1,5 +1,18 @@
 [
   {
+    "id": 1781200000000,
+    "titre": "Internet et équipement informatique : les aides que 70 % des foyers éligibles oublient de demander",
+    "date": "2026-06-10",
+    "categorie": "Info",
+    "extrait": "Fibre à 15,99 €/mois avec le Coup de Pouce Internet d'Orange, prêt à taux zéro de la CAF de l'Isère pour s'équiper en ordinateur : des aides existent, encore faut-il les connaître.",
+    "contenu": "Internet est devenu indispensable : démarches administratives, devoirs des enfants, télétravail, lien avec les proches. Pourtant, des aides existent pour alléger la facture — et la plupart des foyers éligibles ne les demandent jamais. Vizille en Mouvement fait le point.\n\n💶 L'OFFRE « COUP DE POUCE INTERNET » — LA FIBRE À 15,99 €/MOIS\n\nOrange propose une offre sociale réservée aux foyers modestes : fibre ou ADSL à 15,99 € par mois, sans engagement de durée.\n\nQui y a droit ?\n• Les allocataires CAF avec un quotient familial inférieur ou égal à 700 €\n• Les bénéficiaires du RSA, de l'AAH ou de l'ASPA (minimum vieillesse)\n\nC'est simple, sans dossier complexe — il suffit de justifier de sa situation auprès d'Orange. Et pourtant, environ 70 % des foyers éligibles ne la demandent pas, faute de la connaître.\n\n💻 LE PRÊT ÉQUIPEMENT LOGEMENT DE LA CAF DE L'ISÈRE — POUR S'ÉQUIPER\n\nLa CAF de l'Isère propose un prêt à taux zéro qui inclut l'achat d'un ordinateur et d'une imprimante.\n\nLes conditions :\n• Être allocataire CAF 38 avec au moins un enfant à charge\n• Quotient familial inférieur ou égal à 800 €\n• Être dans l'une de ces situations : première installation dans un logement, passage d'un meublé à un non-meublé, ou réinstallation après une séparation\n• Faire la demande dans les 6 mois suivant l'installation (8 mois en cas de séparation)\n\nLes montants :\n• Ordinateur (fixe ou portable) + imprimante : jusqu'à 700 €\n• Téléviseur : jusqu'à 400 €\n• Plafond global : 800 € (rééquipement) ou 1 500 € (première installation ou séparation)\n\nLe remboursement : 0 % d'intérêt, mensualités d'au moins 30 € retenues directement sur vos prestations familiales, sur 27 à 40 mois maximum.\n\n⚠️ Les règles strictes de la CAF 38 :\n• Achat en magasin physique uniquement (Fnac, Darty, Boulanger, Électro Dépôt ou commerce local) — pas d'achat en ligne ni entre particuliers\n• Frais de livraison et extensions de garantie non pris en charge\n\nLa procédure :\n1. Téléchargez le dossier « Prêt équipement logement » sur caf.fr (espace CAF de l'Isère)\n2. Demandez un devis nominatif (moins de 2 mois) en magasin\n3. Envoyez le dossier complet à la CAF de l'Isère — 3 rue des Alliés, 38051 Grenoble Cedex 9\n4. Attendez l'accord écrit : la CAF règle généralement le magasin directement\n\n🏠 BESOIN D'AIDE POUR VOS DÉMARCHES ?\n\nLa Maison France Services « La Source » à Vizille vous accompagne gratuitement dans toutes ces démarches : vérification de votre éligibilité, montage du dossier, contact avec la CAF.\n\nVizille en Mouvement vous informe — parce qu'une aide qui n'est pas demandée est une aide perdue.\n\n#VizilleEnMouvement #Vizille #PouvoirDachat #Numérique #CAF",
+    "image": "",
+    "images": [],
+    "priorite": true,
+    "modifie_le": "2026-06-10T08:00:00.000Z",
+    "slug": "internet-et-equipement-informatique-les-aides-que-70-des-foy"
+  },
+  {
     "id": 1777982343566,
     "titre": "Les Amis de l'Histoire du Pays Vizillois annoncent",
     "date": "2026-05-05",
@@ -527,7 +540,8 @@
     "image": "images/articles/article_1780414823000_tour-aura-2026.png",
     "priorite": true,
     "a_la_une": true,
-    "modifie_le": "2026-06-03T17:53:12.409Z"
+    "modifie_le": "2026-06-03T17:53:12.409Z",
+    "slug": "vizille-ville-depart-du-tour-auvergne-rhone-alpes-dimanche-7"
   },
   {
     "id": 1780421169691,
