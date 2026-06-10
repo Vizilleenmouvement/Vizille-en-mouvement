@@ -133,345 +133,117 @@
         <div class="alaune-container" id="alaune-container"></div>
     </section>
 
-    <!-- SECTION TRAFIC EN DIRECT — Waze Live Map, pleine largeur -->
+    <!-- SECTION SERVICES EN DIRECT — Onglets Trafic / Carburants / Bus -->
     <style>
-    .trafic-live-section { background:#0e1d2e; padding:2.5rem 1.5rem 2rem; }
-    .trafic-live-container { max-width:1400px; margin:0 auto; }
-    .trafic-live-header { text-align:center; margin-bottom:1.5rem; color:#fff; }
-    .trafic-live-badge { display:inline-block; background:rgba(74,222,128,0.15); color:#4ade80; font-size:0.65rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; padding:0.35rem 1rem; border-radius:20px; margin-bottom:0.9rem; border:1px solid rgba(74,222,128,0.3); }
-    .trafic-live-title { font-family:'Playfair Display',serif; font-size:clamp(1.4rem,3vw,1.8rem); margin:0 0 0.4rem; }
-    .trafic-live-subtitle { font-size:0.9rem; color:rgba(255,255,255,0.6); margin:0; }
-    .trafic-live-iframe-wrap { background:#000; border-radius:14px; overflow:hidden; box-shadow:0 12px 40px rgba(0,0,0,0.35); }
-    .trafic-live-iframe-wrap iframe { display:block; width:100%; height:580px; border:0; }
-    .trafic-live-footer { text-align:center; margin-top:1rem; }
-    .trafic-live-footer a { font-size:0.8rem; color:rgba(255,255,255,0.7); text-decoration:none; }
-    .trafic-live-footer a:hover { color:#4ade80; }
-    @media(max-width:900px){ .trafic-live-iframe-wrap iframe { height:440px; } }
-    @media(max-width:600px){ .trafic-live-section { padding:1.5rem 0.75rem; } .trafic-live-iframe-wrap iframe { height:360px; } }
-    </style>
-    <section class="trafic-live-section" id="section-trafic-live">
-        <div class="trafic-live-container">
-            <div class="trafic-live-header">
-                <div class="trafic-live-badge">Vizille en Mouvement vous informe</div>
-                <h2 class="trafic-live-title">Trafic en direct — Vizille / RN85 / Grenoble</h2>
-                <p class="trafic-live-subtitle">Carte temps réel · zoomez, déplacez-vous, repérez les ralentissements avant de partir</p>
-            </div>
-            <div class="trafic-live-iframe-wrap">
-                <iframe src="https://embed.waze.com/iframe?zoom=12&lat=45.105&lon=5.755&ct=livemap"
-                        allowfullscreen loading="lazy"
-                        title="Carte du trafic en direct autour de Vizille — source Waze"></iframe>
-            </div>
-            <div class="trafic-live-footer">
-                <a href="https://www.waze.com/fr/live-map/?zoom=12&lat=45.105&lon=5.755" target="_blank" rel="noopener">🗺️ Ouvrir la carte en plein écran sur Waze →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION PRIX CARBURANTS VIZILLE -->
-    <style>
-    .carburants-section { background: linear-gradient(135deg, #1a3a5c 0%, #2d5a87 100%); padding: 3rem 1.5rem; position: relative; overflow: hidden; }
-    .carburants-section::before { content: ''; position: absolute; top: -50%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(201,162,39,0.08) 0%, transparent 70%); border-radius: 50%; }
-    .carburants-container { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
-    .carburants-header { text-align: center; margin-bottom: 2rem; }
-    .carburants-badge { display: inline-block; background: rgba(201,162,39,0.2); color: #e8c84a; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 20px; margin-bottom: 1rem; border: 1px solid rgba(201,162,39,0.3); }
-    .carburants-title { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 3vw, 1.8rem); color: #fff; margin: 0 0 0.5rem; line-height: 1.3; }
-    .carburants-subtitle { font-family: 'Source Sans 3', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.65); margin: 0; }
-    .carburants-live { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.7rem; color: #4ade80; margin-top: 0.6rem; font-weight: 600; }
-    .carburants-live .dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; animation: pulse-dot 2s infinite; }
-    @keyframes pulse-dot { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74,222,128,0.4); } 50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(74,222,128,0); } }
-    .stations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
-    .station-card { background: rgba(255,255,255,0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.5rem; transition: transform 0.2s, border-color 0.2s; }
-    .station-card:hover { transform: translateY(-3px); border-color: rgba(201,162,39,0.4); }
-    .station-name { font-weight: 700; color: #fff; font-size: 1.1rem; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 0.5rem; }
-    .station-addr { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem; }
-    .station-horaires { font-size: 0.75rem; color: #4ade80; margin-bottom: 1rem; font-weight: 500; }
-    .prix-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 0.5rem; }
-    .prix-item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 0.6rem 0.4rem; text-align: center; transition: background 0.2s; }
-    .prix-item:hover { background: rgba(255,255,255,0.1); }
-    .prix-item.rupture { background: rgba(231,76,60,0.15); border-color: rgba(231,76,60,0.25); }
-    .prix-label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); }
-    .prix-val { font-size: 1.2rem; font-weight: 700; color: #e8c84a; margin-top: 0.15rem; }
-    .prix-val.indispo { font-size: 0.7rem; color: #f87171; font-weight: 600; }
-    .prix-date { font-size: 0.58rem; color: rgba(255,255,255,0.3); margin-top: 0.2rem; }
-    .carburants-loading { text-align: center; padding: 2rem; color: rgba(255,255,255,0.5); }
-    .carburants-footer { text-align: center; margin-top: 1.5rem; }
-    .carburants-penurie { background: rgba(231,76,60,0.15); border: 1px solid rgba(231,76,60,0.3); border-radius: 10px; padding: 0.8rem 1.2rem; margin-bottom: 1.5rem; text-align: center; display: none; }
+    .services-section { background: linear-gradient(135deg, #0e1720 0%, #1a3a5c 100%); padding: 2rem 1.5rem; position: relative; overflow: hidden; }
+    .services-section::before { content: ''; position: absolute; top: -50%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(201,162,39,0.06) 0%, transparent 70%); border-radius: 50%; }
+    .services-container { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+    .services-header { text-align: center; margin-bottom: 1.5rem; }
+    .services-badge { display: inline-block; background: rgba(201,162,39,0.2); color: #e8c84a; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 20px; margin-bottom: 0.8rem; border: 1px solid rgba(201,162,39,0.3); }
+    .services-title { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 3vw, 1.7rem); color: #fff; margin: 0 0 0.3rem; }
+    .services-live { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.7rem; color: #4ade80; margin-top: 0.4rem; font-weight: 600; }
+    .services-live .dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; animation: srv-pulse 2s infinite; }
+    @keyframes srv-pulse { 0%, 100% { opacity:1; box-shadow:0 0 0 0 rgba(74,222,128,0.4); } 50% { opacity:0.7; box-shadow:0 0 0 6px rgba(74,222,128,0); } }
+    .srv-tabs { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .srv-tab { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); padding: 0.6rem 1.2rem; border-radius: 10px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 0.4rem; }
+    .srv-tab:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    .srv-tab.active { background: rgba(201,162,39,0.2); border-color: rgba(201,162,39,0.5); color: #e8c84a; }
+    .srv-panel { display: none; }
+    .srv-panel.active { display: block; }
+    .stations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 900px; margin: 0 auto; }
+    .station-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.2rem; transition: transform 0.2s, border-color 0.2s; }
+    .station-card:hover { transform: translateY(-2px); border-color: rgba(201,162,39,0.3); }
+    .station-name { font-weight: 700; color: #fff; font-size: 1rem; margin-bottom: 0.2rem; }
+    .station-addr { font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-bottom: 0.2rem; }
+    .station-horaires { font-size: 0.72rem; color: #4ade80; margin-bottom: 0.7rem; font-weight: 500; }
+    .prix-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 0.4rem; }
+    .prix-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 0.4rem 0.3rem; text-align: center; }
+    .prix-item.rupture { background: rgba(231,76,60,0.12); border-color: rgba(231,76,60,0.2); }
+    .prix-label { font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.4); }
+    .prix-val { font-size: 1.05rem; font-weight: 700; color: #e8c84a; margin-top: 0.1rem; }
+    .prix-val.indispo { font-size: 0.65rem; color: #f87171; font-weight: 600; }
+    .prix-date { font-size: 0.55rem; color: rgba(255,255,255,0.25); margin-top: 0.1rem; }
+    .station-link { display: inline-block; margin-top: 0.6rem; font-size: 0.8rem; color: #4ade80; text-decoration: none; font-weight: 600; }
+    .carburants-penurie { background: rgba(231,76,60,0.12); border: 1px solid rgba(231,76,60,0.25); border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 1rem; text-align: center; display: none; }
     .carburants-penurie.visible { display: block; }
-    .carburants-penurie-title { font-size: 0.85rem; font-weight: 700; color: #f87171; margin-bottom: 0.3rem; }
-    .carburants-penurie-details { font-size: 0.78rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
-    .carburants-penurie-bar { height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; margin-top: 0.5rem; overflow: hidden; }
+    .carburants-penurie-title { font-size: 0.8rem; font-weight: 700; color: #f87171; margin-bottom: 0.2rem; }
+    .carburants-penurie-details { font-size: 0.72rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+    .carburants-penurie-bar { height: 5px; background: rgba(255,255,255,0.08); border-radius: 3px; margin-top: 0.4rem; overflow: hidden; }
     .carburants-penurie-fill { height: 100%; border-radius: 3px; transition: width 1s ease; }
-    .carburants-source { font-size: 0.7rem; color: rgba(255,255,255,0.35); }
-    .carburants-source a { color: rgba(255,255,255,0.5); text-decoration: underline; }
-    @media(max-width:700px){ .stations-grid { grid-template-columns: 1fr; } .carburants-section { padding: 2rem 1rem; } }
-    </style>
-    <section class="carburants-section" id="section-carburants">
-        <div class="carburants-container">
-            <div class="carburants-header">
-                <div class="carburants-badge">Vizille en Mouvement vous informe</div>
-                <h2 class="carburants-title">Prix des carburants à Vizille</h2>
-                <p class="carburants-subtitle">Vizille et alentours — tarifs et disponibilités en temps réel</p>
-                <div class="carburants-live"><span class="dot"></span> Données actualisées automatiquement</div>
-            </div>
-            <div id="carburants-penurie" class="carburants-penurie"></div>
-            <div id="carburants-content" class="carburants-loading">Chargement des prix...</div>
-            <div class="carburants-footer">
-                <p class="carburants-source">Source officielle : <a href="https://www.prix-carburants.gouv.fr/" target="_blank" rel="noopener">Ministère de l'Économie — prix-carburants.gouv.fr</a></p>
-            </div>
-        </div>
-    </section>
-    <script>
-    (function(){
-        var API = 'https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/prix-des-carburants-en-france-flux-instantane-v2/records';
-        // Recherche par coordonnées : rayon de 5km autour de Vizille (lat 45.084, lon 5.766)
-        var query = '?where=within_distance(geom,geom\'POINT(5.766 45.084)\',5km)&limit=30&order_by=distance(geom,geom\'POINT(5.766 45.084)\')';
-        fetch(API + query)
-            .then(function(r){ return r.json(); })
-            .then(function(data){
-                var records = data.results || [];
-                if(!records.length){ document.getElementById('carburants-content').innerHTML = '<p>Aucune donnée disponible.</p>'; return; }
-                // Séparer Vizille et alentours
-                var vizille = records.filter(function(f){ return f.cp === '38220'; });
-                var alentours = records.filter(function(f){ return f.cp !== '38220'; });
-
-                var html = '';
-                // --- VIZILLE ---
-                if(vizille.length){
-                    html += '<h3 style="color:#e8c84a;font-family:\'Playfair Display\',serif;font-size:1.1rem;margin:0 0 1rem;text-align:center;">À Vizille</h3>';
-                    html += '<div class="stations-grid">';
-                    vizille.forEach(function(f){ html += renderStation(f, true); });
-                    html += '</div>';
-                }
-                // --- ALENTOURS ---
-                if(alentours.length){
-                    // Ne garder que celles avec au moins un carburant disponible
-                    var dispos = alentours.filter(function(f){ return f.carburants_disponibles && f.carburants_disponibles.length > 0; });
-                    if(dispos.length){
-                        html += '<h3 style="color:rgba(255,255,255,0.6);font-family:\'Playfair Display\',serif;font-size:1rem;margin:1.5rem 0 1rem;text-align:center;">Disponibilités à proximité</h3>';
-                        html += '<div class="stations-grid">';
-                        dispos.slice(0,8).forEach(function(f){ html += renderStation(f, false); });
-                        html += '</div>';
-                    }
-                }
-                document.getElementById('carburants-content').innerHTML = html;
-            }).catch(function(){ document.getElementById('carburants-content').innerHTML = '<p style="color:rgba(255,255,255,0.5);">Service temporairement indisponible. <a href="https://www.prix-carburants.gouv.fr/" target="_blank" style="color:rgba(255,255,255,0.7);">Consulter prix-carburants.gouv.fr</a></p>'; });
-
-        var NOMS = {
-            38220002: 'TotalEnergies — Rond-point Muzet',
-            38220003: 'Intermarché Vizille',
-            38130004: 'E.Leclerc Comboire',
-            38130005: 'E.Leclerc Échirolles'
-        };
-        function renderStation(f, isVizille){
-            var ville = f.ville || '';
-            var villeCap = ville.charAt(0).toUpperCase() + ville.slice(1).toLowerCase();
-            var nom = NOMS[f.id] || villeCap;
-            // Détecter Leclerc par les services ou l'adresse
-            if(!NOMS[f.id]){
-                var services = (f.services_service || []).join(' ').toLowerCase();
-                var addr = (f.adresse || '').toLowerCase();
-                if(addr.indexOf('leclerc') > -1 || services.indexOf('leclerc') > -1) nom = 'E.Leclerc ' + villeCap;
-            }
-            var h24 = f.horaires_automate_24_24 === 'Oui';
-            var cardStyle = isVizille ? '' : ' style="opacity:0.85;"';
-            var s = '<div class="station-card"'+cardStyle+'>';
-            s += '<div class="station-name">⛽ ' + nom + '</div>';
-            s += '<div class="station-addr">' + (f.adresse||'') + (isVizille ? '' : ', ' + villeCap) + '</div>';
-            s += '<div class="station-horaires">' + (h24 ? '🟢 Automate 24h/24' : '🕐 Horaires en station') + '</div>';
-            s += '<div class="prix-grid">';
-            var carbs = ['gazole','sp95','sp98','e10','e85','gplc'];
-            var labs = {gazole:'Gazole',sp95:'SP95',sp98:'SP98',e10:'E10',e85:'E85',gplc:'GPLc'};
-            carbs.forEach(function(c){
-                var p = f[c+'_prix'], m = f[c+'_maj'], rt = f[c+'_rupture_type'];
-                if(p){ var d = m ? new Date(m).toLocaleDateString('fr-FR',{day:'numeric',month:'short'}) : '';
-                    s += '<div class="prix-item"><div class="prix-label">'+labs[c]+'</div><div class="prix-val">'+parseFloat(p).toFixed(3)+' €</div>'+(d?'<div class="prix-date">màj '+d+'</div>':'')+'</div>';
-                } else if(rt==='temporaire'){
-                    s += '<div class="prix-item rupture"><div class="prix-label">'+labs[c]+'</div><div class="prix-val indispo">Rupture temp.</div></div>';
-                }
-            });
-            s += '</div>';
-            // Lien Google Maps trafic
-            var lat = f.geom ? f.geom.lat : null;
-            var lon = f.geom ? f.geom.lon : null;
-            if(lat && lon){
-                s += '<a href="https://www.google.com/maps/search/station+essence/@'+lat+','+lon+',16z/data=!5m1!1e1" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.8rem;font-size:0.9rem;color:#4ade80;text-decoration:none;font-weight:600;">📍 Voir le trafic en direct →</a>';
-            }
-            s += '</div>';
-            return s;
-        }
-
-        // --- Indicateur pénurie nationale ---
-        var API_NAT = 'https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/prix-des-carburants-en-france-flux-instantane-v2/records';
-        // Total stations
-        fetch(API_NAT + '?limit=0')
-            .then(function(r){ return r.json(); })
-            .then(function(totalData){
-                var total = totalData.total_count || 0;
-                if(!total) return;
-                // Stations avec au moins une rupture temporaire de gazole
-                return fetch(API_NAT + '?where=gazole_rupture_type%3D%22temporaire%22&limit=0')
-                    .then(function(r){ return r.json(); })
-                    .then(function(gazData){
-                        var gazRupture = gazData.total_count || 0;
-                        // Stations avec rupture totale (aucun carburant dispo)
-                        return fetch(API_NAT + '?where=carburants_disponibles%20is%20null&limit=0')
-                            .then(function(r){ return r.json(); })
-                            .then(function(secData){
-                                var aSec = secData.total_count || 0;
-                                var pctSec = ((aSec / total) * 100).toFixed(1);
-                                var pctGaz = ((gazRupture / total) * 100).toFixed(1);
-                                var el = document.getElementById('carburants-penurie');
-                                var couleur = pctSec > 15 ? '#ef4444' : pctSec > 5 ? '#f59e0b' : '#4ade80';
-                                var niveau = pctSec > 15 ? '🔴 Situation tendue' : pctSec > 5 ? '🟠 Tensions modérées' : '🟢 Approvisionnement normal';
-                                el.innerHTML = '<div class="carburants-penurie-title">🇫🇷 Situation nationale — ' + niveau + '</div>'
-                                    + '<div class="carburants-penurie-details">'
-                                    + '<strong>' + pctSec + '%</strong> des stations en rupture totale (' + aSec.toLocaleString('fr-FR') + ' / ' + total.toLocaleString('fr-FR') + ')'
-                                    + (gazRupture > 0 ? ' · <strong>' + pctGaz + '%</strong> sans Gazole' : '')
-                                    + '</div>'
-                                    + '<div class="carburants-penurie-bar"><div class="carburants-penurie-fill" style="width:' + Math.min(pctSec * 2, 100) + '%;background:' + couleur + ';"></div></div>';
-                                el.classList.add('visible');
-                            });
-                    });
-            }).catch(function(){});
-    })();
-    </script>
-
-    <!-- SECTION TRANSPORTS VIZILLE -->
-    <style>
-    .transports-section {
-        background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-        padding: 3rem 1.5rem;
-        position: relative;
-    }
-    .transports-container { max-width: 1100px; margin: 0 auto; }
-    .transports-header { text-align: center; margin-bottom: 2rem; }
-    .transports-badge { display: inline-block; background: rgba(74,222,128,0.15); color: #4ade80; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 20px; margin-bottom: 1rem; border: 1px solid rgba(74,222,128,0.3); }
-    .transports-title { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 3vw, 1.8rem); color: #fff; margin: 0 0 0.5rem; }
-    .transports-subtitle { font-size: 0.9rem; color: rgba(255,255,255,0.55); margin: 0; }
-    .transports-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
-    .transport-card { background: rgba(255,255,255,0.06); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.5rem; }
-    .transport-card-title { font-weight: 700; color: #fff; font-size: 1.05rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
-
-    /* TRAFIC */
-    .trafic-status { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; }
-    .trafic-indicator { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
-    .trafic-label { font-size: 0.9rem; color: #fff; font-weight: 600; }
-    .trafic-detail { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
-    .trafic-trajet { display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.05); border-radius: 8px; padding: 0.6rem 1rem; margin-top: 0.8rem; }
-    .trafic-trajet-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
-    .trafic-trajet-time { font-size: 1.3rem; font-weight: 700; color: #4ade80; }
-    .trafic-link { display: inline-block; margin-top: 0.8rem; font-size: 0.85rem; color: #4ade80; text-decoration: none; font-weight: 600; }
-
-    /* BUS */
-    .bus-line { display: flex; align-items: center; gap: 0.6rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .waze-wrap { background: #000; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+    .waze-wrap iframe { display: block; width: 100%; height: 450px; border: 0; }
+    .waze-footer { text-align: center; margin-top: 0.8rem; }
+    .waze-footer a { font-size: 0.8rem; color: rgba(255,255,255,0.6); text-decoration: none; }
+    .waze-footer a:hover { color: #4ade80; }
+    .bus-line { display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
     .bus-line:last-child { border-bottom: none; }
-    .bus-num { background: #e74c3c; color: #fff; font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.5rem; border-radius: 4px; min-width: 36px; text-align: center; }
+    .bus-num { background: #e74c3c; color: #fff; font-size: 0.68rem; font-weight: 700; padding: 0.2rem 0.45rem; border-radius: 4px; min-width: 34px; text-align: center; }
     .bus-num.exp { background: #9b59b6; }
-    .bus-dest { flex: 1; font-size: 0.82rem; color: rgba(255,255,255,0.75); }
-    .bus-time { font-size: 0.9rem; font-weight: 700; color: #4ade80; }
-    .bus-loading { text-align: center; padding: 1rem; color: rgba(255,255,255,0.4); font-size: 0.85rem; }
-
-    .transports-footer { text-align: center; margin-top: 1.5rem; }
-    .transports-source { font-size: 0.7rem; color: rgba(255,255,255,0.3); }
-    .transports-source a { color: rgba(255,255,255,0.45); text-decoration: underline; }
-    @media(max-width:700px){ .transports-grid { grid-template-columns: 1fr; } .transports-section { padding: 2rem 1rem; } }
+    .bus-dest { flex: 1; font-size: 0.8rem; color: rgba(255,255,255,0.7); }
+    .bus-time { font-size: 0.85rem; font-weight: 700; color: #4ade80; }
+    .bus-loading { text-align: center; padding: 1rem; color: rgba(255,255,255,0.4); font-size: 0.82rem; }
+    .bus-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.2rem; max-width: 500px; margin: 0 auto; }
+    .srv-source { text-align: center; font-size: 0.65rem; color: rgba(255,255,255,0.25); margin-top: 1rem; }
+    .srv-source a { color: rgba(255,255,255,0.4); text-decoration: underline; }
+    .srv-loading { text-align: center; padding: 1.5rem; color: rgba(255,255,255,0.4); }
+    @media(max-width:700px){ .stations-grid { grid-template-columns: 1fr; } .services-section { padding: 1.5rem 0.75rem; } .waze-wrap iframe { height: 320px; } .srv-tab { padding: 0.5rem 0.8rem; font-size: 0.78rem; } }
     </style>
-    <section class="transports-section">
-        <div class="transports-container">
-            <div class="transports-header">
-                <div class="transports-badge">Vizille en Mouvement vous informe</div>
-                <h2 class="transports-title">Transports — Vizille / Grenoble</h2>
-                <p class="transports-subtitle">Trafic routier et prochains départs en temps réel</p>
+    <section class="services-section" id="section-services">
+        <div class="services-container">
+            <div class="services-header">
+                <div class="services-badge">Vizille en Mouvement vous informe</div>
+                <h2 class="services-title">Services en direct</h2>
+                <div class="services-live"><span class="dot"></span> Données actualisées automatiquement</div>
             </div>
-            <div class="transports-grid" style="grid-template-columns:1fr">
-                <!-- PROCHAINS BUS -->
-                <div class="transport-card">
-                    <div class="transport-card-title">🚌 Prochains départs — Vizille</div>
-                    <div id="bus-content">
-                        <div class="bus-loading">Chargement des horaires...</div>
-                    </div>
-                    <a href="https://www.tag.fr/" target="_blank" rel="noopener" class="trafic-link">🕐 Tous les horaires TAG →</a>
+            <div class="srv-tabs">
+                <div class="srv-tab active" onclick="srvTab('trafic')">🚗 Trafic</div>
+                <div class="srv-tab" onclick="srvTab('carburants')">⛽ Carburants</div>
+                <div class="srv-tab" onclick="srvTab('bus')">🚌 Bus</div>
+            </div>
+            <div class="srv-panel active" id="srv-trafic">
+                <div class="waze-wrap">
+                    <iframe src="https://embed.waze.com/iframe?zoom=12&lat=45.105&lon=5.755&ct=livemap" allowfullscreen loading="lazy" title="Trafic Vizille / RN85 / Grenoble"></iframe>
                 </div>
+                <div class="waze-footer"><a href="https://www.waze.com/fr/live-map/?zoom=12&lat=45.105&lon=5.755" target="_blank" rel="noopener">🗺️ Ouvrir sur Waze →</a></div>
             </div>
-            <div class="transports-footer">
-                <p class="transports-source">Sources : <a href="https://www.mobilites-m.fr/" target="_blank" rel="noopener">Mobilités m</a> · <a href="https://www.tag.fr/" target="_blank" rel="noopener">TAG</a> · <a href="https://www.google.com/maps" target="_blank" rel="noopener">Google Maps</a></p>
+            <div class="srv-panel" id="srv-carburants">
+                <div id="carburants-penurie" class="carburants-penurie"></div>
+                <div id="carburants-content" class="srv-loading">Chargement des prix...</div>
+                <p class="srv-source">Source : <a href="https://www.prix-carburants.gouv.fr/" target="_blank" rel="noopener">prix-carburants.gouv.fr</a></p>
+            </div>
+            <div class="srv-panel" id="srv-bus">
+                <div class="bus-card">
+                    <div style="font-weight:700;color:#fff;font-size:1rem;margin-bottom:0.8rem;">🚌 Prochains départs — Vizille</div>
+                    <div id="bus-content"><div class="bus-loading">Chargement...</div></div>
+                    <a href="https://www.tag.fr/" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.8rem;font-size:0.8rem;color:#4ade80;text-decoration:none;font-weight:600;">🕐 Horaires TAG →</a>
+                </div>
+                <p class="srv-source"><a href="https://www.mobilites-m.fr/" target="_blank" rel="noopener">Mobilités m</a> · <a href="https://www.tag.fr/" target="_blank" rel="noopener">TAG</a></p>
             </div>
         </div>
     </section>
     <script>
-    // (Trafic RN85 : remplacé par iframe Waze Live Map — plus aucun JS de fetch nécessaire.)
-
-    // === PROCHAINS BUS VIZILLE ===
-    (function(){
-        // Arrêts principaux de Vizille — on teste plusieurs formats d'ID
-        var arrets = [
-            { id: 'SEM:VIZCHF', nom: 'Vizille Chantefeuille' },
-            { id: 'SEM:VIZLYC', nom: 'Vizille Lycée' },
-            { id: 'SEM:VIZPEG', nom: 'Vizille Le Péage' },
-            { id: 'SEM:VIZCHAT', nom: 'Vizille Château' }
-        ];
-        var API_BUS = 'https://data.mobilites-m.fr/api/routers/default/index/stops/';
-        var allDepartures = [];
-        var loaded = 0;
-        var total = arrets.length;
-
-        arrets.forEach(function(arret){
-            fetch(API_BUS + arret.id + '/stoptimes')
-                .then(function(r){ return r.ok ? r.json() : []; })
-                .then(function(data){
-                    if(Array.isArray(data)){
-                        data.forEach(function(pattern){
-                            var route = pattern.pattern || {};
-                            var routeId = route.id || '';
-                            var routeDesc = route.desc || '';
-                            var times = pattern.times || [];
-                            times.slice(0, 3).forEach(function(t){
-                                var secs = t.realtimeDeparture || t.scheduledDeparture || 0;
-                                var h = Math.floor(secs / 3600);
-                                var m = Math.floor((secs % 3600) / 60);
-                                var now = new Date();
-                                var nowSecs = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
-                                var diff = secs - nowSecs;
-                                if(diff > 0 && diff < 7200){
-                                    var ligne = routeId.split(':').pop() || '?';
-                                    allDepartures.push({
-                                        ligne: ligne,
-                                        direction: routeDesc || arret.nom,
-                                        depart: (h < 10 ? '0' : '') + h + ':' + (m < 10 ? '0' : '') + m,
-                                        dans: Math.round(diff / 60),
-                                        arret: arret.nom
-                                    });
-                                }
-                            });
-                        });
-                    }
-                }).catch(function(){})
-                .finally(function(){
-                    loaded++;
-                    if(loaded >= total) renderBus();
-                });
-        });
-
-        function renderBus(){
-            var el = document.getElementById('bus-content');
-            allDepartures.sort(function(a,b){ return a.dans - b.dans; });
-            var top = allDepartures.slice(0, 6);
-            if(top.length === 0){
-                el.innerHTML = '<div class="bus-loading">Pas de départ imminent ou données indisponibles.<br><a href="https://www.tag.fr/" target="_blank" style="color:#4ade80;">Consulter les horaires TAG →</a></div>';
-                return;
-            }
-            var html = '';
-            top.forEach(function(d){
-                var isExpress = d.ligne.indexOf('X') === 0 || d.ligne.indexOf('30') === 0;
-                html += '<div class="bus-line">'
-                    + '<span class="bus-num' + (isExpress ? ' exp' : '') + '">' + d.ligne + '</span>'
-                    + '<span class="bus-dest">' + d.direction + '</span>'
-                    + '<span class="bus-time">' + d.dans + ' min</span>'
-                    + '</div>';
-            });
-            el.innerHTML = html;
-        }
-    })();
+    function srvTab(id){
+        document.querySelectorAll('.srv-panel').forEach(function(p){ p.classList.remove('active'); });
+        document.querySelectorAll('.srv-tab').forEach(function(t){ t.classList.remove('active'); });
+        document.getElementById('srv-' + id).classList.add('active');
+        document.querySelector('[onclick="srvTab(\''+id+'\')"]').classList.add('active');
+        if(id === 'carburants' && !window._carbLoaded){ window._carbLoaded = true; loadCarburants(); }
+        if(id === 'bus' && !window._busLoaded){ window._busLoaded = true; loadBus(); }
+    }
+    function loadCarburants(){
+        var API = 'https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/prix-des-carburants-en-france-flux-instantane-v2/records';
+        fetch(API + '?where=within_distance(geom,geom\'POINT(5.766 45.084)\',5km)&limit=30&order_by=distance(geom,geom\'POINT(5.766 45.084)\')').then(function(r){ return r.json(); }).then(function(data){
+            var records = data.results || []; if(!records.length){ document.getElementById('carburants-content').innerHTML = '<p style="color:rgba(255,255,255,0.5);">Aucune donnée.</p>'; return; }
+            var viz = records.filter(function(f){ return f.cp === '38220'; }), alt = records.filter(function(f){ return f.cp !== '38220'; }), html = '';
+            if(viz.length){ html += '<h3 style="color:#e8c84a;font-family:Playfair Display,serif;font-size:1rem;margin:0 0 0.8rem;text-align:center;">À Vizille</h3><div class="stations-grid">'; viz.forEach(function(f){ html += renderStation(f,true); }); html += '</div>'; }
+            if(alt.length){ var d = alt.filter(function(f){ return f.carburants_disponibles && f.carburants_disponibles.length > 0; }); if(d.length){ html += '<h3 style="color:rgba(255,255,255,0.5);font-family:Playfair Display,serif;font-size:0.9rem;margin:1.2rem 0 0.8rem;text-align:center;">À proximité</h3><div class="stations-grid">'; d.slice(0,6).forEach(function(f){ html += renderStation(f,false); }); html += '</div>'; } }
+            document.getElementById('carburants-content').innerHTML = html;
+        }).catch(function(){ document.getElementById('carburants-content').innerHTML = '<p style="color:rgba(255,255,255,0.5);">Indisponible. <a href="https://www.prix-carburants.gouv.fr/" target="_blank" style="color:#4ade80;">prix-carburants.gouv.fr</a></p>'; });
+        fetch(API+'?limit=0').then(function(r){return r.json();}).then(function(td){ var tot=td.total_count||0; if(!tot) return; return fetch(API+'?where=gazole_rupture_type%3D%22temporaire%22&limit=0').then(function(r){return r.json();}).then(function(gd){ var gR=gd.total_count||0; return fetch(API+'?where=carburants_disponibles%20is%20null&limit=0').then(function(r){return r.json();}).then(function(sd){ var s=sd.total_count||0,pS=((s/tot)*100).toFixed(1),pG=((gR/tot)*100).toFixed(1),el=document.getElementById('carburants-penurie'),c=pS>15?'#ef4444':pS>5?'#f59e0b':'#4ade80',n=pS>15?'🔴 Tendue':pS>5?'🟠 Tensions':'🟢 Normal'; el.innerHTML='<div class="carburants-penurie-title">🇫🇷 '+n+'</div><div class="carburants-penurie-details"><strong>'+pS+'%</strong> en rupture'+(gR>0?' · <strong>'+pG+'%</strong> sans Gazole':'')+'</div><div class="carburants-penurie-bar"><div class="carburants-penurie-fill" style="width:'+Math.min(pS*2,100)+'%;background:'+c+';"></div></div>'; el.classList.add('visible'); }); }); }).catch(function(){});
+    }
+    var NOMS={38220002:'TotalEnergies — Muzet',38220003:'Intermarché Vizille',38130004:'E.Leclerc Comboire',38130005:'E.Leclerc Échirolles'};
+    function renderStation(f,isV){ var v=f.ville||'',vc=v.charAt(0).toUpperCase()+v.slice(1).toLowerCase(),nm=NOMS[f.id]||vc; if(!NOMS[f.id]){var sv=(f.services_service||[]).join(' ').toLowerCase(),ad=(f.adresse||'').toLowerCase();if(ad.indexOf('leclerc')>-1||sv.indexOf('leclerc')>-1) nm='E.Leclerc '+vc;} var h24=f.horaires_automate_24_24==='Oui',s='<div class="station-card"'+(isV?'':' style="opacity:0.8;"')+'>'; s+='<div class="station-name">⛽ '+nm+'</div><div class="station-addr">'+(f.adresse||'')+(isV?'':', '+vc)+'</div><div class="station-horaires">'+(h24?'🟢 24h/24':'🕐 Horaires en station')+'</div><div class="prix-grid">'; ['gazole','sp95','sp98','e10','e85','gplc'].forEach(function(c){var p=f[c+'_prix'],m=f[c+'_maj'],rt=f[c+'_rupture_type'],lb={gazole:'Gazole',sp95:'SP95',sp98:'SP98',e10:'E10',e85:'E85',gplc:'GPLc'}; if(p){var d=m?new Date(m).toLocaleDateString('fr-FR',{day:'numeric',month:'short'}):'';s+='<div class="prix-item"><div class="prix-label">'+lb[c]+'</div><div class="prix-val">'+parseFloat(p).toFixed(3)+'€</div>'+(d?'<div class="prix-date">'+d+'</div>':'')+'</div>';}else if(rt==='temporaire'){s+='<div class="prix-item rupture"><div class="prix-label">'+lb[c]+'</div><div class="prix-val indispo">Rupture</div></div>';}}); s+='</div>'; var lat=f.geom?f.geom.lat:null,lon=f.geom?f.geom.lon:null; if(lat&&lon) s+='<a href="https://www.google.com/maps/search/station+essence/@'+lat+','+lon+',16z/data=!5m1!1e1" target="_blank" rel="noopener" class="station-link">📍 Maps →</a>'; s+='</div>'; return s; }
+    function loadBus(){ var arrets=[{id:'SEM:VIZCHF',nom:'Chantefeuille'},{id:'SEM:VIZLYC',nom:'Lycée'},{id:'SEM:VIZPEG',nom:'Le Péage'},{id:'SEM:VIZCHAT',nom:'Château'}],API_B='https://data.mobilites-m.fr/api/routers/default/index/stops/',allD=[],ld=0,tot=arrets.length; arrets.forEach(function(ar){fetch(API_B+ar.id+'/stoptimes').then(function(r){return r.ok?r.json():[];}).then(function(data){if(Array.isArray(data)){data.forEach(function(pat){var rt=pat.pattern||{},rId=rt.id||'',rD=rt.desc||'';(pat.times||[]).slice(0,3).forEach(function(t){var secs=t.realtimeDeparture||t.scheduledDeparture||0,now=new Date(),nS=now.getHours()*3600+now.getMinutes()*60+now.getSeconds(),diff=secs-nS;if(diff>0&&diff<7200){allD.push({ligne:rId.split(':').pop()||'?',direction:rD||ar.nom,dans:Math.round(diff/60)});}});});}}).catch(function(){}).finally(function(){ld++;if(ld>=tot){var el=document.getElementById('bus-content');allD.sort(function(a,b){return a.dans-b.dans;});var top=allD.slice(0,6);if(!top.length){el.innerHTML='<div class="bus-loading">Pas de départ imminent.<br><a href="https://www.tag.fr/" target="_blank" style="color:#4ade80;">Horaires TAG →</a></div>';return;}el.innerHTML=top.map(function(d){var isE=d.ligne.indexOf('X')===0||d.ligne.indexOf('30')===0;return '<div class="bus-line"><span class="bus-num'+(isE?' exp':'')+'">'+d.ligne+'</span><span class="bus-dest">'+d.direction+'</span><span class="bus-time">'+d.dans+' min</span></div>';}).join('');}});}); }
     </script>
     <script>
     (function() {
