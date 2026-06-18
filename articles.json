@@ -541,7 +541,6 @@
     ],
     "image": "images/articles/article_1780414823000_tour-aura-2026.png",
     "priorite": true,
-    "a_la_une": true,
     "modifie_le": "2026-06-03T17:53:12.409Z",
     "slug": "vizille-ville-depart-du-tour-auvergne-rhone-alpes-dimanche-7"
   },
@@ -560,5 +559,21 @@
     "priorite": true,
     "modifie_le": "2026-06-02T17:26:09.000Z",
     "slug": "vous-avez-la-parole"
+  },
+  {
+    "id": 1781760171736,
+    "titre": "Protoxyde d’azote : un danger pour le consommateur et pour les autres",
+    "date": "2026-06-18",
+    "categorie": "Info",
+    "extrait": "https://www.interieur.gouv.fr/actualites/actualites-du-ministere/protoxyde-dazote-danger-pour-consommateur-et-pour-autres",
+    "contenu": "",
+    "images": [
+      "images/articles/article_1781760195530.jpg"
+    ],
+    "image": "images/articles/article_1781760195530.jpg",
+    "source": "https://www.interieur.gouv.fr/actualites/actualites-du-ministere/protoxyde-dazote-danger-pour-consommateur-et-pour-autres",
+    "priorite": true,
+    "a_la_une": true,
+    "modifie_le": "2026-06-18T05:23:22.884Z"
   }
 ]
