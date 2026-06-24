@@ -1,4 +1,7 @@
 /* ===== STYLES DE BASE - Vizille en Mouvement ===== */
+/* Option B - Chaleureux & local */
+
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=Spectral:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 * {
     margin: 0;
@@ -6,23 +9,38 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-primary);
-    background: var(--blanc-casse);
-    color: var(--gris-texte);
+    background: var(--bg-body);
+    color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
 }
 
+/* ===== SELECTION ===== */
+::selection {
+    background: var(--primary);
+    color: var(--bg-card);
+}
+
+::-moz-selection {
+    background: var(--primary);
+    color: var(--bg-card);
+}
+
 /* ===== LIENS ===== */
 a {
-    color: var(--bleu-clair);
+    color: inherit;
     text-decoration: none;
     transition: color var(--transition-fast);
 }
 
 a:hover {
-    color: var(--or);
+    color: var(--primary);
 }
 
 /* ===== BOUTONS ===== */
@@ -41,32 +59,32 @@ a:hover {
 }
 
 .btn-primary {
-    background: var(--bleu-vizille);
+    background: var(--primary);
     color: white;
 }
 
 .btn-primary:hover {
-    background: var(--bleu-clair);
+    background: var(--primary-dark);
     transform: translateY(-2px);
     color: white;
 }
 
 .btn-secondary {
-    background: var(--gris-doux);
-    color: var(--gris-texte);
+    background: var(--border);
+    color: var(--text-primary);
 }
 
 .btn-secondary:hover {
-    background: #d8d6d1;
+    background: #d9ccb5;
 }
 
 .btn-gold {
-    background: var(--or);
-    color: var(--bleu-vizille);
+    background: var(--primary);
+    color: white;
 }
 
 .btn-gold:hover {
-    background: var(--or-clair);
+    background: var(--primary-dark);
     transform: translateY(-2px);
 }
 
@@ -94,10 +112,10 @@ a:hover {
 
 @keyframes glow {
     0%, 100% {
-        filter: drop-shadow(0 0 15px rgba(255,255,255,0.4)) drop-shadow(0 0 30px rgba(201,162,39,0.3));
+        filter: drop-shadow(0 0 15px rgba(255,255,255,0.4)) drop-shadow(0 0 30px rgba(194, 99, 47, 0.3));
     }
     50% {
-        filter: drop-shadow(0 0 25px rgba(255,255,255,0.7)) drop-shadow(0 0 50px rgba(201,162,39,0.5)) drop-shadow(0 0 70px rgba(201,162,39,0.3));
+        filter: drop-shadow(0 0 25px rgba(255,255,255,0.7)) drop-shadow(0 0 50px rgba(194, 99, 47, 0.5)) drop-shadow(0 0 70px rgba(194, 99, 47, 0.3));
     }
 }
 
