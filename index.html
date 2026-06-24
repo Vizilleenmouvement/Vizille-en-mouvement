@@ -283,9 +283,44 @@
         margin: 0 auto;
         padding: 3.5rem 2rem;
     }
-    .vm-services-grid {
+    .vm-services-waze {
+        background: #FBF5EA;
+        border: 1px solid #E6DAC6;
+        border-radius: 14px;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+    }
+    .vm-services-waze-header {
+        background: #3A2A20;
+        color: #fff;
+        padding: 0.9rem 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+    }
+    .vm-services-waze-header h3 {
+        font-family: 'Spectral', serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0;
+    }
+    .vm-services-waze iframe {
+        width: 100%;
+        height: 450px;
+        border: 0;
+        display: block;
+    }
+    .vm-services-waze-footer {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .vm-services-waze-footer a { color: #C2632F; text-decoration: none; font-weight: 600; }
+    .vm-services-bottom {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
     }
     .vm-service-card {
@@ -312,6 +347,7 @@
         font-family: 'Spectral', serif;
         font-size: 1rem;
         font-weight: 600;
+        margin: 0;
     }
     .vm-service-live-dot {
         width: 7px; height: 7px;
@@ -326,7 +362,7 @@
     }
     .vm-service-card-body iframe {
         width: 100%;
-        height: 150px;
+        height: 200px;
         border: 0;
         border-radius: 8px;
     }
@@ -678,7 +714,8 @@
         .vm-hero-text { text-align: center; }
         .vm-hero-text .vm-hero-actions { justify-content: center; }
 
-        .vm-services-grid { grid-template-columns: 1fr; }
+        .vm-services-bottom { grid-template-columns: 1fr; }
+        .vm-services-waze iframe { height: 350px; }
         .vm-priorites-grid { grid-template-columns: repeat(2, 1fr); }
         .vm-priorite-full { flex-direction: column; gap: 1rem; padding: 1.5rem; }
 
@@ -789,28 +826,29 @@
 
     <!-- 5. SERVICES EN DIRECT -->
     <section class="vm-services" id="section-services">
-        <h2 class="vm-section-title vm-rise">Services en direct</h2>
-        <p class="vm-section-subtitle vm-rise vm-rise-d1">Donnees actualisees automatiquement</p>
-        <div class="vm-services-grid">
-            <!-- Card 1: Circulation -->
+        <h2 class="vm-section-title vm-rise">Vizille en direct</h2>
+        <p class="vm-section-subtitle vm-rise vm-rise-d1">Circulation, carburants & transports — actualisés automatiquement</p>
+
+        <!-- Carte Waze pleine largeur -->
+        <div class="vm-services-waze vm-rise">
+            <div class="vm-services-waze-header">
+                <span style="font-size:1.2rem;">🚗</span>
+                <h3>Trafic en direct — Vizille / RN85 / Grenoble</h3>
+                <span class="vm-service-live-dot" style="margin-left:auto;"></span>
+            </div>
+            <iframe src="https://embed.waze.com/iframe?zoom=12&lat=45.105&lon=5.755&ct=livemap" allowfullscreen loading="lazy" title="Carte du trafic en direct — Vizille / RN85 / Grenoble"></iframe>
+            <div class="vm-services-waze-footer">
+                <span style="color:#A07A4E;font-style:italic;font-family:'Spectral',serif;">Zoomez, déplacez-vous, repérez les ralentissements</span>
+                <a href="https://www.waze.com/fr/live-map/?zoom=12&lat=45.105&lon=5.755" target="_blank" rel="noopener">🗺️ Plein écran sur Waze →</a>
+            </div>
+        </div>
+
+        <!-- Carburants + Bus côte à côte -->
+        <div class="vm-services-bottom">
+            <!-- Carburants -->
             <div class="vm-service-card vm-rise vm-rise-d1">
                 <div class="vm-service-card-header">
-                    <span class="icon">&#x1F697;</span>
-                    <h3>Circulation</h3>
-                    <span class="vm-service-live-dot"></span>
-                </div>
-                <div class="vm-service-card-body">
-                    <iframe src="https://embed.waze.com/iframe?zoom=12&lat=45.105&lon=5.755&ct=livemap" allowfullscreen loading="lazy" title="Trafic Vizille / RN85 / Grenoble"></iframe>
-                </div>
-                <div class="vm-service-footer">
-                    <a href="https://www.waze.com/fr/live-map/?zoom=12&lat=45.105&lon=5.755" target="_blank" rel="noopener">Ouvrir sur Waze &rarr;</a>
-                </div>
-            </div>
-
-            <!-- Card 2: Carburants -->
-            <div class="vm-service-card vm-rise vm-rise-d2">
-                <div class="vm-service-card-header">
-                    <span class="icon">&#x26FD;</span>
+                    <span class="icon">⛽</span>
                     <h3>Carburants</h3>
                     <span class="vm-service-live-dot"></span>
                 </div>
@@ -823,18 +861,18 @@
                 </div>
             </div>
 
-            <!-- Card 3: Bus -->
-            <div class="vm-service-card vm-rise vm-rise-d3">
+            <!-- Bus -->
+            <div class="vm-service-card vm-rise vm-rise-d2">
                 <div class="vm-service-card-header">
-                    <span class="icon">&#x1F68C;</span>
-                    <h3>Bus</h3>
+                    <span class="icon">🚌</span>
+                    <h3>Prochains départs — Vizille</h3>
                     <span class="vm-service-live-dot"></span>
                 </div>
                 <div class="vm-service-card-body">
                     <div id="bus-content"><div class="bus-loading">Chargement...</div></div>
                 </div>
                 <div class="vm-service-footer">
-                    <a href="https://www.mobilites-m.fr/" target="_blank" rel="noopener">Mobilites m</a> &middot; <a href="https://www.tag.fr/" target="_blank" rel="noopener">TAG</a>
+                    <a href="https://www.mobilites-m.fr/" target="_blank" rel="noopener">Mobilités m</a> · <a href="https://www.tag.fr/" target="_blank" rel="noopener">TAG</a>
                 </div>
             </div>
         </div>
