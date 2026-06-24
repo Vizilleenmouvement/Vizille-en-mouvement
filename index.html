@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vizille en Mouvement - Ensemble pour une ville dynamique et solidaire</title>
-    <meta name="description" content="Site officiel de Vizille en Mouvement. Bilan 2020-2026, projet 2026-2032 et équipe municipale. Catherine Troton, Maire de Vizille.">
+    <meta name="description" content="Site officiel de Vizille en Mouvement. Projet 2026-2032 et equipe municipale. Catherine Troton, Maire de Vizille.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vizilleenmouvement.fr/">
     <meta property="og:title" content="Vizille en Mouvement — Mandat 2026-2032">
-    <meta property="og:description" content="Catherine Troton élue Maire, 26 élus au service des Vizillois. Découvrez notre programme et notre équipe pour le mandat 2026-2032.">
-    <meta property="og:image" content="https://vizilleenmouvement.fr/images/og-image.webp">
+    <meta property="og:description" content="Catherine Troton elue Maire, 26 elus au service des Vizillois.">
+    <meta property="og:image" content="https://vizilleenmouvement.fr/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="Vizille en Mouvement">
 
@@ -23,10 +21,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://vizilleenmouvement.fr/">
     <meta name="twitter:title" content="Vizille en Mouvement — Mandat 2026-2032">
-    <meta name="twitter:description" content="Catherine Troton élue Maire, 26 élus au service des Vizillois. Découvrez notre programme et notre équipe pour le mandat 2026-2032.">
-    <meta name="twitter:image" content="https://vizilleenmouvement.fr/images/og-image.webp">
+    <meta name="twitter:description" content="Catherine Troton elue Maire, 26 elus au service des Vizillois.">
+    <meta name="twitter:image" content="https://vizilleenmouvement.fr/images/og-image.jpg">
 
-    <!-- Données structurées Schema.org -->
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -34,7 +32,7 @@
         "name": "Vizille en Mouvement",
         "url": "https://vizilleenmouvement.fr",
         "logo": "https://vizilleenmouvement.fr/images/logo.png",
-        "description": "Équipe municipale de Vizille, mandat 2026-2032. Catherine Troton, Maire.",
+        "description": "Equipe municipale de Vizille, mandat 2026-2032. Catherine Troton, Maire.",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "145 chemin des Berthets",
@@ -57,170 +55,792 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/components/flip-cards.css">
-    <link rel="stylesheet" href="css/pages/index.css?v=4">
+
     <style>
-    .vote-banner-section { width: 100%; margin: 0; padding: 0; background: #fff; }
-    .vote-banner-img { width: 100%; display: block; max-height: 520px; object-fit: cover; object-position: center 20%; margin-top: 1.5rem; }
-    .vote-banner-post { max-width: 760px; margin: 0 auto; padding: 2rem 1.5rem 2.5rem; font-family: 'Source Sans 3', sans-serif; font-size: 1.05rem; line-height: 1.75; color: #1a1a2e; }
-    .vbp-titre-wrap { text-align: center; padding: 1.5rem 1rem 1.2rem; margin-bottom: 1rem; }
-    .vbp-titre {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(1.3rem, 3vw, 1.8rem);
-        line-height: 1.35;
-        margin: 0;
-        color: #1a1a2e;
+    /* ===== OPTION B — CHALEUREUX & LOCAL ===== */
+
+    /* --- Reset & base --- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        font-family: 'Hanken Grotesk', 'Source Sans 3', sans-serif;
+        background: #F6EEE2;
+        color: #3A2A20;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* --- Animation --- */
+    @keyframes vmRise {
+        from { opacity: 0; transform: translateY(32px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+    .vm-rise {
+        opacity: 0;
+        animation: vmRise 0.7s ease-out forwards;
+    }
+    .vm-rise-d1 { animation-delay: 0.12s; }
+    .vm-rise-d2 { animation-delay: 0.24s; }
+    .vm-rise-d3 { animation-delay: 0.36s; }
+    .vm-rise-d4 { animation-delay: 0.48s; }
+
+    /* --- Rainbow bar --- */
+    .rainbow-bar {
+        height: 3px;
+        background: linear-gradient(90deg, #D6006C 25%, #F39200 25% 50%, #7AB82E 50% 75%, #1BA7DE 75%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10001;
+    }
+
+    /* --- Sticky header (glassmorphism) --- */
+    .vm-header {
+        position: sticky;
+        top: 3px;
+        z-index: 10000;
+        background: rgba(246, 238, 226, 0.82);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid #E6DAC6;
+        padding: 0 2rem;
+    }
+    .vm-header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+    }
+    .vm-header-logo img {
+        height: 40px;
+    }
+    .vm-header-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
+        list-style: none;
+    }
+    .vm-header-nav a {
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: #3A2A20;
+        padding: 0.45rem 0.75rem;
+        border-radius: 8px;
+        transition: background 0.2s, color 0.2s;
+    }
+    .vm-header-nav a:hover,
+    .vm-header-nav a.active {
+        background: rgba(194, 99, 47, 0.1);
+        color: #C2632F;
+    }
+    .vm-header-cta {
+        background: #C2632F;
+        color: #fff !important;
+        font-weight: 600;
+        padding: 0.5rem 1.3rem !important;
+        border-radius: 10px !important;
+        transition: background 0.2s;
+    }
+    .vm-header-cta:hover {
+        background: #a8522a;
+    }
+    .vm-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #3A2A20;
+        cursor: pointer;
+        padding: 0.3rem;
+    }
+
+    /* --- Hero --- */
+    .vm-hero {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3.5rem 2rem 2.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+    .vm-hero-text h1 {
+        font-family: 'Spectral', serif;
+        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+        font-weight: 700;
+        line-height: 1.25;
+        color: #3A2A20;
+        margin-bottom: 1.2rem;
+    }
+    .vm-hero-text h1 em {
+        color: #C2632F;
+        font-style: italic;
+    }
+    .vm-hero-text .vm-hero-sub {
+        font-size: 1.05rem;
+        color: #6E5B49;
+        margin-bottom: 1.8rem;
+        line-height: 1.7;
+    }
+    .vm-hero-text .vm-hero-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .vm-btn-accent {
+        display: inline-block;
+        background: #C2632F;
+        color: #fff;
+        font-weight: 600;
+        padding: 0.7rem 1.6rem;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        transition: background 0.2s, transform 0.15s;
+    }
+    .vm-btn-accent:hover {
+        background: #a8522a;
+        transform: translateY(-1px);
+    }
+    .vm-btn-outline {
+        display: inline-block;
+        border: 2px solid #E6DAC6;
+        color: #3A2A20;
+        font-weight: 600;
+        padding: 0.65rem 1.5rem;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        transition: border-color 0.2s, background 0.2s;
+    }
+    .vm-btn-outline:hover {
+        border-color: #C2632F;
+        background: rgba(194, 99, 47, 0.06);
+    }
+    .vm-hero-photo img {
+        width: 100%;
+        border-radius: 16px;
+        object-fit: cover;
+        max-height: 420px;
+        box-shadow: 0 12px 40px rgba(58, 42, 32, 0.12);
+    }
+
+    /* --- Engagements line --- */
+    .vm-engagements {
+        background: #FBF5EA;
+        border-top: 1px solid #E6DAC6;
+        border-bottom: 1px solid #E6DAC6;
+        padding: 1.2rem 2rem;
+    }
+    .vm-engagements-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    .vm-engagement-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: #6E5B49;
         white-space: nowrap;
     }
-    @media (max-width: 700px) {
-        .vbp-titre { white-space: normal; text-align: center; font-size: clamp(1.1rem, 4.5vw, 1.4rem); }
+    .vm-engagement-item span.icon {
+        font-size: 1.1rem;
     }
-    .vbp-titre .ligne2 { display: block; font-size: 0.82em; color: #555; font-style: italic; margin-top: 0.2rem; }
-    .vbp-sep { border: none; border-top: 2px solid #e8e0d0; margin: 1.1rem 0; }
-    .vote-banner-post p { margin: 0.6rem 0; }
-    .vbp-axes { background: #f7f4ef; border-left: 4px solid #c9a84c; padding: 0.75rem 1rem; border-radius: 0 6px 6px 0; font-size: 0.97rem; line-height: 1.8; }
-    .vbp-appel { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: #1a3a6b; margin-top: 1rem !important; }
-    @media (max-width: 600px) {
-        .vote-banner-img { max-height: 280px; }
-        .vote-banner-post { padding: 1.5rem 1rem 2rem; font-size: 0.97rem; }
-        .vbp-axes { font-size: 0.9rem; }
+
+    /* --- Section titles --- */
+    .vm-section-title {
+        font-family: 'Spectral', serif;
+        font-size: clamp(1.4rem, 3vw, 2rem);
+        font-weight: 700;
+        color: #3A2A20;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+    .vm-section-subtitle {
+        text-align: center;
+        font-size: 0.95rem;
+        color: #6E5B49;
+        margin-bottom: 2.5rem;
+    }
+
+    /* --- Services en direct --- */
+    .vm-services {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3.5rem 2rem;
+    }
+    .vm-services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    .vm-service-card {
+        background: #FBF5EA;
+        border: 1px solid #E6DAC6;
+        border-radius: 14px;
+        overflow: hidden;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .vm-service-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(58, 42, 32, 0.08);
+    }
+    .vm-service-card-header {
+        background: #3A2A20;
+        color: #fff;
+        padding: 0.9rem 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+    }
+    .vm-service-card-header .icon { font-size: 1.2rem; }
+    .vm-service-card-header h3 {
+        font-family: 'Spectral', serif;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    .vm-service-live-dot {
+        width: 7px; height: 7px;
+        background: #4ade80;
+        border-radius: 50%;
+        margin-left: auto;
+        animation: srv-pulse 2s infinite;
+    }
+    @keyframes srv-pulse { 0%, 100% { opacity:1; box-shadow:0 0 0 0 rgba(74,222,128,0.4); } 50% { opacity:0.7; box-shadow:0 0 0 6px rgba(74,222,128,0); } }
+    .vm-service-card-body {
+        padding: 1rem 1.2rem 1.2rem;
+    }
+    .vm-service-card-body iframe {
+        width: 100%;
+        height: 150px;
+        border: 0;
+        border-radius: 8px;
+    }
+    .vm-service-footer {
+        padding: 0 1.2rem 1rem;
+        font-size: 0.75rem;
+        color: #A07A4E;
+    }
+    .vm-service-footer a { color: #C2632F; text-decoration: underline; }
+
+    /* Carburants & bus styling within warm theme */
+    .vm-carb-loading, .vm-bus-loading {
+        text-align: center;
+        padding: 1.5rem 0.5rem;
+        color: #6E5B49;
+        font-size: 0.88rem;
+    }
+    /* Override station cards for warm theme */
+    .vm-service-card .stations-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    .vm-service-card .station-card {
+        background: #fff;
+        border: 1px solid #E6DAC6;
+        border-radius: 10px;
+        padding: 1rem;
+    }
+    .vm-service-card .station-name { color: #3A2A20; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.15rem; }
+    .vm-service-card .station-addr { font-size: 0.72rem; color: #6E5B49; margin-bottom: 0.15rem; }
+    .vm-service-card .station-horaires { font-size: 0.7rem; color: #7AB82E; margin-bottom: 0.5rem; font-weight: 500; }
+    .vm-service-card .prix-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+        gap: 0.35rem;
+    }
+    .vm-service-card .prix-item {
+        background: #FBF5EA;
+        border: 1px solid #E6DAC6;
+        border-radius: 6px;
+        padding: 0.35rem 0.25rem;
+        text-align: center;
+    }
+    .vm-service-card .prix-item.rupture { background: rgba(231,76,60,0.08); border-color: rgba(231,76,60,0.2); }
+    .vm-service-card .prix-label { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.06em; color: #A07A4E; }
+    .vm-service-card .prix-val { font-size: 0.95rem; font-weight: 700; color: #C2632F; margin-top: 0.05rem; }
+    .vm-service-card .prix-val.indispo { font-size: 0.62rem; color: #e74c3c; font-weight: 600; }
+    .vm-service-card .prix-date { font-size: 0.52rem; color: #A07A4E; margin-top: 0.05rem; }
+    .vm-service-card .station-link { display: inline-block; margin-top: 0.4rem; font-size: 0.78rem; color: #C2632F; text-decoration: none; font-weight: 600; }
+    .vm-service-card .carburants-penurie { background: rgba(231,76,60,0.08); border: 1px solid rgba(231,76,60,0.2); border-radius: 8px; padding: 0.5rem 0.8rem; margin-bottom: 0.8rem; text-align: center; display: none; }
+    .vm-service-card .carburants-penurie.visible { display: block; }
+    .vm-service-card .carburants-penurie-title { font-size: 0.75rem; font-weight: 700; color: #e74c3c; margin-bottom: 0.15rem; }
+    .vm-service-card .carburants-penurie-details { font-size: 0.68rem; color: #6E5B49; line-height: 1.5; }
+    .vm-service-card .carburants-penurie-bar { height: 4px; background: #E6DAC6; border-radius: 3px; margin-top: 0.3rem; overflow: hidden; }
+    .vm-service-card .carburants-penurie-fill { height: 100%; border-radius: 3px; transition: width 1s ease; }
+
+    /* Bus lines warm theme */
+    .vm-service-card .bus-line { display: flex; align-items: center; gap: 0.5rem; padding: 0.45rem 0; border-bottom: 1px solid #E6DAC6; }
+    .vm-service-card .bus-line:last-child { border-bottom: none; }
+    .vm-service-card .bus-num { background: #C2632F; color: #fff; font-size: 0.65rem; font-weight: 700; padding: 0.18rem 0.4rem; border-radius: 4px; min-width: 30px; text-align: center; }
+    .vm-service-card .bus-num.exp { background: #9b59b6; }
+    .vm-service-card .bus-dest { flex: 1; font-size: 0.78rem; color: #6E5B49; }
+    .vm-service-card .bus-time { font-size: 0.82rem; font-weight: 700; color: #7AB82E; }
+    .vm-service-card .bus-loading { text-align: center; padding: 0.8rem; color: #A07A4E; font-size: 0.8rem; }
+
+    /* --- 7 Priorites --- */
+    .vm-priorites {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3.5rem 2rem;
+    }
+    .vm-priorites-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    .vm-priorite-card {
+        background: #FBF5EA;
+        border: 1px solid #E6DAC6;
+        border-radius: 14px;
+        padding: 1.8rem 1.5rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+    }
+    .vm-priorite-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(58, 42, 32, 0.08);
+    }
+    .vm-priorite-num {
+        font-family: 'Spectral', serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #C2632F;
+        line-height: 1;
+        margin-bottom: 0.6rem;
+    }
+    .vm-priorite-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .vm-priorite-card h3 {
+        font-family: 'Spectral', serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #3A2A20;
+        margin-bottom: 0.4rem;
+    }
+    .vm-priorite-card p {
+        font-size: 0.88rem;
+        color: #6E5B49;
+        line-height: 1.6;
+    }
+    .vm-priorite-full {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 2.5rem;
+        background: #3A2A20;
+        border-color: #3A2A20;
+    }
+    .vm-priorite-full .vm-priorite-num { color: #C2632F; }
+    .vm-priorite-full h3 { color: #F6EEE2; }
+    .vm-priorite-full p { color: rgba(246, 238, 226, 0.7); }
+    .vm-priorite-full:hover { box-shadow: 0 8px 32px rgba(58, 42, 32, 0.2); }
+
+    /* --- Message de la maire --- */
+    .vm-maire {
+        background: #FBF5EA;
+        border-top: 1px solid #E6DAC6;
+        border-bottom: 1px solid #E6DAC6;
+    }
+    .vm-maire-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 3rem;
+        align-items: center;
+    }
+    .vm-maire-photo img {
+        width: 100%;
+        border-radius: 16px;
+        object-fit: cover;
+        box-shadow: 0 8px 28px rgba(58, 42, 32, 0.1);
+    }
+    .vm-maire-quote {
+        font-family: 'Spectral', serif;
+        font-size: clamp(1.1rem, 2vw, 1.35rem);
+        font-style: italic;
+        color: #3A2A20;
+        line-height: 1.7;
+        position: relative;
+        padding-left: 1.8rem;
+        border-left: 3px solid #C2632F;
+    }
+    .vm-maire-quote p { margin-bottom: 1rem; }
+    .vm-maire-sig {
+        font-family: 'Spectral', serif;
+        font-style: italic;
+        color: #A07A4E;
+        font-size: 1rem;
+        margin-top: 1.2rem;
+    }
+
+    /* --- Actualites --- */
+    .vm-actualites {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3.5rem 2rem;
+    }
+    .vm-actualites-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 2rem;
+    }
+    .vm-actualites-header .vm-see-all {
+        font-size: 0.88rem;
+        color: #C2632F;
+        font-weight: 600;
+        transition: opacity 0.2s;
+    }
+    .vm-actualites-header .vm-see-all:hover { opacity: 0.7; }
+
+    /* Actualites grid - styled by home-dynamic.js into #actualites-grid */
+    #actualites-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    #actualites-grid .loading-placeholder {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    #actualites-grid .loading-card {
+        background: #FBF5EA;
+        border-radius: 14px;
+        height: 280px;
+        animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 0.3; }
+    }
+
+    /* --- Equipe section --- */
+    .vm-equipe {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 3.5rem 2rem;
+        text-align: center;
+    }
+    .vm-equipe-photo img {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 28px rgba(58, 42, 32, 0.1);
+    }
+
+    /* --- Contact CTA --- */
+    .vm-contact-cta {
+        background: #3A2A20;
+        padding: 4rem 2rem;
+        text-align: center;
+    }
+    .vm-contact-cta h2 {
+        font-family: 'Spectral', serif;
+        font-size: clamp(1.4rem, 3vw, 2rem);
+        color: #F6EEE2;
+        margin-bottom: 0.8rem;
+    }
+    .vm-contact-cta p {
+        color: rgba(246, 238, 226, 0.7);
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .vm-contact-cta .vm-contact-actions {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .vm-btn-light {
+        display: inline-block;
+        background: #F6EEE2;
+        color: #3A2A20;
+        font-weight: 600;
+        padding: 0.7rem 1.6rem;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        transition: background 0.2s, transform 0.15s;
+    }
+    .vm-btn-light:hover {
+        background: #fff;
+        transform: translateY(-1px);
+    }
+    .vm-btn-ghost {
+        display: inline-block;
+        border: 2px solid rgba(246, 238, 226, 0.3);
+        color: #F6EEE2;
+        font-weight: 600;
+        padding: 0.65rem 1.5rem;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        transition: border-color 0.2s, background 0.2s;
+    }
+    .vm-btn-ghost:hover {
+        border-color: #F6EEE2;
+        background: rgba(246, 238, 226, 0.08);
+    }
+
+    /* --- Footer --- */
+    .vm-footer {
+        background: #2A1E16;
+        color: rgba(246, 238, 226, 0.65);
+        padding: 3rem 2rem 1.5rem;
+    }
+    .vm-footer-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+    .vm-footer-brand img {
+        height: 38px;
+        filter: brightness(0) invert(1);
+        margin-bottom: 0.8rem;
+    }
+    .vm-footer-brand p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    .vm-footer-social {
+        display: flex;
+        gap: 0.8rem;
+    }
+    .vm-footer-social a {
+        color: rgba(246, 238, 226, 0.5);
+        transition: color 0.2s;
+    }
+    .vm-footer-social a:hover { color: #F6EEE2; }
+    .vm-footer h4 {
+        font-family: 'Spectral', serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #F6EEE2;
+        margin-bottom: 0.8rem;
+    }
+    .vm-footer ul {
+        list-style: none;
+    }
+    .vm-footer li {
+        margin-bottom: 0.4rem;
+    }
+    .vm-footer li a {
+        font-size: 0.85rem;
+        color: rgba(246, 238, 226, 0.55);
+        transition: color 0.2s;
+    }
+    .vm-footer li a:hover { color: #F6EEE2; }
+    .vm-footer-bottom {
+        max-width: 1200px;
+        margin: 2rem auto 0;
+        padding-top: 1.2rem;
+        border-top: 1px solid rgba(246, 238, 226, 0.1);
+        text-align: center;
+        font-size: 0.78rem;
+        color: rgba(246, 238, 226, 0.35);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 960px) {
+        .vm-hero { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.5rem 2rem; }
+        .vm-hero-photo { order: -1; }
+        .vm-hero-photo img { max-height: 300px; width: 100%; }
+        .vm-hero-text { text-align: center; }
+        .vm-hero-text .vm-hero-actions { justify-content: center; }
+
+        .vm-services-grid { grid-template-columns: 1fr; }
+        .vm-priorites-grid { grid-template-columns: repeat(2, 1fr); }
+        .vm-priorite-full { flex-direction: column; gap: 1rem; padding: 1.5rem; }
+
+        .vm-maire-inner { grid-template-columns: 1fr; gap: 2rem; }
+        .vm-maire-photo img { max-width: 280px; margin: 0 auto; }
+
+        #actualites-grid { grid-template-columns: 1fr; }
+        #actualites-grid .loading-placeholder { grid-template-columns: 1fr; }
+
+        .vm-footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 700px) {
+        .vm-header { padding: 0 1rem; }
+        .vm-header-nav { display: none; }
+        .vm-header-nav.open {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 64px;
+            left: 0;
+            right: 0;
+            background: rgba(246, 238, 226, 0.97);
+            backdrop-filter: blur(16px);
+            padding: 1rem;
+            border-bottom: 1px solid #E6DAC6;
+            gap: 0.1rem;
+        }
+        .vm-header-nav.open a { padding: 0.6rem 1rem; }
+        .vm-menu-toggle { display: block; }
+        .vm-header-cta-wrap { display: none; }
+
+        .vm-engagements-inner { gap: 1rem; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 0.3rem; }
+        .vm-engagement-item { font-size: 0.8rem; }
+
+        .vm-priorites-grid { grid-template-columns: 1fr; }
+
+        .vm-footer-grid { grid-template-columns: 1fr; }
     }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
+    <!-- 1. RAINBOW BAR -->
+    <div class="rainbow-bar"></div>
+
     <!-- BANDEAU INFORMATIF -->
-    <!-- BANDEAU INFORMATIF — piloté par page-sections.json -->
     <div id="section-bandeau"></div>
 
-    <!-- BANNIÈRE DE BIENVENUE -->
-    <section class="vote-banner-section">
-        <img loading="lazy" src="images/photo-equipe.webp" alt="L'équipe Vizille en Mouvement" class="vote-banner-img">
-        <div class="vote-banner-post">
-            <div class="vbp-titre-wrap">
-                <p class="vbp-titre">Vizille en Mouvement<span class="ligne2">Mandat 2026-2032 — Au service des Vizillois</span></p>
+    <!-- 2. STICKY HEADER -->
+    <header class="vm-header">
+        <div class="vm-header-inner">
+            <a href="index.html" class="vm-header-logo">
+                <img src="images/logo-header.png" alt="Vizille en Mouvement">
+            </a>
+            <button class="vm-menu-toggle" aria-label="Menu" onclick="document.querySelector('.vm-header-nav').classList.toggle('open')">&#9776;</button>
+            <ul class="vm-header-nav">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="nos-ambitions.html">Nos Ambitions</a></li>
+                <li><a href="retrospective.html">Retrospective</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
+                <li><a href="projet.html">Projet</a></li>
+                <li><a href="blog.html">Actualites</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+                <li><a href="medias.html">Medias</a></li>
+                <li><a href="faq.html">Construisons ensemble</a></li>
+            </ul>
+            <div class="vm-header-cta-wrap">
+                <a href="faq.html" class="vm-header-cta">Nous contacter</a>
             </div>
-            <hr class="vbp-sep">
-            <p>Notre équipe, soudée par des valeurs partagées et le travail accompli ensemble, poursuit son engagement au service de la commune et de ses habitants.</p>
-            <p>Six ans de mandat ont prouvé notre capacité à structurer des actions, nouer des partenariats, aller chercher des financements pour transformer Vizille. Nous allons maintenant amplifier cette dynamique.</p>
-            <hr class="vbp-sep">
-            <p class="vbp-axes">🏥 L'accès à la santé &nbsp;·&nbsp; 🚶 Les déplacements &nbsp;·&nbsp; 🤝 L'attention portée à chacun &nbsp;·&nbsp; 🌿 L'embellissement des espaces publics &nbsp;·&nbsp; 🛍️ La vitalité commerciale</p>
-            <hr class="vbp-sep">
-            <p class="vbp-appel">Le programme 2026-2032 est en marche.</p>
+        </div>
+    </header>
+    <script>
+    // Close mobile nav on link click
+    document.querySelectorAll('.vm-header-nav a').forEach(function(a) {
+        a.addEventListener('click', function() {
+            document.querySelector('.vm-header-nav').classList.remove('open');
+        });
+    });
+    </script>
+
+    <!-- 3. HERO -->
+    <section class="vm-hero" id="main-content">
+        <div class="vm-hero-text vm-rise">
+            <h1>Ensemble pour une ville <em>dynamique</em> &amp; solidaire</h1>
+            <p class="vm-hero-sub">Notre equipe, soudee par des valeurs partagees, poursuit son engagement au service de Vizille et de ses habitants pour le mandat 2026-2032.</p>
+            <div class="vm-hero-actions">
+                <a href="projet.html" class="vm-btn-accent">Decouvrir le projet</a>
+                <a href="bilan.html" class="vm-btn-outline">Notre bilan</a>
+            </div>
+        </div>
+        <div class="vm-hero-photo vm-rise vm-rise-d1">
+            <img fetchpriority="high" src="images/photo-equipe.webp" alt="L'equipe Vizille en Mouvement">
         </div>
     </section>
 
-    <!-- BLOC À LA UNE — deux articles prioritaires -->
-    <style>
-    #bloc-a-la-une { background:#f7f4ef; border-bottom:3px solid #c9a84c; padding:2rem 1rem; display:none; }
-    .alaune-container { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
-    .alaune-card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08); transition:transform 0.2s; }
-    .alaune-card:hover { transform:translateY(-3px); }
-    .alaune-card img { width:100%; height:220px; object-fit:cover; object-position:center 30%; display:block; }
-    .alaune-card-body { padding:1.5rem; }
-    .alaune-card-meta { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:#c9a84c; font-weight:700; margin:0 0 0.5rem; }
-    .alaune-card-title { font-family:'Playfair Display',serif; font-size:clamp(1rem,2vw,1.3rem); font-weight:600; color:#1a3a6b; margin:0 0 0.6rem; line-height:1.3; }
-    .alaune-card-extrait { font-size:0.88rem; color:#555; line-height:1.7; margin:0 0 1rem; }
-    .alaune-card-btn { display:inline-block; background:#1a3a6b; color:#fff; padding:0.5rem 1.2rem; border-radius:3px; text-decoration:none; font-size:0.8rem; letter-spacing:0.04em; }
-    .alaune-card-btn:hover { background:#c9a84c; }
-    @media(max-width:700px){ .alaune-container{grid-template-columns:1fr;} .alaune-card img{height:180px;} }
-    </style>
-    <section id="bloc-a-la-une">
-        <div class="alaune-container" id="alaune-container"></div>
-    </section>
+    <!-- 4. ENGAGEMENTS LINE -->
+    <div class="vm-engagements">
+        <div class="vm-engagements-inner vm-rise vm-rise-d2">
+            <div class="vm-engagement-item"><span class="icon">&#x1F3E5;</span> Sante</div>
+            <div class="vm-engagement-item"><span class="icon">&#x1F6B6;</span> Deplacements</div>
+            <div class="vm-engagement-item"><span class="icon">&#x1F91D;</span> Solidarite</div>
+            <div class="vm-engagement-item"><span class="icon">&#x1F33F;</span> Cadre de vie</div>
+            <div class="vm-engagement-item"><span class="icon">&#x1F6CD;</span> Vitalite commerciale</div>
+        </div>
+    </div>
 
-    <!-- SECTION SERVICES EN DIRECT — Onglets Trafic / Carburants / Bus -->
-    <style>
-    .services-section { background: linear-gradient(135deg, #0e1720 0%, #1a3a5c 100%); padding: 2rem 1.5rem; position: relative; overflow: hidden; }
-    .services-section::before { content: ''; position: absolute; top: -50%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(201,162,39,0.06) 0%, transparent 70%); border-radius: 50%; }
-    .services-container { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
-    .services-header { text-align: center; margin-bottom: 1.5rem; }
-    .services-badge { display: inline-block; background: rgba(201,162,39,0.2); color: #e8c84a; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 20px; margin-bottom: 0.8rem; border: 1px solid rgba(201,162,39,0.3); }
-    .services-title { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 3vw, 1.7rem); color: #fff; margin: 0 0 0.3rem; }
-    .services-live { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.7rem; color: #4ade80; margin-top: 0.4rem; font-weight: 600; }
-    .services-live .dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; animation: srv-pulse 2s infinite; }
-    @keyframes srv-pulse { 0%, 100% { opacity:1; box-shadow:0 0 0 0 rgba(74,222,128,0.4); } 50% { opacity:0.7; box-shadow:0 0 0 6px rgba(74,222,128,0); } }
-    .srv-tabs { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-    .srv-tab { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); padding: 0.6rem 1.2rem; border-radius: 10px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 0.4rem; }
-    .srv-tab:hover { background: rgba(255,255,255,0.1); color: #fff; }
-    .srv-tab.active { background: rgba(201,162,39,0.2); border-color: rgba(201,162,39,0.5); color: #e8c84a; }
-    .srv-panel { display: none; }
-    .srv-panel.active { display: block; }
-    .stations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 900px; margin: 0 auto; }
-    .station-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.2rem; transition: transform 0.2s, border-color 0.2s; }
-    .station-card:hover { transform: translateY(-2px); border-color: rgba(201,162,39,0.3); }
-    .station-name { font-weight: 700; color: #fff; font-size: 1rem; margin-bottom: 0.2rem; }
-    .station-addr { font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-bottom: 0.2rem; }
-    .station-horaires { font-size: 0.72rem; color: #4ade80; margin-bottom: 0.7rem; font-weight: 500; }
-    .prix-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 0.4rem; }
-    .prix-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 0.4rem 0.3rem; text-align: center; }
-    .prix-item.rupture { background: rgba(231,76,60,0.12); border-color: rgba(231,76,60,0.2); }
-    .prix-label { font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.4); }
-    .prix-val { font-size: 1.05rem; font-weight: 700; color: #e8c84a; margin-top: 0.1rem; }
-    .prix-val.indispo { font-size: 0.65rem; color: #f87171; font-weight: 600; }
-    .prix-date { font-size: 0.55rem; color: rgba(255,255,255,0.25); margin-top: 0.1rem; }
-    .station-link { display: inline-block; margin-top: 0.6rem; font-size: 0.8rem; color: #4ade80; text-decoration: none; font-weight: 600; }
-    .carburants-penurie { background: rgba(231,76,60,0.12); border: 1px solid rgba(231,76,60,0.25); border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 1rem; text-align: center; display: none; }
-    .carburants-penurie.visible { display: block; }
-    .carburants-penurie-title { font-size: 0.8rem; font-weight: 700; color: #f87171; margin-bottom: 0.2rem; }
-    .carburants-penurie-details { font-size: 0.72rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
-    .carburants-penurie-bar { height: 5px; background: rgba(255,255,255,0.08); border-radius: 3px; margin-top: 0.4rem; overflow: hidden; }
-    .carburants-penurie-fill { height: 100%; border-radius: 3px; transition: width 1s ease; }
-    .waze-wrap { background: #000; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
-    .waze-wrap iframe { display: block; width: 100%; height: 450px; border: 0; }
-    .waze-footer { text-align: center; margin-top: 0.8rem; }
-    .waze-footer a { font-size: 0.8rem; color: rgba(255,255,255,0.6); text-decoration: none; }
-    .waze-footer a:hover { color: #4ade80; }
-    .bus-line { display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-    .bus-line:last-child { border-bottom: none; }
-    .bus-num { background: #e74c3c; color: #fff; font-size: 0.68rem; font-weight: 700; padding: 0.2rem 0.45rem; border-radius: 4px; min-width: 34px; text-align: center; }
-    .bus-num.exp { background: #9b59b6; }
-    .bus-dest { flex: 1; font-size: 0.8rem; color: rgba(255,255,255,0.7); }
-    .bus-time { font-size: 0.85rem; font-weight: 700; color: #4ade80; }
-    .bus-loading { text-align: center; padding: 1rem; color: rgba(255,255,255,0.4); font-size: 0.82rem; }
-    .bus-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.2rem; max-width: 500px; margin: 0 auto; }
-    .srv-source { text-align: center; font-size: 0.65rem; color: rgba(255,255,255,0.25); margin-top: 1rem; }
-    .srv-source a { color: rgba(255,255,255,0.4); text-decoration: underline; }
-    .srv-loading { text-align: center; padding: 1.5rem; color: rgba(255,255,255,0.4); }
-    @media(max-width:700px){ .stations-grid { grid-template-columns: 1fr; } .services-section { padding: 1.5rem 0.75rem; } .waze-wrap iframe { height: 320px; } .srv-tab { padding: 0.5rem 0.8rem; font-size: 0.78rem; } }
-    </style>
-    <section class="services-section" id="section-services">
-        <div class="services-container">
-            <div class="services-header">
-                <div class="services-badge">Vizille en Mouvement vous informe</div>
-                <h2 class="services-title">Services en direct</h2>
-                <div class="services-live"><span class="dot"></span> Données actualisées automatiquement</div>
-            </div>
-            <div class="srv-tabs">
-                <div class="srv-tab active" onclick="srvTab('trafic')">🚗 Trafic</div>
-                <div class="srv-tab" onclick="srvTab('carburants')">⛽ Carburants</div>
-                <div class="srv-tab" onclick="srvTab('bus')">🚌 Bus</div>
-            </div>
-            <div class="srv-panel active" id="srv-trafic">
-                <div class="waze-wrap">
+    <!-- 5. SERVICES EN DIRECT -->
+    <section class="vm-services" id="section-services">
+        <h2 class="vm-section-title vm-rise">Services en direct</h2>
+        <p class="vm-section-subtitle vm-rise vm-rise-d1">Donnees actualisees automatiquement</p>
+        <div class="vm-services-grid">
+            <!-- Card 1: Circulation -->
+            <div class="vm-service-card vm-rise vm-rise-d1">
+                <div class="vm-service-card-header">
+                    <span class="icon">&#x1F697;</span>
+                    <h3>Circulation</h3>
+                    <span class="vm-service-live-dot"></span>
+                </div>
+                <div class="vm-service-card-body">
                     <iframe src="https://embed.waze.com/iframe?zoom=12&lat=45.105&lon=5.755&ct=livemap" allowfullscreen loading="lazy" title="Trafic Vizille / RN85 / Grenoble"></iframe>
                 </div>
-                <div class="waze-footer"><a href="https://www.waze.com/fr/live-map/?zoom=12&lat=45.105&lon=5.755" target="_blank" rel="noopener">🗺️ Ouvrir sur Waze →</a></div>
-            </div>
-            <div class="srv-panel" id="srv-carburants">
-                <div id="carburants-penurie" class="carburants-penurie"></div>
-                <div id="carburants-content" class="srv-loading">Chargement des prix...</div>
-                <p class="srv-source">Source : <a href="https://www.prix-carburants.gouv.fr/" target="_blank" rel="noopener">prix-carburants.gouv.fr</a></p>
-            </div>
-            <div class="srv-panel" id="srv-bus">
-                <div class="bus-card">
-                    <div style="font-weight:700;color:#fff;font-size:1rem;margin-bottom:0.8rem;">🚌 Prochains départs — Vizille</div>
-                    <div id="bus-content"><div class="bus-loading">Chargement...</div></div>
-                    <a href="https://www.tag.fr/" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.8rem;font-size:0.8rem;color:#4ade80;text-decoration:none;font-weight:600;">🕐 Horaires TAG →</a>
+                <div class="vm-service-footer">
+                    <a href="https://www.waze.com/fr/live-map/?zoom=12&lat=45.105&lon=5.755" target="_blank" rel="noopener">Ouvrir sur Waze &rarr;</a>
                 </div>
-                <p class="srv-source"><a href="https://www.mobilites-m.fr/" target="_blank" rel="noopener">Mobilités m</a> · <a href="https://www.tag.fr/" target="_blank" rel="noopener">TAG</a></p>
+            </div>
+
+            <!-- Card 2: Carburants -->
+            <div class="vm-service-card vm-rise vm-rise-d2">
+                <div class="vm-service-card-header">
+                    <span class="icon">&#x26FD;</span>
+                    <h3>Carburants</h3>
+                    <span class="vm-service-live-dot"></span>
+                </div>
+                <div class="vm-service-card-body">
+                    <div id="carburants-penurie" class="carburants-penurie"></div>
+                    <div id="carburants-content" class="vm-carb-loading">Chargement des prix...</div>
+                </div>
+                <div class="vm-service-footer">
+                    Source : <a href="https://www.prix-carburants.gouv.fr/" target="_blank" rel="noopener">prix-carburants.gouv.fr</a>
+                </div>
+            </div>
+
+            <!-- Card 3: Bus -->
+            <div class="vm-service-card vm-rise vm-rise-d3">
+                <div class="vm-service-card-header">
+                    <span class="icon">&#x1F68C;</span>
+                    <h3>Bus</h3>
+                    <span class="vm-service-live-dot"></span>
+                </div>
+                <div class="vm-service-card-body">
+                    <div id="bus-content"><div class="bus-loading">Chargement...</div></div>
+                </div>
+                <div class="vm-service-footer">
+                    <a href="https://www.mobilites-m.fr/" target="_blank" rel="noopener">Mobilites m</a> &middot; <a href="https://www.tag.fr/" target="_blank" rel="noopener">TAG</a>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Services JS (exact copy from original) -->
     <script>
     function srvTab(id){
         document.querySelectorAll('.srv-panel').forEach(function(p){ p.classList.remove('active'); });
@@ -233,18 +853,112 @@
     function loadCarburants(){
         var API = 'https://data.economie.gouv.fr/api/explore/v2.1/catalog/datasets/prix-des-carburants-en-france-flux-instantane-v2/records';
         fetch(API + '?where=within_distance(geom,geom\'POINT(5.766 45.084)\',5km)&limit=30&order_by=distance(geom,geom\'POINT(5.766 45.084)\')').then(function(r){ return r.json(); }).then(function(data){
-            var records = data.results || []; if(!records.length){ document.getElementById('carburants-content').innerHTML = '<p style="color:rgba(255,255,255,0.5);">Aucune donnée.</p>'; return; }
+            var records = data.results || []; if(!records.length){ document.getElementById('carburants-content').innerHTML = '<p style="color:#6E5B49;">Aucune donnee.</p>'; return; }
             var viz = records.filter(function(f){ return f.cp === '38220'; }), alt = records.filter(function(f){ return f.cp !== '38220'; }), html = '';
-            if(viz.length){ html += '<h3 style="color:#e8c84a;font-family:Playfair Display,serif;font-size:1rem;margin:0 0 0.8rem;text-align:center;">À Vizille</h3><div class="stations-grid">'; viz.forEach(function(f){ html += renderStation(f,true); }); html += '</div>'; }
-            if(alt.length){ var d = alt.filter(function(f){ return f.carburants_disponibles && f.carburants_disponibles.length > 0; }); if(d.length){ html += '<h3 style="color:rgba(255,255,255,0.5);font-family:Playfair Display,serif;font-size:0.9rem;margin:1.2rem 0 0.8rem;text-align:center;">À proximité</h3><div class="stations-grid">'; d.slice(0,6).forEach(function(f){ html += renderStation(f,false); }); html += '</div>'; } }
+            if(viz.length){ html += '<h3 style="color:#C2632F;font-family:Spectral,serif;font-size:0.95rem;margin:0 0 0.6rem;text-align:center;">A Vizille</h3><div class="stations-grid">'; viz.forEach(function(f){ html += renderStation(f,true); }); html += '</div>'; }
+            if(alt.length){ var d = alt.filter(function(f){ return f.carburants_disponibles && f.carburants_disponibles.length > 0; }); if(d.length){ html += '<h3 style="color:#A07A4E;font-family:Spectral,serif;font-size:0.85rem;margin:1rem 0 0.6rem;text-align:center;">A proximite</h3><div class="stations-grid">'; d.slice(0,6).forEach(function(f){ html += renderStation(f,false); }); html += '</div>'; } }
             document.getElementById('carburants-content').innerHTML = html;
-        }).catch(function(){ document.getElementById('carburants-content').innerHTML = '<p style="color:rgba(255,255,255,0.5);">Indisponible. <a href="https://www.prix-carburants.gouv.fr/" target="_blank" style="color:#4ade80;">prix-carburants.gouv.fr</a></p>'; });
-        fetch(API+'?limit=0').then(function(r){return r.json();}).then(function(td){ var tot=td.total_count||0; if(!tot) return; return fetch(API+'?where=gazole_rupture_type%3D%22temporaire%22&limit=0').then(function(r){return r.json();}).then(function(gd){ var gR=gd.total_count||0; return fetch(API+'?where=carburants_disponibles%20is%20null&limit=0').then(function(r){return r.json();}).then(function(sd){ var s=sd.total_count||0,pS=((s/tot)*100).toFixed(1),pG=((gR/tot)*100).toFixed(1),el=document.getElementById('carburants-penurie'),c=pS>15?'#ef4444':pS>5?'#f59e0b':'#4ade80',n=pS>15?'🔴 Tendue':pS>5?'🟠 Tensions':'🟢 Normal'; el.innerHTML='<div class="carburants-penurie-title">🇫🇷 '+n+'</div><div class="carburants-penurie-details"><strong>'+pS+'%</strong> en rupture'+(gR>0?' · <strong>'+pG+'%</strong> sans Gazole':'')+'</div><div class="carburants-penurie-bar"><div class="carburants-penurie-fill" style="width:'+Math.min(pS*2,100)+'%;background:'+c+';"></div></div>'; el.classList.add('visible'); }); }); }).catch(function(){});
+        }).catch(function(){ document.getElementById('carburants-content').innerHTML = '<p style="color:#6E5B49;">Indisponible. <a href="https://www.prix-carburants.gouv.fr/" target="_blank" style="color:#C2632F;">prix-carburants.gouv.fr</a></p>'; });
+        fetch(API+'?limit=0').then(function(r){return r.json();}).then(function(td){ var tot=td.total_count||0; if(!tot) return; return fetch(API+'?where=gazole_rupture_type%3D%22temporaire%22&limit=0').then(function(r){return r.json();}).then(function(gd){ var gR=gd.total_count||0; return fetch(API+'?where=carburants_disponibles%20is%20null&limit=0').then(function(r){return r.json();}).then(function(sd){ var s=sd.total_count||0,pS=((s/tot)*100).toFixed(1),pG=((gR/tot)*100).toFixed(1),el=document.getElementById('carburants-penurie'),c=pS>15?'#ef4444':pS>5?'#f59e0b':'#4ade80',n=pS>15?'Tendue':pS>5?'Tensions':'Normal'; el.innerHTML='<div class="carburants-penurie-title">'+n+'</div><div class="carburants-penurie-details"><strong>'+pS+'%</strong> en rupture'+(gR>0?' &middot; <strong>'+pG+'%</strong> sans Gazole':'')+'</div><div class="carburants-penurie-bar"><div class="carburants-penurie-fill" style="width:'+Math.min(pS*2,100)+'%;background:'+c+';"></div></div>'; el.classList.add('visible'); }); }); }).catch(function(){});
     }
-    var NOMS={38220002:'TotalEnergies — Muzet',38220003:'Intermarché Vizille',38130004:'E.Leclerc Comboire',38130005:'E.Leclerc Échirolles'};
-    function renderStation(f,isV){ var v=f.ville||'',vc=v.charAt(0).toUpperCase()+v.slice(1).toLowerCase(),nm=NOMS[f.id]||vc; if(!NOMS[f.id]){var sv=(f.services_service||[]).join(' ').toLowerCase(),ad=(f.adresse||'').toLowerCase();if(ad.indexOf('leclerc')>-1||sv.indexOf('leclerc')>-1) nm='E.Leclerc '+vc;} var h24=f.horaires_automate_24_24==='Oui',s='<div class="station-card"'+(isV?'':' style="opacity:0.8;"')+'>'; s+='<div class="station-name">⛽ '+nm+'</div><div class="station-addr">'+(f.adresse||'')+(isV?'':', '+vc)+'</div><div class="station-horaires">'+(h24?'🟢 24h/24':'🕐 Horaires en station')+'</div><div class="prix-grid">'; ['gazole','sp95','sp98','e10','e85','gplc'].forEach(function(c){var p=f[c+'_prix'],m=f[c+'_maj'],rt=f[c+'_rupture_type'],lb={gazole:'Gazole',sp95:'SP95',sp98:'SP98',e10:'E10',e85:'E85',gplc:'GPLc'}; if(p){var d=m?new Date(m).toLocaleDateString('fr-FR',{day:'numeric',month:'short'}):'';s+='<div class="prix-item"><div class="prix-label">'+lb[c]+'</div><div class="prix-val">'+parseFloat(p).toFixed(3)+'€</div>'+(d?'<div class="prix-date">'+d+'</div>':'')+'</div>';}else if(rt==='temporaire'){s+='<div class="prix-item rupture"><div class="prix-label">'+lb[c]+'</div><div class="prix-val indispo">Rupture</div></div>';}}); s+='</div>'; var lat=f.geom?f.geom.lat:null,lon=f.geom?f.geom.lon:null; if(lat&&lon) s+='<a href="https://www.google.com/maps/search/station+essence/@'+lat+','+lon+',16z/data=!5m1!1e1" target="_blank" rel="noopener" class="station-link">📍 Maps →</a>'; s+='</div>'; return s; }
-    function loadBus(){ var arrets=[{id:'SEM:VIZCHF',nom:'Chantefeuille'},{id:'SEM:VIZLYC',nom:'Lycée'},{id:'SEM:VIZPEG',nom:'Le Péage'},{id:'SEM:VIZCHAT',nom:'Château'}],API_B='https://data.mobilites-m.fr/api/routers/default/index/stops/',allD=[],ld=0,tot=arrets.length; arrets.forEach(function(ar){fetch(API_B+ar.id+'/stoptimes').then(function(r){return r.ok?r.json():[];}).then(function(data){if(Array.isArray(data)){data.forEach(function(pat){var rt=pat.pattern||{},rId=rt.id||'',rD=rt.desc||'';(pat.times||[]).slice(0,3).forEach(function(t){var secs=t.realtimeDeparture||t.scheduledDeparture||0,now=new Date(),nS=now.getHours()*3600+now.getMinutes()*60+now.getSeconds(),diff=secs-nS;if(diff>0&&diff<7200){allD.push({ligne:rId.split(':').pop()||'?',direction:rD||ar.nom,dans:Math.round(diff/60)});}});});}}).catch(function(){}).finally(function(){ld++;if(ld>=tot){var el=document.getElementById('bus-content');allD.sort(function(a,b){return a.dans-b.dans;});var top=allD.slice(0,6);if(!top.length){el.innerHTML='<div class="bus-loading">Pas de départ imminent.<br><a href="https://www.tag.fr/" target="_blank" style="color:#4ade80;">Horaires TAG →</a></div>';return;}el.innerHTML=top.map(function(d){var isE=d.ligne.indexOf('X')===0||d.ligne.indexOf('30')===0;return '<div class="bus-line"><span class="bus-num'+(isE?' exp':'')+'">'+d.ligne+'</span><span class="bus-dest">'+d.direction+'</span><span class="bus-time">'+d.dans+' min</span></div>';}).join('');}});}); }
+    var NOMS={38220002:'TotalEnergies — Muzet',38220003:'Intermarche Vizille',38130004:'E.Leclerc Comboire',38130005:'E.Leclerc Echirolles'};
+    function renderStation(f,isV){ var v=f.ville||'',vc=v.charAt(0).toUpperCase()+v.slice(1).toLowerCase(),nm=NOMS[f.id]||vc; if(!NOMS[f.id]){var sv=(f.services_service||[]).join(' ').toLowerCase(),ad=(f.adresse||'').toLowerCase();if(ad.indexOf('leclerc')>-1||sv.indexOf('leclerc')>-1) nm='E.Leclerc '+vc;} var h24=f.horaires_automate_24_24==='Oui',s='<div class="station-card"'+(isV?'':' style="opacity:0.8;"')+'>'; s+='<div class="station-name">'+nm+'</div><div class="station-addr">'+(f.adresse||'')+(isV?'':', '+vc)+'</div><div class="station-horaires">'+(h24?'24h/24':'Horaires en station')+'</div><div class="prix-grid">'; ['gazole','sp95','sp98','e10','e85','gplc'].forEach(function(c){var p=f[c+'_prix'],m=f[c+'_maj'],rt=f[c+'_rupture_type'],lb={gazole:'Gazole',sp95:'SP95',sp98:'SP98',e10:'E10',e85:'E85',gplc:'GPLc'}; if(p){var d=m?new Date(m).toLocaleDateString('fr-FR',{day:'numeric',month:'short'}):'';s+='<div class="prix-item"><div class="prix-label">'+lb[c]+'</div><div class="prix-val">'+parseFloat(p).toFixed(3)+'&euro;</div>'+(d?'<div class="prix-date">'+d+'</div>':'')+'</div>';}else if(rt==='temporaire'){s+='<div class="prix-item rupture"><div class="prix-label">'+lb[c]+'</div><div class="prix-val indispo">Rupture</div></div>';}}); s+='</div>'; var lat=f.geom?f.geom.lat:null,lon=f.geom?f.geom.lon:null; if(lat&&lon) s+='<a href="https://www.google.com/maps/search/station+essence/@'+lat+','+lon+',16z/data=!5m1!1e1" target="_blank" rel="noopener" class="station-link">Maps &rarr;</a>'; s+='</div>'; return s; }
+    function loadBus(){ var arrets=[{id:'SEM:VIZCHF',nom:'Chantefeuille'},{id:'SEM:VIZLYC',nom:'Lycee'},{id:'SEM:VIZPEG',nom:'Le Peage'},{id:'SEM:VIZCHAT',nom:'Chateau'}],API_B='https://data.mobilites-m.fr/api/routers/default/index/stops/',allD=[],ld=0,tot=arrets.length; arrets.forEach(function(ar){fetch(API_B+ar.id+'/stoptimes').then(function(r){return r.ok?r.json():[];}).then(function(data){if(Array.isArray(data)){data.forEach(function(pat){var rt=pat.pattern||{},rId=rt.id||'',rD=rt.desc||'';(pat.times||[]).slice(0,3).forEach(function(t){var secs=t.realtimeDeparture||t.scheduledDeparture||0,now=new Date(),nS=now.getHours()*3600+now.getMinutes()*60+now.getSeconds(),diff=secs-nS;if(diff>0&&diff<7200){allD.push({ligne:rId.split(':').pop()||'?',direction:rD||ar.nom,dans:Math.round(diff/60)});}});});}}).catch(function(){}).finally(function(){ld++;if(ld>=tot){var el=document.getElementById('bus-content');allD.sort(function(a,b){return a.dans-b.dans;});var top=allD.slice(0,6);if(!top.length){el.innerHTML='<div class="bus-loading">Pas de depart imminent.<br><a href="https://www.tag.fr/" target="_blank" style="color:#C2632F;">Horaires TAG &rarr;</a></div>';return;}el.innerHTML=top.map(function(d){var isE=d.ligne.indexOf('X')===0||d.ligne.indexOf('30')===0;return '<div class="bus-line"><span class="bus-num'+(isE?' exp':'')+'">'+d.ligne+'</span><span class="bus-dest">'+d.direction+'</span><span class="bus-time">'+d.dans+' min</span></div>';}).join('');}});}); }
+
+    // Load carburants and bus on page load (not on tab click)
+    window._carbLoaded = true;
+    window._busLoaded = true;
+    loadCarburants();
+    loadBus();
     </script>
+
+    <!-- 6. 7 PRIORITES -->
+    <section class="vm-priorites" id="decouvrir">
+        <h2 class="vm-section-title vm-rise">Nos 7 priorites pour Vizille</h2>
+        <p class="vm-section-subtitle vm-rise vm-rise-d1">Le programme 2026-2032 en actions concretes</p>
+        <div class="vm-priorites-grid">
+            <a href="projet.html#theme=Mobilites" class="vm-priorite-card vm-rise">
+                <div class="vm-priorite-num">1</div>
+                <div class="vm-priorite-icon">&#x1F6B4;</div>
+                <h3>Mobilites</h3>
+                <p>Feu de Jarrie, reseau cyclable, mobilites alternatives</p>
+            </a>
+            <a href="projet.html#theme=Sante" class="vm-priorite-card vm-rise vm-rise-d1">
+                <div class="vm-priorite-num">2</div>
+                <div class="vm-priorite-icon">&#x1F3E5;</div>
+                <h3>Sante</h3>
+                <p>Maison de Sante pluridisciplinaire, mutuelle communale</p>
+            </a>
+            <a href="projet.html#theme=Solidarite" class="vm-priorite-card vm-rise vm-rise-d2">
+                <div class="vm-priorite-num">3</div>
+                <div class="vm-priorite-icon">&#x1F91D;</div>
+                <h3>Solidarite</h3>
+                <p>Maison des solidarites, lien social, soutien aux plus fragiles</p>
+            </a>
+            <a href="projet.html#theme=Environnement" class="vm-priorite-card vm-rise">
+                <div class="vm-priorite-num">4</div>
+                <div class="vm-priorite-icon">&#x1F33F;</div>
+                <h3>Cadre de vie</h3>
+                <p>Transition ecologique, arbres en ville, espaces embellis</p>
+            </a>
+            <a href="projet.html#theme=Economie" class="vm-priorite-card vm-rise vm-rise-d1">
+                <div class="vm-priorite-num">5</div>
+                <div class="vm-priorite-icon">&#x1F6CD;</div>
+                <h3>Economie locale</h3>
+                <p>Vitalite commerciale, ORT centre-ville, soutien aux artisans</p>
+            </a>
+            <a href="projet.html#theme=Culture" class="vm-priorite-card vm-rise vm-rise-d2">
+                <div class="vm-priorite-num">6</div>
+                <div class="vm-priorite-icon">&#x1F3AD;</div>
+                <h3>Culture &amp; Patrimoine</h3>
+                <p>Associations, evenements, memoire de Vizille</p>
+            </a>
+            <a href="projet.html#theme=Tranquillite%20publique" class="vm-priorite-card vm-priorite-full vm-rise">
+                <div>
+                    <div class="vm-priorite-num">7</div>
+                    <div class="vm-priorite-icon">&#x1F6E1;</div>
+                </div>
+                <div>
+                    <h3>Tranquillite publique</h3>
+                    <p>Prevention, mediation, presence de proximite pour le bien-vivre ensemble</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- 7. MESSAGE DE LA MAIRE -->
+    <section class="vm-maire">
+        <div class="vm-maire-inner">
+            <div class="vm-maire-photo vm-rise">
+                <img src="images/catherine-troton.jpg" alt="Catherine Troton, Maire de Vizille" loading="lazy">
+            </div>
+            <div class="vm-rise vm-rise-d1">
+                <div class="vm-maire-quote">
+                    <p>Je crois en une action municipale proche des citoyens, fondee sur le dialogue, la construction collective et la confiance.</p>
+                    <p>Notre projet a vocation a devenir <strong>votre</strong> projet. Six ans de mandat ont prouve notre capacite a structurer des actions, nouer des partenariats, aller chercher des financements pour transformer Vizille.</p>
+                    <p>Nous allons maintenant amplifier cette dynamique.</p>
+                </div>
+                <p class="vm-maire-sig">Catherine Troton, Maire de Vizille</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. ACTUALITES -->
+    <section class="vm-actualites" id="section-actualites">
+        <div class="vm-actualites-header">
+            <h2 class="vm-section-title vm-rise">Dernieres actualites</h2>
+            <a href="blog.html" class="vm-see-all vm-rise vm-rise-d1">Tout voir &rarr;</a>
+        </div>
+        <div class="actualites-grid" id="actualites-grid">
+            <div class="loading-placeholder">
+                <div class="loading-card"></div>
+                <div class="loading-card"></div>
+                <div class="loading-card"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- A la une loader (exact copy from original) -->
     <script>
     (function() {
         fetch('articles.json?v=' + Date.now()).then(function(r){ return r.json(); }).then(function(articles){
@@ -253,6 +967,7 @@
                 .slice(0, 2);
             if(prioritaires.length === 0) return;
             var container = document.getElementById('alaune-container');
+            if(!container) return;
             container.innerHTML = prioritaires.map(function(art){
                 var img = art.image || (art.images && art.images[0]) || '';
                 var d = art.date ? new Date(art.date) : null;
@@ -264,424 +979,89 @@
                     + '<p class="alaune-card-meta">'+ds+cat+'</p>'
                     + '<h2 class="alaune-card-title">'+art.titre+'</h2>'
                     + '<p class="alaune-card-extrait">'+(art.extrait||'')+'</p>'
-                    + '<a href="blog.html?article='+art.id+'" class="alaune-card-btn">📰 Lire l\'article complet →</a>'
+                    + '<a href="blog.html?article='+art.id+'" class="alaune-card-btn">Lire l\'article complet &rarr;</a>'
                     + '</div></div>';
             }).join('');
-            document.getElementById('bloc-a-la-une').style.display='block';
+            var bloc = document.getElementById('bloc-a-la-une');
+            if(bloc) bloc.style.display='block';
         });
     })();
     </script>
 
-    <header class="header">
-        <div class="header-top"><p>Vizille en Mouvement - Mandat 2026-2032</p></div>
-        <div class="header-main">
-            <a href="index.html"><img src="images/logo-header.png" alt="Vizille en Mouvement" class="nav-header-logo"></a>
-            <button class="menu-toggle" aria-label="Menu">☰</button>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Accueil</a></li>
-                    <li><a href="nos-ambitions.html">Nos Ambitions</a></li>
-                    <li><a href="retrospective.html">Rétrospective</a></li>
-                    <li><a href="bilan.html">Bilan</a></li>
-                    <li><a href="projet.html">Projet</a></li>
-                    <li><a href="blog.html">Actualités</a></li>
-                    <li><a href="equipe.html">Équipe</a></li>
-                    <li><a href="medias.html">Médias</a></li>
-                    <li><a href="faq.html">Construisons ensemble</a></li>
-                </ul>
-            </nav>
+    <!-- 9. EQUIPE -->
+    <section class="vm-equipe">
+        <h2 class="vm-section-title vm-rise">Une equipe engagee</h2>
+        <p class="vm-section-subtitle vm-rise vm-rise-d1">Les 26 elues et elus de Vizille en Mouvement</p>
+        <div class="vm-equipe-photo vm-rise vm-rise-d2">
+            <img src="images/photo-equipe.webp" alt="L'equipe Vizille en Mouvement" loading="lazy">
         </div>
-    </header>
-    <script src="js/menu-mobile.js" defer></script>
+        <a href="equipe.html" class="vm-btn-accent vm-rise vm-rise-d3">Decouvrir toute l'equipe &rarr;</a>
+    </section>
 
-    <!-- HERO avec Catherine Troton -->
-    <section class="hero-dynamic">
-        <div class="hero-bg"></div>
-        <div class="hero-layout">
-            <!-- Colonne gauche : portrait -->
-            <div class="hero-left animate-fade-in">
-                <div class="hero-portrait">
-                    <img fetchpriority="high" src="images/catherine-troton.jpg" alt="Catherine Troton, Maire de Vizille" class="hero-candidate-photo">
-                    <div class="hero-portrait-ring"></div>
-                </div>
-                <h1 class="hero-candidate-name">Vizille en Mouvement</h1>
-                <span class="hero-candidate-title">Maire de Vizille</span>
-                <span class="hero-candidate-role">Mandat 2026-2032</span>
-            </div>
-            <!-- Colonne droite : message -->
-            <div class="hero-right">
-                <img src="images/logo.png" alt="Vizille en Mouvement" class="hero-logo-small animate-fade-in delay-1">
-                <p class="hero-slogan animate-slide-up delay-1">« Ensemble pour une ville<br>dynamique et solidaire »</p>
-                <blockquote class="hero-quote animate-slide-up delay-2">
-                    Je crois en une action municipale proche des citoyens,
-                    fondée sur le dialogue, la construction collective et la confiance.
-                </blockquote>
-                <p class="hero-invitation animate-slide-up delay-3">Notre projet a vocation à devenir <strong>votre</strong> projet.</p>
-
-            </div>
+    <!-- 10. CONTACT CTA -->
+    <section class="vm-contact-cta">
+        <h2 class="vm-rise">Rejoignez le mouvement</h2>
+        <p class="vm-rise vm-rise-d1">Ensemble, poursuivons ce chemin avec enthousiasme et exigence pour Vizille.</p>
+        <div class="vm-contact-actions vm-rise vm-rise-d2">
+            <a href="faq.html" class="vm-btn-light">Poser une question</a>
+            <a href="mailto:contact@vizilleenmouvement.fr" class="vm-btn-ghost">Nous ecrire</a>
         </div>
     </section>
 
-    <!-- RÉSULTATS ÉLECTIONS -->
-
-    <section style="background:#f7f9fc;padding:2rem 1.5rem;" id="section-resultats">
-        <div style="max-width:860px;margin:0 auto;">
-
-        <div style="overflow-x:auto;">
-            <table style="width:100%;border-collapse:collapse;font-size:0.85rem;font-family:'Source Sans 3',sans-serif;">
-                <thead>
-                    <tr style="background:#1a3a6b;color:#fff;">
-                        <th colspan="6" style="padding:0.6rem 1rem;text-align:left;font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;">Résultats par liste · Élections municipales 15 mars 2026</th>
-                    </tr>
-                    <tr style="background:#2a4a8b;color:#fff;">
-                        <th style="padding:0.6rem 1rem;text-align:left;font-weight:400;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;">Liste · Tête de liste</th>
-                        <th style="padding:0.6rem 0.8rem;text-align:center;font-weight:400;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;">Bureau 1</th>
-                        <th style="padding:0.6rem 0.8rem;text-align:center;font-weight:400;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;">Bureau 2</th>
-                        <th style="padding:0.6rem 0.8rem;text-align:center;font-weight:400;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;">Bureau 3</th>
-                        <th style="padding:0.6rem 0.8rem;text-align:center;font-weight:400;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;">Bureau 4</th>
-                        <th style="padding:0.6rem 1rem;text-align:center;font-weight:700;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;background:#0f2550;">TOTAUX</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="background:#eef3fa;">
-                        <td style="padding:0.9rem 1rem;border-bottom:1px solid #dde5f0;">
-                            <strong style="color:#1a3a6b;font-size:0.9rem;">Vizille en Mouvement</strong><br>
-                            <span style="font-size:0.75rem;color:#888;">C. Troton</span>
-                        </td>
-                        <td style="padding:0.9rem 0.8rem;text-align:center;border-bottom:1px solid #dde5f0;"><strong style="color:#1a3a6b;font-size:1rem;">420</strong><br><span style="font-size:0.7rem;color:#888;">75,68 %</span></td>
-                        <td style="padding:0.9rem 0.8rem;text-align:center;border-bottom:1px solid #dde5f0;"><strong style="color:#1a3a6b;font-size:1rem;">551</strong><br><span style="font-size:0.7rem;color:#888;">81,87 %</span></td>
-                        <td style="padding:0.9rem 0.8rem;text-align:center;border-bottom:1px solid #dde5f0;"><strong style="color:#1a3a6b;font-size:1rem;">196</strong><br><span style="font-size:0.7rem;color:#888;">72,86 %</span></td>
-                        <td style="padding:0.9rem 0.8rem;text-align:center;border-bottom:1px solid #dde5f0;"><strong style="color:#1a3a6b;font-size:1rem;">475</strong><br><span style="font-size:0.7rem;color:#888;">80,78 %</span></td>
-                        <td style="padding:0.9rem 1rem;text-align:center;border-bottom:1px solid #dde5f0;background:#dce8f8;"><strong style="color:#1a3a6b;font-size:1.15rem;">1 642</strong><br><strong style="color:#1a3a6b;font-size:0.82rem;">78,75 %</strong></td>
-                    </tr>
-                    <tr>
-                        <td style="padding:0.9rem 1rem;">
-                            <span style="color:#555;font-size:0.9rem;">Imagine&nbsp;! Vizille</span><br>
-                            <span style="font-size:0.75rem;color:#888;">S. Garcia de la Rosa</span>
-                        </td>
-                        <td style="padding:0.9rem 0.8rem;text-align:center;color:#666;font-size:0.95rem;">135<br><span style="font-size:0.7rem;color:#aaa;">24,32 %</span></td>
-                        <td style="padding:0.9rem 0.8rem;text-align:center;color:#666;font-size:0.95rem;">122<br><span style="font-size:0.7rem;color:#aaa;">18,13 %</span></td>
-                        <td style="padding:0.9rem 0.8rem;text-align:center;color:#666;font-size:0.95rem;">73<br><span style="font-size:0.7rem;color:#aaa;">27,14 %</span></td>
-                        <td style="padding:0.9rem 0.8rem;text-align:center;color:#666;font-size:0.95rem;">113<br><span style="font-size:0.7rem;color:#aaa;">19,22 %</span></td>
-                        <td style="padding:0.9rem 1rem;text-align:center;background:#f0f0f0;color:#555;font-size:1rem;font-weight:600;">443<br><span style="font-size:0.78rem;color:#777;font-weight:400;">21,25 %</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        </div>
-    </section>
-
-    <!-- SECTION THÈMES — avant les actualités -->
-    <section class="themes-section" id="decouvrir">
-        <div class="themes-container">
-            <h2 class="section-title animate-on-scroll">Nos priorités pour Vizille</h2>
-            <div class="themes-grid">
-                <button class="theme-card animate-on-scroll" onclick="window.location.href='projet.html#theme=Mobilités'">
-                    <div class="theme-icon">🚴</div>
-                    <h3>Mobilités</h3>
-                    <p>Feu de Jarrie · réseau cyclable · mobilités alternatives</p>
-                    <span class="theme-hint">↗ 3 mesures concrètes</span>
-                    <span class="theme-arrow" aria-hidden="true">→</span>
-                </button>
-                <button class="theme-card animate-on-scroll delay-1" onclick="window.location.href='projet.html#theme=Santé'">
-                    <div class="theme-icon">🏥</div>
-                    <h3>Santé</h3>
-                    <p>Maison de Santé pluridisciplinaire · mutuelle communale · accès aux soins</p>
-                    <span class="theme-hint">↗ Voir les engagements</span>
-                    <span class="theme-arrow" aria-hidden="true">→</span>
-                </button>
-                <button class="theme-card animate-on-scroll delay-2" onclick="window.location.href='projet.html#theme=Solidarité'">
-                    <div class="theme-icon">🤝</div>
-                    <h3>Solidarité</h3>
-                    <p>Maison des solidarités · lien social · soutien aux plus fragiles</p>
-                    <span class="theme-hint">↗ Voir les engagements</span>
-                    <span class="theme-arrow" aria-hidden="true">→</span>
-                </button>
-                <button class="theme-card animate-on-scroll delay-2" onclick="window.location.href='projet.html#theme=Environnement'">
-                    <div class="theme-icon">🌿</div>
-                    <h3>Cadre de vie</h3>
-                    <p>Transition écologique · arbres en ville · espaces embellis</p>
-                    <span class="theme-hint">↗ 3 mesures concrètes</span>
-                    <span class="theme-arrow" aria-hidden="true">→</span>
-                </button>
-                <button class="theme-card animate-on-scroll delay-3" onclick="window.location.href='projet.html#theme=Économie'">
-                    <div class="theme-icon">🛍️</div>
-                    <h3>Économie locale</h3>
-                    <p>Vitalité commerciale · ORT centre-ville · soutien aux artisans</p>
-                    <span class="theme-hint">↗ 3 mesures concrètes</span>
-                    <span class="theme-arrow" aria-hidden="true">→</span>
-                </button>
-                <button class="theme-card animate-on-scroll delay-4" onclick="window.location.href='projet.html#theme=Culture'">
-                    <div class="theme-icon">🎭</div>
-                    <h3>Culture & Patrimoine</h3>
-                    <p>Associations · événements · mémoire de Vizille</p>
-                    <span class="theme-hint">↗ 3 mesures concrètes</span>
-                    <span class="theme-arrow" aria-hidden="true">→</span>
-                </button>
-                <button class="theme-card animate-on-scroll delay-5" onclick="window.location.href='projet.html#theme=Tranquillité publique'">
-                    <div class="theme-icon">🛡️</div>
-                    <h3>Tranquillité publique</h3>
-                    <p>Prévention · médiation · présence de proximité</p>
-                    <span class="theme-hint">↗ 3 mesures concrètes</span>
-                    <span class="theme-arrow" aria-hidden="true">→</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- MODAL THÈME -->
-    <div id="theme-modal-overlay" style="display:none;position:fixed;inset:0;background:rgba(10,20,50,0.72);z-index:1000;align-items:center;justify-content:center;padding:1rem;" onclick="if(event.target===this)fermerTheme()">
-        <div id="theme-modal" style="background:#fff;border-radius:6px;max-width:540px;width:100%;padding:2rem 2rem 1.5rem;position:relative;max-height:90vh;overflow-y:auto;">
-            <button onclick="fermerTheme()" aria-label="Fermer" style="position:absolute;top:0.8rem;right:1rem;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#888;line-height:1;">×</button>
-            <div id="theme-modal-icon" style="font-size:2rem;margin-bottom:0.5rem;"></div>
-            <h3 id="theme-modal-titre" style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:600;color:#1a3a6b;margin:0 0 0.3rem;"></h3>
-            <p id="theme-modal-sous" style="font-size:0.75rem;color:#c9a84c;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 1.2rem;"></p>
-            <ul id="theme-modal-projets" style="list-style:none;padding:0;margin:0 0 1.5rem;display:flex;flex-direction:column;gap:0.6rem;"></ul>
-            <a id="theme-modal-lien" href="#" style="display:inline-block;background:#1a3a6b;color:#fff;padding:0.6rem 1.4rem;border-radius:3px;text-decoration:none;font-size:0.85rem;letter-spacing:0.04em;">Voir tous les engagements →</a>
-        </div>
-    </div>
-
-    <script>
-    const THEMES_DATA = {
-        mobilites: {
-            icon: '🚴', titre: 'Mobilités', sous: 'Déplacements & transports',
-            lien: 'projet.html#theme=Mobilités',
-            projets: [
-                { titre: 'Régulation du carrefour de Jarrie (feu intelligent)', detail: 'Réduire la saturation à 88 % aux heures de pointe par une gestion dynamique.' },
-                { titre: 'Réseau cyclable sécurisé', detail: 'Création de nouvelles pistes, jalonnement et stationnements vélos en centre-ville.' },
-                { titre: 'Plan de mobilités alternatives', detail: 'Covoiturage, navettes, accès aux transports en commun depuis les hameaux.' }
-            ]
-        },
-        sante: {
-            icon: '🏥', titre: 'Santé & Solidarité', sous: 'Accès aux soins & lien social',
-            lien: 'projet.html#theme=Santé',
-            projets: [
-                { titre: 'Maison de Santé pluridisciplinaire', detail: 'Regrouper médecins, infirmiers, kinés et paramédicaux en un seul lieu accessible.' },
-                { titre: 'Mutuelle communale', detail: 'Accès à une complémentaire santé pour les Vizillois à revenus modestes.' },
-                { titre: 'Maison des Solidarités', detail: 'Espace d\'accueil, d\'écoute et d\'entraide pour tous les habitants.' }
-            ]
-        },
-        cadre: {
-            icon: '🌿', titre: 'Cadre de vie', sous: 'Environnement & urbanisme',
-            lien: 'projet.html#theme=Transition%20%C3%A9cologique',
-            projets: [
-                { titre: 'Plan de plantation d\'arbres', detail: 'Augmenter la canopée urbaine, lutter contre les îlots de chaleur.' },
-                { titre: 'Zéro pesticide dans les espaces publics', detail: 'Gestion différenciée des espaces verts, fauchage tardif, prairies fleuries.' },
-                { titre: 'Rénovation énergétique des bâtiments communaux', detail: 'Isolation, chauffage, éclairage LED pour réduire l\'empreinte carbone.' }
-            ]
-        },
-        economie: {
-            icon: '🛍️', titre: 'Économie locale', sous: 'Commerce, artisanat & emploi',
-            lien: 'projet.html#theme=%C3%89conomie',
-            projets: [
-                { titre: 'Opération de Revitalisation du Territoire (ORT)', detail: 'Dispositif d\'État pour soutenir les commerces de centre-ville et attirer de nouvelles enseignes.' },
-                { titre: 'Soutien à l\'artisanat local', detail: 'Mise en réseau, communication et accès aux marchés publics pour les artisans vizillois.' },
-                { titre: 'Marché et événements économiques', detail: 'Renforcement du marché hebdomadaire et animation commerciale du centre.' }
-            ]
-        },
-        culture: {
-            icon: '🎭', titre: 'Culture & Patrimoine', sous: 'Associations, événements & mémoire',
-            lien: 'projet.html#theme=Culture',
-            projets: [
-                { titre: 'Soutien aux associations culturelles', detail: 'Maintien et développement des subventions, accès aux équipements communaux.' },
-                { titre: 'Valorisation du patrimoine vizillois', detail: 'Circuit historique, signalétique, partenariat avec le Musée de la Révolution.' },
-                { titre: 'Programmation culturelle accessible', detail: 'Événements gratuits ou à tarif réduit pour tous les Vizillois.' }
-            ]
-        },
-        securite: {
-            icon: '🛡️', titre: 'Tranquillité publique', sous: 'Prévention & médiation',
-            lien: 'projet.html#theme=Tranquillit%C3%A9%20publique',
-            projets: [
-                { titre: 'Médiation de proximité', detail: 'Des référents tranquillité présents dans les quartiers pour résoudre les tensions.' },
-                { titre: 'Éclairage public renforcé', detail: 'Modernisation de l\'éclairage dans les zones sensibles, adapté aux besoins.' },
-                { titre: 'Prévention et sensibilisation', detail: 'Actions en partenariat avec la Police Nationale et les associations.' }
-            ]
-        }
-    };
-
-    function ouvrirTheme(id) {
-        const t = THEMES_DATA[id];
-        if (!t) return;
-        document.getElementById('theme-modal-icon').textContent = t.icon;
-        document.getElementById('theme-modal-titre').textContent = t.titre;
-        document.getElementById('theme-modal-sous').textContent = t.sous;
-        document.getElementById('theme-modal-lien').href = t.lien;
-        const ul = document.getElementById('theme-modal-projets');
-        ul.innerHTML = t.projets.map(p => `
-            <li style="background:#f7f4ef;border-left:3px solid #1a3a6b;padding:0.7rem 0.9rem;border-radius:0 4px 4px 0;">
-                <strong style="color:#1a3a6b;font-size:0.9rem;display:block;margin-bottom:0.2rem;">${p.titre}</strong>
-                <span style="color:#666;font-size:0.8rem;line-height:1.5;">${p.detail}</span>
-            </li>`).join('');
-        const overlay = document.getElementById('theme-modal-overlay');
-        overlay.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
-    function fermerTheme() {
-        document.getElementById('theme-modal-overlay').style.display = 'none';
-        document.body.style.overflow = '';
-    }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') fermerTheme(); });
-    </script>
-
-
-    <!-- SECTION ACTUALITÉS DYNAMIQUES -->
-    <section class="actualites-section" id="section-actualites">
-        <div class="actualites-container">
-            <h2 class="section-title animate-on-scroll">
-                <span>Dernières actualités</span>
-                <a href="blog.html" class="see-all">Tout voir les actualités <span aria-hidden="true">→</span></a>
-            </h2>
-            <div class="actualites-grid" id="actualites-grid">
-                <div class="loading-placeholder">
-                    <div class="loading-card"></div>
-                    <div class="loading-card"></div>
-                    <div class="loading-card"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION FACEBOOK -->
-    <section class="facebook-section" id="section-facebook">
-        <div class="facebook-container">
-            <h2 class="section-title animate-on-scroll">
-                <span class="facebook-icon">📘</span>
-                Suivez-nous sur Facebook
-            </h2>
-            <p class="section-intro animate-on-scroll">Retrouvez toutes nos actualités en temps réel</p>
-            <div class="facebook-widget-wrapper animate-on-scroll">
-                <div id="fb-root"></div>
-                <script async defer crossorigin="anonymous"
-                    src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v18.0"
-                    nonce="randomNonce"></script>
-                <div class="fb-page"
-                    data-href="https://www.facebook.com/Vizilleenmouvement"
-                    data-tabs="timeline" data-width="500" data-height="500"
-                    data-small-header="true" data-adapt-container-width="true"
-                    data-hide-cover="false" data-show-facepile="false">
-                    <blockquote cite="https://www.facebook.com/Vizilleenmouvement" class="fb-xfbml-parse-ignore">
-                        <a href="https://www.facebook.com/Vizilleenmouvement">Vizille en Mouvement</a>
-                    </blockquote>
-                </div>
-            </div>
-            <div class="facebook-cta animate-on-scroll">
-                <a href="https://www.facebook.com/Vizilleenmouvement" target="_blank" rel="noopener" class="btn-facebook">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    Suivre notre page
-                </a>
-                <a href="bilan.html" class="btn-primary">Découvrir notre bilan complet <span aria-hidden="true">→</span></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION GALERIE PHOTOS -->
-    <section class="galerie-section" id="section-galerie">
-        <div class="galerie-container">
-            <h2 class="section-title animate-on-scroll">
-                <span>En images</span>
-                <a href="medias.html" class="see-all">Voir la galerie →</a>
-            </h2>
-            <div class="galerie-mosaic" id="galerie-mosaic">
-                <!-- Chargé dynamiquement -->
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION ÉQUIPE (aperçu) -->
-    <section class="equipe-preview-section" id="section-equipe-preview">
-        <div class="equipe-preview-container">
-            <h2 class="section-title animate-on-scroll">Une équipe engagée</h2>
-            <p class="section-subtitle animate-on-scroll">Les 26 élues et élus de Vizille en Mouvement</p>
-            <div class="equipe-preview-grid" id="equipe-preview">
-                <!-- Chargé dynamiquement -->
-            </div>
-            <!-- Non-élus -->
-            <div id="equipe-soutiens-wrap" style="margin-top:2.5rem;display:none;">
-                <p style="text-align:center;font-size:0.88rem;color:#888;font-style:italic;margin-bottom:1.2rem;">Ils ont porté le projet avec nous tout au long de la campagne</p>
-                <div id="equipe-soutiens-grid" style="display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;"></div>
-            </div>
-            <a href="equipe.html" class="btn-primary animate-on-scroll">Découvrir toute l'équipe →</a>
-        </div>
-    </section>
-
-    <!-- SECTION REJOIGNEZ-NOUS -->
-    <section class="rejoindre-section" id="section-rejoindre">
-        <div class="rejoindre-container">
-            <div class="rejoindre-content animate-on-scroll">
-                <h2>Rejoignez le mouvement !</h2>
-                <p>Ensemble, poursuivons ce chemin avec enthousiasme et exigence.</p>
-                <div class="rejoindre-actions">
-                    <a href="faq.html" class="btn-cta">💬 Poser une question</a>
-                    <a href="mailto:contact@vizilleenmouvement.fr" class="btn-cta-outline">✉️ Nous contacter</a>
-                </div>
-            </div>
-            <div class="rejoindre-info animate-on-scroll delay-1">
-                <div class="info-card">
-                    <h4>📍 Adresse</h4>
-                    <p>Vizille en mouvement !<br>145 chemin des Berthets<br>38220 Vizille</p>
-                </div>
-                <div class="info-card">
-                    <h4>📱 Réseaux sociaux</h4>
-                    <div class="social-buttons">
-                        <a href="https://www.facebook.com/Vizilleenmouvement" target="_blank" rel="noopener" class="social-btn facebook">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                            Facebook
-                        </a>
-                        <a href="https://www.instagram.com/vizilleenmouvement" target="_blank" rel="noopener" class="social-btn instagram">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                            Instagram
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="images/logo-header.png" alt="" role="presentation" style="height: 40px; filter: brightness(0) invert(1);" loading="lazy">
-                <p>Équipe municipale de Vizille.<br>Ensemble pour une ville dynamique et solidaire.</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/Vizilleenmouvement" target="_blank" rel="noopener" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-                    <a href="https://www.instagram.com/vizilleenmouvement" target="_blank" rel="noopener" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <!-- 11. FOOTER -->
+    <footer class="vm-footer">
+        <div class="vm-footer-grid">
+            <div class="vm-footer-brand">
+                <img src="images/logo-header.png" alt="" role="presentation" loading="lazy">
+                <p>Equipe municipale de Vizille.<br>Ensemble pour une ville dynamique et solidaire.</p>
+                <div class="vm-footer-social">
+                    <a href="https://www.facebook.com/Vizilleenmouvement" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/vizilleenmouvement" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
                 </div>
             </div>
             <div>
                 <h4>Navigation</h4>
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
-                    <li><a href="retrospective.html">Rétrospective</a></li>
+                    <li><a href="nos-ambitions.html">Nos Ambitions</a></li>
+                    <li><a href="retrospective.html">Retrospective</a></li>
                     <li><a href="bilan.html">Bilan</a></li>
                     <li><a href="projet.html">Projet</a></li>
-                    <li><a href="blog.html">Actualités</a></li>
+                    <li><a href="blog.html">Actualites</a></li>
                 </ul>
             </div>
             <div>
                 <h4>Informations</h4>
                 <ul>
                     <li><a href="faq.html">Construisons ensemble</a></li>
-                    <li><a href="equipe.html">L'Équipe</a></li>
+                    <li><a href="equipe.html">L'Equipe</a></li>
+                    <li><a href="medias.html">Medias</a></li>
                 </ul>
             </div>
             <div>
                 <h4>Liens</h4>
                 <ul>
-                    <li><a href="mentions-legales.html">Mentions légales</a></li>
-                    <li><a href="https://Vizilleenmouvement.github.io/test2/" target="_blank" rel="noopener">Données ouvertes</a></li>
+                    <li><a href="mentions-legales.html">Mentions legales</a></li>
+                    <li><a href="https://Vizilleenmouvement.github.io/test2/" target="_blank" rel="noopener">Donnees ouvertes</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="vm-footer-bottom">
             <p>&copy; 2026 Vizille en Mouvement</p>
         </div>
     </footer>
 
+    <!-- Script includes -->
     <script src="js/page-sections.js"></script>
     <script src="js/site-features.js" defer></script>
     <script src="js/news-banner.js" defer></script>
-    <script src="js/home-dynamic.js?v=7" defer></script>
-<!-- Admin -->
-<a href="admin.html" style="position:fixed;bottom:12px;right:12px;display:flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(26,58,107,0.85);color:#fff;font-size:0.78rem;font-family:system-ui,sans-serif;text-decoration:none;border-radius:20px;z-index:9999;opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">⚙️ Admin</a>
+    <script src="js/home-dynamic.js?v=8" defer></script>
+
+    <!-- 12. Admin link -->
+    <a href="admin.html" style="position:fixed;bottom:12px;right:12px;display:flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(58,42,32,0.85);color:#F6EEE2;font-size:0.78rem;font-family:system-ui,sans-serif;text-decoration:none;border-radius:20px;z-index:9999;opacity:0.7;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">Admin</a>
 </body>
 </html>
