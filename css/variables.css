@@ -1,16 +1,33 @@
 /* ===== VARIABLES CSS - Vizille en Mouvement ===== */
-/* Fichier centralisé pour toutes les variables du site */
+/* Option B - Chaleureux & local */
 
 :root {
     /* Couleurs principales */
-    --bleu: #1a3a5c;
-    --bleu-vizille: #1a3a5c;
-    --bleu-clair: #2d5a87;
-    --or: #c9a227;
-    --or-clair: #e8c84a;
-    --blanc-casse: #f8f6f1;
-    --gris-doux: #e8e6e1;
-    --gris-texte: #4a4a4a;
+    --primary: #C2632F;
+    --primary-dark: #a8522a;
+    --bg-body: #F6EEE2;
+    --bg-card: #FBF5EA;
+    --bg-section-alt: #FCF8F0;
+    --text-primary: #3A2A20;
+    --text-secondary: #6E5B49;
+    --text-muted: #A07A4E;
+    --border: #E6DAC6;
+
+    /* Accents */
+    --accent-green: #7AB82E;
+    --accent-blue: #1BA7DE;
+    --accent-pink: #D6006C;
+    --accent-orange: #F39200;
+
+    /* Legacy aliases (for pages still referencing old names) */
+    --bleu: #C2632F;
+    --bleu-vizille: #C2632F;
+    --bleu-clair: #a8522a;
+    --or: #A07A4E;
+    --or-clair: #C2632F;
+    --blanc-casse: #F6EEE2;
+    --gris-doux: #E6DAC6;
+    --gris-texte: #3A2A20;
 
     /* Couleurs de statut */
     --vert-realise: #27ae60;
@@ -20,10 +37,10 @@
     --rouge-accent: #e74c3c;
 
     /* Ombres */
-    --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
-    --shadow-lg: 0 8px 24px rgba(0,0,0,0.16);
-    --shadow-xl: 0 12px 48px rgba(0,0,0,0.2);
+    --shadow-sm: 0 2px 4px rgba(58, 42, 32, 0.06);
+    --shadow-md: 0 4px 12px rgba(58, 42, 32, 0.08);
+    --shadow-lg: 0 8px 24px rgba(58, 42, 32, 0.12);
+    --shadow-xl: 0 12px 48px rgba(58, 42, 32, 0.16);
 
     /* Rayons de bordure */
     --radius-sm: 8px;
@@ -32,116 +49,10 @@
     --radius-xl: 28px;
 
     /* Typographie */
-    --font-primary: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-heading: 'Playfair Display', serif;
+    --font-primary: 'Hanken Grotesk', 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Spectral', serif;
 
     /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
-}
-
-/* ===== MODE SOMBRE ===== */
-[data-theme="dark"] {
-    --bleu: #c9d1d9;
-    --bleu-vizille: #2d5a87;
-    --bleu-clair: #4a7db8;
-    --or: #e8c84a;
-    --or-clair: #f0d86a;
-    --blanc-casse: #161b22;
-    --gris-doux: #21262d;
-    --gris-texte: #c9d1d9;
-    --bg-body: #0d1117;
-    --bg-card: #161b22;
-    --bg-header: linear-gradient(135deg, #0d1117 0%, #21262d 100%);
-    --text-primary: #f0f6fc;
-    --text-secondary: #8b949e;
-    --border-color: #30363d;
-}
-
-[data-theme="dark"] body {
-    background-color: var(--bg-body, #0d1117);
-    color: var(--text-primary, #f0f6fc);
-}
-
-[data-theme="dark"] .header {
-    background: var(--bg-header);
-}
-
-[data-theme="dark"] .card,
-[data-theme="dark"] .action-card,
-[data-theme="dark"] .projet-card,
-[data-theme="dark"] .candidat-card {
-    background: var(--bg-card, #161b22);
-    border-color: var(--border-color, #30363d);
-}
-
-[data-theme="dark"] footer {
-    background: #0d1117;
-}
-
-[data-theme="dark"] .btn-primary {
-    background: var(--or);
-    color: #0d1117;
-}
-
-[data-theme="dark"] input,
-[data-theme="dark"] textarea,
-[data-theme="dark"] select {
-    background: var(--bg-card, #161b22);
-    border-color: var(--border-color, #30363d);
-    color: var(--text-primary, #f0f6fc);
-}
-
-/* Mode sombre - Lettre de Catherine (index.html) */
-[data-theme="dark"] .lettre-section {
-    background: var(--bg-body, #0d1117);
-}
-
-[data-theme="dark"] .lettre-texte,
-[data-theme="dark"] .lettre-texte p {
-    color: var(--text-primary, #f0f6fc);
-}
-
-[data-theme="dark"] .lettre-intro {
-    color: var(--text-primary, #f0f6fc);
-}
-
-[data-theme="dark"] .lettre-nom {
-    color: #ff6b9d;
-}
-
-[data-theme="dark"] .lettre-titre {
-    color: #5dd3e8;
-}
-
-[data-theme="dark"] .lettre-citation {
-    color: #5dd3e8;
-}
-
-[data-theme="dark"] .lettre-chaleureusement,
-[data-theme="dark"] .lettre-signature-block {
-    color: var(--text-primary, #f0f6fc);
-}
-
-[data-theme="dark"] .lettre-signature {
-    color: #ff6b9d;
-}
-
-/* Mode sombre - Modales et contenus PDF/articles */
-[data-theme="dark"] .modal-content,
-[data-theme="dark"] .modal-body {
-    background: var(--bg-card, #161b22);
-    color: var(--text-primary, #f0f6fc);
-}
-
-[data-theme="dark"] .modal-section p,
-[data-theme="dark"] .modal-bio,
-[data-theme="dark"] .modal-pedigree,
-[data-theme="dark"] .modal-objectifs,
-[data-theme="dark"] .modal-citation {
-    color: var(--text-primary, #f0f6fc);
-}
-
-[data-theme="dark"] .modal-section-title {
-    color: var(--or-clair, #f0d86a);
 }

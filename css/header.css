@@ -1,4 +1,5 @@
 /* ===== HEADER & NAVIGATION - Vizille en Mouvement ===== */
+/* Option B - Chaleureux & local (glassmorphism sticky header) */
 
 .header {
     position: fixed;
@@ -6,25 +7,23 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(246, 238, 226, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
 }
 
+/* Rainbow bar replaces the old blue .header-top */
 .header-top {
-    background: var(--bleu-vizille);
-    padding: 0.25rem 0;
-    text-align: center;
-    border-bottom: 2px solid var(--or);
+    height: 3px;
+    background: linear-gradient(90deg, #D6006C 25%, #F39200 25% 50%, #7AB82E 50% 75%, #1BA7DE 75%);
+    padding: 0;
+    border: none;
+    overflow: hidden;
 }
 
 .header-top p {
-    color: white;
-    font-family: var(--font-primary);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin: 0;
+    display: none; /* Hide old text; the bar is now purely decorative */
 }
 
 .header-main {
@@ -34,21 +33,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid var(--gris-doux);
-    background: white;
+    border-bottom: none;
+    background: transparent;
+    height: 64px;
 }
 
 /* Logo dans le header */
 .nav-header-logo {
-    height: 70px;
+    height: 40px;
     width: auto;
     transition: all var(--transition-normal);
-    filter: drop-shadow(0 2px 4px rgba(26, 58, 92, 0.2));
 }
 
 .nav-header-logo:hover {
     transform: scale(1.05);
-    filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.4));
 }
 
 /* Navigation */
@@ -60,51 +58,70 @@ nav {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 0;
-    border-left: 1px solid var(--gris-doux);
+    gap: 0.25rem;
+    border: none;
     margin: 0;
     padding: 0;
+    align-items: center;
 }
 
 nav ul li {
-    border-right: 1px solid var(--gris-doux);
+    border: none;
 }
 
 nav ul li a {
     display: block;
-    padding: 0.6rem 1.25rem;
-    color: var(--gris-texte);
+    padding: 0.5rem 0.9rem;
+    color: var(--text-secondary);
     text-decoration: none;
     font-family: var(--font-primary);
-    font-weight: 600;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 0.88rem;
+    letter-spacing: 0.3px;
     transition: all var(--transition-fast);
     cursor: pointer;
     position: relative;
+    border-radius: var(--radius-sm);
+    text-transform: none;
 }
 
 nav ul li a:hover {
-    background: var(--blanc-casse);
-    color: var(--bleu-vizille);
+    background: rgba(194, 99, 47, 0.1);
+    color: var(--primary);
 }
 
 nav ul li a.active {
-    background: var(--bleu-vizille);
-    color: white;
+    background: rgba(194, 99, 47, 0.1);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* CTA button style for last nav item (if used) */
+nav ul li:last-child a.btn-primary,
+nav ul li a.header-cta {
+    background: var(--primary);
+    color: #fff;
+    border-radius: 999px;
+    padding: 0.5rem 1.2rem;
+    font-weight: 600;
+}
+
+nav ul li:last-child a.btn-primary:hover,
+nav ul li a.header-cta:hover {
+    background: var(--primary-dark);
 }
 
 nav ul li a.admin-link {
     opacity: 1;
     font-size: 1.2rem;
-    padding: 0.6rem 1rem;
-    background: #f0f0f0;
+    padding: 0.5rem 0.8rem;
+    background: rgba(194, 99, 47, 0.06);
+    border-radius: var(--radius-sm);
 }
 
 nav ul li a.admin-link:hover {
     opacity: 1;
-    background: #e0e0e0;
+    background: rgba(194, 99, 47, 0.12);
 }
 
 /* Menu mobile toggle */
@@ -114,7 +131,7 @@ nav ul li a.admin-link:hover {
     border: none;
     font-size: 1.8rem;
     cursor: pointer;
-    color: var(--bleu-vizille);
+    color: var(--text-primary);
     padding: 0.5rem;
     line-height: 1;
 }
@@ -122,12 +139,8 @@ nav ul li a.admin-link:hover {
 /* ===== RESPONSIVE HEADER ===== */
 @media (max-width: 768px) {
     .header-top {
-        padding: 0.25rem 0;
-    }
-
-    .header-top p {
-        font-size: 0.6rem;
-        letter-spacing: 0.5px;
+        height: 3px;
+        padding: 0;
     }
 
     .header-main {
@@ -135,6 +148,7 @@ nav ul li a.admin-link:hover {
         grid-template-columns: 1fr auto 1fr;
         align-items: center;
         padding: 0.5rem 1rem;
+        height: auto;
     }
 
     .header-main .nav-header-logo {
@@ -168,7 +182,7 @@ nav ul li a.admin-link:hover {
         left: 0;
         right: 0;
         bottom: 0;
-        background: #1a3a5c; /* Fond solide, pas transparent */
+        background: #2A1E16;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -195,19 +209,19 @@ nav ul li a.admin-link:hover {
         padding: 1rem 1.5rem;
         font-size: 1.1rem;
         text-align: center;
-        color: white !important;
-        background: rgba(255,255,255,0.15);
+        color: #F6EEE2 !important;
+        background: rgba(246, 238, 226, 0.1);
         border-radius: 10px;
-        border: 2px solid rgba(255,255,255,0.3);
+        border: 2px solid rgba(246, 238, 226, 0.2);
         text-decoration: none;
         font-weight: 600;
     }
 
     nav ul li a:hover,
     nav ul li a.active {
-        background: #c9a227 !important;
+        background: var(--primary) !important;
         color: white !important;
-        border-color: #c9a227 !important;
+        border-color: var(--primary) !important;
     }
 
     nav ul li a.admin-link {
@@ -220,10 +234,10 @@ nav ul li a.admin-link:hover {
         position: absolute;
         top: 1rem;
         right: 1rem;
-        background: rgba(255,255,255,0.2);
+        background: rgba(246, 238, 226, 0.15);
         border: none;
         font-size: 1.5rem;
-        color: white;
+        color: #F6EEE2;
         cursor: pointer;
         padding: 0.5rem 0.75rem;
         border-radius: 50%;
