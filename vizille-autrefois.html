@@ -61,7 +61,6 @@
     .va-tag { position: absolute; top: 14px; z-index: 998; background: rgba(58,42,32,0.82); color: #F6EEE2; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; padding: 0.3rem 0.7rem; border-radius: 6px; pointer-events: none; }
     .va-tag.left { left: 14px; }
     .va-tag.right { right: 14px; background: rgba(194,99,47,0.9); }
-    .va-warn { display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 1001; background: rgba(58,42,32,0.92); color: #F6EEE2; font-size: 0.85rem; font-weight: 600; padding: 0.7rem 1.1rem; border-radius: 10px; max-width: 80%; text-align: center; box-shadow: 0 4px 18px rgba(0,0,0,0.35); }
     .va-legend { display: flex; justify-content: space-between; max-width: 1200px; margin: 1rem auto 0; padding: 0 2.5rem; font-family: 'Spectral', serif; font-style: italic; color: #A07A4E; font-size: 0.95rem; }
     .va-legend .now { color: #C2632F; }
 
@@ -128,13 +127,7 @@
     </section>
 
     <div class="va-controls">
-        <label for="va-annee">Époque à comparer :</label>
-        <select id="va-annee">
-            <option value="ORTHOIMAGERY.ORTHOPHOTOS.1950-1965|1950-1965|image/png">Années 1950-1965</option>
-            <option value="ORTHOIMAGERY.ORTHOPHOTOS.1965-1980|1965-1980|image/png">Années 1965-1980</option>
-            <option value="ORTHOIMAGERY.ORTHOPHOTOS2000|Année 2000|image/png">Année 2000</option>
-        </select>
-        <span class="va-vs">comparé à aujourd'hui</span>
+        <span class="va-vs">Vizille en <strong style="color:#C2632F;">1950-1965</strong> &nbsp;·&nbsp; comparé à aujourd'hui</span>
     </div>
     <div class="va-map-wrap">
         <div class="va-map-outer">
@@ -142,7 +135,6 @@
             <div class="va-tag left" id="va-tag-left">Années 1950-1965</div>
             <div class="va-tag right">Aujourd'hui</div>
             <div class="va-divider" id="va-divider"></div>
-            <div class="va-warn" id="va-warn">Cette époque n'est pas encore couverte par l'IGN sur Vizille. Essayez une autre année.</div>
             <input type="range" id="va-slider" min="0" max="100" value="50" aria-label="Curseur de comparaison">
         </div>
     </div>
@@ -194,53 +186,22 @@
         // Base commune, sans le TileMatrixSet (chaque couche indique le sien)
         var WMTS = 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&STYLE=normal&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}';
 
-        var warnEl = document.getElementById('va-warn');
-        // Diagnostic partagé : affiche l'URL exacte de la première tuile en échec
-        var reported = false;
-        function reportTileError(e){
-            if(reported || !e || !e.tile) return;
-            reported = true;
-            console.error('[Vizille autrefois] Tuile en échec :', e.tile.src);
-            warnEl.innerHTML = 'Une couche IGN a été refusée. URL en échec :<br><span style="font-size:0.72rem;word-break:break-all;opacity:0.85;">' + e.tile.src + '</span>';
-            warnEl.style.display = 'block';
-        }
-
-        // --- Couche historique (dessous), remplaçable selon le millésime choisi ---
-        // Les millésimes historiques utilisent encore le TileMatrixSet générique PM
-        var hierLayer = null;
-        function setHier(layerName, format){
-            if(hierLayer) map.removeLayer(hierLayer);
-            hierLayer = L.tileLayer(WMTS + '&TILEMATRIXSET=PM&LAYER=' + layerName + '&FORMAT=' + (format || 'image/png'), {
-                attribution: 'IGN — Remonter le temps', maxZoom: 19, maxNativeZoom: 18
-            });
-            hierLayer.on('tileerror', reportTileError);
-            hierLayer.addTo(map);
-            hierLayer.setZIndex(100);
-        }
-        setHier('ORTHOIMAGERY.ORTHOPHOTOS.1950-1965', 'image/png');
+        // --- Couche historique 1950-1965 (dessous), TileMatrixSet générique PM ---
+        L.tileLayer(WMTS + '&TILEMATRIXSET=PM&LAYER=ORTHOIMAGERY.ORTHOPHOTOS.1950-1965&FORMAT=image/png', {
+            attribution: 'IGN — Remonter le temps', maxZoom: 19, maxNativeZoom: 18
+        }).addTo(map).setZIndex(100);
 
         // --- Couche actuelle en couleur (dessus, dans un pane clippé) ---
         // Depuis juillet 2025, ORTHOIMAGERY.ORTHOPHOTOS utilise le TileMatrixSet PM_0_19
         map.createPane('nowPane');
         map.getPane('nowPane').style.zIndex = 250;
         var nowPane = map.getPane('nowPane');
-        var nowLayer = L.tileLayer(WMTS + '&TILEMATRIXSET=PM_0_19&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {
+        L.tileLayer(WMTS + '&TILEMATRIXSET=PM_0_19&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {
             attribution: 'IGN', maxZoom: 19, maxNativeZoom: 19, pane: 'nowPane'
-        });
-        nowLayer.on('tileerror', reportTileError);
-        nowLayer.addTo(map);
+        }).addTo(map);
 
         // Repère du château de Vizille
         L.marker([45.0797, 5.7730]).addTo(map).bindPopup('Château de Vizille');
-
-        // --- Sélecteur d'époque ---
-        var select = document.getElementById('va-annee');
-        var tagLeft = document.getElementById('va-tag-left');
-        select.addEventListener('change', function(){
-            var parts = this.value.split('|');
-            setHier(parts[0], parts[2]);
-            tagLeft.textContent = parts[1];
-        });
 
         // === Curseur comparateur maison ===
         var slider = document.getElementById('va-slider');
