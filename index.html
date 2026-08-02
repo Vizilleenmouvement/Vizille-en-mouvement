@@ -232,6 +232,91 @@
         box-shadow: 0 12px 40px rgba(58, 42, 32, 0.12);
     }
 
+    /* --- Bloc A la une --- */
+    .vm-alaune {
+        background: #FBF5EA;
+        border-top: 1px solid #E6DAC6;
+        border-bottom: 1px solid #E6DAC6;
+    }
+    .vm-alaune-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2.5rem 2rem 3rem;
+    }
+    .vm-alaune-kicker {
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #C2632F;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+    }
+    #alaune-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 1.5rem;
+    }
+    .alaune-card {
+        background: #fff;
+        border: 1px solid #E6DAC6;
+        border-radius: 14px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 8px 28px rgba(58, 42, 32, 0.07);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .alaune-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 34px rgba(58, 42, 32, 0.12);
+    }
+    .alaune-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+    }
+    .alaune-card-body {
+        padding: 1.5rem 1.6rem 1.7rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+        flex: 1;
+    }
+    .alaune-card-meta {
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #A07A4E;
+        font-weight: 700;
+    }
+    .alaune-card-title {
+        font-family: 'Spectral', serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #3A2A20;
+        line-height: 1.3;
+        margin: 0;
+    }
+    .alaune-card-extrait {
+        font-size: 0.92rem;
+        color: #6E5B49;
+        line-height: 1.7;
+        margin: 0;
+    }
+    .alaune-card-btn {
+        align-self: flex-start;
+        margin-top: auto;
+        background: #C2632F;
+        color: #fff;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 0.6rem 1.3rem;
+        border-radius: 10px;
+        transition: background 0.2s;
+    }
+    .alaune-card-btn:hover { background: #a8522a; }
+
     /* --- Engagements line --- */
     .vm-engagements {
         background: #FBF5EA;
@@ -753,6 +838,10 @@
 
         .vm-priorites-grid { grid-template-columns: 1fr; }
 
+        .vm-alaune-inner { padding: 1.8rem 1.2rem 2.2rem; }
+        #alaune-container { grid-template-columns: 1fr; }
+        .alaune-card img { height: 170px; }
+
         .vm-footer-grid { grid-template-columns: 1fr; }
     }
     </style>
@@ -810,6 +899,29 @@
         </div>
         <div class="vm-hero-photo vm-rise vm-rise-d1">
             <img fetchpriority="high" src="images/photo-equipe.webp" alt="L'equipe Vizille en Mouvement">
+        </div>
+    </section>
+
+    <!-- 3bis. BLOC A LA UNE -->
+    <section class="vm-alaune" id="bloc-a-la-une" style="display:none;">
+        <div class="vm-alaune-inner">
+            <p class="vm-alaune-kicker">À la une</p>
+            <div id="alaune-container"></div>
+        </div>
+    </section>
+
+    <!-- ACTUALITES (remontées en haut) -->
+    <section class="vm-actualites" id="section-actualites">
+        <div class="vm-actualites-header">
+            <h2 class="vm-section-title vm-rise">Dernieres actualites</h2>
+            <a href="blog.html" class="vm-see-all vm-rise vm-rise-d1">Tout voir &rarr;</a>
+        </div>
+        <div class="actualites-grid" id="actualites-grid">
+            <div class="loading-placeholder">
+                <div class="loading-card"></div>
+                <div class="loading-card"></div>
+                <div class="loading-card"></div>
+            </div>
         </div>
     </section>
 
@@ -981,48 +1093,39 @@
         </div>
     </section>
 
-    <!-- 8. ACTUALITES -->
-    <section class="vm-actualites" id="section-actualites">
-        <div class="vm-actualites-header">
-            <h2 class="vm-section-title vm-rise">Dernieres actualites</h2>
-            <a href="blog.html" class="vm-see-all vm-rise vm-rise-d1">Tout voir &rarr;</a>
-        </div>
-        <div class="actualites-grid" id="actualites-grid">
-            <div class="loading-placeholder">
-                <div class="loading-card"></div>
-                <div class="loading-card"></div>
-                <div class="loading-card"></div>
-            </div>
-        </div>
-    </section>
 
-    <!-- A la une loader (exact copy from original) -->
+    <!-- A la une loader -->
     <script>
     (function() {
-        fetch('articles.json?v=' + Date.now()).then(function(r){ return r.json(); }).then(function(articles){
-            var prioritaires = articles.filter(function(a){ return a.priorite; })
-                .sort(function(a,b){ return new Date(b.date)-new Date(a.date); })
-                .slice(0, 2);
-            if(prioritaires.length === 0) return;
+        function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+            return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c];
+        }); }
+        fetch('articles.json?v=' + Date.now()).then(function(r){ return r.json(); }).then(function(data){
+            var articles = Array.isArray(data) ? data : (data.articles || []);
+            var alaune = articles.filter(function(a){ return a.a_la_une === true; });
+            var prios  = articles.filter(function(a){ return a.priorite && a.a_la_une !== true; })
+                .sort(function(a,b){ return new Date(b.date)-new Date(a.date); });
+            var selection = alaune.concat(prios).slice(0, 2);
+            if(selection.length === 0) return;
             var container = document.getElementById('alaune-container');
             if(!container) return;
-            container.innerHTML = prioritaires.map(function(art){
+            container.innerHTML = selection.map(function(art){
                 var img = art.image || (art.images && art.images[0]) || '';
                 var d = art.date ? new Date(art.date) : null;
                 var ds = d ? d.toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'}) : '';
-                var cat = art.categorie ? ' · ' + art.categorie : '';
+                var cat = art.categorie ? ' · ' + esc(art.categorie) : '';
                 return '<div class="alaune-card">'
-                    + (img ? '<img loading="lazy" src="'+img+'" alt="">' : '')
+                    + (img ? '<img loading="lazy" src="'+esc(img)+'" alt="">' : '')
                     + '<div class="alaune-card-body">'
                     + '<p class="alaune-card-meta">'+ds+cat+'</p>'
-                    + '<h2 class="alaune-card-title">'+art.titre+'</h2>'
-                    + '<p class="alaune-card-extrait">'+(art.extrait||'')+'</p>'
-                    + '<a href="blog.html?article='+art.id+'" class="alaune-card-btn">Lire l\'article complet &rarr;</a>'
+                    + '<h2 class="alaune-card-title">'+esc(art.titre)+'</h2>'
+                    + '<p class="alaune-card-extrait">'+esc(art.extrait||'')+'</p>'
+                    + '<a href="blog.html?article='+encodeURIComponent(art.id)+'" class="alaune-card-btn">Lire l\'article complet &rarr;</a>'
                     + '</div></div>';
             }).join('');
             var bloc = document.getElementById('bloc-a-la-une');
             if(bloc) bloc.style.display='block';
-        });
+        }).catch(function(e){ console.warn('a la une:', e); });
     })();
     </script>
 
