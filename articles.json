@@ -1,5 +1,20 @@
 [
   {
+    "id": 1785900000000,
+    "titre": "Le prix des carburants en direct, près de chez vous",
+    "date": "2026-08-02",
+    "categorie": "Info",
+    "extrait": "Vizille en Mouvement met à votre disposition un comparateur des prix des carburants en temps réel : les stations de Vizille et des alentours, avec les données officielles du Ministère de l'Économie.",
+    "contenu": "Faire le plein sans se ruiner, c'est possible — encore faut-il savoir où aller. Vizille en Mouvement met à votre disposition, directement sur son site, un comparateur des prix des carburants en temps réel.\n\n📍 DEUX STATIONS À VIZILLE, ET LES ALENTOURS\n\nSur la page d'accueil, rubrique « Vizille en direct », vous retrouvez :\n\n• Les deux stations de Vizille : TotalEnergies (rond-point Muzet) et Intermarché\n• Les stations disponibles dans un rayon de 5 km autour de la commune\n\nPour chaque station : le prix du Gazole, du SP95, du SP98, de l'E10, de l'E85 et du GPL, la date de dernière mise à jour, et les éventuelles ruptures d'approvisionnement. Un lien vous permet même d'ouvrir l'itinéraire sur une carte.\n\n🇫🇷 DES DONNÉES OFFICIELLES, PAS DE PUBLICITÉ\n\nToutes ces informations proviennent du site officiel du Ministère de l'Économie : prix-carburants.gouv.fr. Ce sont les stations elles-mêmes qui déclarent leurs tarifs, réactualisés en continu. Aucune donnée commerciale, aucune publicité : juste l'information utile.\n\nUn indicateur national vous signale aussi les tensions d'approvisionnement en cas de pénurie — pratique pour anticiper avant les départs en week-end.\n\n💡 POURQUOI CE SERVICE ?\n\nParce qu'informer, c'est déjà agir. Le pouvoir d'achat est une préoccupation quotidienne des Vizillois, et quelques centimes au litre font une vraie différence sur l'année. En rassemblant ces données au même endroit, nous vous faisons gagner du temps — et de l'argent.\n\n👉 Rendez-vous sur vizilleenmouvement.fr, rubrique « Vizille en direct », pour consulter les prix du jour.\n\nVizille en Mouvement vous informe — au service de votre quotidien.\n\n#VizilleEnMouvement #Vizille #PouvoirDachat #Carburants",
+    "image": "images/articles/carburants-service-cover.jpg",
+    "images": [
+      "images/articles/carburants-service-cover.jpg"
+    ],
+    "priorite": true,
+    "modifie_le": "2026-08-02T14:00:00.000Z",
+    "slug": "le-prix-des-carburants-en-direct-pres-de-chez-vous"
+  },
+  {
     "id": 1781200000000,
     "titre": "Internet et équipement informatique : les aides que 70 % des foyers éligibles oublient de demander",
     "date": "2026-06-10",
@@ -573,7 +588,8 @@
     "image": "images/articles/article_1781760195530.jpg",
     "source": "https://www.interieur.gouv.fr/actualites/actualites-du-ministere/protoxyde-dazote-danger-pour-consommateur-et-pour-autres",
     "priorite": true,
-    "modifie_le": "2026-06-18T05:23:22.884Z"
+    "modifie_le": "2026-06-18T05:23:22.884Z",
+    "slug": "protoxyde-d-azote-un-danger-pour-le-consommateur-et-pour-les"
   },
   {
     "id": 1785664548548,
@@ -589,6 +605,7 @@
     "source": "https://mes-aides.1jeune1solution.beta.gouv.fr",
     "priorite": true,
     "a_la_une": true,
-    "modifie_le": "2026-08-02T09:55:48.548Z"
+    "modifie_le": "2026-08-02T09:55:48.548Z",
+    "slug": "aides-pour-les-15-30-ans-verifiez-vos-droits-en-7-minutes"
   }
 ]
