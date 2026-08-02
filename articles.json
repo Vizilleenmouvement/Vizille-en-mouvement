@@ -573,7 +573,22 @@
     "image": "images/articles/article_1781760195530.jpg",
     "source": "https://www.interieur.gouv.fr/actualites/actualites-du-ministere/protoxyde-dazote-danger-pour-consommateur-et-pour-autres",
     "priorite": true,
-    "a_la_une": true,
     "modifie_le": "2026-06-18T05:23:22.884Z"
+  },
+  {
+    "id": 1785664548548,
+    "titre": "Aides pour les 15–30 ans : vérifiez vos droits en 7 minutes",
+    "date": "2026-08-02",
+    "categorie": "Communiqué",
+    "extrait": "",
+    "contenu": "Plus de 1 000 aides financières existent pour les jeunes de 15 à 30 ans : logement, transport, santé, formation, emploi, culture, sport, alimentation. Beaucoup ne sont jamais demandées, simplement parce qu'on ignore qu'elles existent.\n\nLe simulateur officiel de 1jeune1solution, développé par l'État, estime vos droits en moins de 7 minutes. Il est gratuit, ne demande aucune inscription, et vos données personnelles ne sont jamais utilisées à des fins commerciales.\n\nComment ça marche ? 1 — Je réponds à quelques questions sur ma situation. 2 — Je découvre les aides auxquelles j'ai droit, avec les montants estimés. 3 — Je fais mes demandes.\n\nAvant de commencer, munissez-vous de vos ressources — et de celles de vos parents si vous êtes encore à leur charge.\n\nFaire la simulation : https://mes-aides.1jeune1solution.beta.gouv.fr/ Voir la liste complète des aides : https://mes-aides.1jeune1solution.beta.gouv.fr/aides\n\nUne question sur le simulateur ? L'équipe répond à aides-jeunes@beta.gouv.fr.\n\nParlez-en autour de vous : parents, grands-parents, voisins — nous connaissons tous un jeune concerné.",
+    "images": [
+      "images/articles/article_1785664422649_couverture-article-1200x675.png"
+    ],
+    "image": "images/articles/article_1785664422649_couverture-article-1200x675.png",
+    "source": "https://mes-aides.1jeune1solution.beta.gouv.fr",
+    "priorite": true,
+    "a_la_une": true,
+    "modifie_le": "2026-08-02T09:55:48.548Z"
   }
 ]
