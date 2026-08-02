@@ -191,43 +191,43 @@
         // Vizille : lat 45.078, lon 5.773
         var map = L.map('va-map', { center: [45.0785, 5.7715], zoom: 15, minZoom: 12, maxZoom: 19 });
 
-        var WMTS = 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}';
+        // Base commune, sans le TileMatrixSet (chaque couche indique le sien)
+        var WMTS = 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&STYLE=normal&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}';
+
+        var warnEl = document.getElementById('va-warn');
+        // Diagnostic partagé : affiche l'URL exacte de la première tuile en échec
+        var reported = false;
+        function reportTileError(e){
+            if(reported || !e || !e.tile) return;
+            reported = true;
+            console.error('[Vizille autrefois] Tuile en échec :', e.tile.src);
+            warnEl.innerHTML = 'Une couche IGN a été refusée. URL en échec :<br><span style="font-size:0.72rem;word-break:break-all;opacity:0.85;">' + e.tile.src + '</span>';
+            warnEl.style.display = 'block';
+        }
 
         // --- Couche historique (dessous), remplaçable selon le millésime choisi ---
+        // Les millésimes historiques utilisent encore le TileMatrixSet générique PM
         var hierLayer = null;
-        var warnEl = document.getElementById('va-warn');
         function setHier(layerName, format){
             if(hierLayer) map.removeLayer(hierLayer);
-            warnEl.style.display = 'none';
-            var errCount = 0;
-            hierLayer = L.tileLayer(WMTS + '&LAYER=' + layerName + '&FORMAT=' + (format || 'image/png'), {
+            hierLayer = L.tileLayer(WMTS + '&TILEMATRIXSET=PM&LAYER=' + layerName + '&FORMAT=' + (format || 'image/png'), {
                 attribution: 'IGN — Remonter le temps', maxZoom: 19, maxNativeZoom: 18
             });
-            // Si les tuiles de ce millésime n'existent pas sur Vizille, on prévient l'utilisateur
-            hierLayer.on('tileerror', function(){
-                errCount++;
-                if(errCount >= 2){ warnEl.style.display = 'block'; }
-            });
+            hierLayer.on('tileerror', reportTileError);
             hierLayer.addTo(map);
             hierLayer.setZIndex(100);
         }
         setHier('ORTHOIMAGERY.ORTHOPHOTOS.1950-1965', 'image/png');
 
         // --- Couche actuelle en couleur (dessus, dans un pane clippé) ---
+        // Depuis juillet 2025, ORTHOIMAGERY.ORTHOPHOTOS utilise le TileMatrixSet PM_0_19
         map.createPane('nowPane');
         map.getPane('nowPane').style.zIndex = 250;
         var nowPane = map.getPane('nowPane');
-        var nowLayer = L.tileLayer(WMTS + '&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {
+        var nowLayer = L.tileLayer(WMTS + '&TILEMATRIXSET=PM_0_19&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {
             attribution: 'IGN', maxZoom: 19, maxNativeZoom: 19, pane: 'nowPane'
         });
-        // Diagnostic : si la couche couleur échoue, on remonte l'URL exacte
-        var nowReported = false;
-        nowLayer.on('tileerror', function(e){
-            if(!nowReported && e && e.tile){
-                nowReported = true;
-                console.error('[Vizille autrefois] Tuile couleur en échec :', e.tile.src);
-            }
-        });
+        nowLayer.on('tileerror', reportTileError);
         nowLayer.addTo(map);
 
         // Repère du château de Vizille
