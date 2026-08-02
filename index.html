@@ -637,28 +637,48 @@
     }
     .vm-actualites-header .vm-see-all:hover { opacity: 0.7; }
 
-    /* Actualites grid - styled by home-dynamic.js into #actualites-grid */
-    #actualites-grid {
+    /* Actualites grid — cartes propres */
+    #vm-actus-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
     }
-    #actualites-grid .loading-placeholder {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-    }
-    #actualites-grid .loading-card {
+    .vm-actu-loading { grid-column: 1/-1; text-align: center; color: #A07A4E; padding: 2rem; }
+    .vm-actu-card {
+        display: flex;
+        flex-direction: column;
         background: #FBF5EA;
+        border: 1px solid #E6DAC6;
         border-radius: 14px;
-        height: 280px;
-        animation: pulse 1.5s ease-in-out infinite;
+        overflow: hidden;
+        transition: transform 0.2s, box-shadow 0.2s;
+        text-decoration: none;
     }
-    @keyframes pulse {
-        0%, 100% { opacity: 0.5; }
-        50% { opacity: 0.3; }
+    .vm-actu-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(58, 42, 32, 0.1);
     }
+    .vm-actu-img {
+        width: 100%;
+        aspect-ratio: 16/10;
+        overflow: hidden;
+        background: #EDE1CF;
+    }
+    .vm-actu-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .vm-actu-noimg {
+        display: flex; align-items: center; justify-content: center;
+        font-size: 2.5rem; color: #C2632F;
+    }
+    .vm-actu-body { padding: 1.1rem 1.3rem 1.4rem; display: flex; flex-direction: column; gap: 0.4rem; }
+    .vm-actu-meta {
+        font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+        color: #C2632F; font-weight: 700;
+    }
+    .vm-actu-title {
+        font-family: 'Spectral', serif; font-size: 1.15rem; font-weight: 700;
+        color: #3A2A20; line-height: 1.3; margin: 0;
+    }
+    .vm-actu-extrait { font-size: 0.85rem; color: #6E5B49; line-height: 1.6; margin: 0; }
 
     /* --- Equipe section --- */
     .vm-equipe {
@@ -807,8 +827,7 @@
         .vm-maire-inner { grid-template-columns: 1fr; gap: 2rem; }
         .vm-maire-photo img { max-width: 280px; margin: 0 auto; }
 
-        #actualites-grid { grid-template-columns: 1fr; }
-        #actualites-grid .loading-placeholder { grid-template-columns: 1fr; }
+        #vm-actus-grid { grid-template-columns: 1fr; }
 
         .vm-footer-grid { grid-template-columns: 1fr 1fr; }
     }
@@ -913,17 +932,42 @@
     <!-- ACTUALITES (remontées en haut) -->
     <section class="vm-actualites" id="section-actualites">
         <div class="vm-actualites-header">
-            <h2 class="vm-section-title vm-rise">Dernieres actualites</h2>
+            <h2 class="vm-section-title vm-rise">Dernières actualités</h2>
             <a href="blog.html" class="vm-see-all vm-rise vm-rise-d1">Tout voir &rarr;</a>
         </div>
-        <div class="actualites-grid" id="actualites-grid">
-            <div class="loading-placeholder">
-                <div class="loading-card"></div>
-                <div class="loading-card"></div>
-                <div class="loading-card"></div>
-            </div>
+        <div id="vm-actus-grid">
+            <div class="vm-actu-loading">Chargement des actualités…</div>
         </div>
     </section>
+    <script>
+    (function(){
+        function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+        fetch('articles.json?v=' + Date.now()).then(function(r){ return r.json(); }).then(function(data){
+            var articles = Array.isArray(data) ? data : (data.articles || []);
+            // Exclure les articles à la une (déjà affichés au-dessus), garder les 3 plus récents
+            var recents = articles.filter(function(a){ return !a.a_la_une; })
+                .sort(function(a,b){
+                    if(a.priorite && !b.priorite) return -1;
+                    if(!a.priorite && b.priorite) return 1;
+                    return new Date(b.modifie_le||b.date||0) - new Date(a.modifie_le||a.date||0);
+                }).slice(0, 3);
+            var grid = document.getElementById('vm-actus-grid');
+            if(!recents.length){ grid.innerHTML = '<p style="text-align:center;color:#A07A4E;">Aucune actualité pour le moment.</p>'; return; }
+            grid.innerHTML = recents.map(function(art){
+                var img = art.image || (art.images && art.images[0]) || '';
+                var d = art.date ? new Date(art.date) : null;
+                var ds = d ? d.toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'}) : '';
+                return '<a href="blog.html?article='+encodeURIComponent(art.id)+'" class="vm-actu-card">'
+                    + (img ? '<div class="vm-actu-img"><img loading="lazy" src="'+esc(img)+'" alt=""></div>' : '<div class="vm-actu-img vm-actu-noimg">📰</div>')
+                    + '<div class="vm-actu-body">'
+                    + '<p class="vm-actu-meta">'+(art.categorie?esc(art.categorie)+' · ':'')+ds+'</p>'
+                    + '<h3 class="vm-actu-title">'+esc(art.titre)+'</h3>'
+                    + '<p class="vm-actu-extrait">'+esc((art.extrait||'').slice(0,120))+((art.extrait||'').length>120?'…':'')+'</p>'
+                    + '</div></a>';
+            }).join('');
+        }).catch(function(){ document.getElementById('vm-actus-grid').innerHTML = '<p style="text-align:center;color:#A07A4E;">Actualités indisponibles.</p>'; });
+    })();
+    </script>
 
     <!-- 4. ENGAGEMENTS LINE -->
     <div class="vm-engagements">
