@@ -217,9 +217,18 @@
         map.createPane('nowPane');
         map.getPane('nowPane').style.zIndex = 250;
         var nowPane = map.getPane('nowPane');
-        L.tileLayer(WMTS + '&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {
+        var nowLayer = L.tileLayer(WMTS + '&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {
             attribution: 'IGN', maxZoom: 19, maxNativeZoom: 19, pane: 'nowPane'
-        }).addTo(map);
+        });
+        // Diagnostic : si la couche couleur échoue, on remonte l'URL exacte
+        var nowReported = false;
+        nowLayer.on('tileerror', function(e){
+            if(!nowReported && e && e.tile){
+                nowReported = true;
+                console.error('[Vizille autrefois] Tuile couleur en échec :', e.tile.src);
+            }
+        });
+        nowLayer.addTo(map);
 
         // Repère du château de Vizille
         L.marker([45.0797, 5.7730]).addTo(map).bindPopup('Château de Vizille');
