@@ -135,6 +135,7 @@
             <div class="va-tag left" id="va-tag-left">Années 1950-1965</div>
             <div class="va-tag right">Aujourd'hui</div>
             <div class="va-divider" id="va-divider"></div>
+            <div id="va-pill" style="position:absolute;left:14px;bottom:14px;z-index:1002;background:rgba(58,42,32,0.82);color:#F6EEE2;font-size:0.7rem;font-weight:600;padding:0.25rem 0.6rem;border-radius:6px;pointer-events:none;">couleur · chargement…</div>
             <input type="range" id="va-slider" min="0" max="100" value="50" aria-label="Curseur de comparaison">
         </div>
     </div>
@@ -180,8 +181,8 @@
 
     <script>
     (function(){
-        // Vizille : lat 45.078, lon 5.773
-        var map = L.map('va-map', { center: [45.0785, 5.7715], zoom: 15, minZoom: 12, maxZoom: 19 });
+        // Centré sur le centre-ville + château, zoom rapproché : la couleur d'aujourd'hui y est franche
+        var map = L.map('va-map', { center: [45.0793, 5.7725], zoom: 16, minZoom: 12, maxZoom: 19 });
 
         // Base commune, sans le TileMatrixSet (chaque couche indique le sien)
         var WMTS = 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&STYLE=normal&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}';
@@ -192,13 +193,33 @@
         }).addTo(map).setZIndex(100);
 
         // --- Couche actuelle en couleur (dessus, dans un pane clippé) ---
-        // Depuis juillet 2025, ORTHOIMAGERY.ORTHOPHOTOS utilise le TileMatrixSet PM_0_19
         map.createPane('nowPane');
         map.getPane('nowPane').style.zIndex = 250;
         var nowPane = map.getPane('nowPane');
-        L.tileLayer(WMTS + '&TILEMATRIXSET=PM_0_19&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {
-            attribution: 'IGN', maxZoom: 19, maxNativeZoom: 19, pane: 'nowPane'
-        }).addTo(map);
+
+        // Petit témoin de chargement (retiré une fois le rendu validé)
+        var pill = document.getElementById('va-pill');
+        var nowLayer = null, ok = 0, err = 0, switched = false;
+        function buildNow(tms){
+            ok = 0; err = 0;
+            var l = L.tileLayer(WMTS + '&TILEMATRIXSET=' + tms + '&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {
+                attribution: 'IGN', maxZoom: 19, maxNativeZoom: 19, pane: 'nowPane'
+            });
+            l.on('tileload', function(){ ok++; if(pill) pill.textContent = 'couleur ' + tms + ' · OK ' + ok + ' / err ' + err; });
+            l.on('tileerror', function(){
+                err++; if(pill) pill.textContent = 'couleur ' + tms + ' · OK ' + ok + ' / err ' + err;
+                // Si le TileMatrixSet PM échoue, on bascule automatiquement sur PM_0_19
+                if(tms === 'PM' && !switched && err >= 2){
+                    switched = true;
+                    map.removeLayer(l);
+                    nowLayer = buildNow('PM_0_19');
+                    nowLayer.addTo(map);
+                }
+            });
+            return l;
+        }
+        nowLayer = buildNow('PM');
+        nowLayer.addTo(map);
 
         // Repère du château de Vizille
         L.marker([45.0797, 5.7730]).addTo(map).bindPopup('Château de Vizille');
