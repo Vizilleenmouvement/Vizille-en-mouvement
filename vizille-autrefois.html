@@ -23,7 +23,7 @@
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet-side-by-side@2.2.0/leaflet-side-by-side.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-side-by-side@2.2.0/index.js"></script>
 
     <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -163,18 +163,22 @@
 
         var WMTS = 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}';
 
-        // Couche historique 1950-1965
-        var hier = L.tileLayer(WMTS + '&LAYER=ORTHOIMAGERY.ORTHOPHOTOS.ORTHO-EXPRESS.1950-1965&FORMAT=image/png', {
-            attribution: 'IGN — Remonter le temps', maxZoom: 19
+        // Couche historique 1950-1965 (photographies aériennes)
+        var hier = L.tileLayer(WMTS + '&LAYER=ORTHOIMAGERY.ORTHOPHOTOS.1950-1965&FORMAT=image/png', {
+            attribution: 'IGN — Remonter le temps', maxZoom: 19, maxNativeZoom: 18
         }).addTo(map);
 
         // Couche actuelle
-        var now = L.tileLayer(WMTS + '&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {
-            attribution: 'IGN', maxZoom: 19
+        var now = L.tileLayer(WMTS + '&LAYER=HR.ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {
+            attribution: 'IGN', maxZoom: 19, maxNativeZoom: 19
         }).addTo(map);
 
-        // Comparateur côte à côte
-        L.control.sideBySide(hier, now).addTo(map);
+        // Comparateur côte à côte (curseur)
+        if (L.control.sideBySide) {
+            L.control.sideBySide(hier, now).addTo(map);
+        } else {
+            console.error('Plugin side-by-side non chargé');
+        }
 
         // Repère du château de Vizille
         L.marker([45.0797, 5.7730]).addTo(map).bindPopup('Château de Vizille');
