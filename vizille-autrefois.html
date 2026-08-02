@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vizille, hier &amp; aujourd'hui — Vizille en Mouvement</title>
+    <meta name="description" content="Faites glisser le curseur et voyez Vizille se transformer : les vues aériennes des années 1950 face à la ville d'aujourd'hui. Données officielles IGN.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vizilleenmouvement.fr/vizille-autrefois.html">
+    <meta property="og:title" content="Vizille, hier & aujourd'hui — la carte du temps">
+    <meta property="og:description" content="Faites glisser le curseur et voyez Vizille se transformer : les vues aériennes des années 1950 face à la ville d'aujourd'hui.">
+    <meta property="og:image" content="https://vizilleenmouvement.fr/images/photo-equipe.webp">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Vizille en Mouvement">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-side-by-side@2.2.0/leaflet-side-by-side.min.js"></script>
+
+    <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Hanken Grotesk', sans-serif; background: #F6EEE2; color: #3A2A20; line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+
+    .rainbow-bar { height: 3px; background: linear-gradient(90deg, #D6006C 25%, #F39200 25% 50%, #7AB82E 50% 75%, #1BA7DE 75%); position: fixed; top: 0; left: 0; right: 0; z-index: 10001; }
+
+    .vm-header { position: sticky; top: 3px; z-index: 10000; background: rgba(246,238,226,0.82); backdrop-filter: blur(16px); border-bottom: 1px solid #E6DAC6; padding: 0 2rem; }
+    .vm-header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .vm-header-logo img { height: 40px; }
+    .vm-header-nav { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+    .vm-header-nav a { font-size: 0.88rem; font-weight: 500; color: #3A2A20; padding: 0.45rem 0.75rem; border-radius: 8px; transition: all 0.2s; }
+    .vm-header-nav a:hover, .vm-header-nav a.active { background: rgba(194,99,47,0.1); color: #C2632F; }
+    .vm-menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: #3A2A20; cursor: pointer; }
+
+    .va-hero { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem 1.5rem; text-align: center; }
+    .va-kicker { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: #C2632F; font-weight: 700; margin-bottom: 1rem; }
+    .va-hero h1 { font-family: 'Spectral', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+    .va-hero h1 em { color: #C2632F; font-style: italic; }
+    .va-hero p { font-size: 1.05rem; color: #6E5B49; max-width: 640px; margin: 0 auto; }
+
+    .va-map-wrap { max-width: 1200px; margin: 1.5rem auto 0; padding: 0 2rem; }
+    #va-map { width: 100%; height: 580px; border-radius: 16px; overflow: hidden; border: 1px solid #E6DAC6; box-shadow: 0 12px 40px rgba(58,42,32,0.12); }
+    .va-legend { display: flex; justify-content: space-between; max-width: 1200px; margin: 1rem auto 0; padding: 0 2.5rem; font-family: 'Spectral', serif; font-style: italic; color: #A07A4E; font-size: 0.95rem; }
+    .va-legend .now { color: #C2632F; }
+
+    .va-tips { max-width: 900px; margin: 2rem auto; padding: 0 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+    .va-tip { background: #FBF5EA; border: 1px solid #E6DAC6; border-radius: 12px; padding: 1.3rem; text-align: center; }
+    .va-tip .ic { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .va-tip h3 { font-family: 'Spectral', serif; font-size: 1.05rem; margin-bottom: 0.3rem; color: #3A2A20; }
+    .va-tip p { font-size: 0.85rem; color: #6E5B49; }
+
+    .va-source { text-align: center; font-size: 0.8rem; color: #A07A4E; padding: 0 2rem 3rem; }
+    .va-source a { color: #C2632F; text-decoration: underline; }
+
+    .vm-footer { background: #2A1E16; color: rgba(246,238,226,0.65); padding: 3rem 2rem 1.5rem; margin-top: 2rem; }
+    .vm-footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+    .vm-footer-brand img { height: 38px; filter: brightness(0) invert(1); margin-bottom: 0.8rem; }
+    .vm-footer-brand p { font-size: 0.85rem; line-height: 1.6; }
+    .vm-footer h4 { font-family: 'Spectral', serif; font-size: 0.95rem; color: #F6EEE2; margin-bottom: 0.8rem; }
+    .vm-footer ul { list-style: none; }
+    .vm-footer li { margin-bottom: 0.4rem; }
+    .vm-footer li a { font-size: 0.85rem; color: rgba(246,238,226,0.55); }
+    .vm-footer li a:hover { color: #F6EEE2; }
+    .vm-footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding-top: 1.2rem; border-top: 1px solid rgba(246,238,226,0.1); text-align: center; font-size: 0.78rem; color: rgba(246,238,226,0.35); }
+
+    @media (max-width: 900px) {
+        .va-tips { grid-template-columns: 1fr; }
+        .vm-footer-grid { grid-template-columns: 1fr; }
+        #va-map { height: 440px; }
+    }
+    @media (max-width: 700px) {
+        .vm-header-nav { display: none; }
+        .vm-header-nav.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: rgba(246,238,226,0.97); backdrop-filter: blur(16px); padding: 1rem; border-bottom: 1px solid #E6DAC6; }
+        .vm-menu-toggle { display: block; }
+        .va-legend { font-size: 0.8rem; padding: 0 1.5rem; }
+    }
+    /* Leaflet side-by-side range handle */
+    .leaflet-sbs-range { background: #C2632F; }
+    </style>
+</head>
+<body>
+    <div class="rainbow-bar"></div>
+
+    <header class="vm-header">
+        <div class="vm-header-inner">
+            <a href="index.html" class="vm-header-logo"><img src="images/logo-header.png" alt="Vizille en Mouvement"></a>
+            <button class="vm-menu-toggle" aria-label="Menu" onclick="document.querySelector('.vm-header-nav').classList.toggle('open')">&#9776;</button>
+            <ul class="vm-header-nav">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="nos-ambitions.html">Nos Ambitions</a></li>
+                <li><a href="retrospective.html">Rétrospective</a></li>
+                <li><a href="bilan.html">Bilan</a></li>
+                <li><a href="projet.html">Projet</a></li>
+                <li><a href="blog.html">Actualités</a></li>
+                <li><a href="equipe.html">Équipe</a></li>
+                <li><a href="medias.html">Médias</a></li>
+                <li><a href="faq.html">Construisons ensemble</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="va-hero">
+        <p class="va-kicker">Vizille en Mouvement · Patrimoine</p>
+        <h1>Vizille, <em>hier &amp; aujourd'hui</em></h1>
+        <p>Faites glisser le curseur au centre de la carte : d'un côté Vizille vue du ciel dans les années 1950-1965, de l'autre la ville d'aujourd'hui. Découvrez comment notre commune s'est transformée.</p>
+    </section>
+
+    <div class="va-map-wrap">
+        <div id="va-map"></div>
+    </div>
+    <div class="va-legend">
+        <span>◄ Années 1950-1965</span>
+        <span class="now">Aujourd'hui ►</span>
+    </div>
+
+    <div class="va-tips">
+        <div class="va-tip"><div class="ic">🖱️</div><h3>Glissez le curseur</h3><p>Déplacez la barre verticale pour comparer les deux époques.</p></div>
+        <div class="va-tip"><div class="ic">🔍</div><h3>Zoomez, déplacez</h3><p>Explorez le château, le centre, les Mattons, le Péage…</p></div>
+        <div class="va-tip"><div class="ic">🏛️</div><h3>70 ans d'évolution</h3><p>Champs devenus lotissements, nouvelles routes, ville qui grandit.</p></div>
+    </div>
+
+    <p class="va-source">Vues aériennes : <a href="https://remonterletemps.ign.fr/" target="_blank" rel="noopener">IGN — Remonter le temps</a> · Données ouvertes de la <a href="https://geoservices.ign.fr/" target="_blank" rel="noopener">Géoplateforme</a></p>
+
+    <footer class="vm-footer">
+        <div class="vm-footer-grid">
+            <div class="vm-footer-brand">
+                <img src="images/logo-header.png" alt="" role="presentation">
+                <p>Équipe municipale de Vizille.<br>Ensemble pour une ville dynamique et solidaire.</p>
+            </div>
+            <div>
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="retrospective.html">Rétrospective</a></li>
+                    <li><a href="bilan.html">Bilan</a></li>
+                    <li><a href="blog.html">Actualités</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Informations</h4>
+                <ul>
+                    <li><a href="faq.html">Construisons ensemble</a></li>
+                    <li><a href="equipe.html">L'Équipe</a></li>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="vm-footer-bottom"><p>&copy; 2026 Vizille en Mouvement</p></div>
+    </footer>
+
+    <script>
+    (function(){
+        // Vizille : lat 45.078, lon 5.773
+        var map = L.map('va-map', { center: [45.0785, 5.7715], zoom: 15, minZoom: 12, maxZoom: 19 });
+
+        var WMTS = 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}';
+
+        // Couche historique 1950-1965
+        var hier = L.tileLayer(WMTS + '&LAYER=ORTHOIMAGERY.ORTHOPHOTOS.ORTHO-EXPRESS.1950-1965&FORMAT=image/png', {
+            attribution: 'IGN — Remonter le temps', maxZoom: 19
+        }).addTo(map);
+
+        // Couche actuelle
+        var now = L.tileLayer(WMTS + '&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {
+            attribution: 'IGN', maxZoom: 19
+        }).addTo(map);
+
+        // Comparateur côte à côte
+        L.control.sideBySide(hier, now).addTo(map);
+
+        // Repère du château de Vizille
+        L.marker([45.0797, 5.7730]).addTo(map).bindPopup('Château de Vizille');
+    })();
+    </script>
+</body>
+</html>
