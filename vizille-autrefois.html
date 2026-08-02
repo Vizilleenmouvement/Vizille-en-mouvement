@@ -217,8 +217,8 @@
         map.createPane('nowPane');
         map.getPane('nowPane').style.zIndex = 250;
         var nowPane = map.getPane('nowPane');
-        L.tileLayer(WMTS + '&LAYER=HR.ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {
-            attribution: 'IGN', maxZoom: 19, maxNativeZoom: 20, pane: 'nowPane'
+        L.tileLayer(WMTS + '&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {
+            attribution: 'IGN', maxZoom: 19, maxNativeZoom: 19, pane: 'nowPane'
         }).addTo(map);
 
         // Repère du château de Vizille
