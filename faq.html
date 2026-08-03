@@ -4,34 +4,97 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Construisons ensemble – Vizille en Mouvement</title>
-    <meta name="description" content="Participez à la vie de votre commune. Posez vos questions, partagez vos idées et suggestions. Échangez avec l'équipe municipale Vizille en Mouvement.">
+    <title>Participer à la vie de Vizille – Vizille en Mouvement</title>
+    <meta name="description" content="Comprenez comment fonctionne la concertation citoyenne à Vizille — ce qu'elle permet, qui décide — et prenez part : posez une question, proposez une idée, rejoignez un groupe de travail.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vizilleenmouvement.fr/faq.html">
-    <meta property="og:title" content="Construisons ensemble — Vizille en Mouvement">
-    <meta property="og:description" content="La campagne est terminée, pas le dialogue. Participez à la vie de votre commune, partagez vos idées.">
+    <meta property="og:title" content="Participer à la vie de Vizille — Vizille en Mouvement">
+    <meta property="og:description" content="Concertation citoyenne : six questions, six réponses claires. Comprenez le cadre, puis prenez part à la vie de votre commune.">
     <meta property="og:image" content="https://vizilleenmouvement.fr/images/articles/equipe-adjoints-2026.webp">
     <meta property="og:locale" content="fr_FR">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Construisons ensemble — Vizille en Mouvement">
-    <meta name="twitter:description" content="La campagne est terminée, pas le dialogue. Participez !">
+    <meta name="twitter:title" content="Participer à la vie de Vizille — Vizille en Mouvement">
+    <meta name="twitter:description" content="Concertation citoyenne : comprendre le cadre, puis prendre part.">
     <meta name="twitter:image" content="https://vizilleenmouvement.fr/images/articles/equipe-adjoints-2026.webp">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Hanken+Grotesk:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/pages/faq.css">
+
+    <style>
+    /* ===== Participer à la vie de Vizille — mise en page dédiée ===== */
+    .pv-hero { max-width: 1000px; margin: 0 auto; padding: 4.5rem 2rem 1rem; text-align: center; }
+    .pv-kicker { font-family: 'Hanken Grotesk', sans-serif; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: #C2632F; font-weight: 700; margin-bottom: 1rem; }
+    .pv-hero h1 { font-family: 'Spectral', serif; font-size: clamp(1.9rem, 4.2vw, 2.9rem); font-weight: 700; line-height: 1.15; color: #3A2A20; margin-bottom: 1rem; }
+    .pv-hero h1 em { color: #C2632F; font-style: italic; }
+    .pv-hero-sub { font-family: 'Hanken Grotesk', sans-serif; font-size: 1.08rem; color: #6E5B49; max-width: 640px; margin: 0 auto; line-height: 1.65; }
+
+    .pv-main { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem 3rem; font-family: 'Hanken Grotesk', sans-serif; }
+    .pv-grid { display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 2.6rem; align-items: start; }
+
+    /* Colonne gauche : explications */
+    .pv-eyebrow { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: #A07A4E; font-weight: 700; margin-bottom: 0.6rem; }
+    .pv-h2 { font-family: 'Spectral', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; line-height: 1.15; color: #3A2A20; margin: 0 0 0.9rem; }
+    .pv-lead { font-size: 1.02rem; color: #6E5B49; line-height: 1.65; margin-bottom: 2rem; max-width: 34rem; }
+
+    .pv-steps { display: flex; flex-direction: column; gap: 1.3rem; }
+    .pv-step { display: flex; gap: 1.1rem; padding-bottom: 1.3rem; border-bottom: 1px solid #E6DAC6; }
+    .pv-step:last-child { border-bottom: none; }
+    .pv-num { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 50%; background: #FBF5EA; border: 1.5px solid #E6DAC6; color: #C2632F; font-family: 'Spectral', serif; font-weight: 700; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; }
+    .pv-step h3 { font-family: 'Spectral', serif; font-size: 1.16rem; font-weight: 700; color: #3A2A20; margin: 0.35rem 0 0.4rem; line-height: 1.3; }
+    .pv-step p { font-size: 0.97rem; color: #6E5B49; line-height: 1.6; margin: 0; }
+    .pv-step p + p { margin-top: 0.6rem; }
+    .pv-ways { list-style: none; margin: 0.4rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+    .pv-ways li { position: relative; padding-left: 1.5rem; font-size: 0.97rem; color: #3A2A20; }
+    .pv-ways li::before { content: '→'; position: absolute; left: 0; color: #C2632F; font-weight: 700; }
+
+    /* Colonne droite : formulaire */
+    .pv-right { position: sticky; top: 90px; }
+    .pv-form-card { background: #FBF5EA; border: 1px solid #E6DAC6; border-radius: 16px; padding: 1.8rem; box-shadow: 0 12px 40px rgba(58,42,32,0.08); }
+    .pv-form-card > h2 { font-family: 'Spectral', serif; font-size: 1.4rem; font-weight: 700; color: #3A2A20; margin: 0 0 0.4rem; }
+    .pv-form-sub { font-size: 0.94rem; color: #6E5B49; line-height: 1.55; margin-bottom: 1.3rem; }
+    .pv-form-card label { display: block; font-size: 0.82rem; font-weight: 600; color: #3A2A20; margin-bottom: 0.35rem; }
+    .pv-form-card input, .pv-form-card select, .pv-form-card textarea { width: 100%; font-family: 'Hanken Grotesk', sans-serif; font-size: 0.95rem; color: #3A2A20; background: #fff; border: 1.5px solid #E6DAC6; border-radius: 9px; padding: 0.6rem 0.75rem; transition: border-color 0.2s; }
+    .pv-form-card input:focus, .pv-form-card select:focus, .pv-form-card textarea:focus { outline: none; border-color: #C2632F; }
+    .pv-form-card textarea { min-height: 110px; resize: vertical; }
+    .pv-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    .pv-form-group { margin-bottom: 0.9rem; }
+    .pv-btn-submit { width: 100%; margin-top: 0.4rem; background: #C2632F; color: #fff; font-family: 'Hanken Grotesk', sans-serif; font-size: 1rem; font-weight: 600; border: none; border-radius: 10px; padding: 0.8rem; cursor: pointer; transition: background 0.2s; }
+    .pv-btn-submit:hover { background: #a8522a; }
+    .pv-quick { margin-top: 1.3rem; padding-top: 1.2rem; border-top: 1px solid #E6DAC6; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .pv-quick-btn { font-size: 0.83rem; font-weight: 600; color: #3A2A20; background: #fff; border: 1.5px solid #E6DAC6; border-radius: 20px; padding: 0.4rem 0.85rem; cursor: pointer; transition: all 0.2s; text-decoration: none; }
+    .pv-quick-btn:hover { border-color: #C2632F; color: #C2632F; }
+    .success-message { background: #e8f5e9; border: 1px solid #a5d6a7; color: #2e7d32; padding: 0.9rem; border-radius: 10px; margin-bottom: 1rem; font-size: 0.92rem; }
+
+    /* Échanges repliés */
+    .pv-echanges { max-width: 1200px; margin: 3rem auto 0; border-top: 1px solid #E6DAC6; padding-top: 2rem; }
+    .pv-echanges > summary { list-style: none; cursor: pointer; font-family: 'Spectral', serif; font-size: 1.25rem; font-weight: 700; color: #3A2A20; display: flex; align-items: center; gap: 0.6rem; padding: 0.6rem 0; }
+    .pv-echanges > summary::-webkit-details-marker { display: none; }
+    .pv-echanges > summary::after { content: '+'; margin-left: auto; color: #C2632F; font-size: 1.6rem; font-weight: 400; transition: transform 0.2s; }
+    .pv-echanges[open] > summary::after { content: '−'; }
+    .pv-echanges > summary small { display: block; font-family: 'Hanken Grotesk', sans-serif; font-size: 0.9rem; font-weight: 400; color: #6E5B49; }
+    .pv-echanges-body { padding-top: 1.5rem; }
+
+    @media (max-width: 860px) {
+        .pv-grid { grid-template-columns: 1fr; gap: 2rem; }
+        .pv-right { position: static; }
+    }
+    @media (max-width: 520px) {
+        .pv-form-row { grid-template-columns: 1fr; }
+    }
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="header-top">
-            <p>Construisons ensemble • Vizille en Mouvement</p>
+            <p>Participer à la vie de Vizille • Vizille en Mouvement</p>
         </div>
 
         <div class="header-main">
@@ -50,113 +113,186 @@
                     <li><a href="equipe.html">Équipe</a></li>
                     <li><a href="medias.html">Médias</a></li>
                     <li><a href="vizille-autrefois.html">Vizille autrefois</a></li>
-                    <li><a href="faq.html" class="active">Construisons ensemble</a></li>
+                    <li><a href="faq.html" class="active">Participer</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <script src="js/menu-mobile.js"></script>
 
-    <section class="hero-unified">
-        <img loading="lazy" src="images/logo.png" alt="Vizille en Mouvement" class="hero-logo">
-        <div class="hero-text">
-            <h1>Construisons ensemble</h1>
-            <p class="slogan">Mandat 2026-2032 — Le dialogue continue</p>
-            <p class="hero-subtitle">La campagne est terminée, pas le dialogue. Vos questions, vos idées, vos suggestions continuent d'alimenter notre action municipale.</p>
-        </div>
+    <section class="pv-hero">
+        <p class="pv-kicker">Vizille en Mouvement · Démocratie locale</p>
+        <h1>Participer à la vie de <em>Vizille</em></h1>
+        <p class="pv-hero-sub">Votre commune se construit avec vous. Comprenez d'abord comment fonctionne la concertation, puis prenez part — dès maintenant.</p>
     </section>
 
-    <main class="content">
+    <main class="pv-main">
+        <div class="pv-grid">
 
-        <!-- Barre de filtres -->
-        <div class="filters-bar">
-            <div class="filters-container">
-                <div class="filter-buttons" id="filter-buttons">
-                    <!-- Généré dynamiquement -->
-                </div>
-                <div class="search-bar">
-                    <input type="text" id="search-faq" placeholder="Rechercher..." oninput="applyFilters()">
+            <!-- Colonne gauche : le cadre de la concertation -->
+            <div class="pv-left">
+                <p class="pv-eyebrow">Concertation citoyenne</p>
+                <h2 class="pv-h2">Six questions,<br>six réponses claires.</h2>
+                <p class="pv-lead">Ce que la concertation permet, ce qu'elle ne permet pas, et comment y prendre part à Vizille.</p>
+
+                <div class="pv-steps">
+                    <div class="pv-step">
+                        <span class="pv-num">1</span>
+                        <div>
+                            <h3>Pourquoi concerter ?</h3>
+                            <p>Parce qu'une décision est souvent meilleure lorsqu'elle bénéficie de l'expérience des habitants, des associations et des acteurs locaux.</p>
+                        </div>
+                    </div>
+                    <div class="pv-step">
+                        <span class="pv-num">2</span>
+                        <div>
+                            <h3>Sur quoi peut-on participer ?</h3>
+                            <p>Tous les sujets ne relèvent pas de la concertation.</p>
+                            <p>En revanche, lorsqu'il existe plusieurs solutions possibles ou que les usages des habitants sont déterminants, la participation peut enrichir la décision.</p>
+                        </div>
+                    </div>
+                    <div class="pv-step">
+                        <span class="pv-num">3</span>
+                        <div>
+                            <h3>Qui décide au final ?</h3>
+                            <p><strong>Les élus.</strong></p>
+                            <p>La concertation éclaire la décision, elle ne s'y substitue pas.</p>
+                        </div>
+                    </div>
+                    <div class="pv-step">
+                        <span class="pv-num">4</span>
+                        <div>
+                            <h3>Toutes les propositions seront-elles retenues ?</h3>
+                            <p><strong>Non.</strong></p>
+                            <p>Chaque proposition est étudiée, expliquée et mise en perspective avec les contraintes techniques, juridiques, financières et l'intérêt général.</p>
+                        </div>
+                    </div>
+                    <div class="pv-step">
+                        <span class="pv-num">5</span>
+                        <div>
+                            <h3>À quoi sert ma participation ?</h3>
+                            <p>À faire émerger des idées, signaler des difficultés, partager des usages et améliorer les projets.</p>
+                        </div>
+                    </div>
+                    <div class="pv-step">
+                        <span class="pv-num">6</span>
+                        <div>
+                            <h3>Comment participer ?</h3>
+                            <ul class="pv-ways">
+                                <li>Poser une question.</li>
+                                <li>Proposer une idée.</li>
+                                <li>Répondre à une consultation.</li>
+                                <li>Participer à une rencontre.</li>
+                                <li>Rejoindre un groupe de travail lorsque cela est proposé.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- Colonne droite : passer à l'action -->
+            <aside class="pv-right">
+                <div class="pv-form-card" id="ask-box">
+                    <h2>Prendre part, maintenant</h2>
+                    <p class="pv-form-sub">Une question, une idée, une demande de rencontre ? Écrivez à votre équipe municipale — nous vous répondrons.</p>
+
+                    <div class="success-message" id="question-success" style="display: none;">
+                        ✅ Votre message a bien été envoyé ! Nous vous répondrons prochainement.
+                    </div>
+
+                    <form action="https://formspree.io/f/xjknewpy" method="POST" id="question-form">
+                        <input type="hidden" name="_subject" value="Nouveau message - Vizille en Mouvement">
+                        <input type="text" name="_gotcha" style="display:none">
+
+                        <div class="pv-form-row">
+                            <div class="pv-form-group">
+                                <label for="q-name">Votre prénom *</label>
+                                <input type="text" id="q-name" name="name" required placeholder="Marie">
+                            </div>
+                            <div class="pv-form-group">
+                                <label for="q-email">Email (facultatif)</label>
+                                <input type="email" id="q-email" name="email" placeholder="pour la réponse">
+                            </div>
+                        </div>
+
+                        <div class="pv-form-row">
+                            <div class="pv-form-group">
+                                <label for="q-subject">Nature</label>
+                                <select id="q-subject" name="subject">
+                                    <option value="Question générale">Poser une question</option>
+                                    <option value="Proposition / Idée">Proposer une idée</option>
+                                    <option value="Répondre à une consultation">Répondre à une consultation</option>
+                                    <option value="Suivi d'un projet">Suivre un projet</option>
+                                    <option value="Demande de rencontre">Rencontrer un élu</option>
+                                    <option value="Rejoindre un groupe de travail">Rejoindre un groupe de travail</option>
+                                    <option value="Autre">Autre</option>
+                                </select>
+                            </div>
+                            <div class="pv-form-group">
+                                <label for="q-theme">Thème</label>
+                                <select id="q-theme" name="theme">
+                                    <option value="">-- Choisir --</option>
+                                    <option value="Urbanisme">Urbanisme</option>
+                                    <option value="Vie quotidienne">Vie quotidienne</option>
+                                    <option value="Culture">Culture</option>
+                                    <option value="Sport">Sport</option>
+                                    <option value="Social & Solidarité">Social & Solidarité</option>
+                                    <option value="Environnement">Environnement</option>
+                                    <option value="Tranquillité">Tranquillité</option>
+                                    <option value="Finances">Finances</option>
+                                    <option value="Éducation">Éducation</option>
+                                    <option value="Transports">Transports</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="pv-form-group">
+                            <label for="q-question">Votre message *</label>
+                            <textarea id="q-question" name="message" required placeholder="Votre question, votre idée, votre suggestion…"></textarea>
+                        </div>
+
+                        <button type="submit" class="pv-btn-submit">Envoyer mon message</button>
+                    </form>
+
+                    <div class="pv-quick">
+                        <a href="#ask-box" class="pv-quick-btn" onclick="setSubject('Proposition / Idée')">💡 Proposer une idée</a>
+                        <a href="#ask-box" class="pv-quick-btn" onclick="setSubject('Demande de rencontre')">🤝 Rencontrer un élu</a>
+                        <a href="#ask-box" class="pv-quick-btn" onclick="setSubject('Suivi d\'un projet')">📋 Suivre un projet</a>
+                    </div>
+                </div>
+            </aside>
         </div>
 
-        <!-- Section Questions & Réponses -->
-        <div class="questions-header">
-            <h2>Vos questions, nos réponses</h2>
-            <p>Les échanges avec les Vizillois — avant, pendant et après la campagne. Le dialogue continue avec votre équipe municipale.</p>
-        </div>
+        <!-- Échanges avec les Vizillois (repliés) -->
+        <details class="pv-echanges">
+            <summary>
+                <span>Voir les échanges avec les Vizillois
+                    <small>Les questions déjà posées, nos réponses, et vos paroles</small>
+                </span>
+            </summary>
+            <div class="pv-echanges-body">
+                <!-- Barre de filtres -->
+                <div class="filters-bar">
+                    <div class="filters-container">
+                        <div class="filter-buttons" id="filter-buttons"></div>
+                        <div class="search-bar">
+                            <input type="text" id="search-faq" placeholder="Rechercher..." oninput="applyFilters()">
+                        </div>
+                    </div>
+                </div>
 
-        <div class="faq-list" id="faq-list">
-            <div class="loading">
-                <span style="font-size: 2rem;">⏳</span>
-                <p>Chargement...</p>
+                <div class="questions-header">
+                    <h2>Vos questions, nos réponses</h2>
+                    <p>Les échanges avec les Vizillois — avant, pendant et après la campagne. Le dialogue continue.</p>
+                </div>
+
+                <div class="faq-list" id="faq-list">
+                    <div class="loading"><span style="font-size: 2rem;">⏳</span><p>Chargement...</p></div>
+                </div>
+
+                <div id="paroles-section"></div>
             </div>
-        </div>
-
-        <!-- Section Paroles de Vizillois (messages de soutien) -->
-        <div id="paroles-section"></div>
-
-        <!-- Formulaire pour participer -->
-        <div class="ask-question-box" id="ask-box">
-            <h2>Échangez avec votre équipe municipale</h2>
-            <p>Une question sur le mandat ? Une idée pour la commune ? Partagez avec nous, nous vous répondrons !</p>
-
-            <div class="success-message" id="question-success" style="display: none;">
-                ✅ Votre message a bien été envoyé ! Nous vous répondrons prochainement.
-            </div>
-
-            <form action="https://formspree.io/f/xjknewpy" method="POST" id="question-form">
-                <input type="hidden" name="_subject" value="Nouveau message - Vizille en Mouvement">
-                <input type="text" name="_gotcha" style="display:none">
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="q-name">Votre prénom *</label>
-                        <input type="text" id="q-name" name="name" required placeholder="Marie">
-                    </div>
-                    <div class="form-group">
-                        <label for="q-email">Email (facultatif)</label>
-                        <input type="email" id="q-email" name="email" placeholder="pour être notifié de la réponse">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="q-subject">Sujet</label>
-                        <select id="q-subject" name="subject">
-                            <option value="Question générale">Question générale</option>
-                            <option value="Proposition / Idée">Proposition / Idée</option>
-                            <option value="Suivi d'un projet">Suivi d'un projet du programme</option>
-                            <option value="Demande de rencontre">Demande de rencontre avec un élu</option>
-                            <option value="Autre">Autre</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="q-theme">Thème</label>
-                        <select id="q-theme" name="theme">
-                            <option value="">-- Choisir un thème --</option>
-                            <option value="Urbanisme">Urbanisme</option>
-                            <option value="Vie quotidienne">Vie quotidienne</option>
-                            <option value="Culture">Culture</option>
-                            <option value="Sport">Sport</option>
-                            <option value="Social & Solidarité">Social & Solidarité</option>
-                            <option value="Environnement">Environnement</option>
-                            <option value="Tranquillité">Tranquillité</option>
-                            <option value="Finances">Finances</option>
-                            <option value="Éducation">Éducation</option>
-                            <option value="Transports">Transports</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="q-question">Votre message *</label>
-                    <textarea id="q-question" name="message" required placeholder="Quelle est votre question ou suggestion ?"></textarea>
-                </div>
-
-                <button type="submit" class="btn-submit">Envoyer mon message</button>
-            </form>
-        </div>
+        </details>
 
         <!-- Section Contact -->
         <section class="contact-section">
@@ -184,21 +320,6 @@
                         <a href="#" target="_blank" rel="noopener" title="Facebook">📘</a>
                         <a href="#" target="_blank" rel="noopener" title="Instagram">📸</a>
                     </div>
-                </div>
-            </div>
-
-            <div class="special-requests">
-                <h3>Participez à la vie de votre commune</h3>
-                <div class="request-buttons">
-                    <a href="#ask-box" class="btn-request highlight" onclick="setSubject('Proposition / Idée')">
-                        💡 Proposer une idée
-                    </a>
-                    <a href="#ask-box" class="btn-request" onclick="setSubject('Demande de rencontre')">
-                        🤝 Rencontrer un élu
-                    </a>
-                    <a href="#ask-box" class="btn-request" onclick="setSubject('Suivi d\'un projet')">
-                        📋 Suivre un projet
-                    </a>
                 </div>
             </div>
         </section>
@@ -250,7 +371,6 @@
                 if (!response.ok) throw new Error('Erreur');
 
                 faqData = await response.json();
-                // Trier par date décroissante
                 faqData.sort((a, b) => {
                     if (!a.date && !b.date) return 0;
                     if (!a.date) return 1;
@@ -258,7 +378,6 @@
                     return new Date(b.date) - new Date(a.date);
                 });
 
-                updateStats();
                 renderFilters();
                 renderFaq();
             } catch (err) {
@@ -270,15 +389,6 @@
                     </div>
                 `;
             }
-        }
-
-        // ===== STATISTIQUES =====
-        function updateStats() {
-            // Stats retirées du HTML, fonction conservée par sécurité
-            const el = (id) => document.getElementById(id);
-            if (el('stat-total')) el('stat-total').textContent = faqData.length;
-            if (el('stat-reponses')) el('stat-reponses').textContent = faqData.filter(f => f.reponse && f.reponse.trim()).length;
-            if (el('stat-themes')) el('stat-themes').textContent = new Set(faqData.map(f => f.categorie).filter(c => c && c.trim())).size;
         }
 
         // ===== FILTRES =====
@@ -324,11 +434,9 @@
             const container = document.getElementById('faq-list');
             const searchQuery = (document.getElementById('search-faq')?.value || '').toLowerCase();
 
-            // Séparer Q&R avec réponse vs messages de soutien
             const withAnswer = faqData.filter(f => f.reponse && f.reponse.trim());
             const withoutAnswer = faqData.filter(f => !f.reponse || !f.reponse.trim());
 
-            // Filtrer les Q&R
             let filtered = withAnswer;
 
             if (currentFilter) {
@@ -367,7 +475,6 @@
                 return;
             }
 
-            // Grouper par catégorie
             const grouped = {};
             const uncategorized = [];
 
@@ -384,7 +491,6 @@
             let clickableIndex = 0;
             let html = '';
 
-            // Rendre les groupes par catégorie
             Object.keys(grouped).sort().forEach(cat => {
                 const catInfo = CATEGORIES[cat] || { icon: '📋', color: '#f5f5f5' };
                 const items = grouped[cat];
@@ -404,7 +510,6 @@
                 html += `</div>`;
             });
 
-            // Rendre les questions sans catégorie
             if (uncategorized.length > 0) {
                 html += `<div class="category-group">`;
                 html += `<div class="category-group-header">
@@ -422,11 +527,7 @@
             }
 
             container.innerHTML = html;
-
-            // Rendre les paroles de Vizillois
             renderParoles(withoutAnswer);
-
-            // Activer les animations au scroll pour les nouveaux éléments
             setTimeout(observeNewElements, 100);
         }
 
@@ -501,7 +602,6 @@
 
             if (!answer) return;
 
-            // Trouver le bon bouton (en comptant seulement les faq-question)
             let question = null;
             let count = 0;
             questions.forEach(q => {
@@ -511,7 +611,6 @@
 
             if (!question) return;
 
-            // Fermer les autres
             questions.forEach((q, i) => {
                 if (i !== index) {
                     q.classList.remove('active');
@@ -520,7 +619,6 @@
                 }
             });
 
-            // Toggle
             question.classList.toggle('active');
             answer.classList.toggle('open');
         }
