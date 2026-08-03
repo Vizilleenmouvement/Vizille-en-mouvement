@@ -135,7 +135,7 @@
             <div class="va-tag left" id="va-tag-left">Années 1950-1965</div>
             <div class="va-tag right">Aujourd'hui</div>
             <div class="va-divider" id="va-divider"></div>
-            <div id="va-pill" style="position:absolute;left:14px;bottom:14px;z-index:1002;background:rgba(58,42,32,0.82);color:#F6EEE2;font-size:0.7rem;font-weight:600;padding:0.25rem 0.6rem;border-radius:6px;pointer-events:none;">couleur · chargement…</div>
+            <div id="va-pill" style="position:absolute;left:14px;bottom:14px;z-index:1002;background:#C2632F;color:#fff;font-size:0.78rem;font-weight:700;padding:0.35rem 0.7rem;border-radius:6px;pointer-events:none;box-shadow:0 2px 8px rgba(0,0,0,0.3);">v7 · couleur · chargement…</div>
             <input type="range" id="va-slider" min="0" max="100" value="50" aria-label="Curseur de comparaison">
         </div>
     </div>
@@ -205,9 +205,9 @@
             var l = L.tileLayer(WMTS + '&TILEMATRIXSET=' + tms + '&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {
                 attribution: 'IGN', maxZoom: 19, maxNativeZoom: 19, pane: 'nowPane'
             });
-            l.on('tileload', function(){ ok++; if(pill) pill.textContent = 'couleur ' + tms + ' · OK ' + ok + ' / err ' + err; });
+            l.on('tileload', function(){ ok++; if(pill) pill.textContent = 'v7 · couleur ' + tms + ' · OK ' + ok + ' / err ' + err; });
             l.on('tileerror', function(){
-                err++; if(pill) pill.textContent = 'couleur ' + tms + ' · OK ' + ok + ' / err ' + err;
+                err++; if(pill) pill.textContent = 'v7 · couleur ' + tms + ' · OK ' + ok + ' / err ' + err;
                 // Si le TileMatrixSet PM échoue, on bascule automatiquement sur PM_0_19
                 if(tms === 'PM' && !switched && err >= 2){
                     switched = true;
