@@ -127,7 +127,11 @@
     </section>
 
     <div class="va-controls">
-        <span class="va-vs">Vizille en <strong style="color:#C2632F;">1950-1965</strong> &nbsp;·&nbsp; comparé à aujourd'hui</span>
+        <label for="va-annee">Époque à comparer :</label>
+        <select id="va-annee">
+            <option value="ORTHOIMAGERY.ORTHOPHOTOS.1950-1965|image/png|Années 1950-1965">Années 1950-1965</option>
+        </select>
+        <span class="va-vs">&nbsp;·&nbsp; comparé à aujourd'hui</span>
     </div>
     <div class="va-map-wrap">
         <div class="va-map-outer">
@@ -186,10 +190,48 @@
         // Base commune, sans le TileMatrixSet (chaque couche indique le sien)
         var WMTS = 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&STYLE=normal&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}';
 
-        // --- Couche historique 1950-1965 (dessous), TileMatrixSet générique PM ---
-        L.tileLayer(WMTS + '&TILEMATRIXSET=PM&LAYER=ORTHOIMAGERY.ORTHOPHOTOS.1950-1965&FORMAT=image/png', {
-            attribution: 'IGN — Remonter le temps', maxZoom: 19, maxNativeZoom: 18
-        }).addTo(map).setZIndex(100);
+        // --- Couche historique (dessous), remplaçable selon la période choisie ---
+        var hierLayer = null;
+        var tagLeft = document.getElementById('va-tag-left');
+        function setHier(name, fmt, label){
+            if(hierLayer){ map.removeLayer(hierLayer); }
+            hierLayer = L.tileLayer(WMTS + '&TILEMATRIXSET=PM&LAYER=' + name + '&FORMAT=' + fmt, {
+                attribution: 'IGN — Remonter le temps', maxZoom: 19, maxNativeZoom: 18
+            }).addTo(map);
+            hierLayer.setZIndex(100);
+            if(label) tagLeft.textContent = label;
+        }
+        setHier('ORTHOIMAGERY.ORTHOPHOTOS.1950-1965', 'image/png', 'Années 1950-1965');
+
+        // --- Sélecteur de période : chaque candidat est testé (une tuile) ; on
+        //     n'ajoute au menu que les périodes qui renvoient réellement une image ---
+        var sel = document.getElementById('va-annee');
+        var CANDIDATES = [
+            { name: 'ORTHOIMAGERY.ORTHOPHOTOS.2000-2005', fmt: 'image/jpeg', label: 'Années 2000-2005' },
+            { name: 'ORTHOIMAGERY.ORTHOPHOTOS.2006-2010', fmt: 'image/jpeg', label: 'Années 2006-2010' },
+            { name: 'ORTHOIMAGERY.ORTHOPHOTOS.2011-2015', fmt: 'image/jpeg', label: 'Années 2011-2015' }
+        ];
+        function testTileUrl(c){
+            // Tuile centrée sur Vizille (zoom 16) pour vérifier la couverture réelle
+            return 'https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&STYLE=normal'
+                 + '&TILEMATRIXSET=PM&TILEMATRIX=16&TILEROW=23549&TILECOL=33818'
+                 + '&LAYER=' + c.name + '&FORMAT=' + c.fmt;
+        }
+        CANDIDATES.forEach(function(c){
+            var img = new Image();
+            img.onload = function(){
+                var o = document.createElement('option');
+                o.value = c.name + '|' + c.fmt + '|' + c.label;
+                o.textContent = c.label;
+                sel.appendChild(o);
+            };
+            img.onerror = function(){ /* période indisponible : on n'ajoute rien */ };
+            img.src = testTileUrl(c);
+        });
+        sel.addEventListener('change', function(){
+            var p = this.value.split('|');
+            setHier(p[0], p[1], p[2]);
+        });
 
         // --- Couche actuelle en couleur (dessus, dans un pane clippé) ---
         // ORTHOIMAGERY.ORTHOPHOTOS sur le TileMatrixSet PM (validé : rendu couleur OK)
