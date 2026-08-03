@@ -196,24 +196,30 @@
         map.createPane('nowPane');
         map.getPane('nowPane').style.zIndex = 250;
         var nowPane = map.getPane('nowPane');
-        L.tileLayer(WMTS + '&TILEMATRIXSET=PM&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {
+        var nowLayer = L.tileLayer(WMTS + '&TILEMATRIXSET=PM&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&FORMAT=image/jpeg', {
             attribution: 'IGN', maxZoom: 19, maxNativeZoom: 19, pane: 'nowPane'
         }).addTo(map);
 
         // Repère du château de Vizille
         L.marker([45.0797, 5.7730]).addTo(map).bindPopup('Château de Vizille');
 
-        // === Curseur comparateur maison ===
+        // === Curseur comparateur maison (technique clip:rect en coordonnées calque) ===
         var slider = document.getElementById('va-slider');
         var divider = document.getElementById('va-divider');
         function updateClip(){
-            var pct = slider.value;
-            nowPane.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
-            nowPane.style.webkitClipPath = 'inset(0 0 0 ' + pct + '%)';
-            divider.style.left = pct + '%';
+            var container = nowLayer.getContainer();
+            if(!container) return;
+            var pct = slider.value / 100;
+            var nw = map.containerPointToLayerPoint([0, 0]);
+            var se = map.containerPointToLayerPoint(map.getSize());
+            var clipX = nw.x + (se.x - nw.x) * pct;
+            // On ne garde visible que la partie de la couche couleur à DROITE du curseur
+            container.style.clip = 'rect(' + nw.y + 'px,' + se.x + 'px,' + se.y + 'px,' + clipX + 'px)';
+            divider.style.left = (pct * 100) + '%';
         }
         slider.addEventListener('input', updateClip);
-        map.on('move zoom', updateClip);
+        map.on('move zoom moveend zoomend resize', updateClip);
+        nowLayer.on('load', updateClip);
         updateClip();
     })();
     </script>
