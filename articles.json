@@ -1,5 +1,20 @@
 [
   {
+    "id": 1786500000000,
+    "titre": "Propriétaire dans le centre ancien ? Il est encore temps de profiter des aides à la rénovation",
+    "date": "2026-08-11",
+    "categorie": "Info",
+    "extrait": "L'OPAH-RU du centre ancien de Vizille court jusqu'en 2028, et 2026-2027 sont ses années les plus actives. Propriétaires occupants, bailleurs et copropriétés : des aides à la rénovation existent, avec un accompagnement gratuit. Voici comment en profiter.",
+    "contenu": "Vous êtes propriétaire d'un logement ou d'un immeuble dans le centre ancien de Vizille ? Des aides concrètes existent pour rénover — et il est encore temps d'en profiter.\n<strong>Une opération toujours en cours</strong>\nLa commune est engagée, avec la Métropole et l'Anah, dans une OPAH-RU — Opération Programmée d'Amélioration de l'Habitat et de Renouvellement Urbain — pour son centre ancien. Signée le 17 janvier 2023 pour une durée de cinq ans, la convention « OPAH-RU Centre ancien de Vizille 2023-2027 » court jusqu'en janvier 2028. En 2026, nous sommes donc en plein dedans.\nMieux : les années 2026 et 2027 sont les plus intensives du programme — c'est maintenant que l'opération attend le plus de dossiers. Et les travaux votés avant la fin de la convention restent couverts : un dossier peut même être déposé pour l'engagement des aides de l'Anah dans les six mois qui suivent.\n<strong>Pour qui, pour quoi ?</strong>\nLe dispositif s'adresse aux propriétaires occupants comme aux propriétaires bailleurs, ainsi qu'aux copropriétés. Les objectifs portent sur au moins 160 logements : rénovation de logements de propriétaires occupants, remise sur le marché de logements locatifs, redressement de copropriétés en difficulté, rénovation thermique et campagnes de ravalement de façades.\n<strong>À quelles conditions ?</strong>\nDeux conditions principales. D'abord, être situé dans le périmètre du centre ancien : rue Jean Jaurès, rue du Général de Gaulle, avenue Aristide Briand et les rues adjacentes. Ensuite, les aides suivent la réglementation de l'Anah — conditions de ressources pour les propriétaires occupants, et conventionnement des loyers (dispositif Loc'Avantages) pour les bailleurs.\n<strong>Un accompagnement gratuit</strong>\nVous n'êtes pas seul : un opérateur de suivi-animation accompagne gratuitement les propriétaires, aide à monter les dossiers et tient des permanences. La commune met un local à disposition pour ces rendez-vous.\n<strong>Comment en profiter ?</strong>\nRapprochez-vous de la mairie de Vizille pour connaître les prochaines permanences et le contact de l'opérateur de l'OPAH-RU. Vous pouvez aussi nous écrire via la page <a href=\"participation.html\">Participer</a> : nous vous orienterons vers le bon interlocuteur.\nUne belle occasion d'améliorer son logement, de réduire ses factures d'énergie et d'embellir le cœur historique de Vizille — avec un vrai coup de pouce financier.",
+    "image": "images/articles/opah-ru-cover.jpg",
+    "images": [
+      "images/articles/opah-ru-cover.jpg"
+    ],
+    "priorite": true,
+    "modifie_le": "2026-08-11T08:00:00.000Z",
+    "slug": "aides-renovation-centre-ancien-opah-ru"
+  },
+  {
     "id": 1785900000000,
     "titre": "Le prix des carburants en direct, près de chez vous",
     "date": "2026-08-02",
