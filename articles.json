@@ -627,10 +627,15 @@
     "titre": "Sécheresse et feux de forêts : restons vigilants !",
     "date": "2026-08-13",
     "categorie": "Communiqué",
-    "extrait": "",
+    "extrait": "Depuis le 3 août, Vizille est placée en alerte renforcée sécheresse. Ce qui change au quotidien, et les bons réflexes face au risque incendie.",
     "contenu": "<iframe src=\"https://vizille-secheresse.netlify.app/\" style=\"width:100%;height:1600px;border:none;\" title=\"Sécheresse : Vizille en alerte renforcée\" loading=\"lazy\"></iframe>\n<p><a href=\"https://vizille-secheresse.netlify.app/\" target=\"_blank\">Ouvrir en plein écran</a></p>",
     "priorite": true,
     "a_la_une": true,
-    "modifie_le": "2026-08-13T17:10:44.477Z"
+    "modifie_le": "2026-08-13T17:21:37.000Z",
+    "image": "images/articles/article_1786641044477_secheresse.png",
+    "images": [
+      "images/articles/article_1786641044477_secheresse.png"
+    ],
+    "slug": "secheresse-et-feux-de-forets-restons-vigilants"
   }
 ]
