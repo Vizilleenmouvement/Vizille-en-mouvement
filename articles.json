@@ -619,8 +619,18 @@
     "image": "images/articles/article_1785664422649_couverture-article-1200x675.png",
     "source": "https://mes-aides.1jeune1solution.beta.gouv.fr",
     "priorite": true,
-    "a_la_une": true,
     "modifie_le": "2026-08-02T09:55:48.548Z",
     "slug": "aides-pour-les-15-30-ans-verifiez-vos-droits-en-7-minutes"
+  },
+  {
+    "id": 1786641044477,
+    "titre": "Sécheresse et feux de forêts : restons vigilants !",
+    "date": "2026-08-13",
+    "categorie": "Communiqué",
+    "extrait": "",
+    "contenu": "<iframe src=\"https://vizille-secheresse.netlify.app/\" style=\"width:100%;height:1600px;border:none;\" title=\"Sécheresse : Vizille en alerte renforcée\" loading=\"lazy\"></iframe>\n<p><a href=\"https://vizille-secheresse.netlify.app/\" target=\"_blank\">Ouvrir en plein écran</a></p>",
+    "priorite": true,
+    "a_la_une": true,
+    "modifie_le": "2026-08-13T17:10:44.477Z"
   }
 ]
