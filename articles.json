@@ -646,7 +646,8 @@
     "extrait": "Grenoble à un quart d'heure de train depuis Jarrie-Vizille : consultez les prochains départs en direct, dans les deux sens, avec tous les horaires de la semaine.",
     "contenu": "On l'oublie parfois, mais nous avons une gare à deux pas de chez nous — et depuis le quai de Jarrie-Vizille, Grenoble n'est qu'à une quinzaine de minutes. Le temps d'un café, et vous y êtes : sans chercher une place de parking et sans l'entrée saturée dans la cuvette grenobloise.\n\nSoyons honnêtes : le matin, rejoindre la gare depuis Vizille, c'est déjà prendre sa part du bouchon. Mais une fois dans le train, on saute le plus pénible et on arrive à l'heure, quoi qu'il arrive sur la route. Le bon réflexe, c'est de repérer le prochain départ :\n\n<iframe src=\"https://endearing-daffodil-65445e.netlify.app\" style=\"width:100%;height:650px;border:none;\" title=\"Prochains trains en direct — Gare de Jarrie-Vizille\" loading=\"lazy\"></iframe>\n<p><a href=\"https://endearing-daffodil-65445e.netlify.app\" target=\"_blank\">Ouvrir en plein écran</a></p>\n\nTous les horaires (semaine, samedi, dimanche) et les deux sens sont dans la fenêtre ci-dessus. Alors, prochain rendez-vous sur le quai ? 🚆",
     "priorite": true,
-    "modifie_le": "2026-08-24T09:16:15.000Z",
+    "a_la_une": true,
+    "modifie_le": "2026-08-24T09:47:00.000Z",
     "slug": "prochains-trains-en-direct-gare-de-jarrie-vizille"
   }
 ]
