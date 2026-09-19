@@ -233,10 +233,10 @@ function buildActuFlipCard(article, color) {
     const title = (article.titre || '').replace(/^[📰📅📣🎯✊🤝📊🚀📝ℹ️🎬]\s*/, '');
     const date = formatDate(article.date);
     const category = article.categorie || 'Actualité';
-    const extrait = truncate(article.extrait || article.contenu, 150);
+    const extrait = truncate(article.extrait || (article.contenu || '').split('[prix-carburants]').join(''), 150);
 
     // Contenu verso
-    const contenu = article.contenu || '';
+    const contenu = (article.contenu || '').split('[prix-carburants]').join(''); // repère de la carte des prix, jamais affiché tel quel
     const truncContenu = contenu.length > 300 ? contenu.substring(0, 300) + '...' : contenu;
     const contenuHtml = truncContenu.split('\n').filter(p => p.trim()).slice(0, 5).map(p => '<p style="margin:0.3rem 0;">' + p + '</p>').join('');
 

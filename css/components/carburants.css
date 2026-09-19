@@ -1,0 +1,97 @@
+/* Carte « prix des carburants » dans un article (blog.html, repère [prix-carburants]).
+ * Mêmes règles que la carte de la page d'accueil (index.html), recopiées le 2026-09-19. */
+.vm-service-card {
+    background: #FBF5EA;
+    border: 1px solid #E6DAC6;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.vm-service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(58, 42, 32, 0.08);
+}
+.vm-service-card-header {
+    background: #3A2A20;
+    color: #fff;
+    padding: 0.9rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.vm-service-card-header .icon { font-size: 1.2rem; }
+.vm-service-card-header h3 {
+    font-family: 'Spectral', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+.vm-service-live-dot {
+    width: 7px; height: 7px;
+    background: #4ade80;
+    border-radius: 50%;
+    margin-left: auto;
+    animation: srv-pulse 2s infinite;
+}
+@keyframes srv-pulse { 0%, 100% { opacity:1; box-shadow:0 0 0 0 rgba(74,222,128,0.4); } 50% { opacity:0.7; box-shadow:0 0 0 6px rgba(74,222,128,0); } }
+.vm-service-card-body {
+    padding: 1rem 1.2rem 1.2rem;
+}
+.vm-service-footer {
+    padding: 0 1.2rem 1rem;
+    font-size: 0.75rem;
+    color: #A07A4E;
+}
+.vm-service-footer a { color: #C2632F; text-decoration: underline; }
+
+/* Carburants & bus styling within warm theme */
+.vm-carb-loading, .vm-bus-loading {
+    text-align: center;
+    padding: 1.5rem 0.5rem;
+    color: #6E5B49;
+    font-size: 0.88rem;
+}
+/* Override station cards for warm theme */
+.vm-service-card .stations-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+}
+.vm-service-card .station-card {
+    background: #fff;
+    border: 1px solid #E6DAC6;
+    border-radius: 10px;
+    padding: 1rem;
+}
+.vm-service-card .station-name { color: #3A2A20; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.15rem; }
+.vm-service-card .station-addr { font-size: 0.72rem; color: #6E5B49; margin-bottom: 0.15rem; }
+.vm-service-card .station-horaires { font-size: 0.7rem; color: #7AB82E; margin-bottom: 0.5rem; font-weight: 500; }
+.vm-service-card .prix-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+    gap: 0.35rem;
+}
+.vm-service-card .prix-item {
+    background: #FBF5EA;
+    border: 1px solid #E6DAC6;
+    border-radius: 6px;
+    padding: 0.35rem 0.25rem;
+    text-align: center;
+}
+.vm-service-card .prix-item.rupture { background: rgba(231,76,60,0.08); border-color: rgba(231,76,60,0.2); }
+.vm-service-card .prix-label { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.06em; color: #A07A4E; }
+.vm-service-card .prix-val { font-size: 0.95rem; font-weight: 700; color: #C2632F; margin-top: 0.05rem; }
+.vm-service-card .prix-val.indispo { font-size: 0.62rem; color: #e74c3c; font-weight: 600; }
+.vm-service-card .prix-date { font-size: 0.52rem; color: #A07A4E; margin-top: 0.05rem; }
+.vm-service-card .station-link { display: inline-block; margin-top: 0.4rem; font-size: 0.78rem; color: #C2632F; text-decoration: none; font-weight: 600; }
+.vm-service-card .carburants-penurie { background: rgba(231,76,60,0.08); border: 1px solid rgba(231,76,60,0.2); border-radius: 8px; padding: 0.5rem 0.8rem; margin-bottom: 0.8rem; text-align: center; display: none; }
+.vm-service-card .carburants-penurie.visible { display: block; }
+.vm-service-card .carburants-penurie-title { font-size: 0.75rem; font-weight: 700; color: #e74c3c; margin-bottom: 0.15rem; }
+.vm-service-card .carburants-penurie-details { font-size: 0.68rem; color: #6E5B49; line-height: 1.5; }
+.vm-service-card .carburants-penurie-bar { height: 4px; background: #E6DAC6; border-radius: 3px; margin-top: 0.3rem; overflow: hidden; }
+.vm-service-card .carburants-penurie-fill { height: 100%; border-radius: 3px; transition: width 1s ease; }
+
+/* Dans un article : pas d'effet de survol, stations côte à côte si la place le permet. */
+.vm-carb-article { margin: 1.5rem 0; }
+.vm-carb-article.vm-service-card:hover { transform: none; box-shadow: none; }
+.vm-carb-article .stations-grid { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }

@@ -27,6 +27,7 @@
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components/flip-cards.css">
+    <link rel="stylesheet" href="css/components/carburants.css">
 
     <style>
         .content {
@@ -183,7 +184,7 @@
         }
         .article-full .back-link:hover { background: #c9a227; color: white; }
         .article-full-image {
-            max-width: 400px; max-height: 300px; object-fit: cover; border-radius: 10px;
+            max-width: min(400px, 100%); max-height: 300px; object-fit: cover; border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 1rem 0; cursor: pointer; transition: transform 0.2s;
         }
         .article-full-image:hover { transform: scale(1.02); }
@@ -287,6 +288,7 @@
         </div>
     </header>
     <script src="js/menu-mobile.js"></script>
+    <script src="js/carburants.js"></script>
 
     <section class="hero-unified">
         <img loading="lazy" src="images/logo.png" alt="Vizille en Mouvement" class="hero-logo">
@@ -375,6 +377,19 @@
         // et entoure les paragraphes texte normaux dans des <p>.
         function renderArticleContent(txt) {
             if (!txt) return '';
+            // Repère [prix-carburants] : à sa place, la carte des prix en direct (js/carburants.js).
+            // Un repère dans le texte, et non un champ à part : l'administration ne conserve que
+            // les champs qu'elle connaît, le texte, lui, survit à toutes les modifications.
+            var CARB = '[prix-carburants]', ic = txt.indexOf(CARB);
+            if (ic >= 0) {
+                return renderArticleContent(txt.slice(0, ic))
+                    + '<div class="vm-service-card vm-carb-article">'
+                    + '<div class="vm-service-card-header"><span class="icon">⛽</span><h3>Prix des carburants à Vizille — en direct</h3><span class="vm-service-live-dot"></span></div>'
+                    + '<div class="vm-service-card-body"><div id="carburants-penurie" class="carburants-penurie"></div><div id="carburants-content" class="vm-carb-loading">Chargement des prix...</div></div>'
+                    + '<div class="vm-service-footer">Source : <a href="https://www.prix-carburants.gouv.fr/" target="_blank" rel="noopener">prix-carburants.gouv.fr</a></div>'
+                    + '</div>'
+                    + renderArticleContent(txt.slice(ic + CARB.length).split(CARB).join(''));
+            }
             // Balises HTML qu'on autorise à passer telles quelles (sans <p> autour)
             // On découpe le texte en repérant les blocs HTML autonomes.
             var blockRe = /<(iframe|embed|video|blockquote|div|figure|table|script|img)[^>]*>[\s\S]*?<\/\1>|<(iframe|embed|img)[^>]*\/?>/gi;
@@ -434,11 +449,11 @@
             const hasImage = !!a.image;
             const title = cleanTitle(a.titre);
             const dateStr = a.a_preciser ? 'Date à préciser' : fmtDate(a.date);
-            const extrait = a.extrait || (a.contenu ? a.contenu.substring(0, 150) + '...' : '');
+            const extrait = a.extrait || (a.contenu ? a.contenu.split('[prix-carburants]').join('').substring(0, 150) + '...' : '');
             const truncExtrait = extrait.length > 150 ? extrait.substring(0, 150) + '...' : extrait;
 
             // Contenu pour le verso (premiers ~300 chars du contenu)
-            const contenu = a.contenu || '';
+            const contenu = (a.contenu || '').split('[prix-carburants]').join('');
             const truncContenu = contenu.length > 300 ? contenu.substring(0, 300) + '...' : contenu;
             const contenuHtml = truncContenu.split('\n').filter(p => p.trim()).slice(0, 6).map(p => '<p style="margin:0.3rem 0;">' + p + '</p>').join('');
 
@@ -559,6 +574,8 @@
                 '<button class="fb-share-btn" onclick="shareOnFB(' + a.id + ')">' +
                 '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>' +
                 ' Partager sur Facebook</button></div>';
+
+            if (document.getElementById('carburants-content') && typeof loadCarburants === 'function') loadCarburants();
 
             // Mettre à jour les balises OG pour que Facebook récupère la bonne image
             var articleUrl = SITE + '/blog.html?article=' + a.id;
