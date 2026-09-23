@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vizille 2032 – Explorer le projet – Vizille en Mouvement</title>
+    <meta name="description" content="Les projets du mandat 2026-2032, thème par thème : explorez ce qui change à Vizille.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+    /* ══ VIZILLE 2032 — EXPLORER LE PROJET ═══════════════════════════════════
+       Une page qu'on parcourt plutôt qu'on ne lit : des portes d'entrée côté
+       habitant, une mosaïque de thèmes, des tiroirs qui s'ouvrent, des cartes
+       qui se retournent. Couleurs et polices du site ; tout est préfixé vz-. */
+    .vz{--vz-fond:#F6EEE2;--vz-carte:#FBF5EA;--vz-encre:#3A2A20;--vz-doux:#6E5B49;--vz-pale:#A07A4E;--vz-terre:#C2632F;--vz-terre-f:#a8522a;--vz-filet:#eadcc6;
+        background:var(--vz-fond);color:var(--vz-encre);font-family:'Source Sans 3',system-ui,sans-serif;padding:0 16px 64px;}
+    .vz *{box-sizing:border-box;}
+    .vz-in{max-width:1120px;margin:0 auto;}
+    .vz h1,.vz h2,.vz h3{font-family:'Playfair Display',Georgia,serif;text-wrap:balance;margin:0;}
+
+    /* Ouverture : une question, trois chiffres. */
+    .vz-hero{padding:calc(80px + 34px) 0 26px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:end;}
+    .vz-sur{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--vz-terre);margin-bottom:10px;}
+    .vz-hero h1{font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.08;color:var(--vz-encre);}
+    .vz-hero h1 em{font-style:italic;color:var(--vz-terre);}
+    .vz-hero p{margin:14px 0 0;font-size:1.08rem;line-height:1.55;color:var(--vz-doux);max-width:52ch;}
+    .vz-chiffres{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+    .vz-chiffre{background:var(--vz-carte);border:1px solid var(--vz-filet);border-radius:14px;padding:14px 12px;text-align:center;}
+    .vz-chiffre b{display:block;font-family:'Playfair Display',Georgia,serif;font-size:2.1rem;line-height:1;color:var(--vz-terre);font-variant-numeric:tabular-nums;}
+    .vz-chiffre span{display:block;margin-top:6px;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--vz-pale);}
+
+    /* Les portes d'entrée : ce qui compte pour l'habitant, pas l'organigramme. */
+    .vz-titre-bloc{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:30px 0 12px;}
+    .vz-titre-bloc h2{font-size:1.5rem;}
+    .vz-titre-bloc small{font-size:.92rem;color:var(--vz-doux);}
+    .vz-portes{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;}
+    @media (max-width:1060px){ .vz-portes{grid-template-columns:repeat(4,minmax(0,1fr));} }
+    @media (max-width:560px){ .vz-portes{grid-template-columns:repeat(2,minmax(0,1fr));} }
+    .vz-porte{appearance:none;border:1px solid var(--vz-filet);background:#fff;border-radius:16px;padding:16px 12px 14px;cursor:pointer;text-align:left;font:inherit;color:inherit;display:flex;flex-direction:column;gap:8px;transition:transform .18s,box-shadow .18s,border-color .18s,background .18s;}
+    .vz-porte:hover{transform:translateY(-2px);box-shadow:0 10px 24px -14px rgba(90,50,20,.45);}
+    .vz-porte:focus-visible,.vz-tuile:focus-visible,.vz-projet:focus-visible,.vz-bouton:focus-visible{outline:3px solid var(--vz-terre);outline-offset:2px;}
+    .vz-porte .vz-emo{font-size:1.7rem;line-height:1;}
+    .vz-porte b{font-size:1.02rem;line-height:1.2;}
+    .vz-porte span{font-size:.82rem;color:var(--vz-pale);}
+    .vz-porte[aria-pressed="true"]{background:var(--vz-terre);border-color:var(--vz-terre);color:#fff;}
+    .vz-porte[aria-pressed="true"] span{color:#fbe3d3;}
+
+    /* Outils : recherche et hasard. */
+    .vz-outils{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 4px;}
+    .vz-cherche{flex:1 1 280px;position:relative;}
+    .vz-cherche input{width:100%;font:500 1rem/1.3 'Source Sans 3',sans-serif;padding:13px 16px 13px 42px;border:1px solid var(--vz-filet);border-radius:12px;background:#fff;color:var(--vz-encre);}
+    .vz-cherche input:focus{outline:3px solid rgba(194,99,47,.35);border-color:var(--vz-terre);}
+    .vz-cherche::before{content:'🔎';position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:1rem;}
+    .vz-bouton{appearance:none;border:0;border-radius:12px;padding:0 18px;min-height:48px;background:var(--vz-encre);color:#fff;font:700 .98rem/1 'Source Sans 3',sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .15s;}
+    .vz-bouton:hover{background:var(--vz-terre-f);}
+    .vz-bouton.vz-leger{background:#fff;color:var(--vz-encre);border:1px solid var(--vz-filet);}
+    .vz-bouton.vz-leger:hover{background:var(--vz-carte);}
+
+    /* La mosaïque des thèmes. */
+    .vz-mosaique{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;}
+    .vz-tuile{--c:#C2632F;appearance:none;border:0;cursor:pointer;text-align:left;font:inherit;color:#fff;border-radius:16px;padding:16px 16px 14px;min-height:118px;display:flex;flex-direction:column;justify-content:space-between;
+        background:linear-gradient(150deg,var(--c),color-mix(in srgb,var(--c) 72%,#1d120b));box-shadow:0 1px 0 rgba(0,0,0,.05);transition:transform .18s,opacity .25s,filter .25s,box-shadow .18s;}
+    .vz-tuile:hover{transform:translateY(-3px);box-shadow:0 14px 28px -16px color-mix(in srgb,var(--c) 70%,#000);}
+    .vz-tuile .vz-emo{font-size:1.9rem;line-height:1;}
+    .vz-tuile b{font-family:'Playfair Display',Georgia,serif;font-size:1.18rem;line-height:1.15;}
+    .vz-tuile span{font-size:.85rem;font-weight:600;opacity:.88;}
+    .vz-tuile.vz-eteinte{opacity:.28;filter:saturate(.3);}
+    .vz-tuile[aria-expanded="true"]{outline:3px solid var(--vz-encre);outline-offset:2px;}
+
+    /* Le tiroir d'un thème (ou des résultats de recherche). */
+    .vz-tiroir{margin:14px 0 0;background:#fff;border:1px solid var(--vz-filet);border-radius:18px;overflow:hidden;animation:vz-ouvre .28s ease-out;}
+    .vz-tiroir[hidden]{display:none;}
+    .vz-tiroir-tete{--c:#C2632F;display:flex;align-items:center;gap:14px;padding:16px 18px;background:color-mix(in srgb,var(--c) 12%,#fff);border-bottom:1px solid color-mix(in srgb,var(--c) 22%,#fff);}
+    .vz-tiroir-tete .vz-emo{font-size:2rem;}
+    .vz-tiroir-tete h3{font-size:1.45rem;color:color-mix(in srgb,var(--c) 70%,#241509);}
+    .vz-tiroir-tete p{margin:2px 0 0;font-size:.92rem;color:var(--vz-doux);}
+    .vz-tiroir-tete .vz-bouton{margin-left:auto;min-height:40px;padding:0 14px;}
+    .vz-grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;padding:16px 18px 20px;}
+    .vz-aide{padding:0 18px 16px;font-size:.88rem;color:var(--vz-pale);}
+
+    /* Une carte qui se retourne : le titre au recto, l'essentiel au verso. */
+    .vz-projet{--c:#C2632F;appearance:none;border:0;padding:0;background:none;cursor:pointer;text-align:left;font:inherit;color:inherit;perspective:1100px;min-height:200px;}
+    .vz-face{position:absolute;inset:0;border-radius:14px;padding:14px 15px;display:flex;flex-direction:column;gap:8px;backface-visibility:hidden;transition:transform .5s cubic-bezier(.2,.7,.2,1);}
+    .vz-flip{display:block;position:relative;height:100%;min-height:200px;}
+    .vz-projet{display:block;width:100%;}
+    .vz-recto h4{display:block;}
+    .vz-recto{background:var(--vz-carte);border:1px solid var(--vz-filet);border-top:4px solid var(--c);}
+    .vz-verso{background:color-mix(in srgb,var(--c) 10%,#fff);border:1px solid color-mix(in srgb,var(--c) 30%,#fff);transform:rotateY(180deg);}
+    .vz-projet[aria-pressed="true"] .vz-recto{transform:rotateY(-180deg);}
+    .vz-projet[aria-pressed="true"] .vz-verso{transform:rotateY(0);}
+    .vz-projet:hover .vz-recto{box-shadow:0 12px 24px -16px rgba(90,50,20,.5);}
+    .vz-theme-mini{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--c) 75%,#241509);}
+    .vz-recto h4{margin:0;font-family:'Playfair Display',Georgia,serif;font-size:1.12rem;line-height:1.25;color:var(--vz-encre);}
+    .vz-bas{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:.82rem;color:var(--vz-pale);}
+    .vz-puce{font-size:.74rem;font-weight:700;padding:4px 9px;border-radius:999px;background:#fff;border:1px solid var(--vz-filet);color:var(--vz-doux);white-space:nowrap;}
+    .vz-verso p strong{font-weight:700;color:color-mix(in srgb,var(--c) 70%,#241509);}
+    .vz-verso p{margin:0;font-size:.95rem;line-height:1.45;color:var(--vz-encre);display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden;}
+    .vz-verso-bas{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;}
+    .vz-verso .vz-retour{font-size:.82rem;font-weight:600;color:color-mix(in srgb,var(--c) 75%,#241509);}
+    .vz-vide{padding:22px 18px;color:var(--vz-doux);}
+
+    @keyframes vz-ouvre{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
+    @media (prefers-reduced-motion:reduce){
+        .vz *{animation:none !important;transition:none !important;}
+        .vz-face{backface-visibility:visible;}
+        .vz-verso{transform:none;display:none;}
+        .vz-projet[aria-pressed="true"] .vz-recto{transform:none;display:none;}
+        .vz-projet[aria-pressed="true"] .vz-verso{display:flex;}
+    }
+    @media (max-width:760px){
+        .vz-hero{grid-template-columns:minmax(0,1fr);padding-top:calc(80px + 20px);}
+        .vz-tiroir-tete{flex-wrap:wrap;}
+        .vz-tiroir-tete .vz-bouton{margin-left:0;}
+    }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <p>Notre Projet • Mandat 2026-2032</p>
+        </div>
+        <div class="header-main">
+            <a href="index.html">
+                <img loading="lazy" src="images/logo.png" alt="Vizille en Mouvement" class="nav-header-logo">
+            </a>
+            <button class="menu-toggle" aria-label="Menu">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="nos-ambitions.html">Nos Ambitions</a></li>
+                    <li><a href="retrospective.html">Rétrospective</a></li>
+                    <li><a href="bilan.html">Bilan</a></li>
+                    <li><a href="projet.html" class="active">Projet</a></li>
+                    <li><a href="blog.html">Actualités</a></li>
+                    <li><a href="equipe.html">Équipe</a></li>
+                    <li><a href="medias.html">Médias</a></li>
+                    <li><a href="vizille-autrefois.html">Vizille autrefois</a></li>
+                    <li><a href="participation.html">Participer</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script src="js/menu-mobile.js"></script>
+
+    <main class="vz">
+      <div class="vz-in">
+
+        <section class="vz-hero">
+          <div>
+            <div class="vz-sur">Mandat 2026 – 2032</div>
+            <h1>Ce qui change à Vizille</h1>
+            <p>Choisissez ce qui vous concerne, ouvrez un thème, retournez une carte : chaque projet du mandat en quelques mots.</p>
+          </div>
+          <div class="vz-chiffres" aria-label="Le projet en chiffres">
+            <div class="vz-chiffre"><b data-compte="projets">0</b><span>projets</span></div>
+            <div class="vz-chiffre"><b data-compte="themes">0</b><span>thèmes</span></div>
+            <div class="vz-chiffre"><b data-compte="ans">0</b><span>ans</span></div>
+          </div>
+        </section>
+
+        <div class="vz-titre-bloc">
+          <h2>Ce qui compte pour vous</h2>
+          <small>Un clic allume les thèmes qui vous concernent.</small>
+        </div>
+        <div class="vz-portes" id="vz-portes" role="group" aria-label="Portes d'entrée"></div>
+
+        <div class="vz-outils">
+          <label class="vz-cherche">
+            <span class="sr-only" style="position:absolute;left:-9999px">Rechercher un projet</span>
+            <input id="vz-recherche" type="search" autocomplete="off" placeholder="Un mot : école, vélo, commerce, fleurs…">
+          </label>
+          <button class="vz-bouton" id="vz-hasard" type="button">🎲 Un projet au hasard</button>
+        </div>
+
+        <div class="vz-titre-bloc">
+          <h2>Les thèmes du mandat</h2>
+          <small id="vz-consigne">Ouvrez un thème pour voir ses projets.</small>
+        </div>
+        <div class="vz-mosaique" id="vz-mosaique"></div>
+        <section class="vz-tiroir" id="vz-tiroir" hidden aria-live="polite"></section>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>© 2026 Vizille en Mouvement – Projet pour le mandat 2026-2032</p>
+        </div>
+    </footer>
+
+<script>
+(function(){
+  // Les quinze thèmes du plan de mandat, avec l'icône et la couleur déjà employées sur le site.
+  var THEMES = {
+    'Mobilités':{emo:'🚴',c:'#1a9c84'}, 'Travaux':{emo:'🏗️',c:'#d9731f'}, 'Urbanisme':{emo:'🏘️',c:'#3b4f63'},
+    'Transition écologique':{emo:'🌿',c:'#2f9a57'}, 'Économie':{emo:'💼',c:'#c98a0e'}, 'Culture':{emo:'🎭',c:'#8e4fae'},
+    'Patrimoine':{emo:'🏛️',c:'#7a3f99'}, 'Jumelages':{emo:'🌍',c:'#16867a'}, 'Action sociale':{emo:'🤝',c:'#d24b3c'},
+    'Participation':{emo:'🗣️',c:'#e05a2b'}, 'Concertation':{emo:'🗣️',c:'#e05a2b'}, 'Enfance/Jeunesse':{emo:'👶',c:'#2f7fc0'}, 'Santé':{emo:'🩺',c:'#c93a6b'},
+    'Tranquillité publique':{emo:'🛡️',c:'#2c3e50'}, 'Métropole':{emo:'🏙️',c:'#138aa0'}, 'Gouvernance':{emo:'⚖️',c:'#5b6f7c'}
+  };
+  // Les portes d'entrée parlent la langue de l'habitant ; chacune allume un ou plusieurs thèmes.
+  var PORTES = [
+    {emo:'🚲', t:'Me déplacer', s:'Vélo, bus, circulation', themes:['Mobilités']},
+    {emo:'🌳', t:'Mon cadre de vie', s:'Rues, places, nature', themes:['Urbanisme','Travaux','Transition écologique']},
+    {emo:'🛍️', t:'Commerces & emploi', s:'Centre-ville, entreprises', themes:['Économie']},
+    {emo:'🎭', t:'Sortir, me cultiver', s:'Culture, patrimoine, échanges', themes:['Culture','Patrimoine','Jumelages']},
+    {emo:'👨‍👩‍👧', t:'Grandir, s’entraider', s:'Enfance, solidarité, santé', themes:['Enfance/Jeunesse','Action sociale','Santé']},
+    {emo:'🛡️', t:'Vivre tranquille', s:'Sécurité, médiation', themes:['Tranquillité publique']},
+    {emo:'🗳️', t:'Décider ensemble', s:'Participation, commune, Métropole', themes:['Concertation','Participation','Gouvernance','Métropole']}
+  ];
+  var MARQUES_INTERNES = ['Aucune étude','sous-projet','Indicateurs','Moyens / actions','Fiche ORT'];
+
+  var projets = [], parTheme = {}, porteActive = -1, themeOuvert = null;
+  var $ = function(id){ return document.getElementById(id); };
+  var esc = function(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+  var sansAccents = function(s){ return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); };
+
+  // Deux phrases au plus, sans puces ni notes de travail : de l'information, pas un dossier.
+  function essentiel(t){
+    t = String(t || '');
+    var puces = t.split('•').map(function(x){ return x.replace(/\s+/g,' ').trim(); }).filter(Boolean);
+    var out;
+    if (puces.length > 1) {
+      out = puces.slice(0, 3).join(' · ');
+    } else {
+      var texte = t.replace(/\s+/g, ' ').trim();
+      var phrases = (texte.match(/[^.!?]+[.!?]+/g) || (texte ? [texte] : [])).map(function(p){ return p.trim(); });
+      out = phrases.slice(0, 2).join(' ');
+    }
+    out = out.split(/(?<=[.!?])\s+/).filter(function(p){ return !MARQUES_INTERNES.some(function(m){ return p.indexOf(m) >= 0; }); }).join(' ');
+    if (out.length > 240) { out = out.slice(0, 230).replace(/\s+\S*$/, '') + '…'; }
+    return out;
+  }
+
+  function carteHTML(p){
+    var th = THEMES[p.theme] || {emo:'📌', c:'#C2632F'};
+    var acc = String(p.accroche || '').trim(), desc = essentiel(p.description);
+    if (acc && desc && sansAccents(desc).indexOf(sansAccents(acc)) === 0) acc = '';   // pas de redite
+    var txt = (acc || desc) ? '' : 'Le détail de ce projet sera présenté au fil du mandat.';
+    // Pas de statut (« Planifié », « Programmé »…) : du vocabulaire de campagne, pas une information
+    // pour l'habitant (Michel, 23/09). On garde l'horizon.
+    var bas = '<span></span>' + (p.annee ? '<span>Horizon ' + esc(p.annee) + '</span>' : '');
+    return '<div class="vz-projet" role="button" tabindex="0" aria-pressed="false" data-id="' + p.id + '" style="--c:' + th.c + '">'
+      + '<span class="vz-flip">'
+      +   '<span class="vz-face vz-recto"><span class="vz-theme-mini">' + th.emo + ' ' + esc(p.theme) + '</span><h4>' + esc(p.titre) + '</h4><span class="vz-bas">' + bas + '</span></span>'
+      +   '<span class="vz-face vz-verso"><span class="vz-theme-mini">' + th.emo + ' ' + esc(p.theme) + '</span><p>' + (acc ? '<strong>' + esc(acc) + '</strong> ' : '') + esc(desc || txt) + '</p>'
+      +     '<span class="vz-verso-bas"><span class="vz-retour">↺ Retourner la carte</span></span></span>'
+      + '</span></div>';
+  }
+
+  function ouvrirTiroir(titre, sousTitre, emo, couleur, liste){
+    var t = $('vz-tiroir');
+    t.innerHTML = '<div class="vz-tiroir-tete" style="--c:' + couleur + '"><span class="vz-emo">' + emo + '</span><div><h3>' + esc(titre) + '</h3><p>' + esc(sousTitre) + '</p></div>'
+      + '<button class="vz-bouton vz-leger" type="button" id="vz-fermer">✕ Fermer</button></div>'
+      + (liste.length ? '<div class="vz-grille">' + liste.map(carteHTML).join('') + '</div><div class="vz-aide">Touchez une carte pour la retourner.</div>'
+                      : '<div class="vz-vide">Aucun projet ne correspond. Essayez un autre mot.</div>');
+    t.hidden = false;
+    $('vz-fermer').addEventListener('click', fermerTiroir);
+  }
+  function fermerTiroir(){
+    $('vz-tiroir').hidden = true; themeOuvert = null;
+    document.querySelectorAll('.vz-tuile').forEach(function(x){ x.setAttribute('aria-expanded','false'); });
+  }
+  function ouvrirTheme(nom, defiler){
+    var th = THEMES[nom], liste = parTheme[nom] || [];
+    themeOuvert = nom;
+    document.querySelectorAll('.vz-tuile').forEach(function(x){ x.setAttribute('aria-expanded', x.dataset.theme === nom ? 'true' : 'false'); });
+    ouvrirTiroir(nom, liste.length + ' projet' + (liste.length > 1 ? 's' : '') + ' pour le mandat', th.emo, th.c, liste);
+    if (defiler !== false) $('vz-tiroir').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'});
+  }
+
+  function dessinerPortes(){
+    $('vz-portes').innerHTML = PORTES.map(function(p, i){
+      return '<button class="vz-porte" type="button" aria-pressed="false" data-i="' + i + '"><span class="vz-emo">' + p.emo + '</span><b>' + esc(p.t) + '</b><span>' + esc(p.s) + '</span></button>';
+    }).join('');
+    $('vz-portes').addEventListener('click', function(e){
+      var b = e.target.closest('.vz-porte'); if (!b) return;
+      var i = +b.dataset.i;
+      porteActive = (porteActive === i) ? -1 : i;
+      document.querySelectorAll('.vz-porte').forEach(function(x){ x.setAttribute('aria-pressed', +x.dataset.i === porteActive ? 'true' : 'false'); });
+      var allumes = porteActive < 0 ? null : PORTES[porteActive].themes;
+      document.querySelectorAll('.vz-tuile').forEach(function(x){ x.classList.toggle('vz-eteinte', !!allumes && allumes.indexOf(x.dataset.theme) < 0); });
+      $('vz-consigne').textContent = allumes ? 'Les thèmes allumés vous concernent : ouvrez-en un.' : 'Ouvrez un thème pour voir ses projets.';
+      if (allumes && allumes.length === 1) ouvrirTheme(allumes[0]);
+      else $('vz-mosaique').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'center'});
+    });
+  }
+
+  function dessinerMosaique(){
+    var noms = Object.keys(THEMES).filter(function(n){ return (parTheme[n] || []).length; });
+    $('vz-mosaique').innerHTML = noms.map(function(n){
+      var th = THEMES[n], k = parTheme[n].length;
+      return '<button class="vz-tuile" type="button" aria-expanded="false" data-theme="' + esc(n) + '" style="--c:' + th.c + '"><span class="vz-emo">' + th.emo + '</span><b>' + esc(n) + '</b><span>' + k + ' projet' + (k > 1 ? 's' : '') + '</span></button>';
+    }).join('');
+    $('vz-mosaique').addEventListener('click', function(e){
+      var b = e.target.closest('.vz-tuile'); if (!b) return;
+      if (themeOuvert === b.dataset.theme) fermerTiroir(); else ouvrirTheme(b.dataset.theme);
+    });
+    return noms.length;
+  }
+
+  // Retourner une carte : délégation sur le tiroir, qui se redessine à chaque ouverture.
+  $('vz-tiroir').addEventListener('click', function(e){
+    var c = e.target.closest('.vz-projet'); if (!c) return;
+    c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+  });
+  $('vz-tiroir').addEventListener('keydown', function(e){
+    if (e.target.classList && e.target.classList.contains('vz-projet') && (e.key === 'Enter' || e.key === ' ')) {
+      e.preventDefault(); e.target.setAttribute('aria-pressed', e.target.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    }
+  });
+
+
+  function chercher(){
+    var q = sansAccents($('vz-recherche').value).trim();
+    if (q.length < 2) { if (!themeOuvert) fermerTiroir(); return; }
+    var mots = q.split(/\s+/);
+    var liste = projets.filter(function(p){
+      var foin = sansAccents(p.titre + ' ' + p.theme + ' ' + (p.accroche || '') + ' ' + (p.description || ''));
+      return mots.every(function(m){ return foin.indexOf(m) >= 0; });
+    });
+    themeOuvert = null;
+    document.querySelectorAll('.vz-tuile').forEach(function(x){ x.setAttribute('aria-expanded','false'); });
+    ouvrirTiroir('« ' + $('vz-recherche').value.trim() + ' »', liste.length + ' projet' + (liste.length > 1 ? 's trouvés' : ' trouvé'), '🔎', '#C2632F', liste);
+  }
+
+  function auHasard(){
+    if (!projets.length) return;
+    var p = projets[Math.floor(Math.random() * projets.length)];
+    $('vz-recherche').value = '';
+    ouvrirTheme(p.theme);
+    var c = document.querySelector('.vz-projet[data-id="' + p.id + '"]');
+    if (c) { c.setAttribute('aria-pressed','true'); setTimeout(function(){ c.scrollIntoView({behavior:'smooth', block:'center'}); c.focus({preventScroll:true}); }, 60); }
+  }
+
+  function compter(el, fin){
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = fin; return; }
+    var t0 = null, d = 900;
+    (function pas(t){ if (!t0) t0 = t; var k = Math.min(1, (t - t0) / d); el.textContent = Math.round(fin * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(pas); })(performance.now());
+  }
+
+  fetch('plan-mandat.json?v=' + Date.now()).then(function(r){ return r.json(); }).then(function(data){
+    projets = data.filter(function(p){ return THEMES[p.theme]; })   // tous les projets de l'Espace élus en ligne
+                  .sort(function(a, b){ return String(a.titre).localeCompare(String(b.titre), 'fr'); });
+    projets.forEach(function(p){ (parTheme[p.theme] = parTheme[p.theme] || []).push(p); });
+    dessinerPortes();
+    var nbThemes = dessinerMosaique();
+    compter(document.querySelector('[data-compte="projets"]'), projets.length);
+    compter(document.querySelector('[data-compte="themes"]'), nbThemes);
+    compter(document.querySelector('[data-compte="ans"]'), 6);
+    var minuteur;
+    $('vz-recherche').addEventListener('input', function(){ clearTimeout(minuteur); minuteur = setTimeout(chercher, 180); });
+    $('vz-hasard').addEventListener('click', auHasard);
+  }).catch(function(){
+    $('vz-mosaique').innerHTML = '<div class="vz-vide">Les projets n’ont pas pu être chargés. Rechargez la page.</div>';
+  });
+})();
+</script>
+</body>
+</html>
