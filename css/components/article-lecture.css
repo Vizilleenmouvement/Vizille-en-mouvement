@@ -24,7 +24,8 @@ body.mode-article .scroll-progress{background:linear-gradient(90deg,#e84f4f,#f0a
 .al-chapeau{font:400 21px/1.5 Spectral,Georgia,serif;color:var(--al-encre);opacity:.88;margin:0}
 .al-auteur{margin-top:14px;font-size:14px;color:var(--al-doux)}
 .al-img{border-radius:20px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(40,25,10,.55);transform:rotate(1.2deg);background:#fff;cursor:zoom-in}
-.al-img img{width:100%;height:auto;display:block;max-height:560px;object-fit:contain;background:#fff}
+.al-img img{width:100%;height:auto;display:block;max-height:560px;object-fit:contain;background:#fff;max-width:none;margin:0;border-radius:0;box-shadow:none}
+.al-img img:hover{transform:none}
 .al-img .article-carousel{margin:0}
 
 .al-corps{display:grid;grid-template-columns:200px minmax(0,680px) 200px;gap:40px;justify-content:center;max-width:1180px;margin:0 auto;padding:40px 20px 10px}
