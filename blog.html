@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components/flip-cards.css">
     <link rel="stylesheet" href="css/components/carburants.css">
+    <link rel="stylesheet" href="css/components/article-lecture.css">
 
     <style>
         .content {
@@ -289,6 +290,7 @@
     </header>
     <script src="js/menu-mobile.js"></script>
     <script src="js/carburants.js"></script>
+    <script src="js/article-lecture.js"></script>
 
     <section class="hero-unified">
         <img loading="lazy" src="images/logo.png" alt="Vizille en Mouvement" class="hero-logo">
@@ -560,20 +562,9 @@
             } else if (imgs.length === 1) {
                 imgHtml = '<img loading="lazy" src="' + imgs[0] + '" alt="" class="article-full-image" onclick="openLightbox(\'' + imgs[0] + '\')" title="Agrandir">';
             }
-            document.getElementById('article-full-content').innerHTML =
-                imgHtml +
-                '<div style="display:flex;gap:0.75rem;align-items:center;margin-bottom:0.5rem;flex-wrap:wrap;">' +
-                '<span style="color:#c9a227;font-weight:600;font-size:0.85rem;">' + (a.a_preciser ? 'Date à préciser' : fmtDate(a.date)) + '</span>' +
-                (a.categorie ? '<span style="background:#1a3a5c;color:white;padding:0.2rem 0.6rem;border-radius:12px;font-size:0.75rem;">' + a.categorie + '</span>' : '') +
-                '</div>' +
-                '<h1 style="font-family:\'Playfair Display\',serif;font-size:1.8rem;color:#1a3a5c;margin:0.5rem 0 1rem;line-height:1.3;">' + cleanTitle(a.titre) + '</h1>' +
-                (a.auteur ? '<p style="color:#888;font-size:0.9rem;">Par ' + a.auteur + '</p>' : '') +
-                (a.source ? '<p style="color:#888;font-size:0.9rem;">Source : ' + a.source + '</p>' : '') +
-                '<div class="article-full-content">' + renderArticleContent(a.contenu) + '</div>' +
-                '<div class="share-bar">' +
-                '<button class="fb-share-btn" onclick="shareOnFB(' + a.id + ')">' +
-                '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>' +
-                ' Partager sur Facebook</button></div>';
+            // Nouvelle mise en page (11/10/2026) : js/article-lecture.js
+            document.getElementById('article-full-content').innerHTML = alRendre(a, imgHtml);
+            document.body.classList.add('mode-article');
 
             if (document.getElementById('carburants-content') && typeof loadCarburants === 'function') loadCarburants();
 
@@ -589,6 +580,7 @@
         }
 
         function showList() {
+            document.body.classList.remove('mode-article');
             document.getElementById('articles-view').style.display = 'block';
             document.getElementById('article-full').classList.remove('active');
             history.pushState({}, '', location.pathname);
