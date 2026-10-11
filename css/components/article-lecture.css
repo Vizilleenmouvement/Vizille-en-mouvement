@@ -4,7 +4,6 @@
    encadré « Infos pratiques » construit à partir du bloc du même nom, partage,
    « À lire aussi » et bandeau de contact. */
 :root{--al-creme:#f6eee2;--al-papier:#fffaf3;--al-encre:#3a2a20;--al-doux:#7a6656;--al-ligne:#eadcc6;--al-vert:#1f6f4a;--al-bleu:#1a3a5c;--al-orange:#c2632f}
-[data-theme="dark"]{--al-papier:#2b241e;--al-encre:#f1e7da;--al-doux:#c8b6a3;--al-ligne:#4a3d32;--al-bleu:#a9c7e8}
 
 body.mode-article .hero-unified{display:none}
 body.mode-article .content{max-width:none;padding:0 0 3rem}
@@ -68,7 +67,6 @@ body.mode-article .scroll-progress{background:linear-gradient(90deg,#e84f4f,#f0a
 .al-carte small{font:700 11px inherit;letter-spacing:.08em;text-transform:uppercase;color:var(--al-orange)}
 .al-carte h3{font:600 18px/1.25 Spectral,Georgia,serif;margin:6px 0 0}
 .al-contact{max-width:1140px;margin:10px auto 20px;background:var(--al-bleu);color:#fff;border-radius:20px;padding:24px 30px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
-[data-theme="dark"] .al-contact{background:#1d3550}
 .al-contact b{font:600 22px Spectral,Georgia,serif}
 .al-contact a{background:#fff;color:#1a3a5c;text-decoration:none;font:700 15px inherit;padding:11px 18px;border-radius:12px}
 .al-partage-m{display:none}
