@@ -1084,26 +1084,15 @@
     "description": "• Sur la base du plan climat, approfondir les actions pédagogiques et sociétales\n• Renforcer les actions autour de la santé publique (la pollution, les dangers professionnels, l'habitat et les peuplements)\n• Formation citoyenne sur les enjeux climatiques et les transitions\n• Expérimentations collectives (potagers urbains par ex, déchets)\n• Soutien pédagogique, projets dans les écoles\n• Café-débats, ciné-débats"
   },
   {
-    "id": 625,
-    "theme": "Transition écologique",
-    "type": "objectif",
-    "titre": "Objectif 1 - Intégrer l'environnement dans chaque projet municipal",
-    "resume": "Dans chaque projet municipal, dès la conception.",
-    "description": "Pour que chaque décision (travaux, achats, urbanisme, services) réduise l'empreinte écologique et améliore la qualité de vie, aujourd'hui et demain.",
-    "details": "Ce qu'on fait : Évaluer l'impact environnemental et énergétique des projets. Favoriser des solutions sobres, réparables et durables. Structurer une démarche commune : transition numérique responsable & responsabilité sociétale.",
-    "benefices": "Moins de dépenses d'énergie et de ressources. Des projets cohérents, lisibles et mesurables. Une commune plus résiliente et exemplaire.",
-    "indicateurs": "% de projets avec bilan d'impact • kWh économisés/an • Part d'achats responsables"
-  },
-  {
     "id": 626,
     "theme": "Transition écologique",
     "type": "objectif",
-    "titre": "Objectif 2 - Faire de la transition un projet collectif compris et maîtrisé localement",
-    "resume": "Un projet collectif, compris et maîtrisé localement.",
-    "description": "Parce que la transition réussit quand elle est partagée : pédagogie, participation, santé publique et actions concrètes au plus près des habitants.",
-    "details": "Ce qu'on fait : S'appuyer sur le Plan Climat du territoire pour amplifier les actions. Renforcer la santé publique (pollution, risques, expositions). Former et informer sur les enjeux climatiques. Lancer des expérimentations (potagers, déchets). Soutenir les projets scolaires. Cultiver les savoirs : cafés-débats, ciné-débat.",
-    "benefices": "Des habitants acteurs, mieux informés. Des choix collectifs plus acceptés. Des initiatives locales qui essaiment.",
-    "indicateurs": "Nb d'actions pédagogiques/an • Nb de participants • Nb de projets écoles/assos"
+    "titre": "Objectif - Intégrer la transition dans chaque projet municipal",
+    "resume": "Dans chaque projet municipal, dès la conception : une transition collective, comprise et maîtrisée localement.",
+    "description": "Pour que chaque décision (travaux, achats, urbanisme, services) réduise l'empreinte écologique et améliore la qualité de vie, aujourd'hui et demain. Et parce que la transition réussit quand elle est partagée : pédagogie, participation, santé publique et actions concrètes au plus près des habitants.",
+    "details": "Ce qu'on fait : Évaluer l'impact environnemental et énergétique des projets. Favoriser des solutions sobres, réparables et durables. Structurer une démarche commune : transition numérique responsable & responsabilité sociétale. S'appuyer sur le Plan Climat du territoire pour amplifier les actions. Renforcer la santé publique (pollution, risques, expositions). Former et informer sur les enjeux climatiques. Lancer des expérimentations (potagers, déchets). Soutenir les projets scolaires. Cultiver les savoirs : cafés-débats, ciné-débat.",
+    "benefices": "Moins de dépenses d'énergie et de ressources. Des projets cohérents, lisibles et mesurables. Une commune plus résiliente et exemplaire. Des habitants acteurs, mieux informés. Des choix collectifs plus acceptés. Des initiatives locales qui essaiment.",
+    "indicateurs": "% de projets avec bilan d'impact • kWh économisés/an • Part d'achats responsables • Nb d'actions pédagogiques/an • Nb de participants • Nb de projets écoles/assos"
   },
   {
     "id": 627,
